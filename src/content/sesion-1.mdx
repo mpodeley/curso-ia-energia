@@ -1,0 +1,70 @@
+import { Quiz } from '../exercises/Quiz'
+
+## Antes de la sesión
+
+*Tiempo estimado: 30–40 minutos.*
+
+1. **Video (8 min):** [Large Language Models explained briefly — 3Blue1Brown](https://www.youtube.com/watch?v=LPZh9BOjkQs)
+   (activá los subtítulos en español). No hace falta entender todo: quedate con la idea de que el modelo *aprende de texto* y *genera texto*.
+2. **Cuenta gratuita (10 min):** creá una cuenta en al menos uno de estos chatbots:
+   [ChatGPT](https://chatgpt.com), [Claude](https://claude.ai) o [Gemini](https://gemini.google.com).
+   Todos tienen nivel gratuito y es lo único que necesitás en todo el curso.
+3. **Primer contacto (10 min):** pedile al chatbot algo de tu trabajo real. Por ejemplo:
+   *"Explicame como si fuera un directorio no técnico qué es la recuperación secundaria"* o
+   *"Redactá una minuta a partir de estas notas: …"*. Guardá la conversación: la vamos a comentar en vivo.
+
+<div className="callout">
+  <strong>Regla desde el día uno:</strong> en estos ejercicios no uses datos confidenciales de la empresa —
+  ni volúmenes reales de producción, ni nombres de contratos, ni información de partners. En la sesión 3 y la
+  sesión 7 vemos en detalle por qué, y qué alternativas hay.
+</div>
+
+## El mapa: cuatro capas en una historia conocida
+
+Para alguien que trabajó con ingeniería de reservorios, nada de esto es tan nuevo como parece:
+
+- **Data science** es lo que siempre hicimos: mirar datos, limpiarlos, graficarlos, sacar conclusiones.
+  Una curva de declinación ajustada a mano ya es un modelo.
+- **Machine learning** invierte la lógica: en vez de escribir la fórmula, mostrás ejemplos y la máquina
+  encuentra el patrón. Útil cuando la fórmula no existe o no la conocemos.
+- **Deep learning** es machine learning con redes neuronales grandes: más datos y más cómputo, patrones
+  más complejos (imágenes sísmicas, registros de pozo, texto).
+- **IA generativa** es la capa nueva: modelos tan grandes, entrenados con tanto texto, que en lugar de
+  solo clasificar o predecir un número, *generan* — texto, código, imágenes. Los LLMs
+  (modelos grandes de lenguaje) son el caso que nos ocupa.
+
+¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: **datos** (todo el texto de internet),
+**cómputo** (GPUs) y una **arquitectura que escala** (el transformer, 2017). No hubo un descubrimiento
+mágico: hubo una receta que mejora de forma sorprendentemente predecible al agrandarla.
+
+## En la sesión en vivo (2 h)
+
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| El mapa de cuatro capas | 30 min | La historia anterior, con ejemplos de la industria en cada capa |
+| Demos en vivo | 35 min | El chatbot frente a tareas reales: resumir un paper SPE, explicar un término, escribir un correo difícil, analizar una tabla — y también verlo fallar |
+| Encuesta de relevamiento | 15 min | La completamos juntos en vivo (ver abajo) |
+| Discusión | 30 min | Sus primeras conversaciones con el chatbot: qué sorprendió, qué decepcionó |
+| Cierre y tarea | 10 min | Qué viene en la sesión 2 |
+
+## La encuesta que alimenta el final del curso
+
+Este curso termina con un **caso real construido con las necesidades de ustedes**. Para eso, en esta
+primera sesión relevamos: qué rol tiene cada uno, qué tareas repetitivas le comen la semana, qué datos
+maneja y en qué formato. Con eso, en la sesión 5 elegimos juntos un caso, y en la sesión 8 lo recorremos
+resuelto de punta a punta.
+
+*(El enlace a la encuesta se comparte en vivo durante la sesión.)*
+
+<Quiz data="quiz_s1" sesion={1} />
+
+## Para discutir
+
+1. ¿Qué tarea de tu semana laboral te parece **más** automatizable con lo que viste hoy? ¿Y cuál menos?
+2. En la demo, el chatbot respondió algo incorrecto con total seguridad. ¿Cómo cambia eso la forma en que conviene usarlo?
+3. ¿Dónde ya hay "machine learning" escondido en el software que usás (simuladores, interpretación sísmica, mantenimiento predictivo)?
+
+## Tarea para la sesión 2
+
+Usá el chatbot para **una tarea real** (sin datos confidenciales) y anotá: qué pediste, qué salió bien,
+qué salió mal. Dos minutos de notas alcanzan — las usamos para abrir la próxima sesión.

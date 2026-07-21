@@ -1,0 +1,74 @@
+## Antes de la sesión
+
+*Tiempo estimado: 25–35 minutos.*
+
+1. **Tarea de la sesión 2:** tus tres tareas repetitivas anotadas. Son la materia prima de esta sesión.
+2. **Lectura (10 min):** releé la sección "De ahí salen las alucinaciones" de la sesión 2 — el prompting
+   bueno es, en parte, defensa contra eso.
+3. **Experimento (10 min):** tomá una de tus tres tareas y pedísela al chatbot *de la peor manera posible*
+   (una línea, sin contexto). Guardá el resultado: lo vamos a mejorar en vivo.
+
+## Anatomía de un prompt que funciona
+
+Un prompt efectivo no es magia: es una **orden de trabajo bien escrita**, como la que le darías a un
+analista nuevo el primer día. Las piezas:
+
+- **Rol:** quién quiere que sea. *"Sos un ingeniero de producción senior que escribe para gerencia."*
+- **Contexto:** lo que necesita saber. *"Este resumen va al comité que decide el workover del pozo X."*
+- **Tarea:** el verbo concreto. Resumir, comparar, redactar, extraer, traducir, criticar.
+- **Formato:** cómo querés la salida. *"Tabla de dos columnas"*, *"máximo 200 palabras"*, *"en viñetas"*.
+- **Ejemplos:** si tenés un "así me gusta", mostralo. Un ejemplo vale más que tres párrafos de instrucciones.
+- **Iteración:** la primera salida es un borrador. *"Más corto"*, *"menos jerga"*, *"ahora en tono formal"* —
+  la conversación es parte del método, no señal de fracaso.
+
+Un ejemplo completo:
+
+```text
+Sos un ingeniero de reservorios que escribe para un directorio no técnico.
+Contexto: adjunto las conclusiones técnicas del estudio de simulación del campo.
+Tarea: redactá un resumen ejecutivo.
+Formato: máximo una página, tres secciones (situación, opciones, recomendación),
+sin jerga — cada término técnico inevitable, explicado entre paréntesis.
+```
+
+## Dónde rinde hoy, en la oficina
+
+Los casos de mayor retorno inmediato no son los más glamorosos: **resumir** informes y papers (SPE
+incluidos), **redactar** primeros borradores de correos, minutas e informes mensuales, **traducir**
+con vocabulario técnico correcto, **extraer** datos puntuales de documentos largos, **criticar** un
+texto propio antes de mandarlo. La regla común: tareas donde el borrador cuesta y la verificación es
+rápida.
+
+<div className="callout">
+  <strong>Qué no subir a un chatbot gratuito:</strong> producción real por pozo, reservas, precios y
+  cláusulas de contratos, datos de partners, información de personas. Regla práctica: si no lo pondrías
+  en un correo a un desconocido, no va en el chat. En la sesión 7 formalizamos esto en una política de
+  uso — mientras tanto, trabajá con datos públicos, viejos o inventados con la misma estructura.
+</div>
+
+<div className="callout callout--wip">
+  El <strong>constructor de prompts con puntaje</strong> (ejercicio interactivo de esta sesión) se publica
+  en esta página antes de la fecha de dictado.
+</div>
+
+## En la sesión en vivo (2 h)
+
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| El peor prompt | 15 min | Comparamos sus experimentos de "una línea sin contexto" |
+| Anatomía en vivo | 30 min | Reescribimos juntos 3–4 de sus tareas reales con la estructura completa |
+| Taller hands-on | 40 min | Cada uno mejora una tarea propia; compartimos pantalla y criticamos prompts |
+| Confidencialidad | 20 min | Qué no subir y por qué; qué alternativas existen (datos sintéticos, versiones corporativas) |
+| Cierre y tarea | 15 min | La tarea "antes/después" |
+
+## Para discutir
+
+1. De tus tres tareas repetitivas: ¿en cuál el borrador es lo caro, y en cuál lo caro es verificar?
+2. ¿Qué haría falta para que confíes en un resumen automático de un informe que firma tu área?
+3. ¿Dónde está el límite entre "me ayudó a escribir" y "lo escribió y no lo revisé"?
+
+## Tarea para la sesión 4
+
+Elegí una de tus tareas y resolvela completa con el chatbot, iterando hasta que la salida te sirva de
+verdad. Traé el **antes** (tu primer prompt) y el **después** (el que funcionó). Además: si tenés a mano
+una planilla **no confidencial** con datos (o podés armar una de ejemplo), tenela lista para la sesión 4.

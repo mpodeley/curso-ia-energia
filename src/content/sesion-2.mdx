@@ -1,0 +1,65 @@
+import { TokenizerLab } from '../exercises/TokenizerLab'
+import { NextTokenLab } from '../exercises/NextTokenLab'
+
+## Antes de la sesión
+
+*Tiempo estimado: 35–45 minutos.*
+
+1. **Los dos ejercicios interactivos de esta página** (20 min): el tokenizador y el de "adiviná el próximo token". Están más abajo — jugá antes de leer la explicación.
+2. **Video (7 min, opcional):** si te quedaste con ganas después de la sesión 1, el capítulo de
+   [3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) (subtítulos en español) muestra la maquinaria interna. No es requisito.
+
+## El modelo no lee palabras: lee tokens
+
+Antes de procesar tu texto, el modelo lo parte en **tokens**: pedazos que pueden ser palabras enteras,
+sílabas o hasta caracteres sueltos. Las palabras frecuentes en internet (en inglés, sobre todo) son un
+solo token; las técnicas o en español suelen partirse en varios.
+
+Esto explica varias rarezas prácticas: por qué el modelo cuenta mal las letras de una palabra, por qué
+el español "rinde menos" por token que el inglés, y por qué los precios de las APIs se cobran por token.
+
+<TokenizerLab sesion={2} />
+
+## Una sola operación: predecir el próximo token
+
+Todo lo que viste hacer a un chatbot — responder preguntas, escribir informes, traducir — sale de una
+única operación repetida: **dado el texto hasta acá, asignar una probabilidad a cada token posible que
+sigue, elegir uno, y volver a empezar**. No hay una base de datos de respuestas: hay una máquina de
+continuar texto, entrenada con una fracción enorme de todo el texto humano.
+
+La **temperatura** controla cómo se elige entre esos candidatos: con temperatura baja gana siempre el
+más probable (salida estable, repetitiva); con temperatura alta, tokens poco probables tienen su
+oportunidad (salida variada, a veces brillante, a veces disparatada).
+
+<NextTokenLab sesion={2} />
+
+## De ahí salen las alucinaciones
+
+Si el modelo es una máquina de continuar texto de forma *plausible*, entonces cuando no sabe algo no
+tiene un mecanismo natural para callarse: **genera la continuación más plausible igual**. Un número de
+API que parece real, un paper que suena citable, una norma que "debería existir". Eso es una
+**alucinación**, y no es un bug raro: es el comportamiento por defecto del mecanismo que acabás de ver.
+
+La consecuencia práctica que nos acompaña todo el curso: la salida de un LLM es un **borrador
+plausible**, no una fuente. Se verifica todo lo que importa.
+
+## En la sesión en vivo (2 h)
+
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| Repaso de la tarea | 15 min | Qué les salió bien y mal con el chatbot esta semana |
+| Tokens y predicción | 35 min | Recorremos juntos los dos ejercicios de esta página, con tiempo para preguntas |
+| Contexto y entrenamiento | 30 min | La ventana de contexto (la "memoria de trabajo"), y las dos etapas de entrenamiento: leer internet, y aprender a conversar |
+| Alucinaciones en vivo | 25 min | Hacemos alucinar al chatbot con preguntas de la industria y analizamos por qué |
+| Cierre y tarea | 15 min | Qué significa todo esto para usarlo bien (puente a la sesión 3) |
+
+## Para discutir
+
+1. Después de jugar con la temperatura: ¿para qué tareas tuyas querrías temperatura baja? ¿Alguna donde convenga alta?
+2. Si el modelo "solo continúa texto", ¿por qué a veces parece razonar? ¿Dónde está el límite?
+3. ¿Qué pregunta de tu especialidad le harías a un LLM para detectar rápido si alucina?
+
+## Tarea para la sesión 3
+
+Traé anotadas **tres tareas repetitivas de tu semana** que involucren texto, planillas o documentos.
+En la sesión 3 las convertimos en prompts bien escritos.

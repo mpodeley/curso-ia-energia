@@ -1,0 +1,134 @@
+/* ============================================================================
+   prose.css — typography for MDX session bodies (<article class="prose">).
+   ============================================================================ */
+
+.prose {
+  max-width: 46rem;
+  font-size: 1.02rem;
+}
+.prose h2 {
+  font-family: var(--pd-font-display);
+  font-weight: 500;
+  font-size: var(--pd-fs-h2);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: var(--pd-sp-7) 0 var(--pd-sp-3);
+  color: var(--pd-text);
+}
+.prose h2:first-child {
+  margin-top: 0;
+}
+.prose h3 {
+  font-family: var(--pd-font-display);
+  font-weight: 500;
+  font-size: var(--pd-fs-h3);
+  margin: var(--pd-sp-6) 0 var(--pd-sp-2);
+}
+.prose p {
+  margin: var(--pd-sp-3) 0;
+}
+.prose ul,
+.prose ol {
+  margin: var(--pd-sp-3) 0;
+  padding-left: 1.35rem;
+}
+.prose li {
+  margin: 0.4rem 0;
+}
+.prose li::marker {
+  color: var(--pd-text-faint);
+}
+.prose a {
+  color: var(--pd-link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--pd-link) 40%, transparent);
+  text-underline-offset: 2px;
+}
+.prose strong {
+  font-weight: 600;
+}
+.prose em {
+  color: var(--pd-text-muted);
+}
+.prose code {
+  font-family: var(--pd-font-mono);
+  font-size: 0.88em;
+  background: var(--pd-surface-2);
+  border: 1px solid var(--pd-border-soft);
+  border-radius: 0.3rem;
+  padding: 0.08em 0.35em;
+}
+.prose pre {
+  background: var(--pd-surface-2);
+  border: 1px solid var(--pd-border-soft);
+  border-radius: var(--pd-r-2);
+  padding: var(--pd-sp-4);
+  overflow-x: auto;
+  font-size: var(--pd-fs-sm);
+  line-height: 1.55;
+}
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+.prose blockquote {
+  border-left: 3px solid var(--pd-border);
+  margin: var(--pd-sp-4) 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: var(--pd-text-muted);
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--pd-fs-sm);
+  margin: var(--pd-sp-4) 0;
+  display: block;
+  overflow-x: auto;
+}
+.prose th {
+  font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pd-text-faint);
+  text-align: left;
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 1px solid var(--pd-border);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0;
+  border-bottom: 1px solid var(--pd-border-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--pd-border-soft);
+  margin: var(--pd-sp-6) 0;
+}
+
+/* callouts */
+.callout {
+  border: 1px solid var(--pd-border-soft);
+  border-left: 3px solid var(--pd-primary);
+  background: var(--pd-surface-2);
+  border-radius: var(--pd-r-2);
+  padding: var(--pd-sp-4) var(--pd-sp-5);
+  font-size: var(--pd-fs-sm);
+  line-height: 1.6;
+  margin: var(--pd-sp-5) 0;
+}
+.callout--wip {
+  border-left-color: var(--pd-caveat);
+}
+.callout--wip::before {
+  content: 'En preparación';
+  display: block;
+  font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--pd-caveat);
+  margin-bottom: 0.4rem;
+}

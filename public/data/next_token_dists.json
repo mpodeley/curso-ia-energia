@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-07-21T22:00:21+00:00",
+  "source": "distribuciones ilustrativas curadas a mano — no son salidas reales de un modelo",
+  "source_date": null,
+  "data": [
+    {
+      "id": "presion",
+      "contexto": "La presión en boca de pozo se mide en",
+      "opciones": [
+        {
+          "token": " psi",
+          "p": 0.48
+        },
+        {
+          "token": " bar",
+          "p": 0.22
+        },
+        {
+          "token": " kg/cm²",
+          "p": 0.12
+        },
+        {
+          "token": " unidades",
+          "p": 0.1
+        },
+        {
+          "token": " metros",
+          "p": 0.05
+        },
+        {
+          "token": " vacas",
+          "p": 0.03
+        }
+      ],
+      "note": "El modelo leyó millones de textos técnicos: «psi» domina, pero fijate que ninguna opción tiene probabilidad cero — ni siquiera las absurdas. Solo son muy improbables."
+    },
+    {
+      "id": "vaca",
+      "contexto": "El principal yacimiento no convencional de Argentina es Vaca",
+      "opciones": [
+        {
+          "token": " Muerta",
+          "p": 0.9
+        },
+        {
+          "token": " muerta",
+          "p": 0.06
+        },
+        {
+          "token": " Negra",
+          "p": 0.02
+        },
+        {
+          "token": " Viva",
+          "p": 0.01
+        },
+        {
+          "token": " Loca",
+          "p": 0.01
+        }
+      ],
+      "note": "Cuando el contexto apunta a un hecho muy repetido en el entrenamiento, la distribución se concentra: acá el modelo está «casi seguro». La seguridad viene de la frecuencia en los datos, no de haber verificado nada."
+    },
+    {
+      "id": "valvula",
+      "contexto": "El operador cerró la válvula porque detectó una",
+      "opciones": [
+        {
+          "token": " fuga",
+          "p": 0.4
+        },
+        {
+          "token": " caída",
+          "p": 0.18
+        },
+        {
+          "token": " falla",
+          "p": 0.16
+        },
+        {
+          "token": " pérdida",
+          "p": 0.12
+        },
+        {
+          "token": " anomalía",
+          "p": 0.09
+        },
+        {
+          "token": " serpiente",
+          "p": 0.05
+        }
+      ],
+      "note": "Contexto ambiguo → distribución repartida. Acá la temperatura importa mucho: con temperatura alta, «serpiente» aparece cada tanto."
+    },
+    {
+      "id": "informe",
+      "contexto": "Adjunto el informe mensual de",
+      "opciones": [
+        {
+          "token": " producción",
+          "p": 0.45
+        },
+        {
+          "token": " actividades",
+          "p": 0.2
+        },
+        {
+          "token": " gestión",
+          "p": 0.15
+        },
+        {
+          "token": " perforación",
+          "p": 0.1
+        },
+        {
+          "token": " gastos",
+          "p": 0.07
+        },
+        {
+          "token": " vacaciones",
+          "p": 0.03
+        }
+      ],
+      "note": "En texto administrativo el modelo es un excelente autocompletador: por eso los borradores de correos e informes le salen tan naturales."
+    }
+  ]
+}
