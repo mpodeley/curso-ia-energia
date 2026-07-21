@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-07-21T22:00:21+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "¿Cuál de estas frases describe mejor la relación entre machine learning e IA generativa?",
+      "opciones": [
+        {
+          "texto": "Son lo mismo con distinto nombre de marketing.",
+          "explicacion": "No: todo lo generativo es machine learning, pero el machine learning clásico (clasificar, predecir un número) no genera contenido nuevo."
+        },
+        {
+          "texto": "La IA generativa es un tipo de machine learning: modelos entrenados con enormes cantidades de datos que aprenden a generar contenido nuevo.",
+          "correcta": true,
+          "explicacion": "Exacto: es la capa más nueva del mapa — machine learning llevado a una escala donde el modelo ya no solo clasifica o predice: genera."
+        },
+        {
+          "texto": "El machine learning es un tipo de IA generativa.",
+          "explicacion": "Es al revés: la IA generativa es un subconjunto (reciente) del machine learning."
+        },
+        {
+          "texto": "No tienen relación: la IA generativa reemplazó al machine learning.",
+          "explicacion": "El machine learning «clásico» sigue vivo y muy usado (mantenimiento predictivo, interpretación sísmica). La IA generativa se suma, no reemplaza."
+        }
+      ]
+    },
+    {
+      "pregunta": "En el fondo, ¿qué hace un LLM cuando le escribís?",
+      "opciones": [
+        {
+          "texto": "Busca tu pregunta en una base de datos gigante de preguntas y respuestas.",
+          "explicacion": "No hay tal base de datos: por eso puede responder preguntas que nadie hizo nunca — y también por eso puede inventar."
+        },
+        {
+          "texto": "Consulta internet en tiempo real y resume lo que encuentra.",
+          "explicacion": "Algunos chatbots pueden buscar en la web como función extra, pero el mecanismo base es otro: generar texto desde lo aprendido en el entrenamiento."
+        },
+        {
+          "texto": "Predice, token a token, la continuación más plausible del texto.",
+          "correcta": true,
+          "explicacion": "Esa única operación, repetida, produce todo lo que viste. En la sesión 2 la vas a ver funcionando por dentro."
+        },
+        {
+          "texto": "Ejecuta reglas que programadores escribieron para cada tema.",
+          "explicacion": "Nadie programó reglas por tema: el comportamiento emerge del entrenamiento con texto. Eso explica tanto su flexibilidad como su imprevisibilidad."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Por qué esta tecnología explotó ahora y no hace 20 años?",
+      "opciones": [
+        {
+          "texto": "Se descubrió hace poco un algoritmo secreto que lo cambió todo.",
+          "explicacion": "La arquitectura clave (el transformer) es pública desde 2017. No hubo magia: hubo escala."
+        },
+        {
+          "texto": "Se juntaron tres cosas: enormes cantidades de texto disponible, cómputo (GPUs) y una arquitectura que mejora de forma predecible al escalarla.",
+          "correcta": true,
+          "explicacion": "Esa es la receta. Y como sigue mejorando con escala, conviene asumir que lo que hoy «no puede hacer» quizás lo haga en la próxima generación."
+        },
+        {
+          "texto": "Las computadoras cuánticas lo hicieron posible.",
+          "explicacion": "Nada de esto usa computación cuántica: son GPUs — el mismo hardware de los videojuegos."
+        },
+        {
+          "texto": "Los gobiernos liberaron datos que antes eran secretos.",
+          "explicacion": "El combustible fue el texto público de internet (y libros, y código), no datos gubernamentales."
+        }
+      ]
+    },
+    {
+      "pregunta": "Le preguntás al chatbot la profundidad de un pozo del campo Yapacaní y te da una cifra exacta, con tono seguro. ¿Qué corresponde hacer?",
+      "opciones": [
+        {
+          "texto": "Usarla: si la dice con esa seguridad, la sabe.",
+          "explicacion": "El tono seguro es un estilo aprendido, no una medida de confianza. El modelo genera la continuación más plausible — aunque sea inventada."
+        },
+        {
+          "texto": "Tratarla como no verificada: el tono no es evidencia. Buscar la fuente primaria antes de usar la cifra en nada que importe.",
+          "correcta": true,
+          "explicacion": "Regla de oro del curso: la salida de un LLM es un borrador plausible, no una fuente. Datos puntuales y citas se verifican siempre."
+        },
+        {
+          "texto": "Preguntarle si está seguro, y confiar si dice que sí.",
+          "explicacion": "Te va a decir que sí con la misma seguridad con la que inventó la cifra. Preguntarle al modelo por su propia confiabilidad no es verificación."
+        },
+        {
+          "texto": "Pedirle la cifra dos veces y quedarse con el promedio.",
+          "explicacion": "Dos muestras de la misma máquina de plausibilidad no hacen una verificación. Puede darte el mismo número inventado dos veces."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Cuál de estas tareas es HOY el mejor caso de uso para un chatbot gratuito?",
+      "opciones": [
+        {
+          "texto": "Calcular el balance de materiales del campo con los datos reales de producción.",
+          "explicacion": "Dos problemas: aritmética compleja (donde el mecanismo de tokens falla) y datos confidenciales que no deben subirse a una herramienta gratuita."
+        },
+        {
+          "texto": "Resumir un paper SPE de 40 páginas en una página, para decidir si vale la pena leerlo entero.",
+          "correcta": true,
+          "explicacion": "El punto dulce: el borrador cuesta mucho, la verificación es rápida (si el resumen interesa, vas al paper), y el documento no es confidencial."
+        },
+        {
+          "texto": "Decidir el punto óptimo de inyección de agua del bloque.",
+          "explicacion": "Decisiones de ingeniería con consecuencias físicas y económicas necesitan modelos, datos y responsables — el chatbot puede ayudar a redactar el informe, no a decidir."
+        },
+        {
+          "texto": "Llevar el registro oficial de producción del campo.",
+          "explicacion": "Un sistema de registro necesita exactitud y trazabilidad garantizadas — exactamente lo que una máquina de texto plausible no ofrece."
+        }
+      ]
+    }
+  ]
+}
