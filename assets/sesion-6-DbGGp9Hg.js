@@ -1,4 +1,4 @@
-import{j as e}from"./index-B1IavBcJ.js";function s(a){const n={em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",ul:"ul",...a.components};return e.jsxs(e.Fragment,{children:[e.jsx("div",{className:"callout callout--wip",children:e.jsx(n.p,{children:`El contenido completo de esta sesión se publica a medida que avanza el curso. La estructura de abajo
+import{j as e}from"./index-D7zWAstQ.js";function s(a){const n={em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",ul:"ul",...a.components};return e.jsxs(e.Fragment,{children:[e.jsx("div",{className:"callout callout--wip",children:e.jsx(n.p,{children:`El contenido completo de esta sesión se publica a medida que avanza el curso. La estructura de abajo
 es el plan de la sesión.`})}),`
 `,e.jsx(n.h2,{children:"De qué va esta sesión"}),`
 `,e.jsxs(n.p,{children:["Un ",e.jsx(n.strong,{children:"agente"}),` es un LLM en un loop con herramientas: piensa qué hacer, ejecuta una acción (buscar,

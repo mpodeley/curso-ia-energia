@@ -1,4 +1,4 @@
-import{j as e}from"./index-B1IavBcJ.js";function a(s){const n={h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx("div",{className:"callout callout--wip",children:e.jsx(n.p,{children:`Esta sesión se construye con lo relevado durante el curso: su contenido final depende del caso elegido
+import{j as e}from"./index-D7zWAstQ.js";function a(s){const n={h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx("div",{className:"callout callout--wip",children:e.jsx(n.p,{children:`Esta sesión se construye con lo relevado durante el curso: su contenido final depende del caso elegido
 en la sesión 5.`})}),`
 `,e.jsx(n.h2,{children:"De qué va esta sesión"}),`
 `,e.jsxs(n.p,{children:["La sesión final recorre el ",e.jsx(n.strong,{children:"caso real"}),` elegido por el grupo en la sesión 5 y construido durante las

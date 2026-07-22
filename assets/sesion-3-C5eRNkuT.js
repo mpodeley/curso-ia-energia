@@ -1,4 +1,4 @@
-import{j as e}from"./index-B1IavBcJ.js";function r(s){const n={code:"code",em:"em",h2:"h2",li:"li",ol:"ol",p:"p",pre:"pre",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:"Antes de la sesión"}),`
+import{j as e}from"./index-D7zWAstQ.js";function r(s){const n={code:"code",em:"em",h2:"h2",li:"li",ol:"ol",p:"p",pre:"pre",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:"Antes de la sesión"}),`
 `,e.jsx(n.p,{children:e.jsx(n.em,{children:"Tiempo estimado: 25–35 minutos."})}),`
 `,e.jsxs(n.ol,{children:[`
 `,e.jsxs(n.li,{children:[e.jsx(n.strong,{children:"Tarea de la sesión 2:"})," tus tres tareas repetitivas anotadas. Son la materia prima de esta sesión."]}),`
