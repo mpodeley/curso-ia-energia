@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Brochure — IA generativa para petróleo y gas</title>
+<style>
+  /* Print identity: same tokens as the site (light theme values, hex literal). */
+  @font-face { font-family: "IBM Plex Sans"; font-weight: 400; src: url("../../src/fonts/ibm-plex-sans-400.woff2") format("woff2"); }
+  @font-face { font-family: "IBM Plex Sans"; font-weight: 600; src: url("../../src/fonts/ibm-plex-sans-400.woff2") format("woff2"); }
+  @font-face { font-family: "IBM Plex Mono"; font-weight: 400; src: url("../../src/fonts/ibm-plex-mono-400.woff2") format("woff2"); }
+  @font-face { font-family: "IBM Plex Mono"; font-weight: 500; src: url("../../src/fonts/ibm-plex-mono-500.woff2") format("woff2"); }
+  @font-face { font-family: "Space Grotesk"; font-weight: 500; src: url("../../src/fonts/space-grotesk-500.woff2") format("woff2"); }
+
+  :root {
+    --text: #16181d; --muted: #4a5361; --faint: #6b7280;
+    --border: #d9dce0; --border-soft: #e8eaed; --surface2: #f6f7f8;
+    --primary: #c24b22; --blue: #1f6a9b; --green: #147a5f; --gold: #8a6412;
+    --disp: "Space Grotesk", sans-serif; --body: "IBM Plex Sans", sans-serif; --mono: "IBM Plex Mono", monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { background: #fff; color: var(--text); font-family: var(--body); }
+
+  .page {
+    width: 210mm; height: 296.5mm; padding: 15mm 17mm 13mm;
+    page-break-after: always; overflow: hidden; position: relative;
+    display: flex; flex-direction: column;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .kicker { font-family: var(--mono); font-size: 7.4pt; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+  .kicker b { color: var(--primary); font-weight: 500; }
+  .krow { display: flex; justify-content: space-between; align-items: baseline; }
+
+  h1 { font-family: var(--disp); font-weight: 500; font-size: 28.5pt; line-height: 1.12; letter-spacing: -0.01em; margin: 7mm 0 5mm; max-width: 155mm; }
+  .lead { font-size: 11.2pt; line-height: 1.55; color: var(--muted); max-width: 158mm; }
+  .lead b { color: var(--text); font-weight: 600; }
+
+  .rule {
+    flex: none; /* .page is a fixed-height flex column — without this, flex shrinks the empty div to 0 */
+    height: 20px; margin: 7mm 0 6mm; opacity: .55;
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22132%22%20height%3D%2220%22%20viewBox%3D%220%200%20132%2020%22%3E%3Cg%20stroke%3D%22%236e7480%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%3E%3Cline%20x1%3D%221.1%22%20y1%3D%229.6%22%20x2%3D%2213.5%22%20y2%3D%2210.4%22%2F%3E%3Cline%20x1%3D%2216.0%22%20y1%3D%228.4%22%20x2%3D%2228.0%22%20y2%3D%2211.6%22%2F%3E%3Cline%20x1%3D%2230.6%22%20y1%3D%228.7%22%20x2%3D%2242.7%22%20y2%3D%2211.3%22%2F%3E%3Cline%20x1%3D%2245.1%22%20y1%3D%2210.3%22%20x2%3D%2257.5%22%20y2%3D%229.7%22%2F%3E%3Cline%20x1%3D%2260.1%22%20y1%3D%2212.0%22%20x2%3D%2271.9%22%20y2%3D%228.0%22%2F%3E%3Cline%20x1%3D%2275.0%22%20y1%3D%2212.5%22%20x2%3D%2286.3%22%20y2%3D%227.5%22%2F%3E%3Cline%20x1%3D%2289.3%22%20y1%3D%2211.4%22%20x2%3D%22101.4%22%20y2%3D%228.6%22%2F%3E%3Cline%20x1%3D%22103.8%22%20y1%3D%229.6%22%20x2%3D%22116.2%22%20y2%3D%2210.4%22%2F%3E%3Cline%20x1%3D%22118.7%22%20y1%3D%228.4%22%20x2%3D%22130.6%22%20y2%3D%2211.6%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x center / 132px 20px;
+  }
+
+  h2 { font-family: var(--disp); font-weight: 500; font-size: 14.5pt; margin: 0 0 3.2mm; }
+  .eyebrow { font-family: var(--mono); font-size: 7.2pt; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin-bottom: 2mm; }
+
+  /* three design decisions */
+  .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; margin-top: 2mm; }
+  .three .item { border-top: 2px solid var(--primary); padding-top: 3mm; }
+  .three .item:nth-child(2) { border-top-color: var(--blue); }
+  .three .item:nth-child(3) { border-top-color: var(--green); }
+  .three h3 { font-family: var(--disp); font-weight: 500; font-size: 10.8pt; margin-bottom: 1.6mm; }
+  .three p { font-size: 8.9pt; line-height: 1.5; color: var(--muted); }
+
+  /* format section */
+  .fmt { display: grid; grid-template-columns: 1.6fr 1fr; gap: 6mm; margin-top: 2mm; }
+  .fmt-item { margin-bottom: 4mm; }
+  .fmt-item h3 { font-family: var(--disp); font-weight: 500; font-size: 10.8pt; margin-bottom: 1.4mm; }
+  .fmt-item p { font-size: 9pt; line-height: 1.5; color: var(--muted); }
+  .box { background: var(--surface2); border: 1px solid var(--border-soft); border-radius: 3mm; padding: 5mm 5.5mm; }
+  .box h3 { font-family: var(--mono); font-size: 7.4pt; letter-spacing: .13em; text-transform: uppercase; color: var(--faint); font-weight: 500; margin-bottom: 2.4mm; }
+  .box ul { list-style: none; }
+  .box li { font-size: 8.8pt; line-height: 1.45; color: var(--muted); padding-left: 4mm; position: relative; margin-bottom: 1.8mm; }
+  .box li::before { content: "—"; position: absolute; left: 0; color: var(--primary); }
+  .box .note { font-size: 8pt; line-height: 1.45; color: var(--faint); border-top: 1px solid var(--border-soft); padding-top: 2.4mm; margin-top: 1mm; }
+
+  .foot { margin-top: auto; border-top: 1px solid var(--border-soft); padding-top: 3.5mm; display: flex; justify-content: space-between; align-items: baseline; }
+  .foot .fn { font-family: var(--mono); font-size: 7.2pt; color: var(--faint); letter-spacing: .04em; }
+
+  /* page 2: program grid */
+  .prog { display: grid; grid-template-columns: 1fr 1fr; gap: 3.2mm; margin-top: 2mm; }
+  .sess { border: 1px solid var(--border-soft); border-radius: 2.4mm; padding: 3.4mm 4mm; display: flex; gap: 3.4mm; }
+  .snum { font-family: var(--mono); font-size: 7.6pt; font-weight: 500; color: var(--primary); border: 1px solid var(--border); border-radius: 1.4mm; padding: .8mm 1.6mm; height: fit-content; margin-top: .4mm; }
+  .sess h3 { font-family: var(--disp); font-weight: 500; font-size: 10.2pt; line-height: 1.25; margin-bottom: 1mm; }
+  .sess p { font-size: 8.4pt; line-height: 1.45; color: var(--muted); }
+
+  /* pipeline strip */
+  .pipe { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.6mm; margin-top: 2mm; }
+  .pipe--4 { grid-template-columns: repeat(4, 1fr); gap: 3.2mm; }
+  .pipe--4 .step .tag { color: var(--primary); }
+  .pipe--4 .step { background: #fff; }
+  .step { background: var(--surface2); border: 1px solid var(--border-soft); border-radius: 2.2mm; padding: 3mm 3.2mm; }
+  .step .tag { font-family: var(--mono); font-size: 6.8pt; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 1.4mm; }
+  .step p { font-size: 8pt; line-height: 1.4; color: var(--muted); }
+
+  /* instructor + contact */
+  .bottom { display: grid; grid-template-columns: 1.55fr 1fr; gap: 7mm; align-items: stretch; }
+  .bio p { font-size: 9pt; line-height: 1.55; color: var(--muted); margin-bottom: 2.6mm; }
+  .bio b { color: var(--text); font-weight: 600; }
+  .contact { display: flex; gap: 5mm; align-items: center; background: var(--surface2); border: 1px solid var(--border-soft); border-radius: 3mm; padding: 4.5mm 5mm; }
+  .contact img { width: 26mm; height: 26mm; display: block; }
+  .contact .lines { font-family: var(--mono); font-size: 7.8pt; line-height: 2; color: var(--muted); }
+  .contact .lines .url { color: var(--primary); font-weight: 500; }
+
+  .sect { margin-bottom: 6.5mm; }
+</style>
+</head>
+<body>
+
+<!-- ============================ PÁGINA 1 ============================ -->
+<div class="page">
+  <div class="krow">
+    <span class="kicker"><b>Curso en vivo</b> · 8 sesiones × 2 h · online · en español</span>
+    <span class="kicker">2026</span>
+  </div>
+
+  <h1>IA generativa para la industria del petróleo y gas</h1>
+  <p class="lead">
+    LLMs y agentes <b>desde cero y con los pies en la industria</b>: qué son, cómo usarlos bien en el
+    trabajo diario, dónde fallan — y un caso real construido con las necesidades y los datos de los
+    propios asistentes. Para un público amplio: ingeniería, geociencias, operaciones, planificación
+    y administración.
+  </p>
+
+  <div class="rule"></div>
+
+  <div class="sect">
+    <p class="eyebrow">Por qué este curso</p>
+    <div class="three">
+      <div class="item">
+        <h3>Todo con ejemplos de la industria</h3>
+        <p>Los ejercicios usan partes de producción, curvas de declinación, papers SPE y boletines de
+        YPFB — no recetas de cocina. Cada concepto aterriza en una tarea reconocible.</p>
+      </div>
+      <div class="item">
+        <h3>Termina en un caso real del grupo</h3>
+        <p>Desde la sesión 1 se relevan las necesidades de los asistentes. El grupo elige un caso en la
+        sesión 5 y en la 8 se presenta resuelto de punta a punta.</p>
+      </div>
+      <div class="item">
+        <h3>Riesgo y verificación, no como anexo</h3>
+        <p>Alucinaciones, confidencialidad y límites se trabajan desde la sesión 2 y culminan en una
+        sesión propia, con una política de uso lista para adoptar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="eyebrow">Formato</p>
+    <div class="fmt">
+      <div>
+        <div class="fmt-item">
+          <h3>Antes de cada sesión — 30 a 45 min, auto-guiado</h3>
+          <p>Materiales en el sitio del curso: lecturas o videos cortos con tiempo estimado y ejercicios
+          interactivos que corren en el navegador — un tokenizador real, un simulador de predicción de
+          tokens y temperatura, quizzes con explicación.</p>
+        </div>
+        <div class="fmt-item">
+          <h3>Sesión en vivo — 2 h por videollamada</h3>
+          <p>Exposición con demos en vivo (~40 min), taller hands-on con las herramientas (~40 min),
+          discusión estructurada (~30 min), cierre y tarea (~10 min).</p>
+        </div>
+        <div class="fmt-item">
+          <h3>Después del curso</h3>
+          <p>El sitio queda disponible como material de consulta, y cada equipo se lleva una hoja de
+          ruta de adopción y un borrador de política de uso interna.</p>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Requisitos</h3>
+        <ul>
+          <li>Navegador web — no se instala nada</li>
+          <li>Una cuenta gratuita de chatbot (ChatGPT, Claude o Gemini)</li>
+          <li>Sin presupuesto de software ni licencias</li>
+          <li>Sin conocimientos previos de programación</li>
+        </ul>
+        <p class="note">Los ejercicios usan datos públicos de la industria. Regla explícita desde el
+        día uno: nada confidencial en herramientas gratuitas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="eyebrow">Qué se llevan los asistentes</p>
+    <div class="pipe pipe--4">
+      <div class="step"><span class="tag">Criterio</span><p>Uso competente de LLMs en tareas reales, con el hábito de verificación incorporado.</p></div>
+      <div class="step"><span class="tag">Materiales</span><p>El sitio del curso queda disponible: ejercicios interactivos y guías por sesión.</p></div>
+      <div class="step"><span class="tag">Política de uso</span><p>Borrador editable de política interna de IA, listo para adoptar en el equipo.</p></div>
+      <div class="step"><span class="tag">Caso + hoja de ruta</span><p>Un flujo resuelto con sus necesidades y una hoja de ruta de adopción concreta.</p></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="fn">Dictado por Matías Podeley — 18 años en la industria del petróleo y gas</span>
+    <span class="fn">1 / 2</span>
+  </div>
+</div>
+
+<!-- ============================ PÁGINA 2 ============================ -->
+<div class="page">
+  <div class="sect">
+    <p class="eyebrow">Programa</p>
+    <h2>Ocho sesiones, un arco</h2>
+    <div class="prog">
+      <div class="sess"><span class="snum">S1</span><div><h3>De los datos a la IA generativa</h3>
+        <p>Qué es todo esto, por qué explotó ahora y qué tiene que ver con tu trabajo. Se lanza la encuesta de relevamiento.</p></div></div>
+      <div class="sess"><span class="snum">S2</span><div><h3>Cómo funciona un LLM</h3>
+        <p>Tokens, probabilidades y temperatura, sin matemática pesada — y de ahí, por qué los modelos alucinan.</p></div></div>
+      <div class="sess"><span class="snum">S3</span><div><h3>Uso efectivo: prompting y trabajo diario</h3>
+        <p>Anatomía de un buen prompt, aplicada en taller a informes, resúmenes, minutas y traducción técnica.</p></div></div>
+      <div class="sess"><span class="snum">S4</span><div><h3>IA + datos: análisis asistido</h3>
+        <p>El chatbot como copiloto de análisis: de un CSV de producción o un PDF de boletín a una tabla verificada y un gráfico.</p></div></div>
+      <div class="sess"><span class="snum">S5</span><div><h3>Tu conocimiento + LLMs: RAG y NotebookLM</h3>
+        <p>Que el modelo responda con tus manuales y normas, con citas. El grupo elige el caso real del curso.</p></div></div>
+      <div class="sess"><span class="snum">S6</span><div><h3>Agentes</h3>
+        <p>LLM + herramientas + loop: demo en vivo de un agente real, qué funciona hoy, dónde falla y qué riesgos trae.</p></div></div>
+      <div class="sess"><span class="snum">S7</span><div><h3>Riesgos, límites y gobernanza</h3>
+        <p>Protocolo de verificación, mapa de confidencialidad, IA e infraestructura crítica, y una política de uso editable.</p></div></div>
+      <div class="sess"><span class="snum">S8</span><div><h3>Caso real y hoja de ruta</h3>
+        <p>El caso del grupo de punta a punta, su crítica con las reglas de la sesión 7, y cómo seguir después del curso.</p></div></div>
+    </div>
+  </div>
+
+  <div class="sect">
+    <p class="eyebrow">El caso real — cómo se construye</p>
+    <div class="pipe">
+      <div class="step"><span class="tag">Sesión 1</span><p>Encuesta de relevamiento: roles, tareas repetitivas, datos disponibles.</p></div>
+      <div class="step"><span class="tag">Sesión 3</span><p>Cada asistente trae sus tareas reales al taller de prompting.</p></div>
+      <div class="step"><span class="tag">Sesión 5</span><p>Shortlist de 2–3 casos candidatos; el grupo elige uno.</p></div>
+      <div class="step"><span class="tag">Sesiones 5–8</span><p>El instructor construye el caso con feedback del equipo dueño de la necesidad.</p></div>
+      <div class="step"><span class="tag">Sesión 8</span><p>Presentación end-to-end, crítica grupal y hoja de ruta de adopción.</p></div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="bottom">
+    <div class="bio">
+      <p class="eyebrow">Instructor</p>
+      <p><b>Matías Podeley.</b> 18 años en la industria del petróleo y gas: ingeniería de reservorios
+      (simulación) y desarrollo de proyectos de energía en operadoras de la región. Hoy trabaja en
+      evaluación y seguridad de sistemas de IA aplicados a infraestructura energética — el cruce
+      exacto entre los dos mundos de este curso.</p>
+      <p>El curso combina esa doble trayectoria: la tecnología explicada con rigor, y el criterio de
+      quien conoce lo que cuesta un error en esta industria.</p>
+    </div>
+    <div class="contact">
+      <img src="qr-curso.png" alt="QR al sitio del curso" />
+      <div class="lines">
+        <span class="url">mpodeley.github.io/<br/>curso-ia-energia</span><br/>
+        mpodeley@gmail.com<br/>
+        linkedin.com/in/mpodeley
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="fn">Primera edición diseñada para YPFB Andina · fechas y cupos a coordinar</span>
+    <span class="fn">2 / 2</span>
+  </div>
+</div>
+
+</body>
+</html>

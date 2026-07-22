@@ -28,11 +28,8 @@ export default function App() {
       <footer className="site-footer">
         <div className="wrap footer-inner">
           <p className="footer-note">
-            Curso dictado por Matías Podeley —{' '}
-            <a href="https://podeley.ar" target="_blank" rel="noreferrer">
-              podeley.ar
-            </a>
-            . Los ejercicios de este sitio corren enteros en tu navegador: no envían datos a ningún lado.
+            Curso dictado por Matías Podeley. Los ejercicios de este sitio corren enteros en tu
+            navegador: no envían datos a ningún lado.
           </p>
         </div>
       </footer>
