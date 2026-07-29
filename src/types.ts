@@ -1,6 +1,6 @@
 // Shared data types. Every dataset in public/data/ carries the metadata
 // envelope written by scripts/build_data.py (same convention as the sibling
-// repos: estado-del-sistema / simulador-subastas-peru).
+// repos: estado-red-gas / simulador-subastas-peru).
 
 export type Envelope<T> = {
   generated_at: string | null
