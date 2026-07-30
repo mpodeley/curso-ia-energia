@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-07-30T15:11:53+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "De estas cuatro afirmaciones de un informe generado con tu planilla adjunta, ¿cuál es la que más probablemente esté inventada?",
+      "opciones": [
+        {
+          "texto": "\"La producción de gas del bloque en junio fue de 1,847,320 metros cúbicos.\"",
+          "explicacion": "Sale de la planilla y la podés recalcular en dos minutos. Cuando el modelo suma números que le diste, suele acertar."
+        },
+        {
+          "texto": "\"Esto representa una caída del 4.2% respecto de mayo.\"",
+          "explicacion": "También se deriva de los mismos datos. Una cuenta simple sobre lo que le entregaste es terreno seguro."
+        },
+        {
+          "texto": "\"La caída se explica por la parada programada de la planta compresora entre el 8 y el 11 de junio.\"",
+          "correcta": true,
+          "explicacion": "En la planilla hay caudales, no eventos operativos. El modelo no puede saber que hubo una parada ni sus fechas: construyó la explicación más plausible y la escribió con el mismo tono que las cifras reales."
+        },
+        {
+          "texto": "\"Dos pozos no reportaron producción durante la segunda quincena.\"",
+          "explicacion": "Los huecos están en la planilla y se ven contando filas vacías. El modelo describe lo que ve, y ahí acierta."
+        }
+      ]
+    },
+    {
+      "pregunta": "En la cacería marcaste todas las afirmaciones como sospechosas y encontraste todas las invenciones. ¿Por qué el puntaje no es perfecto?",
+      "opciones": [
+        {
+          "texto": "Por un detalle del puntaje que no importa en la práctica.",
+          "explicacion": "Importa, y bastante: es la diferencia entre una herramienta que te ahorra tiempo y una que no."
+        },
+        {
+          "texto": "Porque desconfiar de todo cuesta el mismo tiempo que escribirlo a mano, y hace que la herramienta deje de servir.",
+          "correcta": true,
+          "explicacion": "La habilidad que se entrena es la puntería: saber qué clase de afirmación exige fuente. Sin eso, o confiás de más o verificás todo, y las dos salen caras."
+        },
+        {
+          "texto": "Porque el ejercicio premia la velocidad.",
+          "explicacion": "El tiempo no entra en el puntaje. Lo que se mide es cuántas invenciones encontraste y cuántas afirmaciones sanas marcaste de más."
+        },
+        {
+          "texto": "Porque siempre hay que dejar alguna afirmación sin marcar.",
+          "explicacion": "No es una cuota. Si un texto tuviera todo inventado, marcarlo todo sería correcto."
+        }
+      ]
+    },
+    {
+      "pregunta": "Alguien propone conectar un agente al sistema de control de la planta para que optimice en tiempo real. ¿Cuál es la objeción más fuerte?",
+      "opciones": [
+        {
+          "texto": "Que los modelos todavía no son lo bastante precisos para esa tarea.",
+          "explicacion": "La precisión mejora todos los años. Si el problema fuera ese, alcanzaría con esperar — y no alcanza."
+        },
+        {
+          "texto": "Que el loop del agente funciona porque el error vuelve y se corrige, y ahí un paso equivocado no vuelve como mensaje de error sino como una válvula en la posición que no era.",
+          "correcta": true,
+          "explicacion": "Toda la utilidad del agente supone que equivocarse es barato y reversible. En un sistema que opera equipos, ninguna de las dos cosas es cierta."
+        },
+        {
+          "texto": "Que es caro de implementar.",
+          "explicacion": "El costo es un problema de proyecto. Acá el problema es de seguridad, y no se arregla con presupuesto."
+        },
+        {
+          "texto": "Que la empresa no tiene todavía una política de uso.",
+          "explicacion": "La política hace falta, pero escribirla no vuelve segura una arquitectura que no lo es."
+        }
+      ]
+    },
+    {
+      "pregunta": "Tenés que responder una consulta sobre qué obliga la normativa para informar un venteo. ¿Cómo lo hacés?",
+      "opciones": [
+        {
+          "texto": "Le preguntás al chatbot y usás la respuesta, que suele citar el decreto y el artículo.",
+          "explicacion": "Que cite un número de decreto y un artículo no significa que existan. Las respuestas normativas de memoria son el peor caso de uso, porque el costo del error es legal."
+        },
+        {
+          "texto": "Le adjuntás el texto de la norma y le pedís que responda solo con eso, citando el artículo, y después abrís el artículo citado.",
+          "correcta": true,
+          "explicacion": "Con el texto a la vista el modelo pasa de recordar a leer, que es donde es confiable. El chequeo final del artículo cuesta un minuto y cierra el tema."
+        },
+        {
+          "texto": "Le preguntás y después le pedís que confirme si está seguro.",
+          "explicacion": "Va a confirmar con la misma seguridad con la que inventó. La confirmación no agrega información."
+        },
+        {
+          "texto": "Le preguntás a dos chatbots distintos y comparás.",
+          "explicacion": "Dos modelos entrenados con textos parecidos pueden coincidir en el mismo invento plausible. Coincidir no es verificar."
+        }
+      ]
+    }
+  ]
+}

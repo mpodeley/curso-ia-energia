@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-07-30T15:11:53+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "En una palabra: ¿qué hace un sistema de recuperación aumentada antes de responder?",
+      "opciones": [
+        {
+          "texto": "Reentrena el modelo con tus documentos.",
+          "explicacion": "Eso es otra técnica, mucho más cara y lenta, y casi nunca es lo que se usa. El modelo no cambia en absoluto."
+        },
+        {
+          "texto": "Busca los fragmentos más parecidos a la pregunta y los pega adelante de la pregunta, en el mismo prompt.",
+          "correcta": true,
+          "explicacion": "Nada más que eso. El modelo responde con el libro abierto: no aprendió tu manual, lo está leyendo en ese momento."
+        },
+        {
+          "texto": "Le da acceso a internet para que busque la respuesta.",
+          "explicacion": "Buscar en internet es otra herramienta. Acá el corpus es tuyo y está cerrado, que es justamente la gracia."
+        },
+        {
+          "texto": "Guarda tus documentos en la memoria del modelo para las próximas consultas.",
+          "explicacion": "No hay memoria persistente. En cada pregunta se vuelve a buscar y se vuelve a pegar."
+        }
+      ]
+    },
+    {
+      "pregunta": "El buscador trae un fragmento que no responde la pregunta, pero el modelo contesta igual. ¿Cuál es el riesgo?",
+      "opciones": [
+        {
+          "texto": "Ninguno: si el fragmento no sirve, el modelo va a decir que no sabe.",
+          "explicacion": "Debería, pero muchas veces no lo hace: arma una respuesta usando lo que tiene, porque es lo que sabe hacer."
+        },
+        {
+          "texto": "Que la respuesta salga mal y con una cita al lado, lo que la hace más creíble que una respuesta sin fuente.",
+          "correcta": true,
+          "explicacion": "La cita transmite verificación aunque no la haya. Por eso hay que mirar los fragmentos recuperados, no solo la respuesta."
+        },
+        {
+          "texto": "Que el sistema se ponga más lento.",
+          "explicacion": "El costo es de confiabilidad, no de velocidad."
+        },
+        {
+          "texto": "Que se rompa la búsqueda para las próximas preguntas.",
+          "explicacion": "Cada consulta es independiente. El problema es la respuesta de esta vez."
+        }
+      ]
+    },
+    {
+      "pregunta": "En el mapa de significados, \"burro\" y \"araña\" quedaban lejos del vocabulario del yacimiento. ¿Qué muestra eso?",
+      "opciones": [
+        {
+          "texto": "Que el mapa está mal calculado.",
+          "explicacion": "El mapa está bien: refleja fielmente lo que el modelo entiende por esas palabras."
+        },
+        {
+          "texto": "Que el modelo aprendió esas palabras del lenguaje corriente y no conoce su significado en el yacimiento.",
+          "correcta": true,
+          "explicacion": "Y es la mejor demostración de por qué hace falta darle tus documentos: la jerga de tu empresa no está en internet."
+        },
+        {
+          "texto": "Que hay que evitar la jerga cuando se usan estas herramientas.",
+          "explicacion": "Evitarla es un parche. La solución es darle el material donde esa jerga está definida."
+        },
+        {
+          "texto": "Que el modelo es malo en español.",
+          "explicacion": "Entiende bien el español general. El problema es específico del vocabulario técnico de un oficio."
+        }
+      ]
+    }
+  ]
+}

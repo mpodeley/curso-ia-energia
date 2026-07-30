@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-07-30T15:11:53+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "Ajustaste una curva de declinación a un pozo real y el modelo pasa muy cerca de todos los puntos. ¿Qué probaste?",
+      "opciones": [
+        {
+          "texto": "Que entendiste el comportamiento del reservorio.",
+          "explicacion": "Es la conclusión tentadora y es la equivocada. La curva medida incluye compresión, restricciones de planta y estado del pozo, no solo reservorio."
+        },
+        {
+          "texto": "Que la producción cayó de forma sostenida, sin interrupciones grandes. Nada más que eso.",
+          "correcta": true,
+          "explicacion": "Un buen ajuste dice que la serie es suave, no que sepas por qué. Separar despresurización de efectos operativos necesita caudales corregidos por horas de operación y presión de boca."
+        },
+        {
+          "texto": "Que podés proyectar la producción de los próximos diez años con confianza.",
+          "explicacion": "La cola de la curva la controla b, que es justamente el parámetro peor determinado. Un ajuste bueno sobre el pasado puede dar proyecciones muy distintas."
+        },
+        {
+          "texto": "Que el pozo no tuvo intervenciones.",
+          "explicacion": "Una intervención suave o un cambio gradual de restricción puede pasar desapercibido dentro de una curva que ajusta bien."
+        }
+      ]
+    },
+    {
+      "pregunta": "En la serie mensual de un pozo, febrero siempre aparece más bajo que enero. ¿Qué es eso?",
+      "opciones": [
+        {
+          "texto": "Una caída estacional de la demanda.",
+          "explicacion": "La demanda afecta a algunos pozos, pero esto pasa en todos los pozos y todos los años, con la misma forma. Hay una explicación más simple."
+        },
+        {
+          "texto": "Que febrero tiene menos días: el dato es volumen mensual, no caudal. Dividiendo por días del mes el escalón desaparece.",
+          "correcta": true,
+          "explicacion": "Es el error más común al mirar datos de producción crudos. La declinación describe un caudal, así que hay que compararla contra un caudal."
+        },
+        {
+          "texto": "Paradas de mantenimiento que suelen programarse a principio de año.",
+          "explicacion": "Las paradas aparecen como caídas puntuales en meses distintos según el año, no como un patrón que se repite exactamente cada febrero."
+        },
+        {
+          "texto": "Un error de carga en el sistema de reporte.",
+          "explicacion": "El dato está bien cargado: es volumen del mes. El error está en leerlo como si fuera un caudal."
+        }
+      ]
+    },
+    {
+      "pregunta": "El chatbot te escribió código para analizar tu planilla y devolvió un número razonable. ¿Qué chequeás?",
+      "opciones": [
+        {
+          "texto": "Nada: si el número es razonable y el código corrió sin errores, está bien.",
+          "explicacion": "Un filtro mal escrito no rompe nada. Devuelve menos filas y sigue, y el resultado sigue pareciendo razonable."
+        },
+        {
+          "texto": "Le pedís que te muestre el código y el conteo de filas antes y después de cada filtro, y rastreás un caso a mano en la planilla.",
+          "correcta": true,
+          "explicacion": "Los conteos delatan los filtros que se comieron datos, y un caso rastreado a mano cierra o abre toda la discusión en dos minutos."
+        },
+        {
+          "texto": "Le preguntás si está seguro del resultado.",
+          "explicacion": "Va a decir que sí con la misma seguridad con la que se equivocó. Preguntarle al modelo por su confiabilidad no es verificar."
+        },
+        {
+          "texto": "Le pedís que lo calcule de nuevo y comparás.",
+          "explicacion": "Si el código tiene el mismo error, va a dar el mismo número las dos veces. Repetir no es verificar."
+        }
+      ]
+    }
+  ]
+}

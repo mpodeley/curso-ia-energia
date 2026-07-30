@@ -285,12 +285,484 @@ QUIZ_S1 = [
 ]
 
 
+QUIZ_S2 = [
+    {
+        'pregunta': 'Le pedís al modelo que cuente cuántas letras "r" tiene una palabra y se equivoca. ¿Por qué?',
+        'opciones': [
+            {
+                'texto': 'Porque no le pusiste suficiente contexto en el prompt.',
+                'explicacion': 'El contexto no cambia nada acá. El problema es anterior al prompt: está en cómo el modelo ve el texto.',
+            },
+            {
+                'texto': 'Porque no lee letras: lee tokens, que son pedazos de palabra. Contar caracteres exige ver algo que el modelo no tiene delante.',
+                'correcta': True,
+                'explicacion': 'Exacto. Para el modelo la palabra puede ser dos o tres piezas, y adentro de cada pieza no distingue letras. Por eso también falla con aritmética larga.',
+            },
+            {
+                'texto': 'Porque los modelos son malos en matemática en general.',
+                'explicacion': 'Es una consecuencia, no la causa, y además no es del todo cierto: con una herramienta de cálculo aciertan. El origen del problema es la tokenización.',
+            },
+            {
+                'texto': 'Porque la temperatura estaba muy alta.',
+                'explicacion': 'La temperatura cambia cuánto riesgo toma al elegir, no le da acceso a las letras. Con temperatura cero se equivoca igual.',
+            },
+        ],
+    },
+    {
+        'pregunta': '¿Qué hace exactamente la temperatura?',
+        'opciones': [
+            {
+                'texto': 'Cambia cuánto riesgo toma al elegir el próximo token: baja se queda con lo más probable, alta reparte entre opciones menos probables.',
+                'correcta': True,
+                'explicacion': 'Eso es todo lo que hace. No agrega ni quita conocimiento: solo modifica cómo elige entre las opciones que ya tenía.',
+            },
+            {
+                'texto': 'Controla cuánta información tiene en cuenta el modelo.',
+                'explicacion': 'La información que tiene en cuenta la define el contexto, no la temperatura. Con cualquier temperatura ve lo mismo.',
+            },
+            {
+                'texto': 'Hace al modelo más o menos inteligente.',
+                'explicacion': 'Un modelo con temperatura alta no es más creativo en el sentido de saber más: es más propenso a elegir tokens raros, que a veces suena original y a veces es un disparate.',
+            },
+            {
+                'texto': 'Determina cuánto se demora en responder.',
+                'explicacion': 'La velocidad depende del tamaño del modelo y del largo de la respuesta, no de la temperatura.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'En el ejercicio, "Vaca ___" daba 90% de probabilidad a "Muerta". ¿Qué significa esa seguridad?',
+        'opciones': [
+            {
+                'texto': 'Que el modelo verificó el dato antes de responder.',
+                'explicacion': 'No hay ninguna verificación en el proceso. Solo hay una distribución de probabilidad sobre el próximo token.',
+            },
+            {
+                'texto': 'Que esa combinación aparece muchísimo en el texto con el que se entrenó. La seguridad viene de la frecuencia, no de la verdad.',
+                'correcta': True,
+                'explicacion': 'Y de ahí sale la trampa: el modelo suena igual de seguro cuando la frecuencia es alta y cuando está inventando, porque el tono no depende de la probabilidad.',
+            },
+            {
+                'texto': 'Que el 90% de las veces que respondió esa pregunta acertó.',
+                'explicacion': 'No es una tasa de acierto histórica. Es la probabilidad que le asigna al próximo token en este contexto puntual.',
+            },
+            {
+                'texto': 'Que hay un 10% de posibilidades de que el dato sea falso.',
+                'explicacion': 'La probabilidad es sobre qué palabra sigue, no sobre si el enunciado es verdadero. Son dos cosas distintas que es fácil confundir.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'A partir de la mecánica que vimos, ¿por qué alucina un modelo?',
+        'opciones': [
+            {
+                'texto': 'Porque tiene errores en los datos de entrenamiento que hay que ir corrigiendo.',
+                'explicacion': 'Los datos sucios agregan errores, pero un modelo entrenado con datos perfectos alucinaría igual. El mecanismo es otro.',
+            },
+            {
+                'texto': 'Porque su única operación es continuar el texto de la forma más plausible, y una continuación plausible puede ser falsa.',
+                'correcta': True,
+                'explicacion': 'No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja — y esa continuación tiene la forma de un dato verdadero.',
+            },
+            {
+                'texto': 'Porque a veces se queda sin contexto y rellena.',
+                'explicacion': 'Quedarse sin contexto empeora las cosas, pero alucina también con todo el contexto disponible.',
+            },
+            {
+                'texto': 'Porque los desarrolladores todavía no terminaron de ajustarlo.',
+                'explicacion': 'Los ajustes reducen la frecuencia, no eliminan el mecanismo. Es una propiedad de cómo funciona, no un error pendiente de arreglo.',
+            },
+        ],
+    },
+]
+
+QUIZ_S3 = [
+    {
+        'pregunta': 'De las cinco piezas de un prompt, ¿cuál suele cambiar más la calidad de la salida en una tarea de oficina?',
+        'opciones': [
+            {
+                'texto': 'El rol, porque define quién es el modelo.',
+                'explicacion': 'Ayuda a fijar el registro, pero un rol bien puesto sobre un pedido sin contexto sigue dando un texto genérico.',
+            },
+            {
+                'texto': 'El contexto, cuando dice para qué se va a usar el resultado y qué decisión alimenta.',
+                'correcta': True,
+                'explicacion': 'Es lo que le da criterio para jerarquizar: qué dejar afuera. Sin eso resume "en general", que es resumir para nadie.',
+            },
+            {
+                'texto': 'Los ejemplos, siempre.',
+                'explicacion': 'Un ejemplo real es muy potente, pero es opcional. El contexto no lo es: sin él, el ejemplo tampoco sabe hacia dónde apuntar.',
+            },
+            {
+                'texto': 'El largo del prompt: cuanto más detallado, mejor.',
+                'explicacion': 'Un prompt largo y vago rinde menos que uno corto y específico. Lo que importa es qué piezas están, no cuántas palabras.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'Tenés que resumir el informe mensual de producción del bloque. ¿Cuál es la forma correcta de usar un chatbot gratuito?',
+        'opciones': [
+            {
+                'texto': 'Subir el informe completo con los datos reales: es más rápido y el resultado va a ser mejor.',
+                'explicacion': 'Producción real por pozo no va a una herramienta gratuita. La ganancia de calidad no compensa el riesgo de confidencialidad.',
+            },
+            {
+                'texto': 'No usarlo: para datos de la empresa no sirve ninguna herramienta de este tipo.',
+                'explicacion': 'Demasiado restrictivo. Hay formas de aprovecharlo sin exponer datos, y renunciar del todo también tiene un costo.',
+            },
+            {
+                'texto': 'Trabajar la estructura y el estilo con datos inventados o públicos que tengan la misma forma, y poner los números reales vos, después.',
+                'correcta': True,
+                'explicacion': 'Lo que aporta el modelo es la redacción y la organización, y eso se puede pedir sin datos sensibles. Los números los pegás en tu máquina.',
+            },
+            {
+                'texto': 'Subir el informe pero cambiándole el nombre a los pozos.',
+                'explicacion': 'Los volúmenes, las fechas y las relaciones entre pozos siguen ahí. Anonimizar mal da una sensación de seguridad sin la seguridad.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'El primer resultado no sirve. ¿Qué conviene hacer?',
+        'opciones': [
+            {
+                'texto': 'Empezar de cero con un prompt completamente distinto.',
+                'explicacion': 'A veces hace falta, pero tirar todo descarta la parte que sí funcionaba. Iterar suele llegar antes.',
+            },
+            {
+                'texto': 'Decirle qué está mal y pedirle el ajuste concreto: más corto, sin jerga, con la conclusión al principio.',
+                'correcta': True,
+                'explicacion': 'La conversación es parte del método, no señal de que fallaste. Cada corrección concreta rinde más que reescribir el prompt entero.',
+            },
+            {
+                'texto': 'Preguntarle por qué le salió mal.',
+                'explicacion': 'Te va a dar una explicación plausible e inventada de su propio proceso. No tiene acceso introspectivo a por qué generó lo que generó.',
+            },
+            {
+                'texto': 'Volver a mandar el mismo prompt hasta que salga algo mejor.',
+                'explicacion': 'Vas a obtener variaciones del mismo error. Si el prompt no cambia, el problema no cambia.',
+            },
+        ],
+    },
+]
+
+QUIZ_S4 = [
+    {
+        'pregunta': 'Ajustaste una curva de declinación a un pozo real y el modelo pasa muy cerca de todos los puntos. ¿Qué probaste?',
+        'opciones': [
+            {
+                'texto': 'Que entendiste el comportamiento del reservorio.',
+                'explicacion': 'Es la conclusión tentadora y es la equivocada. La curva medida incluye compresión, restricciones de planta y estado del pozo, no solo reservorio.',
+            },
+            {
+                'texto': 'Que la producción cayó de forma sostenida, sin interrupciones grandes. Nada más que eso.',
+                'correcta': True,
+                'explicacion': 'Un buen ajuste dice que la serie es suave, no que sepas por qué. Separar despresurización de efectos operativos necesita caudales corregidos por horas de operación y presión de boca.',
+            },
+            {
+                'texto': 'Que podés proyectar la producción de los próximos diez años con confianza.',
+                'explicacion': 'La cola de la curva la controla b, que es justamente el parámetro peor determinado. Un ajuste bueno sobre el pasado puede dar proyecciones muy distintas.',
+            },
+            {
+                'texto': 'Que el pozo no tuvo intervenciones.',
+                'explicacion': 'Una intervención suave o un cambio gradual de restricción puede pasar desapercibido dentro de una curva que ajusta bien.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'En la serie mensual de un pozo, febrero siempre aparece más bajo que enero. ¿Qué es eso?',
+        'opciones': [
+            {
+                'texto': 'Una caída estacional de la demanda.',
+                'explicacion': 'La demanda afecta a algunos pozos, pero esto pasa en todos los pozos y todos los años, con la misma forma. Hay una explicación más simple.',
+            },
+            {
+                'texto': 'Que febrero tiene menos días: el dato es volumen mensual, no caudal. Dividiendo por días del mes el escalón desaparece.',
+                'correcta': True,
+                'explicacion': 'Es el error más común al mirar datos de producción crudos. La declinación describe un caudal, así que hay que compararla contra un caudal.',
+            },
+            {
+                'texto': 'Paradas de mantenimiento que suelen programarse a principio de año.',
+                'explicacion': 'Las paradas aparecen como caídas puntuales en meses distintos según el año, no como un patrón que se repite exactamente cada febrero.',
+            },
+            {
+                'texto': 'Un error de carga en el sistema de reporte.',
+                'explicacion': 'El dato está bien cargado: es volumen del mes. El error está en leerlo como si fuera un caudal.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'El chatbot te escribió código para analizar tu planilla y devolvió un número razonable. ¿Qué chequeás?',
+        'opciones': [
+            {
+                'texto': 'Nada: si el número es razonable y el código corrió sin errores, está bien.',
+                'explicacion': 'Un filtro mal escrito no rompe nada. Devuelve menos filas y sigue, y el resultado sigue pareciendo razonable.',
+            },
+            {
+                'texto': 'Le pedís que te muestre el código y el conteo de filas antes y después de cada filtro, y rastreás un caso a mano en la planilla.',
+                'correcta': True,
+                'explicacion': 'Los conteos delatan los filtros que se comieron datos, y un caso rastreado a mano cierra o abre toda la discusión en dos minutos.',
+            },
+            {
+                'texto': 'Le preguntás si está seguro del resultado.',
+                'explicacion': 'Va a decir que sí con la misma seguridad con la que se equivocó. Preguntarle al modelo por su confiabilidad no es verificar.',
+            },
+            {
+                'texto': 'Le pedís que lo calcule de nuevo y comparás.',
+                'explicacion': 'Si el código tiene el mismo error, va a dar el mismo número las dos veces. Repetir no es verificar.',
+            },
+        ],
+    },
+]
+
+QUIZ_S5 = [
+    {
+        'pregunta': 'En una palabra: ¿qué hace un sistema de recuperación aumentada antes de responder?',
+        'opciones': [
+            {
+                'texto': 'Reentrena el modelo con tus documentos.',
+                'explicacion': 'Eso es otra técnica, mucho más cara y lenta, y casi nunca es lo que se usa. El modelo no cambia en absoluto.',
+            },
+            {
+                'texto': 'Busca los fragmentos más parecidos a la pregunta y los pega adelante de la pregunta, en el mismo prompt.',
+                'correcta': True,
+                'explicacion': 'Nada más que eso. El modelo responde con el libro abierto: no aprendió tu manual, lo está leyendo en ese momento.',
+            },
+            {
+                'texto': 'Le da acceso a internet para que busque la respuesta.',
+                'explicacion': 'Buscar en internet es otra herramienta. Acá el corpus es tuyo y está cerrado, que es justamente la gracia.',
+            },
+            {
+                'texto': 'Guarda tus documentos en la memoria del modelo para las próximas consultas.',
+                'explicacion': 'No hay memoria persistente. En cada pregunta se vuelve a buscar y se vuelve a pegar.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'El buscador trae un fragmento que no responde la pregunta, pero el modelo contesta igual. ¿Cuál es el riesgo?',
+        'opciones': [
+            {
+                'texto': 'Ninguno: si el fragmento no sirve, el modelo va a decir que no sabe.',
+                'explicacion': 'Debería, pero muchas veces no lo hace: arma una respuesta usando lo que tiene, porque es lo que sabe hacer.',
+            },
+            {
+                'texto': 'Que la respuesta salga mal y con una cita al lado, lo que la hace más creíble que una respuesta sin fuente.',
+                'correcta': True,
+                'explicacion': 'La cita transmite verificación aunque no la haya. Por eso hay que mirar los fragmentos recuperados, no solo la respuesta.',
+            },
+            {
+                'texto': 'Que el sistema se ponga más lento.',
+                'explicacion': 'El costo es de confiabilidad, no de velocidad.',
+            },
+            {
+                'texto': 'Que se rompa la búsqueda para las próximas preguntas.',
+                'explicacion': 'Cada consulta es independiente. El problema es la respuesta de esta vez.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'En el mapa de significados, "burro" y "araña" quedaban lejos del vocabulario del yacimiento. ¿Qué muestra eso?',
+        'opciones': [
+            {
+                'texto': 'Que el mapa está mal calculado.',
+                'explicacion': 'El mapa está bien: refleja fielmente lo que el modelo entiende por esas palabras.',
+            },
+            {
+                'texto': 'Que el modelo aprendió esas palabras del lenguaje corriente y no conoce su significado en el yacimiento.',
+                'correcta': True,
+                'explicacion': 'Y es la mejor demostración de por qué hace falta darle tus documentos: la jerga de tu empresa no está en internet.',
+            },
+            {
+                'texto': 'Que hay que evitar la jerga cuando se usan estas herramientas.',
+                'explicacion': 'Evitarla es un parche. La solución es darle el material donde esa jerga está definida.',
+            },
+            {
+                'texto': 'Que el modelo es malo en español.',
+                'explicacion': 'Entiende bien el español general. El problema es específico del vocabulario técnico de un oficio.',
+            },
+        ],
+    },
+]
+
+QUIZ_S6 = [
+    {
+        'pregunta': '¿Qué distingue a un agente de un chatbot?',
+        'opciones': [
+            {
+                'texto': 'Que el modelo que tiene adentro es más potente.',
+                'explicacion': 'Suele ser el mismo modelo. La diferencia no está en el modelo sino en lo que lo rodea.',
+            },
+            {
+                'texto': 'Que puede ejecutar herramientas y mirar el resultado, y decidir el paso siguiente con eso a la vista.',
+                'correcta': True,
+                'explicacion': 'Ese loop es todo. Un chatbot que se equivoca no se entera nunca; un agente recibe el error de vuelta y tiene la chance de corregirse.',
+            },
+            {
+                'texto': 'Que fue entrenado específicamente para ser autónomo.',
+                'explicacion': 'La autonomía viene del loop y de los permisos que le dieron, no de un entrenamiento distinto.',
+            },
+            {
+                'texto': 'Que no alucina, porque verifica lo que hace.',
+                'explicacion': 'Alucina igual. Lo que cambia es que algunos de sus errores vuelven como resultado observable, y esos los puede corregir.',
+            },
+        ],
+    },
+    {
+        'pregunta': '¿Por qué un agente rinde peor en tareas largas que en tareas cortas?',
+        'opciones': [
+            {
+                'texto': 'Porque se cansa y baja la calidad con el uso.',
+                'explicacion': 'No hay fatiga: cada llamada es independiente. El problema es acumulativo pero por otra razón.',
+            },
+            {
+                'texto': 'Porque arrastra todo lo anterior en cada vuelta: se vuelve más lento, más caro y más propenso a perder de vista el objetivo original.',
+                'correcta': True,
+                'explicacion': 'El contador de contexto del ejercicio lo muestra creciendo paso a paso. Una tarea de veinte pasos no es dos veces una de diez: es bastante peor.',
+            },
+            {
+                'texto': 'Porque las herramientas fallan más cuando se usan muchas veces.',
+                'explicacion': 'Las herramientas se comportan igual. Lo que se degrada es la capacidad del modelo de sostener el hilo.',
+            },
+            {
+                'texto': 'Porque necesita permisos adicionales para tareas largas.',
+                'explicacion': 'Los permisos son los mismos. El límite es de contexto, no de autorización.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'En la traza, el agente filtró por "AGUARAGUE" sin diéresis y le volvieron cero filas. Lo importante es el paso siguiente. ¿Por qué?',
+        'opciones': [
+            {
+                'texto': 'Porque probó otra grafía hasta que funcionó.',
+                'explicacion': 'Eso sería adivinar de nuevo. Hizo algo mejor.',
+            },
+            {
+                'texto': 'Porque fue a leer los valores que realmente existen en la columna en vez de suponer otro, y ahí encontró la diéresis.',
+                'correcta': True,
+                'explicacion': 'Reemplazó una suposición por un dato. Un chatbot sin herramientas hubiera seguido escribiendo con total seguridad sobre una tabla vacía.',
+            },
+            {
+                'texto': 'Porque avisó del error y frenó para consultar.',
+                'explicacion': 'Frenar ante cada obstáculo lo volvería inútil. La gracia es que pudo resolverlo solo, con evidencia.',
+            },
+            {
+                'texto': 'Porque reintentó la misma consulta y la segunda vez anduvo.',
+                'explicacion': 'La misma consulta hubiera devuelto cero filas de nuevo. El error era del filtro, no de la ejecución.',
+            },
+        ],
+    },
+]
+
+QUIZ_S7 = [
+    {
+        'pregunta': 'De estas cuatro afirmaciones de un informe generado con tu planilla adjunta, ¿cuál es la que más probablemente esté inventada?',
+        'opciones': [
+            {
+                'texto': '"La producción de gas del bloque en junio fue de 1,847,320 metros cúbicos."',
+                'explicacion': 'Sale de la planilla y la podés recalcular en dos minutos. Cuando el modelo suma números que le diste, suele acertar.',
+            },
+            {
+                'texto': '"Esto representa una caída del 4.2% respecto de mayo."',
+                'explicacion': 'También se deriva de los mismos datos. Una cuenta simple sobre lo que le entregaste es terreno seguro.',
+            },
+            {
+                'texto': '"La caída se explica por la parada programada de la planta compresora entre el 8 y el 11 de junio."',
+                'correcta': True,
+                'explicacion': 'En la planilla hay caudales, no eventos operativos. El modelo no puede saber que hubo una parada ni sus fechas: construyó la explicación más plausible y la escribió con el mismo tono que las cifras reales.',
+            },
+            {
+                'texto': '"Dos pozos no reportaron producción durante la segunda quincena."',
+                'explicacion': 'Los huecos están en la planilla y se ven contando filas vacías. El modelo describe lo que ve, y ahí acierta.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'En la cacería marcaste todas las afirmaciones como sospechosas y encontraste todas las invenciones. ¿Por qué el puntaje no es perfecto?',
+        'opciones': [
+            {
+                'texto': 'Por un detalle del puntaje que no importa en la práctica.',
+                'explicacion': 'Importa, y bastante: es la diferencia entre una herramienta que te ahorra tiempo y una que no.',
+            },
+            {
+                'texto': 'Porque desconfiar de todo cuesta el mismo tiempo que escribirlo a mano, y hace que la herramienta deje de servir.',
+                'correcta': True,
+                'explicacion': 'La habilidad que se entrena es la puntería: saber qué clase de afirmación exige fuente. Sin eso, o confiás de más o verificás todo, y las dos salen caras.',
+            },
+            {
+                'texto': 'Porque el ejercicio premia la velocidad.',
+                'explicacion': 'El tiempo no entra en el puntaje. Lo que se mide es cuántas invenciones encontraste y cuántas afirmaciones sanas marcaste de más.',
+            },
+            {
+                'texto': 'Porque siempre hay que dejar alguna afirmación sin marcar.',
+                'explicacion': 'No es una cuota. Si un texto tuviera todo inventado, marcarlo todo sería correcto.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'Alguien propone conectar un agente al sistema de control de la planta para que optimice en tiempo real. ¿Cuál es la objeción más fuerte?',
+        'opciones': [
+            {
+                'texto': 'Que los modelos todavía no son lo bastante precisos para esa tarea.',
+                'explicacion': 'La precisión mejora todos los años. Si el problema fuera ese, alcanzaría con esperar — y no alcanza.',
+            },
+            {
+                'texto': 'Que el loop del agente funciona porque el error vuelve y se corrige, y ahí un paso equivocado no vuelve como mensaje de error sino como una válvula en la posición que no era.',
+                'correcta': True,
+                'explicacion': 'Toda la utilidad del agente supone que equivocarse es barato y reversible. En un sistema que opera equipos, ninguna de las dos cosas es cierta.',
+            },
+            {
+                'texto': 'Que es caro de implementar.',
+                'explicacion': 'El costo es un problema de proyecto. Acá el problema es de seguridad, y no se arregla con presupuesto.',
+            },
+            {
+                'texto': 'Que la empresa no tiene todavía una política de uso.',
+                'explicacion': 'La política hace falta, pero escribirla no vuelve segura una arquitectura que no lo es.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'Tenés que responder una consulta sobre qué obliga la normativa para informar un venteo. ¿Cómo lo hacés?',
+        'opciones': [
+            {
+                'texto': 'Le preguntás al chatbot y usás la respuesta, que suele citar el decreto y el artículo.',
+                'explicacion': 'Que cite un número de decreto y un artículo no significa que existan. Las respuestas normativas de memoria son el peor caso de uso, porque el costo del error es legal.',
+            },
+            {
+                'texto': 'Le adjuntás el texto de la norma y le pedís que responda solo con eso, citando el artículo, y después abrís el artículo citado.',
+                'correcta': True,
+                'explicacion': 'Con el texto a la vista el modelo pasa de recordar a leer, que es donde es confiable. El chequeo final del artículo cuesta un minuto y cierra el tema.',
+            },
+            {
+                'texto': 'Le preguntás y después le pedís que confirme si está seguro.',
+                'explicacion': 'Va a confirmar con la misma seguridad con la que inventó. La confirmación no agrega información.',
+            },
+            {
+                'texto': 'Le preguntás a dos chatbots distintos y comparás.',
+                'explicacion': 'Dos modelos entrenados con textos parecidos pueden coincidir en el mismo invento plausible. Coincidir no es verificar.',
+            },
+        ],
+    },
+]
+
+QUIZZES = {
+    'quiz_s1': QUIZ_S1,
+    'quiz_s2': QUIZ_S2,
+    'quiz_s3': QUIZ_S3,
+    'quiz_s4': QUIZ_S4,
+    'quiz_s5': QUIZ_S5,
+    'quiz_s6': QUIZ_S6,
+    'quiz_s7': QUIZ_S7,
+}
+
+
 def build_quiz():
-    write_json(
-        os.path.join(ROOT, 'quiz_s1.json'),
-        QUIZ_S1,
-        source='elaboración propia para el curso',
-    )
+    for nombre, preguntas in QUIZZES.items():
+        write_json(
+            os.path.join(ROOT, f'{nombre}.json'),
+            preguntas,
+            source='elaboración propia para el curso',
+        )
+    total = sum(len(p) for p in QUIZZES.values())
+    print(f'  quizzes: {len(QUIZZES)} sesiones, {total} preguntas')
 
 
 # ---------------------------------------------------------------------------
