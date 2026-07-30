@@ -1,4 +1,4 @@
-import{j as e}from"./index-CEwbTdGH.js";import{Q as r}from"./Quiz-B67ajied.js";function a(s){const n={a:"a",em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:"Antes de la sesión"}),`
+import{j as e}from"./index-C3MV-fiG.js";import{Q as r}from"./Quiz-E4oWu81Z.js";function a(s){const n={a:"a",em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:"Antes de la sesión"}),`
 `,e.jsx(n.p,{children:e.jsx(n.em,{children:"Tiempo estimado: 30–40 minutos."})}),`
 `,e.jsxs(n.ol,{children:[`
 `,e.jsxs(n.li,{children:[e.jsx(n.strong,{children:"Video (8 min):"})," ",e.jsx(n.a,{href:"https://www.youtube.com/watch?v=LPZh9BOjkQs",children:"Large Language Models explained briefly — 3Blue1Brown"}),`
