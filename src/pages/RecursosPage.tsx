@@ -32,14 +32,59 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
     titulo: 'Para profundizar (opcional)',
     items: [
       {
-        nombre: '3Blue1Brown — redes neuronales y LLMs',
+        nombre: '3Blue1Brown — redes neuronales y modelos de lenguaje',
         href: 'https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi',
-        nota: 'la mejor visualización de cómo funciona esto por dentro (subtítulos en español)',
+        nota: 'la mejor visualización de cómo funciona esto por dentro; varios capítulos tienen audio doblado al español, elegible en el reproductor',
+      },
+      {
+        nombre: '3Blue1Brown Español — la serie doblada',
+        href: 'https://www.youtube.com/@3blue1brownespanol',
+        nota: 'el canal oficial en español, con la serie de aprendizaje profundo completa',
+      },
+      {
+        nombre: 'Dot CSV',
+        href: 'https://www.youtube.com/@DotCSV',
+        nota: 'divulgación en español, de lo mejor que hay; de acá salen varios videos del material previo',
+      },
+      {
+        nombre: 'Codificando Bits',
+        href: 'https://www.youtube.com/@codificandobits',
+        nota: 'explicaciones técnicas en español sobre tokens, embeddings y recuperación de documentos',
       },
       {
         nombre: 'BlueDot — Future of AI (curso corto)',
         href: 'https://bluedot.org/courses/future-of-ai',
         nota: 'panorama de hacia dónde va la IA, en inglés — inspiración del formato de este curso',
+      },
+    ],
+  },
+  {
+    titulo: 'Mirar adentro del modelo (sesión 2)',
+    items: [
+      {
+        nombre: 'LeNet leyendo números escritos a mano, 1989',
+        href: 'https://www.youtube.com/watch?v=H0oEr40YhrQ',
+        nota: 'un minuto de Yann LeCun mostrando el antecedente directo de todo esto, restaurado',
+      },
+      {
+        nombre: 'Extraños patrones dentro de una red neuronal — Dot CSV',
+        href: 'https://www.youtube.com/watch?v=ysqpl6w6Wzg',
+        nota: 'una técnica de interpretabilidad que dibuja qué activa a cada neurona: bordes, después texturas, después objetos',
+      },
+      {
+        nombre: 'Feature Visualization — Distill',
+        href: 'https://distill.pub/2017/feature-visualization/',
+        nota: 'el artículo de referencia, en inglés; se puede recorrer mirando solo las figuras',
+      },
+      {
+        nombre: 'Zoom In: An Introduction to Circuits — Distill',
+        href: 'https://distill.pub/2020/circuits/zoom-in/',
+        nota: 'cómo esas piezas se conectan entre sí para formar un detector, en inglés',
+      },
+      {
+        nombre: 'Mapping the Mind of a Large Language Model — Anthropic',
+        href: 'https://www.anthropic.com/research/mapping-mind-language-model',
+        nota: 'lo mismo dentro de un modelo de lenguaje actual: millones de conceptos identificados, en inglés',
       },
     ],
   },

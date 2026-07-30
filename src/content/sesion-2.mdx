@@ -1,14 +1,19 @@
 import { TokenizerLab } from '../exercises/TokenizerLab'
 import { NextTokenLab } from '../exercises/NextTokenLab'
 import { Quiz } from '../exercises/Quiz'
+import { Recursos, ListaRecursos } from '../components/Recursos'
+import { INTERPRETABILIDAD } from '../content/recursos'
 
 ## Antes de la sesión
 
 *Tiempo estimado: 35–45 minutos.*
 
 1. **Los dos ejercicios interactivos de esta página** (20 min): el tokenizador y el de "adiviná el próximo token". Están más abajo — jugá antes de leer la explicación.
-2. **Video (7 min, opcional):** si te quedaste con ganas después de la sesión 1, el capítulo de
-   [3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) (subtítulos en español) muestra la maquinaria interna. No es requisito.
+2. **Video (27 min, opcional):** el capítulo de
+   [3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) muestra la maquinaria
+   interna. Tiene audio en español: elegilo en el menú de idioma del reproductor. No es requisito.
+
+<Recursos sesion={2} />
 
 ## El modelo no lee palabras: lee tokens
 
@@ -43,6 +48,34 @@ API que parece real, un paper que suena citable, una norma que "debería existir
 
 La consecuencia práctica que nos acompaña todo el curso: la salida de un LLM es un **borrador
 plausible**, no una fuente. Se verifica todo lo que importa.
+
+## ¿Y adentro qué hay? Una caja negra que se puede abrir
+
+Hasta acá describimos qué hace el modelo, no qué pasa adentro. La respuesta corta es que nadie escribió
+esas reglas: se ajustaron solas durante el entrenamiento. La respuesta larga es más interesante, y hay
+toda una disciplina dedicada a ella.
+
+El mejor lugar para verlo no es un modelo de lenguaje sino uno de imágenes, porque lo que aprende se
+puede dibujar. En 1989, en los laboratorios de Bell, Yann LeCun mostró una red que leía números escritos
+a mano. El video dura un minuto y conviene mirarlo sabiendo que ese mismo mecanismo, con más datos y más
+cómputo, es el que hoy escribe informes.
+
+Lo que pasa adentro de esa red es lo que importa. **La red no aprende "el número 7": aprende a
+descomponer la imagen en piezas.** Las primeras capas detectan bordes y cambios de contraste. Las
+siguientes combinan esos bordes en curvas y esquinas. Las de más arriba combinan las curvas en partes
+reconocibles, y recién al final aparece algo que podríamos llamar "un siete". A cada una de esas piezas
+se la llama una *característica*, y ninguna estaba en el programa: emergieron de mirar ejemplos.
+
+Cuando la misma técnica se aplica a redes que miran fotos, aparecen detectores de texturas, de ojos, de
+ruedas de auto. Y cuando se aplica a los modelos de lenguaje de hoy, aparecen millones de conceptos
+identificables, al punto de poder amplificarlos o apagarlos y ver cómo cambia la respuesta.
+
+Esto importa por dos razones prácticas. La primera es que "caja negra" es una metáfora incompleta: se
+puede mirar adentro, con esfuerzo. La segunda es que todavía no sabemos hacerlo lo bastante bien como
+para garantizar cómo se va a comportar un modelo en una situación nueva, y esa brecha es exactamente el
+tema de la sesión 7.
+
+<ListaRecursos items={INTERPRETABILIDAD} titulo="Para ver adentro (opcional)" />
 
 ## En la sesión en vivo (2 h)
 
