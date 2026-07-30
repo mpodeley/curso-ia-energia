@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-07-30T15:11:53+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "Le pedís al modelo que cuente cuántas letras \"r\" tiene una palabra y se equivoca. ¿Por qué?",
+      "opciones": [
+        {
+          "texto": "Porque no le pusiste suficiente contexto en el prompt.",
+          "explicacion": "El contexto no cambia nada acá. El problema es anterior al prompt: está en cómo el modelo ve el texto."
+        },
+        {
+          "texto": "Porque no lee letras: lee tokens, que son pedazos de palabra. Contar caracteres exige ver algo que el modelo no tiene delante.",
+          "correcta": true,
+          "explicacion": "Exacto. Para el modelo la palabra puede ser dos o tres piezas, y adentro de cada pieza no distingue letras. Por eso también falla con aritmética larga."
+        },
+        {
+          "texto": "Porque los modelos son malos en matemática en general.",
+          "explicacion": "Es una consecuencia, no la causa, y además no es del todo cierto: con una herramienta de cálculo aciertan. El origen del problema es la tokenización."
+        },
+        {
+          "texto": "Porque la temperatura estaba muy alta.",
+          "explicacion": "La temperatura cambia cuánto riesgo toma al elegir, no le da acceso a las letras. Con temperatura cero se equivoca igual."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Qué hace exactamente la temperatura?",
+      "opciones": [
+        {
+          "texto": "Cambia cuánto riesgo toma al elegir el próximo token: baja se queda con lo más probable, alta reparte entre opciones menos probables.",
+          "correcta": true,
+          "explicacion": "Eso es todo lo que hace. No agrega ni quita conocimiento: solo modifica cómo elige entre las opciones que ya tenía."
+        },
+        {
+          "texto": "Controla cuánta información tiene en cuenta el modelo.",
+          "explicacion": "La información que tiene en cuenta la define el contexto, no la temperatura. Con cualquier temperatura ve lo mismo."
+        },
+        {
+          "texto": "Hace al modelo más o menos inteligente.",
+          "explicacion": "Un modelo con temperatura alta no es más creativo en el sentido de saber más: es más propenso a elegir tokens raros, que a veces suena original y a veces es un disparate."
+        },
+        {
+          "texto": "Determina cuánto se demora en responder.",
+          "explicacion": "La velocidad depende del tamaño del modelo y del largo de la respuesta, no de la temperatura."
+        }
+      ]
+    },
+    {
+      "pregunta": "En el ejercicio, \"Vaca ___\" daba 90% de probabilidad a \"Muerta\". ¿Qué significa esa seguridad?",
+      "opciones": [
+        {
+          "texto": "Que el modelo verificó el dato antes de responder.",
+          "explicacion": "No hay ninguna verificación en el proceso. Solo hay una distribución de probabilidad sobre el próximo token."
+        },
+        {
+          "texto": "Que esa combinación aparece muchísimo en el texto con el que se entrenó. La seguridad viene de la frecuencia, no de la verdad.",
+          "correcta": true,
+          "explicacion": "Y de ahí sale la trampa: el modelo suena igual de seguro cuando la frecuencia es alta y cuando está inventando, porque el tono no depende de la probabilidad."
+        },
+        {
+          "texto": "Que el 90% de las veces que respondió esa pregunta acertó.",
+          "explicacion": "No es una tasa de acierto histórica. Es la probabilidad que le asigna al próximo token en este contexto puntual."
+        },
+        {
+          "texto": "Que hay un 10% de posibilidades de que el dato sea falso.",
+          "explicacion": "La probabilidad es sobre qué palabra sigue, no sobre si el enunciado es verdadero. Son dos cosas distintas que es fácil confundir."
+        }
+      ]
+    },
+    {
+      "pregunta": "A partir de la mecánica que vimos, ¿por qué alucina un modelo?",
+      "opciones": [
+        {
+          "texto": "Porque tiene errores en los datos de entrenamiento que hay que ir corrigiendo.",
+          "explicacion": "Los datos sucios agregan errores, pero un modelo entrenado con datos perfectos alucinaría igual. El mecanismo es otro."
+        },
+        {
+          "texto": "Porque su única operación es continuar el texto de la forma más plausible, y una continuación plausible puede ser falsa.",
+          "correcta": true,
+          "explicacion": "No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja — y esa continuación tiene la forma de un dato verdadero."
+        },
+        {
+          "texto": "Porque a veces se queda sin contexto y rellena.",
+          "explicacion": "Quedarse sin contexto empeora las cosas, pero alucina también con todo el contexto disponible."
+        },
+        {
+          "texto": "Porque los desarrolladores todavía no terminaron de ajustarlo.",
+          "explicacion": "Los ajustes reducen la frecuencia, no eliminan el mecanismo. Es una propiedad de cómo funciona, no un error pendiente de arreglo."
+        }
+      ]
+    }
+  ]
+}

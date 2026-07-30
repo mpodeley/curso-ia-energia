@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-07-30T15:11:53+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "De las cinco piezas de un prompt, ¿cuál suele cambiar más la calidad de la salida en una tarea de oficina?",
+      "opciones": [
+        {
+          "texto": "El rol, porque define quién es el modelo.",
+          "explicacion": "Ayuda a fijar el registro, pero un rol bien puesto sobre un pedido sin contexto sigue dando un texto genérico."
+        },
+        {
+          "texto": "El contexto, cuando dice para qué se va a usar el resultado y qué decisión alimenta.",
+          "correcta": true,
+          "explicacion": "Es lo que le da criterio para jerarquizar: qué dejar afuera. Sin eso resume \"en general\", que es resumir para nadie."
+        },
+        {
+          "texto": "Los ejemplos, siempre.",
+          "explicacion": "Un ejemplo real es muy potente, pero es opcional. El contexto no lo es: sin él, el ejemplo tampoco sabe hacia dónde apuntar."
+        },
+        {
+          "texto": "El largo del prompt: cuanto más detallado, mejor.",
+          "explicacion": "Un prompt largo y vago rinde menos que uno corto y específico. Lo que importa es qué piezas están, no cuántas palabras."
+        }
+      ]
+    },
+    {
+      "pregunta": "Tenés que resumir el informe mensual de producción del bloque. ¿Cuál es la forma correcta de usar un chatbot gratuito?",
+      "opciones": [
+        {
+          "texto": "Subir el informe completo con los datos reales: es más rápido y el resultado va a ser mejor.",
+          "explicacion": "Producción real por pozo no va a una herramienta gratuita. La ganancia de calidad no compensa el riesgo de confidencialidad."
+        },
+        {
+          "texto": "No usarlo: para datos de la empresa no sirve ninguna herramienta de este tipo.",
+          "explicacion": "Demasiado restrictivo. Hay formas de aprovecharlo sin exponer datos, y renunciar del todo también tiene un costo."
+        },
+        {
+          "texto": "Trabajar la estructura y el estilo con datos inventados o públicos que tengan la misma forma, y poner los números reales vos, después.",
+          "correcta": true,
+          "explicacion": "Lo que aporta el modelo es la redacción y la organización, y eso se puede pedir sin datos sensibles. Los números los pegás en tu máquina."
+        },
+        {
+          "texto": "Subir el informe pero cambiándole el nombre a los pozos.",
+          "explicacion": "Los volúmenes, las fechas y las relaciones entre pozos siguen ahí. Anonimizar mal da una sensación de seguridad sin la seguridad."
+        }
+      ]
+    },
+    {
+      "pregunta": "El primer resultado no sirve. ¿Qué conviene hacer?",
+      "opciones": [
+        {
+          "texto": "Empezar de cero con un prompt completamente distinto.",
+          "explicacion": "A veces hace falta, pero tirar todo descarta la parte que sí funcionaba. Iterar suele llegar antes."
+        },
+        {
+          "texto": "Decirle qué está mal y pedirle el ajuste concreto: más corto, sin jerga, con la conclusión al principio.",
+          "correcta": true,
+          "explicacion": "La conversación es parte del método, no señal de que fallaste. Cada corrección concreta rinde más que reescribir el prompt entero."
+        },
+        {
+          "texto": "Preguntarle por qué le salió mal.",
+          "explicacion": "Te va a dar una explicación plausible e inventada de su propio proceso. No tiene acceso introspectivo a por qué generó lo que generó."
+        },
+        {
+          "texto": "Volver a mandar el mismo prompt hasta que salga algo mejor.",
+          "explicacion": "Vas a obtener variaciones del mismo error. Si el prompt no cambia, el problema no cambia."
+        }
+      ]
+    }
+  ]
+}

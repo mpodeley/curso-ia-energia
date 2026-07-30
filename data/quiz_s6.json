@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-07-30T15:11:53+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "¿Qué distingue a un agente de un chatbot?",
+      "opciones": [
+        {
+          "texto": "Que el modelo que tiene adentro es más potente.",
+          "explicacion": "Suele ser el mismo modelo. La diferencia no está en el modelo sino en lo que lo rodea."
+        },
+        {
+          "texto": "Que puede ejecutar herramientas y mirar el resultado, y decidir el paso siguiente con eso a la vista.",
+          "correcta": true,
+          "explicacion": "Ese loop es todo. Un chatbot que se equivoca no se entera nunca; un agente recibe el error de vuelta y tiene la chance de corregirse."
+        },
+        {
+          "texto": "Que fue entrenado específicamente para ser autónomo.",
+          "explicacion": "La autonomía viene del loop y de los permisos que le dieron, no de un entrenamiento distinto."
+        },
+        {
+          "texto": "Que no alucina, porque verifica lo que hace.",
+          "explicacion": "Alucina igual. Lo que cambia es que algunos de sus errores vuelven como resultado observable, y esos los puede corregir."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Por qué un agente rinde peor en tareas largas que en tareas cortas?",
+      "opciones": [
+        {
+          "texto": "Porque se cansa y baja la calidad con el uso.",
+          "explicacion": "No hay fatiga: cada llamada es independiente. El problema es acumulativo pero por otra razón."
+        },
+        {
+          "texto": "Porque arrastra todo lo anterior en cada vuelta: se vuelve más lento, más caro y más propenso a perder de vista el objetivo original.",
+          "correcta": true,
+          "explicacion": "El contador de contexto del ejercicio lo muestra creciendo paso a paso. Una tarea de veinte pasos no es dos veces una de diez: es bastante peor."
+        },
+        {
+          "texto": "Porque las herramientas fallan más cuando se usan muchas veces.",
+          "explicacion": "Las herramientas se comportan igual. Lo que se degrada es la capacidad del modelo de sostener el hilo."
+        },
+        {
+          "texto": "Porque necesita permisos adicionales para tareas largas.",
+          "explicacion": "Los permisos son los mismos. El límite es de contexto, no de autorización."
+        }
+      ]
+    },
+    {
+      "pregunta": "En la traza, el agente filtró por \"AGUARAGUE\" sin diéresis y le volvieron cero filas. Lo importante es el paso siguiente. ¿Por qué?",
+      "opciones": [
+        {
+          "texto": "Porque probó otra grafía hasta que funcionó.",
+          "explicacion": "Eso sería adivinar de nuevo. Hizo algo mejor."
+        },
+        {
+          "texto": "Porque fue a leer los valores que realmente existen en la columna en vez de suponer otro, y ahí encontró la diéresis.",
+          "correcta": true,
+          "explicacion": "Reemplazó una suposición por un dato. Un chatbot sin herramientas hubiera seguido escribiendo con total seguridad sobre una tabla vacía."
+        },
+        {
+          "texto": "Porque avisó del error y frenó para consultar.",
+          "explicacion": "Frenar ante cada obstáculo lo volvería inútil. La gracia es que pudo resolverlo solo, con evidencia."
+        },
+        {
+          "texto": "Porque reintentó la misma consulta y la segunda vez anduvo.",
+          "explicacion": "La misma consulta hubiera devuelto cero filas de nuevo. El error era del filtro, no de la ejecución."
+        }
+      ]
+    }
+  ]
+}
