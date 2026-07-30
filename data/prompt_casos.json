@@ -1,0 +1,379 @@
+{
+  "generated_at": "2026-07-30T14:20:24+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "id": "informe",
+      "label": "Resumen ejecutivo del informe mensual",
+      "situacion": "Tenés el informe mensual de producción del bloque, veintitantas páginas con tablas. El comité de operaciones quiere una página para la reunión del martes.",
+      "slots": [
+        {
+          "componente": "rol",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin rol",
+              "texto": "",
+              "comentario": "Sin rol, el modelo elige un registro por su cuenta. Suele salir un texto de divulgación genérico, ni técnico ni ejecutivo."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Genérico",
+              "texto": "Sos un asistente experto.",
+              "comentario": "\"Experto\" no dice en qué ni para quién. Un rol que no restringe nada es casi lo mismo que no poner rol."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Con oficio y audiencia",
+              "texto": "Sos un ingeniero de producción senior que le escribe al comité de operaciones: gente técnica, con poco tiempo y sin el detalle del día a día.",
+              "comentario": "Fija el vocabulario y el nivel de detalle de una sola vez. El rol útil dice oficio y audiencia, no adjetivos."
+            }
+          ]
+        },
+        {
+          "componente": "contexto",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin contexto",
+              "texto": "",
+              "comentario": "El modelo no sabe para qué se usa el resumen, así que no puede decidir qué dejar afuera. Y decidir qué dejar afuera es todo el trabajo."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Solo la fuente",
+              "texto": "Contexto: te paso el informe mensual.",
+              "comentario": "Decís qué es el documento pero no qué se juega con él. El modelo resume \"en general\", que es resumir para nadie."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Qué se decide con esto",
+              "texto": "Contexto: te paso el informe mensual del bloque. El comité lo usa para decidir si adelanta el workover del pozo con mayor caída de caudal, así que lo que importa son los desvíos contra el mes anterior y sus causas.",
+              "comentario": "Al decir qué decisión alimenta el resumen, le das el criterio para jerarquizar. Ahora sabe qué es ruido y qué es señal."
+            }
+          ]
+        },
+        {
+          "componente": "tarea",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin verbo",
+              "texto": "",
+              "comentario": "Sin verbo no hay pedido. El modelo va a adivinar entre resumir, comentar o reescribir, y a veces hace las tres."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Vago",
+              "texto": "Analizá el informe y decime qué te parece.",
+              "comentario": "\"Qué te parece\" invita a opinar. Vas a recibir adjetivos donde querías hechos."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Verbo y alcance",
+              "texto": "Tarea: redactá el resumen ejecutivo, y marcá aparte cualquier cifra del informe que no puedas ubicar en una tabla.",
+              "comentario": "Un verbo concreto y un pedido de verificación en el mismo movimiento. La segunda parte te ahorra la mitad del control posterior."
+            }
+          ]
+        },
+        {
+          "componente": "formato",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin formato",
+              "texto": "",
+              "comentario": "Vas a recibir la extensión que al modelo le parezca. Casi siempre es más larga de lo que sirve."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Solo el largo",
+              "texto": "Formato: que sea corto.",
+              "comentario": "\"Corto\" no es una medida. Poné el número: cambia el resultado más que cualquier otra instrucción de estilo."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Estructura y tope",
+              "texto": "Formato: máximo 300 palabras, en tres secciones — qué pasó, por qué, qué se propone. Cada cifra con su unidad y el mes al que corresponde.",
+              "comentario": "El tope de palabras fuerza la jerarquización. Pedir la unidad y el mes al lado de cada cifra hace que el error se vea solo."
+            }
+          ]
+        },
+        {
+          "componente": "ejemplos",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin ejemplo",
+              "texto": "",
+              "comentario": "Se puede vivir sin ejemplo. Pero si ya tenés un \"así me gusta\", no dárselo es tirar la mejor instrucción que tenías."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Mencionado, no mostrado",
+              "texto": "Seguí el estilo de los informes que ya usamos.",
+              "comentario": "El modelo no conoce tus informes. Nombrar un estilo que no puede ver es pedirle que invente uno y le ponga tu nombre."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Una línea real, pegada",
+              "texto": "Por ejemplo, así abría el mes pasado: \"La producción del bloque cayó 4% contra septiembre, explicado casi por completo por la parada programada de la planta compresora.\"",
+              "comentario": "Una sola línea real transmite tono, densidad y nivel de detalle mejor que un párrafo de instrucciones sobre el tono."
+            }
+          ]
+        }
+      ],
+      "modelo": "Sos un ingeniero de producción senior que le escribe al comité de operaciones: gente técnica, con poco tiempo y sin el detalle del día a día.\nContexto: te paso el informe mensual del bloque. El comité lo usa para decidir si adelanta el workover del pozo con mayor caída de caudal, así que lo que importa son los desvíos contra el mes anterior y sus causas.\nTarea: redactá el resumen ejecutivo, y marcá aparte cualquier cifra del informe que no puedas ubicar en una tabla.\nFormato: máximo 300 palabras, en tres secciones — qué pasó, por qué, qué se propone. Cada cifra con su unidad y el mes al que corresponde.\nPor ejemplo, así abría el mes pasado: \"La producción del bloque cayó 4% contra septiembre, explicado casi por completo por la parada programada de la planta compresora.\"",
+      "note": "Fijate que la pieza que más cambia la salida no es el rol: es el contexto que dice qué se decide con el resumen. Sin eso, el modelo no tiene con qué jerarquizar."
+    },
+    {
+      "id": "minuta",
+      "label": "Minuta a partir de notas sueltas",
+      "situacion": "Saliste de la reunión de coordinación con dos carillas de notas telegráficas. Hay que mandar la minuta hoy, con los compromisos claros.",
+      "slots": [
+        {
+          "componente": "rol",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin rol",
+              "texto": "",
+              "comentario": "Para una minuta el rol pesa menos que en otros casos. Igual ayuda a fijar cuán formal sale el texto."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Decorativo",
+              "texto": "Sos un profesional muy organizado.",
+              "comentario": "Un adjetivo de personalidad no cambia la salida. El rol sirve cuando delimita un oficio, no cuando halaga."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Función concreta",
+              "texto": "Sos el coordinador que redacta las minutas del equipo de operaciones.",
+              "comentario": "Una función real trae consigo un formato esperado: compromisos, responsables, fechas."
+            }
+          ]
+        },
+        {
+          "componente": "contexto",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin contexto",
+              "texto": "",
+              "comentario": "Sin saber quiénes estaban, el modelo no puede atribuir compromisos. Los va a inventar o los va a dejar sin dueño."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Genérico",
+              "texto": "Contexto: son notas de una reunión de trabajo.",
+              "comentario": "Repite lo que ya se ve en las notas. Un contexto que no agrega información no agrega nada."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Quiénes y para qué",
+              "texto": "Contexto: reunión semanal de coordinación entre operaciones, mantenimiento y logística. La minuta se manda a los tres jefes de área y es el registro de lo que cada uno se comprometió a hacer.",
+              "comentario": "Ahora sabe que cada compromiso necesita un área responsable, porque ese es el uso real del documento."
+            }
+          ]
+        },
+        {
+          "componente": "tarea",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin verbo",
+              "texto": "",
+              "comentario": "Pegar las notas sin pedido explícito suele devolver las notas ordenadas, no una minuta."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Ambiguo",
+              "texto": "Pasá esto en limpio.",
+              "comentario": "\"En limpio\" puede significar corregir la ortografía o reescribir todo. Dos salidas muy distintas para el mismo pedido."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Con la regla del vacío",
+              "texto": "Tarea: convertí las notas en minuta, separando lo que se discutió de lo que se decidió. Si de una nota no surge quién es el responsable o para cuándo, dejá el campo vacío en vez de completarlo.",
+              "comentario": "La segunda oración es la importante. Autorizar el hueco es la forma más barata de evitar que te invente responsables y fechas."
+            }
+          ]
+        },
+        {
+          "componente": "formato",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin formato",
+              "texto": "",
+              "comentario": "Vas a recibir prosa corrida, que es el peor formato posible para algo que se consulta buscando un compromiso puntual."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "A medias",
+              "texto": "Formato: en viñetas.",
+              "comentario": "Mejor que nada, pero las viñetas no fuerzan que cada compromiso tenga responsable y fecha."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Tabla con columnas nombradas",
+              "texto": "Formato: dos partes. Primero, temas tratados en viñetas. Después, una tabla de compromisos con las columnas qué, quién y para cuándo.",
+              "comentario": "Las columnas nombradas hacen visible lo que falta: un campo vacío en \"quién\" salta a la vista, un párrafo sin responsable no."
+            }
+          ]
+        },
+        {
+          "componente": "ejemplos",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin ejemplo",
+              "texto": "",
+              "comentario": "Con un formato de tabla bien especificado, el ejemplo aporta menos que en otros casos."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Abstracto",
+              "texto": "Por ejemplo, poné cosas como tareas y responsables.",
+              "comentario": "Un ejemplo que no es un ejemplo. Repite la instrucción con otras palabras."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Una fila concreta",
+              "texto": "Por ejemplo, una fila válida: \"Cambiar la válvula de seguridad del separador | Mantenimiento | 15 de marzo\".",
+              "comentario": "Muestra el nivel de detalle esperado en cada columna. Con una fila alcanza."
+            }
+          ]
+        }
+      ],
+      "modelo": "Sos el coordinador que redacta las minutas del equipo de operaciones.\nContexto: reunión semanal de coordinación entre operaciones, mantenimiento y logística. La minuta se manda a los tres jefes de área y es el registro de lo que cada uno se comprometió a hacer.\nTarea: convertí las notas en minuta, separando lo que se discutió de lo que se decidió. Si de una nota no surge quién es el responsable o para cuándo, dejá el campo vacío en vez de completarlo.\nFormato: dos partes. Primero, temas tratados en viñetas. Después, una tabla de compromisos con las columnas qué, quién y para cuándo.\nPor ejemplo, una fila válida: \"Cambiar la válvula de seguridad del separador | Mantenimiento | 15 de marzo\".",
+      "note": "Este caso tiene una pieza que no está en la lista de cinco: la instrucción de dejar el campo vacío. Autorizar explícitamente el \"no sé\" es la defensa más efectiva contra las invenciones, y no aparece en ninguna rúbrica de estructura."
+    },
+    {
+      "id": "paper",
+      "label": "Triaje de un paper técnico",
+      "situacion": "Te pasaron un paper de la Society of Petroleum Engineers (SPE) de 30 páginas sobre control de arena. Querés saber en cinco minutos si vale la pena leerlo entero.",
+      "slots": [
+        {
+          "componente": "rol",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin rol",
+              "texto": "",
+              "comentario": "Sin rol el resumen sale en registro de divulgación, explicando cosas que ya sabés y salteando las que te importan."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Demasiado amplio",
+              "texto": "Sos un experto en petróleo.",
+              "comentario": "El dominio es tan ancho que no restringe nada. Un experto en petróleo puede ser geofísico o comercializador."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Especialidad y propósito",
+              "texto": "Sos un ingeniero de terminación de pozos que hace triaje de bibliografía para su equipo.",
+              "comentario": "La especialidad fija qué es obvio y qué es novedad. El propósito de triaje fija que el resumen sirve para decidir, no para reemplazar la lectura."
+            }
+          ]
+        },
+        {
+          "componente": "contexto",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin contexto",
+              "texto": "",
+              "comentario": "Sin saber contra qué comparás, no puede decirte si el paper trae algo que no tengas."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Sin el problema propio",
+              "texto": "Contexto: es un paper sobre control de arena.",
+              "comentario": "Eso ya está en el título del paper. El contexto que sirve es el tuyo, no el del documento."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Tu problema como filtro",
+              "texto": "Contexto: en nuestros pozos usamos mallas ranuradas en arenas poco consolidadas y tenemos problemas de taponamiento. Quiero saber si este paper aplica a ese escenario o si trata otro tipo de terminación.",
+              "comentario": "Convierte el resumen en una respuesta a tu pregunta. La salida deja de ser \"de qué trata\" y pasa a ser \"te sirve o no\"."
+            }
+          ]
+        },
+        {
+          "componente": "tarea",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin verbo",
+              "texto": "",
+              "comentario": "Pegar el paper sin pedido devuelve un resumen genérico, que es justo lo que no necesitás para decidir."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "El pedido por defecto",
+              "texto": "Resumime el paper.",
+              "comentario": "Funciona, y por eso es la trampa: devuelve algo razonable que no responde tu pregunta real, que es si lo leés o no."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Extraer y recomendar",
+              "texto": "Tarea: extraé el problema que ataca, el método, las condiciones del ensayo y los resultados numéricos. Después decime si aplica a mi escenario, y si no aplica, por qué no.",
+              "comentario": "Separa la extracción del juicio. Podés verificar la primera parte contra el paper y quedarte con la segunda como opinión."
+            }
+          ]
+        },
+        {
+          "componente": "formato",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin formato",
+              "texto": "",
+              "comentario": "Un resumen en prosa obliga a leerlo entero para encontrar el único dato que buscabas."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Solo el largo",
+              "texto": "Formato: media página.",
+              "comentario": "Limita el tamaño pero no la estructura. Vas a tener que buscar los números adentro del párrafo."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Campos y trazabilidad",
+              "texto": "Formato: una tabla con las filas problema, método, condiciones, resultados y limitaciones declaradas por los autores. Al lado de cada dato numérico, la página de donde lo sacaste. Cerrá con una línea: leerlo entero, hojearlo o descartarlo.",
+              "comentario": "Pedir la página de cada número es lo que convierte el resumen en verificable. Sin eso tenés que releer el paper para controlarlo, y perdiste el tiempo que querías ganar."
+            }
+          ]
+        },
+        {
+          "componente": "ejemplos",
+          "opciones": [
+            {
+              "calidad": "ninguna",
+              "etiqueta": "Sin ejemplo",
+              "texto": "",
+              "comentario": "Con las filas de la tabla ya nombradas, el ejemplo agrega poco."
+            },
+            {
+              "calidad": "floja",
+              "etiqueta": "Fuera de lugar",
+              "texto": "Por ejemplo, hacelo como un resumen de Wikipedia.",
+              "comentario": "Un ejemplo que contradice el formato pedido. Dos instrucciones que pelean entre sí dan resultados impredecibles."
+            },
+            {
+              "calidad": "buena",
+              "etiqueta": "Una celda modelo",
+              "texto": "Por ejemplo, la fila de resultados debería verse así: \"Reducción del taponamiento del 60% contra malla convencional, en ensayo de laboratorio con arena sintética (p. 14).\"",
+              "comentario": "Muestra los tres ingredientes juntos: el número, la condición en que vale y la página. Difícil de explicar, fácil de mostrar."
+            }
+          ]
+        }
+      ],
+      "modelo": "Sos un ingeniero de terminación de pozos que hace triaje de bibliografía para su equipo.\nContexto: en nuestros pozos usamos mallas ranuradas en arenas poco consolidadas y tenemos problemas de taponamiento. Quiero saber si este paper aplica a ese escenario o si trata otro tipo de terminación.\nTarea: extraé el problema que ataca, el método, las condiciones del ensayo y los resultados numéricos. Después decime si aplica a mi escenario, y si no aplica, por qué no.\nFormato: una tabla con las filas problema, método, condiciones, resultados y limitaciones declaradas por los autores. Al lado de cada dato numérico, la página de donde lo sacaste. Cerrá con una línea: leerlo entero, hojearlo o descartarlo.\nPor ejemplo, la fila de resultados debería verse así: \"Reducción del taponamiento del 60% contra malla convencional, en ensayo de laboratorio con arena sintética (p. 14).\"",
+      "note": "Pedir la página de cada cifra cambia la economía del ejercicio: el resumen pasa de ser algo en lo que confiás a ser algo que podés controlar en dos minutos."
+    }
+  ]
+}

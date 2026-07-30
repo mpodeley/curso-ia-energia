@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-07-30T14:20:25+00:00",
+  "source": "traza curada para el curso. Reconstruye una corrida real sobre el dataset de Capítulo IV: los comandos, el error de la diéresis y las salidas son representativos, no una captura literal de pantalla.",
+  "source_date": null,
+  "data": {
+    "objetivo": "Averiguá cuál de los pozos de gas de Aguaragüe declinó más rápido en los últimos dos años, y hacé un gráfico.",
+    "modelo": "Un agente con acceso a una terminal y a un intérprete de Python, sobre una carpeta con el CSV de producción de Capítulo IV.",
+    "pasos": [
+      {
+        "pensamiento": "No sé qué archivos hay ni cómo son. Antes de escribir código, miro.",
+        "herramienta": "bash",
+        "entrada": "ls -la datos/",
+        "salida": "total 33240\n-rw-r--r-- 1 user user 34012984 jul 30 10:12 capitulo_iv_pozos.csv\n-rw-r--r-- 1 user user   612844 jul 30 10:12 produccion_mensual.csv",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "Dos archivos. Necesito saber qué columnas tienen antes de cruzarlos.",
+        "herramienta": "bash",
+        "entrada": "head -1 datos/produccion_mensual.csv",
+        "salida": "idpozo,ym,prod_gas,prod_pet,prod_agua",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "La producción está por idpozo, sin nombre ni área. El nombre debe estar en el otro archivo. Voy a filtrar Aguaragüe por la columna \"area\".",
+        "herramienta": "python",
+        "entrada": "import pandas as pd\npozos = pd.read_csv('datos/capitulo_iv_pozos.csv')\nagua = pozos[pozos['area'] == 'AGUARAGUE']\nprint(len(agua))",
+        "salida": "0",
+        "estado": "error"
+      },
+      {
+        "pensamiento": "Cero pozos. O el área se llama distinto, o la escribí mal. En vez de adivinar otra vez, miro los valores que existen de verdad.",
+        "herramienta": "python",
+        "entrada": "print([a for a in pozos['area'].unique() if 'GUA' in str(a).upper()])",
+        "salida": "['AGUARAGÜE', 'AGUA SALADA', 'AGUARAGÜE NORTE']",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "Lleva diéresis: AGUARAGÜE. Mi cadena sin acento nunca iba a coincidir. Corrijo y sigo.",
+        "herramienta": "python",
+        "entrada": "agua = pozos[pozos['area'] == 'AGUARAGÜE']\nprint(len(agua), agua['tipopozo'].value_counts().to_dict())",
+        "salida": "428 {'Gasífero': 115, 'Otro tipo': 203, 'Petrolífero': 88, 'Inyección de Agua': 22}",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "Me quedo con los gasíferos y cruzo con la producción de los últimos 24 meses. Ojo: la producción es volumen mensual, así que febrero siempre parece bajo. Divido por días del mes para comparar caudales.",
+        "herramienta": "python",
+        "entrada": "gas = agua[agua['tipopozo'] == 'Gasífero']['idpozo']\nprod = pd.read_csv('datos/produccion_mensual.csv')\np = prod[prod['idpozo'].isin(gas)].copy()\np['fecha'] = pd.to_datetime(p['ym'])\np = p[p['fecha'] >= p['fecha'].max() - pd.DateOffset(months=24)]\np['dias'] = p['fecha'].dt.days_in_month\np['caudal'] = p['prod_gas'] / p['dias']\nprint(p['idpozo'].nunique(), 'pozos,', len(p), 'registros')",
+        "salida": "115 pozos, 2760 registros",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "Para cada pozo, comparo el caudal promedio del primer trimestre contra el del último. Descarto los que casi no producen, donde el porcentaje engaña.",
+        "herramienta": "python",
+        "entrada": "r = []\nfor pid, g in p.sort_values('fecha').groupby('idpozo'):\n    ini, fin = g['caudal'].head(3).mean(), g['caudal'].tail(3).mean()\n    if ini > 5:\n        r.append({'idpozo': pid, 'caida': 1 - fin / ini})\nres = pd.DataFrame(r).sort_values('caida', ascending=False)\nprint(res.head(3).to_string(index=False))",
+        "salida": " idpozo    caida\n 110457 0.612903\n 118820 0.447511\n 108663 0.318844",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "Ya tengo el pozo que más cayó. Le pongo el nombre y grafico su serie.",
+        "herramienta": "python",
+        "entrada": "top = res.iloc[0]['idpozo']\nprint(pozos[pozos['idpozo'] == top][['sigla', 'formacion']].to_string(index=False))",
+        "salida": "          sigla formacion\n TPT.St.CD-1021   tupambi",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "Grafico caudal contra tiempo y guardo la figura.",
+        "herramienta": "python",
+        "entrada": "import matplotlib; matplotlib.use('Agg')\nimport matplotlib.pyplot as plt\ns = p[p['idpozo'] == top].sort_values('fecha')\nplt.figure(figsize=(8, 4))\nplt.plot(s['fecha'], s['caudal'], marker='o')\nplt.ylabel('Mm³/día'); plt.title('TPT.St.CD-1021 — caudal de gas')\nplt.savefig('declinacion.png', dpi=120, bbox_inches='tight')",
+        "salida": "Figura guardada en declinacion.png",
+        "estado": "ok"
+      },
+      {
+        "pensamiento": "Tengo la respuesta y el gráfico. Le aviso, y le digo qué NO verifiqué.",
+        "herramienta": "respuesta",
+        "entrada": "",
+        "salida": "De los 115 pozos gasíferos de Aguaragüe, el que más cayó en los últimos dos años es TPT.St.CD-1021 (formación tupambi): perdió 61% de caudal entre el primer y el último trimestre. El gráfico quedó en declinacion.png.\n\nDos advertencias: comparé promedios de tres meses contra tres meses, así que una parada de planta al final del período se vería como declinación. Y no revisé si el pozo tuvo una intervención, que explicaría la caída mejor que el agotamiento.",
+        "estado": "ok"
+      }
+    ]
+  }
+}
