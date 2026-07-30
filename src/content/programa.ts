@@ -54,7 +54,7 @@ export const SESIONES: Sesion[] = [
       'Extraer tablas de PDFs (boletines YPFB) y verificarlas contra el original',
       'Ajustar una curva de declinación sobre datos reales de un pozo',
     ],
-    estado: 'en-preparacion',
+    estado: 'lista',
   },
   {
     n: 5,
@@ -65,7 +65,7 @@ export const SESIONES: Sesion[] = [
       'Armar un notebook gratuito con documentos técnicos propios',
       'Elegir entre todos el caso real que se construye hacia el final del curso',
     ],
-    estado: 'en-preparacion',
+    estado: 'lista',
   },
   {
     n: 6,
@@ -76,7 +76,7 @@ export const SESIONES: Sesion[] = [
       'Ver un agente real trabajando sobre datos de la industria',
       'Distinguir qué conviene delegar a un agente hoy y qué todavía no',
     ],
-    estado: 'en-preparacion',
+    estado: 'lista',
   },
   {
     n: 7,
@@ -87,7 +87,7 @@ export const SESIONES: Sesion[] = [
       'Definir qué datos de la empresa pueden y no pueden tocar estas herramientas',
       'Salir con un borrador de política de uso interna para su equipo',
     ],
-    estado: 'en-preparacion',
+    estado: 'lista',
   },
   {
     n: 8,

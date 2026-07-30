@@ -96,10 +96,15 @@ export type Fluido = 'gas' | 'pet' | 'agua'
 
 export type PozoDeclinacion = {
   id: string
+  /** 'escuela' wells are generated from known parameters; 'real' ones carry
+   *  everything the field does — compression, facilities, wellbore effects. */
+  tipo: 'escuela' | 'real'
   sigla: string
   area: string
   formacion: string
   empresa: string
+  /** The parameters the curve was generated from. Only on 'escuela' wells. */
+  verdad: { qi: number; Di: number; b: number } | null
   nota: string
   serie: PuntoProduccion[]
 }

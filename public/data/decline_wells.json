@@ -1,15 +1,913 @@
 {
-  "generated_at": "2026-07-30T14:20:25+00:00",
-  "source": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar. Pozos gasíferos de la cuenca Noroeste (Salta).",
+  "generated_at": "2026-07-30T14:43:10+00:00",
+  "source": "pozos escuela generados a partir de parámetros de Arps conocidos; pozos reales del Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
   "source_date": "2026-06",
   "data": [
     {
+      "id": "escuela-exp",
+      "tipo": "escuela",
+      "sigla": "Pozo escuela 1",
+      "area": "generado para el curso",
+      "formacion": "exponencial (b = 0)",
+      "empresa": "",
+      "verdad": {
+        "qi": 320.0,
+        "Di": 0.021,
+        "b": 0.0
+      },
+      "nota": "Declinación exponencial pura: el caso más simple, y el que se usa como referencia conservadora. Con b en cero y el Di correcto, la curva pasa por el medio de los puntos. El ruido que ves es de medición, del orden del 2%.",
+      "serie": [
+        {
+          "ym": "2019-01",
+          "gas": 9999.35,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-02",
+          "gas": 8933.29,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-03",
+          "gas": 9418.48,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-04",
+          "gas": 8894.41,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-05",
+          "gas": 9206.02,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-06",
+          "gas": 8608.25,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-07",
+          "gas": 8778.07,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-08",
+          "gas": 8451.61,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-09",
+          "gas": 8060.23,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-10",
+          "gas": 8241.92,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-11",
+          "gas": 7771.64,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-12",
+          "gas": 7828.5,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-01",
+          "gas": 7792.19,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-02",
+          "gas": 6991.54,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-03",
+          "gas": 7332.51,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-04",
+          "gas": 6966.63,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-05",
+          "gas": 7011.48,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-06",
+          "gas": 6773.31,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-07",
+          "gas": 6728.02,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-08",
+          "gas": 6707.99,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-09",
+          "gas": 6301.86,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-10",
+          "gas": 6355.14,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-11",
+          "gas": 6028.26,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-12",
+          "gas": 6200.3,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-01",
+          "gas": 5967.61,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-02",
+          "gas": 5379.38,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-03",
+          "gas": 5743.13,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-04",
+          "gas": 5480.22,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-05",
+          "gas": 5409.45,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-06",
+          "gas": 5189.48,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-07",
+          "gas": 5325.53,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-08",
+          "gas": 5265.58,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-09",
+          "gas": 4857.43,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-10",
+          "gas": 4912.73,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-11",
+          "gas": 4716.77,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-12",
+          "gas": 4684.86,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-01",
+          "gas": 4615.43,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-02",
+          "gas": 4095.67,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-03",
+          "gas": 4490.33,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-04",
+          "gas": 4261.71,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-05",
+          "gas": 4209.28,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-06",
+          "gas": 4037.09,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-07",
+          "gas": 4159.68,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-08",
+          "gas": 4053.64,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-09",
+          "gas": 3747.06,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-10",
+          "gas": 3826.95,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-11",
+          "gas": 3647.88,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-12",
+          "gas": 3745.53,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-01",
+          "gas": 3596.13,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-02",
+          "gas": 3242.79,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-03",
+          "gas": 3488.2,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-04",
+          "gas": 3343.78,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-05",
+          "gas": 3267.96,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-06",
+          "gas": 3167.26,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-07",
+          "gas": 3205.65,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-08",
+          "gas": 3149.21,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-09",
+          "gas": 2935.56,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-10",
+          "gas": 3029.17,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-11",
+          "gas": 2806.01,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-12",
+          "gas": 2861.84,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-01",
+          "gas": 2802.59,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-02",
+          "gas": 2587.97,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-03",
+          "gas": 2724.06,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-04",
+          "gas": 2602.65,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-05",
+          "gas": 2626.56,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-06",
+          "gas": 2445.51,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-07",
+          "gas": 2493.18,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-08",
+          "gas": 2471.04,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-09",
+          "gas": 2291.56,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-10",
+          "gas": 2352.26,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-11",
+          "gas": 2233.34,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-12",
+          "gas": 2230.37,
+          "pet": 0.0,
+          "agua": 0.0
+        }
+      ]
+    },
+    {
+      "id": "escuela-hip",
+      "tipo": "escuela",
+      "sigla": "Pozo escuela 2",
+      "area": "generado para el curso",
+      "formacion": "hiperbólica (b = 0.6)",
+      "empresa": "",
+      "verdad": {
+        "qi": 780.0,
+        "Di": 0.055,
+        "b": 0.6
+      },
+      "nota": "Hiperbólica: cae fuerte al principio y después la cola se estira. Si intentás ajustarla con b en cero vas a poder acomodar los primeros meses o los últimos, pero nunca los dos a la vez. Ahí se entiende para qué existe b.",
+      "serie": [
+        {
+          "ym": "2019-01",
+          "gas": 24470.13,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-02",
+          "gas": 21253.75,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-03",
+          "gas": 21416.2,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-04",
+          "gas": 19595.97,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-05",
+          "gas": 19941.59,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-06",
+          "gas": 18031.71,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-07",
+          "gas": 17993.09,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-08",
+          "gas": 16764.9,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-09",
+          "gas": 15674.24,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-10",
+          "gas": 15762.27,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-11",
+          "gas": 14519.81,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2019-12",
+          "gas": 14306.21,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-01",
+          "gas": 14087.95,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-02",
+          "gas": 12287.66,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-03",
+          "gas": 12681.44,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-04",
+          "gas": 11870.62,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-05",
+          "gas": 11732.64,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-06",
+          "gas": 11277.84,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-07",
+          "gas": 10946.3,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-08",
+          "gas": 10868.77,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-09",
+          "gas": 10040.86,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-10",
+          "gas": 9989.99,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-11",
+          "gas": 9375.48,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2020-12",
+          "gas": 9619.46,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-01",
+          "gas": 9088.32,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-02",
+          "gas": 8192.62,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-03",
+          "gas": 8603.78,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-04",
+          "gas": 8169.86,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-05",
+          "gas": 7901.97,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-06",
+          "gas": 7572.38,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-07",
+          "gas": 7772.18,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-08",
+          "gas": 7671.92,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-09",
+          "gas": 6941.75,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-10",
+          "gas": 6980.33,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-11",
+          "gas": 6711.62,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2021-12",
+          "gas": 6572.94,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-01",
+          "gas": 6467.53,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-02",
+          "gas": 5726.15,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-03",
+          "gas": 6290.65,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-04",
+          "gas": 5955.68,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-05",
+          "gas": 5794.49,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-06",
+          "gas": 5577.36,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-07",
+          "gas": 5785.92,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-08",
+          "gas": 5614.43,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-09",
+          "gas": 5117.16,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-10",
+          "gas": 5244.37,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-11",
+          "gas": 5008.83,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2022-12",
+          "gas": 5176.71,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-01",
+          "gas": 4919.65,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-02",
+          "gas": 4478.55,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-03",
+          "gas": 4799.44,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-04",
+          "gas": 4628.6,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-05",
+          "gas": 4448.43,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-06",
+          "gas": 4364.45,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-07",
+          "gas": 4422.83,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-08",
+          "gas": 4357.79,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-09",
+          "gas": 4035.17,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-10",
+          "gas": 4212.36,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-11",
+          "gas": 3865.68,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2023-12",
+          "gas": 3967.26,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-01",
+          "gas": 3894.76,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-02",
+          "gas": 3620.53,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-03",
+          "gas": 3832.3,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-04",
+          "gas": 3687.42,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-05",
+          "gas": 3728.54,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-06",
+          "gas": 3453.13,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-07",
+          "gas": 3546.42,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-08",
+          "gas": 3549.26,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-09",
+          "gas": 3269.33,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-10",
+          "gas": 3394.0,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-11",
+          "gas": 3239.36,
+          "pet": 0.0,
+          "agua": 0.0
+        },
+        {
+          "ym": "2024-12",
+          "gas": 3228.43,
+          "pet": 0.0,
+          "agua": 0.0
+        }
+      ]
+    },
+    {
       "id": "34585",
+      "tipo": "real",
       "sigla": "PAE.St.Mac.x-1001 bis",
       "area": "ACAMBUCO",
       "formacion": "icla",
       "empresa": "PAN AMERICAN ENERGY SL",
-      "nota": "El caso de manual. Cae de forma pareja durante siete años y medio, sin saltos: con qi cerca del primer punto y una b baja vas a ver el modelo pegarse a los datos.",
+      "verdad": null,
+      "nota": "El más parejo de los reales: cae de forma sostenida durante siete años y medio, sin saltos. Aun así, la curva que ves no es solo el reservorio despresurizándose — también está la disponibilidad de compresión y la contrapresión de línea. Que ajuste bien no prueba que sea declinación pura; prueba que nada la interrumpió de golpe.",
       "serie": [
         {
           "ym": "2019-01",
@@ -555,10 +1453,12 @@
     },
     {
       "id": "79164",
+      "tipo": "real",
       "sigla": "Pp.St.R-1003-h",
       "area": "RAMOS",
       "formacion": "huamampampa",
       "empresa": "TECPETROL S.A.",
+      "verdad": null,
       "nota": "Declinación tan suave que en siete años perdió apenas un cuarto del caudal, y el ruido de mes a mes es del mismo tamaño que la tendencia. Vas a encontrar muchas combinaciones de b y Di que ajustan casi igual de bien: los datos no alcanzan para elegir entre ellas. Un ajuste con pocos datos de caída no es una predicción.",
       "serie": [
         {
@@ -1105,10 +2005,12 @@
     },
     {
       "id": "153510",
+      "tipo": "real",
       "sigla": "PAE.St.Mac-1004(d)",
       "area": "ACAMBUCO",
       "formacion": "icla",
       "empresa": "PAN AMERICAN ENERGY SL",
+      "verdad": null,
       "nota": "Parecido al primero pero la mitad de caudal. Buen pozo para comprobar que qi y Di hacen cosas distintas: uno mueve la curva entera, el otro cambia su pendiente.",
       "serie": [
         {
@@ -1655,10 +2557,12 @@
     },
     {
       "id": "127112",
+      "tipo": "real",
       "sigla": "TPT.St.Ag.xp-1(ST4)",
       "area": "AGUARAGÜE",
       "formacion": "santa rosa",
       "empresa": "TECPETROL S.A.",
+      "verdad": null,
       "nota": "Declinación intermedia sobre santa rosa. Probá ajustarlo primero en metros cúbicos por mes y después por día: el serrucho desaparece y el error baja sin que toques nada.",
       "serie": [
         {
@@ -2205,10 +3109,12 @@
     },
     {
       "id": "10639",
+      "tipo": "real",
       "sigla": "CD-12",
       "area": "AGUARAGÜE",
       "formacion": "tupambi",
       "empresa": "TECPETROL S.A.",
+      "verdad": null,
       "nota": "Casi no declina: en siete años perdió menos de un quinto de su caudal. Necesita un Di muy chico. Un pozo así vale por su permanencia, no por su caudal inicial.",
       "serie": [
         {
@@ -2755,10 +3661,12 @@
     },
     {
       "id": "34663",
+      "tipo": "real",
       "sigla": "YPF.St.SP.x-1",
       "area": "ACAMBUCO",
       "formacion": "huamampampa",
       "empresa": "PAN AMERICAN ENERGY SL",
+      "verdad": null,
       "nota": "Acá ningún juego de parámetros ajusta bien, y ese es el punto. Seis años de meseta y después un derrumbe en doce meses no es una declinación: es una intervención, un cierre o la entrada de agua. Arps describe un reservorio que se despresuriza solo, y no fue lo que pasó. El modelo no sabe nada de la operación del pozo — eso lo sabés vos.",
       "serie": [
         {

@@ -6,7 +6,10 @@ browser, only these JSONs. Requires: pip install tiktoken
 Usage: python scripts/build_data.py
 """
 
+import calendar
 import json
+import math
+import random
 import os
 import sys
 
@@ -647,11 +650,43 @@ def build_prompt_casos():
 #    Requires scripts/_cache/, produced by: python scripts/fetch_capiv_gas.py
 # ---------------------------------------------------------------------------
 
+# Teaching wells, generated from known Arps parameters. They come first in the
+# exercise on purpose: on real data the monthly rate mixes reservoir depletion
+# with compressor availability, plant constraints, line backpressure and liquid
+# loading, so a fit there is never a clean read of the reservoir. Learn the tool
+# on a curve that has an answer, then meet the noise.
+DECLINE_ESCUELA = [
+    {
+        'id': 'escuela-exp',
+        'sigla': 'Pozo escuela 1',
+        'formacion': 'exponencial (b = 0)',
+        'verdad': {'qi': 320.0, 'Di': 0.021, 'b': 0.0},
+        'ruido': 0.02,
+        'meses': 72,
+        'nota': 'Declinación exponencial pura: el caso más simple, y el que se usa como referencia '
+        'conservadora. Con b en cero y el Di correcto, la curva pasa por el medio de los puntos. '
+        'El ruido que ves es de medición, del orden del 2%.',
+    },
+    {
+        'id': 'escuela-hip',
+        'sigla': 'Pozo escuela 2',
+        'formacion': 'hiperbólica (b = 0.6)',
+        'verdad': {'qi': 780.0, 'Di': 0.055, 'b': 0.6},
+        'ruido': 0.03,
+        'meses': 72,
+        'nota': 'Hiperbólica: cae fuerte al principio y después la cola se estira. Si intentás '
+        'ajustarla con b en cero vas a poder acomodar los primeros meses o los últimos, pero nunca '
+        'los dos a la vez. Ahí se entiende para qué existe b.',
+    },
+]
+
 DECLINE_POZOS = [
     {
         'idpozo': '34585',
-        'nota': 'El caso de manual. Cae de forma pareja durante siete años y medio, sin saltos: '
-        'con qi cerca del primer punto y una b baja vas a ver el modelo pegarse a los datos.',
+        'nota': 'El más parejo de los reales: cae de forma sostenida durante siete años y medio, sin '
+        'saltos. Aun así, la curva que ves no es solo el reservorio despresurizándose — también está '
+        'la disponibilidad de compresión y la contrapresión de línea. Que ajuste bien no prueba que '
+        'sea declinación pura; prueba que nada la interrumpió de golpe.',
     },
     {
         'idpozo': '79164',
@@ -685,6 +720,38 @@ DECLINE_POZOS = [
 ]
 
 
+def _arps(qi, Di, b, t):
+    if t <= 0 or Di <= 0:
+        return qi
+    if b < 1e-6:
+        return qi * math.exp(-Di * t)
+    return qi / (1 + b * Di * t) ** (1 / b)
+
+
+def _serie_escuela(spec):
+    """Monthly VOLUME from a known daily rate, so the exercise's per-day toggle
+    recovers the true curve exactly and the calendar sawtooth shows up here too.
+    Seeded: the same JSON comes out of every rebuild."""
+    rng = random.Random(20260730)
+    v = spec['verdad']
+    serie = []
+    anio, mes = 2019, 1
+    for t in range(spec['meses']):
+        dias = calendar.monthrange(anio, mes)[1]
+        tasa = _arps(v['qi'], v['Di'], v['b'], t)
+        medido = tasa * (1 + rng.uniform(-spec['ruido'], spec['ruido']))
+        serie.append({
+            'ym': f'{anio:04d}-{mes:02d}',
+            'gas': round(medido * dias, 2),
+            'pet': 0.0,
+            'agua': 0.0,
+        })
+        mes += 1
+        if mes > 12:
+            mes, anio = 1, anio + 1
+    return serie
+
+
 def build_decline_wells():
     cache = os.path.join(os.path.dirname(__file__), '_cache')
     csv_path = os.path.join(cache, 'capiv_noroeste_monthly.csv')
@@ -705,16 +772,31 @@ def build_decline_wells():
             series.setdefault(row['idpozo'], []).append(row)
 
     out = []
+    for spec in DECLINE_ESCUELA:
+        out.append({
+            'id': spec['id'],
+            'tipo': 'escuela',
+            'sigla': spec['sigla'],
+            'area': 'generado para el curso',
+            'formacion': spec['formacion'],
+            'empresa': '',
+            'verdad': spec['verdad'],
+            'nota': spec['nota'],
+            'serie': _serie_escuela(spec),
+        })
+
     for elegido in DECLINE_POZOS:
         idp = elegido['idpozo']
         w = wells[idp]
         filas = sorted(series[idp], key=lambda r: r['ym'])
         out.append({
             'id': idp,
+            'tipo': 'real',
             'sigla': w['sigla'],
             'area': w['area'],
             'formacion': ', '.join(w['formaciones']),
             'empresa': w['empresa'],
+            'verdad': None,
             'nota': elegido['nota'],
             'serie': [
                 {
@@ -727,16 +809,18 @@ def build_decline_wells():
             ],
         })
 
-    desde = min(p['serie'][0]['ym'] for p in out)
-    hasta = max(p['serie'][-1]['ym'] for p in out)
+    reales = [p for p in out if p['tipo'] == 'real']
+    desde = min(p['serie'][0]['ym'] for p in reales)
+    hasta = max(p['serie'][-1]['ym'] for p in reales)
     write_json(
         os.path.join(ROOT, 'decline_wells.json'),
         out,
-        source='Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía '
-        '(Argentina), datos.energia.gob.ar. Pozos gasíferos de la cuenca Noroeste (Salta).',
+        source='pozos escuela generados a partir de parámetros de Arps conocidos; pozos reales del '
+        'Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), '
+        'datos.energia.gob.ar, cuenca Noroeste (Salta).',
         source_date=hasta,
     )
-    print(f'  decline: {len(out)} pozos, {desde} a {hasta}')
+    print(f'  decline: {len(DECLINE_ESCUELA)} de escuela + {len(reales)} reales ({desde} a {hasta})')
     return out
 
 

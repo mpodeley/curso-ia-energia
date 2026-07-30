@@ -1,36 +1,96 @@
 import { DeclineLab } from '../exercises/DeclineLab'
 
-<div className="callout callout--wip">
-  Los ejercicios de esta página ya están publicados. La prosa completa de la sesión se termina antes de
-  la fecha de dictado; lo que sigue es la estructura.
+## Antes de la sesión
+
+*Tiempo estimado: 30–40 minutos.*
+
+1. **Tarea de la sesión 3:** tu prompt "antes y después", y la planilla no confidencial que ibas a
+   traer. Sin datos propios el ejercicio en vivo se hace con los públicos, pero rinde mucho menos.
+2. **Ejercicio de esta página (15 min):** el laboratorio de declinación de más abajo. Arrancá por los
+   dos pozos de escuela antes de tocar los reales.
+3. **Micro-tarea (10 min):** subí una planilla cualquiera a tu chatbot y pedile que te describa qué
+   columnas tiene y cuántas filas. Fijate si acierta el conteo. Lo vamos a discutir en vivo.
+
+## El chatbot como copiloto de análisis
+
+Hasta acá el modelo escribió texto. Ahora le vamos a dar una tabla y pedirle que la analice. La
+diferencia importante es que ya no genera solo prosa: genera **código**, lo corre y te devuelve el
+resultado. Eso cambia dónde puede fallar y dónde tenés que mirar.
+
+Tres movimientos, en orden de dificultad:
+
+1. **De un archivo separado por comas a un análisis.** Subís la planilla, pedís estadísticas y
+   gráficos. El copiloto escribe el código; vos juzgás el resultado.
+2. **De un archivo PDF a una tabla.** Los datos públicos de producción en Bolivia viven en boletines
+   de Yacimientos Petrolíferos Fiscales Bolivianos y en informes de la Agencia Nacional de
+   Hidrocarburos, casi siempre en PDF. Extraemos una tabla y la verificamos contra el original,
+   número por número.
+3. **De una tabla a un modelo.** Ajustar una curva de declinación: pocos parámetros, una fórmula de
+   1945 y la pregunta de siempre, que es cuánto le creés a la extrapolación.
+
+## Verificar código es distinto de verificar texto
+
+Cuando el modelo escribe un párrafo, el error se lee. Cuando escribe código, el error se esconde
+detrás de un número que parece razonable. Un filtro mal escrito no rompe nada: devuelve menos filas
+y sigue.
+
+La regla práctica es corta. Pedile siempre que te muestre el código, no solo el resultado. Pedile un
+conteo de filas antes y después de cada filtro. Y comprobá un caso a mano, uno solo, eligiendo un
+valor que puedas rastrear en la planilla original. Si ese cierra, casi siempre cierra el resto; si no
+cierra, no hay nada más que discutir.
+
+<div className="callout">
+  <strong>Antes de subir nada:</strong> producción real por pozo, reservas y precios de contrato no van
+  a un chatbot gratuito. Para practicar alcanza con datos públicos, con datos viejos que ya no sean
+  sensibles, o con una planilla inventada que tenga la misma estructura que la tuya.
 </div>
 
-## De qué va esta sesión
+## La curva de declinación, y lo que la curva no dice
 
-El salto de "el chatbot me escribe texto" a "el chatbot analiza mis datos conmigo". Tres movimientos:
+El ejercicio tiene dos grupos de pozos, y el orden importa.
 
-1. **CSV a análisis:** subimos una planilla de producción y le pedimos al chatbot estadísticas, gráficos
-   y código Python. El copiloto escribe el código; nosotros juzgamos el resultado.
-2. **PDF a tabla:** el ejercicio boliviano. Los datos públicos de producción en Bolivia viven en archivos
-   PDF (boletines de Yacimientos Petrolíferos Fiscales Bolivianos, informes de la Agencia Nacional de
-   Hidrocarburos). Extraemos una tabla de producción por campo con el chatbot y la verificamos contra el
-   original, número por número. La lección es doble: sirve muchísimo, y sin verificación no sirve de nada.
-3. **Curva de declinación:** el laboratorio de abajo, con datos reales de pozo. Data science clásica de
-   la industria, para conectar el mundo nuevo con el que ya conocés.
+Los **pozos de escuela** están generados a partir de parámetros conocidos. Sirven para aprender qué
+hace cada perilla contra una curva que tiene respuesta exacta: si ponés los valores con los que se
+generó, el modelo pasa por el medio de los puntos.
 
-## La curva de declinación, con datos reales
+Los **pozos reales** son de Aguaragüe, Ramos y Acambuco, en Salta, y producen de huamampampa,
+tupambi, icla y santa rosa: los mismos reservorios del subandino que se producen del lado boliviano.
+La serie es la producción mensual declarada al Estado argentino entre 2019 y 2026, sin retocar.
 
-Los pozos del ejercicio son de Aguaragüe, Ramos y Acambuco, en Salta. Producen de huamampampa, tupambi,
-icla y santa rosa: los mismos reservorios del subandino que se producen del lado boliviano de la
-frontera. La serie es la producción mensual declarada al Estado argentino entre 2019 y 2026, sin retocar.
+Y acá está lo que hay que decir en voz alta, porque es donde este ejercicio se separa de un tutorial
+cualquiera. **Arps describe un reservorio que se despresuriza solo, y ningún pozo real hace eso.** Lo
+que se mide en la boca es el reservorio más la compresión disponible ese mes, más las restricciones
+de planta, más la contrapresión de línea, más el líquido que se acumula y ahoga el pozo. Un ajuste
+que cierra no prueba que entendiste la geología, y uno que no cierra no prueba que el reservorio se
+haya portado mal. Un análisis serio se hace sobre caudales corregidos por horas de operación y
+presión de boca, no sobre el volumen mensual crudo.
 
-Ajustar una curva de declinación es el ejemplo más limpio de lo que hace un modelo. Tres parámetros,
-una fórmula de 1945, y la pregunta de siempre: ¿cuánto le creo a la extrapolación?
+Eso no invalida el método: lo ubica. La curva sirve para ordenar una conversación y para acotar un
+número, no para cerrarla.
 
 <DeclineLab sesion={4} />
 
-## Para discutir (borrador)
+## En la sesión en vivo (2 h)
 
-1. ¿Qué dato de tu área vive hoy atrapado en archivos PDF o escaneos? ¿Cuánto valdría tenerlo en una tabla?
-2. Cuando el chatbot escribe código de análisis: ¿revisás el código o el resultado? ¿Alcanza con uno?
-3. En el pozo que no ajusta con ningún parámetro: ¿qué información tenés vos que el modelo no puede tener?
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| La planilla y el copiloto | 30 min | Subimos datos de producción y pedimos análisis, gráficos y código; leemos el código juntos |
+| De PDF a tabla | 35 min | Extraemos la tabla de un boletín boliviano y la verificamos número por número contra el original |
+| Declinación en vivo | 25 min | Ajustamos un pozo entre todos y discutimos cuánto de esa caída es reservorio y cuánto es operación |
+| Qué se puede afirmar | 20 min | De los tres análisis: qué conclusión firmarías y cuál necesita más trabajo |
+| Cierre y tarea | 10 min | La tarea de la sesión 5 |
+
+## Para discutir
+
+1. ¿Qué dato de tu área vive hoy atrapado en archivos PDF o en escaneos? ¿Cuánto valdría tenerlo en
+   una tabla, y quién lo usaría?
+2. Cuando el chatbot escribe código de análisis: ¿revisás el código o el resultado? ¿Alcanza con uno
+   de los dos?
+3. En el pozo que no ajusta con ningún parámetro: ¿qué información tenés vos que el modelo no puede
+   tener? Esa pregunta es el resumen del curso entero.
+
+## Tarea para la sesión 5
+
+Pensá en un conjunto de documentos de tu trabajo que consultás seguido y que no son confidenciales:
+manuales, normas, procedimientos, instructivos. Anotá tres preguntas concretas que le harías a ese
+conjunto si pudieras preguntarle en lugar de buscar. En la sesión 5 las vamos a usar.

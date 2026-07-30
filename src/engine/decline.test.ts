@@ -131,8 +131,16 @@ describe('ajustar', () => {
 // Guards the well selection itself. If someone swaps a well for one that does
 // not decline cleanly, the exercise stops teaching what it claims to teach.
 describe('decline_wells.json', () => {
-  type Pozo = { id: string; sigla: string; serie: { ym: string; gas: number }[] }
-  const pozos = JSON.parse(readFileSync('public/data/decline_wells.json', 'utf-8')).data as Pozo[]
+  type Pozo = {
+    id: string
+    tipo: 'escuela' | 'real'
+    sigla: string
+    verdad: { qi: number; Di: number; b: number } | null
+    serie: { ym: string; gas: number }[]
+  }
+  const todos = JSON.parse(readFileSync('public/data/decline_wells.json', 'utf-8')).data as Pozo[]
+  const escuela = todos.filter((p) => p.tipo === 'escuela')
+  const pozos = todos.filter((p) => p.tipo === 'real')
 
   /** Daily rate — Arps describes a rate, and the raw series is monthly volume. */
   const caudalDiario = (p: Pozo) => p.serie.map((d) => (d.gas > 0 ? d.gas / diasDelMes(d.ym) : null))
@@ -146,9 +154,34 @@ describe('decline_wells.json', () => {
     return errorRelativo(obs, serieModelo(qi, Di, b, obs.length))
   }
 
-  it('ships six wells with the full monthly series', () => {
+  it('ships six real wells with the full monthly series', () => {
     expect(pozos).toHaveLength(6)
     for (const p of pozos) expect(p.serie.length).toBeGreaterThanOrEqual(80)
+  })
+
+  it('leads with teaching wells that carry their true parameters', () => {
+    expect(escuela.length).toBeGreaterThanOrEqual(2)
+    expect(todos[0].tipo).toBe('escuela') // they come first in the selector
+    for (const p of escuela) expect(p.verdad).not.toBeNull()
+    for (const p of pozos) expect(p.verdad).toBeNull()
+  })
+
+  it('recovers the true parameters of a teaching well from its daily rate', () => {
+    // The promise the exercise makes: put in these numbers and the curve fits.
+    for (const p of escuela) {
+      const obs = caudalDiario(p)
+      const est = ajustar(obs)
+      const v = p.verdad!
+      expect(est.qi, `${p.sigla} qi`).toBeCloseTo(v.qi, -2)
+      expect(est.Di, `${p.sigla} Di`).toBeCloseTo(v.Di, 2)
+      // b gets a looser bound than qi and Di on purpose: even on synthetic data
+      // with 2% noise it is the worst-determined parameter, because the tail it
+      // controls is the part the history barely constrains. That is exactly why
+      // reserves estimated from a few years of decline are fragile.
+      expect(Math.abs(est.b - v.b), `${p.sigla} b`).toBeLessThan(0.15)
+      // The promise the exercise makes: the true parameters fit within the noise.
+      expect(errorRelativo(obs, serieModelo(v.qi, v.Di, v.b, obs.length)), p.sigla).toBeLessThan(0.03)
+    }
   })
 
   it('fits the five well-behaved wells to within 8% of a typical month', () => {

@@ -1,39 +1,69 @@
 import { EmbeddingsMap } from '../exercises/EmbeddingsMap'
 import { RagDemo } from '../exercises/RagDemo'
 
-<div className="callout callout--wip">
-  Los ejercicios de esta página ya están publicados. La prosa completa de la sesión se termina antes de
-  la fecha de dictado; lo que sigue es la estructura.
-</div>
+## Antes de la sesión
 
-## De qué va esta sesión
+*Tiempo estimado: 30–40 minutos.*
 
-El modelo leyó medio internet, pero no leyó tu manual de operaciones, ni tus normas internas, ni los
-informes de tu campo. Esta sesión es sobre cómo se cierra ese hueco sin reentrenar nada.
+1. **Tarea de la sesión 4:** tus tres preguntas sobre un conjunto de documentos propios. Traelas
+   escritas, son el material de la segunda mitad de la sesión.
+2. **Ejercicios de esta página (20 min):** primero el mapa de significados, después la búsqueda. En
+   ese orden, porque el segundo usa lo que muestra el primero.
+3. **Micro-tarea (10 min):** entrá a [NotebookLM](https://notebooklm.google.com) con tu cuenta
+   gratuita y subí dos o tres documentos públicos de tu rubro. Hacele una pregunta y mirá las citas.
 
-La técnica se llama generación aumentada por recuperación, y es más simple de lo que suena: buscar los
-fragmentos de tus documentos que responden la pregunta, pegarlos arriba de la pregunta, y mandarle todo
-eso al modelo. Responde con el libro abierto, y por eso puede citar de dónde sacó cada cosa.
+## El modelo no leyó tus documentos
 
-En la práctica, sin programar nada: [NotebookLM](https://notebooklm.google.com) permite subir un
-conjunto de documentos y conversar con ellos. Armamos uno en vivo con documentación técnica pública y
-vemos qué cambia respecto del chatbot a secas.
+Leyó una cantidad enorme de texto de internet. No leyó tu manual de operaciones, ni tus normas
+internas, ni el informe del campo que escribió tu compañero el mes pasado. Preguntarle sobre eso es
+pedirle que complete lo más plausible, que es exactamente la receta de una respuesta inventada con
+tono seguro.
+
+Hay dos formas de cerrar ese hueco. Una es reentrenar el modelo con tus documentos: cara, lenta y casi
+siempre innecesaria. La otra es más simple y es la que se usa: **buscar los fragmentos que responden
+la pregunta y pegarlos arriba de la pregunta**. El modelo responde con el libro abierto. Se llama
+generación aumentada por recuperación, y una vez que la ves funcionar es difícil que te siga
+pareciendo sofisticada.
 
 ## Primero, qué significa "parecido" para un modelo
 
-Antes de buscar por significado hay que ver cómo se mide el significado. El primer ejercicio convierte
-términos de la industria en vectores y los proyecta a un plano. Prestá atención a la familia de jerga:
-ahí se ve de un vistazo qué es exactamente lo que el modelo no sabe de tu trabajo.
+Para buscar por significado hay que poder medirlo. El modelo convierte cada texto en una lista de
+números, y dos textos con sentido parecido dan listas parecidas. Todo lo demás sale de ahí.
+
+El ejercicio proyecta esas listas a un plano para que las puedas mirar. Prestá atención a la familia
+de jerga: "burro", "araña", "pescado", "camisa". El modelo aprendió esas palabras del lenguaje
+corriente, así que las ubica junto a objetos cotidianos y no junto al equipamiento del yacimiento.
+Ahí se ve, de un vistazo, qué es lo que no sabe de tu trabajo.
 
 <EmbeddingsMap sesion={5} />
 
 ## Y ahora sí, buscar en tus documentos
 
-El corpus del segundo ejercicio es un manual interno inventado para el curso, y eso es a propósito:
-cualquier documento público de verdad podría haber estado en el entrenamiento del modelo, y entonces no
-probaría nada.
+El corpus del segundo ejercicio es un manual interno inventado para el curso, y es a propósito:
+cualquier documento público de verdad podría haber estado en el entrenamiento del modelo, y entonces
+la demostración no probaría nada.
+
+Probá las preguntas que no comparten ninguna palabra con su respuesta. La que pregunta cómo evitar
+que alguien arranque el equipo mientras lo reparás la responde un fragmento que habla de "bloqueo y
+etiquetado". La de cuidarse los oídos la responde uno que dice "protección auditiva". Un buscador de
+palabras no tiene con qué encontrarlas; uno por significado sí. Esa es toda la diferencia, y es la
+razón por la que esto sirve sobre documentación técnica, que siempre está escrita en un vocabulario
+que nadie usa cuando pregunta.
+
+Mirá también el bloque del final, el que dice lo que se le manda al modelo. No hay nada más que eso.
 
 <RagDemo sesion={5} />
+
+## Dónde sigue fallando
+
+Recuperar fragmentos reduce las invenciones, no las elimina, y agrega un modo de falla nuevo: si el
+buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que sea el modelo, y
+va a estar mal **con una cita al lado**, que es peor. Por eso la regla es mirar siempre los fragmentos
+recuperados, no solo la respuesta. Si una herramienta no te los muestra, no te está dando
+verificabilidad: te está dando la apariencia de verificabilidad.
+
+Hay un segundo límite, más aburrido y más frecuente: si la respuesta no está en los documentos, no
+hay recuperación que la traiga. La herramienta no sabe lo que tu empresa nunca escribió.
 
 ## Además: elegimos el caso real
 
@@ -41,11 +71,28 @@ Esta sesión cierra el relevamiento que empezó en la sesión 1. Con la encuesta
 trayendo, presentamos una lista corta de dos o tres casos candidatos y elegimos entre todos el que se
 construye para la sesión 8.
 
-## Para discutir (borrador)
+## En la sesión en vivo (2 h)
 
-1. ¿Qué corpus de tu área — manuales, normas, informes históricos — haría más diferencia con un buscador
-   conversacional encima?
-2. Si el buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que sea el
-   modelo. ¿Cómo te darías cuenta?
-3. ¿Qué documentos de tu empresa no podrían salir nunca de la red interna, y qué implica eso para una
-   herramienta así?
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| Por qué no sabe lo tuyo | 20 min | El hueco, y las dos formas de cerrarlo; por qué reentrenar casi nunca es la respuesta |
+| NotebookLM en vivo | 35 min | Armamos un cuaderno con documentos técnicos y lo interrogamos con sus preguntas |
+| Cuando la cita miente | 20 min | Buscamos a propósito un caso donde el fragmento recuperado no responde la pregunta |
+| Elección del caso real | 35 min | Presentamos la lista corta, discutimos alcance y datos, y votamos |
+| Cierre y tarea | 10 min | La tarea de la sesión 6 |
+
+## Para discutir
+
+1. ¿Qué corpus de tu área — manuales, normas, informes históricos — haría más diferencia con un
+   buscador conversacional encima? ¿Quién lo consultaría?
+2. Si el buscador trae el fragmento equivocado, la respuesta viene mal y con cita. ¿Cómo te darías
+   cuenta vos, en tu tema?
+3. ¿Qué documentos de tu empresa no podrían salir nunca de la red interna? ¿Cambia eso qué
+   herramienta se puede usar, o solo cómo se usa?
+
+## Tarea para la sesión 6
+
+Pensá una tarea tuya que hoy te lleva varios pasos con herramientas distintas: buscar un dato, pasarlo
+a una planilla, calcular algo, escribir un resumen. Anotá los pasos en orden, como si se los tuvieras
+que explicar a alguien que recién entra. En la sesión 6 vamos a ver qué parte de esa cadena puede
+hacer un agente hoy, y cuál no.

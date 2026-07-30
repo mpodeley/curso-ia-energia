@@ -107,7 +107,7 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
     <Ejercicio
       titulo="Ajustá la curva de declinación"
       sesion={sesion}
-      intro="Producción real de pozos de gas de Salta, de los mismos reservorios del subandino que se producen en Bolivia. Movés tres perillas hasta que la curva se pegue a los puntos: eso es ajustar un modelo a datos."
+      intro="Movés tres perillas hasta que la curva se pegue a los puntos: eso es ajustar un modelo a datos. Empezá por los pozos de escuela, que tienen respuesta exacta, y después pasá a los reales de Salta — de los mismos reservorios del subandino que se producen en Bolivia."
       onReset={reset}
     >
       <Field label="Pozo">
@@ -115,11 +115,34 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
           value={pozo.id}
           options={pozos.map((p) => ({
             value: p.id,
-            label: `${p.sigla} — ${p.area} (${p.formacion})`,
+            label:
+              p.tipo === 'escuela'
+                ? `Escuela · ${p.sigla} — ${p.formacion}`
+                : `Real · ${p.sigla} — ${p.area} (${p.formacion})`,
           }))}
           onChange={cambiarPozo}
         />
       </Field>
+
+      {pozo.tipo === 'real' && (
+        <div
+          style={{
+            padding: space.md,
+            marginBottom: space.lg,
+            borderLeft: `3px solid ${colors.accent.orange}`,
+            background: colors.surface,
+            borderRadius: radius.sm,
+            fontSize: 13,
+            color: colors.textSecondary,
+            maxWidth: '72ch',
+          }}
+        >
+          Este es un pozo real, y su curva no es solo el reservorio. Ahí adentro también están la
+          disponibilidad de compresión, las restricciones de planta, la contrapresión de línea y la carga de
+          líquido en el pozo. Arps describe un reservorio que se despresuriza solo; lo que medís es eso más
+          todo lo demás.
+        </div>
+      )}
 
       <div style={{ display: 'flex', gap: space.sm, flexWrap: 'wrap', marginBottom: space.lg }}>
         {FLUIDOS.map((f) => (
@@ -203,7 +226,21 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
             </span>
           </div>
 
-          <Solucion titulo="¿Qué mirar en este pozo?">{pozo.nota}</Solucion>
+          <Solucion titulo="¿Qué mirar en este pozo?">
+            {pozo.nota}
+            {pozo.verdad && (
+              <p style={{ marginTop: space.sm }}>
+                Pasá el gráfico a <strong>{fluido.unidad}/día</strong> con el botón de arriba y después poné{' '}
+                <strong>
+                  qi = {pozo.verdad.qi.toLocaleString('en-US')} {fluido.unidad}/día, Di ={' '}
+                  {(pozo.verdad.Di * 100).toFixed(1)} %/mes, b = {pozo.verdad.b.toFixed(2)}
+                </strong>
+                : con esos valores se generó la curva, y el modelo va a pasar por el medio de los puntos. Lo único
+                que sobra es el ruido de medición. El orden importa — esos números son caudal diario, y en volumen
+                mensual el calendario mete un serrucho que no está en el reservorio.
+              </p>
+            )}
+          </Solucion>
 
           <Solucion titulo="Por qué febrero siempre parece un mal mes">
             En metros cúbicos por mes vas a ver un serrucho: cada febrero cae y cada mes de 31 días sube. No es el
@@ -218,6 +255,17 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
             pozo se apaga rápido; en 1 es armónica y la cola se estira. Cambiar b casi no mueve los primeros meses,
             pero cambia enormemente la acumulada a 30 años — por eso una reserva estimada con pocos años de historia
             es un número frágil.
+          </Solucion>
+
+          <Solucion titulo="Por qué los pozos de escuela vienen primero">
+            Arps describe un reservorio que se despresuriza sin que nadie lo toque. Ningún pozo real cumple eso: lo
+            que se mide en la boca es el reservorio más la compresión disponible ese mes, más las restricciones de
+            planta, más la contrapresión de línea, más el líquido que se acumula en el pozo y lo ahoga. Por eso un
+            ajuste que cierra no prueba que entendiste el reservorio, y uno que no cierra no prueba que el reservorio
+            se portó mal. Los pozos de escuela existen para que aprendas a mover las perillas contra una curva que sí
+            tiene respuesta; los reales, para que veas cuánto de lo que medís no es geología. Un ingeniero de
+            reservorios trabaja con datos corregidos por horas de operación y presión de boca, no con el volumen
+            mensual crudo que ves acá.
           </Solucion>
         </>
       )}

@@ -1,41 +1,115 @@
 import { HallucinationHunt } from '../exercises/HallucinationHunt'
 
-<div className="callout callout--wip">
-  El ejercicio de esta página ya está publicado. La prosa completa de la sesión y el borrador de política
-  de uso se terminan antes de la fecha de dictado; lo que sigue es la estructura.
-</div>
+## Antes de la sesión
 
-## De qué va esta sesión
+*Tiempo estimado: 30–40 minutos.*
 
-Todo el curso vino sembrando límites: alucinaciones en la sesión 2, confidencialidad en la 3,
-verificación en la 4, agentes y acciones en la 6. Esta sesión los junta y los convierte en reglas
-operativas:
+1. **Tarea de la sesión 6:** la afirmación que marcaste en un texto generado. Traela sin veredicto:
+   la vamos a evaluar entre todos.
+2. **Ejercicio de esta página (20 min):** la cacería, los tres informes. Hacelos antes de leer el
+   resto de la página, porque el ejercicio pierde gracia si sabés qué buscar.
+3. **Lectura (10 min):** la sección de política de uso de más abajo, para llegar con opinión formada.
 
-- **Protocolo de verificación:** qué tipo de salida exige qué tipo de chequeo. No es lo mismo un
-  borrador de correo que una cifra que entra en un informe firmado.
-- **Confidencialidad en serio:** mapa de qué datos de la empresa pueden tocar herramientas gratuitas,
-  cuáles solo versiones corporativas y cuáles ninguna.
-- **Inteligencia artificial e infraestructura crítica:** por qué "un agente conectado al sistema de
-  control" es una frase que tiene que encender todas las alarmas, y qué separación debe existir entre
-  asistentes de oficina y sistemas de operación.
-- **Borrador de política de uso:** salimos de la sesión con un documento de una página, editable, que
-  cada equipo puede adoptar.
+## Todo el curso venía sembrando esto
 
-## Antes de discutir, cazar
+Alucinaciones en la sesión 2, confidencialidad en la 3, verificación en la 4, agentes que actúan en la
+6. Esta sesión los junta y los convierte en reglas que se puedan aplicar un martes a la mañana.
 
-La forma más rápida de entender cómo se equivoca un modelo es leer con atención algo que escribió. El
-ejercicio tiene tres textos con errores plantados, y todos los errores son de los que aparecen en la
-práctica: cifras inventadas con demasiada precisión, citas que no existen y normativa recitada de
-memoria.
+## Cazar antes de teorizar
 
-El puntaje mide dos cosas a propósito. Encontrar las invenciones, y no marcar de más: el objetivo es
-la puntería, no la desconfianza.
+La forma más rápida de entender cómo se equivoca un modelo es leer con atención algo que escribió. Los
+tres informes del ejercicio tienen errores plantados, y todos son de los que aparecen de verdad: cifras
+inventadas con demasiada precisión, causas que suenan razonables y no salen de ningún dato, citas
+completas de artículos que no existen, y normativa recitada de memoria.
+
+El puntaje mide dos cosas a propósito: cuántas invenciones encontraste y cuántas afirmaciones sanas
+marcaste de más. Desconfiar de todo no es prudencia, es otra forma de no leer.
 
 <HallucinationHunt sesion={7} />
 
-## Para discutir (borrador)
+## El protocolo de verificación
+
+Después de cazar un rato aparece el patrón, y el patrón es la regla: **lo verificable es lo que se
+deriva de lo que le diste; lo inventado es lo que tuvo que completar**. Un resumen de tu planilla
+suele estar bien. Una causa, una cita, un artículo de una norma o una estimación de beneficio casi
+nunca lo están.
+
+De ahí sale un protocolo corto, que se ajusta al costo del error:
+
+- **Borrador que vas a reescribir igual:** no se verifica, se reescribe. Un correo, un primer esquema.
+- **Texto que sale con tu nombre:** se verifica todo dato puntual — cifras, fechas, nombres — contra la
+  fuente. La prosa es tuya, los datos son de alguien.
+- **Cifra que entra en un informe firmado, una decisión o un documento contractual:** fuente primaria
+  a la vista, sin excepción. Si no podés abrir la fuente en dos minutos, el número no entra.
+- **Cualquier cosa sobre normativa:** con el texto de la norma adjunto, nunca de memoria. El costo del
+  error acá es legal, no reputacional.
+
+## Confidencialidad, en concreto
+
+La regla del primer día — si no lo pondrías en un correo a un desconocido, no va al chat — alcanza para
+empezar y no alcanza para una empresa. La versión operativa es un mapa de tres niveles:
+
+**Nunca, en ninguna herramienta externa:** producción real por pozo, reservas, precios y cláusulas de
+contratos, datos de socios, información de personas, cualquier cosa bajo acuerdo de confidencialidad.
+
+**Solo en herramientas contratadas por la empresa**, con acuerdo de tratamiento de datos y sin
+entrenamiento sobre lo que subís: documentos internos no críticos, procedimientos, correspondencia
+ordinaria.
+
+**En cualquier herramienta, incluso gratuita:** información pública, datos históricos ya publicados,
+textos sin datos propios, y datos inventados que imiten la estructura de los tuyos. Esta última
+categoría es más útil de lo que parece: para probar un análisis o afinar un prompt, una planilla
+sintética con las mismas columnas funciona igual de bien.
+
+## Infraestructura crítica
+
+Acá hay que ser directo. "Conectemos un agente al sistema de control" es una frase que tiene que
+encender todas las alarmas, y no porque el modelo sea tonto.
+
+El motivo es el de la sesión 6. El loop del agente funciona porque el error vuelve y se corrige: leyó
+mal, el resultado salió vacío, reintentó. Ese mecanismo supone que equivocarse es barato y reversible.
+En un sistema que opera equipos, ninguna de las dos cosas es cierta. Un paso equivocado no vuelve como
+mensaje de error: vuelve como una válvula en la posición que no era.
+
+A eso se suma que un modelo de lenguaje no tiene garantías de comportamiento. No podés demostrar que
+nunca va a hacer algo; podés observar que hasta ahora no lo hizo. Los sistemas de seguridad
+industriales se diseñan al revés, sobre garantías demostrables y modos de falla conocidos. Son dos
+culturas de ingeniería incompatibles, y la incompatibilidad no se arregla con un prompt mejor.
+
+La separación práctica es clara: los asistentes trabajan sobre **copias de datos**, del lado de la
+oficina, y producen recomendaciones que una persona ejecuta. Entre el modelo y cualquier cosa que se
+mueva en el campo hay un humano con nombre y apellido. Eso no es desconfianza en la tecnología, es la
+misma lógica por la que un cálculo de ingeniería lo firma alguien.
+
+## La política de uso, en una página
+
+Salimos de la sesión con un borrador editable que cubre cinco puntos: qué herramientas están
+aprobadas y cuáles no; el mapa de datos de tres niveles de más arriba; el protocolo de verificación
+según el destino del texto; qué hay que declarar cuando un documento se hizo con asistencia; y a quién
+se le consulta cuando aparece un caso nuevo. Ese último punto es el que más se olvida y el que hace
+que la política siga viva.
+
+## En la sesión en vivo (2 h)
+
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| Sus casos | 25 min | Evaluamos entre todos las afirmaciones que trajeron: ¿inventada, verificable o correcta? |
+| El protocolo | 25 min | Lo armamos según el costo del error, no según el tipo de herramienta |
+| Datos de la empresa | 25 min | Clasificamos datos reales del equipo en los tres niveles, discutiendo los casos de borde |
+| Agentes y operación | 25 min | Por qué el loop no sirve donde el error no es reversible |
+| La política | 20 min | Redactamos el borrador de una página, en vivo |
+
+## Para discutir
 
 1. ¿Qué error de inteligencia artificial sería más caro en tu área: uno visible y grosero, o uno sutil
-   que pasa revisiones?
+   que pasa las revisiones? ¿Cuál es más probable?
 2. ¿Quién debería poder decidir que una herramienta de este tipo toque datos o sistemas de operación?
-3. De las afirmaciones que marcaste mal en el ejercicio: ¿qué te hizo dudar de una frase que era correcta?
+   ¿Existe hoy ese rol?
+3. De las afirmaciones que marcaste mal en el ejercicio: ¿qué te hizo dudar de una que era correcta?
+   Esa señal falsa también cuesta tiempo.
+
+## Tarea para la sesión 8
+
+Leé el resumen del caso que elegimos en la sesión 5 y anotá dos cosas: qué te gustaría que muestre la
+demostración, y qué tendría que pasar para que tu equipo lo use de verdad después del curso. La
+segunda pregunta es la difícil.
