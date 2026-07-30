@@ -1,31 +1,51 @@
+import { EmbeddingsMap } from '../exercises/EmbeddingsMap'
+import { RagDemo } from '../exercises/RagDemo'
+
 <div className="callout callout--wip">
-  El contenido completo de esta sesión se publica a medida que avanza el curso. La estructura de abajo
-  es el plan de la sesión.
+  Los ejercicios de esta página ya están publicados. La prosa completa de la sesión se termina antes de
+  la fecha de dictado; lo que sigue es la estructura.
 </div>
 
 ## De qué va esta sesión
 
-Un LLM no conoce tus manuales de operación, tus normas internas ni tus informes históricos. **RAG**
-(retrieval-augmented generation) es la solución estándar: en vez de esperar que el modelo "sepa",
-se **busca** primero en tus documentos, se le **entrega** lo encontrado, y se le pide que responda
-**solo con eso**, citando la fuente.
+El modelo leyó medio internet, pero no leyó tu manual de operaciones, ni tus normas internas, ni los
+informes de tu campo. Esta sesión es sobre cómo se cierra ese hueco sin reentrenar nada.
 
-En la práctica, sin programar nada: [NotebookLM](https://notebooklm.google.com) (gratuito) permite
-subir un conjunto de documentos y conversar con ellos, con citas. Armamos en vivo un notebook con
-documentos técnicos públicos y vemos qué cambia respecto del chatbot "a secas".
+La técnica se llama generación aumentada por recuperación, y es más simple de lo que suena: buscar los
+fragmentos de tus documentos que responden la pregunta, pegarlos arriba de la pregunta, y mandarle todo
+eso al modelo. Responde con el libro abierto, y por eso puede citar de dónde sacó cada cosa.
+
+En la práctica, sin programar nada: [NotebookLM](https://notebooklm.google.com) permite subir un
+conjunto de documentos y conversar con ellos. Armamos uno en vivo con documentación técnica pública y
+vemos qué cambia respecto del chatbot a secas.
+
+## Primero, qué significa "parecido" para un modelo
+
+Antes de buscar por significado hay que ver cómo se mide el significado. El primer ejercicio convierte
+términos de la industria en vectores y los proyecta a un plano. Prestá atención a la familia de jerga:
+ahí se ve de un vistazo qué es exactamente lo que el modelo no sabe de tu trabajo.
+
+<EmbeddingsMap sesion={5} />
+
+## Y ahora sí, buscar en tus documentos
+
+El corpus del segundo ejercicio es un manual interno inventado para el curso, y eso es a propósito:
+cualquier documento público de verdad podría haber estado en el entrenamiento del modelo, y entonces no
+probaría nada.
+
+<RagDemo sesion={5} />
 
 ## Además: elegimos el caso real
 
-Esta sesión cierra el relevamiento que empezó en la sesión 1: con la encuesta y las tareas que fueron
-trayendo, presentamos una **shortlist de 2–3 casos candidatos** y elegimos entre todos el que se
+Esta sesión cierra el relevamiento que empezó en la sesión 1. Con la encuesta y las tareas que fueron
+trayendo, presentamos una lista corta de dos o tres casos candidatos y elegimos entre todos el que se
 construye para la sesión 8.
-
-## Ejercicios de esta página (en preparación)
-
-- **Demo RAG visible:** un corpus chico de documentos técnicos, con la búsqueda por similitud a la vista —
-  para entender qué hace NotebookLM por adentro.
 
 ## Para discutir (borrador)
 
-1. ¿Qué corpus de tu área (manuales, normas, informes históricos) haría más diferencia con un buscador conversacional encima?
-2. RAG reduce alucinaciones pero no las elimina: ¿dónde puede seguir fallando?
+1. ¿Qué corpus de tu área — manuales, normas, informes históricos — haría más diferencia con un buscador
+   conversacional encima?
+2. Si el buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que sea el
+   modelo. ¿Cómo te darías cuenta?
+3. ¿Qué documentos de tu empresa no podrían salir nunca de la red interna, y qué implica eso para una
+   herramienta así?

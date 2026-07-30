@@ -1,28 +1,36 @@
+import { DeclineLab } from '../exercises/DeclineLab'
+
 <div className="callout callout--wip">
-  El contenido completo de esta sesión se publica a medida que avanza el curso. La estructura de abajo
-  es el plan de la sesión.
+  Los ejercicios de esta página ya están publicados. La prosa completa de la sesión se termina antes de
+  la fecha de dictado; lo que sigue es la estructura.
 </div>
 
 ## De qué va esta sesión
 
-El salto de "el chatbot me escribe texto" a "el chatbot **analiza mis datos** conmigo". Tres movimientos:
+El salto de "el chatbot me escribe texto" a "el chatbot analiza mis datos conmigo". Tres movimientos:
 
-1. **CSV → análisis:** subimos una planilla de producción (datos públicos de un pozo argentino — cuenca
-   neuquina, dataset Capítulo IV) y le pedimos al chatbot estadísticas, gráficos y código Python. El
-   copiloto escribe el código; nosotros juzgamos el resultado.
-2. **PDF → tabla:** el ejercicio boliviano. Los datos públicos de producción en Bolivia viven en PDFs
-   (boletines de YPFB, informes de la ANH). Extraemos una tabla de producción por campo con el chatbot
-   y la **verificamos contra el original** — número por número. La lección es doble: sirve muchísimo, y
-   sin verificación no sirve de nada.
-3. **Curva de declinación:** el mini-laboratorio interactivo de esta página (sliders de declinación
-   hiperbólica sobre datos reales de pozo) — data science clásica de la industria, para conectar el
-   mundo nuevo con el que ya conocen.
+1. **CSV a análisis:** subimos una planilla de producción y le pedimos al chatbot estadísticas, gráficos
+   y código Python. El copiloto escribe el código; nosotros juzgamos el resultado.
+2. **PDF a tabla:** el ejercicio boliviano. Los datos públicos de producción en Bolivia viven en archivos
+   PDF (boletines de Yacimientos Petrolíferos Fiscales Bolivianos, informes de la Agencia Nacional de
+   Hidrocarburos). Extraemos una tabla de producción por campo con el chatbot y la verificamos contra el
+   original, número por número. La lección es doble: sirve muchísimo, y sin verificación no sirve de nada.
+3. **Curva de declinación:** el laboratorio de abajo, con datos reales de pozo. Data science clásica de
+   la industria, para conectar el mundo nuevo con el que ya conocés.
 
-## Ejercicios de esta página (en preparación)
+## La curva de declinación, con datos reales
 
-- **Mini-lab de declinación:** ajustá qi, Di y b contra la serie real de un pozo neuquino y mirá el error en vivo.
+Los pozos del ejercicio son de Aguaragüe, Ramos y Acambuco, en Salta. Producen de huamampampa, tupambi,
+icla y santa rosa: los mismos reservorios del subandino que se producen del lado boliviano de la
+frontera. La serie es la producción mensual declarada al Estado argentino entre 2019 y 2026, sin retocar.
+
+Ajustar una curva de declinación es el ejemplo más limpio de lo que hace un modelo. Tres parámetros,
+una fórmula de 1945, y la pregunta de siempre: ¿cuánto le creo a la extrapolación?
+
+<DeclineLab sesion={4} />
 
 ## Para discutir (borrador)
 
-1. ¿Qué dato de tu área vive hoy "atrapado" en PDFs o escaneos? ¿Cuánto valdría tenerlo en una tabla?
-2. Cuando el chatbot escribe código de análisis: ¿qué revisás, el código o el resultado? ¿Alcanza con uno?
+1. ¿Qué dato de tu área vive hoy atrapado en archivos PDF o escaneos? ¿Cuánto valdría tenerlo en una tabla?
+2. Cuando el chatbot escribe código de análisis: ¿revisás el código o el resultado? ¿Alcanza con uno?
+3. En el pozo que no ajusta con ningún parámetro: ¿qué información tenés vos que el modelo no puede tener?

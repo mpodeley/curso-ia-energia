@@ -1,0 +1,1747 @@
+{
+  "generated_at": "2026-07-30T14:09:45+00:00",
+  "source": "embeddings de intfloat/multilingual-e5-large, proyectados a 2D por PCA. Los vecinos se calculan en las 384 dimensiones originales, no en el mapa.",
+  "source_date": null,
+  "data": [
+    {
+      "id": "t0",
+      "termino": "reservorio",
+      "familia": "geología",
+      "x": -3.93,
+      "y": 26.94,
+      "vecinos": [
+        {
+          "termino": "auditoría de reservas",
+          "sim": 0.8694
+        },
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.8659
+        },
+        {
+          "termino": "gasoducto",
+          "sim": 0.8637
+        },
+        {
+          "termino": "tanque de almacenamiento",
+          "sim": 0.8589
+        },
+        {
+          "termino": "reservas probadas",
+          "sim": 0.8554
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t1",
+      "termino": "permeabilidad",
+      "familia": "geología",
+      "x": 1.53,
+      "y": -18.4,
+      "vecinos": [
+        {
+          "termino": "porosidad",
+          "sim": 0.8952
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8619
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8572
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8532
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8509
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t2",
+      "termino": "porosidad",
+      "familia": "geología",
+      "x": -25.78,
+      "y": -27.71,
+      "vecinos": [
+        {
+          "termino": "permeabilidad",
+          "sim": 0.8952
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8655
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8553
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8435
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.838
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t3",
+      "termino": "arenisca",
+      "familia": "geología",
+      "x": -83.33,
+      "y": -3.72,
+      "vecinos": [
+        {
+          "termino": "araña",
+          "sim": 0.8672
+        },
+        {
+          "termino": "testigo corona",
+          "sim": 0.8098
+        },
+        {
+          "termino": "camisa",
+          "sim": 0.8038
+        },
+        {
+          "termino": "planta compresora",
+          "sim": 0.8029
+        },
+        {
+          "termino": "gasoducto",
+          "sim": 0.8026
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t4",
+      "termino": "lutita",
+      "familia": "geología",
+      "x": -88.77,
+      "y": -12.56,
+      "vecinos": [
+        {
+          "termino": "gato",
+          "sim": 0.8298
+        },
+        {
+          "termino": "araña",
+          "sim": 0.8029
+        },
+        {
+          "termino": "arenisca",
+          "sim": 0.7983
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.7968
+        },
+        {
+          "termino": "burro",
+          "sim": 0.7955
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t5",
+      "termino": "roca madre",
+      "familia": "geología",
+      "x": -46.6,
+      "y": -28.68,
+      "vecinos": [
+        {
+          "termino": "falla geológica",
+          "sim": 0.8112
+        },
+        {
+          "termino": "camisa",
+          "sim": 0.8109
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8107
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8055
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8047
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t6",
+      "termino": "trampa estructural",
+      "familia": "geología",
+      "x": -7.96,
+      "y": -26.5,
+      "vecinos": [
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8595
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8343
+        },
+        {
+          "termino": "bombeo mecánico",
+          "sim": 0.8303
+        },
+        {
+          "termino": "falla geológica",
+          "sim": 0.8299
+        },
+        {
+          "termino": "presión de formación",
+          "sim": 0.8297
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t7",
+      "termino": "falla geológica",
+      "familia": "geología",
+      "x": 9.43,
+      "y": 5.03,
+      "vecinos": [
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8472
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8439
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8353
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8329
+        },
+        {
+          "termino": "curva de declinación",
+          "sim": 0.832
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t8",
+      "termino": "saturación de agua",
+      "familia": "geología",
+      "x": 24.1,
+      "y": -1.19,
+      "vecinos": [
+        {
+          "termino": "corte de agua",
+          "sim": 0.8784
+        },
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8553
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8493
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.843
+        },
+        {
+          "termino": "permeabilidad",
+          "sim": 0.8413
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t9",
+      "termino": "formación productiva",
+      "familia": "geología",
+      "x": 24.31,
+      "y": -33.01,
+      "vecinos": [
+        {
+          "termino": "presión de formación",
+          "sim": 0.9058
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8641
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8575
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8564
+        },
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8535
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t10",
+      "termino": "trépano",
+      "familia": "perforación",
+      "x": -49.05,
+      "y": -3.82,
+      "vecinos": [
+        {
+          "termino": "reservorio",
+          "sim": 0.823
+        },
+        {
+          "termino": "testigo corona",
+          "sim": 0.8138
+        },
+        {
+          "termino": "punzado",
+          "sim": 0.811
+        },
+        {
+          "termino": "trampa estructural",
+          "sim": 0.8108
+        },
+        {
+          "termino": "separador trifásico",
+          "sim": 0.8099
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t11",
+      "termino": "lodo de perforación",
+      "familia": "perforación",
+      "x": 43.53,
+      "y": -37.76,
+      "vecinos": [
+        {
+          "termino": "torre de perforación",
+          "sim": 0.9275
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8998
+        },
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8903
+        },
+        {
+          "termino": "presión de boca de pozo",
+          "sim": 0.8805
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8746
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t12",
+      "termino": "cementación",
+      "familia": "perforación",
+      "x": 0.1,
+      "y": -25.84,
+      "vecinos": [
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8752
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8719
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8693
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.864
+        },
+        {
+          "termino": "curva de declinación",
+          "sim": 0.8611
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t13",
+      "termino": "torre de perforación",
+      "familia": "perforación",
+      "x": 39.65,
+      "y": -52.67,
+      "vecinos": [
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.9275
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8968
+        },
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8901
+        },
+        {
+          "termino": "presión de boca de pozo",
+          "sim": 0.872
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.864
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t14",
+      "termino": "tubería de revestimiento",
+      "familia": "perforación",
+      "x": 15.41,
+      "y": -3.04,
+      "vecinos": [
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8357
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8348
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8347
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.823
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8221
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t15",
+      "termino": "profundidad medida",
+      "familia": "perforación",
+      "x": 0.31,
+      "y": -33.49,
+      "vecinos": [
+        {
+          "termino": "permeabilidad",
+          "sim": 0.8466
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8383
+        },
+        {
+          "termino": "medidor de caudal",
+          "sim": 0.8365
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8334
+        },
+        {
+          "termino": "porosidad",
+          "sim": 0.8313
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t16",
+      "termino": "testigo corona",
+      "familia": "perforación",
+      "x": -34.23,
+      "y": -35.7,
+      "vecinos": [
+        {
+          "termino": "reservas probadas",
+          "sim": 0.8396
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8385
+        },
+        {
+          "termino": "equipo de protección personal",
+          "sim": 0.8275
+        },
+        {
+          "termino": "simulacro de emergencia",
+          "sim": 0.8257
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8249
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t17",
+      "termino": "pozo desviado",
+      "familia": "perforación",
+      "x": 36.46,
+      "y": -12.02,
+      "vecinos": [
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.9096
+        },
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.9061
+        },
+        {
+          "termino": "presión de boca de pozo",
+          "sim": 0.8814
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8746
+        },
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8641
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t18",
+      "termino": "presión de formación",
+      "familia": "perforación",
+      "x": 36.1,
+      "y": -31.46,
+      "vecinos": [
+        {
+          "termino": "formación productiva",
+          "sim": 0.9058
+        },
+        {
+          "termino": "presión de boca de pozo",
+          "sim": 0.8906
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8541
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8522
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8517
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t19",
+      "termino": "caudal de gas",
+      "familia": "producción",
+      "x": 23.0,
+      "y": 91.24,
+      "vecinos": [
+        {
+          "termino": "medidor de caudal",
+          "sim": 0.9119
+        },
+        {
+          "termino": "gas sulfhídrico",
+          "sim": 0.8785
+        },
+        {
+          "termino": "gasoducto",
+          "sim": 0.876
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8749
+        },
+        {
+          "termino": "precio del gas natural",
+          "sim": 0.8506
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t20",
+      "termino": "curva de declinación",
+      "familia": "producción",
+      "x": 22.55,
+      "y": -7.69,
+      "vecinos": [
+        {
+          "termino": "cementación",
+          "sim": 0.8611
+        },
+        {
+          "termino": "punto de entrega",
+          "sim": 0.8416
+        },
+        {
+          "termino": "emisión fugitiva",
+          "sim": 0.8407
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8404
+        },
+        {
+          "termino": "separador trifásico",
+          "sim": 0.8392
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t21",
+      "termino": "presión de boca de pozo",
+      "familia": "producción",
+      "x": 58.05,
+      "y": -21.66,
+      "vecinos": [
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.9079
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.9059
+        },
+        {
+          "termino": "presión de formación",
+          "sim": 0.8906
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8814
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8805
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t22",
+      "termino": "bombeo mecánico",
+      "familia": "producción",
+      "x": 27.22,
+      "y": 8.4,
+      "vecinos": [
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8727
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8628
+        },
+        {
+          "termino": "batería de recolección",
+          "sim": 0.8627
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.862
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8599
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t23",
+      "termino": "relación gas-petróleo",
+      "familia": "producción",
+      "x": 41.05,
+      "y": 48.08,
+      "vecinos": [
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.8896
+        },
+        {
+          "termino": "gas sulfhídrico",
+          "sim": 0.8872
+        },
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8835
+        },
+        {
+          "termino": "precio del gas natural",
+          "sim": 0.8805
+        },
+        {
+          "termino": "caudal de gas",
+          "sim": 0.8749
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t24",
+      "termino": "corte de agua",
+      "familia": "producción",
+      "x": -1.47,
+      "y": 9.94,
+      "vecinos": [
+        {
+          "termino": "saturación de agua",
+          "sim": 0.8784
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8434
+        },
+        {
+          "termino": "planta deshidratadora",
+          "sim": 0.8408
+        },
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8397
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8355
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t25",
+      "termino": "punzado",
+      "familia": "producción",
+      "x": -52.94,
+      "y": -12.45,
+      "vecinos": [
+        {
+          "termino": "cementación",
+          "sim": 0.8354
+        },
+        {
+          "termino": "pescado",
+          "sim": 0.832
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8258
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8251
+        },
+        {
+          "termino": "bombeo mecánico",
+          "sim": 0.8243
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t26",
+      "termino": "terminación de pozo",
+      "familia": "producción",
+      "x": 50.89,
+      "y": -31.1,
+      "vecinos": [
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.9276
+        },
+        {
+          "termino": "presión de boca de pozo",
+          "sim": 0.9079
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.9061
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8903
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8901
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t27",
+      "termino": "intervención de pozo",
+      "familia": "producción",
+      "x": 51.77,
+      "y": -37.11,
+      "vecinos": [
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.9276
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.9096
+        },
+        {
+          "termino": "presión de boca de pozo",
+          "sim": 0.9059
+        },
+        {
+          "termino": "lodo de perforación",
+          "sim": 0.8998
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8968
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t28",
+      "termino": "separador trifásico",
+      "familia": "superficie",
+      "x": 20.55,
+      "y": 9.71,
+      "vecinos": [
+        {
+          "termino": "gas sulfhídrico",
+          "sim": 0.8533
+        },
+        {
+          "termino": "planta compresora",
+          "sim": 0.8481
+        },
+        {
+          "termino": "planta deshidratadora",
+          "sim": 0.8461
+        },
+        {
+          "termino": "medidor de caudal",
+          "sim": 0.8438
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8432
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t29",
+      "termino": "planta compresora",
+      "familia": "superficie",
+      "x": 8.01,
+      "y": -1.95,
+      "vecinos": [
+        {
+          "termino": "planta deshidratadora",
+          "sim": 0.9025
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8601
+        },
+        {
+          "termino": "batería de recolección",
+          "sim": 0.8528
+        },
+        {
+          "termino": "separador trifásico",
+          "sim": 0.8481
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8437
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t30",
+      "termino": "gasoducto",
+      "familia": "superficie",
+      "x": -22.21,
+      "y": 91.6,
+      "vecinos": [
+        {
+          "termino": "oleoducto",
+          "sim": 0.9429
+        },
+        {
+          "termino": "gas sulfhídrico",
+          "sim": 0.8801
+        },
+        {
+          "termino": "caudal de gas",
+          "sim": 0.876
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8696
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8637
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t31",
+      "termino": "oleoducto",
+      "familia": "superficie",
+      "x": -24.02,
+      "y": 75.07,
+      "vecinos": [
+        {
+          "termino": "gasoducto",
+          "sim": 0.9429
+        },
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8559
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8475
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8446
+        },
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.841
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t32",
+      "termino": "tanque de almacenamiento",
+      "familia": "superficie",
+      "x": 18.17,
+      "y": 9.94,
+      "vecinos": [
+        {
+          "termino": "reservorio",
+          "sim": 0.8589
+        },
+        {
+          "termino": "batería de recolección",
+          "sim": 0.8522
+        },
+        {
+          "termino": "auditoría de reservas",
+          "sim": 0.847
+        },
+        {
+          "termino": "planta deshidratadora",
+          "sim": 0.8385
+        },
+        {
+          "termino": "capacidad de transporte firme",
+          "sim": 0.8363
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t33",
+      "termino": "válvula de seguridad",
+      "familia": "superficie",
+      "x": 20.57,
+      "y": 18.25,
+      "vecinos": [
+        {
+          "termino": "equipo de protección personal",
+          "sim": 0.8424
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8363
+        },
+        {
+          "termino": "caudal de gas",
+          "sim": 0.8331
+        },
+        {
+          "termino": "medidor de caudal",
+          "sim": 0.8306
+        },
+        {
+          "termino": "auditoría de reservas",
+          "sim": 0.83
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t34",
+      "termino": "medidor de caudal",
+      "familia": "superficie",
+      "x": 24.8,
+      "y": 48.21,
+      "vecinos": [
+        {
+          "termino": "caudal de gas",
+          "sim": 0.9119
+        },
+        {
+          "termino": "separador trifásico",
+          "sim": 0.8438
+        },
+        {
+          "termino": "profundidad medida",
+          "sim": 0.8365
+        },
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8346
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8316
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t35",
+      "termino": "planta deshidratadora",
+      "familia": "superficie",
+      "x": 25.16,
+      "y": 13.53,
+      "vecinos": [
+        {
+          "termino": "planta compresora",
+          "sim": 0.9025
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8518
+        },
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8508
+        },
+        {
+          "termino": "batería de recolección",
+          "sim": 0.8492
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8484
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t36",
+      "termino": "batería de recolección",
+      "familia": "superficie",
+      "x": 26.34,
+      "y": -11.08,
+      "vecinos": [
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8638
+        },
+        {
+          "termino": "bombeo mecánico",
+          "sim": 0.8627
+        },
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8534
+        },
+        {
+          "termino": "planta compresora",
+          "sim": 0.8528
+        },
+        {
+          "termino": "tanque de almacenamiento",
+          "sim": 0.8522
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t37",
+      "termino": "permiso de trabajo",
+      "familia": "seguridad",
+      "x": -0.66,
+      "y": -33.0,
+      "vecinos": [
+        {
+          "termino": "formación productiva",
+          "sim": 0.848
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8341
+        },
+        {
+          "termino": "punto de entrega",
+          "sim": 0.8288
+        },
+        {
+          "termino": "equipo de protección personal",
+          "sim": 0.8276
+        },
+        {
+          "termino": "permeabilidad",
+          "sim": 0.8259
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t38",
+      "termino": "análisis de riesgo",
+      "familia": "seguridad",
+      "x": -14.95,
+      "y": -23.24,
+      "vecinos": [
+        {
+          "termino": "auditoría de reservas",
+          "sim": 0.8227
+        },
+        {
+          "termino": "simulacro de emergencia",
+          "sim": 0.8187
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8169
+        },
+        {
+          "termino": "pescado",
+          "sim": 0.8103
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8102
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t39",
+      "termino": "derrame de hidrocarburo",
+      "familia": "seguridad",
+      "x": 41.98,
+      "y": 48.77,
+      "vecinos": [
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.8961
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8835
+        },
+        {
+          "termino": "bombeo mecánico",
+          "sim": 0.8727
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8641
+        },
+        {
+          "termino": "gas sulfhídrico",
+          "sim": 0.861
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t40",
+      "termino": "emisión fugitiva",
+      "familia": "seguridad",
+      "x": 4.7,
+      "y": 2.5,
+      "vecinos": [
+        {
+          "termino": "curva de declinación",
+          "sim": 0.8407
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8365
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8327
+        },
+        {
+          "termino": "gas sulfhídrico",
+          "sim": 0.8323
+        },
+        {
+          "termino": "batería de recolección",
+          "sim": 0.8319
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t41",
+      "termino": "equipo de protección personal",
+      "familia": "seguridad",
+      "x": 23.2,
+      "y": -25.09,
+      "vecinos": [
+        {
+          "termino": "bombeo mecánico",
+          "sim": 0.8592
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8543
+        },
+        {
+          "termino": "formación productiva",
+          "sim": 0.8533
+        },
+        {
+          "termino": "batería de recolección",
+          "sim": 0.849
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8486
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t42",
+      "termino": "bloqueo y etiquetado",
+      "familia": "seguridad",
+      "x": -6.52,
+      "y": -15.33,
+      "vecinos": [
+        {
+          "termino": "batería de recolección",
+          "sim": 0.8265
+        },
+        {
+          "termino": "punto de entrega",
+          "sim": 0.824
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8219
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8209
+        },
+        {
+          "termino": "permeabilidad",
+          "sim": 0.8193
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t43",
+      "termino": "simulacro de emergencia",
+      "familia": "seguridad",
+      "x": 24.35,
+      "y": -0.15,
+      "vecinos": [
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8585
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8486
+        },
+        {
+          "termino": "equipo de protección personal",
+          "sim": 0.848
+        },
+        {
+          "termino": "bombeo mecánico",
+          "sim": 0.843
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8395
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t44",
+      "termino": "gas sulfhídrico",
+      "familia": "seguridad",
+      "x": 22.83,
+      "y": 71.68,
+      "vecinos": [
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8872
+        },
+        {
+          "termino": "gasoducto",
+          "sim": 0.8801
+        },
+        {
+          "termino": "caudal de gas",
+          "sim": 0.8785
+        },
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.861
+        },
+        {
+          "termino": "precio del gas natural",
+          "sim": 0.8605
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t45",
+      "termino": "contrato de suministro",
+      "familia": "comercial",
+      "x": 8.96,
+      "y": 10.36,
+      "vecinos": [
+        {
+          "termino": "punto de entrega",
+          "sim": 0.8516
+        },
+        {
+          "termino": "equipo de protección personal",
+          "sim": 0.8385
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8372
+        },
+        {
+          "termino": "formación productiva",
+          "sim": 0.8323
+        },
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.8275
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t46",
+      "termino": "precio del gas natural",
+      "familia": "comercial",
+      "x": 23.76,
+      "y": 67.0,
+      "vecinos": [
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8805
+        },
+        {
+          "termino": "gas sulfhídrico",
+          "sim": 0.8605
+        },
+        {
+          "termino": "caudal de gas",
+          "sim": 0.8506
+        },
+        {
+          "termino": "gasoducto",
+          "sim": 0.8468
+        },
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.8418
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t47",
+      "termino": "regalías hidrocarburíferas",
+      "familia": "comercial",
+      "x": 42.64,
+      "y": 41.11,
+      "vecinos": [
+        {
+          "termino": "derrame de hidrocarburo",
+          "sim": 0.8961
+        },
+        {
+          "termino": "relación gas-petróleo",
+          "sim": 0.8896
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8659
+        },
+        {
+          "termino": "auditoría de reservas",
+          "sim": 0.865
+        },
+        {
+          "termino": "reservas probadas",
+          "sim": 0.8601
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t48",
+      "termino": "reservas probadas",
+      "familia": "comercial",
+      "x": 25.36,
+      "y": -36.65,
+      "vecinos": [
+        {
+          "termino": "auditoría de reservas",
+          "sim": 0.9127
+        },
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.8601
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8575
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8554
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8517
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t49",
+      "termino": "punto de entrega",
+      "familia": "comercial",
+      "x": 4.35,
+      "y": -23.16,
+      "vecinos": [
+        {
+          "termino": "terminación de pozo",
+          "sim": 0.8543
+        },
+        {
+          "termino": "contrato de suministro",
+          "sim": 0.8516
+        },
+        {
+          "termino": "batería de recolección",
+          "sim": 0.8465
+        },
+        {
+          "termino": "formación productiva",
+          "sim": 0.8455
+        },
+        {
+          "termino": "pozo desviado",
+          "sim": 0.8431
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t50",
+      "termino": "auditoría de reservas",
+      "familia": "comercial",
+      "x": 32.28,
+      "y": -22.3,
+      "vecinos": [
+        {
+          "termino": "reservas probadas",
+          "sim": 0.9127
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8694
+        },
+        {
+          "termino": "regalías hidrocarburíferas",
+          "sim": 0.865
+        },
+        {
+          "termino": "intervención de pozo",
+          "sim": 0.8581
+        },
+        {
+          "termino": "tanque de almacenamiento",
+          "sim": 0.847
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t51",
+      "termino": "capacidad de transporte firme",
+      "familia": "comercial",
+      "x": -3.13,
+      "y": -31.39,
+      "vecinos": [
+        {
+          "termino": "tanque de almacenamiento",
+          "sim": 0.8363
+        },
+        {
+          "termino": "permeabilidad",
+          "sim": 0.8216
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8118
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8092
+        },
+        {
+          "termino": "contrato de suministro",
+          "sim": 0.8086
+        }
+      ],
+      "glosa": null
+    },
+    {
+      "id": "t52",
+      "termino": "árbol de navidad",
+      "familia": "jerga",
+      "x": -16.12,
+      "y": -0.11,
+      "vecinos": [
+        {
+          "termino": "precio del gas natural",
+          "sim": 0.8163
+        },
+        {
+          "termino": "equipo de protección personal",
+          "sim": 0.8124
+        },
+        {
+          "termino": "planta deshidratadora",
+          "sim": 0.812
+        },
+        {
+          "termino": "torre de perforación",
+          "sim": 0.8114
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8081
+        }
+      ],
+      "glosa": "El conjunto de válvulas montado en la boca del pozo para controlar el flujo."
+    },
+    {
+      "id": "t53",
+      "termino": "pescado",
+      "familia": "jerga",
+      "x": -56.77,
+      "y": 4.15,
+      "vecinos": [
+        {
+          "termino": "camisa",
+          "sim": 0.8617
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8443
+        },
+        {
+          "termino": "araña",
+          "sim": 0.8367
+        },
+        {
+          "termino": "porosidad",
+          "sim": 0.8343
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8334
+        }
+      ],
+      "glosa": "Una herramienta o un tramo de tubería que quedó suelto adentro del pozo y hay que recuperar."
+    },
+    {
+      "id": "t54",
+      "termino": "camisa",
+      "familia": "jerga",
+      "x": -82.18,
+      "y": 5.76,
+      "vecinos": [
+        {
+          "termino": "pescado",
+          "sim": 0.8617
+        },
+        {
+          "termino": "gato",
+          "sim": 0.851
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.838
+        },
+        {
+          "termino": "araña",
+          "sim": 0.8314
+        },
+        {
+          "termino": "equipo de protección personal",
+          "sim": 0.8156
+        }
+      ],
+      "glosa": "Un tubo interior que se corre dentro de otro, para aislar o reparar un tramo."
+    },
+    {
+      "id": "t55",
+      "termino": "araña",
+      "familia": "jerga",
+      "x": -86.73,
+      "y": -21.32,
+      "vecinos": [
+        {
+          "termino": "arenisca",
+          "sim": 0.8672
+        },
+        {
+          "termino": "pescado",
+          "sim": 0.8367
+        },
+        {
+          "termino": "gato",
+          "sim": 0.8365
+        },
+        {
+          "termino": "camisa",
+          "sim": 0.8314
+        },
+        {
+          "termino": "cementación",
+          "sim": 0.8278
+        }
+      ],
+      "glosa": "La cuña que sostiene la tubería mientras se enrosca o desenrosca."
+    },
+    {
+      "id": "t56",
+      "termino": "gato",
+      "familia": "jerga",
+      "x": -100.0,
+      "y": 26.82,
+      "vecinos": [
+        {
+          "termino": "camisa",
+          "sim": 0.851
+        },
+        {
+          "termino": "burro",
+          "sim": 0.8371
+        },
+        {
+          "termino": "araña",
+          "sim": 0.8365
+        },
+        {
+          "termino": "gasoducto",
+          "sim": 0.8346
+        },
+        {
+          "termino": "lutita",
+          "sim": 0.8298
+        }
+      ],
+      "glosa": "El dispositivo hidráulico que levanta carga en el equipo."
+    },
+    {
+      "id": "t57",
+      "termino": "burro",
+      "familia": "jerga",
+      "x": -96.13,
+      "y": 8.27,
+      "vecinos": [
+        {
+          "termino": "gato",
+          "sim": 0.8371
+        },
+        {
+          "termino": "araña",
+          "sim": 0.8163
+        },
+        {
+          "termino": "punzado",
+          "sim": 0.8124
+        },
+        {
+          "termino": "pescado",
+          "sim": 0.8116
+        },
+        {
+          "termino": "reservorio",
+          "sim": 0.8075
+        }
+      ],
+      "glosa": "La unidad de bombeo mecánico, por la forma en que cabecea."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-07-30T14:20:25+00:00",
+  "source": "informes redactados para el curso, con errores plantados a propósito. Los tipos de error son los que producen los modelos de verdad: falsa precisión, citas inventadas y normativa de memoria.",
+  "source_date": null,
+  "data": [
+    {
+      "id": "parte",
+      "label": "Parte de producción mensual",
+      "contexto": "Le pediste al chatbot que redacte el resumen del mes a partir de una planilla de producción que le pegaste. Esto es lo que devolvió. Marcá lo que no usarías sin verificar antes.",
+      "segmentos": [
+        {
+          "texto": "La producción de gas del bloque durante junio fue de 1,847,320 metros cúbicos.",
+          "porque": "Está bien: es la suma de la planilla que le pasaste, y podés recalcularla en dos minutos. Una cifra que sale de datos que vos entregaste es verificable."
+        },
+        {
+          "texto": "Esto representa una caída del 4.2% respecto de mayo.",
+          "porque": "También correcta y recalculable a partir de los mismos datos. Cuando el modelo hace una cuenta simple sobre números que le diste, suele acertar."
+        },
+        {
+          "texto": "La caída se explica principalmente por la parada programada de la planta compresora entre el 8 y el 11 de junio.",
+          "inventada": true,
+          "porque": "Acá inventó una causa. En la planilla hay caudales, no eventos operativos: el modelo no tiene forma de saber que hubo una parada, ni sus fechas. Construyó la explicación más plausible y la escribió con la misma seguridad que las cifras reales.",
+          "comoVerificar": "Buscá el parte de novedades o el registro de paradas del mes. Si no figura ninguna parada en esas fechas, la frase entera se cae — y con ella la conclusión del informe."
+        },
+        {
+          "texto": "El pozo con mayor aporte fue el AG-14, con 312,500 metros cúbicos.",
+          "inventada": true,
+          "porque": "Falsa precisión con nombre propio. El número termina en cifras redondas sospechosas y el identificador del pozo puede no existir en tu planilla. Los modelos completan nombres con el patrón que vieron, no con tu nomenclatura.",
+          "comoVerificar": "Buscá \"AG-14\" en la planilla original. Si no está, el modelo inventó el pozo. Si está, ordená por producción y comprobá que sea el primero."
+        },
+        {
+          "texto": "El corte de agua promedio se mantuvo estable en 18%.",
+          "porque": "Verificable contra la planilla. Es el tipo de afirmación agregada que el modelo calcula bien cuando tiene los datos delante."
+        },
+        {
+          "texto": "Dos pozos no reportaron producción durante la segunda quincena.",
+          "porque": "Correcta: los huecos están en la planilla y se ven contando filas vacías. Notá que el modelo dice que no reportaron, no por qué — cuando se limita a describir lo que ve, acierta."
+        },
+        {
+          "texto": "Se recomienda evaluar la instalación de bombeo neumático en los tres pozos de menor caudal, con una recuperación estimada de 45,000 metros cúbicos mensuales.",
+          "inventada": true,
+          "porque": "La recomendación puede ser razonable, pero el número de recuperación es puro invento: estimarlo requiere un modelo de reservorio y datos que el chatbot no tiene. Una cifra de beneficio inventada es la más peligrosa de todas, porque es la que termina en una presentación a gerencia.",
+          "comoVerificar": "Preguntale de dónde salió el número. Si no puede señalar un dato de la planilla ni un cálculo explícito, no existe. Una estimación así se hace con análisis nodal, no con una frase."
+        }
+      ],
+      "note": "Fijate el patrón: las tres invenciones son las tres afirmaciones que NO se pueden derivar de la planilla. El modelo no distingue entre resumir lo que tiene y completar lo que le falta, y escribe las dos cosas con el mismo tono."
+    },
+    {
+      "id": "paper",
+      "label": "Resumen de un artículo técnico",
+      "contexto": "Le pediste un resumen de un artículo sobre control de arena en pozos de gas. No le adjuntaste el artículo: se lo pediste de memoria. Marcá lo que no usarías sin verificar.",
+      "segmentos": [
+        {
+          "texto": "El control de arena busca evitar que los granos de la formación migren hacia el pozo y dañen las instalaciones.",
+          "porque": "Conocimiento general de la industria, repetido en miles de textos. Este tipo de afirmación amplia es donde los modelos son más confiables."
+        },
+        {
+          "texto": "Las dos familias principales de solución son las mallas o filtros y el empaque de grava.",
+          "porque": "También conocimiento general y correcto. Sirve como marco, no como dato."
+        },
+        {
+          "texto": "Según Al-Rashidi et al. (2019), publicado en el Journal of Petroleum Technology, las mallas expandibles redujeron el taponamiento un 63% en pozos del Golfo Pérsico.",
+          "inventada": true,
+          "porque": "La cita completa es el invento clásico: autor plausible, año plausible, revista real, porcentaje específico. Los modelos generan referencias que tienen la forma de una cita real sin corresponder a ningún artículo existente.",
+          "comoVerificar": "Buscá el título o los autores en OnePetro o en Google Scholar. Si no aparece el artículo exacto, la cita es inventada. Nunca copies una referencia sin haberla abierto."
+        },
+        {
+          "texto": "La elección entre una y otra depende de la distribución granulométrica de la arena y de la geometría del pozo.",
+          "porque": "Correcto y general. Es el tipo de criterio que aparece en cualquier manual de terminación."
+        },
+        {
+          "texto": "La norma API RP 58 establece que el empaque de grava debe dimensionarse con un factor de 6 a 8 veces el percentil D50 de la formación.",
+          "inventada": true,
+          "porque": "Mezcla una norma real con un contenido que no le corresponde. El criterio de dimensionamiento suele expresarse con el D50 pero el número y la norma citada están cambiados. Es más difícil de detectar que una cita falsa entera, justamente porque la norma existe.",
+          "comoVerificar": "Abrí la norma citada y buscá el criterio. Si tu empresa no la tiene, preguntale a alguien de terminación: un especialista detecta el número cambiado al instante."
+        },
+        {
+          "texto": "En pozos horizontales el problema se complica porque la distribución del flujo a lo largo del tramo no es uniforme.",
+          "porque": "Correcto y bien conocido. Otra afirmación de marco general."
+        }
+      ],
+      "note": "Las dos invenciones son las dos afirmaciones más específicas y más citables: la referencia y el número normativo. Es exactamente al revés de lo que dice la intuición — cuanto más precisa suena una frase generada sin fuente, más hay que desconfiar."
+    },
+    {
+      "id": "normativa",
+      "label": "Consulta sobre normativa",
+      "contexto": "Le preguntaste al chatbot qué obligaciones tiene la empresa para informar un venteo de gas. Marcá lo que no usarías sin verificar.",
+      "segmentos": [
+        {
+          "texto": "En general, los marcos regulatorios de hidrocarburos exigen registrar y reportar los eventos de venteo a la autoridad de aplicación.",
+          "porque": "Afirmación general y prudente, con el \"en general\" que corresponde. Sirve para orientarse, no para cumplir."
+        },
+        {
+          "texto": "El Decreto Supremo 28397, artículo 14, obliga a informar todo venteo mayor a 500 metros cúbicos dentro de las 48 horas.",
+          "inventada": true,
+          "porque": "Número de norma, artículo, umbral y plazo: los cuatro elementos suenan exactos y ninguno es verificable sin ir a la fuente. Las respuestas sobre normativa son el peor caso de uso de un chatbot sin documentos adjuntos, porque el costo del error es legal.",
+          "comoVerificar": "Buscá el texto de la norma en el boletín oficial o en la página de la autoridad. Cualquier consulta normativa se responde con el texto a la vista, no de memoria — ni la del modelo ni la tuya."
+        },
+        {
+          "texto": "La obligación alcanza tanto al venteo por emergencia como al venteo operativo programado, aunque el tratamiento suele diferir entre ambos.",
+          "porque": "Prudente y bien matizada: dice \"suele\" en vez de afirmar un régimen concreto. Cuando el modelo se cuida así, generalmente está en terreno general y no inventando un dato."
+        },
+        {
+          "texto": "Además debe presentarse un informe mensual consolidado con el volumen total venteado y las causas de cada evento.",
+          "inventada": true,
+          "porque": "Suena razonable y probablemente se parezca a la obligación real, y eso lo vuelve más peligroso que un disparate: una afirmación casi correcta pasa cualquier revisión rápida.",
+          "comoVerificar": "Contrastá con el procedimiento interno de gestión ambiental de tu empresa, que ya tiene mapeadas las obligaciones vigentes."
+        },
+        {
+          "texto": "Te recomiendo confirmar esto con el área legal o de medio ambiente antes de actuar, porque la normativa cambia y puede variar según la jurisdicción.",
+          "porque": "Esta advertencia es correcta y es lo más valioso de la respuesta. El problema es que aparece al final, después de dos párrafos escritos con total seguridad, y la mayoría de la gente ya dejó de leer."
+        }
+      ],
+      "note": "Este es el caso donde conviene no usar un chatbot sin adjuntarle la norma. Fijate que la respuesta trae su propia advertencia al final: el modelo \"sabe\" que puede estar equivocado y aun así escribió el número de decreto y el plazo sin ninguna marca de duda."
+    }
+  ]
+}

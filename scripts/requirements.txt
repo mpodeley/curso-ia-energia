@@ -1,0 +1,9 @@
+# Dependencias del precómputo offline. Nada de esto llega al navegador: los scripts
+# generan los JSON de public/data/ y ahí termina su trabajo.
+#
+#     pip install -r scripts/requirements.txt
+
+tiktoken          # tokenización real (o200k_base) para TokenizerLab
+requests          # descarga por stream del dataset Capítulo IV
+sentence-transformers  # embeddings multilingües para EmbeddingsMap y RagDemo
+scikit-learn      # PCA para proyectar los embeddings a 2D

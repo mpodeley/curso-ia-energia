@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react'
-import type { Envelope, FetchState, NextTokenContext, TokenizerExample } from '../types'
+import type {
+  Envelope,
+  FetchState,
+  NextTokenContext,
+  PozoDeclinacion,
+  PromptCaso,
+  RagCorpus,
+  TerminoEmbebido,
+  TokenizerExample,
+  TrazaAgente,
+} from '../types'
 import type { QuizPregunta } from '../engine/quiz'
+import type { Informe } from '../engine/hunt'
 
 /**
  * Loads a JSON file from ./data/ and unwraps the {generated_at, source,
@@ -60,3 +71,9 @@ export function useJson<T>(path: string): FetchState<T> {
 export const useTokenizerExamples = () => useJson<TokenizerExample[]>('./data/tokenizer_examples.json')
 export const useNextTokenDists = () => useJson<NextTokenContext[]>('./data/next_token_dists.json')
 export const useQuiz = (id: string) => useJson<QuizPregunta[]>(`./data/${id}.json`)
+export const usePromptCasos = () => useJson<PromptCaso[]>('./data/prompt_casos.json')
+export const useDeclineWells = () => useJson<PozoDeclinacion[]>('./data/decline_wells.json')
+export const useAgentTrace = () => useJson<TrazaAgente>('./data/agent_trace.json')
+export const useAlucinaciones = () => useJson<Informe[]>('./data/alucinaciones.json')
+export const useEmbeddings = () => useJson<TerminoEmbebido[]>('./data/embeddings_2d.json')
+export const useRagCorpus = () => useJson<RagCorpus>('./data/rag_corpus.json')

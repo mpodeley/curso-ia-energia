@@ -6,3 +6,6 @@ dist/
 # Bytecode de Python (no versionar)
 __pycache__/
 *.pyc
+
+# Datos crudos bajados por los scripts de precómputo (se regeneran, no se versionan)
+scripts/_cache/

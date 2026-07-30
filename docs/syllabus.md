@@ -3,7 +3,7 @@
 **Curso en vivo · 8 sesiones × 2 horas · online · en español**
 Primera edición diseñada para YPFB Andina.
 
-Dictado por **Matías Podeley** — 18 años en la industria (ingeniería de reservorios y desarrollo
+Dictado por **Matías Podeley** — dieciocho años en energía (ingeniería de reservorios y desarrollo
 de proyectos en YPF, Tecpetrol y Pluspetrol), hoy dedicado a la evaluación y seguridad de sistemas
 de IA para infraestructura energética. [podeley.ar](https://podeley.ar)
 
