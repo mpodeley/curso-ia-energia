@@ -1,4 +1,4 @@
-import{j as e}from"./index-C3MV-fiG.js";function a(n){const s={em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",...n.components};return e.jsxs(e.Fragment,{children:[e.jsx("div",{className:"callout callout--wip",children:e.jsx(s.p,{children:`El caso concreto de esta sesión se define en la sesión 5 y se construye entre esa fecha y esta. Lo que
+import{j as e}from"./index-CfQ8CGuP.js";function a(n){const s={em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",...n.components};return e.jsxs(e.Fragment,{children:[e.jsx("div",{className:"callout callout--wip",children:e.jsx(s.p,{children:`El caso concreto de esta sesión se define en la sesión 5 y se construye entre esa fecha y esta. Lo que
 sigue es todo lo que no depende de cuál se elija.`})}),`
 `,e.jsx(s.h2,{children:"Antes de la sesión"}),`
 `,e.jsx(s.p,{children:e.jsx(s.em,{children:"Tiempo estimado: 20–30 minutos."})}),`

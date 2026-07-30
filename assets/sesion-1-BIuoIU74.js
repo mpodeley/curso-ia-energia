@@ -1,7 +1,7 @@
-import{j as e}from"./index-C3MV-fiG.js";import{Q as r}from"./Quiz-E4oWu81Z.js";function a(s){const n={a:"a",em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:"Antes de la sesión"}),`
+import{j as e}from"./index-CfQ8CGuP.js";import{R as r,Q as o}from"./Recursos-kAW3c6BC.js";function a(s){const n={a:"a",em:"em",h2:"h2",li:"li",ol:"ol",p:"p",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...s.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h2,{children:"Antes de la sesión"}),`
 `,e.jsx(n.p,{children:e.jsx(n.em,{children:"Tiempo estimado: 30–40 minutos."})}),`
 `,e.jsxs(n.ol,{children:[`
-`,e.jsxs(n.li,{children:[e.jsx(n.strong,{children:"Video (8 min):"})," ",e.jsx(n.a,{href:"https://www.youtube.com/watch?v=LPZh9BOjkQs",children:"Large Language Models explained briefly — 3Blue1Brown"}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.strong,{children:"Video (8 min):"})," ",e.jsx(n.a,{href:"https://www.youtube.com/watch?v=LPZh9BOjkQs",children:"Explicación breve de los modelos de lenguaje — 3Blue1Brown"}),` (tiene audio en español, elegible en el reproductor)
 (activá los subtítulos en español). No hace falta entender todo: quedate con la idea de que el modelo `,e.jsx(n.em,{children:"aprende de texto"})," y ",e.jsx(n.em,{children:"genera texto"}),"."]}),`
 `,e.jsxs(n.li,{children:[e.jsx(n.strong,{children:"Cuenta gratuita (10 min):"}),` creá una cuenta en al menos uno de estos chatbots:
 `,e.jsx(n.a,{href:"https://chatgpt.com",children:"ChatGPT"}),", ",e.jsx(n.a,{href:"https://claude.ai",children:"Claude"})," o ",e.jsx(n.a,{href:"https://gemini.google.com",children:"Gemini"}),`.
@@ -13,6 +13,7 @@ Todos tienen nivel gratuito y es lo único que necesitás en todo el curso.`]}),
 `,e.jsx("div",{className:"callout",children:e.jsxs(n.p,{children:[e.jsx("strong",{children:"Regla desde el día uno:"}),` en estos ejercicios no uses datos confidenciales de la empresa —
 ni volúmenes reales de producción, ni nombres de contratos, ni información de partners. En la sesión 3 y la
 sesión 7 vemos en detalle por qué, y qué alternativas hay.`]})}),`
+`,e.jsx(r,{sesion:1}),`
 `,e.jsx(n.h2,{children:"El mapa: cuatro capas en una historia conocida"}),`
 `,e.jsx(n.p,{children:"Para alguien que trabajó con ingeniería de reservorios, nada de esto es tan nuevo como parece:"}),`
 `,e.jsxs(n.ul,{children:[`
@@ -37,7 +38,7 @@ primera sesión relevamos: qué rol tiene cada uno, qué tareas repetitivas le c
 maneja y en qué formato. Con eso, en la sesión 5 elegimos juntos un caso, y en la sesión 8 lo recorremos
 resuelto de punta a punta.`]}),`
 `,e.jsx(n.p,{children:e.jsx(n.em,{children:"(El enlace a la encuesta se comparte en vivo durante la sesión.)"})}),`
-`,e.jsx(r,{data:"quiz_s1",sesion:1}),`
+`,e.jsx(o,{data:"quiz_s1",sesion:1}),`
 `,e.jsx(n.h2,{children:"Para discutir"}),`
 `,e.jsxs(n.ol,{children:[`
 `,e.jsxs(n.li,{children:["¿Qué tarea de tu semana laboral te parece ",e.jsx(n.strong,{children:"más"})," automatizable con lo que viste hoy? ¿Y cuál menos?"]}),`
