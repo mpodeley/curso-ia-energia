@@ -14,6 +14,11 @@ compatibility_date = "2026-08-01"
 #   custom_domain = true
 workers_dev = true
 
+# Cada deploy publicaría además una URL propia de su versión, todas apuntando a
+# los mismos secretos y a la misma base. Para una herramienta de clase en vivo
+# eso es superficie de más sin nada a cambio: la única URL es la de arriba.
+preview_urls = false
+
 [vars]
 # La estampa el Worker en cada fila; el cliente no la manda y no puede falsearla.
 # Cohorte nueva = cambiar esta línea y `npm run deploy`. Las filas viejas quedan
@@ -27,7 +32,7 @@ ORIGENES = "https://podeley.github.io,http://localhost:5173,http://127.0.0.1:517
 binding = "DB"
 database_name = "curso-energia-ypfb"
 # Lo devuelve `npx wrangler d1 create curso-energia-ypfb`.
-database_id = "PENDIENTE-correr-wrangler-d1-create"
+database_id = "9b2c26a5-245f-4ca2-a08d-c686ab4bf87d"
 
 # Los tres secretos NO van acá. Se cargan una vez con:
 #   npx wrangler secret put PIN_ALUMNO       (el que se proyecta en una slide)
