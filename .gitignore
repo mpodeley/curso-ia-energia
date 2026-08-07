@@ -14,3 +14,8 @@ scripts/_cache/
 # Los PDF de public/handouts/ SÍ se versionan (generarlos necesita navegador).
 public/slides/
 build/
+
+# Worker: secretos locales y estado de wrangler
+worker/.dev.vars
+worker/.wrangler/
+worker/node_modules/

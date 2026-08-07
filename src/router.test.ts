@@ -20,11 +20,17 @@ describe('parseHash', () => {
     expect(parseHash('#/recursos')).toEqual({ page: 'recursos' })
   })
 
+  it('routes the instructor panel', () => {
+    expect(parseHash('#/panel')).toEqual({ page: 'panel' })
+    expect(parseHash('#/panel/')).toEqual({ page: 'panel' })
+  })
+
   it('hrefFor round-trips through parseHash', () => {
     const routes = [
       { page: 'home' },
       { page: 'sesion', n: 3 },
       { page: 'recursos' },
+      { page: 'panel' },
     ] as const
     for (const r of routes) expect(parseHash(hrefFor(r))).toEqual(r)
   })

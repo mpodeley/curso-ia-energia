@@ -6,7 +6,14 @@ import { useEffect, useState } from 'react'
 
 export const N_SESIONES = 8
 
-export type Route = { page: 'home' } | { page: 'sesion'; n: number } | { page: 'recursos' }
+// 'panel' es el tablero del instructor. No está en la navegación del masthead
+// —nadie lo encuentra sin que se lo digan— pero tampoco es secreto: lo que lo
+// protege es el PIN que verifica el Worker, no el hecho de estar sin enlazar.
+export type Route =
+  | { page: 'home' }
+  | { page: 'sesion'; n: number }
+  | { page: 'recursos' }
+  | { page: 'panel' }
 
 export function parseHash(hash: string): Route {
   const h = hash.replace(/^#\/?/, '').replace(/\/+$/, '')
@@ -15,6 +22,7 @@ export function parseHash(hash: string): Route {
     if (Number.isInteger(n) && n >= 1 && n <= N_SESIONES) return { page: 'sesion', n }
   }
   if (h === 'recursos') return { page: 'recursos' }
+  if (h === 'panel') return { page: 'panel' }
   return { page: 'home' }
 }
 
@@ -26,6 +34,8 @@ export function hrefFor(route: Route): string {
       return `#/sesion/${route.n}`
     case 'recursos':
       return '#/recursos'
+    case 'panel':
+      return '#/panel'
   }
 }
 

@@ -383,6 +383,7 @@ input[type='range'] {
   accent-color: var(--pd-primary);
 }
 select,
+textarea,
 input[type='number'],
 input[type='text'] {
   font: inherit;
@@ -392,6 +393,13 @@ input[type='text'] {
   border: 1px solid var(--pd-border);
   border-radius: var(--pd-r-1);
   padding: 0.45rem 0.6rem;
+}
+select:focus-visible,
+textarea:focus-visible,
+input[type='number']:focus-visible,
+input[type='text']:focus-visible {
+  outline: 2px solid var(--pd-focus);
+  outline-offset: 1px;
 }
 
 /* ---------- footer ---------- */
@@ -430,6 +438,17 @@ input[type='text'] {
   .sess-card {
     transition: none;
   }
+}
+
+/* ---------- panel del instructor (#/panel) ---------- */
+/* El modo proyección sube el cuerpo de letra y saca el cromo del sitio: lo que
+   queda en pantalla compartida es solo la pregunta y las barras. */
+.panel[data-proyeccion='true'] {
+  font-size: 1.35rem;
+}
+body:has(.panel[data-proyeccion='true']) .masthead,
+body:has(.panel[data-proyeccion='true']) .site-footer {
+  display: none;
 }
 
 /* ---------- enlaces al deck, en la cabecera de la sesión ---------- */

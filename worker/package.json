@@ -1,0 +1,18 @@
+{
+  "name": "curso-ia-energia-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "schema:local": "wrangler d1 execute curso-ia-energia --local --file=./sql/schema.sql",
+    "schema:remote": "wrangler d1 execute curso-ia-energia --remote --file=./sql/schema.sql",
+    "export": "wrangler d1 export curso-ia-energia --remote --output=../docs/respuestas/backup.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260804.1",
+    "wrangler": "^4.119.0"
+  }
+}

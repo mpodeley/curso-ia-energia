@@ -1,0 +1,36 @@
+name = "curso-ia-energia-api"
+main = "src/index.ts"
+compatibility_date = "2026-08-01"
+
+# Arranca en el subdominio workers.dev. Un custom domain (curso-api.podeley.ar)
+# exigiría la zona podeley.ar en Cloudflare, y hoy los NS están en Porkbun
+# apuntando a GitHub Pages: migrarlos es mover un dominio con sitio vivo y
+# subdominios, no algo para hacer días antes de una clase.
+#
+# Si el firewall de YPFB bloquea *.workers.dev —probarlo con una semana de
+# anticipación, ver README— ahí sí conviene migrar la zona y agregar acá:
+#   [[routes]]
+#   pattern = "curso-api.podeley.ar"
+#   custom_domain = true
+workers_dev = true
+
+[vars]
+# La estampa el Worker en cada fila; el cliente no la manda y no puede falsearla.
+# Cohorte nueva = cambiar esta línea y `npm run deploy`. Las filas viejas quedan
+# consultables desde el selector de edición del panel.
+EDICION = "ypfb-andina-2026-08"
+
+# Allowlist exacta de CORS. Sin esto no entra ningún origen.
+ORIGENES = "https://mpodeley.github.io,http://localhost:5173,http://127.0.0.1:5173"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "curso-ia-energia"
+# Lo devuelve `npx wrangler d1 create curso-ia-energia`.
+database_id = "PENDIENTE-correr-wrangler-d1-create"
+
+# Los tres secretos NO van acá. Se cargan una vez con:
+#   npx wrangler secret put PIN_ALUMNO       (el que se proyecta en una slide)
+#   npx wrangler secret put PIN_INSTRUCTOR
+#   npx wrangler secret put TOKEN_SECRET     (openssl rand -hex 32)
+# En local van en worker/.dev.vars, que está gitignoreado.

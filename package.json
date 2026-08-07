@@ -10,13 +10,16 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
+    "typecheck:worker": "tsc -p worker --noEmit",
     "data": "python scripts/build_data.py",
     "slides": "node tools/slides-assets.mjs && marp -I slides -o public/slides",
     "slides:preview": "node tools/slides-assets.mjs && marp -I slides -o public/slides -w -p",
     "slides:serve": "marp -s slides",
     "slides:pdf": "marp --allow-local-files --pdf --pdf-notes --pdf-outlines -I slides -o public/handouts",
     "slides:notes": "marp --notes -I slides -o build/notas",
-    "slides:fonts": "node tools/marp-fonts.mjs"
+    "slides:fonts": "node tools/marp-fonts.mjs",
+    "worker:dev": "npm --prefix worker run dev",
+    "worker:deploy": "npm --prefix worker run deploy"
   },
   "dependencies": {
     "react": "^19.1.1",

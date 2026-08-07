@@ -16,6 +16,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
+import type { PalabraUbicada } from '../engine/pulso'
 import { chart, colors } from '../theme'
 import type { NextTokenOption } from '../types'
 
@@ -272,3 +273,85 @@ export function EmbeddingScatter({
 }
 
 export { colors as themeColors }
+
+/**
+ * Count bars for the live pulso panel. Two differences with ProbBarChart, both
+ * because this one gets projected while it fills:
+ *   - Keeps the order it is given (the options are a scale, not a ranking).
+ *   - `grande` bumps every size for the proyección mode.
+ */
+export function ConteoBarChart({
+  data,
+  grande = false,
+}: {
+  data: { etiqueta: string; n: number }[]
+  grande?: boolean
+}) {
+  const fuente = grande ? 20 : 13
+  const alturaFila = grande ? 54 : 38
+  const corte = grande ? 34 : 44
+  return (
+    <ChartBox height={data.length * alturaFila + 40}>
+      <BarChart data={data} layout="vertical" margin={{ top: 4, right: 48, bottom: 4, left: 8 }}>
+        <CartesianGrid stroke={chart.grid} horizontal={false} />
+        {/* dataMax y no el dominio "lindo" de Recharts: con una sola respuesta,
+            el default dibuja un eje que llega a 4 y la barra parece diminuta. */}
+        <XAxis
+          type="number"
+          domain={[0, (max: number) => Math.max(1, max)]}
+          allowDecimals={false}
+          tick={{ ...axisTick, fontSize: fuente }}
+          stroke={chart.grid}
+        />
+        <YAxis
+          type="category"
+          dataKey="etiqueta"
+          width={grande ? 330 : 270}
+          tick={{ ...axisTick, fontSize: fuente }}
+          stroke={chart.grid}
+          // Recortar en vez de dejar que envuelva a tres líneas y se pisen las
+          // filas. El texto completo sigue estando en el tooltip.
+          tickFormatter={(t: string) => (t.length > corte ? `${t.slice(0, corte - 1)}…` : t)}
+        />
+        <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => [String(v), 'respuestas']} />
+        <Bar dataKey="n" isAnimationActive={false} radius={[0, 4, 4, 0]} fill={chart.fill[1]} />
+      </BarChart>
+    </ChartBox>
+  )
+}
+
+/**
+ * Word cloud for free-word pulsos. Hand-rolled SVG in the EmbeddingScatter idiom
+ * rather than a library, because the positions have to come from
+ * engine/pulso.ts `layoutNube` — deterministic row packing, so the words do not
+ * jump around between two-second polls while the room is watching.
+ */
+export function NubeDePalabras({
+  palabras,
+  ancho = 860,
+  alto = 320,
+}: {
+  palabras: PalabraUbicada[]
+  ancho?: number
+  alto?: number
+}) {
+  return (
+    <svg viewBox={`0 0 ${ancho} ${alto}`} width="100%" style={{ display: 'block' }} role="img">
+      {palabras.map((p) => (
+        <text
+          key={p.palabra}
+          x={p.x}
+          y={p.y}
+          fontSize={p.size}
+          fontFamily="var(--pd-font-display)"
+          fontWeight={500}
+          // Rota los cuatro acentos de la identidad por frecuencia, igual que
+          // .three del brochure: el más dicho queda en naranja.
+          fill={chart.line[Math.min(3, Math.max(0, 4 - Math.ceil((p.size / 64) * 4)))]}
+        >
+          {p.palabra}
+        </text>
+      ))}
+    </svg>
+  )
+}
