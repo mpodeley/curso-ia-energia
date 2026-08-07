@@ -21,7 +21,7 @@ workers_dev = true
 EDICION = "ypfb-andina-2026-08"
 
 # Allowlist exacta de CORS. Sin esto no entra ningún origen.
-ORIGENES = "https://mpodeley.github.io,http://localhost:5173,http://127.0.0.1:5173"
+ORIGENES = "https://podeley.github.io,http://localhost:5173,http://127.0.0.1:5173"
 
 [[d1_databases]]
 binding = "DB"

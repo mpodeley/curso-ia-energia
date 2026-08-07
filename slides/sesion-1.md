@@ -3,7 +3,7 @@ marp: true
 theme: podeley
 paginate: true
 header: 'IA generativa · petróleo y gas · **Sesión 1**'
-footer: 'mpodeley.github.io/curso-ia-energia'
+footer: 'podeley.github.io/curso-ia-energia'
 ---
 
 <!-- _class: portada -->
@@ -75,7 +75,7 @@ datos, lo vemos en la 7. Hoy trabajamos con cuentas gratuitas.
 
 ## Antes de empezar, entrá al sitio
 
-`mpodeley.github.io/curso-ia-energia`
+`podeley.github.io/curso-ia-energia`
 
 Vamos a usar la página de la sesión 1 varias veces hoy. El PIN del curso lo dicto en voz alta.
 
@@ -415,7 +415,7 @@ y los ejercicios, y no hay que poner nada confidencial.
 
 ## La encuesta está en la página de la sesión 1
 
-`mpodeley.github.io/curso-ia-energia`
+`podeley.github.io/curso-ia-energia`
 
 Son doce preguntas y unos quince minutos. Sin datos confidenciales.
 
@@ -527,7 +527,7 @@ suponiendo que ya jugaron.
 
 # Nos vemos en la sesión 2
 
-El quiz, los recursos y los ejercicios quedan en la página · **mpodeley.github.io/curso-ia-energia**
+El quiz, los recursos y los ejercicios quedan en la página · **podeley.github.io/curso-ia-energia**
 
 <!--
 2 min · acumulado 2:10

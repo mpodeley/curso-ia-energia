@@ -27,6 +27,12 @@ npm run data       # regenera public/data/ (requiere: pip install tiktoken)
 npm run typecheck  # tsc --noEmit    ·    npm run typecheck:worker para worker/
 ```
 
+El brochure son dos artefactos versionados que se regeneran a mano cuando cambia
+`docs/brochure/brochure.html`: `python scripts/build_qr.py` rehace el QR desde la URL del
+curso, y `SHOTS_MODULES_DIR=<dir-con-playwright-core> node tools/brochure-pdf.mjs` rehace
+`public/brochure.pdf`. Los dos necesitan algo que no está en el repo —segno y un chromium—
+y por eso el resultado se versiona en vez de construirse en CI.
+
 ## Slides
 
 Los decks de cada sesión son markdown plano, editables a mano en cualquier editor. El tema
