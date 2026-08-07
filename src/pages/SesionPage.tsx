@@ -26,6 +26,16 @@ export function SesionPage({ n }: { n: number }) {
             ))}
           </ul>
         </div>
+        {/* Rutas relativas sin barra inicial: es lo que resuelve bien con
+            base:'./' bajo hash routing, tanto en Pages como en dev. */}
+        {sesion.slides && (
+          <p className="deck-links">
+            <a href={`slides/sesion-${sesion.n}.html`} target="_blank" rel="noopener">
+              Diapositivas de la sesión
+            </a>
+            <a href={`handouts/sesion-${sesion.n}.pdf`}>PDF para imprimir</a>
+          </p>
+        )}
       </header>
 
       <article className="prose">

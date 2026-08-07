@@ -84,13 +84,20 @@ def recursos_declarados() -> list[dict]:
 
 
 def otros_links() -> list[tuple[str, str]]:
-    """Plain hrefs from the resources page and the session prose."""
+    """Plain hrefs from the resources page, the session prose and the decks."""
     fuera = []
     objetivos = [os.path.join(SRC, 'pages', 'RecursosPage.tsx')]
     contenido = os.path.join(SRC, 'content')
     objetivos += [
         os.path.join(contenido, f) for f in os.listdir(contenido) if f.endswith('.mdx')
     ]
+    # Los decks también: un curso que enseña verificación no puede proyectar un
+    # enlace muerto, y las slides llevan URLs propias (el sitio, los QR).
+    slides = os.path.join(HERE, '..', 'slides')
+    if os.path.isdir(slides):
+        objetivos += [
+            os.path.join(slides, f) for f in os.listdir(slides) if f.endswith('.md')
+        ]
     for ruta in objetivos:
         texto = open(ruta, encoding='utf-8').read()
         for url in re.findall(r'https?://[^\s"\')\]]+', texto):

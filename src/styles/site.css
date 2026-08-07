@@ -431,3 +431,25 @@ input[type='text'] {
     transition: none;
   }
 }
+
+/* ---------- enlaces al deck, en la cabecera de la sesión ---------- */
+.deck-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pd-sp-5);
+  margin: var(--pd-sp-5) 0 0;
+}
+.deck-links a {
+  font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-cap);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pd-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pd-border);
+  padding-bottom: 2px;
+}
+.deck-links a:hover {
+  color: var(--pd-primary);
+  border-color: var(--pd-primary);
+}

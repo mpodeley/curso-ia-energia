@@ -9,6 +9,8 @@ export type Sesion = {
   resumen: string
   objetivos: string[]
   estado: 'lista' | 'en-preparacion'
+  /** Hay deck publicado en slides/sesion-N.html y handout en handouts/sesion-N.pdf. */
+  slides?: boolean
 }
 
 export const SESIONES: Sesion[] = [
@@ -22,6 +24,7 @@ export const SESIONES: Sesion[] = [
       'Completar la encuesta de relevamiento que alimenta el caso real del final del curso',
     ],
     estado: 'lista',
+    slides: true,
   },
   {
     n: 2,

@@ -9,3 +9,8 @@ __pycache__/
 
 # Datos crudos bajados por los scripts de precómputo (se regeneran, no se versionan)
 scripts/_cache/
+
+# Decks Marp generados: los produce npm run build desde slides/*.md.
+# Los PDF de public/handouts/ SÍ se versionan (generarlos necesita navegador).
+public/slides/
+build/
