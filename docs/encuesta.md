@@ -1,7 +1,17 @@
 # Encuesta de relevamiento — Sesión 1
 
-Se completa en vivo durante la sesión 1 (15 min). Implementar como Google Form.
+Se completa en vivo durante la sesión 1 (15 min).
 Objetivo: alimentar la shortlist de casos (sesión 5) y el caso real final (sesión 8).
+
+**Ya está implementada, dentro del sitio.** Las preguntas viven en `src/content/encuesta-s1.ts`
+y el formulario es `src/exercises/EncuestaS1.tsx`; las respuestas se ven en `#/panel`. Este
+documento queda como el diseño y la justificación de cada bloque. Para cambiar una pregunta hay
+que tocar el archivo TS, y sin renombrar su `id`: es parte de la clave con la que se guardaron
+las respuestas que ya existan. El plan original era un Google Form; se descartó para poder ver
+lo que completan en vivo sin salir del sitio.
+
+La primera pregunta perdió el "nombre (opcional)": ahora el nombre lo toma la tarjeta de
+identidad, una vez por navegador para todo el curso.
 
 **Nota de privacidad para el encabezado del form:** "Las respuestas se usan solo para diseñar
 los ejercicios y el caso final del curso. No pidas ni incluyas datos confidenciales de la
