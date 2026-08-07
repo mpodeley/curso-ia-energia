@@ -25,6 +25,17 @@ ROOT = os.path.join(os.path.dirname(__file__), '..', 'public', 'data')
 
 TOKENIZER_TEXTS = [
     {
+        # El pulso s2-cuantos-tokens pregunta por esta frase justo antes de que
+        # abran el laboratorio, así que tiene que estar acá: sin ella la clase
+        # tendría que creerle al instructor en vez de mirar el conteo.
+        'id': 'direccional',
+        'label': 'Dos palabras que usás todos los días',
+        'texto': 'perforación direccional',
+        'note': 'Dos palabras, seis tokens. La misma idea en inglés, «directional drilling», '
+        'usa tres: la mitad. Nada de esto lo decidió alguien pensando en la industria; salió '
+        'de qué texto abundaba cuando se entrenó el tokenizador.',
+    },
+    {
         'id': 'produccion',
         'label': 'Parte de producción (español)',
         'texto': 'El pozo Sirari-12 produjo 4.850 barriles de petróleo por día.',

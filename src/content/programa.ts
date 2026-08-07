@@ -36,6 +36,7 @@ export const SESIONES: Sesion[] = [
       'Derivar de esa mecánica por qué los modelos alucinan',
     ],
     estado: 'lista',
+    slides: true,
   },
   {
     n: 3,

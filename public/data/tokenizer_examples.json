@@ -1,8 +1,22 @@
 {
-  "generated_at": "2026-07-21T22:00:21+00:00",
+  "generated_at": "2026-08-07T20:48:09+00:00",
   "source": "tokenizador o200k_base (GPT-4o) vía tiktoken",
   "source_date": null,
   "data": [
+    {
+      "id": "direccional",
+      "label": "Dos palabras que usás todos los días",
+      "texto": "perforación direccional",
+      "tokens": [
+        "per",
+        "for",
+        "ación",
+        " dire",
+        "cc",
+        "ional"
+      ],
+      "note": "Dos palabras, seis tokens. La misma idea en inglés, «directional drilling», usa tres: la mitad. Nada de esto lo decidió alguien pensando en la industria; salió de qué texto abundaba cuando se entrenó el tokenizador."
+    },
     {
       "id": "produccion",
       "label": "Parte de producción (español)",
