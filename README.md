@@ -1,4 +1,4 @@
-# curso-ia-energia
+# curso-energia-ypfb
 
 Sitio del curso **"IA generativa para la industria del petróleo y gas"** — 8 sesiones × 2 h,
 en vivo por video, con materiales auto-guiados y ejercicios interactivos que corren enteros en
@@ -65,8 +65,8 @@ abiertas, y los sirve al panel del instructor en `#/panel`. Se deploya a mano, a
 
 ```bash
 cd worker && npm install && npx wrangler login
-npx wrangler d1 create curso-ia-energia          # el database_id va a wrangler.toml
-npx wrangler d1 execute curso-ia-energia --remote --file=./sql/schema.sql
+npx wrangler d1 create curso-energia-ypfb          # el database_id va a wrangler.toml
+npx wrangler d1 execute curso-energia-ypfb --remote --file=./sql/schema.sql
 npx wrangler secret put PIN_ALUMNO               # el que se dicta en clase
 npx wrangler secret put PIN_INSTRUCTOR
 npx wrangler secret put TOKEN_SECRET             # openssl rand -hex 32
@@ -75,7 +75,7 @@ npx wrangler deploy                              # la URL resultante va a .env.p
 
 Cohorte nueva: cambiar `EDICION` en `wrangler.toml`, rotar `PIN_ALUMNO` y deployar. Las
 respuestas viejas quedan consultables desde el selector de edición del panel. Backup:
-`npx wrangler d1 export curso-ia-energia --remote --output=backup.sql`, o el botón
+`npx wrangler d1 export curso-energia-ypfb --remote --output=backup.sql`, o el botón
 **Exportar CSV** del panel.
 
 Ningún PIN vive en el cliente: todo lo que está en `src/` es público y los tres secretos los

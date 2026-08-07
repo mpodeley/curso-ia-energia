@@ -1,8 +1,8 @@
 -- Esquema de la base del curso (Cloudflare D1 / SQLite).
 --
 -- Aplicar:
---   local:  npx wrangler d1 execute curso-ia-energia --local  --file=./sql/schema.sql
---   remoto: npx wrangler d1 execute curso-ia-energia --remote --file=./sql/schema.sql
+--   local:  npx wrangler d1 execute curso-energia-ypfb --local  --file=./sql/schema.sql
+--   remoto: npx wrangler d1 execute curso-energia-ypfb --remote --file=./sql/schema.sql
 --
 -- Dos ideas sostienen el diseño:
 --

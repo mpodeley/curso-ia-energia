@@ -1,5 +1,5 @@
 {
-  "name": "curso-ia-energia-worker",
+  "name": "curso-energia-ypfb-worker",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,9 +7,9 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "tail": "wrangler tail",
-    "schema:local": "wrangler d1 execute curso-ia-energia --local --file=./sql/schema.sql",
-    "schema:remote": "wrangler d1 execute curso-ia-energia --remote --file=./sql/schema.sql",
-    "export": "wrangler d1 export curso-ia-energia --remote --output=../docs/respuestas/backup.sql"
+    "schema:local": "wrangler d1 execute curso-energia-ypfb --local --file=./sql/schema.sql",
+    "schema:remote": "wrangler d1 execute curso-energia-ypfb --remote --file=./sql/schema.sql",
+    "export": "wrangler d1 export curso-energia-ypfb --remote --output=../docs/respuestas/backup.sql"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260804.1",
