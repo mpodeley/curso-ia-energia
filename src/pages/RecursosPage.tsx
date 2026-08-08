@@ -56,6 +56,16 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
         href: 'https://bluedot.org/courses/future-of-ai',
         nota: 'panorama de hacia dónde va la IA, en inglés — inspiración del formato de este curso',
       },
+      {
+        nombre: 'Anthropic — The four properties of AI',
+        href: 'https://claude.com/resources/tutorials/the-4-properties-of-ai',
+        nota: 'las cuatro propiedades de la tabla de la sesión 7, en cinco minutos, en inglés y sin registrarse',
+      },
+      {
+        nombre: 'Anthropic — AI Capabilities and Limitations (curso corto)',
+        href: 'https://anthropic.skilljar.com/ai-capabilities-and-limitations',
+        nota: 'el curso completo del que sale esa forma de ordenar los errores por su causa; gratuito, en inglés, pide crear una cuenta',
+      },
     ],
   },
   {

@@ -1,6 +1,7 @@
 import { HallucinationHunt } from '../exercises/HallucinationHunt'
 import { Quiz } from '../exercises/Quiz'
-import { Recursos } from '../components/Recursos'
+import { ListaRecursos, Recursos } from '../components/Recursos'
+import { PROPIEDADES } from '../content/recursos'
 
 ## Antes de la sesión
 
@@ -10,7 +11,8 @@ import { Recursos } from '../components/Recursos'
    la vamos a evaluar entre todos.
 2. **Ejercicio de esta página (20 min):** la cacería, los tres informes. Hacelos antes de leer el
    resto de la página, porque el ejercicio pierde gracia si sabés qué buscar.
-3. **Lectura (10 min):** la sección de política de uso de más abajo, para llegar con opinión formada.
+3. **Lectura (10 min):** la sección de las cuatro propiedades y la de política de uso, para llegar
+   con vocabulario y con opinión formada.
 
 <Recursos sesion={7} />
 
@@ -31,9 +33,42 @@ marcaste de más. Desconfiar de todo no es prudencia, es otra forma de no leer.
 
 <HallucinationHunt sesion={7} />
 
+## Cuatro propiedades, y cómo falla cada una
+
+En la sesión 1 anticipamos cuatro maneras de fallar. Acá tienen nombre, y el nombre no es una
+etiqueta: es la propiedad del modelo de la que sale cada una. No son cuatro defectos, son cuatro
+capacidades miradas desde el borde, donde se terminan. Por eso el arreglo cambia según cuál te
+tocó, y por eso conviene diagnosticar antes de reescribir el prompt por cuarta vez.
+
+| La propiedad | Cómo se ve la falla | El arreglo |
+| --- | --- | --- |
+| **Predice el próximo token** (sesión 2) | Escribe algo que no existe con el mismo tono con el que escribe lo que sí. La forma del dato queda impecable. | No lo uses de fuente. El dato lo traés vos, él lo redacta. |
+| **Conocimiento** (sesión 5) | Seguro y equivocado sobre un hecho puntual: lo reciente, lo local, lo interno, lo tuyo. | Adjuntale el documento. Con el texto delante deja de recordar y pasa a leer. |
+| **Memoria de trabajo** (sesiones 2 y 6) | Se olvida de una instrucción de hace veinte mensajes, se contradice, pierde de vista el objetivo. | Conversaciones cortas, una tarea por vez, y repetile lo que no puede perder. |
+| **Control de la salida** (sesión 3) | Hace algo parecido a lo que pediste y no lo que pediste: cambia el formato, se pasa de largo, vuelve al tono de siempre. | Describí mejor el resultado, o mostrale un ejemplo. |
+
+La tabla es el índice del curso leído al revés. Cada fila se trabajó donde correspondía, con su
+ejercicio al lado. Lo que faltaba era verlas juntas y poder preguntarse, frente a un error
+concreto, cuál de las cuatro se activó.
+
+En el trabajo real casi nunca viene una sola. Una consulta larga sobre una norma que no le
+adjuntaste falla por conocimiento, porque nunca leyó esa norma, y también por memoria, porque la
+instrucción de citar textual quedó doce mensajes atrás. El resultado se lee como una única
+respuesta mala. Ahí está el valor de separar las causas: si le atribuís al prompt lo que era falta
+de documento, vas a reescribirlo cuatro veces y el modelo va a seguir inventando con prolijidad.
+
+El diagnóstico te dice qué arreglo aplicar. No te dice cuánto conviene verificar antes de mandar el
+texto, porque eso ya no depende del modelo: depende de dónde termina lo que escribiste. De eso se
+ocupa la sección que sigue.
+
+Esta forma de ordenar los errores por su causa sale de un curso corto y gratuito de Anthropic. Está
+en inglés, es opcional, y no hace falta para seguir leyendo.
+
+<ListaRecursos items={PROPIEDADES} titulo="El marco original (opcional, en inglés)" />
+
 ## El protocolo de verificación
 
-Después de cazar un rato aparece el patrón, y el patrón es la regla: **lo verificable es lo que se
+La regla que deja la cacería es corta: **lo verificable es lo que se
 deriva de lo que le diste; lo inventado es lo que tuvo que completar**. Un resumen de tu planilla
 suele estar bien. Una causa, una cita, un artículo de una norma o una estimación de beneficio casi
 nunca lo están.
@@ -41,8 +76,8 @@ nunca lo están.
 De ahí sale un protocolo corto, que se ajusta al costo del error:
 
 - **Borrador que vas a reescribir igual:** no se verifica, se reescribe. Un correo, un primer esquema.
-- **Texto que sale con tu nombre:** se verifica todo dato puntual — cifras, fechas, nombres — contra la
-  fuente. La prosa es tuya, los datos son de alguien.
+- **Texto que sale con tu nombre:** se verifica contra la fuente todo dato puntual (cifras, fechas,
+  nombres). La prosa es tuya, los datos son de alguien.
 - **Cifra que entra en un informe firmado, una decisión o un documento contractual:** fuente primaria
   a la vista, sin excepción. Si no podés abrir la fuente en dos minutos, el número no entra.
 - **Cualquier cosa sobre normativa:** con el texto de la norma adjunto, nunca de memoria. El costo del
@@ -50,7 +85,7 @@ De ahí sale un protocolo corto, que se ajusta al costo del error:
 
 ## Confidencialidad, en concreto
 
-La regla del primer día — si no lo pondrías en un correo a un desconocido, no va al chat — alcanza para
+La regla del primer día, si no lo pondrías en un correo a un desconocido no va al chat, alcanza para
 empezar y no alcanza para una empresa. La versión operativa es un mapa de tres niveles:
 
 **Nunca, en ninguna herramienta externa:** producción real por pozo, reservas, precios y cláusulas de
@@ -97,7 +132,7 @@ que la política siga viva.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Sus casos | 25 min | Evaluamos entre todos las afirmaciones que trajeron: ¿inventada, verificable o correcta? |
+| Sus casos | 25 min | Evaluamos entre todos las afirmaciones que trajeron y le ponemos causa a cada una, con la tabla de las cuatro propiedades a la vista |
 | El protocolo | 25 min | Lo armamos según el costo del error, no según el tipo de herramienta |
 | Datos de la empresa | 25 min | Clasificamos datos reales del equipo en los tres niveles, discutiendo los casos de borde |
 | Agentes y operación | 25 min | Por qué el loop no sirve donde el error no es reversible |

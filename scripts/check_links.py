@@ -13,6 +13,7 @@ Exits non-zero if anything is broken or drifted.
 
 from __future__ import annotations
 
+import datetime
 import json
 import os
 import re
@@ -45,7 +46,7 @@ def video_id(url: str) -> str | None:
 
 
 def datos_video(vid: str) -> dict | None:
-    """Real title, channel and duration straight from the watch page."""
+    """Real title, channel, duration and publication date from the watch page."""
     _, html = curl(f'https://www.youtube.com/watch?v={vid}')
     m = re.search(r'ytInitialPlayerResponse\s*=\s*(\{.*?\});', html, re.S)
     if not m:
@@ -57,11 +58,28 @@ def datos_video(vid: str) -> dict | None:
     if not d.get('title'):
         return None
     seg = int(d.get('lengthSeconds') or 0)
+    # publishDate lives next to the rest of the metadata in the same page, in
+    # the microformat block rather than in videoDetails.
+    pub = re.search(r'"publishDate":"(\d{4}-\d{2})', html)
     return {
         'titulo': d['title'],
         'canal': d.get('author', ''),
         'duracion': f'{seg // 60}:{seg % 60:02d}',
+        'publicado': pub.group(1) if pub else '',
     }
+
+
+def antiguedad(publicado: str) -> int:
+    """Months between a 'YYYY-MM' and today."""
+    a, m = (int(x) for x in publicado.split('-'))
+    hoy = datetime.date.today()
+    return (hoy.year - a) * 12 + (hoy.month - m)
+
+
+# Past this, a video about generative AI is teaching a different field than the
+# one it names. Entries flagged `historico` are linked precisely because they
+# are old and are exempt.
+MESES_VIEJO = 36
 
 
 def recursos_declarados() -> list[dict]:
@@ -79,6 +97,8 @@ def recursos_declarados() -> list[dict]:
             'url': campo('url'),
             'fuente': campo('fuente'),
             'duracion': campo('duracion'),
+            'publicado': campo('publicado'),
+            'historico': 'historico: true' in bloque,
         })
     return [e for e in entradas if e['url']]
 
@@ -107,6 +127,7 @@ def otros_links() -> list[tuple[str, str]]:
 
 def main() -> int:
     problemas = 0
+    viejos = 0
     declarados = recursos_declarados()
     print(f'recursos declarados en recursos.ts: {len(declarados)}\n')
 
@@ -125,13 +146,25 @@ def main() -> int:
             # different video by comparing the channel, which we never edit.
             if r['fuente'] and real['canal'] and real['canal'].lower() not in r['fuente'].lower():
                 avisos.append(f'canal declarado "{r["fuente"]}" vs real "{real["canal"]}"')
+            if not r['publicado']:
+                avisos.append(f'sin fecha declarada (la real es {real["publicado"] or "?"})')
+            elif real['publicado'] and r['publicado'] != real['publicado']:
+                avisos.append(f'publicado declarado {r["publicado"]} vs real {real["publicado"]}')
             if avisos:
                 print(f'  DIFIERE   {real["titulo"][:60]}')
                 for a in avisos:
                     print(f'            {a}')
                 problemas += 1
             else:
-                print(f'  ok        [{real["duracion"]:>5}] {real["canal"][:22]:24s} {real["titulo"][:48]}')
+                meses = antiguedad(r['publicado'])
+                # Aging is not breakage, so this never fails the run. It exists
+                # so nobody has to notice on their own that the first thing the
+                # course assigns predates the thing the course is about.
+                sello = f'{r["publicado"]}'
+                if meses > MESES_VIEJO and not r['historico']:
+                    sello += f'  ← VIEJO, {meses // 12} años'
+                    viejos += 1
+                print(f'  ok        [{real["duracion"]:>5}] {sello:<22} {real["canal"][:20]:22s} {real["titulo"][:40]}')
         else:
             host = urllib.parse.urlparse(r['url']).netloc
             if any(h in host for h in ANTIBOT):
@@ -162,6 +195,9 @@ def main() -> int:
             print(f'  ok        {code}  {url}')
 
     print()
+    if viejos:
+        print(f'{viejos} video(s) con más de {MESES_VIEJO // 12} años. No es un error: '
+              'decidí si siguen enseñando lo que dicen enseñar, y si no, reemplazalos.')
     if problemas:
         print(f'{problemas} link(s) con problemas.')
     else:

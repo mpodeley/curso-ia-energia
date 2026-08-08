@@ -8,12 +8,14 @@ const ETIQUETA: Record<Recurso['tipo'], string> = {
   video: 'video',
   lectura: 'lectura',
   herramienta: 'herramienta',
+  curso: 'curso',
 }
 
 const COLOR: Record<Recurso['tipo'], string> = {
   video: colors.accent.blue,
   lectura: colors.accent.green,
   herramienta: colors.accent.orange,
+  curso: colors.accent.gold,
 }
 
 export function ListaRecursos({ items, titulo }: { items: Recurso[]; titulo?: string }) {
@@ -59,6 +61,9 @@ export function ListaRecursos({ items, titulo }: { items: Recurso[]; titulo?: st
               >
                 {ETIQUETA[r.tipo]}
                 {r.duracion ? ` · ${r.duracion}` : ''}
+                {/* La fecha va a la vista: el alumno tiene que poder decidir
+                    solo cuánto le cree a un video de hace tres años. */}
+                {r.publicado ? ` · ${r.publicado}` : ''}
                 {r.idioma === 'en' ? ' · en inglés' : ''}
               </span>
             </div>
