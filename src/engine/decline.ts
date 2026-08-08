@@ -94,15 +94,25 @@ export type Ajuste = { qi: number; Di: number; b: number }
 
 const B_GRID = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2]
 
+/** The slider grid session 1 hands the student, who gets qi and Di and no b.
+ *  Coarse on purpose: the true Di does not even fall between two notches, so
+ *  the gap between what a hand can reach and what ajustar() sweeps is the whole
+ *  lesson. It lives here, where a test can guard it, and not in the component. */
+export const PERILLAS_A_MANO = { maxQi: 450, pasoQi: 5, maxDi: 0.06, pasoDi: 0.002 } as const
+
 /** Coarse-to-fine grid search for the least-squares Arps parameters.
  *  Deterministic on purpose: the same well always yields the same answer, so a
- *  screen-shared run reproduces. */
-export function ajustar(observado: (number | null)[]): Ajuste {
+ *  screen-shared run reproduces.
+ *
+ *  bFijo pins the exponent instead of searching for it. Session 1 gives the
+ *  student two knobs, and an answer that came back carrying a third number
+ *  nobody could have moved would need explaining at the worst possible moment. */
+export function ajustar(observado: (number | null)[], bFijo?: number): Ajuste {
   const validos = observado.filter((v): v is number => v !== null && Number.isFinite(v) && v > 0)
-  if (validos.length < 3) return { qi: validos[0] ?? 0, Di: 0, b: 0 }
+  if (validos.length < 3) return { qi: validos[0] ?? 0, Di: 0, b: bFijo ?? 0 }
 
   const qi0 = Math.max(...validos.slice(0, 3))
-  let mejor: Ajuste = { qi: qi0, Di: 0.01, b: 0.5 }
+  let mejor: Ajuste = { qi: qi0, Di: 0.01, b: bFijo ?? 0.5 }
   let mejorErr = Infinity
 
   const probar = (qi: number, Di: number, b: number) => {
@@ -114,7 +124,7 @@ export function ajustar(observado: (number | null)[]): Ajuste {
   }
 
   // Pass 1 — coarse sweep over the three axes.
-  for (const b of B_GRID) {
+  for (const b of bFijo === undefined ? B_GRID : [bFijo]) {
     for (let Di = 0.001; Di <= 0.12; Di += 0.002) {
       for (const f of [0.85, 0.95, 1, 1.05, 1.15]) probar(qi0 * f, Di, b)
     }
@@ -122,9 +132,20 @@ export function ajustar(observado: (number | null)[]): Ajuste {
 
   // Pass 2 — refine around the winner.
   const { qi: q1, Di: d1, b: b1 } = mejor
-  for (let b = Math.max(0, b1 - 0.1); b <= b1 + 0.1; b += 0.02) {
+  for (let b = bFijo ?? Math.max(0, b1 - 0.1); b <= (bFijo ?? b1 + 0.1); b += 0.02) {
     for (let Di = Math.max(0.0002, d1 - 0.004); Di <= d1 + 0.004; Di += 0.0004) {
       for (let f = 0.94; f <= 1.06; f += 0.02) probar(q1 * f, Di, b)
+    }
+  }
+
+  // Pass 3 — one more turn of the screw. Two passes stop a couple of tenths
+  // short of the parameters a teaching well was generated from, which means the
+  // search loses to its own answer key. Session 1 shows both side by side, so
+  // that gap would be the first thing an attentive room notices.
+  const { qi: q2, Di: d2, b: b2 } = mejor
+  for (let b = bFijo ?? Math.max(0, b2 - 0.02); b <= (bFijo ?? b2 + 0.02); b += 0.005) {
+    for (let Di = Math.max(0.0001, d2 - 0.0004); Di <= d2 + 0.0004; Di += 0.00005) {
+      for (let f = 0.985; f <= 1.015; f += 0.0025) probar(q2 * f, Di, b)
     }
   }
 

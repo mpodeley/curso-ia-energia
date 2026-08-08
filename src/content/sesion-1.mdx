@@ -1,3 +1,4 @@
+import { DeclineDuel } from '../exercises/DeclineDuel'
 import { Quiz } from '../exercises/Quiz'
 import { EncuestaS1 } from '../exercises/EncuestaS1'
 import { PulsoVivo } from '../exercises/PulsoVivo'
@@ -7,8 +8,8 @@ import { Recursos } from '../components/Recursos'
 
 *Tiempo estimado: 30–40 minutos.*
 
-1. **Video (8 min):** [Explicación breve de los modelos de lenguaje — 3Blue1Brown](https://www.youtube.com/watch?v=LPZh9BOjkQs) (tiene audio en español, elegible en el reproductor)
-   (activá los subtítulos en español). No hace falta entender todo: quedate con la idea de que el modelo *aprende de texto* y *genera texto*.
+1. **Video (8 min):** [Explicación breve de los modelos de lenguaje, de 3Blue1Brown](https://www.youtube.com/watch?v=LPZh9BOjkQs)
+   (tiene pista de audio en español, elegible en el reproductor). No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.
 2. **Cuenta gratuita (10 min):** creá una cuenta en al menos uno de estos chatbots:
    [ChatGPT](https://chatgpt.com), [Claude](https://claude.ai) o [Gemini](https://gemini.google.com).
    Todos tienen nivel gratuito y es lo único que necesitás en todo el curso.
@@ -17,7 +18,7 @@ import { Recursos } from '../components/Recursos'
    *"Redactá una minuta a partir de estas notas: …"*. Guardá la conversación: la vamos a comentar en vivo.
 
 <div className="callout">
-  <strong>Regla desde el día uno:</strong> en estos ejercicios no uses datos confidenciales de la empresa —
+  <strong>Regla desde el día uno:</strong> en estos ejercicios no uses datos confidenciales de la empresa:
   ni volúmenes reales de producción, ni nombres de contratos, ni información de partners. En la sesión 3 y la
   sesión 7 vemos en detalle por qué, y qué alternativas hay.
 </div>
@@ -35,8 +36,18 @@ Para alguien que trabajó con ingeniería de reservorios, nada de esto es tan nu
 - **Deep learning** es machine learning con redes neuronales grandes: más datos y más cómputo, patrones
   más complejos (imágenes sísmicas, registros de pozo, texto).
 - **IA generativa** es la capa nueva: modelos tan grandes, entrenados con tanto texto, que en lugar de
-  solo clasificar o predecir un número, *generan* — texto, código, imágenes. Los LLMs
-  (modelos grandes de lenguaje) son el caso que nos ocupa.
+  solo clasificar o predecir un número, *generan*: texto, código, imágenes. Los modelos grandes de
+  lenguaje (LLM, por *large language models*) son el caso que nos ocupa.
+
+Las dos primeras capas se pueden tocar acá mismo, con el mismo pozo, y conviene hacerlo antes de la
+sesión: primero ajustás la curva a mano, después dejás que la máquina busque sola.
+
+<DeclineDuel sesion={1} />
+
+Ese pozo es de escuela: la curva se generó con una fórmula, y los tres números estaban ahí para que
+alguien los encontrara. Ningún pozo real se porta así. En la sesión 4 volvemos con pozos de
+Aguaragüe, Ramos y Acambuco, con la tercera perilla, y con la pregunta incómoda de cuánto de esa
+caída es el reservorio y cuánto es la operación.
 
 ¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: **datos** (todo el texto de internet),
 **cómputo** (GPUs) y una **arquitectura que escala** (el transformer, 2017). No hubo un descubrimiento
@@ -48,11 +59,23 @@ mágico: hubo una receta que mejora de forma sorprendentemente predecible al agr
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| El mapa de cuatro capas | 30 min | La historia anterior, con ejemplos de la industria en cada capa |
-| Demos en vivo | 35 min | El chatbot frente a tareas reales: resumir un paper SPE, explicar un término, escribir un correo difícil, analizar una tabla — y también verlo fallar |
+| Apertura y entrada al sitio | 10 min | La regla de confidencialidad, el ingreso con el PIN y el primer pulso |
+| El mapa de cuatro capas | 35 min | La historia anterior, con ejemplos de la industria en cada capa. Las dos primeras las tocamos en vivo, con el ejercicio de esta página |
+| Demos en vivo | 30 min | El chatbot frente a tareas reales: resumir un paper de la Society of Petroleum Engineers (SPE), explicar un término, escribir un correo difícil, y también verlo fallar |
 | Encuesta de relevamiento | 15 min | La completamos juntos en vivo (ver abajo) |
-| Discusión | 30 min | Sus primeras conversaciones con el chatbot: qué sorprendió, qué decepcionó |
-| Cierre y tarea | 10 min | Qué viene en la sesión 2 |
+| Discusión | 20 min | Sus primeras conversaciones con el chatbot: qué sorprendió, qué decepcionó |
+| Cierre y tarea | 10 min | Las cuatro maneras de fallar, y qué viene en la sesión 2 |
+
+## Dos maneras distintas de equivocarse
+
+En las demos el chatbot se va a equivocar más de una vez, y no siempre por lo mismo. A veces le
+falta el dato: nunca leyó el boletín por el que le preguntás, y en lugar de decirlo escribe la
+cifra más creíble. Otras veces el dato no existe en ninguna parte, y aun así devuelve algo con la
+forma exacta de un dato: el número de un artículo, la cita de un trabajo técnico, el inciso de una
+norma.
+
+La diferencia no es académica. A la primera se la arregla trayéndole el documento, y eso es la
+sesión 5. A la segunda no se la arregla: se la verifica, y eso es la sesión 7.
 
 ## La encuesta que alimenta el final del curso
 
@@ -68,10 +91,27 @@ resuelto de punta a punta.
 ## Para discutir
 
 1. ¿Qué tarea de tu semana laboral te parece **más** automatizable con lo que viste hoy? ¿Y cuál menos?
-2. En la demo, el chatbot respondió algo incorrecto con total seguridad. ¿Cómo cambia eso la forma en que conviene usarlo?
+2. En la demo, el chatbot respondió algo incorrecto con total seguridad. ¿Fue porque le faltaba el
+   dato, o porque el dato no existía y lo completó igual? No son la misma falla y no se arreglan
+   igual.
 3. ¿Dónde ya hay "machine learning" escondido en el software que usás (simuladores, interpretación sísmica, mantenimiento predictivo)?
+
+## Las cuatro maneras de fallar, y dónde vemos cada una
+
+Hoy vieron dos. Hay cuatro en total, y cada una sale de una propiedad distinta del modelo, así que
+cada una tiene su propio arreglo. El curso las recorre en este orden:
+
+- **Inventa lo que no sabe.** Sale de cómo genera el texto, palabra por palabra. Sesión 2.
+- **Está seguro y equivocado.** Sale de lo que aprendió y de lo que no. Sesión 5.
+- **Se olvida de lo que le dijiste.** Sale de cuánto puede mirar a la vez. Sesiones 2 y 6.
+- **No hace lo que le pediste.** Sale de cuánto control te dan de verdad las instrucciones. Sesión 3.
+
+En la sesión 7 las juntamos en una sola tabla y las convertimos en un protocolo. No hace falta
+memorizar nada ahora: alcanza con saber que cuando algo salga mal, la primera pregunta útil no es
+"¿cómo lo reescribo?" sino "¿cuál de las cuatro fue?".
 
 ## Tarea para la sesión 2
 
 Usá el chatbot para **una tarea real** (sin datos confidenciales) y anotá: qué pediste, qué salió bien,
-qué salió mal. Dos minutos de notas alcanzan — las usamos para abrir la próxima sesión.
+qué salió mal. Si podés, arriesgá por qué salió mal. Dos minutos de notas alcanzan: las usamos para
+abrir la próxima sesión.

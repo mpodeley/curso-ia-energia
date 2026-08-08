@@ -84,18 +84,38 @@ export function ProbBarChart({
  * Decline curve: real monthly points as a scatter, the Arps model as a line.
  * The log toggle matters — a decline that is a curve on a linear axis becomes a
  * straight line in log, which is how the shape is actually read.
+ *
+ * A second model curve is optional: session 1 puts the student's hand fit and
+ * the machine's side by side, and the whole point lands visually or not at all.
  */
-export type PuntoDeclinacion = { t: number; ym: string; observado: number | null; modelo: number }
+export type PuntoDeclinacion = {
+  t: number
+  ym: string
+  observado: number | null
+  modelo: number
+  modelo2?: number
+}
 
 export function DeclineChart({
   data,
   log,
   unidad,
+  etiquetas,
 }: {
   data: PuntoDeclinacion[]
   log: boolean
   unidad: string
+  /** Tooltip names for the two model curves. Defaults to "modelo". */
+  etiquetas?: { modelo?: string; modelo2?: string }
 }) {
+  const haySegunda = data.some((d) => d.modelo2 !== undefined)
+  const nombre = (key: string) =>
+    key === 'observado'
+      ? 'medido'
+      : key === 'modelo2'
+        ? (etiquetas?.modelo2 ?? 'modelo')
+        : (etiquetas?.modelo ?? 'modelo')
+
   // A log axis cannot show zero, and shut-in months legitimately report zero.
   const positivos = data.flatMap((d) => (d.observado && d.observado > 0 ? [d.observado] : []))
   const minimo = positivos.length ? Math.min(...positivos) : 1
@@ -132,7 +152,7 @@ export function DeclineChart({
           labelFormatter={etiqueta}
           formatter={(v: number, name: string) => [
             v === null ? 'sin dato' : `${Math.round(v).toLocaleString('en-US')} ${unidad}`,
-            name === 'observado' ? 'medido' : 'modelo',
+            nombre(name),
           ]}
         />
         <Scatter dataKey="observado" fill={chart.fill[0]} isAnimationActive={false} />
@@ -143,6 +163,15 @@ export function DeclineChart({
           dot={false}
           isAnimationActive={false}
         />
+        {haySegunda && (
+          <Line
+            dataKey="modelo2"
+            stroke={chart.line[2]}
+            strokeWidth={2}
+            dot={false}
+            isAnimationActive={false}
+          />
+        )}
       </ComposedChart>
     </ChartBox>
   )

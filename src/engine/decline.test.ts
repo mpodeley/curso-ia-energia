@@ -1,6 +1,17 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import { ajustar, arps, declinacionAnual, diasDelMes, errorRelativo, eur, r2, rmse, serieModelo } from './decline'
+import {
+  PERILLAS_A_MANO,
+  ajustar,
+  arps,
+  declinacionAnual,
+  diasDelMes,
+  errorRelativo,
+  eur,
+  r2,
+  rmse,
+  serieModelo,
+} from './decline'
 
 describe('diasDelMes', () => {
   it('knows the calendar, leap years included', () => {
@@ -128,6 +139,25 @@ describe('ajustar', () => {
   })
 })
 
+describe('ajustar con el exponente clavado', () => {
+  it('hands back exactly the b it was given, never a searched one', () => {
+    const serie = serieModelo(5000, 0.025, 0.6, 72)
+    for (const b of [0, 0.5, 1]) expect(ajustar(serie, b).b).toBe(b)
+  })
+
+  it('recovers qi and Di of a pure exponential', () => {
+    const serie = serieModelo(2000, 0.03, 0, 60)
+    const est = ajustar(serie, 0)
+    expect(est.qi).toBeCloseTo(2000, -1)
+    expect(est.Di).toBeCloseTo(0.03, 3)
+  })
+
+  it('is still deterministic', () => {
+    const serie = serieModelo(3000, 0.018, 0, 60)
+    expect(ajustar(serie, 0)).toEqual(ajustar(serie, 0))
+  })
+})
+
 // Guards the well selection itself. If someone swaps a well for one that does
 // not decline cleanly, the exercise stops teaching what it claims to teach.
 describe('decline_wells.json', () => {
@@ -182,6 +212,36 @@ describe('decline_wells.json', () => {
       // The promise the exercise makes: the true parameters fit within the noise.
       expect(errorRelativo(obs, serieModelo(v.qi, v.Di, v.b, obs.length)), p.sigla).toBeLessThan(0.03)
     }
+  })
+
+  // The two promises the session 1 exercise makes out loud, in front of the
+  // room. Nothing else guards them: widen the sliders, sharpen the search or
+  // swap the well and the demo quietly stops landing.
+  describe('el duelo de la sesión 1', () => {
+    const pozo = todos.find((p) => p.id === 'escuela-exp')!
+    const obs = caudalDiario(pozo)
+    const maquina = ajustar(obs, 0)
+    const errMaquina = errorRelativo(obs, serieModelo(maquina.qi, maquina.Di, 0, obs.length))
+
+    it('beats the best fit any hand could reach on those sliders', () => {
+      let mejorAMano = Infinity
+      for (let qi = 0; qi <= PERILLAS_A_MANO.maxQi; qi += PERILLAS_A_MANO.pasoQi) {
+        for (let Di = 0; Di <= PERILLAS_A_MANO.maxDi + 1e-9; Di += PERILLAS_A_MANO.pasoDi) {
+          const e = errorRelativo(obs, serieModelo(qi, Di, 0, obs.length))
+          if (e < mejorAMano) mejorAMano = e
+        }
+      }
+      expect(errMaquina).toBeLessThan(mejorAMano * 0.75)
+    })
+
+    it('lands on the parameters the well was generated from', () => {
+      expect(maquina.qi).toBeCloseTo(pozo.verdad!.qi, -1)
+      expect(maquina.Di).toBeCloseTo(pozo.verdad!.Di, 3)
+    })
+
+    it('does not reach zero error, because the noise floor is the point', () => {
+      expect(errMaquina).toBeGreaterThan(0.005)
+    })
   })
 
   it('fits the five well-behaved wells to within 8% of a typical month', () => {

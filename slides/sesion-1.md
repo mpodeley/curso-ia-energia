@@ -25,11 +25,12 @@ puede seguir las slides desde ahí.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| El mapa de cuatro capas | 30 min | La historia, con ejemplos de la industria en cada capa |
-| Demos en vivo | 35 min | El chatbot frente a tareas reales, y también verlo fallar |
+| Apertura y entrada al sitio | 10 min | La regla de confidencialidad, el PIN y el primer pulso |
+| El mapa de cuatro capas | 35 min | La historia, con ejemplos de la industria. Las dos primeras capas las tocamos en vivo |
+| Demos en vivo | 30 min | El chatbot frente a tareas reales, y también verlo fallar |
 | Encuesta de relevamiento | 15 min | La completamos juntos |
-| Discusión | 30 min | Sus primeras conversaciones: qué sorprendió, qué decepcionó |
-| Cierre y tarea | 10 min | Qué viene en la sesión 2 |
+| Discusión | 20 min | Sus primeras conversaciones: qué sorprendió, qué decepcionó |
+| Cierre y tarea | 10 min | Las cuatro maneras de fallar, y qué viene en la sesión 2 |
 
 <!--
 2 min · acumulado 0:02
@@ -85,6 +86,8 @@ Dictar el PIN y esperar a que todos entren. Que escriban nombre y apellido:
 las respuestas de hoy se cruzan con las de la sesión 3 y la 5.
 Cambiar a la ventana B (panel) y abrir el pulso "s1-palabra-ia".
 Volver acá cuando hayan votado unos cuantos.
+Pedirles que dejen la página de la sesión 1 abierta: en el bloque 1 hay un
+ejercicio que hacemos ahí mismo.
 -->
 
 ---
@@ -93,10 +96,10 @@ Volver acá cuando hayan votado unos cuantos.
 
 ## El mapa de cuatro capas
 
-Bloque 1 de 5 · **30 min**
+Bloque 1 de 5 · **35 min**
 
 <!--
-Arranca 0:10, termina 0:40
+Arranca 0:10, termina 0:45
 -->
 
 ---
@@ -138,10 +141,35 @@ Es lo que siempre hicimos: mirar datos, limpiarlos, graficarlos, sacar conclusio
 funcional, estimó tres parámetros y proyectó. Eso es modelar.
 
 <!--
-4 min · acumulado 0:18
-El ejemplo tiene que ser de ellos, no mío. Preguntar quién ajustó una declinación
-a mano alguna vez, y con qué la ajustó.
-En la sesión 4 volvemos a esto con datos reales de pozo en el sitio.
+3 min · acumulado 0:17
+Preguntar quién ajustó una declinación a mano alguna vez, y con qué la ajustó.
+Cortar corto: la conversación larga sobre esto va en el bloque 4.
+Entregar al ejercicio: "no se los voy a contar, lo van a hacer ustedes".
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Ajustala vos
+
+`podeley.github.io/curso-energia-ypfb` · sesión 1
+
+Dos perillas y un número que tiene que bajar: el error. Bájenlo todo lo que puedan.
+
+<!--
+6 min · acumulado 0:23
+Ventana C (el sitio), página de la sesión 1, ejercicio "Ajustala vos, después
+que la busque la máquina".
+ANTES de proyectar: apretar "Reiniciar ejercicio". Si ensayé antes de la clase,
+el navegador se acuerda y el ejercicio abre con la respuesta puesta.
+Arranca en una recta plana, con 66% de error. En tres minutos la mayoría llega
+a algo entre 3% y 8%. El mejor ajuste posible con estas perillas es 2.17%.
+Que aprieten "Listo, este es mi ajuste" antes de seguir.
+Mientras trabajan, decir en voz alta que esto ES la capa 1: eligieron una forma
+funcional y estimaron los parámetros a ojo. Todavía no hay ninguna máquina.
+Este ejercicio no depende del Worker: si el firewall bloquea los pulsos, esto
+funciona igual.
 -->
 
 ---
@@ -156,11 +184,31 @@ nadie sabe escribir la ecuación de "esta bomba va a fallar en tres semanas", pe
 bombas que fallaron y sus datos previos.
 
 <!--
-4 min · acumulado 0:22
+3 min · acumulado 0:26
 La pregunta que suele aparecer acá: ¿y cómo sabe que acertó?
 Respuesta corta: se le esconde parte de los datos y se mide. Es la idea de
 validación, y es la razón por la que un modelo puede andar bien en el papel y
 mal en el campo.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Ahora que la busque la máquina
+
+El botón está abajo del gráfico. Nadie le dijo los valores: tiene los puntos y un criterio.
+
+<!--
+5 min · acumulado 0:31
+Ventana C otra vez. Que aprieten "Que la busque la máquina".
+Leer la tabla en voz alta: su ajuste contra el de ella. Casi siempre gana la
+máquina, y por el doble (2.17% contra 1.06% en el mejor caso a mano).
+Abrir el desplegable "Los valores con los que se generó esta curva": qi 320 y
+Di 2.1%/mes. La máquina cayó justo encima sin que nadie se los dijera.
+La frase del bloque: ni con los valores exactos el error da cero. Queda 1.06%,
+que es el ruido de medición. Un modelo que llega a cero está copiando el ruido.
+Si alguien le ganó a la máquina, mostrarlo: barre una grilla finita, no es magia.
 -->
 
 ---
@@ -174,7 +222,7 @@ Acá entran las imágenes sísmicas, los registros de pozo, el texto. Son datos 
 está distribuida y no se deja resumir en cinco variables.
 
 <!--
-3 min · acumulado 0:25
+2 min · acumulado 0:33
 No entrar en arquitectura. Lo único que tiene que quedar: "grande" quiere decir
 muchas capas de transformación aprendidas de los datos.
 Puente: en la sesión 2 abrimos esta caja con el ejemplo de LeCun y los números
@@ -191,21 +239,9 @@ un número, **generan**: texto, código, imágenes.
 Los **LLM** — modelos grandes de lenguaje — son el caso que nos ocupa las próximas ocho semanas.
 
 <!--
-3 min · acumulado 0:28
+3 min · acumulado 0:36
 Acá recién aparece el chatbot. Todo lo anterior sigue existiendo y sigue siendo
 la herramienta correcta para la mayoría de los problemas con números.
--->
-
----
-
-## ¿Por qué explotó ahora y no en 2010?
-
-Tres cosas se juntaron.
-
-<!--
-1 min · acumulado 0:29
-Pregunta abierta antes de contestar: ¿qué creen que cambió?
-Suele salir "más computadoras". Es un tercio de la respuesta.
 -->
 
 ---
@@ -219,7 +255,9 @@ Suele salir "más computadoras". Es un tercio de la respuesta.
 - **Una arquitectura que escala** — el *transformer*, 2017
 
 <!--
-4 min · acumulado 0:33
+4 min · acumulado 0:40
+Abrir con la pregunta antes de mostrar la lista: ¿por qué explotó ahora y no en
+2010? Suele salir "más computadoras", que es un tercio de la respuesta.
 Lo importante del transformer no es cómo funciona sino que **mejora al agrandarlo**,
 de forma predecible. Eso convirtió la investigación en ingeniería: si duplico
 datos y cómputo, sé aproximadamente cuánto mejora.
@@ -232,7 +270,7 @@ datos y cómputo, sé aproximadamente cuánto mejora.
 ## No hubo un descubrimiento mágico: hubo una **receta que mejora al agrandarla**
 
 <!--
-2 min · acumulado 0:35
+2 min · acumulado 0:42
 La frase que quiero que se lleven del bloque.
 Consecuencia práctica: lo que hoy no funciona bien probablemente funcione mejor
 en un año, sin que nadie invente nada nuevo. Y lo que falla por diseño —las
@@ -250,9 +288,9 @@ Lo nuevo de 2023 en adelante no es la IA. Es que **una parte de la IA se volvió
 y por eso llegó a todos los escritorios de golpe.
 
 <!--
-5 min · acumulado 0:40
-Momento para que hablen. ¿Dónde sospechan que ya hay ML en lo que usan?
-Anotar lo que digan: sirve para el relevamiento de más adelante.
+3 min · acumulado 0:45
+NO abrir conversación acá: esa charla es la tercera pregunta del bloque 4, y
+ahí está presupuestada. Acá es puente a las demos.
 Cierre del bloque 1.
 -->
 
@@ -262,26 +300,27 @@ Cierre del bloque 1.
 
 ## Demos en vivo
 
-Bloque 2 de 5 · **35 min**
+Bloque 2 de 5 · **30 min**
 
 <!--
-Arranca 0:40, termina 1:15
+Arranca 0:45, termina 1:15
 -->
 
 ---
 
-## Cuatro tareas reales
+## Tres tareas reales
 
 - Resumir un **paper del SPE**
 - Explicar un **término técnico** a alguien no técnico
 - Redactar un **correo difícil**
-- Analizar una **tabla**
 
-Y una quinta, la más importante: **verlo fallar**.
+Y una cuarta, la más importante: **verlo fallar**.
 
 <!--
-2 min · acumulado 0:42
-Avisar que las cuatro las hago en vivo y que van a ver los errores también.
+2 min · acumulado 0:47
+Avisar que las tres las hago en vivo y que van a ver los errores también.
+La tabla de producción sale de acá a propósito: es el bloque de apertura de la
+sesión 4, y hacerla dos veces no agrega nada.
 Pedir que mientras miran anoten: ¿esto me serviría el lunes?
 -->
 
@@ -294,7 +333,7 @@ Pedir que mientras miran anoten: ¿esto me serviría el lunes?
 Miren tres cosas: qué tan **rápido** responde, qué tan **seguro** suena, y si lo que dice es **verdad**.
 
 <!--
-14 min · acumulado 0:56
+10 min · acumulado 0:57
 Cambiar a la ventana del chatbot. Prompts exactos, en orden:
 
 1) "Resumí este resumen de paper del SPE en cinco viñetas para un gerente que
@@ -306,9 +345,6 @@ Cambiar a la ventana del chatbot. Prompts exactos, en orden:
 3) "Redactá un correo para avisarle a un contratista que vamos a postergar una
    intervención dos semanas por disponibilidad de equipo. Tono cordial pero firme,
    sin comprometer fecha nueva."
-
-4) Pegar una tabla chica de producción mensual inventada y pedir: "¿Qué ves acá?
-   Dame tres observaciones y una advertencia sobre qué no se puede concluir."
 
 Volver al deck en la slide siguiente.
 -->
@@ -322,7 +358,7 @@ Rápido, ordenado, con buen tono. Y **sin ninguna garantía de que sea cierto**.
 El chatbot no tiene un botón de "no sé". Cuando no sabe, sigue escribiendo igual.
 
 <!--
-3 min · acumulado 0:59
+2 min · acumulado 0:59
 Puente al fallo deliberado. Preguntar si alguien notó algo raro en las respuestas
 anteriores; a veces ya lo cazaron solos y es mejor si sale de ellos.
 -->
@@ -354,12 +390,31 @@ Volver al deck.
 
 ---
 
+## No fallaron todas por lo mismo
+
+A la primera le **faltaba el dato**: nunca leyó ese boletín, y en vez de decirlo escribió la cifra más creíble.
+
+En la segunda el dato **no existe en ninguna parte**, y aun así produjo algo con la forma exacta de una cita.
+
+<!--
+2 min · acumulado 1:11
+Dos causas, no cuatro. Las otras dos no las vieron todavía y nombrarlas ahora
+sería humo; van enteras en el cierre, como hoja de ruta.
+La primera se arregla trayéndole el documento, y eso es la sesión 5.
+La segunda no se arregla: se verifica, y eso es la sesión 7.
+Si preguntan por la tercera respuesta, la de la norma API 14B: es la mezcla de
+las dos. La norma existe y el contenido no. Es la peor de las tres, y por eso
+el ejercicio de la sesión 7 le dedica un informe entero.
+-->
+
+---
+
 <!-- _class: cita -->
 
 ## La salida de un LLM es un **borrador plausible**, no una fuente
 
 <!--
-4 min · acumulado 1:13
+2 min · acumulado 1:13
 La regla que nos acompaña las ocho sesiones.
 En la sesión 2 vemos POR QUÉ pasa esto: sale del mecanismo mismo, no es un bug
 que alguien vaya a arreglar.
@@ -434,10 +489,10 @@ El que no llegue la puede terminar después: se guarda sola.
 
 ## Discusión
 
-Bloque 4 de 5 · **30 min**
+Bloque 4 de 5 · **20 min**
 
 <!--
-Arranca 1:30, termina 2:00
+Arranca 1:30, termina 1:50
 -->
 
 ---
@@ -447,7 +502,7 @@ Arranca 1:30, termina 2:00
 ¿Y cuál **menos**?
 
 <!--
-10 min · acumulado 1:40
+8 min · acumulado 1:38
 Primera pregunta de discusión. Dejarla proyectada mientras hablan.
 Si nadie arranca, empezar por la de "menos": es más fácil y suele destrabar.
 Anotar todo: esto alimenta la shortlist de la sesión 5 igual que la encuesta.
@@ -457,12 +512,14 @@ Anotar todo: esto alimenta la shortlist de la sesión 5 igual que la encuesta.
 
 ## El chatbot respondió algo incorrecto con total seguridad
 
-¿Cómo cambia eso la forma en que conviene usarlo?
+¿Le **faltaba el dato**, o el dato **no existía** y lo completó igual?
 
 <!--
-10 min · acumulado 1:50
-Segunda pregunta. Buscar que salga la idea de "verificable": las tareas donde
-puedo comprobar el resultado rápido son las tareas seguras.
+7 min · acumulado 1:45
+Segunda pregunta. Ahora es un diagnóstico, no una opinión: que clasifiquen cada
+error que vieron en una de las dos causas.
+Buscar que salga la idea de "verificable": las tareas donde puedo comprobar el
+resultado rápido son las tareas seguras.
 Si sale "entonces no sirve", repreguntar: ¿un borrador de un pasante sirve?
 -->
 
@@ -473,8 +530,9 @@ Si sale "entonces no sirve", repreguntar: ¿un borrador de un pasante sirve?
 Simuladores, interpretación sísmica, mantenimiento predictivo…
 
 <!--
-10 min · acumulado 2:00
-Tercera pregunta. Cierra el círculo con el bloque 1.
+5 min · acumulado 1:50
+Tercera pregunta. Cierra el círculo con el bloque 1, que la dejó planteada y no
+la conversó.
 Si quedó poco tiempo, esta es la que se puede acortar.
 -->
 
@@ -487,7 +545,28 @@ Si quedó poco tiempo, esta es la que se puede acortar.
 Bloque 5 de 5 · **10 min**
 
 <!--
-Arranca 2:00, termina 2:10
+Arranca 1:50, termina 2:00
+-->
+
+---
+
+<!-- _class: acentos -->
+
+## Las cuatro maneras de fallar
+
+- **Inventa lo que no sabe** — de cómo genera el texto, palabra por palabra · sesión 2
+- **Está seguro y equivocado** — de lo que aprendió y de lo que no · sesión 5
+- **Se olvida de lo que le dijiste** — de cuánto puede mirar a la vez · sesiones 2 y 6
+- **No hace lo que le pediste** — de cuánto control dan las instrucciones · sesión 3
+
+<!--
+3 min · acumulado 1:53
+Hoy vieron las dos primeras. Esta es la hoja de ruta del curso, no materia.
+No hay que memorizar nada. Lo único que quiero que se lleven: cuando algo salga
+mal, la primera pregunta útil no es "¿cómo lo reescribo?" sino "¿cuál de las
+cuatro fue?".
+En la sesión 7 las juntamos en una tabla y salen con un protocolo.
+La misma lista está en la página de la sesión 1.
 -->
 
 ---
@@ -501,8 +580,9 @@ Anotá tres cosas: **qué pediste**, **qué salió bien**, **qué salió mal**.
 Dos minutos de notas alcanzan. Las usamos para abrir la próxima sesión.
 
 <!--
-4 min · acumulado 2:04
+3 min · acumulado 1:56
 Insistir en que anoten lo que salió MAL. Es el material más útil que van a traer.
+Y que arriesguen por qué: con la hoja de ruta recién vista, ya pueden.
 -->
 
 ---
@@ -516,7 +596,7 @@ Insistir en que anoten lo que salió MAL. Es el material más útil que van a tr
 En la página hay dos ejercicios para jugar antes: el tokenizador y "adiviná el próximo token".
 
 <!--
-4 min · acumulado 2:08
+3 min · acumulado 1:59
 Pedirles que hagan los dos ejercicios ANTES de la sesión 2: la clase los recorre
 suponiendo que ya jugaron.
 -->
@@ -530,7 +610,7 @@ suponiendo que ya jugaron.
 El quiz, los recursos y los ejercicios quedan en la página · **podeley.github.io/curso-energia-ypfb**
 
 <!--
-2 min · acumulado 2:10
+1 min · acumulado 2:00
 Dejar proyectada mientras se despiden y responder lo que quede suelto.
 Después de la clase: revisar el panel, exportar el CSV del relevamiento y
 empezar a clasificar los casos.
