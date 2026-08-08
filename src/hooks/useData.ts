@@ -10,6 +10,7 @@ import type {
   TokenizerExample,
   TrazaAgente,
 } from '../types'
+import type { Conversacion } from '../engine/contexto'
 import type { QuizPregunta } from '../engine/quiz'
 import type { Informe } from '../engine/hunt'
 
@@ -77,3 +78,4 @@ export const useAgentTrace = () => useJson<TrazaAgente>('./data/agent_trace.json
 export const useAlucinaciones = () => useJson<Informe[]>('./data/alucinaciones.json')
 export const useEmbeddings = () => useJson<TerminoEmbebido[]>('./data/embeddings_2d.json')
 export const useRagCorpus = () => useJson<RagCorpus>('./data/rag_corpus.json')
+export const useContexto = () => useJson<Conversacion>('./data/contexto_conversacion.json')

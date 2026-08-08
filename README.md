@@ -14,7 +14,7 @@ Vite + React 19 + TypeScript + Recharts, prosa de sesiones en MDX, deploy estát
 Pages. Mismo esqueleto que `simulador-subastas-peru`; identidad visual compartida vía
 `src/styles/tokens.css` (capa portable `--pd-*` de podeley.ar).
 
-Los nueve ejercicios corren enteros en el navegador y no mandan nada a ningún lado. Lo único
+Los once ejercicios corren enteros en el navegador y no mandan nada a ningún lado. Lo único
 que viaja a un servidor es lo que el alumno envía a propósito —la encuesta, los pulsos en vivo
 y las respuestas abiertas— contra un Cloudflare Worker propio (`worker/`), que es opcional:
 sin `VITE_API_URL` el sitio se construye sin nada de eso.

@@ -1,5 +1,6 @@
 import { TokenizerLab } from '../exercises/TokenizerLab'
 import { NextTokenLab } from '../exercises/NextTokenLab'
+import { ContextoLab } from '../exercises/ContextoLab'
 import { PulsoVivo } from '../exercises/PulsoVivo'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos, ListaRecursos } from '../components/Recursos'
@@ -7,9 +8,9 @@ import { INTERPRETABILIDAD } from '../content/recursos'
 
 ## Antes de la sesión
 
-*Tiempo estimado: 35–45 minutos.*
+*Tiempo estimado: 40–50 minutos.*
 
-1. **Los dos ejercicios interactivos de esta página** (20 min): el tokenizador y el de "adiviná el próximo token". Están más abajo — jugá antes de leer la explicación.
+1. **Los tres ejercicios interactivos de esta página** (30 min): el tokenizador, el de "adiviná el próximo token" y el de la ventana de contexto. Están más abajo: jugá antes de leer la explicación.
 2. **Video (27 min, opcional):** el capítulo de
    [3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) muestra la maquinaria
    interna. Tiene audio en español: elegilo en el menú de idioma del reproductor. No es requisito.
@@ -31,7 +32,7 @@ el español "rinde menos" por token que el inglés, y por qué los precios de la
 
 ## Una sola operación: predecir el próximo token
 
-Todo lo que viste hacer a un chatbot — responder preguntas, escribir informes, traducir — sale de una
+Todo lo que viste hacer a un chatbot (responder preguntas, escribir informes, traducir) sale de una
 única operación repetida: **dado el texto hasta acá, asignar una probabilidad a cada token posible que
 sigue, elegir uno, y volver a empezar**. No hay una base de datos de respuestas: hay una máquina de
 continuar texto, entrenada con una fracción enorme de todo el texto humano.
@@ -52,11 +53,51 @@ API que parece real, un paper que suena citable, una norma que "debería existir
 La consecuencia práctica que nos acompaña todo el curso: la salida de un LLM es un **borrador
 plausible**, no una fuente. Se verifica todo lo que importa.
 
+## La ventana de contexto: la memoria de trabajo
+
+En la sesión 1 quedaron anunciadas cuatro maneras de fallar. La primera acaba de aparecer, y sale
+del mecanismo que viste en el ejercicio anterior. Esta es la segunda, y no tiene nada que ver con
+la otra.
+
+Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu pregunta, sus respuestas
+anteriores, los documentos que pegaste. Ese conjunto se llama **ventana de contexto** y tiene un
+tamaño máximo, medido en tokens. Lo que no entra ahí no existe para el modelo.
+
+Conviene pensarla como un escritorio, no como un archivo. Lo que está sobre el escritorio lo mira;
+lo que se cayó al piso no lo busca, y tampoco sabe que se cayó.
+
+<ContextoLab sesion={2} />
+
+De acá salen dos frustraciones que a esta altura ya te deben haber pasado. En una conversación
+larga, el principio se cae y el modelo deja de respetar algo que le pediste al empezar, sin avisar.
+Y en un documento grande, lo que quedó afuera no se busca solo: hay que volver a pegarlo. Al
+segundo problema le dedicamos la sesión 5 entera, donde en vez de pegar todo buscamos el pedazo que
+hace falta.
+
+## Cómo se entrena: dos etapas de tamaños muy distintos
+
+Nada de lo anterior lo programó alguien. El modelo pasa por dos etapas, y la diferencia entre ellas
+explica bastante de cómo se comporta.
+
+En la **primera** lee una fracción enorme de todo el texto humano y practica una sola cosa: predecir
+lo que sigue. De ahí salen la gramática, los hechos y los patrones de razonamiento, todos como
+efecto de hacer bien esa única tarea. La consecuencia incómoda es que aprendió lo que estaba
+escrito, con sus errores y sus sesgos, y lo escrito no es lo verdadero.
+
+En la **segunda**, mucho más chica, personas le enseñan a comportarse como asistente: a responder en
+vez de continuar, a seguir instrucciones y a negarse a algunas cosas. Un modelo que solo pasó por la
+primera etapa no contesta preguntas, las continúa. Esa segunda etapa es la que convirtió una
+curiosidad de laboratorio en algo que llegó a todos los escritorios: la capacidad ya estaba, faltaba
+la interfaz.
+
+El tono servicial y seguro con el que te contesta viene de ahí, y no tiene ninguna relación con si
+lo que dice es cierto. Es una forma aprendida de hablar, no una señal de que sabe.
+
 ## ¿Y adentro qué hay? Una caja negra que se puede abrir
 
-Hasta acá describimos qué hace el modelo, no qué pasa adentro. La respuesta corta es que nadie escribió
-esas reglas: se ajustaron solas durante el entrenamiento. La respuesta larga es más interesante, y hay
-toda una disciplina dedicada a ella.
+Hasta acá describimos qué hace el modelo y cómo se entrenó, no qué pasa adentro cuando responde. La
+respuesta corta ya la tenés: nadie escribió esas reglas, se ajustaron solas. La respuesta larga es
+más interesante, y hay toda una disciplina dedicada a ella.
 
 El mejor lugar para verlo no es un modelo de lenguaje sino uno de imágenes, porque lo que aprende se
 puede dibujar. En 1989, en los laboratorios de Bell, Yann LeCun mostró una red que leía números escritos
@@ -84,11 +125,12 @@ tema de la sesión 7.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
+| Apertura y entrada al sitio | 8 min | Objetivos y el PIN, como la semana pasada |
 | Repaso de la tarea | 15 min | Qué les salió bien y mal con el chatbot esta semana |
-| Tokens y predicción | 35 min | Recorremos juntos los dos ejercicios de esta página, con tiempo para preguntas |
-| Contexto y entrenamiento | 30 min | La ventana de contexto (la "memoria de trabajo"), y las dos etapas de entrenamiento: leer internet, y aprender a conversar |
-| Alucinaciones en vivo | 25 min | Hacemos alucinar al chatbot con preguntas de la industria y analizamos por qué |
-| Cierre y tarea | 15 min | Qué significa todo esto para usarlo bien (puente a la sesión 3) |
+| Tokens y predicción | 33 min | Recorremos juntos los dos primeros ejercicios de esta página, con tiempo para preguntas |
+| Contexto y entrenamiento | 28 min | La ventana de contexto en vivo con el tercer ejercicio, y las dos etapas de entrenamiento: leer internet, y aprender a conversar |
+| Alucinaciones en vivo | 22 min | Hacemos alucinar al chatbot con preguntas de la industria y analizamos por qué |
+| Cierre y tarea | 14 min | Dos de las cuatro maneras de fallar, y qué significa esto para usarlo bien |
 
 <Quiz data="quiz_s2" sesion={2} />
 

@@ -1642,6 +1642,128 @@ def build_alucinaciones():
     )
 
 
+# ---------------------------------------------------------------------------
+# 8. Ventana de contexto — una conversación real de trabajo, con el conteo de
+#    tokens de cada mensaje. El ejercicio de la sesión 2 la corta con distintos
+#    tamaños de ventana para que se vea CUÁL se cae y qué deja de saber el
+#    modelo. Los conteos salen del mismo tokenizador que el laboratorio de
+#    tokens: si el alumno suma a mano, tiene que dar.
+# ---------------------------------------------------------------------------
+
+# `hecho` marca los mensajes que aportan algo que el modelo va a necesitar al
+# final. Son los que duele perder, y el orden importa: el primero es una
+# instrucción, y las instrucciones se dan al principio, que es justo el lugar
+# del que se caen.
+CONVERSACION = [
+    {
+        'rol': 'usuario',
+        'texto': 'Vas a ayudarme con el informe mensual del bloque. Dos reglas para toda la '
+        'conversación: todos los volúmenes van en metros cúbicos, nunca en pies cúbicos, y '
+        'cada vez que uses una cifra que yo no te di, avisame en la misma línea.',
+        'hecho': 'Las dos reglas: metros cúbicos, y avisar cuando la cifra no salió de vos.',
+    },
+    {
+        'rol': 'modelo',
+        'texto': 'Entendido. Trabajo en metros cúbicos y marco cualquier cifra que no venga de '
+        'los datos que me pases. ¿Con qué arrancamos?',
+    },
+    {
+        'rol': 'usuario',
+        'texto': 'El pozo Sirari-12 produjo 148,500 metros cúbicos de gas en junio, con 28 días '
+        'de operación efectiva.',
+        'hecho': 'Sirari-12: 148,500 m³ en junio, 28 días de operación.',
+    },
+    {
+        'rol': 'modelo',
+        'texto': 'Anotado. Eso da un caudal promedio de 5,304 metros cúbicos por día sobre los '
+        'días efectivamente operados. Si querés el promedio sobre los 30 días del mes, son '
+        '4,950 metros cúbicos por día.',
+    },
+    {
+        'rol': 'usuario',
+        'texto': 'El Sirari-14 estuvo cerrado tres semanas por reparación de la línea de '
+        'conducción y produjo 31,200 metros cúbicos.',
+        'hecho': 'Sirari-14: cerrado tres semanas, 31,200 m³.',
+    },
+    {
+        'rol': 'modelo',
+        'texto': 'Con nueve días de operación efectiva, el Sirari-14 promedió 3,467 metros '
+        'cúbicos por día. Ojo con comparar ese promedio mensual contra el del Sirari-12: la '
+        'diferencia es de disponibilidad, no de reservorio.',
+    },
+    {
+        'rol': 'usuario',
+        'texto': 'Bien. Ahora sumale el Sirari-9, que produjo 96,300 metros cúbicos con el mes '
+        'completo, y armame el cuadro comparativo de los tres.',
+    },
+    {
+        'rol': 'modelo',
+        'texto': 'Cuadro de los tres pozos, con volumen del mes, días operados y caudal '
+        'promedio sobre días operados. Sirari-12: 148,500 y 28 días, 5,304 por día. Sirari-14: '
+        '31,200 y 9 días, 3,467 por día. Sirari-9: 96,300 y 30 días, 3,210 por día.',
+    },
+    {
+        'rol': 'usuario',
+        'texto': 'Perfecto. Agregale una columna con el corte de agua: 12% en el Sirari-12, 4% '
+        'en el Sirari-14 y 21% en el Sirari-9.',
+    },
+    {
+        'rol': 'modelo',
+        'texto': 'Listo, cuadro con la columna de corte de agua agregada. El Sirari-9 es el que '
+        'más agua produce de los tres, con 21%, y también el de menor caudal promedio pese a '
+        'haber operado el mes completo.',
+    },
+    {
+        'rol': 'usuario',
+        'texto': 'Escribime ahora el párrafo de conclusiones del informe, dos o tres oraciones, '
+        'para la gerencia.',
+    },
+    {
+        'rol': 'modelo',
+        'texto': 'El bloque produjo 276,000 metros cúbicos en junio. El Sirari-12 aportó más de '
+        'la mitad del total con el mejor caudal promedio del grupo. El Sirari-14 quedó muy por '
+        'debajo por la reparación de la línea, y el Sirari-9 combina el mes completo con el '
+        'caudal más bajo y el corte de agua más alto, que conviene seguir de cerca.',
+    },
+    {
+        'rol': 'usuario',
+        'texto': 'Cerrá con una estimación de lo que produciría el bloque el mes que viene si '
+        'el Sirari-14 vuelve a operar normal.',
+    },
+]
+
+
+def build_contexto():
+    try:
+        import tiktoken
+    except ImportError:
+        print('  contexto: SALTEADO — falta tiktoken (pip install -r scripts/requirements.txt).')
+        print('            public/data/contexto_conversacion.json queda como está.')
+        return None
+
+    enc = tiktoken.get_encoding('o200k_base')
+    mensajes = []
+    for i, m in enumerate(CONVERSACION):
+        mensajes.append(
+            {
+                'i': i,
+                'rol': m['rol'],
+                'texto': m['texto'],
+                'tokens': len(enc.encode(m['texto'])),
+                **({'hecho': m['hecho']} if 'hecho' in m else {}),
+            }
+        )
+    payload = {'mensajes': mensajes, 'total': sum(m['tokens'] for m in mensajes)}
+    write_json(
+        os.path.join(ROOT, 'contexto_conversacion.json'),
+        payload,
+        source='conversación de trabajo escrita para el curso; el conteo de tokens de cada '
+        'mensaje sale del tokenizador o200k_base (GPT-4o) vía tiktoken, igual que el laboratorio '
+        'de tokens de esta misma sesión.',
+    )
+    return payload
+
+
 if __name__ == '__main__':
     build_next_token()
     build_quiz()
@@ -1649,7 +1771,10 @@ if __name__ == '__main__':
     build_decline_wells()
     build_agent_trace()
     build_alucinaciones()
+    ctx = build_contexto()
     ex = build_tokenizer_examples()
     for e in ex:
         print(f"  {e['id']}: {len(e['texto'])} chars -> {len(e['tokens'])} tokens")
+    if ctx:
+        print(f"  contexto: {len(ctx['mensajes'])} mensajes, {ctx['total']} tokens en total")
     print('OK: public/data/ actualizado')
