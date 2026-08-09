@@ -1,6 +1,6 @@
 # curso-energia-ypfb
 
-Sitio del curso **"IA generativa para la industria del petróleo y gas"** — 8 sesiones × 2 h,
+Sitio del curso **"IA generativa para la industria del petróleo y gas"**: 8 sesiones × 2 h,
 en vivo por video, con materiales auto-guiados y ejercicios interactivos que corren enteros en
 el navegador.
 
@@ -15,9 +15,9 @@ Pages. Mismo esqueleto que `simulador-subastas-peru`; identidad visual compartid
 `src/styles/tokens.css` (capa portable `--pd-*` de podeley.ar).
 
 Los once ejercicios corren enteros en el navegador y no mandan nada a ningún lado. Lo único
-que viaja a un servidor es lo que el alumno envía a propósito —la encuesta, los pulsos en vivo
-y las respuestas abiertas— contra un Cloudflare Worker propio (`worker/`), que es opcional:
-sin `VITE_API_URL` el sitio se construye sin nada de eso.
+que viaja a un servidor es lo que el alumno envía a propósito (la encuesta, los pulsos en vivo
+y las respuestas abiertas), junto con el nombre con el que entró, contra un Cloudflare Worker
+propio (`worker/`), que es opcional: sin `VITE_API_URL` el sitio se construye sin nada de eso.
 
 ```bash
 npm run dev        # desarrollo
@@ -30,7 +30,7 @@ npm run typecheck  # tsc --noEmit    ·    npm run typecheck:worker para worker/
 El brochure son dos artefactos versionados que se regeneran a mano cuando cambia
 `docs/brochure/brochure.html`: `python scripts/build_qr.py` rehace el QR desde la URL del
 curso, y `SHOTS_MODULES_DIR=<dir-con-playwright-core> node tools/brochure-pdf.mjs` rehace
-`public/brochure.pdf`. Los dos necesitan algo que no está en el repo —segno y un chromium—
+`public/brochure.pdf`. Los dos necesitan algo que no está en el repo (segno y un chromium),
 y por eso el resultado se versiona en vez de construirse en CI.
 
 ## Slides
@@ -88,6 +88,13 @@ Una semana antes de la primera clase, pedirle a alguien de la empresa que abra
 manera de saber si el firewall bloquea `*.workers.dev`, y no es algo que se pueda descubrir
 diez minutos antes de empezar. Si está bloqueado, la salida es mover la zona `podeley.ar` a
 Cloudflare y darle un dominio propio al Worker.
+
+Ojo con el origen: el sitio se publica en `podeley.github.io/curso-energia-ypfb`, pero
+mientras la organización tenga dominio propio configurado en GitHub Pages, esa URL responde
+301 y el navegador termina en `podeley.ar/curso-energia-ypfb/`. El `Origin` que ve el Worker
+es entonces `https://podeley.ar`, y `ORIGENES` en `worker/wrangler.toml` tiene que incluir
+los dos. Por eso el ensayo se hace siempre desde la URL publicada, la misma que van a abrir
+los alumnos, nunca desde localhost.
 
 El día anterior conviene un ensayo con `EDICION` terminada en `-ensayo`: abrir un pulso,
 responderlo **desde un teléfono con datos móviles** (no del wifi de la oficina, que prueba

@@ -31,43 +31,49 @@ TOKENIZER_TEXTS = [
         'id': 'direccional',
         'label': 'Dos palabras que usás todos los días',
         'texto': 'perforación direccional',
-        'note': 'Dos palabras, seis tokens. La misma idea en inglés, «directional drilling», '
+        'note': 'Dos palabras, seis tokens. La misma idea en inglés, "directional drilling", '
         'usa tres: la mitad. Nada de esto lo decidió alguien pensando en la industria; salió '
         'de qué texto abundaba cuando se entrenó el tokenizador.',
     },
     {
         'id': 'produccion',
+        # La misma cifra y el mismo pozo que la conversación del ejercicio de la
+        # ventana de contexto: un solo Sirari-12, produciendo gas (el campo real
+        # es gasífero), en los dos datasets de la sesión.
         'label': 'Parte de producción (español)',
-        'texto': 'El pozo Sirari-12 produjo 4.850 barriles de petróleo por día.',
+        'texto': 'El pozo Sirari-12 produjo 148,500 metros cúbicos de gas en junio.',
         'note': 'Las palabras comunes en español suelen partirse en 2–3 pedazos, y los números y '
         'nombres propios en más. Compará este conteo con la misma frase en inglés.',
     },
     {
         'id': 'ingles',
         'label': 'La misma frase en inglés',
-        'texto': 'Well Sirari-12 produced 4,850 barrels of oil per day.',
+        'texto': 'Well Sirari-12 produced 148,500 cubic meters of gas in June.',
         'note': 'La misma información en inglés usa menos tokens: el tokenizador se entrenó con '
-        'mucho más inglés que español. Por eso el español «rinde menos» por token (y cuesta más en APIs).',
+        'mucho más inglés que español. Por eso el español "rinde menos" por token (y cuesta más en APIs).',
     },
     {
         'id': 'tecnico',
         'label': 'Términos técnicos',
         'texto': 'La estimulación hidráulica del esquisto aumentó la permeabilidad del reservorio.',
-        'note': 'Términos técnicos poco frecuentes se parten en varias piezas. El modelo no «conoce '
-        'la palabra»: conoce estadísticas sobre sus pedazos.',
+        'note': 'Términos técnicos poco frecuentes se parten en varias piezas. El modelo no "conoce '
+        'la palabra": conoce estadísticas sobre sus pedazos.',
     },
     {
         'id': 'siglas',
+        # "unos 30" y no una cifra exacta: la producción boliviana ronda ese
+        # orden y la frase no puede afirmar un dato falso en un curso que enseña
+        # a verificar. Las siglas y unidades, que son el punto, quedan.
         'label': 'Siglas y unidades',
-        'texto': 'YPFB reportó 42 MMm3/d de gas natural y 1.200 psi en boca de pozo.',
+        'texto': 'YPFB informó unos 30 MMm3/d de gas natural y 1,200 psi en boca de pozo.',
         'note': 'Siglas, unidades y números se tokenizan de formas poco intuitivas. Esta es una de '
         'las razones por las que los LLMs se equivocan contando caracteres o haciendo aritmética.',
     },
     {
         'id': 'numeros',
         'label': 'Un número largo',
-        'texto': 'La reserva probada es de 10.234.567.890 metros cúbicos.',
-        'note': 'El número se parte en grupos arbitrarios de dígitos: el modelo no ve «un número», '
+        'texto': 'La reserva probada es de 10,234,567,890 metros cúbicos.',
+        'note': 'El número se parte en grupos arbitrarios de dígitos: el modelo no ve "un número", '
         've pedazos. Desconfiá de cualquier aritmética que haga de cabeza.',
     },
 ]
@@ -364,6 +370,50 @@ QUIZ_S2 = [
         ],
     },
     {
+        'pregunta': 'En una conversación larga, el modelo dejó de respetar una regla que pusiste en el primer mensaje. ¿Qué es lo más probable?',
+        'opciones': [
+            {
+                'texto': 'Se confundió porque la temperatura estaba alta.',
+                'explicacion': 'La temperatura elige entre continuaciones candidatas; no decide qué parte de la conversación tiene delante el modelo.',
+            },
+            {
+                'texto': 'El modelo se cansa en conversaciones largas y empieza a ignorar instrucciones.',
+                'explicacion': 'No hay nada que se canse: cada respuesta se calcula igual que la primera. Lo que cambia no es el esfuerzo, es qué parte de la conversación entra en la ventana.',
+            },
+            {
+                'texto': 'La conversación creció más que la ventana de contexto y el primer mensaje quedó afuera. Para el modelo, esa regla ya no existe.',
+                'correcta': True,
+                'explicacion': 'Y no avisa: lo que sale de la ventana no se "olvidó", directamente dejó de estar, y el modelo no sabe que alguna vez estuvo. Por eso las instrucciones importantes conviene repetirlas cada tanto.',
+            },
+            {
+                'texto': 'Hay que escribir la regla de nuevo, con más énfasis.',
+                'explicacion': 'Repetirla sí funciona, pero no por el énfasis: funciona porque la vuelve a meter en la ventana. El subrayado no le agrega nada a un texto que el modelo ya no tiene delante.',
+            },
+        ],
+    },
+    {
+        'pregunta': 'De las dos etapas de entrenamiento que vimos, ¿cuál describe mejor el proceso completo?',
+        'opciones': [
+            {
+                'texto': 'Se reentrena con cada conversación: aprende de lo que le escribís.',
+                'explicacion': 'Lo que le escribís no cambia sus parámetros: entra como contexto de esa conversación y nada más. Aprenderlo exigiría volver a entrenarlo.',
+            },
+            {
+                'texto': 'La segunda etapa le carga los datos que le faltaron en la primera.',
+                'explicacion': 'La segunda etapa no agrega conocimiento del mundo: enseña comportamiento. Casi todo lo que el modelo "sabe" viene de la primera.',
+            },
+            {
+                'texto': 'Las dos etapas son iguales; la segunda solo usa más datos.',
+                'explicacion': 'Es al revés: la segunda usa muchísimos menos datos. Y no hacen lo mismo: una aprende a continuar texto, la otra a portarse como asistente.',
+            },
+            {
+                'texto': 'Primero aprende a continuar texto leyendo un corpus enorme; después, con muchos menos ejemplos y preferencias humanas, aprende a comportarse como un asistente.',
+                'correcta': True,
+                'explicacion': 'Y el tono servicial y seguro sale de esa segunda etapa, no de haber verificado nada: por eso suena igual de convencido cuando acierta y cuando inventa.',
+            },
+        ],
+    },
+    {
         'pregunta': 'A partir de la mecánica que vimos, ¿por qué alucina un modelo?',
         'opciones': [
             {
@@ -373,7 +423,7 @@ QUIZ_S2 = [
             {
                 'texto': 'Porque su única operación es continuar el texto de la forma más plausible, y una continuación plausible puede ser falsa.',
                 'correcta': True,
-                'explicacion': 'No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja — y esa continuación tiene la forma de un dato verdadero.',
+                'explicacion': 'No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja, y esa continuación tiene la forma de un dato verdadero.',
             },
             {
                 'texto': 'Porque a veces se queda sin contexto y rellena.',
@@ -1254,6 +1304,18 @@ def build_decline_wells():
         for row in _csv.DictReader(f):
             series.setdefault(row['idpozo'], []).append(row)
 
+    # Per-well provenance. The envelope `source` mixes both origins because the
+    # file does; an exercise that shows ONE well prints this field instead, so a
+    # synthetic curve never gets credited to the government dataset.
+    fuente_escuela = (
+        'pozo de escuela: serie sintética generada para el curso a partir de parámetros de '
+        'Arps conocidos, más ruido de medición; no proviene de ningún dato medido.'
+    )
+    fuente_real = (
+        'Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía '
+        '(Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).'
+    )
+
     out = []
     for spec in DECLINE_ESCUELA:
         out.append({
@@ -1265,6 +1327,7 @@ def build_decline_wells():
             'empresa': '',
             'verdad': spec['verdad'],
             'nota': spec['nota'],
+            'fuente': fuente_escuela,
             'serie': _serie_escuela(spec),
         })
 
@@ -1281,6 +1344,7 @@ def build_decline_wells():
             'empresa': w['empresa'],
             'verdad': None,
             'nota': elegido['nota'],
+            'fuente': fuente_real,
             'serie': [
                 {
                     'ym': r['ym'],
@@ -1695,6 +1759,7 @@ CONVERSACION = [
         'rol': 'usuario',
         'texto': 'Bien. Ahora sumale el Sirari-9, que produjo 96,300 metros cúbicos con el mes '
         'completo, y armame el cuadro comparativo de los tres.',
+        'hecho': 'Sirari-9: 96,300 m³ con el mes completo.',
     },
     {
         'rol': 'modelo',
@@ -1706,6 +1771,7 @@ CONVERSACION = [
         'rol': 'usuario',
         'texto': 'Perfecto. Agregale una columna con el corte de agua: 12% en el Sirari-12, 4% '
         'en el Sirari-14 y 21% en el Sirari-9.',
+        'hecho': 'Cortes de agua: 12% (S-12), 4% (S-14), 21% (S-9).',
     },
     {
         'rol': 'modelo',

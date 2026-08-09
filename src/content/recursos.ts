@@ -6,7 +6,7 @@
 // one, check it and move the date; when a link rots, remove it rather than
 // leaving it "probably fine".
 
-export const VERIFICADO = '2026-08-08'
+export const VERIFICADO = '2026-08-09'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -33,6 +33,17 @@ export type Recurso = {
 
 export const RECURSOS: Record<number, Recurso[]> = {
   1: [
+    {
+      tipo: 'video',
+      titulo: 'Large Language Models explained briefly',
+      url: 'https://www.youtube.com/watch?v=LPZh9BOjkQs',
+      fuente: '3Blue1Brown',
+      duracion: '7:58',
+      publicado: '2024-11',
+      idioma: 'en',
+      porque:
+        'El video del punto 1 de la lista de arriba. Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
+    },
     {
       tipo: 'video',
       titulo: '¿Qué son los Grandes Modelos de Lenguaje? Explicación sencilla',

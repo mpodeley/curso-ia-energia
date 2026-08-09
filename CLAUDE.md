@@ -11,9 +11,10 @@ hosts the per-session materials, the slide decks, and **fully client-side intera
 to GitHub Pages.
 
 One thing *does* leave the browser, and only when the student presses a button: the session-1
-survey, the live pulsos and the open answers, which go to a Cloudflare Worker in `worker/`
-(see below). The exercises themselves still send nothing. Keep the footer in `src/App.tsx`
-honest about that distinction — it is a promise, not decoration.
+survey, the live pulsos and the open answers — plus the name typed into the identity card, which
+travels with them — all going to a Cloudflare Worker in `worker/` (see below). The exercises
+themselves still send nothing. Keep the footer in `src/App.tsx` honest about that distinction —
+it is a promise, not decoration.
 
 Sibling of `simulador-subastas-peru` (same Vite + React 19 + TS + Recharts skeleton and
 conventions). Curriculum design + full plan: `~/.claude/plans/flickering-floating-star.md`.
@@ -56,11 +57,15 @@ Sales material: `docs/syllabus.md`.
 - UI text Spanish (voseo — the instructor is Argentine); identifiers/comments English.
 - No inline hex in components — theme.ts tokens only (chart hexes live in `theme.chart`).
 - Every dataset JSON carries the metadata envelope; exercises show `meta.source` (provenance is
-  part of the pedagogy — the course teaches verification).
+  part of the pedagogy — the course teaches verification). Exception: `decline_wells.json` mixes
+  synthetic and real wells, so single-well exercises print the per-well `fuente` field instead —
+  a synthetic curve must never get credited to the government dataset.
 - Exercises must run 100% client-side and deterministic where demoed live (seeded RNG in
   `engine/sampling.ts`) so screen-shared runs reproduce.
-- Session pages S4–S8 carry a `callout--wip` block until their content lands; remove it when
-  filling in the session (and flip `estado` in programa.ts).
+- Only S8 still carries the `callout--wip` block (`estado: 'en-preparacion'`); remove it when its
+  content lands and flip `estado` in programa.ts. S3–S7 have full prose, exercises and quizzes but
+  no deck yet — `slides` in programa.ts stays unset until each deck exists, and the instructor
+  writes them as the course advances.
 - A deck and its MDX share the agenda table: change both or neither.
 - The LIGHT values of `tokens.css` are restated as literal hex in **three** places
   (`src/theme.ts`, `docs/brochure/brochure.html`, `slides/themes/podeley.css`) because each one

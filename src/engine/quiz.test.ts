@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { correctIndex, score, type QuizPregunta } from './quiz'
 
@@ -39,12 +39,19 @@ describe('quiz scoring', () => {
 // Guards the quiz content. A quiz with two right answers, or with an option
 // that has no explanation, teaches nothing and the component would not say so.
 describe('quiz_sN.json', () => {
-  const SESIONES = [1, 2, 3, 4, 5, 6, 7]
+  // Globbed, not hardcoded: the day quiz_s8.json lands it is covered without
+  // anyone remembering to extend a list.
+  const SESIONES = readdirSync('public/data')
+    .map((f) => /^quiz_s(\d+)\.json$/.exec(f)?.[1])
+    .filter((n): n is string => n !== undefined)
+    .map(Number)
+    .sort((a, b) => a - b)
 
   const cargar = (n: number) =>
     JSON.parse(readFileSync(`public/data/quiz_s${n}.json`, 'utf-8')).data as QuizPregunta[]
 
   it('ships a quiz for every session that has one', () => {
+    expect(SESIONES.length).toBeGreaterThanOrEqual(7)
     for (const n of SESIONES) expect(cargar(n).length, `sesión ${n}`).toBeGreaterThanOrEqual(3)
   })
 

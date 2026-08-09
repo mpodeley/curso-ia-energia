@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T15:11:53+00:00",
+  "generated_at": "2026-08-09T21:22:22+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
@@ -70,6 +70,50 @@
       ]
     },
     {
+      "pregunta": "En una conversación larga, el modelo dejó de respetar una regla que pusiste en el primer mensaje. ¿Qué es lo más probable?",
+      "opciones": [
+        {
+          "texto": "Se confundió porque la temperatura estaba alta.",
+          "explicacion": "La temperatura elige entre continuaciones candidatas; no decide qué parte de la conversación tiene delante el modelo."
+        },
+        {
+          "texto": "El modelo se cansa en conversaciones largas y empieza a ignorar instrucciones.",
+          "explicacion": "No hay nada que se canse: cada respuesta se calcula igual que la primera. Lo que cambia no es el esfuerzo, es qué parte de la conversación entra en la ventana."
+        },
+        {
+          "texto": "La conversación creció más que la ventana de contexto y el primer mensaje quedó afuera. Para el modelo, esa regla ya no existe.",
+          "correcta": true,
+          "explicacion": "Y no avisa: lo que sale de la ventana no se \"olvidó\", directamente dejó de estar, y el modelo no sabe que alguna vez estuvo. Por eso las instrucciones importantes conviene repetirlas cada tanto."
+        },
+        {
+          "texto": "Hay que escribir la regla de nuevo, con más énfasis.",
+          "explicacion": "Repetirla sí funciona, pero no por el énfasis: funciona porque la vuelve a meter en la ventana. El subrayado no le agrega nada a un texto que el modelo ya no tiene delante."
+        }
+      ]
+    },
+    {
+      "pregunta": "De las dos etapas de entrenamiento que vimos, ¿cuál describe mejor el proceso completo?",
+      "opciones": [
+        {
+          "texto": "Se reentrena con cada conversación: aprende de lo que le escribís.",
+          "explicacion": "Lo que le escribís no cambia sus parámetros: entra como contexto de esa conversación y nada más. Aprenderlo exigiría volver a entrenarlo."
+        },
+        {
+          "texto": "La segunda etapa le carga los datos que le faltaron en la primera.",
+          "explicacion": "La segunda etapa no agrega conocimiento del mundo: enseña comportamiento. Casi todo lo que el modelo \"sabe\" viene de la primera."
+        },
+        {
+          "texto": "Las dos etapas son iguales; la segunda solo usa más datos.",
+          "explicacion": "Es al revés: la segunda usa muchísimos menos datos. Y no hacen lo mismo: una aprende a continuar texto, la otra a portarse como asistente."
+        },
+        {
+          "texto": "Primero aprende a continuar texto leyendo un corpus enorme; después, con muchos menos ejemplos y preferencias humanas, aprende a comportarse como un asistente.",
+          "correcta": true,
+          "explicacion": "Y el tono servicial y seguro sale de esa segunda etapa, no de haber verificado nada: por eso suena igual de convencido cuando acierta y cuando inventa."
+        }
+      ]
+    },
+    {
       "pregunta": "A partir de la mecánica que vimos, ¿por qué alucina un modelo?",
       "opciones": [
         {
@@ -79,7 +123,7 @@
         {
           "texto": "Porque su única operación es continuar el texto de la forma más plausible, y una continuación plausible puede ser falsa.",
           "correcta": true,
-          "explicacion": "No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja — y esa continuación tiene la forma de un dato verdadero."
+          "explicacion": "No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja, y esa continuación tiene la forma de un dato verdadero."
         },
         {
           "texto": "Porque a veces se queda sin contexto y rellena.",

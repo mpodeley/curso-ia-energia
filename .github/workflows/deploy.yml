@@ -23,8 +23,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # The worker deploys by hand, never from CI — but its typecheck is free,
+      # and it needs the worker's own node_modules for @cloudflare/workers-types.
+      - name: Install worker dependencies
+        run: npm ci --prefix worker
+
       - name: Type check
         run: npm run typecheck
+
+      - name: Type check worker
+        run: npm run typecheck:worker
 
       - name: Unit tests
         run: npm test

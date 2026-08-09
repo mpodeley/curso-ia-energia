@@ -11,7 +11,9 @@ las respuestas que ya existan. El plan original era un Google Form; se descartó
 lo que completan en vivo sin salir del sitio.
 
 La primera pregunta perdió el "nombre (opcional)": ahora el nombre lo toma la tarjeta de
-identidad, una vez por navegador para todo el curso.
+identidad, una vez por navegador para todo el curso. La opción "Sistemas corporativos" del
+bloque C perdió el "(¿cuál?)" a propósito: una opción múltiple no puede repreguntar, y el
+detalle sale solo en la pregunta 9, la de "conversar con tus datos".
 
 **Nota de privacidad para el encabezado del form:** "Las respuestas se usan solo para diseñar
 los ejercicios y el caso final del curso. No pidas ni incluyas datos confidenciales de la

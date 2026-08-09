@@ -111,6 +111,14 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
   const entregar = () => patch({ mano: { qi: state.qi, Di: state.Di } })
   const correrMaquina = () => patch({ maquina: ajustar(obs, B_FIJO) })
 
+  // The nearest hand-slider notches around the true Di, derived from the real
+  // step so the "your knobs could not get there" sentence stays true if the
+  // knobs ever change. decline.test.ts guards that the true Di is off-grid.
+  const pasoDiPct = PERILLAS_A_MANO.pasoDi * 100
+  const diVerdadPct = (pozo.verdad?.Di ?? 0) * 100
+  const vecinoDiAbajo = Math.floor(diVerdadPct / pasoDiPct + 1e-9) * pasoDiPct
+  const vecinoDiArriba = vecinoDiAbajo + pasoDiPct
+
   const celda: React.CSSProperties = { padding: `${space.xs}px ${space.md}px`, textAlign: 'right' }
   const encabezado: React.CSSProperties = {
     ...celda,
@@ -199,7 +207,7 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
               <tr style={{ borderTop: `1px solid ${colors.border}` }}>
                 <td style={{ ...celda, textAlign: 'left', color: chart.line[1], fontWeight: 700 }}>Vos</td>
                 <td style={celda}>{mano.qi.toLocaleString('en-US')}</td>
-                <td style={celda}>{(mano.Di * 100).toFixed(1)}%/mes</td>
+                <td style={celda}>{(mano.Di * 100).toFixed(2)}%/mes</td>
                 <td style={{ ...celda, fontWeight: 700 }}>{pct(errMano)}</td>
               </tr>
               {maq && (
@@ -250,12 +258,12 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
                     qi = {pozo.verdad?.qi.toLocaleString('en-US')} {UNIDAD} y Di ={' '}
                     {((pozo.verdad?.Di ?? 0) * 100).toFixed(1)}%/mes
                   </strong>
-                  , y después se le sumó un ruido de medición del orden del 2%. Compará esos dos números con los que
+                  , y después se le sumó un ruido de medición de hasta ±2%. Compará esos dos números con los que
                   encontró la máquina.
                 </p>
                 <p style={{ margin: `${space.sm}px 0 0` }}>
                   Fijate en algo más: ni siquiera con los valores exactos el error da cero. Queda{' '}
-                  {pct(errorDe(pozo.verdad?.qi ?? 0, pozo.verdad?.Di ?? 0))}, que es el ruido. Ese es el piso, y
+                  {pct(errorDe(pozo.verdad?.qi ?? 0, pozo.verdad?.Di ?? 0))}, el residuo que deja ese ruido. Ese es el piso, y
                   abajo no hay nada que ganar. Un modelo que llega a cero contra datos con ruido no entendió mejor el
                   pozo: está copiando el ruido.
                 </p>
@@ -276,9 +284,9 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
 
               <Solucion titulo="Por qué tus perillas no podían llegar">
                 <p style={{ margin: 0 }}>
-                  La perilla de Di se mueve de a {(PERILLAS_A_MANO.pasoDi * 100).toFixed(1)}%/mes, así que sus
-                  posiciones cercanas al valor verdadero son {((pozo.verdad?.Di ?? 0) * 100 - 0.1).toFixed(1)}% y{' '}
-                  {((pozo.verdad?.Di ?? 0) * 100 + 0.1).toFixed(1)}%. El valor con el que se generó la curva no está
+                  La perilla de Di se mueve de a {pasoDiPct.toFixed(1)}%/mes, así que sus
+                  posiciones cercanas al valor verdadero son {vecinoDiAbajo.toFixed(1)}% y{' '}
+                  {vecinoDiArriba.toFixed(1)}%. El valor con el que se generó la curva no está
                   entre ellas: no hay forma de acertarlo con esta perilla.
                 </p>
                 <p style={{ margin: `${space.sm}px 0 0` }}>
@@ -293,7 +301,11 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
         </>
       )}
 
-      {meta.source && (
+      {/* Per-well provenance: the envelope source covers the whole file (school
+          wells AND the real Capítulo IV ones), and crediting a government
+          dataset under a purely synthetic curve would be the wrong lesson in a
+          course that teaches verification. */}
+      {(pozo.fuente ?? meta.source) && (
         <div
           style={{
             marginTop: space.md,
@@ -302,7 +314,7 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
             color: colors.textDim,
           }}
         >
-          fuente: {meta.source}
+          fuente: {pozo.fuente ?? meta.source}
         </div>
       )}
     </Ejercicio>

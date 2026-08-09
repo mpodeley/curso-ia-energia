@@ -9,7 +9,7 @@
     "tail": "wrangler tail",
     "schema:local": "wrangler d1 execute curso-energia-ypfb --local --file=./sql/schema.sql",
     "schema:remote": "wrangler d1 execute curso-energia-ypfb --remote --file=./sql/schema.sql",
-    "export": "wrangler d1 export curso-energia-ypfb --remote --output=../docs/respuestas/backup.sql"
+    "export": "wrangler d1 export curso-energia-ypfb --remote --output=backup.sql"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260804.1",

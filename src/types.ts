@@ -106,6 +106,10 @@ export type PozoDeclinacion = {
   /** The parameters the curve was generated from. Only on 'escuela' wells. */
   verdad: { qi: number; Di: number; b: number } | null
   nota: string
+  /** Per-well provenance. The envelope `source` covers the whole file; this is
+   *  what an exercise showing a single well prints, so a synthetic well never
+   *  gets credited to the government dataset the real ones came from. */
+  fuente?: string
   serie: PuntoProduccion[]
 }
 

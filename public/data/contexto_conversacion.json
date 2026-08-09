@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T20:34:03+00:00",
+  "generated_at": "2026-08-09T21:22:22+00:00",
   "source": "conversación de trabajo escrita para el curso; el conteo de tokens de cada mensaje sale del tokenizador o200k_base (GPT-4o) vía tiktoken, igual que el laboratorio de tokens de esta misma sesión.",
   "source_date": null,
   "data": {
@@ -47,7 +47,8 @@
         "i": 6,
         "rol": "usuario",
         "texto": "Bien. Ahora sumale el Sirari-9, que produjo 96,300 metros cúbicos con el mes completo, y armame el cuadro comparativo de los tres.",
-        "tokens": 37
+        "tokens": 37,
+        "hecho": "Sirari-9: 96,300 m³ con el mes completo."
       },
       {
         "i": 7,
@@ -59,7 +60,8 @@
         "i": 8,
         "rol": "usuario",
         "texto": "Perfecto. Agregale una columna con el corte de agua: 12% en el Sirari-12, 4% en el Sirari-14 y 21% en el Sirari-9.",
-        "tokens": 44
+        "tokens": 44,
+        "hecho": "Cortes de agua: 12% (S-12), 4% (S-14), 21% (S-9)."
       },
       {
         "i": 9,

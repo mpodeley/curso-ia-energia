@@ -120,10 +120,10 @@ verdaderamente nueva.
 
 ## Cuatro capas, una historia conocida
 
-- **Data science** — mirar datos, limpiarlos, graficarlos, sacar conclusiones
-- **Machine learning** — en vez de escribir la fórmula, mostrás ejemplos y la máquina encuentra el patrón
-- **Deep learning** — machine learning con redes neuronales grandes: más datos, más cómputo, patrones más complejos
-- **IA generativa** — modelos tan grandes que ya no solo clasifican o predicen un número: *generan*
+- **Data science**: mirar datos, limpiarlos, graficarlos, sacar conclusiones
+- **Machine learning**: en vez de escribir la fórmula, mostrás ejemplos y la máquina encuentra el patrón
+- **Deep learning**: machine learning con redes neuronales grandes (más datos, más cómputo, patrones más complejos)
+- **IA generativa**: modelos tan grandes que ya no solo clasifican o predicen un número: *generan*
 
 <!--
 3 min · acumulado 0:14
@@ -138,7 +138,7 @@ Insistir en que están anidadas: cada capa usa la anterior, no la reemplaza.
 Es lo que siempre hicimos: mirar datos, limpiarlos, graficarlos, sacar conclusiones.
 
 **Una curva de declinación ajustada a mano ya es un modelo.** Alguien eligió una forma
-funcional, estimó tres parámetros y proyectó. Eso es modelar.
+funcional, estimó sus parámetros y proyectó. Eso es modelar.
 
 <!--
 3 min · acumulado 0:17
@@ -155,7 +155,9 @@ Entregar al ejercicio: "no se los voy a contar, lo van a hacer ustedes".
 
 `podeley.github.io/curso-energia-ypfb` · sesión 1
 
-Dos perillas y un número que tiene que bajar: el error. Bájenlo todo lo que puedan.
+Dos perillas y un número que tiene que bajar: el error. Bajalo todo lo que puedas.
+
+Si ya lo hiciste antes de hoy, apretá "Reiniciar ejercicio" y arrancá de cero.
 
 <!--
 6 min · acumulado 0:23
@@ -203,7 +205,7 @@ El botón está abajo del gráfico. Nadie le dijo los valores: tiene los puntos 
 5 min · acumulado 0:31
 Ventana C otra vez. Que aprieten "Que la busque la máquina".
 Leer la tabla en voz alta: su ajuste contra el de ella. Casi siempre gana la
-máquina, y por el doble (2.17% contra 1.06% en el mejor caso a mano).
+máquina, y por el doble: 1.06% contra el 2.17% del mejor ajuste posible a mano.
 Abrir el desplegable "Los valores con los que se generó esta curva": qi 320 y
 Di 2.1%/mes. La máquina cayó justo encima sin que nadie se los dijera.
 La frase del bloque: ni con los valores exactos el error da cero. Queda 1.06%,
@@ -236,7 +238,7 @@ escritos a mano.
 Modelos tan grandes, entrenados con tanto texto, que en lugar de solo clasificar o predecir
 un número, **generan**: texto, código, imágenes.
 
-Los **LLM** — modelos grandes de lenguaje — son el caso que nos ocupa las próximas ocho semanas.
+Los **LLM** (modelos grandes de lenguaje) son el caso que nos ocupa el resto del curso.
 
 <!--
 3 min · acumulado 0:36
@@ -250,9 +252,9 @@ la herramienta correcta para la mayoría de los problemas con números.
 
 ## Tres cosas, ninguna mágica
 
-- **Datos** — todo el texto de internet, disponible y digitalizado
-- **Cómputo** — GPUs, que resultaron ser justo la máquina que estos modelos necesitaban
-- **Una arquitectura que escala** — el *transformer*, 2017
+- **Datos**: todo el texto de internet, disponible y digitalizado
+- **Cómputo**: GPUs, que resultaron ser justo la máquina que estos modelos necesitaban
+- **Una arquitectura que escala**: el *transformer*, 2017
 
 <!--
 4 min · acumulado 0:40
@@ -273,8 +275,8 @@ datos y cómputo, sé aproximadamente cuánto mejora.
 2 min · acumulado 0:42
 La frase que quiero que se lleven del bloque.
 Consecuencia práctica: lo que hoy no funciona bien probablemente funcione mejor
-en un año, sin que nadie invente nada nuevo. Y lo que falla por diseño —las
-alucinaciones— no se arregla solo agrandando.
+en un año, sin que nadie invente nada nuevo. Y lo que falla por diseño (las
+alucinaciones) no se arregla solo agrandando.
 -->
 
 ---
@@ -284,7 +286,7 @@ alucinaciones— no se arregla solo agrandando.
 Machine learning lleva años escondido en herramientas de la industria: simuladores,
 interpretación sísmica, mantenimiento predictivo, control de procesos.
 
-Lo nuevo de 2023 en adelante no es la IA. Es que **una parte de la IA se volvió conversacional**,
+Lo nuevo desde fines de 2022 no es la IA. Es que **una parte de la IA se volvió conversacional**,
 y por eso llegó a todos los escritorios de golpe.
 
 <!--
@@ -330,7 +332,7 @@ Pedir que mientras miran anoten: ¿esto me serviría el lunes?
 
 ## Vamos al chatbot
 
-Miren tres cosas: qué tan **rápido** responde, qué tan **seguro** suena, y si lo que dice es **verdad**.
+Miren tres cosas: qué tan rápido responde, qué tan seguro suena, y si lo que dice es **verdad**.
 
 <!--
 10 min · acumulado 0:57
@@ -381,8 +383,10 @@ más evidente:
    Subandino con su número de SPE."
    (los números de paper suelen ser inventados y son verificables al instante)
 
-3) "¿Qué dice la norma API 14B sobre el intervalo de prueba?"
-   (mezcla normas reales con contenido inventado)
+3) "¿Con qué número de resolución aprobó la ANH el plan de desarrollo del campo
+   Sábalo?"
+   (el organismo y el campo son reales; el número que dé va a tener la forma
+   exacta de una cita, y no va a resistir la búsqueda)
 
 Verificar UNA en vivo, buscándola. Que vean el chequeo, no solo la afirmación.
 Volver al deck.
@@ -402,9 +406,10 @@ Dos causas, no cuatro. Las otras dos no las vieron todavía y nombrarlas ahora
 sería humo; van enteras en el cierre, como hoja de ruta.
 La primera se arregla trayéndole el documento, y eso es la sesión 5.
 La segunda no se arregla: se verifica, y eso es la sesión 7.
-Si preguntan por la tercera respuesta, la de la norma API 14B: es la mezcla de
-las dos. La norma existe y el contenido no. Es la peor de las tres, y por eso
-el ejercicio de la sesión 7 le dedica un informe entero.
+Si preguntan por la tercera respuesta, la de la resolución de la ANH: es la
+mezcla de las dos. El organismo y el campo existen; el número, no. Es la peor
+de las tres, porque el marco real hace creíble al dato inventado, y por eso el
+ejercicio de la sesión 7 le dedica un informe entero.
 -->
 
 ---
@@ -429,9 +434,10 @@ que alguien vaya a arreglar.
 <!--
 2 min · acumulado 1:15
 Cambiar al panel y abrir el pulso "s1-confianza".
-Es la misma forma de pregunta que la del arranque, pero después de ver fallar al
-modelo. Mostrar las barras mientras se llenan.
-Cerrar el pulso para que ellos vean el resultado. Cierre del bloque 2.
+Retoma la pregunta del arranque, ahora después de ver fallar al modelo: el
+antes y el después es el golpe del bloque.
+No proyectar las barras mientras votan (el que mira ancla su voto en el de los
+demás): cerrar el pulso y mostrar el resultado recién ahí. Cierre del bloque 2.
 -->
 
 ---
@@ -497,7 +503,7 @@ Arranca 1:30, termina 1:50
 
 ---
 
-## ¿Qué tarea de tu semana te parece **más** automatizable con lo que viste hoy?
+## ¿Qué tarea de tu semana laboral te parece **más** automatizable con lo que viste hoy?
 
 ¿Y cuál **menos**?
 
@@ -554,10 +560,10 @@ Arranca 1:50, termina 2:00
 
 ## Las cuatro maneras de fallar
 
-- **Inventa lo que no sabe** — de cómo genera el texto, palabra por palabra · sesión 2
-- **Está seguro y equivocado** — de lo que aprendió y de lo que no · sesión 5
-- **Se olvida de lo que le dijiste** — de cuánto puede mirar a la vez · sesiones 2 y 6
-- **No hace lo que le pediste** — de cuánto control dan las instrucciones · sesión 3
+- **Inventa lo que no sabe**: de cómo genera el texto, palabra por palabra · sesión 2
+- **Está seguro y equivocado**: de lo que aprendió y de lo que no · sesión 5
+- **Se olvida de lo que le dijiste**: de cuánto puede mirar a la vez · sesiones 2 y 6
+- **No hace lo que le pediste**: de cuánto control dan las instrucciones · sesión 3
 
 <!--
 3 min · acumulado 1:53
@@ -575,7 +581,7 @@ La misma lista está en la página de la sesión 1.
 
 Usá el chatbot para **una tarea real** de tu trabajo, sin datos confidenciales.
 
-Anotá tres cosas: **qué pediste**, **qué salió bien**, **qué salió mal**.
+Anotá tres cosas: qué pediste, qué salió bien y **qué salió mal**.
 
 Dos minutos de notas alcanzan. Las usamos para abrir la próxima sesión.
 
@@ -593,12 +599,14 @@ Y que arriesguen por qué: con la hoja de ruta recién vista, ya pueden.
 - Ver que el modelo **predice el próximo token**, y qué controla la temperatura
 - Derivar de esa mecánica **por qué los modelos alucinan**
 
-En la página hay dos ejercicios para jugar antes: el tokenizador y "adiviná el próximo token".
+En la página hay tres ejercicios para jugar antes (el tokenizador, "adiviná el próximo token"
+y la ventana de contexto), más el material previo en video.
 
 <!--
 3 min · acumulado 1:59
-Pedirles que hagan los dos ejercicios ANTES de la sesión 2: la clase los recorre
-suponiendo que ya jugaron.
+Pedirles que hagan los tres ejercicios ANTES de la sesión 2: la clase los
+recorre suponiendo que ya jugaron. Los videos del material previo son opcionales
+pero cortos, y el que llegue con uno visto entiende el doble.
 -->
 
 ---

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T20:48:09+00:00",
+  "generated_at": "2026-08-09T21:22:22+00:00",
   "source": "tokenizador o200k_base (GPT-4o) vía tiktoken",
   "source_date": null,
   "data": [
@@ -15,12 +15,12 @@
         "cc",
         "ional"
       ],
-      "note": "Dos palabras, seis tokens. La misma idea en inglés, «directional drilling», usa tres: la mitad. Nada de esto lo decidió alguien pensando en la industria; salió de qué texto abundaba cuando se entrenó el tokenizador."
+      "note": "Dos palabras, seis tokens. La misma idea en inglés, \"directional drilling\", usa tres: la mitad. Nada de esto lo decidió alguien pensando en la industria; salió de qué texto abundaba cuando se entrenó el tokenizador."
     },
     {
       "id": "produccion",
       "label": "Parte de producción (español)",
-      "texto": "El pozo Sirari-12 produjo 4.850 barriles de petróleo por día.",
+      "texto": "El pozo Sirari-12 produjo 148,500 metros cúbicos de gas en junio.",
       "tokens": [
         "El",
         " po",
@@ -31,15 +31,17 @@
         "12",
         " produjo",
         " ",
-        "4",
-        ".",
-        "850",
-        " barr",
-        "iles",
+        "148",
+        ",",
+        "500",
+        " metros",
+        " cú",
+        "b",
+        "icos",
         " de",
-        " petróleo",
-        " por",
-        " día",
+        " gas",
+        " en",
+        " junio",
         "."
       ],
       "note": "Las palabras comunes en español suelen partirse en 2–3 pedazos, y los números y nombres propios en más. Compará este conteo con la misma frase en inglés."
@@ -47,7 +49,7 @@
     {
       "id": "ingles",
       "label": "La misma frase en inglés",
-      "texto": "Well Sirari-12 produced 4,850 barrels of oil per day.",
+      "texto": "Well Sirari-12 produced 148,500 cubic meters of gas in June.",
       "tokens": [
         "Well",
         " Sir",
@@ -56,17 +58,18 @@
         "12",
         " produced",
         " ",
-        "4",
+        "148",
         ",",
-        "850",
-        " barrels",
+        "500",
+        " cubic",
+        " meters",
         " of",
-        " oil",
-        " per",
-        " day",
+        " gas",
+        " in",
+        " June",
         "."
       ],
-      "note": "La misma información en inglés usa menos tokens: el tokenizador se entrenó con mucho más inglés que español. Por eso el español «rinde menos» por token (y cuesta más en APIs)."
+      "note": "La misma información en inglés usa menos tokens: el tokenizador se entrenó con mucho más inglés que español. Por eso el español \"rinde menos\" por token (y cuesta más en APIs)."
     },
     {
       "id": "tecnico",
@@ -91,19 +94,19 @@
         "orio",
         "."
       ],
-      "note": "Términos técnicos poco frecuentes se parten en varias piezas. El modelo no «conoce la palabra»: conoce estadísticas sobre sus pedazos."
+      "note": "Términos técnicos poco frecuentes se parten en varias piezas. El modelo no \"conoce la palabra\": conoce estadísticas sobre sus pedazos."
     },
     {
       "id": "siglas",
       "label": "Siglas y unidades",
-      "texto": "YPFB reportó 42 MMm3/d de gas natural y 1.200 psi en boca de pozo.",
+      "texto": "YPFB informó unos 30 MMm3/d de gas natural y 1,200 psi en boca de pozo.",
       "tokens": [
         "YP",
         "FB",
-        " report",
-        "ó",
+        " informó",
+        " unos",
         " ",
-        "42",
+        "30",
         " MM",
         "m",
         "3",
@@ -114,7 +117,7 @@
         " y",
         " ",
         "1",
-        ".",
+        ",",
         "200",
         " psi",
         " en",
@@ -129,7 +132,7 @@
     {
       "id": "numeros",
       "label": "Un número largo",
-      "texto": "La reserva probada es de 10.234.567.890 metros cúbicos.",
+      "texto": "La reserva probada es de 10,234,567,890 metros cúbicos.",
       "tokens": [
         "La",
         " reserva",
@@ -139,11 +142,11 @@
         " de",
         " ",
         "10",
-        ".",
+        ",",
         "234",
-        ".",
+        ",",
         "567",
-        ".",
+        ",",
         "890",
         " metros",
         " cú",
@@ -151,7 +154,7 @@
         "icos",
         "."
       ],
-      "note": "El número se parte en grupos arbitrarios de dígitos: el modelo no ve «un número», ve pedazos. Desconfiá de cualquier aritmética que haga de cabeza."
+      "note": "El número se parte en grupos arbitrarios de dígitos: el modelo no ve \"un número\", ve pedazos. Desconfiá de cualquier aritmética que haga de cabeza."
     }
   ]
 }

@@ -106,8 +106,16 @@ export const PERILLAS_A_MANO = { maxQi: 450, pasoQi: 5, maxDi: 0.06, pasoDi: 0.0
  *
  *  bFijo pins the exponent instead of searching for it. Session 1 gives the
  *  student two knobs, and an answer that came back carrying a third number
- *  nobody could have moved would need explaining at the worst possible moment. */
-export function ajustar(observado: (number | null)[], bFijo?: number): Ajuste {
+ *  nobody could have moved would need explaining at the worst possible moment.
+ *
+ *  medidor, when given, counts candidate evaluations. The session-1 copy says
+ *  the machine got there in "menos de setecientas combinaciones"; a test counts
+ *  through this hook so widening the grid cannot silently falsify the slide. */
+export function ajustar(
+  observado: (number | null)[],
+  bFijo?: number,
+  medidor?: { evaluaciones: number },
+): Ajuste {
   const validos = observado.filter((v): v is number => v !== null && Number.isFinite(v) && v > 0)
   if (validos.length < 3) return { qi: validos[0] ?? 0, Di: 0, b: bFijo ?? 0 }
 
@@ -116,6 +124,7 @@ export function ajustar(observado: (number | null)[], bFijo?: number): Ajuste {
   let mejorErr = Infinity
 
   const probar = (qi: number, Di: number, b: number) => {
+    if (medidor) medidor.evaluaciones++
     const err = rmse(observado, serieModelo(qi, Di, b, observado.length))
     if (Number.isFinite(err) && err < mejorErr) {
       mejorErr = err

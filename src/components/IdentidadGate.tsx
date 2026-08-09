@@ -106,7 +106,8 @@ export function IdentidadGate({ para }: { para: string }) {
       </button>
 
       <p style={{ ...nota, color: colors.textDim }}>
-        Se guarda en este navegador para todo el curso. No pide correo ni contraseña.
+        Tu nombre queda guardado en este navegador para todo el curso, y acompaña lo que envíes al
+        servidor del curso (encuesta y pulsos). No pide correo ni contraseña.
       </p>
     </div>
   )

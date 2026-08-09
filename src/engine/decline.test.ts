@@ -242,6 +242,24 @@ describe('decline_wells.json', () => {
     it('does not reach zero error, because the noise floor is the point', () => {
       expect(errMaquina).toBeGreaterThan(0.005)
     })
+
+    it('needs fewer evaluations than the seven hundred the copy claims', () => {
+      // The verdict box says "le alcanzó con menos de setecientas combinaciones".
+      // Today the sweep runs 668; widening any grid would falsify the sentence
+      // without breaking anything else, so the count is pinned here.
+      const medidor = { evaluaciones: 0 }
+      ajustar(obs, 0, medidor)
+      expect(medidor.evaluaciones).toBeGreaterThan(0)
+      expect(medidor.evaluaciones).toBeLessThan(700)
+    })
+
+    it('keeps the true Di off the hand grid, so "no podías llegar" stays true', () => {
+      // The last Solucion shows the two slider notches around the true Di and
+      // says the true value is not one of them. That only holds while the true
+      // Di sits well away from a multiple of the slider step.
+      const cociente = pozo.verdad!.Di / PERILLAS_A_MANO.pasoDi
+      expect(Math.abs(cociente - Math.round(cociente))).toBeGreaterThan(0.25)
+    })
   })
 
   it('fits the five well-behaved wells to within 8% of a typical month', () => {

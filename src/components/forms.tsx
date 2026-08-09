@@ -165,6 +165,27 @@ export function CheckboxGroup({
   )
 }
 
+/** What a live-form component renders in a build without VITE_API_URL. Never
+ *  return null there: the surrounding MDX prose introduces the form, and prose
+ *  that points at nothing reads as a broken page. */
+export function NotaSinServidor({ titulo, children }: { titulo: string; children: ReactNode }) {
+  return (
+    <div
+      style={{
+        background: colors.surfaceAlt,
+        border: `1px solid ${colors.border}`,
+        borderRadius: radius.md,
+        padding: space.lg,
+        margin: `${space.xxl}px 0`,
+      }}
+    >
+      <p style={{ margin: 0, color: colors.textMuted, fontSize: 14, lineHeight: 1.5 }}>
+        <strong style={{ color: colors.textPrimary }}>{titulo}</strong> {children}
+      </p>
+    </div>
+  )
+}
+
 export type EstadoEnvio = 'listo' | 'enviando' | 'enviado' | 'local' | 'error'
 
 /** El cartel de estado. "local" no es un error y no se muestra como tal: la

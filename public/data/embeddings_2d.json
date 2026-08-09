@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-07-30T14:09:45+00:00",
-  "source": "embeddings de intfloat/multilingual-e5-large, proyectados a 2D por PCA. Los vecinos se calculan en las 384 dimensiones originales, no en el mapa.",
+  "source": "embeddings de intfloat/multilingual-e5-large, proyectados a 2D por PCA. Los vecinos se calculan en las 1024 dimensiones originales, no en el mapa.",
   "source_date": null,
   "data": [
     {

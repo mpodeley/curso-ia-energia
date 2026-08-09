@@ -52,6 +52,48 @@ export function tallyOpciones(votos: Voto[], opciones: string[]): { total: numbe
   return { total, items }
 }
 
+// The Worker's /tally returns raw counts: keys exactly as students typed them
+// (lowercased, but with accents and punctuation intact) and only the options
+// somebody picked, sorted by count. Presentation is this module's job, and it
+// has to be the SAME presentation the instructor panel shows, or the room sees
+// two different charts for one vote. These two reshape a raw tally into the
+// tallyOpciones/tallyPalabras contract.
+
+export type ItemTallyCrudo = { clave: string; n: number }
+
+/** Reshape the server tally for a single-choice pulso: every option present
+ *  (zeros included), content order, unknown keys dropped and not counted. */
+export function moldearTallyOpciones(
+  items: ItemTallyCrudo[],
+  opciones: string[],
+): { total: number; items: Conteo[] } {
+  const cuenta = new Map<string, number>(opciones.map((_, i) => [String(i), 0]))
+  let total = 0
+  for (const item of items) {
+    if (!cuenta.has(item.clave)) continue
+    cuenta.set(item.clave, (cuenta.get(item.clave) ?? 0) + item.n)
+    total += item.n
+  }
+  const res = conPorcentaje([...cuenta.entries()], total, (k) => opciones[Number(k)] ?? k)
+  res.sort((a, b) => Number(a.clave) - Number(b.clave))
+  return { total, items: res }
+}
+
+/** Reshape the server tally for a free-word pulso: re-key every entry through
+ *  normalizarPalabra and merge, so "razón" and "razon" become one bar here just
+ *  like they do on the projector. */
+export function moldearTallyPalabras(items: ItemTallyCrudo[]): { total: number; items: Conteo[] } {
+  const cuenta = new Map<string, number>()
+  let total = 0
+  for (const item of items) {
+    const clave = normalizarPalabra(item.clave)
+    if (!clave) continue
+    cuenta.set(clave, (cuenta.get(clave) ?? 0) + item.n)
+    total += item.n
+  }
+  return { total, items: conPorcentaje([...cuenta.entries()], total, (k) => k) }
+}
+
 /** Tally for a free-word pulso. */
 export function tallyPalabras(votos: Voto[]): { total: number; items: Conteo[] } {
   const cuenta = new Map<string, number>()

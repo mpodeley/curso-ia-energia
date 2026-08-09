@@ -19,3 +19,6 @@ build/
 worker/.dev.vars
 worker/.wrangler/
 worker/node_modules/
+
+# Dump de D1 (npm run export en worker/): trae respuestas con nombres, no se versiona
+worker/backup.sql

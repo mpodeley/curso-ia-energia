@@ -27,7 +27,7 @@ El panel va en la cuarta, o en el segundo monitor si hay.
 | --- | --- | --- |
 | Apertura y entrada al sitio | 8 min | Objetivos y el PIN, como la semana pasada |
 | Repaso de la tarea | 15 min | Qué les salió bien y mal con el chatbot esta semana |
-| Tokens y predicción | 33 min | Recorremos juntos los dos ejercicios de la página |
+| Tokens y predicción | 33 min | Recorremos juntos los dos primeros ejercicios de la página |
 | Contexto y entrenamiento | 28 min | La memoria de trabajo en vivo, y cómo se entrena |
 | Alucinaciones en vivo | 22 min | Lo hacemos alucinar y analizamos por qué pasa |
 | Cierre y tarea | 14 min | Dos de las cuatro maneras de fallar, y qué hacer con esto |
@@ -67,7 +67,7 @@ Hoy usamos la página de la sesión 2. El PIN es el mismo y el navegador ya se a
 <!--
 3 min · acumulado 0:08
 Esperar a que entren. A quien cambió de computadora hay que dictarle el PIN de nuevo.
-Los dos ejercicios de hoy están en esa página; los vamos a recorrer juntos.
+Los tres ejercicios de hoy están en esa página; los vamos a recorrer juntos.
 -->
 
 ---
@@ -401,7 +401,7 @@ porque sí se puede mirar adentro, con esfuerzo.
 
 ## Se puede mirar adentro, con esfuerzo
 
-En 1989, en los laboratorios Bell, Yann LeCun mostró una red que leía números escritos a mano.
+En 1989, en los Laboratorios Bell, Yann LeCun mostró una red que leía números escritos a mano.
 El video dura un minuto y está en la página.
 
 Esa red no aprende "el número 7". Aprende a **descomponer la imagen en piezas**: primero
@@ -539,10 +539,10 @@ Arranca 1:46, termina 2:00
 
 ## Dos de las cuatro, y las dos por diseño
 
-- **Inventa lo que no sabe** — de la predicción del próximo token, que vieron hoy
-- **Se olvida de lo que le dijiste** — de la ventana de contexto, que también vieron hoy
-- **Está seguro y equivocado** — sesión 5
-- **No hace lo que le pediste** — sesión 3
+- **Inventa lo que no sabe**: de la predicción del próximo token, que vieron hoy
+- **Se olvida de lo que le dijiste**: de la ventana de contexto, que también vieron hoy
+- **Está seguro y equivocado**: sesión 5
+- **No hace lo que le pediste**: sesión 3
 
 <!--
 3 min · acumulado 1:49
@@ -608,7 +608,7 @@ En la página hay un ejercicio para armar prompts antes de la clase.
 
 # Nos vemos en la sesión 3
 
-El quiz y los dos ejercicios quedan en la página · **podeley.github.io/curso-energia-ypfb**
+El quiz y los tres ejercicios quedan en la página · **podeley.github.io/curso-energia-ypfb**
 
 <!--
 1 min · acumulado 2:00

@@ -8,7 +8,7 @@ import { INTERPRETABILIDAD } from '../content/recursos'
 
 ## Antes de la sesión
 
-*Tiempo estimado: 40–50 minutos.*
+*Tiempo estimado: 30 minutos; el video opcional suma 27 más.*
 
 1. **Los tres ejercicios interactivos de esta página** (30 min): el tokenizador, el de "adiviná el próximo token" y el de la ventana de contexto. Están más abajo: jugá antes de leer la explicación.
 2. **Video (27 min, opcional):** el capítulo de
@@ -43,21 +43,7 @@ oportunidad (salida variada, a veces brillante, a veces disparatada).
 
 <NextTokenLab sesion={2} />
 
-## De ahí salen las alucinaciones
-
-Si el modelo es una máquina de continuar texto de forma *plausible*, entonces cuando no sabe algo no
-tiene un mecanismo natural para callarse: **genera la continuación más plausible igual**. Un número de
-API que parece real, un paper que suena citable, una norma que "debería existir". Eso es una
-**alucinación**, y no es un bug raro: es el comportamiento por defecto del mecanismo que acabás de ver.
-
-La consecuencia práctica que nos acompaña todo el curso: la salida de un LLM es un **borrador
-plausible**, no una fuente. Se verifica todo lo que importa.
-
 ## La ventana de contexto: la memoria de trabajo
-
-En la sesión 1 quedaron anunciadas cuatro maneras de fallar. La primera acaba de aparecer, y sale
-del mecanismo que viste en el ejercicio anterior. Esta es la segunda, y no tiene nada que ver con
-la otra.
 
 Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu pregunta, sus respuestas
 anteriores, los documentos que pegaste. Ese conjunto se llama **ventana de contexto** y tiene un
@@ -73,6 +59,9 @@ larga, el principio se cae y el modelo deja de respetar algo que le pediste al e
 Y en un documento grande, lo que quedó afuera no se busca solo: hay que volver a pegarlo. Al
 segundo problema le dedicamos la sesión 5 entera, donde en vez de pegar todo buscamos el pedazo que
 hace falta.
+
+De las cuatro maneras de fallar que quedaron anunciadas en la sesión 1, acabás de ver el mecanismo
+de una: "se olvida de lo que le dijiste". No es un olvido. Es la ventana.
 
 ## Cómo se entrena: dos etapas de tamaños muy distintos
 
@@ -100,7 +89,7 @@ respuesta corta ya la tenés: nadie escribió esas reglas, se ajustaron solas. L
 más interesante, y hay toda una disciplina dedicada a ella.
 
 El mejor lugar para verlo no es un modelo de lenguaje sino uno de imágenes, porque lo que aprende se
-puede dibujar. En 1989, en los laboratorios de Bell, Yann LeCun mostró una red que leía números escritos
+puede dibujar. En 1989, en los Laboratorios Bell, Yann LeCun mostró una red que leía números escritos
 a mano. El video dura un minuto y conviene mirarlo sabiendo que ese mismo mecanismo, con más datos y más
 cómputo, es el que hoy escribe informes.
 
@@ -120,6 +109,19 @@ para garantizar cómo se va a comportar un modelo en una situación nueva, y esa
 tema de la sesión 7.
 
 <ListaRecursos items={INTERPRETABILIDAD} titulo="Para ver adentro (opcional)" />
+
+## De ahí salen las alucinaciones
+
+Volvé a la única operación: continuar texto de forma *plausible*. Cuando el modelo no sabe algo, no
+tiene un mecanismo natural para callarse: **genera la continuación más plausible igual**. Un número
+de norma que parece real, un paper que suena citable, una cifra de producción con tres decimales.
+Eso es una **alucinación**, y no es un bug raro: es el comportamiento por defecto del mecanismo que
+acabás de ver en los ejercicios. Peor: el tono seguro con el que la dice viene de la segunda etapa
+del entrenamiento, que enseña forma, no verdad.
+
+De la lista de la sesión 1, esta es "inventa lo que no sabe". La consecuencia práctica que nos
+acompaña todo el curso: la salida de un modelo grande de lenguaje (LLM) es un **borrador
+plausible**, no una fuente. Se verifica todo lo que importa.
 
 ## En la sesión en vivo (2 h)
 

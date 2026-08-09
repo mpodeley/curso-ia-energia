@@ -84,6 +84,13 @@ describe('contexto_conversacion.json', () => {
     expect(conv.mensajes[0].hecho).toBeTruthy()
   })
 
+  it('marks every message the final question needs, not just the first ones', () => {
+    // The "Datos perdidos" counter only counts marked messages. The forecast at
+    // the end needs the instruction, the three wells and the water cuts: five
+    // hechos. Fewer means the counter under-reports what fell off.
+    expect(conv.mensajes.filter((m) => m.hecho).length).toBe(5)
+  })
+
   it('has a window size that drops the rules and keeps every datum', () => {
     // The exercise opens here on purpose: the cleanest version of the lesson is
     // "the data is still there, the instruction is not".

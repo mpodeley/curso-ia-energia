@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T14:43:10+00:00",
+  "generated_at": "2026-08-09T21:22:22+00:00",
   "source": "pozos escuela generados a partir de parámetros de Arps conocidos; pozos reales del Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
   "source_date": "2026-06",
   "data": [
@@ -16,6 +16,7 @@
         "b": 0.0
       },
       "nota": "Declinación exponencial pura: el caso más simple, y el que se usa como referencia conservadora. Con b en cero y el Di correcto, la curva pasa por el medio de los puntos. El ruido que ves es de medición, del orden del 2%.",
+      "fuente": "pozo de escuela: serie sintética generada para el curso a partir de parámetros de Arps conocidos, más ruido de medición; no proviene de ningún dato medido.",
       "serie": [
         {
           "ym": "2019-01",
@@ -464,6 +465,7 @@
         "b": 0.6
       },
       "nota": "Hiperbólica: cae fuerte al principio y después la cola se estira. Si intentás ajustarla con b en cero vas a poder acomodar los primeros meses o los últimos, pero nunca los dos a la vez. Ahí se entiende para qué existe b.",
+      "fuente": "pozo de escuela: serie sintética generada para el curso a partir de parámetros de Arps conocidos, más ruido de medición; no proviene de ningún dato medido.",
       "serie": [
         {
           "ym": "2019-01",
@@ -908,6 +910,7 @@
       "empresa": "PAN AMERICAN ENERGY SL",
       "verdad": null,
       "nota": "El más parejo de los reales: cae de forma sostenida durante siete años y medio, sin saltos. Aun así, la curva que ves no es solo el reservorio despresurizándose — también está la disponibilidad de compresión y la contrapresión de línea. Que ajuste bien no prueba que sea declinación pura; prueba que nada la interrumpió de golpe.",
+      "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {
           "ym": "2019-01",
@@ -1460,6 +1463,7 @@
       "empresa": "TECPETROL S.A.",
       "verdad": null,
       "nota": "Declinación tan suave que en siete años perdió apenas un cuarto del caudal, y el ruido de mes a mes es del mismo tamaño que la tendencia. Vas a encontrar muchas combinaciones de b y Di que ajustan casi igual de bien: los datos no alcanzan para elegir entre ellas. Un ajuste con pocos datos de caída no es una predicción.",
+      "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {
           "ym": "2019-01",
@@ -2012,6 +2016,7 @@
       "empresa": "PAN AMERICAN ENERGY SL",
       "verdad": null,
       "nota": "Parecido al primero pero la mitad de caudal. Buen pozo para comprobar que qi y Di hacen cosas distintas: uno mueve la curva entera, el otro cambia su pendiente.",
+      "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {
           "ym": "2019-01",
@@ -2564,6 +2569,7 @@
       "empresa": "TECPETROL S.A.",
       "verdad": null,
       "nota": "Declinación intermedia sobre santa rosa. Probá ajustarlo primero en metros cúbicos por mes y después por día: el serrucho desaparece y el error baja sin que toques nada.",
+      "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {
           "ym": "2019-01",
@@ -3116,6 +3122,7 @@
       "empresa": "TECPETROL S.A.",
       "verdad": null,
       "nota": "Casi no declina: en siete años perdió menos de un quinto de su caudal. Necesita un Di muy chico. Un pozo así vale por su permanencia, no por su caudal inicial.",
+      "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {
           "ym": "2019-01",
@@ -3668,6 +3675,7 @@
       "empresa": "PAN AMERICAN ENERGY SL",
       "verdad": null,
       "nota": "Acá ningún juego de parámetros ajusta bien, y ese es el punto. Seis años de meseta y después un derrumbe en doce meses no es una declinación: es una intervención, un cierre o la entrada de agua. Arps describe un reservorio que se despresuriza solo, y no fue lo que pasó. El modelo no sabe nada de la operación del pozo — eso lo sabés vos.",
+      "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {
           "ym": "2019-01",

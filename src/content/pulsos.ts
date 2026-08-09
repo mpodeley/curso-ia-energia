@@ -30,21 +30,10 @@ export const PULSOS: Pulso[] = [
     ayuda: 'No lo pienses mucho. La primera que se te ocurra.',
   },
   {
-    id: 's1-uso-chatbot',
-    sesion: 1,
-    tipo: 'opcion',
-    pregunta: '¿Cuánto usaste chatbots de IA hasta hoy?',
-    opciones: [
-      'Nunca',
-      'Probé alguna vez',
-      'Algunas veces al mes',
-      'Todas las semanas',
-      'Todos los días',
-    ],
-  },
-  {
-    // Se abre al terminar las demos. Mismo eje que s1-palabra-ia pero después de
-    // ver al chatbot fallar: el antes y el después es el golpe del bloque.
+    // Se abre al terminar las demos: la confianza declarada DESPUÉS de ver al
+    // chatbot fallar. El contraste con el clima del arranque es el golpe del
+    // bloque. (Hubo un s1-uso-chatbot acá; se retiró porque duplicaba la
+    // pregunta a3-uso-previo de la encuesta y ningún deck lo abría.)
     id: 's1-confianza',
     sesion: 1,
     tipo: 'opcion',

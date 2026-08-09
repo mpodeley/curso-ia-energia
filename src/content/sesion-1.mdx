@@ -6,16 +6,19 @@ import { Recursos } from '../components/Recursos'
 
 ## Antes de la sesión
 
-*Tiempo estimado: 30–40 minutos.*
+*Tiempo estimado: 40–50 minutos.*
 
-1. **Video (8 min):** [Explicación breve de los modelos de lenguaje, de 3Blue1Brown](https://www.youtube.com/watch?v=LPZh9BOjkQs)
-   (tiene pista de audio en español, elegible en el reproductor). No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.
-2. **Cuenta gratuita (10 min):** creá una cuenta en al menos uno de estos chatbots:
+1. Video (8 min): el primero del material previo de abajo, el de 3Blue1Brown. No hace falta
+   entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.
+2. Cuenta gratuita (10 min): creá una cuenta en al menos uno de estos chatbots:
    [ChatGPT](https://chatgpt.com), [Claude](https://claude.ai) o [Gemini](https://gemini.google.com).
    Todos tienen nivel gratuito y es lo único que necesitás en todo el curso.
-3. **Primer contacto (10 min):** pedile al chatbot algo de tu trabajo real. Por ejemplo:
+3. Primer contacto (10 min): pedile al chatbot algo de tu trabajo real. Por ejemplo:
    *"Explicame como si fuera un directorio no técnico qué es la recuperación secundaria"* o
    *"Redactá una minuta a partir de estas notas: …"*. Guardá la conversación: la vamos a comentar en vivo.
+4. Ejercicio (10 min): el duelo de declinación, más abajo en esta página. Primero ajustás la
+   curva a mano, después la busca la máquina. En vivo lo repetimos de cero, así que si lo hacés
+   antes llegás sabiendo qué hace cada perilla.
 
 <div className="callout">
   <strong>Regla desde el día uno:</strong> en estos ejercicios no uses datos confidenciales de la empresa:
@@ -44,13 +47,14 @@ sesión: primero ajustás la curva a mano, después dejás que la máquina busqu
 
 <DeclineDuel sesion={1} />
 
-Ese pozo es de escuela: la curva se generó con una fórmula, y los tres números estaban ahí para que
-alguien los encontrara. Ningún pozo real se porta así. En la sesión 4 volvemos con pozos de
-Aguaragüe, Ramos y Acambuco, con la tercera perilla, y con la pregunta incómoda de cuánto de esa
-caída es el reservorio y cuánto es la operación.
+Ese pozo es de escuela: la curva se generó con una fórmula, y los dos valores que buscaste estaban
+ahí para que alguien los encontrara (el tercer parámetro quedó clavado en cero). Ningún pozo real
+se porta así. En la sesión 4 volvemos con pozos de Aguaragüe, Ramos y Acambuco, con esa tercera
+perilla, y con la pregunta incómoda de cuánto de esa caída es el reservorio y cuánto es la
+operación.
 
-¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: **datos** (todo el texto de internet),
-**cómputo** (GPUs) y una **arquitectura que escala** (el transformer, 2017). No hubo un descubrimiento
+¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: datos (todo el texto de internet),
+cómputo (GPUs) y una **arquitectura que escala** (el transformer, 2017). No hubo un descubrimiento
 mágico: hubo una receta que mejora de forma sorprendentemente predecible al agrandarla.
 
 <PulsoVivo sesion={1} />

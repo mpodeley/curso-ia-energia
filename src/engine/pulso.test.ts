@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest'
 import { PULSOS, pulsoPorId, pulsosDeSesion } from '../content/pulsos'
-import { layoutNube, normalizarPalabra, tallyOpciones, tallyPalabras, type Voto } from './pulso'
+import {
+  layoutNube,
+  moldearTallyOpciones,
+  moldearTallyPalabras,
+  normalizarPalabra,
+  tallyOpciones,
+  tallyPalabras,
+  type Voto,
+} from './pulso'
 
 const voto = (i: number, payload: unknown): Voto => ({
   alumnoId: `a${i}`,
@@ -90,6 +98,74 @@ describe('tallyPalabras', () => {
     const r = tallyPalabras([voto(1, { palabra: '!!!' }), voto(2, { palabra: 'dudas' })])
     expect(r.total).toBe(1)
     expect(r.items).toHaveLength(1)
+  })
+})
+
+// What the Worker's /tally actually returns: only the keys somebody voted,
+// count-sorted, words keyed by trim().toLowerCase() with accents intact.
+const comoElWorker = (pares: [string, number][]) =>
+  pares.map(([clave, n]) => ({ clave, n })).sort((a, b) => b.n - a.n || a.clave.localeCompare(b.clave))
+
+describe('moldearTallyOpciones', () => {
+  const opciones = ['Nunca', 'A veces', 'Siempre']
+
+  it('restores content order and the bars nobody voted', () => {
+    const r = moldearTallyOpciones(comoElWorker([['2', 4], ['0', 1]]), opciones)
+    expect(r.total).toBe(5)
+    expect(r.items.map((i) => i.etiqueta)).toEqual(opciones)
+    expect(r.items.map((i) => i.n)).toEqual([1, 0, 4])
+    expect(r.items[2].pct).toBeCloseTo(0.8)
+  })
+
+  it('drops keys that no longer map to an option, and does not count them', () => {
+    const r = moldearTallyOpciones(comoElWorker([['7', 3], ['1', 2]]), opciones)
+    expect(r.total).toBe(2)
+    expect(r.items.map((i) => i.n)).toEqual([0, 2, 0])
+  })
+
+  it('shows the full scale even with zero votes', () => {
+    const r = moldearTallyOpciones([], opciones)
+    expect(r.total).toBe(0)
+    expect(r.items.map((i) => i.n)).toEqual([0, 0, 0])
+  })
+})
+
+describe('moldearTallyPalabras', () => {
+  it('merges what the server kept apart, exactly like the projector does', () => {
+    // The Worker lowercases but keeps accents, so "razón" and "razon" arrive as
+    // two rows. The student's chart has to fuse them like tallyOpciones' twin.
+    const r = moldearTallyPalabras(comoElWorker([['razón', 2], ['razon', 1], ['costo', 1]]))
+    expect(r.total).toBe(4)
+    expect(r.items[0]).toMatchObject({ clave: 'razon', n: 3 })
+    expect(r.items[1]).toMatchObject({ clave: 'costo', n: 1 })
+  })
+
+  it('drops keys that normalize to nothing', () => {
+    const r = moldearTallyPalabras(comoElWorker([['!!!', 2], ['dudas', 1]]))
+    expect(r.total).toBe(1)
+    expect(r.items).toHaveLength(1)
+  })
+
+  it('matches tallyPalabras bar for bar on the same votes', () => {
+    // Same votes through both paths: raw Voto[] on the panel, worker-keyed
+    // counts on the student side. One chart, or the room sees two truths.
+    const votos = [
+      voto(1, { palabra: 'Razón' }),
+      voto(2, { palabra: 'razon' }),
+      voto(3, { palabra: 'miedo' }),
+      voto(4, { palabra: 'razón ' }),
+    ]
+    const proyector = tallyPalabras(votos)
+
+    const crudo = new Map<string, number>()
+    for (const v of votos) {
+      const k = String((v.payload as { palabra: string }).palabra).trim().toLowerCase()
+      crudo.set(k, (crudo.get(k) ?? 0) + 1)
+    }
+    const alumno = moldearTallyPalabras(comoElWorker([...crudo.entries()]))
+
+    expect(alumno.items).toEqual(proyector.items)
+    expect(alumno.total).toBe(proyector.total)
   })
 })
 

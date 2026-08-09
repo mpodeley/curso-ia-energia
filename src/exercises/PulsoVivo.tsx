@@ -12,8 +12,16 @@
 import { useCallback, useState } from 'react'
 import { Ejercicio } from '../components/Ejercicio'
 import { IdentidadGate } from '../components/IdentidadGate'
-import { Aviso, EnviarButton, RadioGroup, TextInput, type EstadoEnvio } from '../components/forms'
-import { pulsoPorId } from '../content/pulsos'
+import {
+  Aviso,
+  EnviarButton,
+  NotaSinServidor,
+  RadioGroup,
+  TextInput,
+  type EstadoEnvio,
+} from '../components/forms'
+import { pulsoPorId, type Pulso } from '../content/pulsos'
+import { moldearTallyOpciones, moldearTallyPalabras } from '../engine/pulso'
 import { useExerciseState } from '../hooks/useExerciseState'
 import { usePoll } from '../hooks/usePoll'
 import { enviarRespuesta, pulsoActual, tallyDe } from '../lib/api'
@@ -29,9 +37,6 @@ export function PulsoVivo({ sesion }: { sesion: number }) {
   const { identidad, probar } = useIdentidad()
   const [estado, patch] = useExerciseState<Estado>('pulsos', { votados: {} })
   const [gate, setGate] = useState(false)
-  const [envio, setEnvio] = useState<EstadoEnvio>('listo')
-  const [mensaje, setMensaje] = useState<string>()
-  const [borrador, setBorrador] = useState<string | number | undefined>()
 
   const token = identidad?.token
   const consultar = useCallback(
@@ -40,7 +45,14 @@ export function PulsoVivo({ sesion }: { sesion: number }) {
   )
   const { dato } = usePoll(consultar, POLL_MS, Boolean(token))
 
-  if (!apiHabilitada) return null
+  if (!apiHabilitada) {
+    return (
+      <NotaSinServidor titulo="Pulsos en vivo.">
+        Durante la clase el instructor abre acá preguntas cortas para votar. Esta copia del sitio
+        corre sin el servidor del curso, así que hoy no hay nada abierto.
+      </NotaSinServidor>
+    )
+  }
 
   // --- sin identidad: una línea, y la tarjeta solo si la pide ---------------
   if (!identidad) {
@@ -84,12 +96,48 @@ export function PulsoVivo({ sesion }: { sesion: number }) {
 
   const yaVoto = pulso.id in estado.votados
 
+  return (
+    <Ejercicio titulo={pulso.pregunta} sesion={sesion} intro={pulso.ayuda} done={yaVoto}>
+      {!yaVoto && (
+        // Keyed by pulso.id: when the instructor closes one pulso and opens the
+        // next, the form remounts clean. Without the key, the draft (and the
+        // "enviado" state) of the previous pulso leaks into the new one — an
+        // option index left in `borrador` would even render inside the text
+        // input of a word pulso.
+        <FormularioVoto
+          key={pulso.id}
+          pulso={pulso}
+          token={identidad.token}
+          onVotado={(valor) => patch({ votados: { ...estado.votados, [pulso.id]: valor } })}
+        />
+      )}
+
+      {yaVoto && <Resultado pulsoId={pulso.id} token={identidad.token} />}
+    </Ejercicio>
+  )
+}
+
+/** El formulario de un pulso concreto. Dueño de su borrador y de su estado de
+ *  envío, que mueren con él cuando cambia el pulso abierto. */
+function FormularioVoto({
+  pulso,
+  token,
+  onVotado,
+}: {
+  pulso: Pulso
+  token: string
+  onVotado: (valor: string | number) => void
+}) {
+  const [envio, setEnvio] = useState<EstadoEnvio>('listo')
+  const [mensaje, setMensaje] = useState<string>()
+  const [borrador, setBorrador] = useState<string | number | undefined>()
+
   const votar = async () => {
     if (borrador === undefined || borrador === '') return
     const payload = pulso.tipo === 'opcion' ? { opcion: Number(borrador) } : { palabra: String(borrador) }
 
     setEnvio('enviando')
-    const r = await enviarRespuesta(identidad.token, {
+    const r = await enviarRespuesta(token, {
       tipo: 'pulso',
       ref: pulso.id,
       sesion: pulso.sesion,
@@ -97,7 +145,7 @@ export function PulsoVivo({ sesion }: { sesion: number }) {
     })
     if (r.ok) {
       setEnvio('enviado')
-      patch({ votados: { ...estado.votados, [pulso.id]: borrador } })
+      onVotado(borrador)
       return
     }
     // Un pulso no se encola: para cuando la red vuelva, el instructor ya lo
@@ -107,43 +155,48 @@ export function PulsoVivo({ sesion }: { sesion: number }) {
   }
 
   return (
-    <Ejercicio titulo={pulso.pregunta} sesion={sesion} intro={pulso.ayuda} done={yaVoto}>
-      {!yaVoto && (
-        <>
-          {pulso.tipo === 'opcion' ? (
-            <RadioGroup
-              name={pulso.id}
-              opciones={pulso.opciones}
-              value={typeof borrador === 'number' ? borrador : undefined}
-              onChange={setBorrador}
-            />
-          ) : (
-            <div style={{ maxWidth: 340, marginBottom: space.md }}>
-              <TextInput
-                value={String(borrador ?? '')}
-                onChange={setBorrador}
-                placeholder={pulso.maxPalabras === 1 ? 'Una palabra' : `Hasta ${pulso.maxPalabras} palabras`}
-                maxLength={40}
-              />
-            </div>
-          )}
-          <EnviarButton estado={envio} onClick={() => void votar()} disabled={borrador === undefined || borrador === ''}>
-            Votar
-          </EnviarButton>
-          <Aviso estado={envio} mensaje={mensaje} />
-        </>
+    <>
+      {pulso.tipo === 'opcion' ? (
+        <RadioGroup
+          name={pulso.id}
+          opciones={pulso.opciones}
+          value={typeof borrador === 'number' ? borrador : undefined}
+          onChange={setBorrador}
+        />
+      ) : (
+        <div style={{ maxWidth: 340, marginBottom: space.md }}>
+          <TextInput
+            value={String(borrador ?? '')}
+            onChange={setBorrador}
+            placeholder={pulso.maxPalabras === 1 ? 'Una palabra' : `Hasta ${pulso.maxPalabras} palabras`}
+            maxLength={40}
+          />
+        </div>
       )}
-
-      {yaVoto && <Resultado pulsoId={pulso.id} token={identidad.token} />}
-    </Ejercicio>
+      <EnviarButton estado={envio} onClick={() => void votar()} disabled={borrador === undefined || borrador === ''}>
+        Votar
+      </EnviarButton>
+      <Aviso estado={envio} mensaje={mensaje} />
+    </>
   )
 }
 
 /** Después de votar. Mientras el pulso siga abierto el servidor responde 409 y
- *  mostramos la espera; en cuanto el instructor cierra, aparecen las barras. */
+ *  mostramos la espera; en cuanto el instructor cierra, aparecen las barras.
+ *
+ *  El tally crudo del servidor se moldea con las mismas funciones que usa el
+ *  panel del instructor (orden de contenido, barras en cero, tildes fundidas):
+ *  el alumno y el proyector tienen que mostrar el mismo gráfico. Cerrado el
+ *  pulso no entran votos nuevos, así que el primer tally bueno es el último:
+ *  ahí se corta el poll. */
 function Resultado({ pulsoId, token }: { pulsoId: string; token: string }) {
-  const consultar = useCallback(() => tallyDe(token, pulsoId), [token, pulsoId])
-  const { dato } = usePoll(consultar, 4000)
+  const [cerrado, setCerrado] = useState(false)
+  const consultar = useCallback(async () => {
+    const r = await tallyDe(token, pulsoId)
+    if (r.ok) setCerrado(true)
+    return r
+  }, [token, pulsoId])
+  const { dato } = usePoll(consultar, 4000, !cerrado)
   const pulso = pulsoPorId(pulsoId)
 
   if (!dato) {
@@ -154,19 +207,26 @@ function Resultado({ pulsoId, token }: { pulsoId: string; token: string }) {
     )
   }
 
-  const etiqueta = (clave: string) =>
-    pulso?.tipo === 'opcion' ? (pulso.opciones[Number(clave)] ?? clave) : clave
-  const max = Math.max(1, ...dato.items.map((i) => i.n))
+  const conteo = pulso
+    ? pulso.tipo === 'opcion'
+      ? moldearTallyOpciones(dato.items, pulso.opciones)
+      : moldearTallyPalabras(dato.items)
+    : {
+        // Pulso que ya no existe en el contenido: mostrar lo que haya, crudo.
+        total: dato.items.reduce((s, i) => s + i.n, 0),
+        items: dato.items.map((i) => ({ clave: i.clave, etiqueta: i.clave, n: i.n, pct: 0 })),
+      }
+  const max = Math.max(1, ...conteo.items.map((i) => i.n))
 
   return (
     <div>
       <p style={{ margin: `0 0 ${space.md}px`, color: colors.textMuted, fontSize: 14 }}>
-        {dato.total} {dato.total === 1 ? 'respuesta' : 'respuestas'}
+        {conteo.total} {conteo.total === 1 ? 'respuesta' : 'respuestas'}
       </p>
-      {dato.items.map((i) => (
+      {conteo.items.map((i) => (
         <div key={i.clave} style={{ marginBottom: space.sm }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, marginBottom: 2 }}>
-            <span>{etiqueta(i.clave)}</span>
+            <span>{i.etiqueta}</span>
             <span style={{ fontFamily: 'var(--pd-font-mono)', color: colors.textDim }}>{i.n}</span>
           </div>
           <div style={{ background: colors.surfaceAlt, borderRadius: radius.sm, height: 8 }}>

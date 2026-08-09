@@ -14,6 +14,7 @@ import {
   Campo,
   CheckboxGroup,
   EnviarButton,
+  NotaSinServidor,
   RadioGroup,
   TextArea,
   TextInput,
@@ -38,8 +39,16 @@ export function EncuestaS1({ sesion = 1 }: { sesion?: number }) {
   const [copiado, setCopiado] = useState(false)
 
   // Con el sitio construido sin VITE_API_URL no hay dónde mandar nada, así que
-  // la encuesta no se muestra en absoluto.
-  if (!apiHabilitada) return null
+  // el formulario no se muestra: en su lugar va una nota, para que la prosa de
+  // la sesión que habla de la encuesta no quede apuntando a la nada.
+  if (!apiHabilitada) {
+    return (
+      <NotaSinServidor titulo="Encuesta de relevamiento.">
+        Se completa en la sesión 1 en vivo. Esta copia del sitio corre sin el servidor del curso,
+        así que el formulario no está disponible acá.
+      </NotaSinServidor>
+    )
+  }
 
   const valores = estado.valores
   const setValor = (id: string, v: Valores[string]) => patch({ valores: { ...valores, [id]: v } })

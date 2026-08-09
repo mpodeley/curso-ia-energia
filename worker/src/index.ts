@@ -282,9 +282,14 @@ function salida(f: FilaRespuesta) {
 }
 
 /** Counts for the student-facing tally. Deterministic order (n desc, then key
- *  asc) so repeated polls never reshuffle the bars on a projector. */
+ *  asc) so repeated polls never reshuffle the bars on a projector. Raw keys on
+ *  purpose — presentation (content order, zero bars, accent folding) is the
+ *  client's job, in engine/pulso.ts, so student and panel shape the same way.
+ *  `total` counts only the votes that parsed into a key: it has to equal the
+ *  sum of the bars the client draws. */
 function contar(filas: FilaRespuesta[]): { total: number; items: { clave: string; n: number }[] } {
   const cuenta = new Map<string, number>()
+  let total = 0
   for (const f of filas) {
     let clave: string | null = null
     try {
@@ -296,11 +301,12 @@ function contar(filas: FilaRespuesta[]): { total: number; items: { clave: string
     }
     if (!clave) continue
     cuenta.set(clave, (cuenta.get(clave) ?? 0) + 1)
+    total++
   }
   const items = [...cuenta.entries()]
     .map(([clave, n]) => ({ clave, n }))
     .sort((a, b) => b.n - a.n || a.clave.localeCompare(b.clave))
-  return { total: filas.length, items }
+  return { total, items }
 }
 
 function csv(filas: FilaRespuesta[]): string {
