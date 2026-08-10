@@ -26,10 +26,11 @@ preview_urls = false
 EDICION = "ypfb-andina-2026-08"
 
 # Allowlist exacta de CORS. Sin esto no entra ningún origen.
-# podeley.ar está porque el dominio custom de la org absorbe las project pages:
-# mientras GitHub responda 301 podeley.github.io → podeley.ar, el Origin real
-# del navegador del alumno es podeley.ar. Se dejan los dos por si ese 301 se va.
-ORIGENES = "https://podeley.ar,https://podeley.github.io,http://localhost:5173,http://127.0.0.1:5173"
+# mpodeley.github.io es la URL canónica del curso (cuenta personal, sin dominio
+# custom: sirve directo). podeley.ar y podeley.github.io quedan por la copia de
+# respaldo en la org: el dominio custom absorbe las project pages, así que esa
+# copia se sirve desde podeley.ar y github.io responde 301 hacia ahí.
+ORIGENES = "https://mpodeley.github.io,https://podeley.ar,https://podeley.github.io,http://localhost:5173,http://127.0.0.1:5173"
 
 [[d1_databases]]
 binding = "DB"

@@ -89,12 +89,13 @@ manera de saber si el firewall bloquea `*.workers.dev`, y no es algo que se pued
 diez minutos antes de empezar. Si está bloqueado, la salida es mover la zona `podeley.ar` a
 Cloudflare y darle un dominio propio al Worker.
 
-Ojo con el origen: el sitio se publica en `podeley.github.io/curso-energia-ypfb`, pero
-mientras la organización tenga dominio propio configurado en GitHub Pages, esa URL responde
-301 y el navegador termina en `podeley.ar/curso-energia-ypfb/`. El `Origin` que ve el Worker
-es entonces `https://podeley.ar`, y `ORIGENES` en `worker/wrangler.toml` tiene que incluir
-los dos. Por eso el ensayo se hace siempre desde la URL publicada, la misma que van a abrir
-los alumnos, nunca desde localhost.
+Ojo con el origen: la URL canónica del curso es `mpodeley.github.io/curso-energia-ypfb`
+(cuenta personal, sin dominio custom: sirve directo, sin redirecciones). El CI publica además
+una copia de respaldo en la organización, que por el dominio propio de esta termina servida
+en `podeley.ar/curso-energia-ypfb/` (con `podeley.github.io/...` respondiendo 301 hacia ahí).
+`ORIGENES` en `worker/wrangler.toml` tiene que incluir los tres orígenes: `mpodeley.github.io`,
+`podeley.ar` y `podeley.github.io`. El ensayo se hace siempre desde la URL canónica, la misma
+que van a abrir los alumnos, nunca desde localhost.
 
 El día anterior conviene un ensayo con `EDICION` terminada en `-ensayo`: abrir un pulso,
 responderlo **desde un teléfono con datos móviles** (no del wifi de la oficina, que prueba

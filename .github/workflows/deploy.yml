@@ -40,7 +40,21 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      # La canónica: mpodeley.github.io/curso-energia-ypfb (cuenta personal, sin
+      # dominio custom, sirve directo). Necesita ACTIONS_DEPLOY_KEY, una deploy
+      # key con escritura sobre mpodeley/curso-energia-ypfb; mientras el secret
+      # no exista, el paso se saltea y la canónica se publica a mano (README).
+      - name: Deploy to GitHub Pages (canónica, mpodeley)
+        if: ${{ secrets.ACTIONS_DEPLOY_KEY != '' }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: mpodeley/curso-energia-ypfb
+          publish_dir: ./dist
+
+      # El respaldo en la org: por el dominio custom termina servido en
+      # podeley.ar/curso-energia-ypfb/ (github.io responde 301 hacia ahí).
+      - name: Deploy to GitHub Pages (respaldo org)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

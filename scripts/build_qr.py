@@ -15,7 +15,7 @@ import os
 
 import segno
 
-URL = 'https://podeley.github.io/curso-energia-ypfb/'
+URL = 'https://mpodeley.github.io/curso-energia-ypfb/'
 SALIDA = os.path.join(os.path.dirname(__file__), '..', 'docs', 'brochure', 'qr-curso.png')
 
 OSCURO = '#16181d'  # --pd-near-black

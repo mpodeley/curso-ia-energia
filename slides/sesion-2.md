@@ -3,7 +3,7 @@ marp: true
 theme: podeley
 paginate: true
 header: 'IA generativa · petróleo y gas · **Sesión 2**'
-footer: 'podeley.github.io/curso-energia-ypfb'
+footer: 'mpodeley.github.io/curso-energia-ypfb'
 ---
 
 <!-- _class: portada -->
@@ -60,7 +60,7 @@ alucinación deja de ser un misterio y pasa a ser una consecuencia.
 
 ## Entrá al sitio, como la semana pasada
 
-`podeley.github.io/curso-energia-ypfb`
+`mpodeley.github.io/curso-energia-ypfb`
 
 Hoy usamos la página de la sesión 2. El PIN es el mismo y el navegador ya se acuerda.
 
@@ -314,7 +314,7 @@ No explicar la consecuencia todavía: la van a ver ellos en el ejercicio.
 
 ## Achicá la ventana
 
-`podeley.github.io/curso-energia-ypfb` · sesión 2
+`mpodeley.github.io/curso-energia-ypfb` · sesión 2
 
 Bajá el tamaño de la ventana y mirá cuál es el mensaje que se cae primero.
 
@@ -608,7 +608,7 @@ En la página hay un ejercicio para armar prompts antes de la clase.
 
 # Nos vemos en la sesión 3
 
-El quiz y los tres ejercicios quedan en la página · **podeley.github.io/curso-energia-ypfb**
+El quiz y los tres ejercicios quedan en la página · **mpodeley.github.io/curso-energia-ypfb**
 
 <!--
 1 min · acumulado 2:00

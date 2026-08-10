@@ -3,7 +3,7 @@ marp: true
 theme: podeley
 paginate: true
 header: 'IA generativa · petróleo y gas · **Sesión 1**'
-footer: 'podeley.github.io/curso-energia-ypfb'
+footer: 'mpodeley.github.io/curso-energia-ypfb'
 ---
 
 <!-- _class: portada -->
@@ -76,7 +76,7 @@ datos, lo vemos en la 7. Hoy trabajamos con cuentas gratuitas.
 
 ## Antes de empezar, entrá al sitio
 
-`podeley.github.io/curso-energia-ypfb`
+`mpodeley.github.io/curso-energia-ypfb`
 
 Vamos a usar la página de la sesión 1 varias veces hoy. El PIN del curso lo dicto en voz alta.
 
@@ -153,7 +153,7 @@ Entregar al ejercicio: "no se los voy a contar, lo van a hacer ustedes".
 
 ## Ajustala vos
 
-`podeley.github.io/curso-energia-ypfb` · sesión 1
+`mpodeley.github.io/curso-energia-ypfb` · sesión 1
 
 Dos perillas y un número que tiene que bajar: el error. Bajalo todo lo que puedas.
 
@@ -476,7 +476,7 @@ y los ejercicios, y no hay que poner nada confidencial.
 
 ## La encuesta está en la página de la sesión 1
 
-`podeley.github.io/curso-energia-ypfb`
+`mpodeley.github.io/curso-energia-ypfb`
 
 Son doce preguntas y unos quince minutos. Sin datos confidenciales.
 
@@ -615,7 +615,7 @@ pero cortos, y el que llegue con uno visto entiende el doble.
 
 # Nos vemos en la sesión 2
 
-El quiz, los recursos y los ejercicios quedan en la página · **podeley.github.io/curso-energia-ypfb**
+El quiz, los recursos y los ejercicios quedan en la página · **mpodeley.github.io/curso-energia-ypfb**
 
 <!--
 1 min · acumulado 2:00
