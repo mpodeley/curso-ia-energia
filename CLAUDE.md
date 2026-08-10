@@ -57,10 +57,15 @@ Sales material: `docs/syllabus.md`.
 
 ## Course calibration (set 2026-08-10, after S1–S2; applies to every future session and deck)
 
+- **Cadence: 8 consecutive business days, 17:00–19:00 Bolivia — NOT weekly.** "Next session"
+  means tomorrow. Never write "esta semana / la semana pasada / el lunes" for course cadence
+  (work-week senses like "tareas que te comen la semana" are fine). Tareas must fit the evening
+  or next morning. Consequence to design around: the S5→S8 case build has 2–3 days, not weeks,
+  and S8's "resumen publicado unos días antes" needs rethinking when S8 gets prepared.
 - **Driving school, not mechanics.** The course teaches first steps in USING generative AI at
   work, not ML expertise. Mechanics appear only in service of use, and every mechanical piece
-  must land on something the student does differently on Monday. Depth goes to clearly-marked
-  "para curiosos" material on the page, never into live minutes.
+  must land on something the student does differently at work tomorrow. Depth goes to
+  clearly-marked "para curiosos" material on the page, never into live minutes.
 - **Zero pre-work assumed.** Nobody arrives having read anything: everything essential happens
   live, from zero. Session pages are reinforcement and optional depth ("Antes de la sesión
   (opcional)"), never prerequisites. The ONLY ask between sessions is the tarea, sized at ~5

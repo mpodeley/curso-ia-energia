@@ -142,12 +142,20 @@ Insistir en que están anidadas: cada capa usa la anterior, no la reemplaza.
 
 Es lo que siempre hicimos: mirar datos, limpiarlos, graficarlos, sacar conclusiones.
 
-**Una curva de declinación ajustada a mano ya es un modelo.** Alguien eligió una forma
-funcional, estimó sus parámetros y proyectó. Eso es modelar.
+**Una curva de declinación ajustada a mano ya es un modelo.** Y la línea de tendencia sobre un
+Excel de costos o de demanda, también: elegiste una forma, estimaste sus parámetros y
+proyectaste. La estadística de la facultad vive acá.
 
 <!--
 3 min · acumulado 0:17
-Preguntar quién ajustó una declinación a mano alguna vez, y con qué la ajustó.
+Para los que no son de reservorios (planning, administración): la línea de
+tendencia en Excel es el mismo gesto, sobre costos, demanda o avance de obra.
+Si preguntan por la regresión lineal: vive en las capas 1 y 2. Es estadística
+cuando la usás para entender (coeficientes, significancia) y es machine
+learning cuando la máquina elige sola los parámetros para predecir y se la
+valida con datos que no vio. La diferencia no es la matemática: es la
+intención, y el ritual de validar.
+Preguntar quién ajustó una declinación o una tendencia a mano, y con qué.
 Cortar corto: la conversación larga sobre esto va en el bloque 4.
 Entregar al ejercicio: "no se los voy a contar, lo van a hacer ustedes".
 -->
@@ -190,6 +198,8 @@ Sirve cuando la fórmula no existe, o existe pero no la conocemos. Mantenimiento
 nadie sabe escribir la ecuación de "esta bomba va a fallar en tres semanas", pero hay miles de
 bombas que fallaron y sus datos previos.
 
+Tu correo hace esto hace veinte años: nadie escribió la regla de qué es spam. Vio ejemplos.
+
 <!--
 3 min · acumulado 0:26
 La pregunta que suele aparecer acá: ¿y cómo sabe que acertó?
@@ -225,8 +235,8 @@ Si alguien le ganó a la máquina, mostrarlo: barre una grilla finita, no es mag
 Machine learning con **redes neuronales grandes**. Más datos y más cómputo, y a cambio
 patrones mucho más complejos.
 
-Acá entran las imágenes sísmicas, los registros de pozo, el texto. Son datos donde la señal
-está distribuida y no se deja resumir en cinco variables.
+Acá entran las imágenes sísmicas, los registros de pozo, el texto. Y la cara que desbloquea tu
+teléfono: datos donde la señal está distribuida y no se deja resumir en cinco variables.
 
 <!--
 2 min · acumulado 0:33
@@ -328,7 +338,7 @@ Y una cuarta, la más importante: **verlo fallar**.
 Avisar que las tres las hago en vivo y que van a ver los errores también.
 La tabla de producción sale de acá a propósito: es el bloque de apertura de la
 sesión 4, y hacerla dos veces no agrega nada.
-Pedir que mientras miran anoten: ¿esto me serviría el lunes?
+Pedir que mientras miran anoten: ¿esto me serviría mañana en mi trabajo?
 -->
 
 ---
@@ -591,7 +601,7 @@ Usá el chatbot para **una tarea real** de tu trabajo, sin datos confidenciales.
 
 Anotá tres cosas: qué pediste, qué salió bien y **qué salió mal**.
 
-Dos minutos de notas alcanzan. Las usamos para abrir la próxima sesión.
+Dos minutos de notas alcanzan. Las usamos para abrir la sesión de mañana.
 
 Y lo de hoy, en tres frases: la salida es un borrador plausible, se verifica lo que importa,
 y nada confidencial en cuentas gratuitas.

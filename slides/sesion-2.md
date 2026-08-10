@@ -14,7 +14,7 @@ Sesión 2 de 8 · 2 h en vivo · **YPFB Andina**
 
 <!--
 0:00 · portada mientras entra la gente
-Chequear pantalla y audio, igual que la semana pasada.
+Chequear pantalla y audio, igual que ayer.
 Tener abiertas tres ventanas: este deck, el sitio del curso y el chatbot.
 El panel va en la cuarta, o en el segundo monitor si hay.
 -->
@@ -25,8 +25,8 @@ El panel va en la cuarta, o en el segundo monitor si hay.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura y entrada al sitio | 8 min | Objetivos y el PIN, como la semana pasada |
-| Repaso de la tarea | 15 min | Qué les salió bien y mal con el chatbot esta semana |
+| Apertura y entrada al sitio | 8 min | Objetivos y el PIN, como ayer |
+| Repaso de la tarea | 15 min | Qué les salió bien y mal con la tarea de ayer |
 | Tokens y predicción | 33 min | Recorremos juntos los dos primeros ejercicios de la página |
 | Contexto y entrenamiento | 20 min | La memoria de trabajo en vivo, y cómo se entrena en dos etapas |
 | Alucinaciones en vivo | 30 min | Lo hacemos alucinar: primero el instructor, después cada uno |
@@ -35,9 +35,9 @@ El panel va en la cuarta, o en el segundo monitor si hay.
 <!--
 3 min · acumulado 0:03
 La misma tabla está en la página de la sesión 2.
-Bajada del día: la semana pasada vimos QUÉ hace; hoy levantamos el capó un
-rato, lo justo. Cada pieza que veamos termina en algo que van a hacer distinto
-el lunes.
+Bajada del día: ayer vimos QUÉ hace; hoy levantamos el capó un rato, lo justo.
+Cada pieza que veamos termina en algo que van a hacer distinto mañana en el
+trabajo.
 -->
 
 ---
@@ -61,7 +61,7 @@ alucinación deja de ser un misterio y pasa a ser una consecuencia.
 
 <!-- _class: panel -->
 
-## Entrá al sitio, como la semana pasada
+## Entrá al sitio, como ayer
 
 `mpodeley.github.io/curso-energia-ypfb`
 
@@ -87,7 +87,7 @@ Arranca 0:08, termina 0:23
 
 ---
 
-## ¿Qué le pidieron al chatbot esta semana?
+## ¿Qué le pidieron al chatbot desde ayer?
 
 <!--
 6 min · acumulado 0:14
@@ -106,7 +106,7 @@ de la tarea.
 
 <!--
 7 min · acumulado 0:21
-Este es el bloque, no el anterior. Los errores de esta semana son el material
+Este es el bloque, no el anterior. Los errores que trajeron son el material
 con el que arranca la clase de hoy.
 Buscar tres tipos, que son tres de las cuatro maneras de fallar anunciadas en el
 cierre de la sesión 1: inventó un dato (predicción), se olvidó de algo dicho
@@ -494,7 +494,7 @@ sesión 7.
 <!--
 3 min · acumulado 1:43
 La misma regla de la sesión 1, ahora con la explicación atrás. Vale la pena
-decirlo así: la semana pasada era una advertencia, hoy es una conclusión.
+decirlo así: ayer era una advertencia, hoy es una conclusión.
 Cerrar el pulso de alucinación y leer dos o tres palabras de la nube en voz alta.
 -->
 
@@ -551,7 +551,7 @@ La tabla completa, con el arreglo de cada una, está en la sesión 7.
 
 <!-- _class: acentos -->
 
-## Qué hacer con esto el lunes
+## Qué hacer con esto desde mañana
 
 - **Tareas donde podés verificar rápido**: ahí rinde y el riesgo es bajo
 - **Poné el material en la ventana**: pegá el texto en vez de confiar en su memoria
