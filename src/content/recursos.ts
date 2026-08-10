@@ -6,7 +6,7 @@
 // one, check it and move the date; when a link rots, remove it rather than
 // leaving it "probably fine".
 
-export const VERIFICADO = '2026-08-09'
+export const VERIFICADO = '2026-08-10'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -45,15 +45,18 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'El video del punto 1 de la lista de arriba. Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
     },
     {
+      // Repetido a propósito en la sesión 2, donde acompaña la sección de
+      // interpretabilidad: acá es el "para curiosos" de la capa 3 del mapa.
       tipo: 'video',
-      titulo: '¿Qué son los Grandes Modelos de Lenguaje? Explicación sencilla',
-      url: 'https://www.youtube.com/watch?v=0K5Knnq2ZRk',
-      fuente: 'Derivando',
-      duracion: '9:12',
-      publicado: '2025-01',
+      titulo: '¿Qué es una Red Neuronal? | Aprendizaje Profundo, capítulo 1',
+      url: 'https://www.youtube.com/watch?v=jKCQsndqEGQ',
+      fuente: '3Blue1Brown Español',
+      duracion: '20:51',
+      publicado: '2020-09',
+      historico: true,
       idioma: 'es',
       porque:
-        'Un panorama corto y sin tecnicismos de qué son estas herramientas, útil si venís completamente de cero.',
+        'Para el más curioso: la mejor visualización que existe de qué hace una red neuronal por dentro, doblada al español. Es la capa 3 del mapa de esta sesión, contada con el reconocimiento de dígitos escritos a mano.',
     },
   ],
   2: [
