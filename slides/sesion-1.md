@@ -143,8 +143,8 @@ Insistir en que están anidadas: cada capa usa la anterior, no la reemplaza.
 Es lo que siempre hicimos: mirar datos, limpiarlos, graficarlos, sacar conclusiones.
 
 **Una curva de declinación ajustada a mano ya es un modelo.** Y la línea de tendencia sobre un
-Excel de costos o de demanda, también: elegiste una forma, estimaste sus parámetros y
-proyectaste. La estadística de la facultad vive acá.
+Excel de costos o de demanda, también: la fórmula la pusiste vos, y los datos pusieron los
+parámetros. La estadística de la facultad vive acá.
 
 <!--
 3 min · acumulado 0:17
@@ -202,6 +202,9 @@ Tu correo hace esto hace veinte años: nadie escribió la regla de qué es spam.
 
 <!--
 3 min · acumulado 0:26
+El contraste con la capa 1, en una frase: allá la fórmula la ponías vos y los
+datos ponían los parámetros; acá la máquina ajusta el modelo sola, contra un
+criterio. Subir de capa es dejar que los datos pongan cada vez más del modelo.
 La pregunta que suele aparecer acá: ¿y cómo sabe que acertó?
 Respuesta corta: se le esconde parte de los datos y se mide. Es la idea de
 validación, y es la razón por la que un modelo puede andar bien en el papel y
@@ -238,12 +241,19 @@ patrones mucho más complejos.
 Acá entran las imágenes sísmicas, los registros de pozo, el texto. Y la cara que desbloquea tu
 teléfono: datos donde la señal está distribuida y no se deja resumir en cinco variables.
 
+El ejemplo fundacional es de 1989: una red de los Laboratorios Bell leyendo números escritos
+a mano. El video dura **un minuto** y está en la página.
+
 <!--
 2 min · acumulado 0:33
 No entrar en arquitectura. Lo único que tiene que quedar: "grande" quiere decir
-muchas capas de transformación aprendidas de los datos.
-Puente: en la sesión 2 abrimos esta caja con el ejemplo de LeCun y los números
-escritos a mano.
+muchas capas de transformación aprendidas de los datos. Acá ni la forma de la
+función la escribe nadie: la aprende la red.
+Si preguntan por LeNet: es deep learning, el ancestro directo. El nombre se
+impuso recién en 2012 con AlexNet, que es el mismo mecanismo con GPUs y un
+millón de imágenes.
+El video de LeCun está en el material previo de esta página; la sesión 2 tiene
+la sección entera para el que quiera mirar adentro.
 -->
 
 ---
@@ -255,10 +265,14 @@ un número, **generan**: texto, código, imágenes.
 
 Los **LLM** (modelos grandes de lenguaje) son el caso que nos ocupa el resto del curso.
 
+¿Y por qué explotó ahora, y no en 2010?
+
 <!--
 3 min · acumulado 0:36
 Acá recién aparece el chatbot. Todo lo anterior sigue existiendo y sigue siendo
 la herramienta correcta para la mayoría de los problemas con números.
+Cerrar con la pregunta proyectada y juntar dos o tres hipótesis de la sala
+antes de avanzar: la slide siguiente es la respuesta.
 -->
 
 ---
@@ -273,11 +287,14 @@ la herramienta correcta para la mayoría de los problemas con números.
 
 <!--
 4 min · acumulado 0:40
-Abrir con la pregunta antes de mostrar la lista: ¿por qué explotó ahora y no en
-2010? Suele salir "más computadoras", que es un tercio de la respuesta.
+Esta slide responde la pregunta que quedó proyectada en la anterior. En las
+hipótesis suele salir "más computadoras", que es un tercio de la respuesta.
 Lo importante del transformer no es cómo funciona sino que **mejora al agrandarlo**,
 de forma predecible. Eso convirtió la investigación en ingeniería: si duplico
 datos y cómputo, sé aproximadamente cuánto mejora.
+Si alguien pregunta qué tiene de especial la arquitectura: el mecanismo de
+atención, que mira todo el contexto a la vez y se paraleliza bien. Con el
+nombre alcanza; la mecánica está en la serie de 3Blue1Brown de la página.
 -->
 
 ---

@@ -50,6 +50,20 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'El video del punto 1 de la lista de arriba. Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
     },
     {
+      // Repetido a propósito en INTERPRETABILIDAD (sesión 2): acá respalda la
+      // línea de la capa 3 del deck ("el video dura un minuto y está en la página").
+      tipo: 'video',
+      titulo: 'Convolutional Network Demo from 1989 (versión restaurada)',
+      url: 'https://www.youtube.com/watch?v=H0oEr40YhrQ',
+      fuente: 'Yann LeCun',
+      duracion: '1:01',
+      publicado: '2024-12',
+      historico: true,
+      idioma: 'en',
+      porque:
+        'El ejemplo fundacional de la capa 3, en un minuto y sin narración: una red de los Laboratorios Bell leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy escribe informes, en una computadora de hace treinta y siete años.',
+    },
+    {
       // Repetido a propósito en la sesión 2, donde acompaña la sección de
       // interpretabilidad: acá es el "para curiosos" de la capa 3 del mapa.
       tipo: 'video',
