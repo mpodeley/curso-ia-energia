@@ -58,6 +58,16 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'Para el más curioso: la mejor visualización que existe de qué hace una red neuronal por dentro, doblada al español. Es la capa 3 del mapa de esta sesión, contada con el reconocimiento de dígitos escritos a mano.',
     },
+    {
+      tipo: 'curso',
+      titulo: 'Neural networks, la serie completa',
+      url: 'https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi',
+      fuente: '3Blue1Brown',
+      duracion: '10 videos',
+      idioma: 'en',
+      porque:
+        'La idea de este curso es ser bien práctico, así que la matemática queda afuera. Para el más curioso, esta serie es un recurso excelente: arranca donde el video anterior (acá en su versión original) y sigue hasta adentro de los transformers de los chatbots actuales, con las mismas visualizaciones.',
+    },
   ],
   2: [
     {
