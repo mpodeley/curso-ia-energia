@@ -19,7 +19,8 @@
     "slides:notes": "marp --notes -I slides -o build/notas",
     "slides:fonts": "node tools/marp-fonts.mjs",
     "worker:dev": "npm --prefix worker run dev",
-    "worker:deploy": "npm --prefix worker run deploy"
+    "worker:deploy": "npm --prefix worker run deploy",
+    "deploy:canonica": "npm run build && bash tools/deploy-canonica.sh"
   },
   "dependencies": {
     "react": "^19.1.1",

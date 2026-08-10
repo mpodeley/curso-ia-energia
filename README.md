@@ -20,12 +20,19 @@ y las respuestas abiertas), junto con el nombre con el que entró, contra un Clo
 propio (`worker/`), que es opcional: sin `VITE_API_URL` el sitio se construye sin nada de eso.
 
 ```bash
-npm run dev        # desarrollo
-npm test           # vitest (engine de ejercicios + validación del Worker)
-npm run build      # slides + tsc + vite build → dist/
-npm run data       # regenera public/data/ (requiere: pip install tiktoken)
-npm run typecheck  # tsc --noEmit    ·    npm run typecheck:worker para worker/
+npm run dev              # desarrollo
+npm test                 # vitest (engine de ejercicios + validación del Worker)
+npm run build            # slides + tsc + vite build → dist/
+npm run data             # regenera public/data/ (requiere: pip install tiktoken)
+npm run typecheck        # tsc --noEmit    ·    npm run typecheck:worker para worker/
+npm run deploy:canonica  # build + push de dist/ a mpodeley.github.io (la canónica)
 ```
+
+El deploy tiene dos destinos: el CI publica solo el **respaldo** de la org (servido en
+podeley.ar) en cada push; la **canónica** (`mpodeley.github.io/curso-energia-ypfb`, la URL
+impresa en decks y brochure) se publica a mano con `npm run deploy:canonica`. Decisión del
+10-ago-2026; si algún día se quiere automatizar, el paso ya está en `deploy.yml` y se activa
+creando el secret `ACTIONS_DEPLOY_KEY` (deploy key de escritura sobre el repo de mpodeley).
 
 El brochure son dos artefactos versionados que se regeneran a mano cuando cambia
 `docs/brochure/brochure.html`: `python scripts/build_qr.py` rehace el QR desde la URL del
