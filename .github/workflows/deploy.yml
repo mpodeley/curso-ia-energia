@@ -44,8 +44,14 @@ jobs:
       # dominio custom, sirve directo). Necesita ACTIONS_DEPLOY_KEY, una deploy
       # key con escritura sobre mpodeley/curso-energia-ypfb; mientras el secret
       # no exista, el paso se saltea y la canónica se publica a mano (README).
+      # El contexto secrets no se puede leer en un if de paso, por eso el flag
+      # pasa por un output.
+      - name: Check deploy key
+        id: haskey
+        run: echo "has=${{ secrets.ACTIONS_DEPLOY_KEY != '' }}" >> "$GITHUB_OUTPUT"
+
       - name: Deploy to GitHub Pages (canónica, mpodeley)
-        if: ${{ secrets.ACTIONS_DEPLOY_KEY != '' }}
+        if: ${{ steps.haskey.outputs.has == 'true' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
