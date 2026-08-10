@@ -8,7 +8,10 @@ Static site for an 8-session Spanish-language course on generative AI (LLMs + ag
 petroleum-industry professionals (first client: YPFB Andina). Delivered live by video; this site
 hosts the per-session materials, the slide decks, and **fully client-side interactive exercises**
 (attendees only have free-tier chatbot accounts — the exercises never call an LLM API). Deployed
-to GitHub Pages.
+to GitHub Pages twice: the canonical site at **mpodeley.github.io/curso-energia-ypfb** (personal
+account, no custom domain, serves directly — this is the URL printed on decks, QR and brochure)
+and a backup copy in the org, which the org's custom domain serves at podeley.ar/curso-energia-ypfb.
+The Worker's ORIGENES allowlist carries all three origins.
 
 One thing *does* leave the browser, and only when the student presses a button: the session-1
 survey, the live pulsos and the open answers — plus the name typed into the identity card, which
