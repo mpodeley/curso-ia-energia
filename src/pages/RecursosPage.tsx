@@ -77,6 +77,11 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
         nota: 'un minuto de Yann LeCun mostrando el antecedente directo de todo esto, restaurado',
       },
       {
+        nombre: 'The moment we stopped understanding AI [AlexNet] — Welch Labs',
+        href: 'https://www.youtube.com/watch?v=UZDiGooFs54',
+        nota: 'AlexNet (2012): cuando la escala hizo que el rendimiento le ganara a la legibilidad, en inglés',
+      },
+      {
         nombre: 'Feature Visualization — Distill',
         href: 'https://distill.pub/2017/feature-visualization/',
         nota: 'el artículo de referencia, en inglés; se puede recorrer mirando solo las figuras',

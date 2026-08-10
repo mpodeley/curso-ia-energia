@@ -7,9 +7,9 @@
 // leaving it "probably fine".
 //
 // Quality bar (instructor's rule, 2026-08-10): first-rate sources only —
-// 3Blue1Brown, Khan Academy, Anthropic, Distill, official tools and data
-// sources. No generic-divulgation YouTube channels, in any language. A short
-// list beats a padded one; a session with no external resource is fine.
+// 3Blue1Brown, Welch Labs, Khan Academy, Anthropic, Distill, official tools
+// and data sources. No generic-divulgation YouTube channels, in any language.
+// A short list beats a padded one; a session with no external resource is fine.
 
 export const VERIFICADO = '2026-08-10'
 
@@ -62,6 +62,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'en',
       porque:
         'El ejemplo fundacional de la capa 3, en un minuto y sin narración: una red de los Laboratorios Bell leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy escribe informes, en una computadora de hace treinta y siete años.',
+    },
+    {
+      tipo: 'video',
+      titulo: 'The moment we stopped understanding AI [AlexNet]',
+      url: 'https://www.youtube.com/watch?v=UZDiGooFs54',
+      fuente: 'Welch Labs',
+      duracion: '17:38',
+      publicado: '2024-07',
+      idioma: 'en',
+      porque:
+        'Donde la capa 3 explota: AlexNet (2012), el mismo mecanismo de LeNet con GPUs y un millón de imágenes. El título es literal, y es el hilo que retomamos en las sesiones 2 y 7: desde acá los modelos rinden más de lo que se dejan leer.',
     },
     {
       // Repetido a propósito en la sesión 2, donde acompaña la sección de
@@ -173,6 +184,18 @@ export const INTERPRETABILIDAD: Recurso[] = [
     idioma: 'en',
     porque:
       'Un minuto, sin narración: LeNet-1 leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy mueve todo, corriendo en una computadora de hace treinta y siete años.',
+  },
+  {
+    // Repetido a propósito en el material previo de la sesión 1 (capa 3).
+    tipo: 'video',
+    titulo: 'The moment we stopped understanding AI [AlexNet]',
+    url: 'https://www.youtube.com/watch?v=UZDiGooFs54',
+    fuente: 'Welch Labs',
+    duracion: '17:38',
+    publicado: '2024-07',
+    idioma: 'en',
+    porque:
+      'El otro extremo del arco que abre LeNet: AlexNet (2012), cuando la escala hizo que el rendimiento le ganara a la legibilidad. Es la mejor motivación visual de por qué existe todo lo que sigue en esta lista.',
   },
   {
     tipo: 'lectura',

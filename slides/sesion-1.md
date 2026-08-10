@@ -241,19 +241,21 @@ patrones mucho más complejos.
 Acá entran las imágenes sísmicas, los registros de pozo, el texto. Y la cara que desbloquea tu
 teléfono: datos donde la señal está distribuida y no se deja resumir en cinco variables.
 
-El ejemplo fundacional es de 1989: una red de los Laboratorios Bell leyendo números escritos
-a mano. El video dura **un minuto** y está en la página.
+La capa arranca en 1989 (**LeNet** leyendo números escritos a mano, video de un minuto) y
+explota en 2012 (**AlexNet**, el mismo mecanismo con GPUs). Los dos videos están en la página.
 
 <!--
 2 min · acumulado 0:33
 No entrar en arquitectura. Lo único que tiene que quedar: "grande" quiere decir
 muchas capas de transformación aprendidas de los datos. Acá ni la forma de la
 función la escribe nadie: la aprende la red.
-Si preguntan por LeNet: es deep learning, el ancestro directo. El nombre se
-impuso recién en 2012 con AlexNet, que es el mismo mecanismo con GPUs y un
-millón de imágenes.
-El video de LeCun está en el material previo de esta página; la sesión 2 tiene
-la sección entera para el que quiera mirar adentro.
+El arco: LeNet (Bell Labs, 1989) es donde empieza; AlexNet (2012, GPUs y un
+millón de imágenes) es donde deja de ser curiosidad y se come la década. Ojo
+con decir que la capa "termina" ahí: la capa 4 es esta misma receta llevada al
+extremo. Lo que termina en 2012 es otra cosa, y es el título del video de
+Welch Labs: el momento en que dejamos de entender qué pasa adentro. Ese hilo
+se retoma en la sesión 2 (mirar adentro) y en la 7 (verificar porque no se
+puede mirar todo).
 -->
 
 ---
