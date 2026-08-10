@@ -406,9 +406,11 @@ anteriores; a veces ya lo cazaron solos y es mejor si sale de ellos.
 ## Ahora, a hacerlo fallar
 
 <!--
-10 min · acumulado 1:09
-Cambiar al chatbot. Preguntas para provocar la falla, en orden de más sutil a
-más evidente:
+12 min · acumulado 1:11
+Demo en Gemini Flash, pidiéndole en el primer mensaje que no use búsqueda ni
+se conecte a internet: sin conexión no puede apoyarse en fuentes y la falla
+sale reproducible. Ejemplos de juguete a elección; estos tres son candidatos,
+de más sutil a más evidente:
 
 1) "¿Cuál es la producción del campo Río Grande en 2024 según el boletín de la ANH?"
    (va a inventar una cifra con total seguridad)
@@ -423,27 +425,14 @@ más evidente:
    exacta de una cita, y no va a resistir la búsqueda)
 
 Verificar UNA en vivo, buscándola. Que vean el chequeo, no solo la afirmación.
+Comentar al pasar, sin slide, las dos causas: a una le faltaba el dato (nunca
+leyó ese boletín, y en vez de decirlo escribió la cifra más creíble) y en la
+otra el dato no existe en ninguna parte, y aun así salió con la forma exacta
+de una cita. La primera se arregla trayéndole el documento (sesión 5); la
+segunda no se arregla: se verifica (sesión 7). La resolución de la ANH es la
+mezcla de las dos, la peor, porque el marco real hace creíble al dato
+inventado. La segunda pregunta de la discusión retoma esta distinción.
 Volver al deck.
--->
-
----
-
-## No fallaron todas por lo mismo
-
-A la primera le **faltaba el dato**: nunca leyó ese boletín, y en vez de decirlo escribió la cifra más creíble.
-
-En la segunda el dato **no existe en ninguna parte**, y aun así produjo algo con la forma exacta de una cita.
-
-<!--
-2 min · acumulado 1:11
-Dos causas, no cuatro. Las otras dos no las vieron todavía y nombrarlas ahora
-sería humo; van enteras en el cierre, como hoja de ruta.
-La primera se arregla trayéndole el documento, y eso es la sesión 5.
-La segunda no se arregla: se verifica, y eso es la sesión 7.
-Si preguntan por la tercera respuesta, la de la resolución de la ANH: es la
-mezcla de las dos. El organismo y el campo existen; el número, no. Es la peor
-de las tres, porque el marco real hace creíble al dato inventado, y por eso el
-ejercicio de la sesión 7 le dedica un informe entero.
 -->
 
 ---
