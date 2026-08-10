@@ -55,6 +55,25 @@ Sales material: `docs/syllabus.md`.
   (never throws — every call returns a `Resultado`), `outbox.ts` (localStorage retry queue),
   `identidad.tsx` (PIN + name context).
 
+## Course calibration (set 2026-08-10, after S1–S2; applies to every future session and deck)
+
+- **Driving school, not mechanics.** The course teaches first steps in USING generative AI at
+  work, not ML expertise. Mechanics appear only in service of use, and every mechanical piece
+  must land on something the student does differently on Monday. Depth goes to clearly-marked
+  "para curiosos" material on the page, never into live minutes.
+- **Zero pre-work assumed.** Nobody arrives having read anything: everything essential happens
+  live, from zero. Session pages are reinforcement and optional depth ("Antes de la sesión
+  (opcional)"), never prerequisites. The ONLY ask between sessions is the tarea, sized at ~5
+  minutes, and every deck carries a plan B in its notes for when few did it.
+- **Resources: first-rate only.** 3Blue1Brown, Khan Academy, Anthropic, Distill, official tools
+  and data sources. No generic-divulgation YouTube channels in any language. Short lists beat
+  padded ones; a session with no external resource is fine.
+- **Cohort: ~10 people, remote.** Direct rounds by name, results pasted into the video-call
+  chat (nobody screen-shares except the instructor), the panel makes individual progress
+  visible. Ten pulse votes are quorum.
+- **Every session ends with takeaways**: two or three concrete practices, said in plain words
+  on a closing slide.
+
 ## Conventions
 
 - UI text Spanish (voseo — the instructor is Argentine); identifiers/comments English.

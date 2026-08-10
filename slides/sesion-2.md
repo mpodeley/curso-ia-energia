@@ -28,15 +28,16 @@ El panel va en la cuarta, o en el segundo monitor si hay.
 | Apertura y entrada al sitio | 8 min | Objetivos y el PIN, como la semana pasada |
 | Repaso de la tarea | 15 min | Qué les salió bien y mal con el chatbot esta semana |
 | Tokens y predicción | 33 min | Recorremos juntos los dos primeros ejercicios de la página |
-| Contexto y entrenamiento | 28 min | La memoria de trabajo en vivo, y cómo se entrena |
-| Alucinaciones en vivo | 22 min | Lo hacemos alucinar y analizamos por qué pasa |
+| Contexto y entrenamiento | 20 min | La memoria de trabajo en vivo, y cómo se entrena en dos etapas |
+| Alucinaciones en vivo | 30 min | Lo hacemos alucinar: primero el instructor, después cada uno |
 | Cierre y tarea | 14 min | Dos de las cuatro maneras de fallar, y qué hacer con esto |
 
 <!--
 3 min · acumulado 0:03
 La misma tabla está en la página de la sesión 2.
-Bajada del día: la semana pasada vimos QUÉ hace; hoy vemos CÓMO, y de ahí sale
-solo por qué falla.
+Bajada del día: la semana pasada vimos QUÉ hace; hoy levantamos el capó un
+rato, lo justo. Cada pieza que veamos termina en algo que van a hacer distinto
+el lunes.
 -->
 
 ---
@@ -46,6 +47,8 @@ solo por qué falla.
 - Entender qué es un **token** y por qué importa para todo lo demás
 - Ver que el modelo **predice el próximo token**, y qué controla la temperatura
 - Derivar de esa mecánica **por qué los modelos alucinan**
+
+Hoy levantamos el capó un rato: mecánica, solo la que sirve para manejar mejor.
 
 <!--
 2 min · acumulado 0:05
@@ -89,9 +92,12 @@ Arranca 0:08, termina 0:23
 <!--
 6 min · acumulado 0:14
 Que cuenten. Empezar por quien haya traído algo concreto, no preguntar al aire.
+Con ~10 personas: ronda directa, con nombre.
 Anotar cada tarea que mencionen: alimenta la shortlist de la sesión 5 igual que
 la encuesta.
-Si alguien no hizo la tarea, que escuche; sale igual.
+Plan B si pocos la hicieron: tres minutos ahí mismo. Que abran el chatbot, le
+pidan UNA tarea real chica, y el repaso se hace sobre eso. La clase no depende
+de la tarea.
 -->
 
 ---
@@ -283,10 +289,10 @@ Cierre del bloque 2.
 
 ## Contexto y entrenamiento
 
-Bloque 3 de 5 · **28 min**
+Bloque 3 de 5 · **20 min**
 
 <!--
-Arranca 0:56, termina 1:24
+Arranca 0:56, termina 1:16
 -->
 
 ---
@@ -350,37 +356,23 @@ buscar el pedazo que hace falta y pegar solo eso.
 
 ---
 
-## Primera etapa: leer
+## Cómo se entrena: dos etapas de tamaños muy distintos
 
-El modelo lee una fracción enorme de todo el texto humano y practica una sola cosa: predecir
-lo que sigue.
+Primero **lee** una fracción enorme de todo el texto humano, practicando una sola cosa:
+predecir lo que sigue. De ahí salen la gramática, los hechos y los patrones.
 
-De ahí salen la gramática, los hechos y los patrones de razonamiento. Nadie los escribió como
-reglas: se ajustaron solos.
+Después, una etapa **mucho más chica**: personas le enseñan a comportarse como asistente.
+El tono servicial y seguro sale de acá, y no tiene relación con si lo que dice es cierto.
 
 <!--
 5 min · acumulado 1:13
-Insistir en que el único objetivo del entrenamiento es continuar texto. Todo lo
-demás aparece como efecto de hacer eso muy bien.
-La consecuencia incómoda: el modelo aprendió lo que había escrito, con sus
-errores y sus sesgos. Lo escrito no es lo verdadero.
--->
-
----
-
-## Segunda etapa: aprender a conversar
-
-Un modelo que solo continúa texto no responde preguntas: las continúa. Después de esa primera
-etapa hay una segunda, mucho más chica, donde personas le enseñan a comportarse como asistente.
-
-Ahí aprende a responder, a seguir instrucciones y a negarse a algunas cosas.
-
-<!--
-5 min · acumulado 1:18
-Este es el paso que convirtió una curiosidad de laboratorio en un producto que
-llegó a todos los escritorios. La capacidad ya estaba; faltaba la interfaz.
-Detalle que conviene mencionar: el tono servicial y seguro viene de esta etapa,
-y no tiene relación con si lo que dice es cierto. Volvemos a esto en el bloque 4.
+Lo único que hay que llevarse para manejar: el objetivo del entrenamiento es
+continuar texto, y el tono seguro viene del ajuste posterior, no de saber.
+Aprendió lo que había escrito, con sus errores y sesgos: lo escrito no es lo
+verdadero.
+Un modelo que solo pasó por la primera etapa no responde preguntas, las
+continúa. La capacidad ya estaba; la segunda etapa le puso la interfaz.
+Volvemos al tono seguro en el bloque 4.
 -->
 
 ---
@@ -390,32 +382,11 @@ y no tiene relación con si lo que dice es cierto. Volvemos a esto en el bloque 
 ## Nadie escribió esas reglas: **se ajustaron solas** mirando ejemplos
 
 <!--
-3 min · acumulado 1:21
+3 min · acumulado 1:16
 La frase del bloque. Es también la razón por la que nadie puede abrir el modelo
 y leer por qué contestó lo que contestó.
-Puente a la slide siguiente: "caja negra" es una metáfora cómoda pero incompleta,
-porque sí se puede mirar adentro, con esfuerzo.
--->
-
----
-
-## Se puede mirar adentro, con esfuerzo
-
-En 1989, en los Laboratorios Bell, Yann LeCun mostró una red que leía números escritos a mano.
-El video dura un minuto y está en la página.
-
-Esa red no aprende "el número 7". Aprende a **descomponer la imagen en piezas**: primero
-bordes, después curvas, después partes reconocibles.
-
-<!--
-3 min · acumulado 1:24
-Es el mismo mecanismo que hoy escribe informes, con más datos y más cómputo.
-El ejemplo es de imágenes a propósito: lo que la red aprende se puede dibujar.
-En los modelos de lenguaje de hoy aparecen millones de conceptos identificables,
-y se los puede amplificar o apagar y ver cómo cambia la respuesta.
-En la página hay una sección de enlaces para el que quiera ir más lejos.
-Esto vuelve en la sesión 7: se puede mirar adentro, pero todavía no lo bastante
-bien como para garantizar cómo se va a comportar en una situación nueva.
+Si alguien quiere mirar adentro: la página tiene una sección entera para
+curiosos, con el video de LeCun de 1989 y los enlaces de interpretabilidad.
 Cierre del bloque 3.
 -->
 
@@ -425,10 +396,10 @@ Cierre del bloque 3.
 
 ## Alucinaciones en vivo
 
-Bloque 4 de 5 · **22 min**
+Bloque 4 de 5 · **30 min**
 
 <!--
-Arranca 1:24, termina 1:46
+Arranca 1:16, termina 1:46
 -->
 
 ---
@@ -441,7 +412,7 @@ Un número de norma que parece real, un paper que suena citable, una cifra de pr
 tres decimales.
 
 <!--
-3 min · acumulado 1:27
+3 min · acumulado 1:19
 Acá se cierra la cadena que abrimos a las 0:05: token, predicción, alucinación.
 Decirlo explícito: esto no es un bug que alguien vaya a arreglar el año que
 viene. Es el comportamiento por defecto del mecanismo que acaban de ver.
@@ -455,7 +426,7 @@ Lo que sí mejora es la frecuencia. Lo que no cambia es que hay que verificar.
 ## Una palabra: ¿qué te preocupa de que alucine?
 
 <!--
-2 min · acumulado 1:29
+2 min · acumulado 1:21
 Cambiar al panel y abrir el pulso "s2-palabra-alucinacion".
 Dejar la nube a la vista mientras la completan; sirve de telón para lo que sigue.
 No cerrar el pulso todavía: se cierra al volver de la demo, y ahí se comenta.
@@ -470,7 +441,7 @@ No cerrar el pulso todavía: se cierra al volver de la demo, y ahí se comenta.
 Miren dos cosas: qué **seguro** suena, y cuánto tardamos en **verificarlo**.
 
 <!--
-11 min · acumulado 1:40
+10 min · acumulado 1:31
 Cambiar al chatbot. Preguntas en orden, de más sutil a más evidente:
 
 1) "¿Cuál fue la producción de gas del campo San Alberto en 2024 según el
@@ -488,7 +459,30 @@ Cambiar al chatbot. Preguntas en orden, de más sutil a más evidente:
 Verificar UNA en vivo, buscándola delante de ellos. Que vean el chequeo, no la
 afirmación de que hay que chequear.
 Preguntar quién le habría creído a la primera respuesta si la veía sola.
-Volver al deck.
+Seguir a la slide siguiente sin volver al deck de fondo: ahora les toca a ellos.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Ahora vos: hacelo alucinar
+
+Preguntale algo de **tu especialidad** que puedas verificar de memoria: una cifra, una norma,
+un nombre. Pegá la respuesta en el chat de la videollamada.
+
+<!--
+9 min · acumulado 1:40
+La consigna exacta: una pregunta de su área cuya respuesta conocen de memoria.
+Tres o cuatro minutos para probar; el resultado, pegado en el chat.
+Leer dos o tres en voz alta y clasificar con la sala: ¿le faltaba el dato, o el
+dato no existe y lo completó igual?
+Si a alguien "le salió bien", también es dato: preguntarle cómo lo verificaría
+si NO supiera la respuesta de memoria. Esa pregunta es el puente a la cita
+siguiente.
+Con diez personas alcanza para escuchar a varios; nadie comparte pantalla, el
+chat es suficiente. Guardar el chat al final: esos ejemplos alimentan la
+sesión 7.
 -->
 
 ---

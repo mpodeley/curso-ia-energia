@@ -29,7 +29,7 @@ puede seguir las slides desde ahí.
 | El mapa de cuatro capas | 35 min | La historia, con ejemplos de la industria. Las dos primeras capas las tocamos en vivo |
 | Demos en vivo | 30 min | El chatbot frente a tareas reales, y también verlo fallar |
 | Encuesta de relevamiento | 15 min | La completamos juntos |
-| Discusión | 20 min | Sus primeras conversaciones: qué sorprendió, qué decepcionó |
+| Discusión | 20 min | Qué sorprendió y qué decepcionó de lo visto hoy |
 | Cierre y tarea | 10 min | Las cuatro maneras de fallar, y qué viene en la sesión 2 |
 
 <!--
@@ -47,8 +47,12 @@ La misma tabla está en la página de la sesión: deck y sitio no se contradicen
 - Ver en vivo qué puede y qué **no** puede hacer hoy un chatbot con tareas reales de la industria
 - Completar la **encuesta de relevamiento** que alimenta el caso real del final del curso
 
+Este es un curso de conducir, no de mecánica: de cómo funciona por dentro, solo lo que ayude a manejar mejor.
+
 <!--
 2 min · acumulado 0:04
+La frase del auto es el encuadre de las ocho sesiones: decirla y dejarla. Nadie
+sale de acá experto en machine learning; salen manejando mejor la herramienta.
 El tercer punto es el que más importa para el resto del curso: sin encuesta no
 hay caso final. Repetirlo cuando lleguemos al bloque 3.
 -->
@@ -85,6 +89,7 @@ Vamos a usar la página de la sesión 1 varias veces hoy. El PIN del curso lo di
 Dictar el PIN y esperar a que todos entren. Que escriban nombre y apellido:
 las respuestas de hoy se cruzan con las de la sesión 3 y la 5.
 Cambiar a la ventana B (panel) y abrir el pulso "s1-palabra-ia".
+Con diez votos la nube dibuja igual; no esperar más quórum que ese.
 Volver acá cuando hayan votado unos cuantos.
 Pedirles que dejen la página de la sesión 1 abierta: en el bloque 1 hay un
 ejercicio que hacemos ahí mismo.
@@ -484,7 +489,8 @@ Son doce preguntas y unos quince minutos. Sin datos confidenciales.
 13 min · acumulado 1:30
 Dejar esta slide proyectada mientras la completan. No cambiar de ventana: que
 tengan la URL a la vista todo el bloque.
-Mirar el panel en la otra ventana para ver cuántos van completando.
+Mirar el panel en la otra ventana: con diez personas se ve al instante quién
+va completando, y se puede preguntar por nombre si alguien se trabó.
 A los 10 min avisar que quedan 5.
 El que no llegue la puede terminar después: se guarda sola.
 -->
@@ -510,6 +516,8 @@ Arranca 1:30, termina 1:50
 <!--
 8 min · acumulado 1:38
 Primera pregunta de discusión. Dejarla proyectada mientras hablan.
+Con ~10 personas: ronda directa con nombre, no preguntar al aire. Alcanza el
+tiempo para que hablen todos por lo menos una vez en el bloque.
 Si nadie arranca, empezar por la de "menos": es más fácil y suele destrabar.
 Anotar todo: esto alimenta la shortlist de la sesión 5 igual que la encuesta.
 -->
@@ -585,6 +593,9 @@ Anotá tres cosas: qué pediste, qué salió bien y **qué salió mal**.
 
 Dos minutos de notas alcanzan. Las usamos para abrir la próxima sesión.
 
+Y lo de hoy, en tres frases: la salida es un borrador plausible, se verifica lo que importa,
+y nada confidencial en cuentas gratuitas.
+
 <!--
 3 min · acumulado 1:56
 Insistir en que anoten lo que salió MAL. Es el material más útil que van a traer.
@@ -593,20 +604,21 @@ Y que arriesguen por qué: con la hoja de ruta recién vista, ya pueden.
 
 ---
 
-## La sesión 2: cómo funciona un LLM
+## La sesión 2: una mirada bajo el capó
 
-- Entender qué es un **token** y por qué importa para todo lo demás
-- Ver que el modelo **predice el próximo token**, y qué controla la temperatura
-- Derivar de esa mecánica **por qué los modelos alucinan**
+- Por qué **cuenta mal** las letras y los números
+- Por qué **se olvida** de lo que le dijiste
+- Por qué **inventa**, y con tanta seguridad
 
-En la página hay tres ejercicios para jugar antes (el tokenizador, "adiviná el próximo token"
-y la ventana de contexto), más el material previo en video.
+Los tres ejercicios de la página los recorremos juntos, de cero. Si querés llegar jugado, mejor,
+pero no hace falta.
 
 <!--
 3 min · acumulado 1:59
-Pedirles que hagan los tres ejercicios ANTES de la sesión 2: la clase los
-recorre suponiendo que ya jugaron. Los videos del material previo son opcionales
-pero cortos, y el que llegue con uno visto entiende el doble.
+Lo único que se pide entre sesiones es la tarea de la slide anterior: dos
+minutos de notas. Nada de material previo obligatorio; el que quiera jugar con
+los ejercicios o ver los videos de la página, bienvenido, pero la clase arranca
+de cero igual.
 -->
 
 ---

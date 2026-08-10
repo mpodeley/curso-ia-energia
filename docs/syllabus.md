@@ -17,6 +17,11 @@ un uso competente y con criterio**: qué son los LLMs y los agentes, cómo rinde
 diario, dónde fallan, y qué reglas de uso corresponde adoptar en una industria donde los errores
 cuestan caro.
 
+Es **un curso de conducir, no de mecánica**: el objetivo no es formar expertos en machine
+learning sino dar los primeros pasos en usar estas herramientas en el trabajo. De cómo funcionan
+por dentro se ve solo lo que ayuda a manejar mejor, y el que quiera abrir el capó tiene material
+de primera línea señalado en cada sesión.
+
 Tres decisiones de diseño lo distinguen de un curso genérico:
 
 1. Todo con ejemplos de la industria. Los ejercicios usan partes de producción, curvas de
@@ -31,10 +36,11 @@ Tres decisiones de diseño lo distinguen de un curso genérico:
 
 ## Formato
 
-- **Antes de cada sesión (30–45 min, auto-guiado):** materiales en el sitio del curso: lecturas o
-  videos cortos con tiempo estimado y **ejercicios interactivos que corren en el navegador** (un
-  tokenizador real, un simulador de predicción y temperatura, un laboratorio de ventana de
-  contexto, quizzes con explicación).
+- **El sitio del curso (repaso y profundización):** nadie necesita llegar con material leído;
+  todo lo esencial pasa en la sesión en vivo. La página de cada sesión guarda los
+  **ejercicios interactivos que corren en el navegador** (un tokenizador real, un simulador de
+  predicción y temperatura, un laboratorio de ventana de contexto, quizzes con explicación) y el
+  material para el que quiera ir más lejos.
 - **Sesión en vivo (2 h, videollamada):** exposición con demos en vivo (~40 min), taller hands-on
   con las herramientas (~40 min), discusión estructurada (~30 min), cierre y tarea (~10 min).
 - **Requisitos:** navegador y una cuenta gratuita de chatbot (ChatGPT, Claude o Gemini). No se

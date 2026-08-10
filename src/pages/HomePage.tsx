@@ -9,7 +9,7 @@ export function HomePage() {
         <h1>IA generativa para la industria del petróleo y gas</h1>
         <p className="hero-sub">
           LLMs y agentes desde cero, con los pies en la industria: qué son, cómo usarlos bien en el
-          trabajo diario, dónde fallan — y un caso real construido con las necesidades y los datos de
+          trabajo diario, dónde fallan, y un caso real construido con las necesidades y los datos de
           los propios asistentes.
         </p>
         <div className="hero-cta">
@@ -29,9 +29,10 @@ export function HomePage() {
           <p className="eyebrow">Programa</p>
           <h2>Ocho sesiones, un arco</h2>
           <p className="intro">
-            De entender qué es esto (sesiones 1–2), a usarlo bien (3–5), a lo que viene (6), a usarlo con
-            cabeza (7) — y cerrar con un caso real del propio equipo (8). Cada sesión tiene materiales
-            previos y ejercicios interactivos en este sitio.
+            Este es un curso de conducir, no de mecánica: el objetivo es dar los primeros pasos con la
+            IA generativa en el trabajo, y de cómo funciona por dentro se ve solo lo que ayuda a
+            manejar mejor. El arco: entender qué es esto (sesiones 1–2), usarlo bien (3–5), lo que
+            viene (6), usarlo con cabeza (7), y cerrar con un caso real del propio equipo (8).
           </p>
         </div>
         <div className="prog-grid">
@@ -55,10 +56,11 @@ export function HomePage() {
         </div>
         <div className="how-grid">
           <div className="how-item">
-            <h3>Antes de cada sesión</h3>
+            <h3>La página de cada sesión</h3>
             <p>
-              30–45 minutos auto-guiados en este sitio: una lectura o video corto y ejercicios
-              interactivos que corren en tu navegador. Sin instalar nada.
+              Todo lo esencial pasa en vivo: no hace falta llegar con nada leído. La página de cada
+              sesión guarda los ejercicios interactivos y el material para repasar o profundizar
+              después, en tu navegador y sin instalar nada.
             </p>
           </div>
           <div className="how-item">

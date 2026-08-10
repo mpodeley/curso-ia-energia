@@ -5,6 +5,11 @@
 // verification cannot ship a dead link or an invented citation. When you add
 // one, check it and move the date; when a link rots, remove it rather than
 // leaving it "probably fine".
+//
+// Quality bar (instructor's rule, 2026-08-10): first-rate sources only —
+// 3Blue1Brown, Khan Academy, Anthropic, Distill, official tools and data
+// sources. No generic-divulgation YouTube channels, in any language. A short
+// list beats a padded one; a session with no external resource is fine.
 
 export const VERIFICADO = '2026-08-10'
 
@@ -72,28 +77,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
   2: [
     {
       tipo: 'video',
-      titulo: '¿Qué es un LLM? Enormes Modelos del Lenguaje',
-      url: 'https://www.youtube.com/watch?v=Sz4qacFBHLk',
-      fuente: 'Dot CSV',
-      duracion: '15:25',
-      publicado: '2022-06',
-      idioma: 'es',
-      porque:
-        'Cubre la mecánica de la sesión con más profundidad. Mirá sobre todo la parte de cómo el entrenamiento a escala hace aparecer capacidades que nadie programó. Es anterior a ChatGPT: los ejemplos quedaron viejos, el mecanismo que explica no.',
-    },
-    {
-      tipo: 'video',
-      titulo: '¿Qué son los TOKENS? | Grandes Modelos de Lenguaje',
-      url: 'https://www.youtube.com/watch?v=p3cPzA4S_wk',
-      fuente: 'Codificando Bits',
-      duracion: '13:51',
-      publicado: '2023-08',
-      idioma: 'es',
-      porque:
-        'Complementa el laboratorio de tokens de esta página. Explica por qué el conteo de tokens define el costo y el límite de contexto.',
-    },
-    {
-      tipo: 'video',
       titulo: '¿Qué es una Red Neuronal? | Aprendizaje Profundo, capítulo 1',
       url: 'https://www.youtube.com/watch?v=jKCQsndqEGQ',
       fuente: '3Blue1Brown Español',
@@ -116,29 +99,16 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   3: [
     {
-      tipo: 'video',
-      titulo: 'Cómo escribir prompts perfectos: prompt engineering con el método de Google',
-      url: 'https://www.youtube.com/watch?v=BRy7Z3ZoQZk',
-      fuente: 'Xavier Mitjana',
-      duracion: '14:36',
-      publicado: '2026-01',
-      idioma: 'es',
+      tipo: 'lectura',
+      titulo: 'Prompt engineering overview',
+      url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview',
+      fuente: 'Anthropic',
+      idioma: 'en',
       porque:
-        'Otra forma de ordenar las mismas piezas que usa el constructor de esta página. Compará su lista con la nuestra: lo que se repite entre las dos es lo que de verdad importa.',
+        'La guía con la que Anthropic enseña a escribir prompts. Está pensada para gente que programa, pero las técnicas (ser claro, dar ejemplos, dejar pensar) son las mismas piezas del constructor de esta página, y sirven en cualquier chatbot. En inglés: el traductor del navegador alcanza.',
     },
   ],
   4: [
-    {
-      tipo: 'video',
-      titulo: 'Analizar datos con IA: ChatGPT, Gemini y Copilot',
-      url: 'https://www.youtube.com/watch?v=RHWvBwQ92dA',
-      fuente: 'Sergio Alejandro Campos - EXCELeINFO',
-      duracion: '2:56',
-      publicado: '2025-07',
-      idioma: 'es',
-      porque:
-        'Tres minutos para ver el flujo completo de subir una planilla y pedir análisis. Fijate que en el video nadie verifica el resultado: eso es exactamente lo que agregamos nosotros.',
-    },
     {
       tipo: 'herramienta',
       titulo: 'Producción por pozo — Capítulo IV',
@@ -146,32 +116,10 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Secretaría de Energía, Argentina',
       idioma: 'es',
       porque:
-        'La fuente de los pozos del laboratorio. Bajate un año y probá el flujo del video con datos de verdad, que es la mejor práctica antes de tocar los de tu empresa.',
+        'La fuente de los pozos del laboratorio. Bajate un año y probá el flujo de la sesión con datos de verdad, que es la mejor práctica antes de tocar los de tu empresa.',
     },
   ],
   5: [
-    {
-      tipo: 'video',
-      titulo: '¿Qué son los EMBEDDINGS? | Grandes Modelos de Lenguaje',
-      url: 'https://www.youtube.com/watch?v=h4GNDHC-s50',
-      fuente: 'Codificando Bits',
-      duracion: '10:09',
-      publicado: '2023-08',
-      idioma: 'es',
-      porque:
-        'La versión formal de lo que muestra el mapa de esta página: cómo un texto se convierte en una lista de números y qué significa que dos listas se parezcan.',
-    },
-    {
-      tipo: 'video',
-      titulo: 'RAG explicado | Grandes Modelos de Lenguaje',
-      url: 'https://www.youtube.com/watch?v=esQ4LMVdbaA',
-      fuente: 'Codificando Bits',
-      duracion: '14:43',
-      publicado: '2024-11',
-      idioma: 'es',
-      porque:
-        'Recorre el mismo circuito que el segundo ejercicio, con el vocabulario que vas a encontrar si después buscás herramientas o hablás con proveedores.',
-    },
     {
       tipo: 'herramienta',
       titulo: 'NotebookLM',
@@ -184,41 +132,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   6: [
     {
-      tipo: 'video',
-      titulo: '¿Qué son los Agentes de IA? Explicación sencilla',
-      url: 'https://www.youtube.com/watch?v=Xh1Jv33RIKw',
-      fuente: 'Oliver Nabani',
-      duracion: '9:00',
-      publicado: '2024-12',
-      idioma: 'es',
+      tipo: 'lectura',
+      titulo: 'Building effective agents',
+      url: 'https://www.anthropic.com/engineering/building-effective-agents',
+      fuente: 'Anthropic',
+      idioma: 'en',
       porque:
-        'Nueve minutos de panorama antes de meterte en la traza. Ojo con el entusiasmo del género: mientras lo mirás, anotá qué de eso ya viste funcionar y qué es promesa.',
+        'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad es el mejor antídoto que existe contra el humo del género. En inglés.',
     },
   ],
-  7: [
-    {
-      tipo: 'video',
-      titulo: 'Alucinaciones, tokens y contexto explicado fácil',
-      url: 'https://www.youtube.com/watch?v=_Obv6vrXZmQ',
-      fuente: 'NetMentor',
-      duracion: '11:02',
-      publicado: '2025-09',
-      idioma: 'es',
-      porque:
-        'Conecta las tres cosas que en el curso vimos por separado: por qué alucina, qué mitiga la recuperación de documentos y cómo el contexto afecta costo y calidad.',
-    },
-    {
-      tipo: 'video',
-      titulo: 'Cómo evitar que ChatGPT y otras IA usen los datos de tu empresa',
-      url: 'https://www.youtube.com/watch?v=kvgnZ3x5fkY',
-      fuente: 'Platzi',
-      duracion: '19:19',
-      publicado: '2025-05',
-      idioma: 'es',
-      porque:
-        'Su tesis es que bloquear el acceso empeora las cosas, porque empuja al uso clandestino. Es un buen contrapunto para la discusión de la política de uso.',
-    },
-  ],
+  // La sesión 7 no tiene material previo externo: sus dos recursos de primera
+  // línea (Anthropic) viven en PROPIEDADES, renderizados dentro de la prosa.
 }
 
 /** Session 2's interpretability detour: the antecedent, the intuition, and the
@@ -235,30 +159,6 @@ export const INTERPRETABILIDAD: Recurso[] = [
     idioma: 'en',
     porque:
       'Un minuto, sin narración: LeNet-1 leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy mueve todo, corriendo en una computadora de hace treinta y siete años.',
-  },
-  {
-    tipo: 'video',
-    titulo: '¡Redes Neuronales Convolucionales! ¿Cómo funcionan?',
-    url: 'https://www.youtube.com/watch?v=V8j1oENVz00',
-    fuente: 'Dot CSV',
-    duracion: '13:25',
-    publicado: '2020-11',
-    historico: true,
-    idioma: 'es',
-    porque:
-      'Cómo una red descompone una imagen en piezas cada vez más grandes. Es la primera parte del video siguiente.',
-  },
-  {
-    tipo: 'video',
-    titulo: '¡Extraños Patrones dentro de una RED NEURONAL!',
-    url: 'https://www.youtube.com/watch?v=ysqpl6w6Wzg',
-    fuente: 'Dot CSV',
-    duracion: '14:40',
-    publicado: '2021-02',
-    historico: true,
-    idioma: 'es',
-    porque:
-      'Acá se abre la caja: una técnica de interpretabilidad que dibuja qué activa a cada neurona. Vas a ver bordes, después texturas, después ojos y ruedas. Nadie programó ninguna de esas cosas.',
   },
   {
     tipo: 'lectura',

@@ -29,7 +29,7 @@ export const SESIONES: Sesion[] = [
   {
     n: 2,
     titulo: 'Cómo funciona un LLM',
-    resumen: 'Tokens, probabilidades y temperatura: la mecánica del modelo, sin matemática pesada.',
+    resumen: 'Una mirada bajo el capó, lo justo para manejarlo mejor: por qué cuenta mal, por qué se olvida y por qué inventa.',
     objetivos: [
       'Entender qué es un token y por qué importa para todo lo demás',
       'Ver que el modelo predice el próximo token, y qué controla la temperatura',

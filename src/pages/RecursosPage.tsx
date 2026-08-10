@@ -42,14 +42,14 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
         nota: 'el canal oficial en español, con la serie de aprendizaje profundo completa',
       },
       {
-        nombre: 'Dot CSV',
-        href: 'https://www.youtube.com/@DotCSV',
-        nota: 'divulgación en español, de lo mejor que hay; de acá salen varios videos del material previo',
+        nombre: 'Anthropic — Prompt engineering overview',
+        href: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview',
+        nota: 'la guía oficial de escritura de prompts (sesión 3); pensada para programadores, las técnicas sirven en cualquier chatbot, en inglés',
       },
       {
-        nombre: 'Codificando Bits',
-        href: 'https://www.youtube.com/@codificandobits',
-        nota: 'explicaciones técnicas en español sobre tokens, embeddings y recuperación de documentos',
+        nombre: 'Anthropic — Building effective agents',
+        href: 'https://www.anthropic.com/engineering/building-effective-agents',
+        nota: 'qué es un agente y cuándo no conviene armar uno (sesión 6); el mejor antídoto contra el humo del género, en inglés',
       },
       {
         nombre: 'BlueDot — Future of AI (curso corto)',
@@ -75,11 +75,6 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
         nombre: 'LeNet leyendo números escritos a mano, 1989',
         href: 'https://www.youtube.com/watch?v=H0oEr40YhrQ',
         nota: 'un minuto de Yann LeCun mostrando el antecedente directo de todo esto, restaurado',
-      },
-      {
-        nombre: 'Extraños patrones dentro de una red neuronal — Dot CSV',
-        href: 'https://www.youtube.com/watch?v=ysqpl6w6Wzg',
-        nota: 'una técnica de interpretabilidad que dibuja qué activa a cada neurona: bordes, después texturas, después objetos',
       },
       {
         nombre: 'Feature Visualization — Distill',

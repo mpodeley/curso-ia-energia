@@ -6,14 +6,14 @@ import { Quiz } from '../exercises/Quiz'
 import { Recursos, ListaRecursos } from '../components/Recursos'
 import { INTERPRETABILIDAD } from '../content/recursos'
 
-## Antes de la sesión
+## Antes de la sesión (opcional)
 
-*Tiempo estimado: 30 minutos; el video opcional suma 27 más.*
-
-1. **Los tres ejercicios interactivos de esta página** (30 min): el tokenizador, el de "adiviná el próximo token" y el de la ventana de contexto. Están más abajo: jugá antes de leer la explicación.
-2. **Video (27 min, opcional):** el capítulo de
-   [3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) muestra la maquinaria
-   interna. Tiene audio en español: elegilo en el menú de idioma del reproductor. No es requisito.
+Lo único que pide esta sesión es la tarea de la anterior: una tarea real en el chatbot y dos
+minutos de notas. Los tres ejercicios de esta página (el tokenizador, "adiviná el próximo
+token" y la ventana de contexto) los recorremos juntos en vivo; están acá para volver después,
+o para adelantarte si querés. Para el más curioso, el capítulo de
+[3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) (27 min) muestra
+la maquinaria interna; tiene audio en español, elegible en el menú del reproductor.
 
 <Recursos sesion={2} />
 
@@ -82,7 +82,7 @@ la interfaz.
 El tono servicial y seguro con el que te contesta viene de ahí, y no tiene ninguna relación con si
 lo que dice es cierto. Es una forma aprendida de hablar, no una señal de que sabe.
 
-## ¿Y adentro qué hay? Una caja negra que se puede abrir
+## ¿Y adentro qué hay? Una caja negra que se puede abrir (para curiosos)
 
 Hasta acá describimos qué hace el modelo y cómo se entrenó, no qué pasa adentro cuando responde. La
 respuesta corta ya la tenés: nadie escribió esas reglas, se ajustaron solas. La respuesta larga es
@@ -130,8 +130,8 @@ plausible**, no una fuente. Se verifica todo lo que importa.
 | Apertura y entrada al sitio | 8 min | Objetivos y el PIN, como la semana pasada |
 | Repaso de la tarea | 15 min | Qué les salió bien y mal con el chatbot esta semana |
 | Tokens y predicción | 33 min | Recorremos juntos los dos primeros ejercicios de esta página, con tiempo para preguntas |
-| Contexto y entrenamiento | 28 min | La ventana de contexto en vivo con el tercer ejercicio, y las dos etapas de entrenamiento: leer internet, y aprender a conversar |
-| Alucinaciones en vivo | 22 min | Hacemos alucinar al chatbot con preguntas de la industria y analizamos por qué |
+| Contexto y entrenamiento | 20 min | La ventana de contexto en vivo con el tercer ejercicio, y cómo se entrena en dos etapas |
+| Alucinaciones en vivo | 30 min | Lo hacemos alucinar: primero el instructor, después cada uno con una pregunta de su especialidad |
 | Cierre y tarea | 14 min | Dos de las cuatro maneras de fallar, y qué significa esto para usarlo bien |
 
 <Quiz data="quiz_s2" sesion={2} />
@@ -140,7 +140,7 @@ plausible**, no una fuente. Se verifica todo lo que importa.
 
 1. Después de jugar con la temperatura: ¿para qué tareas tuyas querrías temperatura baja? ¿Alguna donde convenga alta?
 2. Si el modelo "solo continúa texto", ¿por qué a veces parece razonar? ¿Dónde está el límite?
-3. ¿Qué pregunta de tu especialidad le harías a un LLM para detectar rápido si alucina?
+3. ¿En qué tarea tuya alcanza con un borrador plausible, y en cuál no sirve ni con verificación?
 
 ## Tarea para la sesión 3
 
