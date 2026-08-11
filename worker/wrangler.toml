@@ -44,11 +44,8 @@ database_id = "9b2c26a5-245f-4ca2-a08d-c686ab4bf87d"
 #   npx wrangler secret put TOKEN_SECRET     (openssl rand -hex 32)
 # En local van en worker/.dev.vars, que está gitignoreado.
 
-[limits]
-# Tope de CPU por invocación. El default en Paid es 30 s; estos handlers usan
-# pocos ms (parse + un par de queries a D1), así que esto corta en seco cualquier
-# loop que se coma CPU. Ojo: el costo por CANTIDAD de requests NO se topa acá,
-# porque un 429 igual cuenta como request. Eso se arregla en el cliente (el bug
-# de polling de src/hooks/usePoll.ts) o con un rate limit de borde detrás de un
-# dominio propio.
-cpu_ms = 200
+# Un tope de CPU por invocación (bloque [limits] con cpu_ms) sería un lindo
+# guardarraíl, pero es un feature de Workers Paid: en Free la API lo rechaza
+# (code 100328). El costo real de este incidente era por CANTIDAD de requests,
+# que ni cpu_ms ni un 429 del worker topan; se arregló en el cliente
+# (src/hooks/usePoll.ts). Si algún día se pasa a Paid, se puede agregar acá.
