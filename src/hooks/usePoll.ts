@@ -36,61 +36,71 @@ export function usePoll<T>(
   const fnRef = useRef(fn)
   fnRef.current = fn
 
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const fallos = useRef(0)
-  const vivo = useRef(true)
   const [tick, setTick] = useState(0)
 
   const refrescar = useCallback(() => setTick((t) => t + 1), [])
 
   useEffect(() => {
-    vivo.current = true
     if (!activo) return
 
+    // Todo el estado de la cadena es LOCAL a esta corrida del efecto. Antes vivía
+    // en refs compartidas (`vivo`, `timer`): una corrida en vuelo de un efecto
+    // anterior podía re-agendar después de que el efecto nuevo reactivara la ref,
+    // dejando dos cadenas de setTimeout a la vez, y cada visibilitychange sumaba
+    // otra. Una pestaña abierta mucho tiempo terminaba multiplicando el polling a
+    // cientos de req/s. Con locales y un guard de "en vuelo" hay una sola cadena.
+    let cancelado = false
+    let enVuelo = false
+    let fallos = 0
+    let t: ReturnType<typeof setTimeout> | null = null
+
+    const agendar = (ms: number) => {
+      if (cancelado) return
+      t = setTimeout(correr, ms)
+    }
+
     const correr = async () => {
+      if (cancelado || enVuelo) return
       if (document.visibilityState === 'hidden') {
         agendar(intervaloMs)
         return
       }
+      enVuelo = true
       setCargando(true)
       const r = await fnRef.current()
-      if (!vivo.current) return
+      enVuelo = false
+      if (cancelado) return
       setCargando(false)
 
       if (r.ok) {
-        fallos.current = 0
+        fallos = 0
         setFallando(false)
         setDato(r.data)
         setDesde(Date.now())
         agendar(intervaloMs)
       } else {
-        fallos.current++
+        fallos++
         setFallando(true)
         // Deja el dato anterior intacto a propósito.
-        agendar(Math.min(intervaloMs * 2 ** fallos.current, MAX_MS))
+        agendar(Math.min(intervaloMs * 2 ** fallos, MAX_MS))
       }
     }
 
-    const agendar = (ms: number) => {
-      if (!vivo.current) return
-      timer.current = setTimeout(correr, ms)
-    }
-
-    void correr()
-
-    // Volver a la pestaña refresca ya: el instructor que vuelve del deck espera
-    // ver el estado de ahora, no el de dentro de dos segundos.
+    // Volver a la pestaña refresca ya, salvo que ya haya una corrida en vuelo:
+    // sin ese guard, cada visibilitychange arrancaba una cadena paralela.
     const alVolver = () => {
-      if (document.visibilityState === 'visible') {
-        if (timer.current) clearTimeout(timer.current)
+      if (document.visibilityState === 'visible' && !enVuelo) {
+        if (t) clearTimeout(t)
         void correr()
       }
     }
+
+    void correr()
     document.addEventListener('visibilitychange', alVolver)
 
     return () => {
-      vivo.current = false
-      if (timer.current) clearTimeout(timer.current)
+      cancelado = true
+      if (t) clearTimeout(t)
       document.removeEventListener('visibilitychange', alVolver)
     }
   }, [intervaloMs, activo, tick])
