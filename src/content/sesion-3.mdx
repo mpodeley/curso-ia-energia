@@ -12,6 +12,25 @@ prompt.
 
 <Recursos sesion={3} />
 
+## Elegir modelo: benchmarks y precios
+
+Todos los proveedores ofrecen la misma escalera: un modelo **grande** y uno **rápido y barato**
+(GPT y su mini, Claude y Haiku, Gemini Pro y Flash). El selector de modelos de tu chatbot es esa
+decisión. Al comparar, cuatro cosas: capacidad en tu tarea, ventana de contexto, precio por
+token y velocidad.
+
+Un benchmark es un examen estandarizado: sirve para descartar, no para elegir fino. Los modelos
+"estudian para el examen", un punto más de puntaje no se nota en una minuta, y el podio cambia
+todos los meses. [LMArena](https://lmarena.ai) junta votos a ciegas de miles de usuarios;
+[Artificial Analysis](https://artificialanalysis.ai) pone capacidad, precio y velocidad en un
+solo cuadro. El benchmark que importa de verdad es tu tarea, corrida en dos modelos.
+
+Los precios son por token, distintos para entrada y salida, y entre el grande y el rápido de un
+mismo proveedor puede haber cien veces de diferencia. Con cuentas gratuitas no lo pagás; importa
+el día que algo se automatiza, porque mil corridas por mes convierten el precio por token en
+presupuesto. El patrón que se usa en serio: el grande para lo difícil o lo que se hace una vez,
+el rápido para lo repetitivo, después de probar que alcanza.
+
 ## Anatomía de un prompt que funciona
 
 Un prompt efectivo no es magia: es una **orden de trabajo bien escrita**, como la que le darías a un
@@ -58,10 +77,11 @@ rápida**.
 | --- | --- | --- |
 | Apertura y entrada al sitio | 5 min | El PIN de siempre y el mapa del día |
 | Repaso de la tarea | 10 min | Las tres tareas repetitivas de cada uno; con ellas armamos la lista del taller |
-| El peor prompt | 15 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
-| Anatomía de un prompt | 25 min | Las seis piezas, reescribiendo en vivo dos o tres tareas de la lista |
-| Taller: tu tarea, tu prompt | 40 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
-| Qué no se sube a un chatbot | 15 min | La regla, el porqué y las alternativas |
+| Elegir modelo | 12 min | Benchmarks, precios por token y la escalera grande/rápido de cada proveedor |
+| El peor prompt | 12 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
+| Anatomía de un prompt | 22 min | Las seis piezas, reescribiendo en vivo dos tareas de la lista |
+| Taller: tu tarea, tu prompt | 36 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
+| Qué no se sube a un chatbot | 13 min | La regla, el porqué y las alternativas |
 | Cierre y tarea | 10 min | La tercera manera de fallar tachada, y la tarea antes/después |
 
 <Quiz data="quiz_s3" sesion={3} />

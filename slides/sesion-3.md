@@ -29,17 +29,18 @@ repaso viene flojo, sirve de arranque.
 | --- | --- | --- |
 | Apertura y entrada al sitio | 5 min | El PIN de siempre y el mapa del día |
 | Repaso de la tarea | 10 min | Las tres tareas repetitivas de cada uno; con ellas armamos la lista del taller |
-| El peor prompt | 15 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
-| Anatomía de un prompt | 25 min | Las seis piezas, reescribiendo en vivo dos o tres tareas de la lista |
-| Taller: tu tarea, tu prompt | 40 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
-| Qué no se sube a un chatbot | 15 min | La regla, el porqué y las alternativas |
+| Elegir modelo | 12 min | Benchmarks, precios por token y la escalera grande/rápido de cada proveedor |
+| El peor prompt | 12 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
+| Anatomía de un prompt | 22 min | Las seis piezas, reescribiendo en vivo dos tareas de la lista |
+| Taller: tu tarea, tu prompt | 36 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
+| Qué no se sube a un chatbot | 13 min | La regla, el porqué y las alternativas |
 | Cierre y tarea | 10 min | La tercera manera de fallar tachada, y la tarea antes/después |
 
 <!--
 2 min · acumulado 0:02
 La misma tabla está en la página de la sesión 3.
 Bajada del día: dos días mirando qué es y cómo funciona; hoy es manejo puro.
-Dos horas de escribir órdenes de trabajo y ver qué devuelven.
+El bloque de elegir modelo es nuevo y existe porque lo pidieron ayer.
 -->
 
 ---
@@ -47,7 +48,7 @@ Dos horas de escribir órdenes de trabajo y ver qué devuelven.
 ## Al final de esta sesión van a poder
 
 - Escribir prompts con **rol, contexto, tarea, formato y ejemplos**
-- Aplicarlo a **informes, resúmenes, minutas y traducción técnica** de su semana real
+- Comparar modelos con criterio: **benchmarks, precio por token, velocidad**
 - Saber **qué información de la empresa no debe subirse** a un chatbot
 
 <!--
@@ -79,7 +80,7 @@ chatbot. El que no tenga cuenta, que la cree ahora que estamos arrancando.
 
 ## Repaso de la tarea
 
-Bloque 1 de 6 · **10 min**
+Bloque 1 de 7 · **10 min**
 
 <!--
 Arranca 0:05, termina 0:15
@@ -89,18 +90,96 @@ Arranca 0:05, termina 0:15
 
 ## ¿Qué tres tareas trajeron?
 
-Una ronda rápida. Las anotamos: son la materia prima del taller de hoy.
+Una ronda completa. Las anotamos: son la materia prima del taller de hoy.
 
 <!--
 10 min · acumulado 0:15
-Ronda directa con nombre, una tarea por persona como mínimo. Anotarlas TODAS
-en un archivo a la vista (se puede compartir la ventana de notas un momento):
-esa lista es el menú del taller y alimenta la shortlist de la sesión 5.
-Plan B si pocos la hicieron: dos minutos ahí mismo para anotar las tres tareas,
+Con cinco personas la ronda es completa y sin apuro: las tres tareas de cada
+uno, por nombre. Anotarlas TODAS en un archivo a la vista (se puede compartir
+la ventana de notas un momento): esa lista es el menú del taller y alimenta
+la shortlist de la sesión 5.
+Plan B si alguien no la hizo: dos minutos ahí mismo para anotar las tres,
 con la consigna "lo que hacés más de una vez por semana y te aburre". Nadie
-queda afuera del taller por no haber hecho la tarea.
-Marcar con un asterisco las dos o tres tareas más repetidas entre personas:
-esas van al bloque siguiente.
+queda afuera del taller.
+Marcar con un asterisco las dos tareas más repetidas entre personas: esas van
+al bloque del peor prompt.
+-->
+
+---
+
+<!-- _class: seccion -->
+
+## Elegir modelo
+
+Bloque 2 de 7 · **12 min**
+
+<!--
+Arranca 0:15, termina 0:27
+Este bloque salió de una pregunta de ayer: cómo se comparan los modelos y
+dónde mirar.
+-->
+
+---
+
+<!-- _class: acentos -->
+
+## ¿Qué modelo uso? Cuatro cosas para mirar
+
+- **Capacidad en tu tarea**: los rankings generales no redactan tu minuta
+- **Ventana de contexto**: cuánto le entra de una vez
+- **Precio por token**: la entrada y la salida se cobran distinto
+- **Velocidad**: el grande piensa mejor y tarda más
+
+Todos los proveedores tienen la misma escalera: un modelo **grande** y uno **rápido**.
+
+<!--
+4 min · acumulado 0:19
+La escalera, con nombres: GPT y su mini, Claude y Haiku, Gemini Pro y Flash.
+Ya la usaron sin saberlo: el Flash de las demos es el rápido de Gemini.
+El selector de modelo del chatbot ES esta decisión, y hasta hoy lo dejaron
+en el que venía por defecto. Después de este bloque, que sea una elección.
+-->
+
+---
+
+## Dónde mirar
+
+- Un benchmark es un **examen estandarizado**: sirve para descartar, no para elegir fino
+- **LMArena**: miles de personas votando a ciegas entre dos respuestas
+- **Artificial Analysis**: capacidad, precio y velocidad de todos, en un solo cuadro
+- Y el benchmark que importa de verdad: **tu tarea**, corrida en dos modelos
+
+<!--
+4 min · acumulado 0:23
+Los dos sitios están en el material previo de la página, con enlace.
+Los límites de los benchmarks, dichos sin cinismo: los modelos "estudian para
+el examen" (las preguntas se filtran al entrenamiento), un punto más de
+benchmark no se nota en una minuta, y el podio cambia todos los meses. Se
+mira el cuadro general, no el ranking del día.
+La última viñeta es la que quiero que se lleven, y el taller de hoy la deja
+practicada: mismo prompt, dos modelos, comparar con tus propios ojos.
+-->
+
+---
+
+## La economía de tokens
+
+Se cobra **por token**, y la entrada y la salida tienen precio distinto. Entre el modelo grande
+y el rápido puede haber **cien veces** de diferencia.
+
+Hoy no lo pagan: cuentas gratuitas. Importa el día que algo se automatiza: mil corridas por mes
+convierten el precio por token en presupuesto.
+
+<!--
+4 min · acumulado 0:27
+Conectar con la sesión 2: ya saben qué es un token y por qué el español rinde
+menos por token; ahora saben que eso también es plata.
+El patrón que se usa en serio: el modelo grande para lo difícil o lo que se
+hace una vez; el rápido para lo repetitivo, después de probar que alcanza.
+Adelanto de la sesión 5: pegar el manual entero en cada pregunta también es
+plata; traer solo el fragmento que hace falta es la mitad de la gracia de lo
+que veremos pasado mañana.
+Cierre del bloque 2.
 -->
 
 ---
@@ -109,10 +188,10 @@ esas van al bloque siguiente.
 
 ## El peor prompt
 
-Bloque 2 de 6 · **15 min**
+Bloque 3 de 7 · **12 min**
 
 <!--
-Arranca 0:15, termina 0:30
+Arranca 0:27, termina 0:39
 -->
 
 ---
@@ -125,17 +204,18 @@ Elegimos una tarea de la lista y se la pedimos al chatbot **de la peor manera po
 línea, sin contexto. Antes de ver la respuesta: ¿qué creen que devuelve?
 
 <!--
-10 min · acumulado 0:25
+8 min · acumulado 0:35
 Cambiar a la ventana del chatbot (Gemini Flash, sin conexión, como en las
 demos de la sesión 1). Tomar una tarea con asterisco de la lista y pedirla
 literal en una línea: "haceme el informe mensual de producción", "escribí una
 minuta de la reunión".
-ANTES de mandar: juntar dos o tres predicciones de la sala por el chat.
+ANTES de mandar: una predicción por persona, por el chat. Con cinco entran
+todas.
 Mandar y leer la respuesta en voz alta. Suele ser: larga, genérica, con el
 contexto inventado (unidades, campos, fechas que nadie le dio) y con tono de
 mucha seguridad.
-No corregirlo todavía: dejar el resultado a la vista para compararlo al final
-del bloque siguiente.
+No corregirlo todavía: dejar el resultado a la vista para compararlo en el
+bloque de anatomía.
 -->
 
 ---
@@ -148,7 +228,7 @@ lo rellena con lo más plausible, que ya sabemos lo que significa.
 La salida genérica no es un límite de la herramienta. Es el espejo del pedido.
 
 <!--
-5 min · acumulado 0:30
+4 min · acumulado 0:39
 La frase del bloque: la salida genérica es el espejo del pedido.
 Conectar con la sesión 2 sin nombres técnicos: lo que rellenó es la
 continuación más plausible, el mismo mecanismo de las alucinaciones.
@@ -162,10 +242,10 @@ Puente: si el problema es la orden, la solución es aprender a escribir
 
 ## Anatomía de un prompt
 
-Bloque 3 de 6 · **25 min**
+Bloque 4 de 7 · **22 min**
 
 <!--
-Arranca 0:30, termina 0:55
+Arranca 0:39, termina 1:01
 -->
 
 ---
@@ -183,7 +263,7 @@ Arranca 0:30, termina 0:55
 La sexta pieza es la conversación misma: **iterar**.
 
 <!--
-6 min · acumulado 0:36
+5 min · acumulado 0:44
 La metáfora que ordena todo: es la orden de trabajo que le darías a un
 analista nuevo en su primer día. Nadie le dice "haceme el informe" a alguien
 que llegó ayer; le dice quién lo lee, qué importa, cómo lo quiere.
@@ -204,7 +284,7 @@ sin jerga; cada término técnico inevitable, explicado entre paréntesis.
 ```
 
 <!--
-4 min · acumulado 0:40
+3 min · acumulado 0:47
 Leerlo pieza por pieza señalando cada una: rol, contexto, tarea, formato.
 No tiene ejemplo adjunto y funciona igual: no todas las piezas hacen falta
 siempre. Las dos que casi nunca pueden faltar: contexto y formato.
@@ -220,8 +300,8 @@ Las mismas tareas del peor prompt, ahora con las piezas completas. Miren la dife
 lo que devolvió la orden de una línea.
 
 <!--
-12 min · acumulado 0:52
-Cambiar al chatbot. Tomar la tarea del bloque 2 y reescribirla en vivo
+11 min · acumulado 0:58
+Cambiar al chatbot. Tomar la tarea del bloque anterior y reescribirla en vivo
 preguntándole a su dueño: ¿quién lo lee? ¿qué decide con esto? ¿cómo lo
 querés? Las respuestas SON el prompt; escribirlo delante de todos.
 Mandar y comparar contra la salida genérica que quedó de antes.
@@ -237,7 +317,7 @@ piezas de la slide anterior, en orden.
 ## La primera salida es un **borrador**. La conversación es el método.
 
 <!--
-3 min · acumulado 0:55
+3 min · acumulado 1:01
 Iterar no es señal de fracaso: "más corto", "menos jerga", "ahora en tono
 formal" son parte del uso normal, no parches.
 Cierre del bloque: ya vieron las piezas y la reescritura en vivo. Ahora les
@@ -250,10 +330,10 @@ toca a ellos, con una tarea propia.
 
 ## Taller: tu tarea, tu prompt
 
-Bloque 4 de 6 · **40 min**
+Bloque 5 de 7 · **36 min**
 
 <!--
-Arranca 0:55, termina 1:35
+Arranca 1:01, termina 1:37
 -->
 
 ---
@@ -266,7 +346,7 @@ Elegí **una** de tus tres tareas. Armá el prompt en el constructor de la pági
 pieza, o escribilo directo si ya lo ves. Cuando esté, apretá "Copiar prompt".
 
 <!--
-15 min · acumulado 1:10
+13 min · acumulado 1:14
 Ventana C: página de la sesión 3, ejercicio "Constructor de prompts". Tiene
 tres casos de ejemplo (resumen ejecutivo, minuta, triaje de paper) y acepta
 pegar uno propio para ver qué le falta.
@@ -284,18 +364,20 @@ que nadie persiga el puntaje.
 ## Probalo y pegá el resultado en el chat
 
 Corré tu prompt en tu chatbot. Pegá en el chat de la videollamada **el prompt y la primera
-respuesta**, sin editar.
+respuesta**, sin editar. Si te sobra tiempo: corré el mismo prompt en el **otro modelo** de tu
+chatbot y compará.
 
 <!--
-20 min · acumulado 1:30
+18 min · acumulado 1:32
 El mismo mecanismo del hacelo-alucinar de ayer: todos trabajan a la vez, el
 chat junta los resultados, nadie comparte pantalla.
-Diez minutos de trabajo en silencio; avisar cuando queden cinco.
-Después leer dos o tres en voz alta y criticarlos CON las piezas: ¿tiene rol?
-¿el contexto dice quién lo lee? ¿pidió formato? La crítica con nombre de pieza
-es amable y transferible; "está flojo" no enseña nada.
-Al que le salió bien de entrada, preguntarle qué pieza cree que hizo la
-diferencia.
+Ocho minutos de trabajo en silencio; avisar cuando queden tres.
+Con cinco personas se leen TODOS los resultados en voz alta, y se critican
+CON las piezas: ¿tiene rol? ¿el contexto dice quién lo lee? ¿pidió formato?
+La crítica con nombre de pieza es amable y transferible; "está flojo" no
+enseña nada.
+La consigna extra del cambio de modelo cierra el bloque de benchmarks: quien
+la haya probado, que cuente qué cambió entre el grande y el rápido.
 -->
 
 ---
@@ -308,12 +390,12 @@ que tener, y un ejemplo de cómo te gusta.
 El rol y la tarea casi siempre están. Lo que no está es lo que un analista nuevo preguntaría.
 
 <!--
-5 min · acumulado 1:35
+5 min · acumulado 1:37
 Síntesis del taller con lo que apareció de verdad en el chat: nombrar los
 agujeros que se repitieron, sin nombres propios.
 La frase para llevarse: lo que le falta a tu prompt es lo que un analista
 nuevo te preguntaría antes de empezar.
-Cierre del bloque 4.
+Cierre del bloque 5.
 -->
 
 ---
@@ -322,10 +404,10 @@ Cierre del bloque 4.
 
 ## Qué no se sube a un chatbot
 
-Bloque 5 de 6 · **15 min**
+Bloque 6 de 7 · **13 min**
 
 <!--
-Arranca 1:35, termina 1:50
+Arranca 1:37, termina 1:50
 -->
 
 ---
@@ -338,7 +420,7 @@ No van: producción real por pozo, reservas, precios y cláusulas de contratos, 
 información de personas.
 
 <!--
-8 min · acumulado 1:43
+7 min · acumulado 1:44
 La regla del día uno, ahora con criterio detrás. El porqué corto: lo que se
 sube a una cuenta gratuita sale de tu control, y el contrato de datos de una
 cuenta gratuita no promete nada.
@@ -359,12 +441,12 @@ borrador de política de uso entero.
 Y las versiones corporativas existen, con otro contrato de datos. Eso es parte de la sesión 7.
 
 <!--
-7 min · acumulado 1:50
+6 min · acumulado 1:50
 La tercera alternativa es la más útil para el trabajo diario: el modelo no
 necesita tus números para ayudarte a armar el informe; necesita la estructura.
 Adelanto de mañana: la sesión 4 trabaja entera con datos públicos de
 producción, argentinos y bolivianos, justamente por esta regla.
-Cierre del bloque 5.
+Cierre del bloque 6.
 -->
 
 ---
@@ -373,7 +455,7 @@ Cierre del bloque 5.
 
 ## Cierre y tarea
 
-Bloque 6 de 6 · **10 min**
+Bloque 7 de 7 · **10 min**
 
 <!--
 Arranca 1:50, termina 2:00

@@ -73,9 +73,10 @@ Sales material: `docs/syllabus.md`.
 - **Resources: first-rate only.** 3Blue1Brown, Khan Academy, Anthropic, Distill, official tools
   and data sources. No generic-divulgation YouTube channels in any language. Short lists beat
   padded ones; a session with no external resource is fine.
-- **Cohort: ~10 people, remote.** Direct rounds by name, results pasted into the video-call
+- **Cohort: 5 people, remote.** Full rounds by name are cheap — use them: everyone speaks in
+  every round, every workshop result gets read aloud. Results are pasted into the video-call
   chat (nobody screen-shares except the instructor), the panel makes individual progress
-  visible. Ten pulse votes are quorum.
+  visible. Five pulse votes are quorum.
 - **Every session ends with takeaways**: two or three concrete practices, said in plain words
   on a closing slide.
 

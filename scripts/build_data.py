@@ -439,6 +439,28 @@ QUIZ_S2 = [
 
 QUIZ_S3 = [
     {
+        'pregunta': 'Querés automatizar un resumen que va a correr mil veces por mes. ¿Cómo elegís el modelo?',
+        'opciones': [
+            {
+                'texto': 'El que esté primero en los benchmarks: es el mejor, punto.',
+                'explicacion': 'El podio general no mide tu tarea, y el mejor del ranking puede costar cien veces más para un resumen que un modelo rápido hace igual de bien.',
+            },
+            {
+                'texto': 'El más barato siempre: total, todos hacen más o menos lo mismo.',
+                'explicacion': 'No hacen lo mismo: el rápido falla más seguido en tareas difíciles. Barato sin probar sale caro apenas hay que revisar todo a mano.',
+            },
+            {
+                'texto': 'Pruebo la tarea real en el modelo grande y en el rápido, comparo las salidas, y me quedo con el más barato que alcanza.',
+                'correcta': True,
+                'explicacion': 'Tu tarea es el benchmark que importa. A mil corridas por mes, el precio por token se vuelve presupuesto: se paga capacidad solo donde hace falta.',
+            },
+            {
+                'texto': 'Da igual cuál: los proveedores cobran todos lo mismo por consulta.',
+                'explicacion': 'Se cobra por token, no por consulta, y entre el modelo grande y el rápido de un mismo proveedor puede haber cien veces de diferencia de precio.',
+            },
+        ],
+    },
+    {
         'pregunta': 'De las cinco piezas de un prompt, ¿cuál suele cambiar más la calidad de la salida en una tarea de oficina?',
         'opciones': [
             {

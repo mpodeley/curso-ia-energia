@@ -101,8 +101,8 @@ del cuaderno de hoy.
 Ronda directa con nombre, la mejor de las tres por persona. Anotarlas en un
 archivo a la vista: ese es el guion del bloque de NotebookLM.
 Plan B si pocos la hicieron: dos minutos para escribir UNA pregunta con la
-consigna "lo que le preguntarías a tus manuales si contestaran". Con diez
-personas salen diez preguntas igual.
+consigna "lo que le preguntarías a tus manuales si contestaran". Con cinco
+personas salen cinco preguntas igual, y da el tiempo para las tres de cada uno.
 Marcar las dos o tres más concretas (equipo, número, procedimiento): esas van
 primero en el cuaderno.
 -->

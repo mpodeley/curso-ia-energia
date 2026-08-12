@@ -89,7 +89,7 @@ Vamos a usar la página de la sesión 1 varias veces hoy. El PIN del curso lo di
 Dictar el PIN y esperar a que todos entren. Que escriban nombre y apellido:
 las respuestas de hoy se cruzan con las de la sesión 3 y la 5.
 Cambiar a la ventana B (panel) y abrir el pulso "s1-palabra-ia".
-Con diez votos la nube dibuja igual; no esperar más quórum que ese.
+Con cinco votos la nube dibuja igual; no esperar más quórum que ese.
 Volver acá cuando hayan votado unos cuantos.
 Pedirles que dejen la página de la sesión 1 abierta: en el bloque 1 hay un
 ejercicio que hacemos ahí mismo.
@@ -507,7 +507,7 @@ Son doce preguntas y unos quince minutos. Sin datos confidenciales.
 13 min · acumulado 1:30
 Dejar esta slide proyectada mientras la completan. No cambiar de ventana: que
 tengan la URL a la vista todo el bloque.
-Mirar el panel en la otra ventana: con diez personas se ve al instante quién
+Mirar el panel en la otra ventana: con cinco personas se ve al instante quién
 va completando, y se puede preguntar por nombre si alguien se trabó.
 A los 10 min avisar que quedan 5.
 El que no llegue la puede terminar después: se guarda sola.
@@ -534,8 +534,8 @@ Arranca 1:30, termina 1:50
 <!--
 8 min · acumulado 1:38
 Primera pregunta de discusión. Dejarla proyectada mientras hablan.
-Con ~10 personas: ronda directa con nombre, no preguntar al aire. Alcanza el
-tiempo para que hablen todos por lo menos una vez en el bloque.
+Con cinco personas: ronda completa con nombre, no preguntar al aire. Alcanza
+el tiempo para que hablen todos en cada pregunta.
 Si nadie arranca, empezar por la de "menos": es más fácil y suele destrabar.
 Anotar todo: esto alimenta la shortlist de la sesión 5 igual que la encuesta.
 -->

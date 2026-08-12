@@ -44,7 +44,7 @@ export const SESIONES: Sesion[] = [
     resumen: 'Anatomía de un buen prompt y los flujos de oficina donde ya rinde.',
     objetivos: [
       'Escribir prompts con rol, contexto, tarea, formato y ejemplos',
-      'Aplicarlo a informes, resúmenes, minutas y traducción técnica',
+      'Comparar modelos con criterio: benchmarks, precio por token y velocidad',
       'Saber qué información de la empresa no debe subirse a un chatbot',
     ],
     estado: 'lista',

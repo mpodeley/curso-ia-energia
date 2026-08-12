@@ -92,7 +92,7 @@ Arranca 0:08, termina 0:23
 <!--
 6 min · acumulado 0:14
 Que cuenten. Empezar por quien haya traído algo concreto, no preguntar al aire.
-Con ~10 personas: ronda directa, con nombre.
+Con cinco personas: ronda completa, con nombre.
 Anotar cada tarea que mencionen: alimenta la shortlist de la sesión 5 igual que
 la encuesta.
 Plan B si pocos la hicieron: tres minutos ahí mismo. Que abran el chatbot, le
@@ -480,8 +480,8 @@ dato no existe y lo completó igual?
 Si a alguien "le salió bien", también es dato: preguntarle cómo lo verificaría
 si NO supiera la respuesta de memoria. Esa pregunta es el puente a la cita
 siguiente.
-Con diez personas alcanza para escuchar a varios; nadie comparte pantalla, el
-chat es suficiente. Guardar el chat al final: esos ejemplos alimentan la
+Con cinco personas se escuchan todos; nadie comparte pantalla, el chat es
+suficiente. Guardar el chat al final: esos ejemplos alimentan la
 sesión 7.
 -->
 

@@ -133,6 +133,9 @@ El cambio de régimen del día, dicho antes de la demo para que sepan qué mirar
 Un filtro mal escrito no rompe nada: devuelve menos filas y sigue. Esa es la
 diferencia con el texto, y la razón de las reglas que vienen después de la
 demo.
+Si preguntan por el costo de automatizar esto: la cuenta quedó ayer, precio
+por token por mil corridas. La demo de hoy es gratis; el presupuesto aparece
+con la automatización.
 -->
 
 ---
@@ -260,9 +263,9 @@ Se reparte: cada uno toma **una fila** de la tabla extraída y la compara contra
 
 <!--
 10 min · acumulado 1:11
-El mecanismo estrella del día: con diez personas, la tabla entera queda
-verificada en minutos y cada uno hizo el gesto completo con sus propios ojos.
-Asignar las filas por nombre, en orden de lista, para que nadie espere.
+El mecanismo estrella del día: con cinco personas tocan dos filas por cabeza
+y la tabla queda verificada igual, con cada uno haciendo el gesto completo
+con sus propios ojos. Asignar las filas por nombre para que nadie espere.
 Pegar el PDF y la tabla extraída en el chat si alguien no puede abrir el
 boletín.
 Anotar los "no cierra" a la vista y revisarlos juntos: ¿fue un dígito bailado,

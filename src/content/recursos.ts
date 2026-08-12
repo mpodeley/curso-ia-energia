@@ -11,7 +11,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-08-10'
+export const VERIFICADO = '2026-08-11'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -123,6 +123,24 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
   ],
   3: [
+    {
+      tipo: 'herramienta',
+      titulo: 'LMArena',
+      url: 'https://lmarena.ai',
+      fuente: 'LMArena',
+      idioma: 'en',
+      porque:
+        'El ranking de chatbots hecho con votos a ciegas: miles de personas eligen entre dos respuestas sin saber de qué modelo es cada una. Sirve para el pulso general; tu tarea sigue siendo el benchmark que importa.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'Artificial Analysis',
+      url: 'https://artificialanalysis.ai',
+      fuente: 'Artificial Analysis',
+      idioma: 'en',
+      porque:
+        'Capacidad, precio por token y velocidad de todos los modelos en un solo cuadro. El lugar para mirar la escalera grande/rápido de cada proveedor con los números al lado.',
+    },
     {
       tipo: 'lectura',
       titulo: 'Prompt engineering overview',
