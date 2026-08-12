@@ -473,11 +473,36 @@ Arranca 1:50, termina 2:00
 - **Está seguro y equivocado**: sesión 5
 
 <!--
-3 min · acumulado 1:53
+2 min · acumulado 1:52
 Volver a la hoja de ruta y tachar la tercera. La lección de hoy sobre esa
 falla: la mayoría de las veces que "no hizo lo que pediste", hizo exactamente
 lo que pediste. El control está en el prompt, y ahora saben escribirlo.
 Queda una sola, y cae en la sesión 5.
+-->
+
+---
+
+<!-- _class: cita -->
+
+## La contracara: **"intentá en serio"**
+
+En agosto de 2026, un modelo de Anthropic sin publicar movió una cota de la hipótesis de
+Riemann que llevaba décadas casi quieta: del 41.6% al 67.2% de los ceros en la línea crítica.
+El prompt no tenía rol, ni contexto, ni formato.
+
+<!--
+3 min · acumulado 1:55
+La historia, verificable (el anuncio de Anthropic está en el material previo
+de la página): un empleado sin formación matemática le pidió a un modelo
+interno que "le diera una probada en serio" a la hipótesis. Un día y medio,
+650 ideas probadas, 60 subagentes, 31 millones de tokens, y el resultado
+formalizado en Lean y revisado por dos matemáticos. No probó la hipótesis:
+movió una cota parcial.
+El contrapunto, sin desdecir la clase: el prompt fino es para controlar la
+salida en el trabajo de todos los días. En las tareas donde un modelo de
+frontera tiene talento nativo, el prompt puede ser mínimo. Lo que no fue
+mínimo ahí es lo otro que enseña este curso: la verificación, que en ese caso
+fue un asistente de pruebas formal y dos matemáticos.
 -->
 
 ---
@@ -493,7 +518,7 @@ trabajamos igual con datos públicos.
 Y lo de hoy, en una frase: escribile como a un analista nuevo en su primer día.
 
 <!--
-3 min · acumulado 1:56
+2 min · acumulado 1:57
 El antes/después es el material del repaso de mañana: insistir en traer los
 dos, porque la distancia entre ellos es la clase de hoy funcionando.
 La planilla es opcional de verdad: el plan de mañana no depende de ella.
@@ -508,7 +533,7 @@ La planilla es opcional de verdad: el plan de mañana no depende de ella.
 - La curva de declinación, ahora **sobre pozos reales**
 
 <!--
-3 min · acumulado 1:59
+2 min · acumulado 1:59
 Mañana el modelo deja de escribir solo texto: escribe código y lo corre. Ahí
 cambia dónde puede fallar y dónde hay que mirar.
 El quiz y el constructor quedan en la página, como siempre.

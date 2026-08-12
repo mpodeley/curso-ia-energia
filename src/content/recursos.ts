@@ -154,6 +154,15 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
     {
       tipo: 'lectura',
+      titulo: "Learning more about Claude's mathematical capabilities",
+      url: 'https://www.anthropic.com/research/riemann-zeta',
+      fuente: 'Anthropic',
+      idioma: 'en',
+      porque:
+        'El anuncio original de la contracara de esta sesión: la cota de Riemann movida de 41.6% a 67.2% con un prompt de aliento, y 31 millones de tokens y una prueba formal atrás. Con sus advertencias a la vista: no prueba la hipótesis.',
+    },
+    {
+      tipo: 'lectura',
       titulo: 'Prompt engineering overview',
       url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview',
       fuente: 'Anthropic',
