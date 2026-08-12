@@ -124,6 +124,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   3: [
     {
+      tipo: 'video',
+      titulo: 'Prompting 101 | Code w/ Claude',
+      url: 'https://www.youtube.com/watch?v=ysPbXH0LpIE',
+      fuente: 'Anthropic',
+      duracion: '24:52',
+      publicado: '2025-07',
+      idioma: 'en',
+      porque:
+        'La clase de prompting de los que hacen los modelos: el equipo de Anthropic construye un prompt real, pieza por pieza, sobre un caso de seguros. Son las mismas piezas del constructor de esta página, contadas desde adentro. En inglés, con subtítulos.',
+    },
+    {
       tipo: 'herramienta',
       titulo: 'LMArena',
       url: 'https://lmarena.ai',
@@ -153,6 +164,18 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   4: [
     {
+      tipo: 'video',
+      titulo: 'Introduction to residuals and least-squares regression',
+      url: 'https://www.youtube.com/watch?v=VqD-nf1YUks',
+      fuente: 'Khan Academy',
+      duracion: '4:49',
+      publicado: '2018-06',
+      historico: true,
+      idioma: 'en',
+      porque:
+        'La matemática que corre detrás del botón "que la busque la máquina": qué es un residuo y por qué se minimiza la suma de sus cuadrados. Cinco minutos de Khan Academy, sin pedir nada previo.',
+    },
+    {
       tipo: 'herramienta',
       titulo: 'Producción por pozo — Capítulo IV',
       url: 'https://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
@@ -163,6 +186,18 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
   ],
   5: [
+    {
+      tipo: 'video',
+      titulo: 'What is Retrieval-Augmented Generation (RAG)?',
+      url: 'https://www.youtube.com/watch?v=T-D1OfcDW1M',
+      fuente: 'IBM Technology',
+      duracion: '6:35',
+      publicado: '2023-08',
+      historico: true,
+      idioma: 'en',
+      porque:
+        'El explicador de referencia de RAG: una investigadora de IBM dibuja el circuito completo en una pizarra, con el mismo busca-y-pega del ejercicio de esta página. Es de 2023 y no envejeció: el mecanismo es el mismo.',
+    },
     {
       tipo: 'herramienta',
       titulo: 'NotebookLM',
@@ -175,6 +210,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   6: [
     {
+      tipo: 'video',
+      titulo: 'Tips for building AI agents',
+      url: 'https://www.youtube.com/watch?v=LP5OCa20Zpg',
+      fuente: 'Anthropic',
+      duracion: '18:19',
+      publicado: '2025-02',
+      idioma: 'en',
+      porque:
+        'Tres personas de Anthropic (investigación, aplicaciones y relación con desarrolladores) cuentan qué agentes funcionan hoy y los errores típicos de quien empieza. El mejor complemento en video de la lectura de abajo.',
+    },
+    {
       tipo: 'lectura',
       titulo: 'Building effective agents',
       url: 'https://www.anthropic.com/engineering/building-effective-agents',
@@ -184,8 +230,21 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad es el mejor antídoto que existe contra el humo del género. En inglés.',
     },
   ],
-  // La sesión 7 no tiene material previo externo: sus dos recursos de primera
-  // línea (Anthropic) viven en PROPIEDADES, renderizados dentro de la prosa.
+  // Los otros dos recursos de primera línea de la sesión 7 (Anthropic) viven
+  // en PROPIEDADES, renderizados dentro de la prosa.
+  7: [
+    {
+      tipo: 'video',
+      titulo: 'The Dark Matter of AI [Mechanistic Interpretability]',
+      url: 'https://www.youtube.com/watch?v=UGO_Ehywuxc',
+      fuente: 'Welch Labs',
+      duracion: '24:09',
+      publicado: '2024-12',
+      idioma: 'en',
+      porque:
+        'Para el más curioso: por qué mirar adentro de un modelo es difícil de verdad. Welch Labs explica la interpretabilidad mecanicista, la disciplina detrás de "se puede mirar adentro, pero no lo bastante para garantizar", que es el corazón de esta sesión.',
+    },
+  ],
 }
 
 /** Session 2's interpretability detour: the antecedent, the intuition, and the
