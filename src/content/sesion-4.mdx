@@ -2,16 +2,13 @@ import { DeclineLab } from '../exercises/DeclineLab'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos } from '../components/Recursos'
 
-## Antes de la sesión
+## Antes de la sesión (opcional)
 
-*Tiempo estimado: 30–40 minutos.*
-
-1. **Tarea de la sesión 3:** tu prompt "antes y después", y la planilla no confidencial que ibas a
-   traer. Sin datos propios el ejercicio en vivo se hace con los públicos, pero rinde mucho menos.
-2. **Ejercicio de esta página (20 min):** el laboratorio de declinación de más abajo. Arrancá por los
-   dos pozos de escuela antes de tocar los reales, que es donde se pone interesante.
-3. **Micro-tarea (10 min):** subí una planilla cualquiera a tu chatbot y pedile que te describa qué
-   columnas tiene y cuántas filas. Fijate si acierta el conteo. Lo vamos a discutir en vivo.
+Lo único que pide esta sesión es la tarea de ayer: tu prompt **antes y después**. La planilla no
+confidencial es un extra bienvenido, no un requisito: la clase trabaja con datos públicos de
+producción, argentinos y bolivianos, justamente por la regla de confidencialidad. Si tenés un
+rato antes, el laboratorio de declinación de esta página se puede jugar solo; arrancá por los
+pozos de escuela.
 
 <Recursos sesion={4} />
 
@@ -23,13 +20,13 @@ resultado. Eso cambia dónde puede fallar y dónde tenés que mirar.
 
 Tres movimientos, en orden de dificultad:
 
-1. **De un archivo separado por comas a un análisis.** Subís la planilla, pedís estadísticas y
+1. De un archivo separado por comas a un análisis. Subís la planilla, pedís estadísticas y
    gráficos. El copiloto escribe el código; vos juzgás el resultado.
-2. **De un archivo PDF a una tabla.** Los datos públicos de producción en Bolivia viven en boletines
+2. De un archivo PDF a una tabla. Los datos públicos de producción en Bolivia viven en boletines
    de Yacimientos Petrolíferos Fiscales Bolivianos y en informes de la Agencia Nacional de
    Hidrocarburos, casi siempre en PDF. Extraemos una tabla y la verificamos contra el original,
    número por número.
-3. **De una tabla a un modelo.** Ajustar una curva de declinación: pocos parámetros, una fórmula de
+3. De una tabla a un modelo. Ajustar una curva de declinación: pocos parámetros, una fórmula de
    1945 y la pregunta de siempre, que es cuánto le creés a la extrapolación.
 
 ## Verificar código es distinto de verificar texto
@@ -82,10 +79,12 @@ número, no para cerrarla.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| La planilla y el copiloto | 30 min | Subimos datos de producción y pedimos análisis, gráficos y código; leemos el código juntos |
-| De PDF a tabla | 35 min | Extraemos la tabla de un boletín boliviano y la verificamos número por número contra el original |
-| Declinación en vivo | 25 min | Ajustamos un pozo entre todos y discutimos cuánto de esa caída es reservorio y cuánto es operación |
-| Qué se puede afirmar | 20 min | De los tres análisis: qué conclusión firmarías y cuál necesita más trabajo |
+| Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
+| Repaso de la tarea | 10 min | El antes y el después de sus prompts |
+| La planilla y el copiloto | 30 min | Subimos producción real del Capítulo IV, pedimos análisis y leemos el código juntos |
+| De PDF a tabla | 30 min | La tabla de un boletín boliviano, verificada número por número entre todos |
+| Declinación en vivo | 25 min | Pozos reales de Salta: ajustamos entre todos y discutimos qué no dice la curva |
+| Qué se puede afirmar | 10 min | De los tres análisis: qué conclusión firmarías y cuál necesita más trabajo |
 | Cierre y tarea | 10 min | La tarea de la sesión 5 |
 
 <Quiz data="quiz_s4" sesion={4} />

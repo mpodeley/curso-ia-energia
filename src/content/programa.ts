@@ -48,6 +48,7 @@ export const SESIONES: Sesion[] = [
       'Saber qué información de la empresa no debe subirse a un chatbot',
     ],
     estado: 'lista',
+    slides: true,
   },
   {
     n: 4,
@@ -59,6 +60,7 @@ export const SESIONES: Sesion[] = [
       'Ajustar una curva de declinación sobre datos reales de un pozo',
     ],
     estado: 'lista',
+    slides: true,
   },
   {
     n: 5,
@@ -70,6 +72,7 @@ export const SESIONES: Sesion[] = [
       'Elegir entre todos el caso real que se construye hacia el final del curso',
     ],
     estado: 'lista',
+    slides: true,
   },
   {
     n: 6,

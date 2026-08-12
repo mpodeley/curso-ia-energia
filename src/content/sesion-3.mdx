@@ -2,15 +2,13 @@ import { PromptBuilder } from '../exercises/PromptBuilder'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos } from '../components/Recursos'
 
-## Antes de la sesión
+## Antes de la sesión (opcional)
 
-*Tiempo estimado: 25–35 minutos.*
-
-1. **Tarea de la sesión 2:** tus tres tareas repetitivas anotadas. Son la materia prima de esta sesión.
-2. **Lectura (10 min):** releé la sección "De ahí salen las alucinaciones" de la sesión 2 — el prompting
-   bueno es, en parte, defensa contra eso.
-3. **Experimento (10 min):** tomá una de tus tres tareas y pedísela al chatbot *de la peor manera posible*
-   (una línea, sin contexto). Guardá el resultado: lo vamos a mejorar en vivo.
+Lo único que pide esta sesión es la tarea de ayer: tus **tres tareas repetitivas** anotadas. Son
+la materia prima del taller; si no llegaste, las anotamos en los primeros minutos de la clase.
+Si tenés un rato antes, el constructor de prompts de esta página se puede jugar solo, y la
+sección "De ahí salen las alucinaciones" de la sesión 2 explica de qué se defiende un buen
+prompt.
 
 <Recursos sesion={3} />
 
@@ -24,7 +22,7 @@ analista nuevo el primer día. Las piezas:
 - **Tarea:** el verbo concreto. Resumir, comparar, redactar, extraer, traducir, criticar.
 - **Formato:** cómo querés la salida. *"Tabla de dos columnas"*, *"máximo 200 palabras"*, *"en viñetas"*.
 - **Ejemplos:** si tenés un "así me gusta", mostralo. Un ejemplo vale más que tres párrafos de instrucciones.
-- **Iteración:** la primera salida es un borrador. *"Más corto"*, *"menos jerga"*, *"ahora en tono formal"* —
+- **Iteración:** la primera salida es un borrador. *"Más corto"*, *"menos jerga"*, *"ahora en tono formal"*:
   la conversación es parte del método, no señal de fracaso.
 
 Un ejemplo completo:
@@ -34,35 +32,37 @@ Sos un ingeniero de reservorios que escribe para un directorio no técnico.
 Contexto: adjunto las conclusiones técnicas del estudio de simulación del campo.
 Tarea: redactá un resumen ejecutivo.
 Formato: máximo una página, tres secciones (situación, opciones, recomendación),
-sin jerga — cada término técnico inevitable, explicado entre paréntesis.
+sin jerga; cada término técnico inevitable, explicado entre paréntesis.
 ```
 
 <PromptBuilder sesion={3} />
 
 ## Dónde rinde hoy, en la oficina
 
-Los casos de mayor retorno inmediato no son los más glamorosos: **resumir** informes y papers (SPE
-incluidos), **redactar** primeros borradores de correos, minutas e informes mensuales, **traducir**
-con vocabulario técnico correcto, **extraer** datos puntuales de documentos largos, **criticar** un
-texto propio antes de mandarlo. La regla común: tareas donde el borrador cuesta y la verificación es
-rápida.
+Los casos de mayor retorno inmediato no son los más glamorosos: resumir informes y papers (SPE
+incluidos), redactar primeros borradores de correos, minutas e informes mensuales, traducir con
+vocabulario técnico correcto, extraer datos puntuales de documentos largos, criticar un texto
+propio antes de mandarlo. La regla común: **tareas donde el borrador cuesta y la verificación es
+rápida**.
 
 <div className="callout">
   <strong>Qué no subir a un chatbot gratuito:</strong> producción real por pozo, reservas, precios y
   cláusulas de contratos, datos de partners, información de personas. Regla práctica: si no lo pondrías
   en un correo a un desconocido, no va en el chat. En la sesión 7 formalizamos esto en una política de
-  uso — mientras tanto, trabajá con datos públicos, viejos o inventados con la misma estructura.
+  uso; mientras tanto, trabajá con datos públicos, viejos o inventados con la misma estructura.
 </div>
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| El peor prompt | 15 min | Comparamos sus experimentos de "una línea sin contexto" |
-| Anatomía en vivo | 30 min | Reescribimos juntos 3–4 de sus tareas reales con la estructura completa |
-| Taller hands-on | 40 min | Cada uno mejora una tarea propia; compartimos pantalla y criticamos prompts |
-| Confidencialidad | 20 min | Qué no subir y por qué; qué alternativas existen (datos sintéticos, versiones corporativas) |
-| Cierre y tarea | 15 min | La tarea "antes/después" |
+| Apertura y entrada al sitio | 5 min | El PIN de siempre y el mapa del día |
+| Repaso de la tarea | 10 min | Las tres tareas repetitivas de cada uno; con ellas armamos la lista del taller |
+| El peor prompt | 15 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
+| Anatomía de un prompt | 25 min | Las seis piezas, reescribiendo en vivo dos o tres tareas de la lista |
+| Taller: tu tarea, tu prompt | 40 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
+| Qué no se sube a un chatbot | 15 min | La regla, el porqué y las alternativas |
+| Cierre y tarea | 10 min | La tercera manera de fallar tachada, y la tarea antes/después |
 
 <Quiz data="quiz_s3" sesion={3} />
 
@@ -75,5 +75,6 @@ rápida.
 ## Tarea para la sesión 4
 
 Elegí una de tus tareas y resolvela completa con el chatbot, iterando hasta que la salida te sirva de
-verdad. Traé el **antes** (tu primer prompt) y el **después** (el que funcionó). Además: si tenés a mano
-una planilla **no confidencial** con datos (o podés armar una de ejemplo), tenela lista para la sesión 4.
+verdad. Traé el **antes** (tu primer prompt) y el **después** (el que funcionó): diez minutos. Y si
+tenés a mano una planilla no confidencial con datos (o podés armar una de ejemplo), tenela lista
+para mañana; si no, mañana trabajamos igual con datos públicos.
