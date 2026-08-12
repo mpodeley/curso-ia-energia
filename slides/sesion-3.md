@@ -526,16 +526,25 @@ La planilla es opcional de verdad: el plan de mañana no depende de ella.
 
 ---
 
-## La sesión 4: IA + datos
+## De la ingeniería de prompts a la **ingeniería de contexto**
 
-- El chatbot como **copiloto de análisis**: le das una planilla y escribe el código
-- Extraer una tabla de un **PDF de boletín boliviano** y verificarla número por número
-- La curva de declinación, ahora **sobre pozos reales**
+El prompt que ve el modelo ya no es solo el que escribís: es tu pedido más todo lo que viaja
+con él.
+
+Las próximas sesiones son exactamente eso: mañana, tus datos adjuntos (sesión 4); después, los
+fragmentos recuperados de tus documentos (sesión 5); después, herramientas que trabajan
+(sesión 6).
 
 <!--
 2 min · acumulado 1:59
-Mañana el modelo deja de escribir solo texto: escribe código y lo corre. Ahí
-cambia dónde puede fallar y dónde hay que mirar.
+El término real del rubro: la ingeniería de prompts está dando lugar a la
+ingeniería de contexto. Lo de hoy no caduca: las piezas siguen siendo la
+orden de trabajo; lo que crece es todo lo que viaja alrededor.
+Ya lo vieron sin nombre: la ventana de contexto de la sesión 2 es el lugar
+donde todo eso entra, y de donde se cae.
+Dejar la palabra sembrada y no profundizar: las sesiones 4, 5 y 6 la llenan
+de contenido concreto. Mañana arranca con el primer escalón: el modelo
+escribe código sobre una planilla que le adjuntás.
 El quiz y el constructor quedan en la página, como siempre.
 -->
 
