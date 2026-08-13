@@ -36,6 +36,14 @@ Sales material: `docs/syllabus.md`.
 - `public/data/*.json` — precomputed datasets with the `{generated_at, source, source_date, data}`
   envelope; regenerated offline by `scripts/build_data.py` (tiktoken for real BPE splits). Only
   JSON ships to the browser.
+- `public/descargas/` — files the student downloads to feed a chatbot (today: the 10-well
+  production CSV for the session-4 batch-forecast exercise, built by
+  `scripts/build_csv_descarga.py` from the tef-bearing Capítulo IV cache).
+  `scripts/dca_referencia.py` implements the same rules as the prompt printed on the session-4
+  page and writes the instructor's reference xlsx/png to `scripts/_cache/` — prompt and script
+  are two copies of one contract: change both or neither. Volve data (the "para curiosos"
+  pressures example) stays instructor-side in `scripts/_cache/`, never committed: Equinor's
+  license is research/study, not redistribution.
 - `src/theme.ts` — same export shape as simulador's, but values are `var(--pd-*)` strings from
   `src/styles/tokens.css` (podeley.ar identity layer, copied verbatim — edit upstream, not here).
   Chart/badge colors stay literal hex (SVG attributes can't resolve var()); they mirror the LIGHT

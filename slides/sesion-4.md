@@ -14,12 +14,17 @@ Sesión 4 de 8 · 2 h en vivo · **YPFB Andina**
 
 <!--
 0:00 · portada mientras entra la gente
-Ventanas de hoy: A este deck, C el sitio en la sesión 4, D un chatbot que corra
-código (Gemini acepta archivos y ejecuta; si falla, ChatGPT con análisis de
-datos). Sin pulsos ni encuesta hoy.
+Ventanas de hoy: A este deck, C el sitio en la sesión 4, D el chatbot del
+instructor: Claude (Sonnet), que corre código y genera el Excel y el artifact
+de la demo grande. Los alumnos siguen con Gemini o ChatGPT si su cuenta
+gratuita no escribe archivos; el prompt trae el plan B. Sin pulsos ni
+encuesta hoy.
 Antes de clase, en el escritorio: un CSV de un año del Capítulo IV (cuenca
-Noroeste, el link está en el material previo de la página) y un boletín
-estadístico de YPFB en PDF con una tabla de producción por campo.
+Noroeste, el link está en el material previo de la página), el CSV de 10
+pozos de la página (descargas/produccion_noroeste_10pozos.csv), un boletín
+estadístico de YPFB en PDF con una tabla de producción por campo, y el
+scripts/_cache/dca_referencia.xlsx abierto como referencia del instructor
+(regenerar con: python scripts/dca_referencia.py).
 -->
 
 ---
@@ -164,6 +169,11 @@ Narrar mientras corre: el código aparece, se ejecuta, devuelve número y
 gráfico. Señalar UNA línea del código en voz alta (el filtro, el groupby) sin
 explicar sintaxis: alcanza con que vean que se puede leer qué hizo.
 Guardar el resultado del prompt 3: se retoma en el bloque de declinación.
+Antes de cerrar la demo, SEMBRAR la corrida grande: subir el CSV de 10 pozos
+y pegar el prompt de pronóstico en lote de la página (sección "Del ajuste a
+mano al pronóstico en lote"). Contestarle el ok a la tabla de control y
+dejarlo trabajando: se cosecha en el bloque 4. Decirlo en voz alta: "esto
+queda corriendo, volvemos con la declinación".
 -->
 
 ---
@@ -391,6 +401,13 @@ acota un número; no la cierra.
 El párrafo serio del día, el que separa esto de un tutorial. Un análisis de
 verdad se hace sobre caudales corregidos por horas de operación y presión de
 boca, no sobre el volumen mensual crudo.
+COSECHA de la corrida sembrada en el bloque 2: abrir el Excel que devolvió
+Claude. Dos miradas, no más: la fila de YPF.St.SP.x-1 tiene que decir "sin
+ajuste" (el pozo que acaban de sufrir a mano: el prompt con reglas lo dice
+solo), y el qi/declinación de un pozo que ajustaron a mano, comparado con lo
+que dio la sala. Referencia del instructor: dca_referencia.xlsx. Si el
+artifact salió, mostrarlo 30 segundos. Plan B si la corrida falló o quedó a
+medias: abrir dca_referencia.xlsx y leer las mismas dos filas ahí.
 La pregunta de discusión de la página lo remata: en el pozo que no ajusta,
 ¿qué información tenés vos que el modelo no puede tener? Esa pregunta es el
 resumen del curso entero.

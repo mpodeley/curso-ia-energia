@@ -18,7 +18,7 @@ Hasta acá el modelo escribió texto. Ahora le vamos a dar una tabla y pedirle q
 diferencia importante es que ya no genera solo prosa: genera **código**, lo corre y te devuelve el
 resultado. Eso cambia dónde puede fallar y dónde tenés que mirar.
 
-Tres movimientos, en orden de dificultad:
+Cuatro movimientos, en orden de dificultad:
 
 1. De un archivo separado por comas a un análisis. Subís la planilla, pedís estadísticas y
    gráficos. El copiloto escribe el código; vos juzgás el resultado.
@@ -28,6 +28,8 @@ Tres movimientos, en orden de dificultad:
    número por número.
 3. De una tabla a un modelo. Ajustar una curva de declinación: pocos parámetros, una fórmula de
    1945 y la pregunta de siempre, que es cuánto le creés a la extrapolación.
+4. Del modelo al lote. Un prompt con reglas escritas, diez pozos, y de vuelta un Excel con
+   pronósticos, supuestos anotados y una visualización para recorrerlos.
 
 ## Verificar código es distinto de verificar texto
 
@@ -74,6 +76,120 @@ Eso no invalida el método: lo ubica. La curva sirve para ordenar una conversaci
 número, no para cerrarla.
 
 <DeclineLab sesion={4} />
+
+## Del ajuste a mano al pronóstico en lote
+
+El laboratorio ajusta de a un pozo, con tus dedos en las perillas. El trabajo real rara vez es
+así: son diez, cuarenta o doscientos pozos, y el pronóstico se entrega en una planilla. Ese
+salto es el último movimiento de la sesión.
+
+La planilla del ejercicio es
+[produccion_noroeste_10pozos.csv](descargas/produccion_noroeste_10pozos.csv): los seis pozos
+del laboratorio más cuatro nuevos, 90 meses cada uno, 2019 a 2026, del mismo Capítulo IV. Trae
+una columna que el laboratorio no tenía: `dias_efectivos`, los días del mes que el pozo produjo
+de verdad. Con ella el ajuste se hace sobre **caudal efectivo**, no sobre volumen calendario, y
+el serrucho de los febreros desaparece solo.
+
+Entre los cuatro nuevos hay un pozo que murió, uno que produce cada vez más y uno que cambió de
+régimen a mitad de la serie. Están porque tu campo también los tiene: un prompt de pronóstico se
+mide en qué hace cuando el modelo no corresponde.
+
+El prompt completo, para copiar:
+
+```text
+Actuá como ingeniero de reservorios. Te subo un CSV con la producción mensual
+de 10 pozos de gas convencional de la cuenca Noroeste argentina (fuente:
+Capítulo IV, Secretaría de Energía; datos públicos). Columnas: idpozo, pozo,
+yacimiento, formacion, mes (AAAA-MM), gas_miles_m3 (producción del mes, en
+miles de m³), petroleo_m3, agua_m3, dias_efectivos (días del mes que el pozo
+produjo de verdad).
+
+Tarea: ajustá curvas de declinación de Arps por pozo y pronosticá el gas.
+
+Antes de analizar: describí el archivo (filas, columnas, rango de fechas,
+meses por pozo, huecos) y mostrame esa tabla de control. Recién después
+seguí con el análisis.
+
+Reglas del análisis:
+1. Trabajá sobre caudal efectivo: q = gas_miles_m3 / dias_efectivos, en
+   miles de m³/día. Los meses con dias_efectivos < 10 quedan en la historia
+   pero fuera de todos los ajustes.
+2. Si el caudal salta más de 2 veces de forma sostenida, para arriba o para
+   abajo, es un cambio de régimen: ajustá solo el tramo posterior al último
+   salto y anotalo en las notas del pozo.
+3. Ventana de ajuste: desde el pico de la mediana móvil de 3 meses en
+   adelante. Si quedan menos de 24 meses útiles, reportá "sin ajuste" con el
+   motivo. No fuerces ningún ajuste.
+4. Ajustá tres variantes: exponencial (b = 0), hiperbólica (0 < b <= 1.2) y
+   armónica (b = 1), minimizando el error sobre log(q).
+5. Elegí por menor error, pero la hiperbólica tiene que mejorar a la
+   exponencial en más de 2% para ganarse su parámetro extra. Si b queda en
+   el tope, marcá el ajuste como dudoso.
+6. Confiabilidad por R² sobre log(q): 0.6 o más, confiable; entre 0.25 y
+   0.6, pronóstico de orden de magnitud, marcado "dudoso"; menos de 0.25,
+   no ajustable. Si la producción sube, decilo: Arps no aplica.
+7. Backtest por pozo: reajustá sin los últimos 12 meses, pronosticá esos 12
+   e informá el error absoluto medio en volumen. Es la medida de cuánto
+   creerle a cada pronóstico.
+8. Pronóstico mensual desde 2026-07 hasta 2036-12 o hasta el límite
+   económico de 2 miles de m³/día, lo que llegue primero. Volumen del mes =
+   q × días del mes × factor de servicio (mediana de dias_efectivos / días
+   del mes de los últimos 24 meses).
+
+Entregables:
+1. Un Excel: hoja "Resumen" con una fila por pozo (estado, modelo elegido,
+   qi, Di anual, b, R², error de backtest, acumulada histórica, EUR
+   restante, fin del pronóstico, notas); una hoja por pozo con historia y
+   pronóstico mensual; hoja "Supuestos" con todas las reglas que aplicaste.
+2. Un gráfico panel con los 10 pozos en escala semilogarítmica: puntos de
+   historia, las tres curvas, la elegida resaltada y el pronóstico.
+3. Un artifact interactivo: selector de pozo, escala lineal/log, historia,
+   ajustes, pronóstico y la tabla resumen.
+
+En todo el proceso: mostrá el código que corras y el conteo de filas antes
+y después de cada filtro. Si no podés generar archivos descargables,
+entregá el Resumen como tabla y cada pronóstico como CSV en un bloque de
+código.
+```
+
+Cada regla numerada es una decisión de ingeniería de reservorios, no un truco de prompt: qué
+meses valen, cuándo un salto parte la historia, cuánta historia pide un ajuste, cuándo decir que
+no. Lo que en el laboratorio era una perilla acá es una regla escrita, auditable y repetible.
+
+Cuando vuelva el resultado, las tres reglas del día siguen mandando. Pedí el conteo de filas.
+Elegí un pozo que hayas ajustado a mano y compará qi y la declinación anual: son los mismos
+datos, tienen que contar la misma historia. Y buscá la fila de YPF.St.SP.x-1: si el Excel le
+inventa un EUR en lugar de decir "sin ajuste", el archivo entero pierde crédito.
+
+<div className="callout">
+  <strong>Si tu cuenta no genera archivos:</strong> no todos los chatbots gratuitos escriben un
+  Excel o una página interactiva. El prompt ya trae el plan B: las mismas tablas como CSV en
+  bloques de código, para pegar en tu planilla.
+</div>
+
+### Para curiosos: cuando además hay presiones
+
+Todo lo de arriba usa caudales solos, porque es lo que publica el Capítulo IV. Equinor liberó
+los datos completos del campo Volve (Mar del Norte, 2008–2016) para investigación y estudio,
+y ahí está lo que acá falta: [producción diaria con presión de fondo, presión de boca y horas
+en línea](https://www.equinor.com/energy/volve-data-sharing), pozo por pozo.
+
+Con ese archivo el pedido al chatbot ya no es aplicar Arps: es construir el método. Por
+ejemplo:
+
+```text
+Del Excel de producción diaria de Volve, tomá los pozos 15/9-F-14 y
+15/9-F-11. Corregí el caudal de petróleo por horas en línea. Estimá la
+presión inicial del reservorio con el máximo temprano de presión de fondo.
+Construí el caudal normalizado por drawdown, q / (pi − pwf), y graficálo
+contra la producción acumulada. Compará lo que concluís de ahí con una
+declinación de Arps sobre el caudal crudo: ¿qué explica la presión que la
+curva sola no explica?
+```
+
+Sobre volumen mensual crudo ese análisis es imposible. Con presiones diarias es una tarde de
+trabajo con el copiloto, y es la diferencia entre extrapolar una curva y entender por qué
+declina.
 
 ## En la sesión en vivo (2 h)
 
