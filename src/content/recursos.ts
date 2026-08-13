@@ -11,7 +11,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-08-11'
+export const VERIFICADO = '2026-08-13'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -182,7 +182,19 @@ export const RECURSOS: Record<number, Recurso[]> = {
       historico: true,
       idioma: 'en',
       porque:
-        'La matemática que corre detrás del botón "que la busque la máquina": qué es un residuo y por qué se minimiza la suma de sus cuadrados. Cinco minutos de Khan Academy, sin pedir nada previo.',
+        'La primera mitad de la matemática del botón "que la busque la máquina": qué es un residuo y por qué se minimiza la suma de sus cuadrados. Cinco minutos, sin pedir nada previo.',
+    },
+    {
+      tipo: 'video',
+      titulo: 'Calculating the equation of a regression line',
+      url: 'https://www.youtube.com/watch?v=FGesqq22TCM',
+      fuente: 'Khan Academy',
+      duracion: '8:10',
+      publicado: '2017-07',
+      historico: true,
+      idioma: 'en',
+      porque:
+        'La segunda mitad, que el video anterior deja abierta: cómo se encuentra la recta que minimiza esos cuadrados. Es la cuenta que el laboratorio hace cada vez que apretás el botón.',
     },
     {
       tipo: 'herramienta',
