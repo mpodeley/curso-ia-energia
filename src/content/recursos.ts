@@ -205,6 +205,15 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La fuente de los pozos del laboratorio. Bajate un año y probá el flujo de la sesión con datos de verdad, que es la mejor práctica antes de tocar los de tu empresa.',
     },
+    {
+      tipo: 'lectura',
+      titulo: 'Rendición pública de cuentas final 2025',
+      url: 'https://www.ypfb.gob.bo/sites/default/files/2026-03/Presentacion.RPC%20Final%202025-versi%C3%B3n%2014-03-2026-OFICIAL-FINAL%20v8.pdf',
+      fuente: 'Yacimientos Petrolíferos Fiscales Bolivianos',
+      idioma: 'es',
+      porque:
+        'El PDF del ejercicio de extracción. En la página 8, la producción fiscalizada de gas 2006–2025 y el pronóstico oficial 2026–2040: 35 números rotulados sobre un gráfico, para sacarlos a una tabla y verificarlos uno por uno. Bonus: el pronóstico oficial es una curva de declinación.',
+    },
   ],
   5: [
     {

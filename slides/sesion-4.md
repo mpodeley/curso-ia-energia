@@ -21,10 +21,11 @@ gratuita no escribe archivos; el prompt trae el plan B. Sin pulsos ni
 encuesta hoy.
 Antes de clase, en el escritorio: un CSV de un año del Capítulo IV (cuenca
 Noroeste, el link está en el material previo de la página), el CSV de 10
-pozos de la página (descargas/produccion_noroeste_10pozos.csv), un boletín
-estadístico de YPFB en PDF con una tabla de producción por campo, y el
-scripts/_cache/dca_referencia.xlsx abierto como referencia del instructor
-(regenerar con: python scripts/dca_referencia.py).
+pozos de la página (descargas/produccion_noroeste_10pozos.csv), la rendición
+pública de cuentas final 2025 de YPFB en PDF (también en el material previo;
+abrirla en la página 8), y el scripts/_cache/dca_referencia.xlsx abierto
+como referencia del instructor (regenerar con: python
+scripts/dca_referencia.py).
 Si un bloque corre corto: la corrida de Volve está lista para demo. El xlsx
 en scripts/_cache/volve_production.xlsx, el prompt en la página (para
 curiosos), la referencia en volve_referencia.xlsx/png (regenerar con:
@@ -41,7 +42,7 @@ nunca cayó, el agua subió a 94%, y Arps igual ajusta con R² 0.96.
 | Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
 | Repaso de la tarea | 10 min | El antes y el después de sus prompts |
 | La planilla y el copiloto | 30 min | Subimos producción real del Capítulo IV, pedimos análisis y leemos el código juntos |
-| De PDF a tabla | 30 min | La tabla de un boletín boliviano, verificada número por número entre todos |
+| De PDF a tabla | 30 min | El pronóstico oficial de YPFB sacado de un PDF, verificado número por número entre todos |
 | Declinación en vivo | 25 min | Pozos reales de Salta: ajustamos entre todos y discutimos qué no dice la curva |
 | Qué se puede afirmar | 10 min | De los tres análisis: qué conclusión firmarías y cuál necesita más trabajo |
 | Cierre y tarea | 10 min | La tarea de la sesión 5 |
@@ -59,7 +60,7 @@ dónde hay que mirar.
 ## Al final de esta sesión van a poder
 
 - Analizar un **CSV de producción** con el chatbot como copiloto
-- Extraer tablas de **PDFs de boletines** y verificarlas contra el original
+- Extraer datos de **PDFs oficiales** y verificarlos contra el original
 - Ajustar una curva de declinación **sobre datos reales de un pozo**
 
 <!--
@@ -186,7 +187,7 @@ queda corriendo, volvemos con la declinación".
 ## Leé el código, no solo el resultado
 
 - Pedile **siempre** que muestre el código, no solo la respuesta
-- Pedile el **conteo de filas** antes y después de cada filtro
+- Pedile que el código **informe cuántas filas** entran y cuántas quedan en cada filtro
 - Comprobá **un caso a mano**, uno solo, que puedas rastrear en la planilla original
 
 Si ese caso cierra, casi siempre cierra el resto. Si no cierra, no hay nada más que discutir.
@@ -196,8 +197,13 @@ Si ese caso cierra, casi siempre cierra el resto. Si no cierra, no hay nada más
 Las tres reglas del día, sobre la demo fresca. Aplicarlas en vivo: elegir un
 pozo del gráfico, pedirle al chatbot su serie, y comprobar UN mes contra el
 CSV abierto en otra ventana. Que vean el gesto completo, no la teoría.
-La regla del conteo de filas es la más barata y la que más errores caza: un
-filtro que come filas de más es invisible en el gráfico.
+La regla de las filas, dicha completa porque el título solo no alcanza: el
+que cuenta es el chatbot, no ustedes. Se le pide que cada filtro del código
+imprima cuántas filas recibió y cuántas dejó. Un filtro mal escrito no tira
+error: se come filas en silencio y el gráfico sale igual de lindo. Ejemplo
+con el CSV de 10 pozos: 900 filas; "excluí los meses con menos de 10 días
+efectivos" tiene que dejar 885. Si el conteo dice 400, el filtro quedó mal
+escrito, y ningún gráfico lo iba a mostrar.
 -->
 
 ---
@@ -249,22 +255,25 @@ primera pregunta de discusión de la página; acá alcanza una mano levantada.)
 
 <!-- _class: panel -->
 
-## Demo: del boletín a la tabla
+## Demo: del PDF a la tabla
 
-Un boletín estadístico de YPFB, real. Le pedimos la tabla de producción por campo, en formato
-tabla, con las unidades.
+La rendición pública de cuentas final 2025 de YPFB, real. Le pedimos la producción de gas y su
+pronóstico oficial, en tabla, con las unidades.
 
 <!--
 12 min · acumulado 1:01
-Subir el PDF del boletín al chatbot. Prompt: "Extraé la tabla de producción
-por campo de la página N. Devolvela como tabla, con las unidades exactas del
-original."
-Mientras extrae, abrir el PDF en otra ventana, en la página de la tabla, y
-dejarlo a la vista: la comparación visual ya muestra si la estructura vino
-bien.
-Pedir una segunda pasada si hace falta ("te faltó la columna de unidades",
-"esa fila es un subtotal, marcala"). Iterar acá es normal: es la conversación
-como método, de ayer.
+El PDF está en el material previo de la página (Rendición pública de cuentas
+final 2025). Subirlo al chatbot. Prompt: "Extraé del gráfico de la página 8
+la producción fiscalizada de gas 2006-2025 y el pronóstico 2026-2040.
+Devolvelos como una tabla año-valor, con la unidad exacta del original."
+Mientras extrae, abrir el PDF en otra ventana, en la página 8, y dejarlo a
+la vista: la comparación visual ya muestra si la estructura vino bien.
+Pedir una segunda pasada si hace falta ("te faltó la unidad", "esa serie
+punteada es mercado interno, no la mezcles"). Iterar acá es normal: es la
+conversación como método, de ayer.
+Guardar la tabla extraída: el pronóstico oficial 2026-2040 ES una curva de
+declinación (27.34 a 4.81 MMmcd), y si sobra tiempo en el bloque 4 la
+pregunta es qué declinación anual implica (~12% nominal por año).
 -->
 
 ---
@@ -273,26 +282,27 @@ como método, de ayer.
 
 ## Verifiquemos número por número
 
-Se reparte: cada uno toma **una fila** de la tabla extraída y la compara contra el PDF original.
-"Cierra" o "no cierra", por el chat.
+Se reparte: cada uno toma **un tramo de años** de la tabla extraída y lo compara contra el PDF
+original. "Cierra" o "no cierra", por el chat.
 
 <!--
 10 min · acumulado 1:11
-El mecanismo estrella del día: con cinco personas tocan dos filas por cabeza
-y la tabla queda verificada igual, con cada uno haciendo el gesto completo
-con sus propios ojos. Asignar las filas por nombre para que nadie espere.
+El mecanismo estrella del día: 35 números entre cinco son siete por cabeza,
+y la tabla queda verificada entera, con cada uno haciendo el gesto completo
+con sus propios ojos. Asignar los tramos por nombre para que nadie espere.
 Pegar el PDF y la tabla extraída en el chat si alguien no puede abrir el
-boletín.
-Anotar los "no cierra" a la vista y revisarlos juntos: ¿fue un dígito bailado,
-una celda fusionada, un subtotal tomado como fila?
+archivo.
+Anotar los "no cierra" a la vista y revisarlos juntos: ¿fue un dígito
+bailado, un año corrido, la serie punteada del mercado interno tomada como
+producción?
 -->
 
 ---
 
 ## Qué encontramos
 
-Lo típico: casi todo cierra, y **algo no cierra**. Un dígito bailado, una celda fusionada, un
-subtotal que entró como si fuera un campo.
+Lo típico: casi todo cierra, y **algo no cierra**. Un dígito bailado, un año corrido de lugar,
+una serie tomada por otra.
 
 El error de extracción no avisa. Por eso la verificación no es opcional, y por eso se hace
 número por número.
@@ -467,7 +477,7 @@ Arranca 1:50, termina 2:00
 ## Qué te llevás hoy
 
 - **Pedí el código**, no solo el resultado
-- **Contá las filas** antes y después de cada filtro
+- **Pedí las filas**: que cada filtro diga cuántas recibió y cuántas dejó
 - **Un caso a mano**: si ese cierra, casi siempre cierra el resto
 
 <!--
