@@ -273,9 +273,10 @@ Pedir una segunda pasada si hace falta ("te faltó la unidad", "esa serie
 punteada es mercado interno, no la mezcles"). Iterar acá es normal: es la
 conversación como método, de ayer.
 Guardar la tabla extraída: el pronóstico oficial 2026-2040 ES una curva de
-declinación (27.34 a 4.81 MMmcd). Si sobra tiempo en el bloque 4, correr en
-este mismo chat el prompt del caso optimista/pesimista (página, sección "El
-pronóstico oficial, con optimista y pesimista"). Bolsillo del instructor:
+declinación (27.34 a 4.81 MMmcd). Si sobra tiempo en el bloque 4, el prompt
+del caso optimista/pesimista (página, sección "El pronóstico oficial, con
+optimista y pesimista") es autónomo: se le pega el PDF y extrae y analiza
+en una sola pasada, en chat nuevo o en este mismo. Bolsillo del instructor:
 optimista 6.5%/año (promedio 2014-2025) acumula 3.2 TCF; pesimista 12.7%
 (últimos 3 años) acumula 2.1; el oficial implica 11.5% y 2.5 TCF, pegado al
 pesimista, y ninguno agota los 3.7 TCF de reserva probada del mismo PDF.

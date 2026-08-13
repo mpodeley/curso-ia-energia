@@ -173,28 +173,35 @@ inventa un EUR en lugar de decir "sin ajuste", el archivo entero pierde crédito
 En la sesión en vivo, el bloque de PDF extrae de la
 [rendición de cuentas 2025 de YPFB](https://www.ypfb.gob.bo/sites/default/files/2026-03/Presentacion.RPC%20Final%202025-versi%C3%B3n%2014-03-2026-OFICIAL-FINAL%20v8.pdf)
 la producción fiscalizada de gas 2006–2025 y el pronóstico oficial 2026–2040 (página 8). Esa
-tabla da para un segundo ejercicio: declinar la serie y ponerle bandas al futuro. El prompt
-sigue en el mismo chat de la extracción:
+misma página da para un ejercicio entero en una sola pasada: el prompt asume el PDF adjunto y
+hace extracción y análisis juntos. La verificación no desaparece: la tabla extraída se muestra
+antes del análisis, y ahí es donde mirás.
 
 ```text
-Seguimos con la tabla que extrajiste de la página 8: producción
-fiscalizada de gas de Bolivia 2006-2025 y pronóstico oficial 2026-2040,
-en millones de m³/día (MMmcd), promedios anuales.
+Te subo la rendición pública de cuentas final 2025 de YPFB. En la página
+8 hay un gráfico de barras con la producción fiscalizada de gas de
+Bolivia 2006-2025 y el pronóstico oficial 2026-2040, en millones de
+m³/día (MMmcd), promedios anuales, con cada valor rotulado.
 
-1. Identificá el año pico de la producción y ajustá una declinación
+1. Extraé las dos series completas del gráfico de la página 8 y
+   mostralas como una tabla año-valor antes de seguir: la voy a
+   verificar contra el original. No confundas la serie punteada de
+   mercado interno con las barras de producción.
+2. Identificá el año pico de la producción y ajustá una declinación
    exponencial al tramo que va del pico a 2025, sobre log(q). Informá
    la tasa anual.
-2. Armá dos escenarios 2026-2040 arrancando del valor de 2025:
-   - optimista: la tasa del punto 1, la declinación promedio de toda
+3. Armá dos escenarios 2026-2040 arrancando del valor de 2025:
+   - optimista: la tasa del punto 2, la declinación promedio de toda
      la ventana.
    - pesimista: la tasa de los últimos 3 años (2022 a 2025).
-3. Graficá en semilog: historia, los dos escenarios y el pronóstico
-   oficial. ¿A cuál de los dos escenarios se parece el oficial?
-4. Acumulá cada camino 2026-2040 y convertilo a TCF (1 TCF = 28.32
+4. Graficá en semilog: historia, los dos escenarios y el pronóstico
+   oficial extraído. ¿A cuál de los dos escenarios se parece el
+   oficial?
+5. Acumulá cada camino 2026-2040 y convertilo a TCF (1 TCF = 28.32
    Bcm). Compará con la reserva probada de gas que declara el mismo
    PDF: 3.7 TCF al 31/12/2025, página 10. ¿Qué escenario es
    consistente con qué reserva?
-5. Mostrá el código y decime qué supuestos hiciste sin que te los pida.
+6. Mostrá el código y decime qué supuestos hiciste sin que te los pida.
 ```
 
 Los números de control: el pico es 2014, con 59.3 millones de m³/día. La declinación promedio
