@@ -174,20 +174,57 @@ los datos completos del campo Volve (Mar del Norte, 2008–2016) para investigac
 y ahí está lo que acá falta: [producción diaria con presión de fondo, presión de boca y horas
 en línea](https://www.equinor.com/energy/volve-data-sharing), pozo por pozo.
 
-Con ese archivo el pedido al chatbot ya no es aplicar Arps: es construir el método. Por
-ejemplo:
+Con ese archivo el pedido al chatbot ya no es aplicar Arps: es construir el diagnóstico que
+Arps no puede dar. El prompt completo, para el archivo oficial:
 
 ```text
-Del Excel de producción diaria de Volve, tomá los pozos 15/9-F-14 y
-15/9-F-11. Corregí el caudal de petróleo por horas en línea. Estimá la
-presión inicial del reservorio con el máximo temprano de presión de fondo.
-Construí el caudal normalizado por drawdown, q / (pi − pwf), y graficálo
-contra la producción acumulada. Compará lo que concluís de ahí con una
-declinación de Arps sobre el caudal crudo: ¿qué explica la presión que la
-curva sola no explica?
+Te subo "Volve production data.xlsx", los datos diarios de producción del
+campo Volve que Equinor liberó en 2018. Hoja "Daily Production Data": una
+fila por pozo y día, con horas en línea (ON_STREAM_HRS), presión de fondo
+(AVG_DOWNHOLE_PRESSURE, bar), presión de boca (AVG_WHP_P) y volúmenes
+diarios de petróleo, gas y agua (BORE_OIL_VOL, BORE_GAS_VOL, BORE_WAT_VOL,
+en sm³).
+
+Antes de analizar: describí el archivo (pozos, WELL_TYPE, rango de fechas,
+cobertura de presión de fondo por pozo) y esperá mi ok.
+
+Trabajá con los productores 15/9-F-14 y 15/9-F-11 (WELL_TYPE = OP), los de
+mejor cobertura de presión. Reglas:
+1. Día productivo: ON_STREAM_HRS > 0 y petróleo > 0. Normalizá los
+   caudales a 24 horas en línea. Día de cierre: ON_STREAM_HRS = 0.
+2. La presión de fondo de los días de cierre es tu proxy de presión de
+   reservorio: descartá los ceros de sensor (< 50 bar), tomá la mediana
+   mensual e interpolá los meses sin cierres. Graficala junto a la
+   presión fluyente de los días productivos.
+3. Armá series mensuales por pozo: caudal de petróleo, caudal de líquido,
+   corte de agua, presión fluyente y proxy de reservorio.
+4. Índice de productividad: PI = caudal de líquido / (pR − pwf), en los
+   días que tienen las dos presiones. Seguilo en el tiempo.
+5. Ajustá una curva de Arps al caudal de petróleo desde su pico, como
+   referencia, e informá qi, Di, b y R².
+6. El entregable central es un diagnóstico por pozo, en una tabla de
+   cuatro filas: depresionamiento (¿pR cae?), pérdida de productividad
+   (¿PI cae?), avance de agua (¿el corte sube?), manejo del drawdown
+   (¿pR − pwf cae?). Cada fila con su evidencia numérica: valor al
+   principio, valor al final.
+7. Cerrá comparando: ¿qué acierta la Arps del punto 5 y qué no puede ver?
+   ¿Qué habría pronosticado para 15/9-F-11 una Arps ajustada solo hasta
+   fines de 2015, y qué pasó de verdad en 2016?
+
+Mostrá el código y el conteo de filas después de cada filtro. Si no podés
+generar archivos, las tablas van como CSV en bloques de código. Cerrá con
+un gráfico de cuatro paneles por pozo: caudales y corte de agua,
+presiones, PI, y el semilog con la Arps.
 ```
 
-Sobre volumen mensual crudo ese análisis es imposible. Con presiones diarias es una tarde de
+Lo que ese diagnóstico tiene que mostrar, para controlar al copiloto: la presión de reservorio
+de los dos pozos no cae nunca (la inyección de agua la sostiene cerca de 300 bar), el índice de
+productividad no se pierde, y el corte de agua sube de 8% a 94% en 15/9-F-14 y de 9% a 81% en
+15/9-F-11. Mientras tanto una Arps ajusta el petróleo de 15/9-F-14 con R² de 0.96. La curva
+describe la caída sin ver el mecanismo, y la meseta de 15/9-F-11 hasta 2015 no anuncia en nada
+el barranco de 2016.
+
+Sobre volumen mensual crudo este análisis es imposible. Con presiones diarias es una tarde de
 trabajo con el copiloto, y es la diferencia entre extrapolar una curva y entender por qué
 declina.
 

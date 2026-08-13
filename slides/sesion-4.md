@@ -25,6 +25,11 @@ pozos de la página (descargas/produccion_noroeste_10pozos.csv), un boletín
 estadístico de YPFB en PDF con una tabla de producción por campo, y el
 scripts/_cache/dca_referencia.xlsx abierto como referencia del instructor
 (regenerar con: python scripts/dca_referencia.py).
+Si un bloque corre corto: la corrida de Volve está lista para demo. El xlsx
+en scripts/_cache/volve_production.xlsx, el prompt en la página (para
+curiosos), la referencia en volve_referencia.xlsx/png (regenerar con:
+python scripts/volve_referencia.py). El remate en una frase: la presión
+nunca cayó, el agua subió a 94%, y Arps igual ajusta con R² 0.96.
 -->
 
 ---
