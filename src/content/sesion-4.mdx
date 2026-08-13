@@ -168,31 +168,78 @@ inventa un EUR en lugar de decir "sin ajuste", el archivo entero pierde crédito
   bloques de código, para pegar en tu planilla.
 </div>
 
+### El pronóstico oficial, con optimista y pesimista
+
+En la sesión en vivo, el bloque de PDF extrae de la
+[rendición de cuentas 2025 de YPFB](https://www.ypfb.gob.bo/sites/default/files/2026-03/Presentacion.RPC%20Final%202025-versi%C3%B3n%2014-03-2026-OFICIAL-FINAL%20v8.pdf)
+la producción fiscalizada de gas 2006–2025 y el pronóstico oficial 2026–2040 (página 8). Esa
+tabla da para un segundo ejercicio: declinar la serie y ponerle bandas al futuro. El prompt
+sigue en el mismo chat de la extracción:
+
+```text
+Seguimos con la tabla que extrajiste de la página 8: producción
+fiscalizada de gas de Bolivia 2006-2025 y pronóstico oficial 2026-2040,
+en millones de m³/día (MMmcd), promedios anuales.
+
+1. Identificá el año pico de la producción y ajustá una declinación
+   exponencial al tramo que va del pico a 2025, sobre log(q). Informá
+   la tasa anual.
+2. Armá dos escenarios 2026-2040 arrancando del valor de 2025:
+   - optimista: la tasa del punto 1, la declinación promedio de toda
+     la ventana.
+   - pesimista: la tasa de los últimos 3 años (2022 a 2025).
+3. Graficá en semilog: historia, los dos escenarios y el pronóstico
+   oficial. ¿A cuál de los dos escenarios se parece el oficial?
+4. Acumulá cada camino 2026-2040 y convertilo a TCF (1 TCF = 28.32
+   Bcm). Compará con la reserva probada de gas que declara el mismo
+   PDF: 3.7 TCF al 31/12/2025, página 10. ¿Qué escenario es
+   consistente con qué reserva?
+5. Mostrá el código y decime qué supuestos hiciste sin que te los pida.
+```
+
+Los números de control: el pico es 2014, con 59.3 millones de m³/día. La declinación promedio
+del tramo 2014–2025 da 6.5% anual; la de los últimos 3 años, 12.7%. El pronóstico oficial
+implica 11.5% anual: **va pegado al caso pesimista**, no al promedio histórico. Las acumuladas
+2026–2040 quedan en 3.2 TCF el optimista, 2.1 TCF el pesimista y 2.5 TCF el oficial, todas por
+debajo de los 3.7 TCF de reserva probada del mismo documento: los tres caminos son consistentes
+con la reserva, y ninguno la agota al 2040.
+
+Una advertencia que el gráfico no muestra: la serie nacional agrega campos, plantas y contratos,
+y los envíos a la Argentina terminaron en 2024. La curva resume ese conjunto. Para explicar hay
+que bajar al campo, que es lo que hiciste arriba con los 10 pozos.
+
 ### Para curiosos: cuando además hay presiones
 
 Todo lo de arriba usa caudales solos, porque es lo que publica el Capítulo IV. Equinor liberó
-los datos completos del campo Volve (Mar del Norte, 2008–2016) para investigación y estudio,
-y ahí está lo que acá falta: [producción diaria con presión de fondo, presión de boca y horas
-en línea](https://www.equinor.com/energy/volve-data-sharing), pozo por pozo.
+los datos completos del campo Volve (Mar del Norte, 2008–2016) bajo una licencia abierta que
+permite usarlos y compartirlos con crédito, y ahí está lo que acá falta:
+[producción diaria con presión de fondo, presión de boca y horas en
+línea](https://www.equinor.com/energy/volve-data-sharing), pozo por pozo.
+
+El dataset completo pide registro; para este ejercicio no hace falta. La planilla
+[volve_diario_2pozos.csv](descargas/volve_diario_2pozos.csv) trae el recorte listo: los dos
+productores con mejor cobertura de presión, 15/9-F-14 (2008–2016) y 15/9-F-11 (2013–2016), día
+por día. Datos del campo Volve de Equinor y los ex socios de la licencia (ExxonMobil Exploration
+& Production Norway AS, Bayerngas Norge AS), compartidos acá bajo
+[sus términos](https://cdn.equinor.com/files/h61q9gi9/global/de6532f6134b9a953f6c41bac47a0c055a3712d3.pdf):
+usarlos y compartirlos con crédito está permitido; venderlos, no.
 
 Con ese archivo el pedido al chatbot ya no es aplicar Arps: es construir el diagnóstico que
-Arps no puede dar. El prompt completo, para el archivo oficial:
+Arps no puede dar. El prompt completo:
 
 ```text
-Te subo "Volve production data.xlsx", los datos diarios de producción del
-campo Volve que Equinor liberó en 2018. Hoja "Daily Production Data": una
-fila por pozo y día, con horas en línea (ON_STREAM_HRS), presión de fondo
-(AVG_DOWNHOLE_PRESSURE, bar), presión de boca (AVG_WHP_P) y volúmenes
-diarios de petróleo, gas y agua (BORE_OIL_VOL, BORE_GAS_VOL, BORE_WAT_VOL,
-en sm³).
+Te subo volve_diario_2pozos.csv: producción diaria real de dos pozos de
+petróleo del campo Volve (Mar del Norte), una fila por pozo y día.
+Columnas: fecha, pozo, horas_linea (horas en producción ese día),
+p_fondo_bar (presión de fondo fluyente promedio), p_boca_bar (presión de
+boca), oil_sm3, gas_sm3, agua_sm3 (volúmenes del día).
 
-Antes de analizar: describí el archivo (pozos, WELL_TYPE, rango de fechas,
-cobertura de presión de fondo por pozo) y esperá mi ok.
+Antes de analizar: describí el archivo (filas y rango de fechas por pozo,
+cobertura de presión de fondo) y esperá mi ok.
 
-Trabajá con los productores 15/9-F-14 y 15/9-F-11 (WELL_TYPE = OP), los de
-mejor cobertura de presión. Reglas:
-1. Día productivo: ON_STREAM_HRS > 0 y petróleo > 0. Normalizá los
-   caudales a 24 horas en línea. Día de cierre: ON_STREAM_HRS = 0.
+Reglas:
+1. Día productivo: horas_linea > 0 y petróleo > 0. Normalizá los
+   caudales a 24 horas en línea. Día de cierre: horas_linea = 0.
 2. La presión de fondo de los días de cierre es tu proxy de presión de
    reservorio: descartá los ceros de sensor (< 50 bar), tomá la mediana
    mensual e interpolá los meses sin cierres. Graficala junto a la

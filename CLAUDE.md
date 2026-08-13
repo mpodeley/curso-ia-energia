@@ -41,9 +41,13 @@ Sales material: `docs/syllabus.md`.
   `scripts/build_csv_descarga.py` from the tef-bearing Capítulo IV cache).
   `scripts/dca_referencia.py` implements the same rules as the prompt printed on the session-4
   page and writes the instructor's reference xlsx/png to `scripts/_cache/` — prompt and script
-  are two copies of one contract: change both or neither. Volve data (the "para curiosos"
-  pressures example) stays instructor-side in `scripts/_cache/`, never committed: Equinor's
-  license is research/study, not redistribution.
+  are two copies of one contract: change both or neither. The Volve daily CSV (the "para
+  curiosos" pressures example) also ships in `public/descargas/`: the Equinor Open Data
+  Licence permits sharing with attribution and forbids only selling, and the session-4 page
+  carries the credit + terms link next to the download. `scripts/build_csv_volve.py` builds it
+  from the official xlsx cached in `scripts/_cache/` (out of git as a 2.3 MB source binary,
+  not for license reasons); `scripts/volve_referencia.py` reads the committed CSV — the same
+  file the student downloads.
 - `src/theme.ts` — same export shape as simulador's, but values are `var(--pd-*)` strings from
   `src/styles/tokens.css` (podeley.ar identity layer, copied verbatim — edit upstream, not here).
   Chart/badge colors stay literal hex (SVG attributes can't resolve var()); they mirror the LIGHT

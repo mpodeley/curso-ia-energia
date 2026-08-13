@@ -5,15 +5,13 @@ Implements the rules of the Volve prompt printed on the session-4 page, so the
 instructor can check whatever the chatbot returns. Same contract discipline as
 dca_referencia.py: if the prompt changes, this script changes with it.
 
-Data: scripts/_cache/volve_production.xlsx (gitignored, never committed — the
-Equinor Open Data Licence covers research and study, not redistribution). It is
-the official "Volve production data.xlsx" of the 2018 Equinor release, sheet
-"Daily Production Data": one row per wellbore-day with ON_STREAM_HRS, average
-downhole/wellhead pressure and daily oil/gas/water volumes. Download it from
-the official Volve page (https://www.equinor.com/energy/volve-data-sharing) or
-a public mirror, and drop it in scripts/_cache/ under that name.
+Data: public/descargas/volve_diario_2pozos.csv — the same file the student
+downloads from the page, built by scripts/build_csv_volve.py from the official
+"Volve production data.xlsx" (see that script's docstring for provenance and
+the Equinor Open Data Licence notice). The reference reads the student's file
+on purpose: if the trim ever drifts, the reference drifts with it.
 
-The exercise reads the two producers with the best downhole-pressure coverage:
+The file holds the two producers with the best downhole-pressure coverage:
 15/9-F-14 (2008-2016, the full field life) and 15/9-F-11 (2013-2016).
 
 What the prompt asks, and this script mirrors:
@@ -49,7 +47,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-XLSX_IN = os.path.join(HERE, '_cache', 'volve_production.xlsx')
+CSV_IN = os.path.join(HERE, '..', 'public', 'descargas', 'volve_diario_2pozos.csv')
 OUT_XLSX = os.path.join(HERE, '_cache', 'volve_referencia.xlsx')
 OUT_PNG = os.path.join(HERE, '_cache', 'volve_referencia.png')
 
@@ -65,23 +63,17 @@ def q_arps(t, qi, di, b):
 
 
 def load() -> dict[str, list[dict]]:
-    import openpyxl
-    if not os.path.exists(XLSX_IN):
+    import csv as _csv
+    if not os.path.exists(CSV_IN):
         raise SystemExit(
-            f'Falta {XLSX_IN}. Bajá "Volve production data.xlsx" (ver docstring) '
-            'y guardalo ahí.')
-    wb = openpyxl.load_workbook(XLSX_IN, read_only=True)
-    ws = wb['Daily Production Data']
-    rows = ws.iter_rows(values_only=True)
-    hdr = list(next(rows))
+            f'Falta {CSV_IN}: corré primero python scripts/build_csv_volve.py')
     out: dict[str, list[dict]] = defaultdict(list)
-    for r in rows:
-        d = dict(zip(hdr, r))
-        w = d['NPD_WELL_BORE_NAME']
-        if w in WELLS and d['WELL_TYPE'] == 'OP':
-            out[w].append(d)
+    with open(CSV_IN, encoding='utf-8') as f:
+        for r in _csv.DictReader(f):
+            if r['pozo'] in WELLS:
+                out[r['pozo']].append(r)
     for w in out:
-        out[w].sort(key=lambda d: d['DATEPRD'])
+        out[w].sort(key=lambda d: d['fecha'])
     return out
 
 
@@ -89,11 +81,11 @@ def monthly(days: list[dict]) -> dict:
     """Monthly medians of the daily diagnostics."""
     acc: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     for d in days:
-        ym = d['DATEPRD'].strftime('%Y-%m')
-        hrs = float(d['ON_STREAM_HRS'] or 0)
-        oil = float(d['BORE_OIL_VOL'] or 0)
-        wat = float(d['BORE_WAT_VOL'] or 0)
-        bhp = float(d['AVG_DOWNHOLE_PRESSURE'] or 0)
+        ym = d['fecha'][:7]
+        hrs = float(d['horas_linea'] or 0)
+        oil = float(d['oil_sm3'] or 0)
+        wat = float(d['agua_sm3'] or 0)
+        bhp = float(d['p_fondo_bar'] or 0)
         m = acc[ym]
         if hrs == 0 and bhp > P_SENSOR_MIN:
             m['p_res'].append(bhp)          # shut-in: reservoir-pressure proxy

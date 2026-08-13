@@ -26,11 +26,12 @@ pública de cuentas final 2025 de YPFB en PDF (también en el material previo;
 abrirla en la página 8), y el scripts/_cache/dca_referencia.xlsx abierto
 como referencia del instructor (regenerar con: python
 scripts/dca_referencia.py).
-Si un bloque corre corto: la corrida de Volve está lista para demo. El xlsx
-en scripts/_cache/volve_production.xlsx, el prompt en la página (para
-curiosos), la referencia en volve_referencia.xlsx/png (regenerar con:
-python scripts/volve_referencia.py). El remate en una frase: la presión
-nunca cayó, el agua subió a 94%, y Arps igual ajusta con R² 0.96.
+Si un bloque corre corto: la corrida de Volve está lista para demo. El CSV
+se baja de la página como todo lo demás (descargas/volve_diario_2pozos.csv),
+el prompt está al lado (para curiosos), la referencia en
+volve_referencia.xlsx/png (regenerar con: python scripts/volve_referencia.py).
+El remate en una frase: la presión nunca cayó, el agua subió a 94%, y Arps
+igual ajusta con R² 0.96.
 -->
 
 ---
@@ -272,8 +273,12 @@ Pedir una segunda pasada si hace falta ("te faltó la unidad", "esa serie
 punteada es mercado interno, no la mezcles"). Iterar acá es normal: es la
 conversación como método, de ayer.
 Guardar la tabla extraída: el pronóstico oficial 2026-2040 ES una curva de
-declinación (27.34 a 4.81 MMmcd), y si sobra tiempo en el bloque 4 la
-pregunta es qué declinación anual implica (~12% nominal por año).
+declinación (27.34 a 4.81 MMmcd). Si sobra tiempo en el bloque 4, correr en
+este mismo chat el prompt del caso optimista/pesimista (página, sección "El
+pronóstico oficial, con optimista y pesimista"). Bolsillo del instructor:
+optimista 6.5%/año (promedio 2014-2025) acumula 3.2 TCF; pesimista 12.7%
+(últimos 3 años) acumula 2.1; el oficial implica 11.5% y 2.5 TCF, pegado al
+pesimista, y ninguno agota los 3.7 TCF de reserva probada del mismo PDF.
 -->
 
 ---
