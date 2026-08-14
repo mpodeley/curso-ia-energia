@@ -234,7 +234,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Google',
       idioma: 'es',
       porque:
-        'La versión sin programar de todo esto. Subí dos o tres documentos públicos de tu rubro y hacele una pregunta antes de la sesión.',
+        'La versión sin programar de todo esto. Subí dos o tres documentos públicos de tu rubro y hacele una pregunta antes de la sesión: más abajo en esta página hay tres reales para arrancar.',
     },
   ],
   6: [
