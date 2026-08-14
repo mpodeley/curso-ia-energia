@@ -30,7 +30,7 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
     <Ejercicio
       titulo="El mapa de significados"
       sesion={sesion}
-      intro="Cada término de la industria convertido en un vector, y esos vectores proyectados a un plano. Clickeá cualquier punto para ver qué términos le quedan más cerca según el modelo. Buscá los de la familia «jerga»: ahí está lo interesante."
+      intro="Cada término de la industria convertido en un vector, y esos vectores proyectados a un plano. Las flechas salen del promedio de todos los términos: dos con sentido parecido apuntan para el mismo lado. Clickeá cualquier punto para ver qué términos le quedan más cerca según el modelo. Buscá los de la familia «jerga»: ahí está lo interesante."
       onReset={reset}
     >
       <div style={{ display: 'flex', gap: space.md, flexWrap: 'wrap', marginBottom: space.md }}>
@@ -73,7 +73,7 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
         <>
           <div style={{ marginTop: space.lg }}>
             <div style={{ fontSize: 12, color: colors.textDim, fontFamily: 'var(--pd-font-mono)', textTransform: 'uppercase', letterSpacing: 0.5 }}>
-              Vecinos de «{sel.termino}», en las 384 dimensiones reales
+              Vecinos de «{sel.termino}», en las 1024 dimensiones reales
             </div>
             <div style={{ display: 'flex', gap: space.sm, flexWrap: 'wrap', marginTop: space.sm }}>
               {sel.vecinos.map((v) => (
@@ -123,8 +123,8 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
               />
             </StatRow>
             <p style={{ fontSize: 13, color: colors.textMuted, marginTop: space.sm, maxWidth: '70ch' }}>
-              Los vecinos reales están marcados con borde en el mapa. Si alguno quedó lejos del punto elegido, es
-              porque aplastar 384 dimensiones en dos pierde información: en el dibujo dos puntos pueden verse juntos
+              Los vecinos reales están marcados con flecha y borde en el mapa. Si alguno quedó lejos del punto elegido, es
+              porque aplastar 1024 dimensiones en dos pierde información: en el dibujo dos puntos pueden verse juntos
               sin serlo.
             </p>
           </div>
@@ -136,7 +136,7 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
       )}
 
       <Solucion titulo="Qué es un embedding, sin metáforas de más">
-        El modelo convierte cada palabra o frase en una lista de 384 números. Esa lista no significa nada por sí
+        El modelo convierte cada palabra o frase en una lista de 1024 números. Esa lista no significa nada por sí
         sola: lo único que importa es que dos textos con sentido parecido den listas parecidas. Todo lo que ves acá
         sale de una sola operación, medir cuán parecidas son dos listas. Y eso alcanza para buscar por significado en
         vez de por palabras, que es lo que hace posible el próximo ejercicio.

@@ -11,7 +11,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-08-13'
+export const VERIFICADO = '2026-08-14'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -218,15 +218,14 @@ export const RECURSOS: Record<number, Recurso[]> = {
   5: [
     {
       tipo: 'video',
-      titulo: 'What is Retrieval-Augmented Generation (RAG)?',
-      url: 'https://www.youtube.com/watch?v=T-D1OfcDW1M',
-      fuente: 'IBM Technology',
-      duracion: '6:35',
-      publicado: '2023-08',
-      historico: true,
+      titulo: 'RAG Explained For Beginners',
+      url: 'https://www.youtube.com/watch?v=_HQ2H_0Ayy0',
+      fuente: 'KodeKloud',
+      duracion: '10:09',
+      publicado: '2025-08',
       idioma: 'en',
       porque:
-        'El explicador de referencia de RAG: una investigadora de IBM dibuja el circuito completo en una pizarra, con el mismo busca-y-pega del ejercicio de esta página. Es de 2023 y no envejeció: el mecanismo es el mismo.',
+        'El circuito completo de la generación aumentada por recuperación (RAG) en diez minutos: por qué la búsqueda clásica se queda corta y qué hace cada etapa (recuperar, aumentar, generar). Es el mismo busca-y-pega del ejercicio de esta página, contado paso a paso.',
     },
     {
       tipo: 'herramienta',

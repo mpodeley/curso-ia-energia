@@ -240,21 +240,72 @@ export function EmbeddingScatter({
     return peso(a) - peso(b)
   })
 
+  // The data is centered PCA, so (0,0) in data coords is the mean of every
+  // term: the tail all the vectors share.
+  const ox = escalaX(0)
+  const oy = escalaY(0)
+
   return (
     <div style={{ width: '100%' }}>
       <svg
         viewBox={`0 0 ${VB.ancho} ${VB.alto}`}
         style={{ width: '100%', height: 'auto', display: 'block', touchAction: 'manipulation' }}
         role="img"
-        aria-label="Mapa de términos proyectado a dos dimensiones"
+        aria-label="Mapa de términos proyectado a dos dimensiones; cada término es un vector que sale del promedio de todos"
       >
         <rect x={0} y={0} width={VB.ancho} height={VB.alto} fill="none" stroke={chart.grid} rx={8} />
+        {/* Faint spokes keep the vector reading without covering the dots; the
+            selected term and its neighbors get a strong arrow further down. */}
+        {puntos.map((p) => (
+          <line
+            key={`v-${p.id}`}
+            x1={ox}
+            y1={oy}
+            x2={escalaX(p.x)}
+            y2={escalaY(p.y)}
+            stroke={colorPorFamilia[p.familia] ?? chart.fill[0]}
+            strokeWidth={1.5}
+            strokeOpacity={
+              !seleccionado
+                ? 0.2
+                : p.id === seleccionado || (vecinos?.has(p.termino) ?? false)
+                  ? 0
+                  : 0.07
+            }
+          />
+        ))}
+        <circle cx={ox} cy={oy} r={3.5} fill="#16181d" fillOpacity={0.5} />
+        <text
+          x={ox + 9}
+          y={oy - 7}
+          fontSize={12}
+          fill="#16181d"
+          fillOpacity={0.5}
+          stroke="#ffffff"
+          strokeWidth={3}
+          style={{ pointerEvents: 'none', paintOrder: 'stroke' }}
+        >
+          promedio
+        </text>
         {orden.map((p) => {
           const cx = escalaX(p.x)
           const cy = escalaY(p.y)
           const esSel = p.id === seleccionado
           const esVecino = vecinos?.has(p.termino) ?? false
           const color = colorPorFamilia[p.familia] ?? chart.fill[0]
+          const dx = cx - ox
+          const dy = cy - oy
+          const len = Math.hypot(dx, dy)
+          // Arrow stops at the dot's edge so the head stays visible; a vector
+          // too short to fit a head keeps only its ring and label.
+          const conFlecha = (esSel || esVecino) && len > 26
+          const ux = dx / (len || 1)
+          const uy = dy / (len || 1)
+          const punta = len - (esSel ? 11 : 9) - 3
+          const px = ox + ux * punta
+          const py = oy + uy * punta
+          const bx = px - ux * 10
+          const by = py - uy * 10
           return (
             <g
               key={p.id}
@@ -269,6 +320,16 @@ export function EmbeddingScatter({
               }}
             >
               <title>{`${p.termino} · ${p.familia}`}</title>
+              {conFlecha && (
+                <g style={{ pointerEvents: 'none' }}>
+                  <line x1={ox} y1={oy} x2={bx} y2={by} stroke={color} strokeWidth={2.5} strokeOpacity={0.85} />
+                  <polygon
+                    points={`${px},${py} ${bx - uy * 4.5},${by + ux * 4.5} ${bx + uy * 4.5},${by - ux * 4.5}`}
+                    fill={color}
+                    fillOpacity={0.85}
+                  />
+                </g>
+              )}
               {/* Generous invisible hit area: a 7px dot is a hard target on a phone. */}
               <circle cx={cx} cy={cy} r={18} fill="transparent" />
               <circle
