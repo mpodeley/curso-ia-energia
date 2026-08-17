@@ -21,8 +21,8 @@ Un agente es un modelo de lenguaje metido en un loop, con permiso para usar herr
 le falta, ejecuta una acción, mira el resultado y vuelve a pensar. Repite hasta poder responder.
 
 Eso es todo. No hay una tecnología nueva debajo: es el mismo modelo que predice el próximo token de la
-sesión 2, con dos agregados que cambian todo. Puede **ejecutar** — correr un comando, leer un archivo,
-buscar en internet — y puede **mirar lo que salió**. Un chatbot que se equivoca no se entera nunca. Un
+sesión 2, con dos agregados que cambian todo. Puede **ejecutar** (correr un comando, leer un archivo,
+buscar en internet) y puede **mirar lo que salió**. Un chatbot que se equivoca no se entera nunca. Un
 agente que se equivoca recibe el error de vuelta y tiene la chance de corregirse.
 
 Ahí está la diferencia entre un asistente que responde y uno que trabaja. Y también, exactamente, el
@@ -34,7 +34,7 @@ Abajo está una corrida sobre el mismo conjunto de datos de producción de la se
 interesante no es ninguno de los que salen bien: es el tercero, donde el agente filtra por el nombre
 del área, escribe "AGUARAGUE" sin diéresis y le vuelven cero filas.
 
-Mirá qué hace con eso. No insiste, no prueba otra grafía al azar y — sobre todo — no inventa un
+Mirá qué hace con eso. No insiste, no prueba otra grafía al azar y, sobre todo, no inventa un
 resultado para seguir adelante. Va a buscar los valores que existen de verdad en la columna, encuentra
 que el área lleva diéresis, corrige y continúa. Un chatbot sin herramientas hubiera seguido escribiendo
 con total seguridad sobre una tabla vacía.
@@ -48,8 +48,8 @@ documentos, transformar datos de un formato a otro, escribir y corregir código,
 secuencia repetitiva de pasos que hoy hacés a mano. La característica común es que el resultado se
 puede comprobar rápido.
 
-Funcionan mal las tareas largas y ambiguas. El agente acumula contexto en cada vuelta — el ejercicio
-lo muestra con un contador — y a medida que crece, se vuelve más lento, más caro y más propenso a
+Funcionan mal las tareas largas y ambiguas. El agente acumula contexto en cada vuelta (el ejercicio
+lo muestra con un contador) y a medida que crece, se vuelve más lento, más caro y más propenso a
 perder el hilo del objetivo original. Una tarea de veinte pasos no es dos veces una de diez: es
 bastante peor.
 
@@ -66,15 +66,45 @@ un sistema de control, el paso equivocado ya no se corrige mirando la salida. De
   cambia nada de lo que un agente puede o no puede hacer.
 </div>
 
+## Lo que aprende no vive en el modelo: vive en archivos
+
+La sesión de un agente se apaga y el modelo no retiene nada de lo que pasó. Lo que queda, queda en
+archivos: un archivo de instrucciones con las reglas del proyecto (en las herramientas actuales se
+llama CLAUDE.md, AGENTS.md o parecido), habilidades empaquetadas que el agente carga cuando las
+necesita (las llaman skills), y las conexiones a tus sistemas. Lo que le enseñás a un agente se
+escribe, no se conversa: es la biblioteca de prompts de la sesión 3, versión agente. Y tiene una
+consecuencia que vale plata: podés cambiar de modelo mañana y esos archivos siguen valiendo.
+
+Lo otro que conviene saber es que el techo se mueve.
+[METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/) mide el largo
+de tarea que un agente completa solo, y viene duplicándose cada siete meses: de tareas de segundos a
+tareas de horas en pocos años. La medición tiene su letra chica (50% de éxito, tareas de software),
+pero la dirección es clara: lo que hoy no delegás porque es largo, reevalualo en seis meses.
+
+## El caso arranca acá
+
+El viernes quedó elegido el caso de la sesión 8: un **screening de waterflooding**, un ranking de
+dónde conviene inyectar agua (o revisar la que ya se inyecta) construido con criterios explícitos
+sobre datos de producción. En el último bloque de esta sesión armamos el plan entre todos: qué tiene
+que responder para servirles, con qué datos, y quién hace qué hasta la sesión 8. El primer intento
+se lo damos al agente en vivo.
+
+Los datos tienen su realidad: producción por pozo de Bolivia, pública, no hay. El análogo es la
+cuenca Noroeste argentina, los mismos reservorios subandinos que opera Andina del otro lado de la
+frontera, y ya está en el curso: es el conjunto de datos donde el agente del ejercicio encontró,
+solo en Aguaragüe, 88 pozos petrolíferos y 22 inyectores de agua.
+
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| El loop, en vivo | 30 min | Un agente real trabajando sobre datos de la industria, de punta a punta |
-| Sus tareas | 40 min | Tomamos las cadenas de pasos que trajeron y marcamos qué tramo delegaría hoy y cuál no |
-| Dónde se rompe | 25 min | Contexto que crece, objetivos que se pierden, herramientas que no deberían estar |
-| Puente a la sesión 7 | 15 min | Qué cambia cuando las herramientas dejan de ser de solo lectura |
-| Cierre y tarea | 10 min | La tarea de la sesión 7 |
+| Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
+| El loop del agente | 20 min | La traza del ejercicio paso a paso, y después en vivo |
+| Sus tareas | 30 min | Las cadenas que trajeron: qué delegarían y qué no |
+| Dónde se rompe, dónde mejora | 20 min | Contexto, memoria en archivos, la frontera que sube |
+| Puente a la sesión 7 | 10 min | Qué cambia cuando las herramientas escriben |
+| El caso, en marcha | 25 min | El screening de waterflooding, planificado entre todos |
+| Cierre y tarea | 10 min | La tarea de la sesión 7 y quién hace qué |
 
 <Quiz data="quiz_s6" sesion={6} />
 
@@ -89,6 +119,6 @@ un sistema de control, el paso equivocado ya no se corrige mirando la salida. De
 
 ## Tarea para la sesión 7
 
-Buscá un texto generado por inteligencia artificial que hayas usado en las últimas semanas — tuyo o de
-un compañero — y releelo con una pregunta en la cabeza: ¿qué afirmación de acá no podría haber salido
+Buscá un texto generado por inteligencia artificial que hayas usado en las últimas semanas (tuyo o de
+un compañero) y releelo con una pregunta en la cabeza: ¿qué afirmación de acá no podría haber salido
 de lo que le di? Marcá una. Traela a la sesión 7, sin decir todavía si estaba bien o mal.

@@ -11,7 +11,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-08-14'
+export const VERIFICADO = '2026-08-17'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -238,6 +238,26 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
   ],
   6: [
+    {
+      tipo: 'video',
+      titulo: 'Agentic AI: Workflows vs. agents',
+      url: 'https://www.youtube.com/watch?v=Qd6anWv0mv0',
+      fuente: 'Google Cloud Tech',
+      duracion: '5:30',
+      publicado: '2025-03',
+      idioma: 'en',
+      porque:
+        'La distinción que ordena el tema en cinco minutos: un flujo fijo que usa un modelo no es lo mismo que un modelo que decide sus propios pasos. Es el mismo eje de la lectura de Anthropic de abajo, en video.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Measuring AI ability to complete long tasks',
+      url: 'https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/',
+      fuente: 'METR',
+      idioma: 'en',
+      porque:
+        'La medición detrás de "el techo sube solo": el largo de tarea que un agente completa viene duplicándose cada siete meses. Con su letra chica a la vista (50% de éxito, tareas de software), que es lo que la hace confiable.',
+    },
     {
       tipo: 'video',
       titulo: 'Tips for building AI agents',

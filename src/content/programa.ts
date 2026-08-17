@@ -79,11 +79,12 @@ export const SESIONES: Sesion[] = [
     titulo: 'Agentes',
     resumen: 'LLM + herramientas + loop: qué es un agente, qué hace bien hoy y dónde falla.',
     objetivos: [
-      'Entender el loop de un agente: pensar, llamar una herramienta, leer el resultado, repetir',
-      'Ver un agente real trabajando sobre datos de la industria',
+      'Ver el loop de un agente trabajando en vivo sobre datos de la industria',
       'Distinguir qué conviene delegar a un agente hoy y qué todavía no',
+      'Dejar en marcha el caso real: el screening de waterflooding de la sesión 8',
     ],
     estado: 'lista',
+    slides: true,
   },
   {
     n: 7,

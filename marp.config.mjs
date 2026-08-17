@@ -14,6 +14,10 @@ import { join } from 'node:path';
 export default {
   themeSet: ['./slides/themes'],
 
+  /* Los fuentes se editan a ~76 columnas; sin esto, Marp convierte cada salto
+     de línea del markdown en un <br> y parte las oraciones al medio. */
+  options: { markdown: { breaks: false } },
+
   /* Los decks se mantienen en markdown plano: el tema hace el trabajo pesado
      para que editarlos a mano siga siendo cómodo. Lo único que se permite es el
      comentario de notas del orador y las directivas _class. */
