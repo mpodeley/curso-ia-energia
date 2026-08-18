@@ -29,7 +29,7 @@ en la página.
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
 | Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
-| Sus casos | 20 min | Las afirmaciones que trajeron, cada una con su causa |
+| La cacería | 20 min | Invenciones cazadas en vivo, cada una con su causa |
 | El protocolo | 25 min | Cuánto verificar según el costo del error |
 | Datos de la empresa | 20 min | Datos reales del equipo en los tres niveles |
 | Agentes y operación | 25 min | Donde el error no es reversible, el loop no sirve |
@@ -42,6 +42,8 @@ La misma tabla está en la página de la sesión 7.
 Bajada del día: hoy no hay tema nuevo. Hoy se convierte todo lo que vieron
 en reglas que se aplican un martes a la mañana. Y de acá sale la vara con la
 que mañana se critica el caso.
+Primero la cacería: el material del día se produce en vivo, sin depender de
+la tarea.
 -->
 
 ---
@@ -67,20 +69,21 @@ hipotético.
 
 `mpodeley.github.io/curso-energia-ypfb`
 
-Hoy usamos la página de la sesión 7. Tené a mano tu **afirmación marcada** de la tarea: el
-primer bloque se hace con ellas.
+Hoy usamos la página de la sesión 7. El primer bloque se juega en su ejercicio: la **cacería
+de alucinaciones**.
 
 <!--
 2 min · acumulado 0:05
-El PIN de siempre. Plan del día en una frase: primero sus casos, después las
-tres reglas (verificar, datos, operación), y al final la política escrita.
+El PIN de siempre. Plan del día en una frase: primero cazar invenciones,
+después las tres reglas (verificar, datos, operación), y al final la
+política escrita.
 -->
 
 ---
 
 <!-- _class: seccion -->
 
-## Sus casos
+## La cacería
 
 Bloque 1 de 6 · **20 min**
 
@@ -92,20 +95,22 @@ Arranca 0:05, termina 0:25
 
 <!-- _class: panel -->
 
-## Sus afirmaciones, a juicio
+## A cazar invenciones
 
-Ronda por nombre: leé la afirmación que marcaste, sin decir tu veredicto. Entre todos:
-¿invención o correcta? ¿Y **de qué propiedad** salió?
+Abrí la **cacería de alucinaciones**: tres informes con errores plantados. Cinco minutos en el
+primero, marcando lo que **no sale de los datos**. Después, ronda.
 
 <!--
 12 min · acumulado 0:17
-La tarea era marcar UNA afirmación sospechosa en un texto generado. Ronda
-con nombre; la sala vota antes de que el dueño revele qué encontró.
-Plan B si pocos la trajeron: Ventana C, ejercicio "Cacería de
-alucinaciones": dos minutos para encontrar una invención en el primer
-informe, y el bloque se hace sobre esas.
-Anotar a la vista de qué propiedad salió cada una: esa lista es el puente a
-la slide siguiente.
+Ventana C, ejercicio "Cacería de alucinaciones". El material del bloque se
+produce acá mismo: no depende de que hayan hecho nada antes.
+Cinco minutos de caza individual en el primer informe. Después ronda por
+nombre: qué marcaste y por qué. Contar también los falsos positivos: el
+puntaje penaliza marcar de más, y desconfiar de todo es otra forma de no
+leer.
+Bonus si alguien trajo la afirmación de la tarea: va primera en la ronda.
+Quien ya hizo la cacería en casa comparte qué lo engañó, que vale igual.
+Anotar los hallazgos a la vista: son el material de la slide siguiente.
 -->
 
 ---
@@ -121,8 +126,11 @@ la slide siguiente.
 
 <!--
 8 min · acumulado 0:25
-La tabla de la página, que es el índice del curso leído al revés: cada fila
-se trabajó en su sesión, con su ejercicio.
+Recorrer los hallazgos de la cacería y ponerle propiedad a cada uno: la
+cifra precisa inventada (predicción), la norma recitada de memoria
+(conocimiento).
+La tabla de la página es el índice del curso leído al revés: cada fila se
+trabajó en su sesión, con su ejercicio.
 El uso real: diagnosticar antes de reescribir el prompt por cuarta vez. Si
 le atribuís al prompt lo que era falta de documento, va a seguir inventando
 con prolijidad.
