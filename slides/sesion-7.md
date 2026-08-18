@@ -15,11 +15,11 @@ Sesión 7 de 8 · 2 h en vivo · **YPFB Andina**
 <!--
 0:00 · portada mientras entra la gente
 Ventanas de hoy: A este deck, C el sitio en la sesión 7. Sin pulsos hoy.
-Antes de clase: el borrador de la política (una página, editable) listo para
-completar en vivo, y las fuentes de los cinco incidentes abiertas en
-pestañas: Deloitte (Guardian), el registro de Charlotin, Replit (AIID), Air
-Canada (BBC) y el reporte de espionaje de Anthropic. Todas están linkeadas
-en la página.
+Antes de clase: el borrador de la política (el .docx descargable de la
+página, con corchetes para completar) abierto y listo, y las fuentes de los
+cinco incidentes abiertas en pestañas: Deloitte (Guardian), el registro de
+Charlotin, Replit (AIID), Air Canada (BBC) y el reporte de espionaje de
+Anthropic. Todas están linkeadas en la página.
 -->
 
 ---
@@ -417,11 +417,12 @@ mapa de datos, verificación, declaración de asistencia, y a quién consultar.
 
 <!--
 10 min · acumulado 1:50
-El borrador ya existe; en vivo se completa con lo de hoy: los datos
-clasificados del bloque 3 entran al punto 2, el protocolo al punto 3.
+El borrador es el .docx descargable de la página; proyectarlo y completarlo
+en vivo: los datos clasificados del bloque 3 entran al punto 2, el
+protocolo al punto 3, y el nombre del punto 5 se decide acá.
 El quinto punto (a quién se consulta el caso nuevo) es el que más se olvida
 y el que mantiene la política viva.
-Cada uno se lleva el archivo editable para su equipo.
+Cada uno se lo baja de la página, editable, para su equipo.
 Cierre del bloque 5.
 -->
 
