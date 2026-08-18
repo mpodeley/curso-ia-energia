@@ -11,7 +11,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-08-17'
+export const VERIFICADO = '2026-08-18'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -284,6 +284,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
   7: [
     {
       tipo: 'video',
+      titulo: 'What is interpretability?',
+      url: 'https://www.youtube.com/watch?v=TxhhMTOTMDg',
+      fuente: 'Anthropic',
+      duracion: '3:53',
+      publicado: '2024-06',
+      idioma: 'en',
+      porque:
+        'La pregunta que sostiene esta sesión, contada por el equipo que la investiga: qué es mirar adentro de un modelo, y por qué todavía no alcanza para garantizar cómo se comporta. El video de abajo es la versión larga.',
+    },
+    {
+      tipo: 'video',
       titulo: 'The Dark Matter of AI [Mechanistic Interpretability]',
       url: 'https://www.youtube.com/watch?v=UGO_Ehywuxc',
       fuente: 'Welch Labs',
@@ -292,6 +303,15 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'en',
       porque:
         'Para el más curioso: por qué mirar adentro de un modelo es difícil de verdad. Welch Labs explica la interpretabilidad mecanicista, la disciplina detrás de "se puede mirar adentro, pero no lo bastante para garantizar", que es el corazón de esta sesión.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'AI Incident Database',
+      url: 'https://incidentdatabase.ai',
+      fuente: 'Responsible AI Collaborative',
+      idioma: 'en',
+      porque:
+        'El registro público de incidentes de IA, con el mismo espíritu que los registros de incidentes de aviación: documentar para que otros no repitan. Buscá los de tu industria antes de la sesión y traé el que más se parezca a tu trabajo.',
     },
   ],
 }

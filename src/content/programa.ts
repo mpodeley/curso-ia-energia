@@ -96,6 +96,7 @@ export const SESIONES: Sesion[] = [
       'Salir con un borrador de política de uso interna para su equipo',
     ],
     estado: 'lista',
+    slides: true,
   },
   {
     n: 8,
