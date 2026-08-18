@@ -270,6 +270,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Tres personas de Anthropic (investigación, aplicaciones y relación con desarrolladores) cuentan qué agentes funcionan hoy y los errores típicos de quien empieza. El mejor complemento en video de la lectura de abajo.',
     },
     {
+      tipo: 'video',
+      titulo: 'How We Build Effective Agents: Barry Zhang, Anthropic',
+      url: 'https://www.youtube.com/watch?v=D7_ipDqhtwk',
+      fuente: 'Anthropic, en la conferencia AI Engineer',
+      duracion: '15:09',
+      publicado: '2025-04',
+      idioma: 'en',
+      porque:
+        'La charla del coautor de la lectura de abajo, en un cuarto de hora: no construyas agentes para todo, mantenelos simples, y pensá desde el punto de vista del agente. Tiene pista de audio en español, elegible en el reproductor.',
+    },
+    {
       tipo: 'lectura',
       titulo: 'Building effective agents',
       url: 'https://www.anthropic.com/engineering/building-effective-agents',
