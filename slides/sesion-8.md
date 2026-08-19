@@ -32,8 +32,8 @@ de LifeArchitect. Todo está linkeado en la página.
 | Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
 | El caso, en vivo | 30 min | El screening recorrido de punta a punta |
 | La crítica | 20 min | El caso pasa por el protocolo de la sesión 7 |
-| Hoja de ruta | 25 min | Mañana, noventa días, decisión corporativa |
-| El futuro, conversado | 25 min | La frontera, los modelos locales y p(doom) |
+| Hoja de ruta | 20 min | Mañana, noventa días, decisión corporativa |
+| El futuro, conversado | 30 min | La frontera, AGI y ASI, los modelos locales y p(doom) |
 | Cierre del curso | 15 min | Lo que queda, y una cosa distinta para el lunes |
 
 <!--
@@ -194,10 +194,10 @@ Cierre del bloque 2.
 
 ## Hoja de ruta
 
-Bloque 3 de 5 · **25 min**
+Bloque 3 de 5 · **20 min**
 
 <!--
-Arranca 0:55, termina 1:20
+Arranca 0:55, termina 1:15
 -->
 
 ---
@@ -211,7 +211,7 @@ Arranca 0:55, termina 1:20
 - **Decisión corporativa**: contratos, datos, presupuesto, y quién responde
 
 <!--
-7 min · acumulado 1:02
+5 min · acumulado 1:00
 Ejemplos del propio curso para cada horizonte: borradores asistidos y
 triaje de documentos (mañana); el cuaderno de NotebookLM del área, o un
 screening como el de hoy con datos internos (noventa días); la herramienta
@@ -228,7 +228,7 @@ Un piloto sin criterio de éxito escrito no termina nunca: se diluye.
 Cada uno: **una fila por horizonte**. Qué, quién, y cómo se mide. Al chat, y queda anotada.
 
 <!--
-12 min · acumulado 1:14
+10 min · acumulado 1:10
 Ronda por nombre. Empujar hacia lo observable: no "usar más IA" sino "los
 informes de turno salen con borrador asistido desde el lunes".
 Las filas de todos van al chat: cada uno se lleva la suya y ve las de los
@@ -245,7 +245,7 @@ Rinde más **contar cosas**: informes con borrador asistido, consultas resueltas
 interrumpir a nadie, el análisis que tardaba una tarde.
 
 <!--
-6 min · acumulado 1:20
+5 min · acumulado 1:15
 Cerrar el bloque con la advertencia de la página: lo que no se puede
 observar, no se puede defender ante un directorio.
 Cierre del bloque 3.
@@ -257,10 +257,10 @@ Cierre del bloque 3.
 
 ## El futuro, conversado
 
-Bloque 4 de 5 · **25 min**
+Bloque 4 de 5 · **30 min**
 
 <!--
-Arranca 1:20, termina 1:45
+Arranca 1:15, termina 1:45
 Aviso al entrar al bloque: acá cambia la vara y se declara. Lo que sigue es
 especulación con nombre propio, para conversar. Las reglas de verificación
 aplican también a los pronósticos.
@@ -276,15 +276,34 @@ rápido.
 Y el largo de tarea que un agente completa se sigue **duplicando cada siete meses**.
 
 <!--
-4 min · acumulado 1:24
-Mostrar los gráficos en vivo: el de Our World in Data (pruebas contra la
-línea humana) y el tablero de Epoch, abiertos en pestañas. El de METR ya lo
-vieron en la sesión 6.
-Leerlos con cuidado, como enseñó el curso: decir qué mide cada eje antes de
-opinar. Un benchmark no es un puesto de trabajo.
+4 min · acumulado 1:19
+El gráfico viene en la slide siguiente; el tablero de Epoch queda en
+pestaña para el que quiera profundizar. El de METR ya lo vieron en la
+sesión 6.
 Si preguntan por el mundo físico: el video de Gemini Robotics está en los
 recursos (tres minutos, Google DeepMind): el mismo tipo de modelo moviendo
 un cuerpo completo. Ahí la regla de la sesión 7 vale doble.
+-->
+
+---
+
+## La progresión, en un gráfico
+
+![h:440](img/owid-progresion-competencias.png)
+
+Fuente: Our World in Data · CC BY
+
+<!--
+4 min · acumulado 1:23
+Leerlo como enseñó el curso: decir qué mide cada eje antes de opinar. Cada
+línea es una prueba estandarizada (comprensión, matemática, código) contra
+la línea del desempeño humano, y el patrón es siempre el mismo: años por
+debajo, cruce, saturación.
+La advertencia honesta: un benchmark no es un puesto de trabajo, y las
+pruebas se eligen porque se pueden medir. Aun así, la pendiente es el dato.
+Este gráfico canónico llega a 2023: para lo último, cambiar a la pestaña
+del tablero de Epoch, que está al día, y mostrar una prueba reciente
+(matemática o código) con la misma forma de curva.
 -->
 
 ---
@@ -298,7 +317,7 @@ Para el mapa de datos de ayer, eso cambia el tablero: el **nivel 1** puede tener
 adentro de la red.
 
 <!--
-4 min · acumulado 1:28
+3 min · acumulado 1:26
 Bajarlo a tierra: las familias abiertas chicas (Llama, Qwen, Gemma, Phi) en
 tamaños de pocos miles de millones de parámetros corren en una notebook
 buena o un servidor interno modesto.
@@ -310,13 +329,53 @@ de escritorio.
 
 ---
 
+## AGI y ASI, definidos
+
+**Inteligencia artificial general (AGI)**: desempeño al nivel de una persona competente en la
+mayoría de las tareas cognitivas.
+
+**Superinteligencia (ASI)**: por encima del mejor humano en casi todas. La letra chica: no hay
+definición única, y por eso se discute tanto si la primera ya llegó.
+
+<!--
+4 min · acumulado 1:30
+Los conteos de LifeArchitect (en los recursos) usan criterios propios y a
+la vista: leerlos como pronóstico, mirando los supuestos. El título del
+video de Kosinski juega justamente con la ambigüedad de la definición.
+Para la sala: con la definición de arriba, ¿cuánto falta? ¿Y si la
+definición fuera "hace tu trabajo de hoy"?
+-->
+
+---
+
+## La mejora recursiva
+
+La hipótesis de I. J. Good (1965): una máquina que **diseña máquinas mejores** dispara una
+**explosión de inteligencia**.
+
+La versión de hoy, sin ciencia ficción: los laboratorios ya usan sus modelos para construir
+los siguientes.
+
+<!--
+4 min · acumulado 1:34
+Good era matemático, colega de Turing. Su frase: la primera máquina
+ultrainteligente sería el último invento que el hombre necesite hacer.
+El dato aterrizado: buena parte del código de los laboratorios ya lo
+escriben sus propios modelos, y la curva del largo de tarea es el
+indicador que más miran los que toman esta hipótesis en serio.
+Es el mecanismo detrás de los números de p(doom) que vienen enseguida: si
+el loop se acelera, el control importa más.
+-->
+
+---
+
 ## La hipótesis de Kosinski
 
 Un psicólogo computacional de Stanford, **para conversar**: la inteligencia artificial va a
 reemplazar el trabajo científico y la mayoría de los usos prácticos del lenguaje.
 
 <!--
-4 min · acumulado 1:32
+3 min · acumulado 1:37
 El video está en los recursos de la página; lo mejor son los últimos diez
 minutos. Presentarla como lo que es: una hipótesis de alguien serio, no un
 pronóstico del curso.
@@ -334,7 +393,7 @@ lo vuelve a **cuatro puntos**.
 Pero quizás no los tuyos: **los que le importan al receptor**.
 
 <!--
-4 min · acumulado 1:36
+3 min · acumulado 1:40
 El ejemplo de Kosinski, y es mejor de lo que parece: no es que el mail
 largo sobra, es que cada lado lee la versión que necesita. Un aumentador de
 comunicación.
@@ -354,7 +413,7 @@ El número con el que el rubro resume su miedo: la probabilidad que le asignás 
 Va de casi cero a casi seguro según a quién le preguntes. **La dispersión es el dato.**
 
 <!--
-3 min · acumulado 1:39
+2 min · acumulado 1:42
 Nombres para la conversación, sin caricaturizar: pioneros que se volvieron
 cautos (Hinton dejó Google para poder hablar de esto), gente que lo
 considera manejable, gente que lo descarta. No hay consenso: hay apuestas
@@ -374,27 +433,16 @@ Y para esta industria: los centros de datos son **demanda eléctrica firme**, y 
 esa electricidad es gas.
 
 <!--
-3 min · acumulado 1:42
+3 min · acumulado 1:45
 El ensayo está linkeado en la página; el argumento fuerte es biología y
 salud. Honestidad hasta en el optimismo: el mismo autor toma el riesgo en
 serio; optimismo y cautela no son bandos, son la misma persona.
 El ángulo propio: la demanda de los centros de datos ya mueve contratos de
 gas en las Américas. Para una empresa de gas, el futuro de la IA también es
 un mercado.
--->
-
----
-
-<!-- _class: panel -->
-
-## Conversemos
-
-Ronda final: ¿optimista o pesimista **para tu trabajo**, y por qué? Una respuesta por cabeza.
-
-<!--
-3 min · acumulado 1:45
-Sin bandos obligatorios y sin arbitrar. La única regla es la del curso:
-las afirmaciones con dato se distinguen de las afirmaciones con fe.
+Cerrar el bloque con la mini ronda: ¿optimista o pesimista para tu
+trabajo, y por qué? Una respuesta por cabeza; la única regla es distinguir
+la afirmación con dato de la afirmación con fe.
 Cierre del bloque 4.
 -->
 
