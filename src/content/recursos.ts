@@ -320,21 +320,30 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
     {
       tipo: 'herramienta',
-      titulo: 'Test scores of AI systems relative to human performance',
-      url: 'https://ourworldindata.org/grapher/test-scores-ai-capabilities-relative-human-performance',
+      titulo: 'Artificial Intelligence',
+      url: 'https://ourworldindata.org/artificial-intelligence',
       fuente: 'Our World in Data',
       idioma: 'en',
       porque:
-        'El gráfico de progresión de competencias: prueba tras prueba, los sistemas cruzan la línea del desempeño humano, y cada vez más rápido. Es el dato duro detrás de toda la conversación del bloque final.',
+        'Los 35 gráficos que hacen falta para discutir el futuro con datos y no con anécdotas: cómputo de entrenamiento, desempeño en pruebas contra la línea humana, inversión, adopción entre trabajadores y demanda eléctrica de los centros de datos. En clase se recorre en vivo.',
     },
     {
       tipo: 'herramienta',
-      titulo: 'AI Benchmarking Dashboard',
-      url: 'https://epoch.ai/data/ai-benchmarking-dashboard',
+      titulo: 'Data',
+      url: 'https://epoch.ai/data',
       fuente: 'Epoch AI',
       idioma: 'en',
       porque:
-        'Para el más curioso: los mismos gráficos de progresión, con los datos crudos, al día y descargables. Epoch AI es el instituto de referencia en medir hacia dónde va la capacidad de estos sistemas.',
+        'Once exploradores con los datos crudos, al día y descargables: capacidades contra benchmarks, 3,500 modelos desde 1950, y el seguimiento de centros de datos por satélite. Epoch AI es el instituto de referencia en medir hacia dónde va la capacidad de estos sistemas.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Understanding is the new bottleneck',
+      url: 'https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck',
+      fuente: 'Geoffrey Litt',
+      idioma: 'en',
+      porque:
+        'Con lo que cierra el curso. Contra la idea cómoda de que si el agente se verifica solo entender deja de hacer falta: se entiende para participar, no solo para controlar. Su instrumento es un cuestionario de cinco preguntas después de cada explicación, que es el mismo aparato que usaron acá siete sesiones seguidas.',
     },
     {
       tipo: 'lectura',

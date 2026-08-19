@@ -14,13 +14,13 @@ Sesión 8 de 8 · 2 h en vivo · **YPFB Andina**
 
 <!--
 0:00 · portada mientras entra la gente
-Ventanas de hoy: A este deck, C el sitio en la sesión 8, D los resultados
-del screening (terminal o carpeta con el ranking y los gráficos).
-Sin pulsos hoy.
-Antes de clase: el caso corrido y sus salidas listas en D; las preguntas de
-aceptación de la sesión 6 a la vista; y las pestañas del bloque del futuro
-abiertas: el gráfico de Our World in Data, el tablero de Epoch, el conteo
-de LifeArchitect. Todo está linkeado en la página.
+Ventanas de hoy: A este deck, C el sitio en la sesión 8, D el Libro A de
+Puesto Guardián abierto en la planilla, E la terminal con el modelo local ya
+cargado.
+Sin pulsos hoy: el Worker está apagado y esta sesión no lo necesita.
+Antes de clase: las preguntas de aceptación de la sesión 6 a la vista, los
+dos videos bajados al disco, y las pestañas del bloque del futuro abiertas
+(Our World in Data, Epoch, LifeArchitect). Todo está linkeado en la página.
 -->
 
 ---
@@ -29,18 +29,20 @@ de LifeArchitect. Todo está linkeado en la página.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
+| Apertura y entrada al sitio | 5 min | Las ventanas del día |
 | El caso, en vivo | 30 min | El screening recorrido de punta a punta |
-| La crítica | 20 min | El caso pasa por el protocolo de la sesión 7 |
-| Hoja de ruta | 20 min | Mañana, noventa días, decisión corporativa |
-| El futuro, conversado | 30 min | La frontera, AGI y ASI, los modelos locales y p(doom) |
+| La crítica | 15 min | El caso pasa por el protocolo de la sesión 7 |
+| Hoja de ruta | 10 min | Mañana, noventa días, decisión corporativa |
+| El futuro, en pantalla | 45 min | La frontera, los modelos locales, entender |
 | Cierre del curso | 15 min | Lo que queda, y una cosa distinta para el lunes |
 
 <!--
 2 min · acumulado 0:02
 La misma tabla está en la página de la sesión 8.
-Bajada del día: hoy se cierra el arco. El caso que eligieron, la ruta para
-adoptarlo, y al final una hora de levantar la vista. Es la última sesión.
+Bajada del día: la sesión se parte al medio. La primera hora es el caso que
+eligieron y qué hacen con él. La segunda es levantar la vista, y no es
+relleno: sin una idea de dónde va a estar la herramienta, el proyecto se
+dimensiona contra la de hoy. Es la última sesión.
 -->
 
 ---
@@ -49,13 +51,13 @@ adoptarlo, y al final una hora de levantar la vista. Es la última sesión.
 
 - Recorrer y **criticar el caso real**: necesidad, flujo, resultado
 - Llevarse una **hoja de ruta** concreta por equipo
-- Conversar el **futuro** con datos: la frontera, los modelos locales, los riesgos
+- Discutir el **futuro con datos**: la frontera, los modelos locales, los riesgos
 
 <!--
 1 min · acumulado 0:03
 El tercero es distinto a todo lo anterior y se anuncia así: el bloque del
-futuro es especulación declarada, para conversar. La única regla es la del
-curso: separar el dato de la fe.
+futuro es especulación declarada. La única regla es la del curso: separar el
+dato de la fe.
 -->
 
 ---
@@ -71,8 +73,9 @@ crítica se hace con ellas.
 
 <!--
 2 min · acumulado 0:05
-El PIN de siempre, por última vez. Plan del día en una frase: el caso, su
-crítica, la ruta de cada equipo, y el horizonte.
+Hoy no hace falta el PIN: no hay encuesta ni pulsos, la página se lee sola.
+Plan del día en una frase: el caso, su crítica, la ruta de cada equipo, y
+después una hora de horizonte.
 -->
 
 ---
@@ -97,12 +100,73 @@ inyecta. Lo eligió el grupo; lo construyó el mismo loop de la sesión 6.
 Hoy se mide contra las preguntas que escribieron **ustedes**.
 
 <!--
-5 min · acumulado 0:10
-Recordar de quién salió el dolor y el techo fijado en la sesión 6:
-screening con criterios, no simulación. La vara del bloque son las
-preguntas de aceptación de la ronda, que están a la vista.
+4 min · acumulado 0:09
+Recordar de quién salió el dolor y el techo fijado en la sesión 6: screening
+con criterios, no simulación. La vara del bloque son las preguntas de
+aceptación de la ronda, que están a la vista.
 El resumen del caso está publicado arriba en la página: alcance, datos y
 techo, para que nadie critique de memoria.
+-->
+
+---
+
+## La escalera de datos, y dónde terminó
+
+Producción por pozo de Bolivia, pública, no hay. El análogo es la **cuenca Noroeste
+argentina**: Capítulo IV publica producción e inyección, pozo por pozo y mes por mes.
+
+**1,003 pozos · 88,093 registros mensuales · enero de 2019 a julio de 2026.**
+
+<!--
+4 min · acumulado 0:13
+Ventana D. Es el mismo conjunto de datos donde el agente de la sesión 6
+trabajó en vivo, ahora bajado entero: ocho años de archivos anuales,
+filtrados por cuenca al vuelo.
+Decir el precio: 2.5 GB de descarga y un script de sesenta líneas. Eso es
+todo lo que hizo falta para tener el análogo público.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Primer resultado, y no es el que esperábamos
+
+De los **5.6 millones de m³** de agua inyectada en la cuenca, el 97% entra por pozos
+**Sumidero**: disposición de agua producida, no recuperación secundaria.
+
+Pozos de inyección de agua declarados en toda la cuenca Noroeste: **uno**.
+
+<!--
+6 min · acumulado 0:19
+Este es el hallazgo del caso y conviene dejarlo respirar.
+Mostrar la tabla en la ventana D: 26 sumideros contra 1 inyector. Preguntar
+a la sala qué diferencia hay entre los dos, y dejar que lo contesten ellos:
+el sumidero se deshace del agua en una formación que no produce; el inyector
+la mete en el reservorio para empujar petróleo. La columna del dataset que
+los separa es tipopozo, y son dos negocios distintos.
+Consecuencia dura: la mitad "revisar la inyección que ya existe" no se puede
+correr sobre el análogo. En el norte argentino no hay waterflooding que
+revisar. Queda la otra mitad, que es la que se corre hoy.
+-->
+
+---
+
+## El único inyector de la cuenca
+
+**P.Gu. a-11**, en Puesto Guardián, Salta. Inyección de agua declarada, 154,484 m³.
+
+Estado en el registro: **parado transitoriamente**.
+
+<!--
+3 min · acumulado 0:22
+El campo del caso se eligió por él: es el único lugar de la cuenca donde el
+screening puede comparar un inyector de verdad contra dos sumideros del
+mismo campo.
+Y el dato incómodo, que se dice igual: la serie de Puesto Guardián corta en
+julio de 2025. El resto de la cuenca llega a julio de 2026. Un campo que
+dejó de informar es una señal, y el screening no puede decir si es cierre,
+venta o atraso administrativo.
 -->
 
 ---
@@ -111,35 +175,45 @@ techo, para que nadie critique de memoria.
 
 ## El flujo, de punta a punta
 
-En vivo: los datos, los criterios, el agente y el ranking. Miren dónde interviene una
-persona, y qué quedó **manual a propósito**.
+En vivo: los datos crudos, la conversión a unidades de campo, el Libro A, y los
+diagnósticos que salen solos. Miren dónde interviene una persona.
 
 <!--
-18 min · acumulado 0:28
-Ventana D. Recorrer en orden: la escalera de datos (el análogo del Capítulo
-IV, y lo interno si viajó, con su nivel del mapa dicho en voz alta), los
-criterios explícitos (corte de agua, tendencias, pares productor-inyector),
-la corrida del agente, y el ranking con sus fuentes.
-Mostrar también lo que falló o quedó a medias: el contrato de esta sesión
-es resultado con honestidad, y las fallas del agente son material, no
-vergüenza.
-Ir tachando las preguntas de aceptación que el recorrido va contestando.
+8 min · acumulado 0:30
+Ventana D, en orden:
+1. El CSV crudo: idpozo, mes, metros cúbicos. Nadie piensa en metros cúbicos
+   por mes; la herramienta piensa en barriles por día.
+2. La conversión, que es donde se cuela el primer error posible: el tef de
+   Capítulo IV cuenta días de PRODUCCIÓN, así que un inyector informa
+   siempre cero. Cargado sin mirar eso, los inyectores desaparecen del
+   libro y el screening se queda sin la mitad que le importa. Pasó acá.
+3. El Libro A cargado: 8 pozos, 340 filas, yacoraite.
+4. Los diagnósticos: clasificador de Chan da DESPLAZAMIENTO NORMAL, la
+   relación agua-petróleo termina en 10.38, y la pendiente de Hall mide al
+   inyector.
+Todo esto es Excel sin macros: se abre y anda.
 -->
 
 ---
 
 ## El resultado, con honestidad
 
-Qué mejora y cuánto. Qué **no** mejoró. Qué sigue necesitando lupa de reservorista.
+Lo que salió: declinación, firma de Chan, relación agua-petróleo, pendiente de Hall.
 
-Un caso que solo muestra lo que funciona **no sirve para decidir**.
+Lo que **no** salió: el índice de atractivo. Le falta el Nivel 2, y el Nivel 2 no está
+en ninguna fuente pública.
 
 <!--
-7 min · acumulado 0:35
-El balance contra las preguntas de la sesión 6: cuáles quedaron
-contestadas, cuáles a medias, cuáles no. Decir el costo real: horas del
-instructor, corridas del agente, qué haría falta para repetirlo adentro.
-Cierre del bloque 1.
+5 min · acumulado 0:35
+Mostrar la hoja de completitud de datos: el libro dice en la cara qué
+porcentaje tiene y se niega a calcular el índice sin eso.
+Y ese es el punto que vale para YPFB: lo que traba el screening no es la
+capacidad del modelo. Es la volumetría, los fluidos y la roca. Ningún modelo
+nuevo los va a inventar.
+Decir el costo real: horas del instructor, y qué haría falta para repetirlo
+adentro con datos propios.
+Ir tachando las preguntas de aceptación que el recorrido contestó, y marcar
+las que quedaron sin contestar. Cierre del bloque 1.
 -->
 
 ---
@@ -148,10 +222,10 @@ Cierre del bloque 1.
 
 ## La crítica
 
-Bloque 2 de 5 · **20 min**
+Bloque 2 de 5 · **15 min**
 
 <!--
-Arranca 0:35, termina 0:55
+Arranca 0:35, termina 0:50
 -->
 
 ---
@@ -164,11 +238,11 @@ Ronda con la tarea: tus **dos anotaciones**. ¿Pasa el protocolo de verificació
 mapa de datos? ¿Qué pasa el día que se equivoque?
 
 <!--
-12 min · acumulado 0:47
-Ronda por nombre: qué querías que muestre, y qué tendría que pasar para que
-tu equipo lo use. Después las tres preguntas de la página, contra el caso.
-Plan B si pocos leyeron el resumen: dos minutos para leerlo ahí mismo (está
-arriba en la página) y anotar UNA objeción; con cinco personas alcanza.
+9 min · acumulado 0:44
+Ronda por nombre, dos minutos por cabeza: qué querías que muestre, y qué
+tendría que pasar para que tu equipo lo use.
+Plan B si pocos leyeron el resumen: dos minutos para leerlo ahí mismo, está
+arriba en la página, y anotar UNA objeción. Con cinco personas alcanza.
 Todo lo que salga se anota: la crítica es el entregable del bloque.
 -->
 
@@ -181,10 +255,13 @@ Si mañana el ranking se equivoca y **nadie lo nota**, ¿qué pasa?
 Si esa respuesta es grave, el flujo necesita otro control antes de usarse.
 
 <!--
-8 min · acumulado 0:55
+6 min · acumulado 0:50
 Aplicada al caso: el screening es una lista de dónde mirar primero, no una
-decisión de inversión. El control que le sigue es el de siempre: la lupa
-del reservorista antes de mover un peso.
+decisión de inversión. El control que le sigue es el de siempre, la lupa del
+reservorista antes de mover un peso.
+Y el error concreto de hoy sirve de ejemplo: el inyector que desaparecía por
+una columna mal leída no daba error, daba un libro prolijo con la mitad de
+los pozos. Los errores caros no se anuncian.
 Cierre del bloque 2.
 -->
 
@@ -194,10 +271,10 @@ Cierre del bloque 2.
 
 ## Hoja de ruta
 
-Bloque 3 de 5 · **20 min**
+Bloque 3 de 5 · **10 min**
 
 <!--
-Arranca 0:55, termina 1:15
+Arranca 0:50, termina 1:00
 -->
 
 ---
@@ -211,12 +288,15 @@ Arranca 0:55, termina 1:15
 - **Decisión corporativa**: contratos, datos, presupuesto, y quién responde
 
 <!--
-5 min · acumulado 1:00
-Ejemplos del propio curso para cada horizonte: borradores asistidos y
-triaje de documentos (mañana); el cuaderno de NotebookLM del área, o un
+3 min · acumulado 0:53
+Ejemplos del propio curso para cada horizonte: borradores asistidos y triaje
+de documentos (mañana); el cuaderno de la sesión 5 para el área, o un
 screening como el de hoy con datos internos (noventa días); la herramienta
 contratada con acuerdo de datos (decisión corporativa).
-Un piloto sin criterio de éxito escrito no termina nunca: se diluye.
+Dos advertencias, rápidas: un piloto sin criterio de éxito escrito no
+termina nunca, se diluye. Y medir "horas ahorradas" es fácil de inflar;
+rinde más contar cosas observables, informes con borrador asistido,
+consultas resueltas sin interrumpir a nadie.
 -->
 
 ---
@@ -228,26 +308,14 @@ Un piloto sin criterio de éxito escrito no termina nunca: se diluye.
 Cada uno: **una fila por horizonte**. Qué, quién, y cómo se mide. Al chat, y queda anotada.
 
 <!--
-10 min · acumulado 1:10
+7 min · acumulado 1:00
 Ronda por nombre. Empujar hacia lo observable: no "usar más IA" sino "los
 informes de turno salen con borrador asistido desde el lunes".
 Las filas de todos van al chat: cada uno se lleva la suya y ve las de los
 demás, que es de donde salen las mejores ideas.
--->
-
----
-
-## Medir algo observable
-
-"Horas ahorradas" es difícil de estimar y fácil de inflar.
-
-Rinde más **contar cosas**: informes con borrador asistido, consultas resueltas sin
-interrumpir a nadie, el análisis que tardaba una tarde.
-
-<!--
-5 min · acumulado 1:15
-Cerrar el bloque con la advertencia de la página: lo que no se puede
-observar, no se puede defender ante un directorio.
+El pase al bloque siguiente, y decirlo con estas palabras: esa fila de
+noventa días se escribe contra la herramienta que va a existir a los noventa
+días, no contra la de hoy. De eso va la segunda mitad.
 Cierre del bloque 3.
 -->
 
@@ -255,93 +323,120 @@ Cierre del bloque 3.
 
 <!-- _class: seccion -->
 
-## El futuro, conversado
+## El futuro, en pantalla
 
-Bloque 4 de 5 · **30 min**
+Bloque 4 de 5 · **45 min**
 
 <!--
-Arranca 1:15, termina 1:45
-Aviso al entrar al bloque: acá cambia la vara y se declara. Lo que sigue es
-especulación con nombre propio, para conversar. Las reglas de verificación
-aplican también a los pronósticos.
+Arranca 1:00, termina 1:45
 -->
 
 ---
 
-## Dónde está la frontera
+<!-- _class: acentos -->
 
-Prueba tras prueba, los sistemas cruzan la **línea del desempeño humano**, y cada vez más
-rápido.
+## Por qué esto no es entretenimiento
 
-Y el largo de tarea que un agente completa se sigue **duplicando cada siete meses**.
+Un proyecto dura. El que arranca **dentro de un mes** con el flujo de ese momento puede
+terminar antes que el que arranca hoy.
+
+Pero esperar tampoco es una estrategia: lo único que mejora solo es la **capacidad**.
 
 <!--
-4 min · acumulado 1:19
-El gráfico viene en la slide siguiente; el tablero de Epoch queda en
-pestaña para el que quiera profundizar. El de METR ya lo vieron en la
-sesión 6.
-Si preguntan por el mundo físico: el video de Gemini Robotics está en los
-recursos (tres minutos, Google DeepMind): el mismo tipo de modelo moviendo
-un cuerpo completo. Ahí la regla de la sesión 7 vale doble.
+4 min · acumulado 1:04
+Primero el argumento incómodo: si tu proyecto lleva seis meses, la
+herramienta con la que lo vas a terminar no es la que usaste para
+dimensionarlo. La ventaja de haber salido primero se la come la diferencia
+de herramienta.
+Y enseguida la contracara, para que nadie se vaya con la excusa: los datos,
+los permisos y los criterios no se construyen solos. La regla que sale de
+las dos mitades: arrancá YA con lo que no se abarata (el mapa de datos, la
+política, las preguntas de aceptación) y postergá lo que sí (la
+construcción).
+El caso de hoy lo probó: lo que faltaba no era modelo, era Nivel 2.
+La vara del bloque, declarada: de acá en adelante es especulación con nombre
+propio, para conversar. Las reglas de verificación valen también para los
+pronósticos.
 -->
 
 ---
 
-## La progresión, en un gráfico
+<!-- _class: panel -->
 
-![h:440](img/owid-progresion-competencias.png)
+## La frontera, en vivo
 
-Fuente: Our World in Data · CC BY
+**ourworldindata.org/artificial-intelligence** · **epoch.ai/data**
+
+Elegimos dos o tres gráficos y los leemos como enseñó el curso: primero qué mide cada eje,
+después la opinión.
 
 <!--
-4 min · acumulado 1:23
-Leerlo como enseñó el curso: decir qué mide cada eje antes de opinar. Cada
-línea es una prueba estandarizada (comprensión, matemática, código) contra
-la línea del desempeño humano, y el patrón es siempre el mismo: años por
-debajo, cruce, saturación.
-La advertencia honesta: un benchmark no es un puesto de trabajo, y las
-pruebas se eligen porque se pueden medir. Aun así, la pendiente es el dato.
-Este gráfico canónico llega a 2023: para lo último, cambiar a la pestaña
-del tablero de Epoch, que está al día, y mostrar una prueba reciente
-(matemática o código) con la misma forma de curva.
+8 min · acumulado 1:12
+Pestañas abiertas de antes. Our World in Data tiene 35 gráficos y Epoch
+once exploradores al día.
+Recorrido sugerido: cómputo de entrenamiento (la exponencial más limpia),
+desempeño en pruebas contra la línea humana (años por debajo, cruce,
+saturación), y demanda eléctrica de los centros de datos, que se retoma al
+final del bloque.
+La advertencia honesta antes de opinar: un benchmark no es un puesto de
+trabajo, y las pruebas se eligen porque se pueden medir. Aun así, la
+pendiente es el dato.
+Si preguntan por el largo de tarea que un agente completa, se duplica cada
+siete meses y ya lo vieron en la sesión 6.
 -->
 
 ---
+
+<!-- _class: panel -->
+
+## El mismo modelo, con cuerpo
+
+**Gemini Robotics 2**, anuncio oficial de Google DeepMind. Tres minutos.
+
+<!--
+5 min · acumulado 1:17
+Reproducir el video entero desde el archivo bajado, no desde el navegador.
+El comentario después, en dos frases: es el mismo tipo de modelo que redacta
+un informe, moviendo un cuerpo completo. Y ahí la regla de la sesión 7 vale
+doble, porque en el mundo físico el error no vuelve como mensaje.
+-->
+
+---
+
+<!-- _class: panel -->
 
 ## La frontera también se achica
 
-Modelos que corren en una **laptop de trabajo**, sin mandar un byte afuera, hoy rinden como
-los gigantes de hace dos años.
+Un modelo abierto, corriendo **en esta máquina**, sin mandar un byte afuera.
 
-Para el mapa de datos de ayer, eso cambia el tablero: el **nivel 1** puede tener asistente
+Para el mapa de datos de ayer eso cambia el tablero: el **nivel 1** puede tener asistente
 adentro de la red.
 
 <!--
-3 min · acumulado 1:26
-Bajarlo a tierra: las familias abiertas chicas (Llama, Qwen, Gemma, Phi) en
-tamaños de pocos miles de millones de parámetros corren en una notebook
-buena o un servidor interno modesto.
+6 min · acumulado 1:23
+Ventana E, el modelo ya cargado antes de clase. Pedirle algo del rubro y
+mostrar el monitor de recursos al lado: corre en una máquina de escritorio.
+Plan B si no levanta: contarlo. Las familias abiertas chicas (Llama, Qwen,
+Gemma, Phi) rinden hoy como los gigantes de hace dos años.
 La brecha con la frontera sigue existiendo; la sorpresa es la velocidad con
-la que lo de ayer se vuelve local. Si el grupo quiere seguirla: es un
+la que lo de ayer se vuelve local. Si el grupo quiere seguirla, es un
 proyecto de sistemas con el mapa de datos como requisito, no un experimento
 de escritorio.
 -->
 
 ---
 
-## AGI y ASI, definidos
+## Inteligencia artificial general y superinteligencia
 
-**Inteligencia artificial general (AGI)**: desempeño al nivel de una persona competente en la
-mayoría de las tareas cognitivas.
+**General**: desempeño al nivel de una persona competente en la mayoría de las tareas
+cognitivas. **Superinteligencia**: por encima del mejor humano en casi todas.
 
-**Superinteligencia (ASI)**: por encima del mejor humano en casi todas. La letra chica: no hay
-definición única, y por eso se discute tanto si la primera ya llegó.
+La letra chica: no hay definición única, y por eso se discute tanto si la primera ya llegó.
 
 <!--
-4 min · acumulado 1:30
-Los conteos de LifeArchitect (en los recursos) usan criterios propios y a
-la vista: leerlos como pronóstico, mirando los supuestos. El título del
-video de Kosinski juega justamente con la ambigüedad de la definición.
+5 min · acumulado 1:28
+Abrir el conteo de LifeArchitect en la pestaña: usa criterios propios y a la
+vista. Leerlo como pronóstico, mirando los supuestos, no como consenso.
 Para la sala: con la definición de arriba, ¿cuánto falta? ¿Y si la
 definición fuera "hace tu trabajo de hoy"?
 -->
@@ -357,33 +452,18 @@ La versión de hoy, sin ciencia ficción: los laboratorios ya usan sus modelos p
 los siguientes.
 
 <!--
-4 min · acumulado 1:34
+3 min · acumulado 1:31
 Good era matemático, colega de Turing. Su frase: la primera máquina
 ultrainteligente sería el último invento que el hombre necesite hacer.
 El dato aterrizado: buena parte del código de los laboratorios ya lo
-escriben sus propios modelos, y la curva del largo de tarea es el
-indicador que más miran los que toman esta hipótesis en serio.
-Es el mecanismo detrás de los números de p(doom) que vienen enseguida: si
-el loop se acelera, el control importa más.
+escriben sus propios modelos, y la curva del largo de tarea es el indicador
+que más miran los que toman esta hipótesis en serio.
+Es el mecanismo detrás de los números que vienen enseguida.
 -->
 
 ---
 
-## La hipótesis de Kosinski
-
-Un psicólogo computacional de Stanford, **para conversar**: la inteligencia artificial va a
-reemplazar el trabajo científico y la mayoría de los usos prácticos del lenguaje.
-
-<!--
-3 min · acumulado 1:37
-El video está en los recursos de la página; lo mejor son los últimos diez
-minutos. Presentarla como lo que es: una hipótesis de alguien serio, no un
-pronóstico del curso.
-La pregunta que abre: si las máquinas hacen ciencia, ¿qué queda del trabajo
-técnico? El puente natural es el ejemplo del mail, que viene ahora.
--->
-
----
+<!-- _class: panel -->
 
 ## El mail de cuatro puntos
 
@@ -393,14 +473,16 @@ lo vuelve a **cuatro puntos**.
 Pero quizás no los tuyos: **los que le importan al receptor**.
 
 <!--
-3 min · acumulado 1:40
-El ejemplo de Kosinski, y es mejor de lo que parece: no es que el mail
-largo sobra, es que cada lado lee la versión que necesita. Un aumentador de
-comunicación.
+5 min · acumulado 1:36
+El fragmento del video de Kosinski, psicólogo computacional de Stanford,
+desde el archivo bajado. Su hipótesis, presentada como lo que es: la
+inteligencia artificial reemplaza el trabajo científico y la mayoría de los
+usos prácticos del lenguaje.
 Las preguntas para la sala: ¿para qué está el mail largo del medio?
 ¿desaparece el género "mail cortés"? ¿qué pasa cuando los dos modelos
-negocian qué es lo importante? Conectar con la sesión 3: lo que era una
-herramienta de redacción empieza a parecer un protocolo entre máquinas.
+negocian qué es lo importante?
+Conectar con la sesión 3: lo que era una herramienta de redacción empieza a
+parecer un protocolo entre máquinas.
 -->
 
 ---
@@ -413,13 +495,13 @@ El número con el que el rubro resume su miedo: la probabilidad que le asignás 
 Va de casi cero a casi seguro según a quién le preguntes. **La dispersión es el dato.**
 
 <!--
-2 min · acumulado 1:42
+4 min · acumulado 1:40
 Nombres para la conversación, sin caricaturizar: pioneros que se volvieron
 cautos (Hinton dejó Google para poder hablar de esto), gente que lo
 considera manejable, gente que lo descarta. No hay consenso: hay apuestas
 razonadas, y la página linkea el panorama.
-La pregunta para la sala no es el número ajeno sino el propio: ¿te
-preocupa? ¿cambia algo de lo que hacés el lunes?
+La pregunta para la sala no es el número ajeno sino el propio: ¿te preocupa?
+¿cambia algo de lo que hacés el lunes?
 -->
 
 ---
@@ -433,16 +515,16 @@ Y para esta industria: los centros de datos son **demanda eléctrica firme**, y 
 esa electricidad es gas.
 
 <!--
-3 min · acumulado 1:45
+5 min · acumulado 1:45
 El ensayo está linkeado en la página; el argumento fuerte es biología y
 salud. Honestidad hasta en el optimismo: el mismo autor toma el riesgo en
-serio; optimismo y cautela no son bandos, son la misma persona.
-El ángulo propio: la demanda de los centros de datos ya mueve contratos de
-gas en las Américas. Para una empresa de gas, el futuro de la IA también es
-un mercado.
-Cerrar el bloque con la mini ronda: ¿optimista o pesimista para tu
-trabajo, y por qué? Una respuesta por cabeza; la única regla es distinguir
-la afirmación con dato de la afirmación con fe.
+serio. Optimismo y cautela no son bandos, son la misma persona.
+El ángulo propio: volver al gráfico de demanda eléctrica de los centros de
+datos que vimos al principio del bloque. Para una empresa de gas, el futuro
+de la inteligencia artificial también es un mercado.
+Cerrar con la mini ronda, una respuesta por cabeza: ¿optimista o pesimista
+para tu trabajo, y por qué? La única regla es distinguir la afirmación con
+dato de la afirmación con fe.
 Cierre del bloque 4.
 -->
 
@@ -466,44 +548,73 @@ Arranca 1:45, termina 2:00
 
 - La salida de un modelo es un **borrador plausible**: la verificación es tuya
 - Delegá lo **digital, acotado y verificable**, con el mapa de datos en la mano
-- El techo **sube cada mes**: el protocolo es lo que permite subirse sin sustos
+- Arrancá ya con **lo que no se abarata**: los datos, los permisos, los criterios
 
 <!--
 3 min · acumulado 1:48
-Las dos semanas en tres frases, y la tercera es la optimista: esto mejora
-rápido, y ustedes ya saben manejarlo con las reglas puestas.
+Las dos semanas en tres frases. La tercera es la del bloque anterior y es la
+más accionable: la capacidad mejora sola, tu mapa de datos no.
 -->
 
 ---
 
-## El sitio queda abierto
+## La última tarea: cine
 
-Todo queda publicado: los ejercicios, los decks y sus PDF, los archivos descargables y la
-política editable. La dirección es la misma de siempre.
-
-<!--
-3 min · acumulado 1:51
-Invitarlos a volver: los ejercicios no caducan y el quiz de cada sesión
-sigue ahí. El punto 5 de la política vale también conmigo: el caso nuevo
-que aparezca, me lo escriben.
--->
-
----
-
-## La última tarea: una película
-
-- **2001, odisea del espacio** (1968): HAL, el agente con herramientas de más
-- **Her** (2013): el asistente que conversa
-- **Ex Machina** (2014): el test de Turing hecho thriller
-- **Terminator** (1984): el p(doom) original
-- **AlphaGo** (2017): documental, la máquina sorprende a los maestros
+| Ficción | Documental |
+| --- | --- |
+| **Memento** (2000) | AlphaGo (2017) |
+| 2001, odisea del espacio (1968) | **The AI Doc** (2026) |
+| Her (2013) | |
+| Ex Machina (2014) | |
+| Terminator (1984) | |
+| **Artificial** (2026) | |
 
 <!--
-4 min · acumulado 1:55
+4 min · acumulado 1:52
 La única tarea del curso sin plan B. Decirlo mitad en broma y mitad en
-serio: después de estas dos semanas las van a ver distinto. HAL es
-literalmente el bloque 4 de ayer; AlphaGo es la nota optimista en
+serio: después de estas dos semanas las van a ver distinto.
+Memento es la que se explica, y es la mejor metáfora del curso: el
+protagonista no forma memoria nueva, cada mañana arranca de cero y lo único
+que sabe es lo que tiene tatuado encima. Un modelo de lenguaje es eso. Los
+tatuajes son el contexto: los documentos que le pegás, lo que el buscador le
+mete adentro antes de responder. Por eso la ingeniería de contexto no es un
+truco, es la única memoria que tiene.
+Los dos estrenos de este año: Artificial es la crisis del directorio de
+OpenAI de 2023, con Andrew Garfield, ficción sobre hechos reales. The AI Doc
+es documental, del director de Navalny, que entrevista a los que construyen
+esto mientras espera un hijo. Es el bloque anterior hecho película.
+HAL es el agente con herramientas de más; AlphaGo es la nota optimista en
 documental.
+-->
+
+---
+
+<!-- _class: acentos -->
+
+## Entender es el cuello de botella nuevo
+
+Cuando la máquina hace el trabajo, le queda un trabajo más: **explicarlo**. Y a vos te queda
+el de **entenderlo**.
+
+No alcanza con aprobar lo que no entendés. Eso es el gerente que asiente.
+
+<!--
+4 min · acumulado 1:56
+Fuente: Geoffrey Litt, "Understanding is the new bottleneck", julio de 2026,
+linkeado en la página.
+Su tesis, que es más filosa que "hay que seguirle el ritmo": la idea cómoda
+es que si el agente se verifica solo, entender deja de hacer falta. Litt
+dice lo contrario, y no por desconfianza: se entiende para PARTICIPAR. Sin
+fluidez conceptual no podés intervenir, ni pedir la variante, ni ver la
+opción que el modelo no consideró.
+Su instrumento es un quiz de cinco preguntas después de cada explicación,
+con una regla dura: no le manda código a nadie hasta que puede aprobarlo.
+Trabajar y cursar a la vez.
+Y acá el gancho: eso es lo que vinieron haciendo. Siete sesiones, siete
+quizzes. Están arriba en la página y no caducan.
+El remate, con Alan Kay de fondo: la computación se pensó siempre como
+aumento, no como reemplazo. No hace falta que nos saquemos del loop, también
+podemos meternos más adentro.
 -->
 
 ---
@@ -516,10 +627,9 @@ Ronda de cierre, por nombre: **una sola cosa** que vas a hacer distinto el lunes
 frase.
 
 <!--
-4 min · acumulado 1:59
-De viva voz, todos, sin panel. Anotarlas y pedirles que las peguen en el
-chat: ese puñado de frases es el mejor resumen posible del curso, escrito
-por ellos.
+3 min · acumulado 1:59
+De viva voz, todos. Anotarlas y pedirles que las peguen en el chat: ese
+puñado de frases es el mejor resumen posible del curso, escrito por ellos.
 -->
 
 ---

@@ -18,11 +18,11 @@ revisar la inyección que ya existe, construido con criterios explícitos sobre 
 inyección. Lo armó el instructor entre las sesiones 6 y 8, con el mismo loop de agente que vimos
 trabajar en la sesión 6, y hoy se recorre completo.
 
-Los datos son los que fijó la escalera de la sesión 6. La base es el análogo público: la cuenca
-Noroeste argentina, los mismos reservorios subandinos que opera Andina del otro lado de la frontera,
-con los 88 pozos petrolíferos y 22 inyectores de agua de Aguaragüe que el agente encontró en clase.
-Si algún dato interno viajó a tiempo, se suma y se dice en vivo, con su nivel del mapa de datos a la
-vista.
+Los datos son los que fijó la escalera de la sesión 6. Producción por pozo de Bolivia, pública, no
+hay. El análogo es la cuenca Noroeste argentina, los mismos reservorios subandinos que se operan del
+otro lado de la frontera, y la fuente es el Capítulo IV de la Secretaría de Energía, que publica
+producción e inyección pozo por pozo y mes por mes: **1,003 pozos y 88,093 registros mensuales entre
+enero de 2019 y julio de 2026**.
 
 El techo quedó fijado de antemano y se sostiene: screening con criterios, no simulación. La lupa
 fina que sigue después es trabajo de reservoristas, con sus herramientas de siempre.
@@ -30,16 +30,47 @@ fina que sigue después es trabajo de reservoristas, con sus herramientas de sie
 Los criterios de aceptación son las preguntas que escribió el grupo en la sesión 6, una por cabeza.
 La demostración se mide contra esas preguntas, no contra lo que salió lindo.
 
+### El primer resultado no fue el esperado
+
+De los 5.6 millones de metros cúbicos de agua inyectada en la cuenca Noroeste, el 97% entra por
+pozos clasificados como **sumidero**: disposición del agua que sale con el petróleo, en una
+formación que no produce. Eso no es recuperación secundaria. Son dos negocios distintos y el
+conjunto de datos los separa en una columna.
+
+Pozos de inyección de agua declarados en toda la cuenca: **uno**. Es el P.Gu. a-11, en Puesto
+Guardián, Salta, con 154,484 metros cúbicos inyectados, y figura parado transitoriamente.
+
+De ahí sale el campo del caso. Puesto Guardián es el único lugar de la cuenca donde el screening
+puede comparar un inyector de verdad contra dos sumideros del mismo campo, sobre la misma formación
+yacoraite. Su serie, además, corta en julio de 2025 mientras el resto de la cuenca llega a julio de
+2026: un campo que dejó de informar es una señal, y el screening no puede decir si es cierre, venta
+o atraso administrativo.
+
+La consecuencia para la pregunta original es incómoda y se dice igual: la mitad "revisar la
+inyección que ya existe" no se puede correr sobre el análogo público, porque en el norte argentino
+no hay waterflooding que revisar.
+
+### Lo que salió, y lo que no
+
+Sobre los 8 pozos y 340 filas de Puesto Guardián, el Libro A calcula la declinación, la firma de
+Chan, la relación agua-petróleo y la pendiente de Hall del inyector.
+
+No calcula el índice de atractivo. Le falta el Nivel 2 de la escalera de datos (volumetría,
+fluidos, roca) y ese nivel no está en ninguna fuente pública. El libro no lo estima ni lo rellena
+con correlaciones: muestra el porcentaje de completitud y se niega a calcular.
+
+Ese es el resultado que más vale para una empresa. **Lo que traba el screening no es la capacidad
+del modelo, son los datos.** Ningún modelo nuevo va a inventar la porosidad de un reservorio.
+
 El proyecto completo se puede bajar:
-[waterflood-screening-ypfb_2026-08-18.zip](descargas/waterflood-screening-ypfb_2026-08-18.zip)
-trae los dos libros de la herramienta (diagnóstico y screening), el manual de criterios, el
-checklist de datos, el plan con presupuesto, un campo sintético de ejemplo para practicar sin datos
-reales, y los scripts que construyen y verifican todo. Lo que se proyecta en vivo sale de ahí.
+[waterflood-screening-ypfb_2026-08-19.zip](descargas/waterflood-screening-ypfb_2026-08-19.zip)
+trae los dos libros de la herramienta, el manual de criterios, el checklist de datos, el plan con
+presupuesto, el campo sintético de práctica, el Libro A de Puesto Guardián ya cargado y los scripts
+que construyen y verifican todo. Lo que se proyecta en vivo sale de ahí.
 
 ## El caso, de punta a punta
 
-La sesión recorre el caso que eligió el grupo, construido con sus necesidades y sus datos. Cuatro
-partes:
+La sesión recorre el caso que eligió el grupo. Cuatro partes:
 
 1. **La necesidad, como salió del relevamiento.** Quién la tiene, cuánto cuesta hoy resolverla a mano,
    qué datos existen y en qué estado.
@@ -51,13 +82,14 @@ partes:
 4. **La crítica del grupo.** El caso se somete a las reglas de la sesión 7. ¿Pasa el protocolo de
    verificación? ¿Respeta el mapa de datos? ¿Qué pasa el día que se equivoque?
 
-Si los datos internos no se pudieron compartir (escenario previsto desde el principio), el caso se
-construye sobre datos públicos con la misma estructura. Lo transferible es el flujo, no el conjunto de
-datos.
+Vale la pena anticipar un error del recorrido, porque es del tipo que importa. El campo `tef` del
+Capítulo IV cuenta días de **producción**, así que un pozo inyector informa siempre cero. Cargado
+sin mirar eso, todos los inyectores desaparecen del libro y queda un archivo prolijo con la mitad de
+los pozos. No da error: da un resultado. Los errores caros no se anuncian.
 
 ## La hoja de ruta
 
-La segunda mitad es lo que se llevan puesto. Una hoja de ruta por equipo, en tres horizontes:
+Una hoja de ruta por equipo, en tres horizontes:
 
 **Mañana.** Lo que ya pueden usar con las reglas de la sesión 7, sin pedirle permiso a nadie: los
 flujos de oficina de la sesión 3, el triaje de documentos, los borradores. Bajo riesgo, retorno
@@ -76,32 +108,65 @@ fácil de inflar. Rinde más medir algo observable: cuántos informes salieron e
 borrador asistido, cuántas consultas al manual se resolvieron sin interrumpir a un compañero, cuánto
 tardó el análisis que antes tardaba una tarde.
 
-## El futuro, conversado
+## El futuro, en pantalla
 
-La última media hora del curso levanta la vista. Acá la vara cambia y se declara: lo que sigue es
-**especulación con nombre propio**, para conversar, no para planificar. Las reglas de verificación
-de la sesión 7 aplican también a los pronósticos.
+La segunda mitad de la sesión levanta la vista, y no es un premio consuelo. Acá la vara cambia y se
+declara: lo que sigue es **especulación con nombre propio**, para conversar. Las reglas de
+verificación de la sesión 7 aplican también a los pronósticos.
 
-El dato duro primero: los gráficos de progresión de competencias muestran prueba tras prueba
-cruzando la línea del desempeño humano.
+### Por qué esto no es entretenimiento
+
+Un proyecto dura. Si el tuyo lleva seis meses, la herramienta con la que lo vas a terminar no es la
+que usaste para dimensionarlo. Llevado al extremo: el que arranca dentro de un mes con el flujo de
+ese momento puede terminar antes que el que arranca hoy, porque la ventaja de haber salido primero
+se la come la diferencia de herramienta.
+
+La contracara, para que no quede como excusa: esperar tampoco es una estrategia. Lo único que mejora
+solo es la capacidad. Los datos, los permisos y los criterios no se construyen a sí mismos. De ahí
+la regla que sale de las dos mitades de esta sesión:
+
+> Arrancá ya con lo que no se abarata (el mapa de datos, la política, las preguntas de aceptación,
+> el criterio de éxito escrito) y postergá lo que sí: la construcción.
+
+El caso de hoy lo probó sin que hiciera falta forzarlo. Lo que faltaba para completar el screening
+no era un modelo mejor, era el Nivel 2.
+
+### Dónde está la frontera
+
+En vez de un gráfico, dos lugares donde están todos y se actualizan solos:
+
+- [Our World in Data · Artificial Intelligence](https://ourworldindata.org/artificial-intelligence):
+  35 gráficos interactivos entre cómputo de entrenamiento, desempeño en pruebas contra la línea del
+  desempeño humano, inversión privada, adopción entre trabajadores y demanda eléctrica de los
+  centros de datos.
+- [Epoch AI · Data](https://epoch.ai/data): once exploradores al día, con los datos crudos
+  descargables, incluidos 3,500 modelos desde 1950 y el seguimiento de centros de datos por
+  satélite.
+
+El patrón que se repite prueba tras prueba es siempre el mismo: años por debajo de la línea humana,
+cruce, saturación. La advertencia honesta antes de opinar: un benchmark no es un puesto de trabajo,
+y las pruebas se eligen porque se pueden medir. Aun así, la pendiente es el dato.
 
 ![Puntajes de sistemas de IA en pruebas estandarizadas, relativos al desempeño humano](slides/img/owid-progresion-competencias.png)
 
-*Cada línea es una prueba estandarizada contra la línea del desempeño humano: años por debajo,
-cruce, saturación. Fuente: Our World in Data, CC BY; el gráfico llega a 2023. La versión
-interactiva está en los recursos, y el tablero al día, con las pruebas recientes, es el de
-[Epoch AI](https://epoch.ai/data/ai-benchmarking-dashboard).*
+*Una de esas series, en versión estática: cada línea es una prueba estandarizada contra la línea del
+desempeño humano. Fuente: Our World in Data, CC BY; llega a 2023, y por eso en clase se mira la
+versión viva.*
 
-Y la frontera también se achica: modelos que corren en una laptop de trabajo, sin mandar un byte
-afuera, hoy rinden como los gigantes de hace dos años. Para un mapa de datos como el de la sesión 7,
-eso cambia el tablero: lo que nunca podía salir de la red interna puede tener su asistente adentro.
+### La frontera también se achica
 
-Dos términos que van a escuchar seguido, definidos. **Inteligencia artificial general (AGI)**:
-desempeño al nivel de una persona competente en la mayoría de las tareas cognitivas.
-**Superinteligencia (ASI)**: por encima del mejor humano en casi todas. No hay definición única, y
-por eso se discute tanto si la primera ya llegó. La teoría que conecta una con la otra es la
-mejora recursiva: la hipótesis de I. J. Good (1965) de que una máquina capaz de diseñar
-máquinas mejores dispara una
+Modelos que corren en una laptop de trabajo, sin mandar un byte afuera, hoy rinden como los gigantes
+de hace dos años. Para un mapa de datos como el de la sesión 7, eso cambia el tablero: lo que nunca
+podía salir de la red interna puede tener su asistente adentro. La brecha con la frontera sigue
+existiendo; la sorpresa es la velocidad con la que lo de ayer se vuelve local.
+
+### Los términos, y las hipótesis
+
+Dos que van a escuchar seguido, definidos. **Inteligencia artificial general**: desempeño al nivel de
+una persona competente en la mayoría de las tareas cognitivas. **Superinteligencia**: por encima del
+mejor humano en casi todas. No hay definición única, y por eso se discute tanto si la primera ya
+llegó. La teoría que conecta una con la otra es la mejora recursiva: la hipótesis de I. J. Good
+(1965) de que una máquina capaz de diseñar máquinas mejores dispara una
 [explosión de inteligencia](https://en.wikipedia.org/wiki/Technological_singularity). La versión de
 hoy, sin ciencia ficción: los laboratorios ya usan sus modelos para escribir buena parte del código
 de los siguientes.
@@ -115,25 +180,65 @@ de inteligencia artificial general de LifeArchitect. Y
 con el que el rubro resume su miedo a una catástrofe existencial: va de casi cero a casi seguro
 según a quién le preguntes, y esa dispersión es el dato.
 
-El cierre es optimista a propósito, y con fuente: el ensayo
+La nota optimista es a propósito, y con fuente: el ensayo
 [Machines of Loving Grace](https://www.darioamodei.com/essay/machines-of-loving-grace) argumenta
 que la inteligencia artificial puede comprimir décadas de progreso científico en años. Y para esta
 industria hay un ángulo más cercano: los centros de datos que entrenan y sirven estos modelos son
 demanda eléctrica firme, y buena parte de esa electricidad, en las Américas, es gas.
 
-Para el fin de semana, cine: 2001 (HAL, el agente con herramientas de más), Her (el asistente que
-conversa), Ex Machina (el test de Turing hecho thriller), Terminator (el p(doom) original) y el
-documental AlphaGo (el momento en que la máquina sorprendió a los maestros).
+## Entender es el cuello de botella nuevo
+
+El curso cierra con una idea prestada, y es la que conviene que se lleven puesta.
+
+Cuando la máquina hace el trabajo, le queda un trabajo más: **explicarlo**. Y a la persona le queda
+el de **entenderlo**. Es una mezcla rara de trabajar y cursar al mismo tiempo, parecida a cuando un
+ingeniero brillante le explica lo que hizo a alguien que está un paso más lejos del detalle técnico.
+
+La trampa está justo ahí: el que escucha puede asentir sin entender. Eso no es delegar, es firmar.
+
+[Understanding is the new bottleneck](https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck)
+lo dice más filoso. La idea cómoda es que si el agente se verifica solo, entender deja de hacer
+falta; Geoffrey Litt sostiene lo contrario, y no por desconfianza. Se entiende para **participar**:
+sin fluidez conceptual no podés intervenir, ni pedir la variante, ni ver la opción que el modelo no
+consideró. Su instrumento es un cuestionario de cinco preguntas después de cada explicación, con una
+regla dura: no le manda el trabajo a nadie hasta que puede aprobarlo.
+
+Es exactamente el aparato que usaron durante todo el curso. Siete sesiones, siete quizzes. Siguen
+arriba, y no caducan.
+
+Y el remate, con Alan Kay de fondo: la computación se pensó siempre como aumento, no como reemplazo.
+No hace falta que nos saquemos del loop; también podemos meternos más adentro.
+
+## La última tarea: cine
+
+| Ficción | Documental |
+| --- | --- |
+| **Memento** (2000) | AlphaGo (2017) |
+| 2001, odisea del espacio (1968) | **The AI Doc** (2026) |
+| Her (2013) | |
+| Ex Machina (2014) | |
+| Terminator (1984) | |
+| **Artificial** (2026) | |
+
+Memento es la que se explica. El protagonista no forma memoria nueva: cada mañana arranca de cero y
+lo único que sabe es lo que tiene tatuado encima. Un modelo de lenguaje es eso. Los tatuajes son el
+contexto, los documentos que le pegás y lo que el buscador le mete adentro antes de que responda.
+Por eso la ingeniería de contexto no es un truco: es la única memoria que tiene.
+
+Los dos estrenos de este año son las dos caras del bloque anterior. *Artificial*, de Luca
+Guadagnino, dramatiza la crisis del directorio de OpenAI de noviembre de 2023 con Andrew Garfield;
+es ficción sobre hechos reales y se mira sabiendo eso. *The AI Doc*, del director de *Navalny*, es
+documental: entrevista a los que construyen esto mientras espera un hijo.
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
+| Apertura y entrada al sitio | 5 min | Las ventanas del día |
 | El caso, en vivo | 30 min | El screening recorrido de punta a punta |
-| La crítica | 20 min | El caso pasa por el protocolo de la sesión 7 |
-| Hoja de ruta | 20 min | Mañana, noventa días, decisión corporativa |
-| El futuro, conversado | 30 min | La frontera, AGI y ASI, los modelos locales y p(doom) |
+| La crítica | 15 min | El caso pasa por el protocolo de la sesión 7 |
+| Hoja de ruta | 10 min | Mañana, noventa días, decisión corporativa |
+| El futuro, en pantalla | 45 min | La frontera, los modelos locales, entender |
 | Cierre del curso | 15 min | Lo que queda, y una cosa distinta para el lunes |
 
 ## Para discutir

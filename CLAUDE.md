@@ -69,7 +69,7 @@ Sales material: `docs/syllabus.md`.
 
 ## Course calibration (set 2026-08-10, after S1–S2; applies to every future session and deck)
 
-- **Cadence: 8 consecutive business days, 17:00–19:00 Bolivia — NOT weekly.** "Next session"
+- **Cadence: 8 consecutive business days, 15:00–17:00 Bolivia (16:00–18:00 Argentina) — NOT weekly.** "Next session"
   means tomorrow. Never write "esta semana / la semana pasada / el lunes" for course cadence
   (work-week senses like "tareas que te comen la semana" are fine). Tareas must fit the evening
   or next morning. Consequence to design around: the S5→S8 case build has 2–3 days, not weeks,
