@@ -309,6 +309,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
     {
       tipo: 'video',
+      titulo: 'OpenAI: Inside the Battle for the Startup\'s Soul',
+      url: 'https://www.youtube.com/watch?v=VGtOPcd33ks',
+      fuente: 'Bloomberg Originals',
+      duracion: '8:15',
+      publicado: '2023-11',
+      idioma: 'en',
+      porque:
+        'Ocho minutos sobre los cinco días de noviembre de 2023 en que echaron y repusieron al director ejecutivo de OpenAI. Ilya Sutskever, el científico jefe, votó por echarlo y después se fue de la empresa; nunca dijo del todo por qué, y de ahí salió la pregunta que quedó dando vueltas en el rubro: qué vio. Sirve para ver que las discusiones sobre riesgo no son abstractas: se pelean adentro de las empresas que construyen esto.',
+    },
+    {
+      tipo: 'video',
       titulo: 'Gemini Robotics 2 brings whole body intelligence to robots',
       url: 'https://www.youtube.com/watch?v=4lSQnrMC6nY',
       fuente: 'Google DeepMind',

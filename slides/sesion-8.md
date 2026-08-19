@@ -382,7 +382,7 @@ Elegimos dos o tres gráficos y los leemos como enseñó el curso: primero qué 
 después la opinión.
 
 <!--
-8 min · acumulado 1:12
+10 min · acumulado 1:14
 Pestañas abiertas de antes. Our World in Data tiene 35 gráficos y Epoch
 once exploradores al día.
 Recorrido sugerido: cómputo de entrenamiento (la exponencial más limpia),
@@ -405,7 +405,7 @@ siete meses y ya lo vieron en la sesión 6.
 **Gemini Robotics 2**, anuncio oficial de Google DeepMind. Tres minutos.
 
 <!--
-5 min · acumulado 1:17
+5 min · acumulado 1:19
 Reproducir el video entero, tres minutos, desde la pestaña ya cargada.
 El comentario después, en dos frases: es el mismo tipo de modelo que redacta
 un informe, moviendo un cuerpo completo. Y ahí la regla de la sesión 7 vale
@@ -418,21 +418,22 @@ doble, porque en el mundo físico el error no vuelve como mensaje.
 
 ## La frontera también se achica
 
-Un modelo abierto, corriendo **en esta máquina**, sin mandar un byte afuera.
+Modelos abiertos que corren en **una máquina de escritorio**, sin mandar un byte afuera, hoy
+rinden como los gigantes de hace dos años.
 
 Para el mapa de datos de ayer eso cambia el tablero: el **nivel 1** puede tener asistente
 adentro de la red.
 
 <!--
-6 min · acumulado 1:23
-Ventana E, el modelo ya cargado antes de clase. Pedirle algo del rubro y
-mostrar el monitor de recursos al lado: corre en una máquina de escritorio.
-Plan B si no levanta: contarlo. Las familias abiertas chicas (Llama, Qwen,
-Gemma, Phi) rinden hoy como los gigantes de hace dos años.
-La brecha con la frontera sigue existiendo; la sorpresa es la velocidad con
-la que lo de ayer se vuelve local. Si el grupo quiere seguirla, es un
-proyecto de sistemas con el mapa de datos como requisito, no un experimento
-de escritorio.
+4 min · acumulado 1:23
+Contado, no mostrado. La experiencia propia sirve de anécdota: un modelo
+abierto de 27 mil millones de parámetros corriendo en la máquina del
+instructor, respondiendo sobre documentos que nunca salieron del disco.
+Las familias abiertas chicas (Llama, Qwen, Gemma, Phi) son las de este
+mundo. La brecha con la frontera sigue existiendo; la sorpresa es la
+velocidad con la que lo de ayer se vuelve local.
+Si el grupo quiere seguirla, es un proyecto de sistemas con el mapa de datos
+como requisito, no un experimento de escritorio.
 -->
 
 ---
@@ -578,7 +579,6 @@ más accionable: la capacidad mejora sola, tu mapa de datos no.
 | Her (2013) | |
 | Ex Machina (2014) | |
 | Terminator (1984) | |
-| **Artificial** (2026) | |
 
 <!--
 4 min · acumulado 1:52
@@ -590,10 +590,12 @@ que sabe es lo que tiene tatuado encima. Un modelo de lenguaje es eso. Los
 tatuajes son el contexto: los documentos que le pegás, lo que el buscador le
 mete adentro antes de responder. Por eso la ingeniería de contexto no es un
 truco, es la única memoria que tiene.
-Los dos estrenos de este año: Artificial es la crisis del directorio de
-OpenAI de 2023, con Andrew Garfield, ficción sobre hechos reales. The AI Doc
-es documental, del director de Navalny, que entrevista a los que construyen
-esto mientras espera un hijo. Es el bloque anterior hecho película.
+The AI Doc es el estreno de este año: documental, del director de Navalny,
+que entrevista a los que construyen esto mientras espera un hijo. Es el
+bloque anterior hecho película. Avisar que puede no estar disponible en la
+región todavía.
+Y para esta noche, algo que sí se puede ver ya: los ocho minutos de
+Bloomberg sobre la crisis del directorio de OpenAI, en los recursos.
 HAL es el agente con herramientas de más; AlphaGo es la nota optimista en
 documental.
 -->
