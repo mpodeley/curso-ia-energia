@@ -1,8 +1,4 @@
-<div className="callout callout--wip">
-  El caso de esta sesión ya tiene nombre: un screening de waterflooding, elegido con el grupo y puesto
-  en marcha en la sesión 6. Lo que sigue es la estructura que ese caso viene a llenar; el resumen con
-  alcance, datos y criterios se publica acá abajo.
-</div>
+import { Recursos } from '../components/Recursos'
 
 ## Antes de la sesión
 
@@ -10,8 +6,29 @@
 
 1. **Tarea de la sesión 7:** qué te gustaría que muestre la demostración, y qué tendría que pasar para
    que tu equipo lo use de verdad después del curso.
-2. **El resumen del caso**, que se publica en esta página después de la sesión 6. Leelo con las reglas
-   de la sesión 7 en la mano: la idea es que llegues con objeciones, no con expectativas.
+2. **El resumen del caso**, acá abajo. Leelo con las reglas de la sesión 7 en la mano: la idea es que
+   llegues con objeciones, no con expectativas.
+
+<Recursos sesion={8} />
+
+## El resumen del caso
+
+El caso elegido es un **screening de waterflooding**: un ranking de dónde conviene inyectar agua, o
+revisar la inyección que ya existe, construido con criterios explícitos sobre datos de producción e
+inyección. Lo armó el instructor entre las sesiones 6 y 8, con el mismo loop de agente que vimos
+trabajar en la sesión 6, y hoy se recorre completo.
+
+Los datos son los que fijó la escalera de la sesión 6. La base es el análogo público: la cuenca
+Noroeste argentina, los mismos reservorios subandinos que opera Andina del otro lado de la frontera,
+con los 88 pozos petrolíferos y 22 inyectores de agua de Aguaragüe que el agente encontró en clase.
+Si algún dato interno viajó a tiempo, se suma y se dice en vivo, con su nivel del mapa de datos a la
+vista.
+
+El techo quedó fijado de antemano y se sostiene: screening con criterios, no simulación. La lupa
+fina que sigue después es trabajo de reservoristas, con sus herramientas de siempre.
+
+Los criterios de aceptación son las preguntas que escribió el grupo en la sesión 6, una por cabeza.
+La demostración se mide contra esas preguntas, no contra lo que salió lindo.
 
 ## El caso, de punta a punta
 
@@ -53,14 +70,48 @@ fácil de inflar. Rinde más medir algo observable: cuántos informes salieron e
 borrador asistido, cuántas consultas al manual se resolvieron sin interrumpir a un compañero, cuánto
 tardó el análisis que antes tardaba una tarde.
 
+## El futuro, conversado
+
+La última media hora del curso levanta la vista. Acá la vara cambia y se declara: lo que sigue es
+**especulación con nombre propio**, para conversar, no para planificar. Las reglas de verificación
+de la sesión 7 aplican también a los pronósticos.
+
+El dato duro primero: los gráficos de progresión de competencias (el de Our World in Data está en
+los recursos de arriba, y [Epoch AI](https://epoch.ai/data/ai-benchmarking-dashboard) tiene la
+versión con datos crudos) muestran prueba tras prueba cruzando la línea del desempeño humano. Y la
+frontera también se achica: modelos que corren en una laptop de trabajo, sin mandar un byte afuera,
+hoy rinden como los gigantes de hace dos años. Para un mapa de datos como el de la sesión 7, eso
+cambia el tablero: lo que nunca podía salir de la red interna puede tener su asistente adentro.
+
+Después, las hipótesis. La de Kosinski (el video de los recursos): la inteligencia artificial
+reemplaza el trabajo científico y la mayoría de los usos prácticos del lenguaje, con el ejemplo del
+mail que para vos son cuatro puntos, un modelo lo estira, y el modelo del receptor lo vuelve a
+comprimir en cuatro puntos que quizás no son los tuyos: son los que le importan a él. Los conteos
+de inteligencia artificial general de LifeArchitect. Y
+[p(doom)](https://en.wikipedia.org/wiki/Existential_risk_from_artificial_intelligence), el número
+con el que el rubro resume su miedo a una catástrofe existencial: va de casi cero a casi seguro
+según a quién le preguntes, y esa dispersión es el dato.
+
+El cierre es optimista a propósito, y con fuente: el ensayo
+[Machines of Loving Grace](https://www.darioamodei.com/essay/machines-of-loving-grace) argumenta
+que la inteligencia artificial puede comprimir décadas de progreso científico en años. Y para esta
+industria hay un ángulo más cercano: los centros de datos que entrenan y sirven estos modelos son
+demanda eléctrica firme, y buena parte de esa electricidad, en las Américas, es gas.
+
+Para el fin de semana, cine: 2001 (HAL, el agente con herramientas de más), Her (el asistente que
+conversa), Ex Machina (el test de Turing hecho thriller), Terminator (el p(doom) original) y el
+documental AlphaGo (el momento en que la máquina sorprendió a los maestros).
+
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| El caso, en vivo | 35 min | Recorrido completo del flujo, con los datos reales del grupo |
-| La crítica | 30 min | Lo pasamos por el protocolo de la sesión 7 y buscamos dónde se rompe |
-| Hoja de ruta | 35 min | La armamos por equipo: mañana, noventa días, decisión corporativa |
-| Cierre | 20 min | Qué se llevan, qué queda abierto y dónde seguir |
+| Apertura y entrada al sitio | 5 min | El PIN de siempre y las ventanas del día |
+| El caso, en vivo | 30 min | El screening recorrido de punta a punta |
+| La crítica | 20 min | El caso pasa por el protocolo de la sesión 7 |
+| Hoja de ruta | 25 min | Mañana, noventa días, decisión corporativa |
+| El futuro, conversado | 25 min | La frontera, los modelos locales y p(doom) |
+| Cierre del curso | 15 min | Lo que queda, y una cosa distinta para el lunes |
 
 ## Para discutir
 

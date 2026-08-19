@@ -11,7 +11,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-08-18'
+export const VERIFICADO = '2026-08-19'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -288,6 +288,60 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'en',
       porque:
         'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad es el mejor antídoto que existe contra el humo del género. En inglés.',
+    },
+  ],
+  // La lista de la sesión 8 es deliberadamente distinta al resto: el bloque
+  // final es una conversación sobre el futuro, así que acá entran hipótesis y
+  // especulación con nombre propio, siempre presentadas como tales. La vara de
+  // "primera línea" acá significa: la fuente es quien realmente sostiene la
+  // hipótesis, y el dato duro (los gráficos) sigue siendo de primera línea.
+  8: [
+    {
+      tipo: 'video',
+      titulo: 'We Already Built AGI | Michal Kosinski',
+      url: 'https://www.youtube.com/watch?v=xKq2yl3nHJY',
+      fuente: 'Michal Kosinski (Stanford), en FounderCoHo',
+      duracion: '46:50',
+      publicado: '2026-07',
+      idioma: 'en',
+      porque:
+        'Especulativo a propósito: es para el bloque de conversación. Lo mejor está en los últimos diez minutos: la hipótesis de que la inteligencia artificial reemplaza el trabajo científico y la mayoría de los usos prácticos del lenguaje, con el ejemplo del mail de cuatro puntos que conversamos en vivo.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'Test scores of AI systems relative to human performance',
+      url: 'https://ourworldindata.org/grapher/test-scores-ai-capabilities-relative-human-performance',
+      fuente: 'Our World in Data',
+      idioma: 'en',
+      porque:
+        'El gráfico de progresión de competencias: prueba tras prueba, los sistemas cruzan la línea del desempeño humano, y cada vez más rápido. Es el dato duro detrás de toda la conversación del bloque final.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'AI Benchmarking Dashboard',
+      url: 'https://epoch.ai/data/ai-benchmarking-dashboard',
+      fuente: 'Epoch AI',
+      idioma: 'en',
+      porque:
+        'Para el más curioso: los mismos gráficos de progresión, con los datos crudos, al día y descargables. Epoch AI es el instituto de referencia en medir hacia dónde va la capacidad de estos sistemas.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'AGI: conteo regresivo',
+      url: 'https://lifearchitect.ai/agi/',
+      fuente: 'LifeArchitect (Alan D. Thompson)',
+      idioma: 'en',
+      porque:
+        'Un analista que mantiene, con criterio propio y explícito, un porcentaje de cuán cerca está la inteligencia artificial general. Es una opinión con método a la vista, no un consenso: leelo como se lee un pronóstico, mirando los supuestos.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'ASI: superinteligencia',
+      url: 'https://lifearchitect.ai/asi/',
+      fuente: 'LifeArchitect (Alan D. Thompson)',
+      idioma: 'en',
+      porque:
+        'La página hermana del conteo: qué significaría un sistema por encima del nivel humano en todo, y quiénes lo toman en serio. Material de conversación, no de planificación.',
     },
   ],
   // Los otros dos recursos de primera línea de la sesión 7 (Anthropic) viven

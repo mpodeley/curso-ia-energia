@@ -102,10 +102,9 @@ Sales material: `docs/syllabus.md`.
   a synthetic curve must never get credited to the government dataset.
 - Exercises must run 100% client-side and deterministic where demoed live (seeded RNG in
   `engine/sampling.ts`) so screen-shared runs reproduce.
-- Only S8 still carries the `callout--wip` block (`estado: 'en-preparacion'`); remove it when its
-  content lands and flip `estado` in programa.ts. S3–S7 have full prose, exercises and quizzes but
-  no deck yet — `slides` in programa.ts stays unset until each deck exists, and the instructor
-  writes them as the course advances.
+- All eight sessions are `estado: 'lista'` with `slides: true`: full prose, exercises, quizzes
+  (S1–S7) and decks. The `callout--wip` pattern is retired; if a future edition reopens a session,
+  restore both the callout and the `en-preparacion` estado together.
 - A deck and its MDX share the agenda table: change both or neither.
 - The LIGHT values of `tokens.css` are restated as literal hex in **three** places
   (`src/theme.ts`, `docs/brochure/brochure.html`, `slides/themes/podeley.css`) because each one

@@ -103,11 +103,12 @@ export const SESIONES: Sesion[] = [
     titulo: 'Caso real y hoja de ruta',
     resumen: 'El caso construido con sus datos y necesidades, de punta a punta, y cómo seguir.',
     objetivos: [
-      'Recorrer el caso real end-to-end: necesidad relevada → flujo con IA → resultado',
-      'Evaluar críticamente el caso: qué funcionó, qué hay que verificar, qué falta',
+      'Recorrer y criticar el caso real: necesidad relevada → flujo con IA → resultado',
       'Llevarse una hoja de ruta de adopción concreta para el equipo',
+      'Conversar el presente y futuro de la IA: la frontera, los modelos locales, los riesgos',
     ],
-    estado: 'en-preparacion',
+    estado: 'lista',
+    slides: true,
   },
 ]
 
