@@ -282,6 +282,9 @@ línea humana) y el tablero de Epoch, abiertos en pestañas. El de METR ya lo
 vieron en la sesión 6.
 Leerlos con cuidado, como enseñó el curso: decir qué mide cada eje antes de
 opinar. Un benchmark no es un puesto de trabajo.
+Si preguntan por el mundo físico: el video de Gemini Robotics está en los
+recursos (tres minutos, Google DeepMind): el mismo tipo de modelo moviendo
+un cuerpo completo. Ahí la regla de la sesión 7 vale doble.
 -->
 
 ---

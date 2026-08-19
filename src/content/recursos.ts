@@ -308,6 +308,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Especulativo a propósito: es para el bloque de conversación. Lo mejor está en los últimos diez minutos: la hipótesis de que la inteligencia artificial reemplaza el trabajo científico y la mayoría de los usos prácticos del lenguaje, con el ejemplo del mail de cuatro puntos que conversamos en vivo.',
     },
     {
+      tipo: 'video',
+      titulo: 'Gemini Robotics 2 brings whole body intelligence to robots',
+      url: 'https://www.youtube.com/watch?v=4lSQnrMC6nY',
+      fuente: 'Google DeepMind',
+      duracion: '3:00',
+      publicado: '2026-07',
+      idioma: 'en',
+      porque:
+        'Tres minutos del anuncio oficial: el mismo tipo de modelo que redacta informes, moviendo un cuerpo completo. Es la conversación del bloque final saliendo de la pantalla, y conecta con la regla de la sesión 7: en el mundo físico el error no vuelve como mensaje.',
+    },
+    {
       tipo: 'herramienta',
       titulo: 'Test scores of AI systems relative to human performance',
       url: 'https://ourworldindata.org/grapher/test-scores-ai-capabilities-relative-human-performance',
