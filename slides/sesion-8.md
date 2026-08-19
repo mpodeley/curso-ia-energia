@@ -18,9 +18,13 @@ Ventanas de hoy: A este deck, C el sitio en la sesión 8, D el Libro A de
 Puesto Guardián abierto en la planilla, E la terminal con el modelo local ya
 cargado.
 Sin pulsos hoy: el Worker está apagado y esta sesión no lo necesita.
-Antes de clase: las preguntas de aceptación de la sesión 6 a la vista, los
-dos videos bajados al disco, y las pestañas del bloque del futuro abiertas
-(Our World in Data, Epoch, LifeArchitect). Todo está linkeado en la página.
+Antes de clase: las preguntas de aceptación de la sesión 6 a la vista, y
+todas las pestañas del bloque del futuro abiertas y ya cargadas (Our World
+in Data, Epoch, LifeArchitect, y los dos videos). Los videos van desde el
+navegador: dejarlos arrancados unos segundos y pausados, para que el buffer
+esté hecho, y el de Kosinski ya posicionado en el minuto 36.
+Al compartir pantalla, tildar "compartir audio de la pestaña". Sin eso el
+video se ve mudo del otro lado.
 -->
 
 ---
@@ -135,12 +139,14 @@ todo lo que hizo falta para tener el análogo público.
 De los **5.6 millones de m³** de agua inyectada en la cuenca, el 97% entra por pozos
 **Sumidero**: disposición de agua producida, no recuperación secundaria.
 
-Pozos de inyección de agua declarados en toda la cuenca Noroeste: **uno**.
+Seis pozos figuran como inyección de agua en toda la cuenca. **Uno solo inyectó** algo en
+siete años.
 
 <!--
 6 min · acumulado 0:19
 Este es el hallazgo del caso y conviene dejarlo respirar.
-Mostrar la tabla en la ventana D: 26 sumideros contra 1 inyector. Preguntar
+Correr resumen_cuenca.py en la ventana D: la tabla sale ahí. 26 sumideros
+con 5.5 millones de m3, contra un solo inyector con 154 mil. Preguntar
 a la sala qué diferencia hay entre los dos, y dejar que lo contesten ellos:
 el sumidero se deshace del agua en una formación que no produce; el inyector
 la mete en el reservorio para empujar petróleo. La columna del dataset que
@@ -152,11 +158,11 @@ revisar. Queda la otra mitad, que es la que se corre hoy.
 
 ---
 
-## El único inyector de la cuenca
+## El único que inyectó
 
-**P.Gu. a-11**, en Puesto Guardián, Salta. Inyección de agua declarada, 154,484 m³.
+**P.Gu. a-11**, en Puesto Guardián, Salta. Yacoraite, 154,484 m³ en siete años.
 
-Estado en el registro: **parado transitoriamente**.
+Estado en el registro: **parado transitoriamente**. Los otros cinco declarados están en cero.
 
 <!--
 3 min · acumulado 0:22
@@ -395,7 +401,7 @@ siete meses y ya lo vieron en la sesión 6.
 
 <!--
 5 min · acumulado 1:17
-Reproducir el video entero desde el archivo bajado, no desde el navegador.
+Reproducir el video entero, tres minutos, desde la pestaña ya cargada.
 El comentario después, en dos frases: es el mismo tipo de modelo que redacta
 un informe, moviendo un cuerpo completo. Y ahí la regla de la sesión 7 vale
 doble, porque en el mundo físico el error no vuelve como mensaje.
@@ -475,7 +481,7 @@ Pero quizás no los tuyos: **los que le importan al receptor**.
 <!--
 5 min · acumulado 1:36
 El fragmento del video de Kosinski, psicólogo computacional de Stanford,
-desde el archivo bajado. Su hipótesis, presentada como lo que es: la
+desde el minuto 36. Su hipótesis, presentada como lo que es: la
 inteligencia artificial reemplaza el trabajo científico y la mayoría de los
 usos prácticos del lenguaje.
 Las preguntas para la sala: ¿para qué está el mail largo del medio?
