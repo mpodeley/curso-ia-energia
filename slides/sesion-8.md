@@ -151,9 +151,10 @@ a la sala qué diferencia hay entre los dos, y dejar que lo contesten ellos:
 el sumidero se deshace del agua en una formación que no produce; el inyector
 la mete en el reservorio para empujar petróleo. La columna del dataset que
 los separa es tipopozo, y son dos negocios distintos.
-Consecuencia dura: la mitad "revisar la inyección que ya existe" no se puede
-correr sobre el análogo. En el norte argentino no hay waterflooding que
-revisar. Queda la otra mitad, que es la que se corre hoy.
+Consecuencia, dicha con precisión: la mitad "revisar la inyección que ya
+existe" no se puede correr sobre el análogo, porque en el norte argentino la
+inyección para recuperación secundaria está en pasado. Queda la otra mitad,
+que es la que se corre hoy: dónde tendría sentido inyectar.
 -->
 
 ---
@@ -169,10 +170,14 @@ Estado en el registro: **parado transitoriamente**. Los otros cinco declarados e
 El campo del caso se eligió por él: es el único lugar de la cuenca donde el
 screening puede comparar un inyector de verdad contra dos sumideros del
 mismo campo.
-Y el dato incómodo, que se dice igual: la serie de Puesto Guardián corta en
-julio de 2025. El resto de la cuenca llega a julio de 2026. Un campo que
-dejó de informar es una señal, y el screening no puede decir si es cierre,
-venta o atraso administrativo.
+Y el cuadro completo, que es el de una cuenca madura: el inyector parado,
+tres de los otros cinco abandonados, y la serie del campo cortada en julio
+de 2025 mientras el resto de la cuenca llega a julio de 2026.
+Decirlo sin dramatismo, porque es la lectura correcta: un proyecto de
+recuperación secundaria tiene un final, no es eterno. Así se ve un campo que
+ya lo transitó. Lo que queda después es manejo de agua, y eso es lo que
+muestran los sumideros.
+Si alguien de la sala conoce el campo, es buen momento para preguntarle.
 -->
 
 ---
