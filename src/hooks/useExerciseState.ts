@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-const PREFIX = 'curso-energia-ypfb:ej:'
+const PREFIX = 'curso-ia-energia:ej:'
 
 function load<T extends object>(id: string, defaults: T): T {
   try {

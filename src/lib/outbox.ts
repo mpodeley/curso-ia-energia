@@ -8,7 +8,7 @@
 
 import { enviarRespuesta, type EnvioRespuesta } from './api'
 
-const CLAVE = 'curso-energia-ypfb:outbox'
+const CLAVE = 'curso-ia-energia:outbox'
 const MAX = 50
 
 export type Pendiente = EnvioRespuesta & { encolado: number }

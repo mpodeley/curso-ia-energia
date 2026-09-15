@@ -1,5 +1,8 @@
 # IA generativa para la industria del petróleo y gas
 
+> Histórico: syllabus de la primera edición (YPFB Andina, agosto de 2026, tag `ypfb-2026-08`).
+> El programa vigente está en [`edicion-2026-09/programa.md`](edicion-2026-09/programa.md).
+
 **Curso en vivo · 8 sesiones × 2 horas · online · en español**
 Primera edición diseñada para YPFB Andina.
 

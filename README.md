@@ -1,10 +1,15 @@
-# curso-energia-ypfb
+# curso-ia-energia
 
-Sitio del curso **"IA generativa para la industria del petróleo y gas"**: 8 sesiones × 2 h,
-en vivo por video, con materiales auto-guiados y ejercicios interactivos que corren enteros en
-el navegador.
+Sitio del curso **"IA generativa para la industria del petróleo y gas"**: en vivo por video,
+con materiales auto-guiados y ejercicios interactivos que corren enteros en el navegador.
 
-- Syllabus completo: [`docs/syllabus.md`](docs/syllabus.md)
+Edición vigente: **4 sesiones × 4 h, del 28 de septiembre al 1 de octubre de 2026**, para una
+cohorte de PCR, CGC, Tecpetrol y Andes Petroleum, con dos instructores. La primera edición
+(YPFB Andina, 8 sesiones × 2 h, agosto de 2026) quedó congelada en el tag `ypfb-2026-08` y en
+`mpodeley.github.io/curso-energia-ypfb` (repo archivado): no se reconstruye nunca más.
+
+- Programa de la edición vigente: [`docs/edicion-2026-09/programa.md`](docs/edicion-2026-09/programa.md)
+  (el syllabus de la primera edición, [`docs/syllabus.md`](docs/syllabus.md), queda como histórico)
 - Encuesta de relevamiento (sesión 1): [`src/content/encuesta-s1.ts`](src/content/encuesta-s1.ts),
   diseñada en [`docs/encuesta.md`](docs/encuesta.md)
 
@@ -29,16 +34,15 @@ npm run deploy:canonica  # build + push de dist/ a mpodeley.github.io (la canón
 ```
 
 El deploy tiene dos destinos: el CI publica solo el **respaldo** de la org (servido en
-podeley.ar) en cada push; la **canónica** (`mpodeley.github.io/curso-energia-ypfb`, la URL
+podeley.ar) en cada push; la **canónica** (`mpodeley.github.io/curso-ia-energia`, la URL
 impresa en decks y brochure) se publica a mano con `npm run deploy:canonica`. Decisión del
 10-ago-2026; si algún día se quiere automatizar, el paso ya está en `deploy.yml` y se activa
 creando el secret `ACTIONS_DEPLOY_KEY` (deploy key de escritura sobre el repo de mpodeley).
 
-El brochure son dos artefactos versionados que se regeneran a mano cuando cambia
-`docs/brochure/brochure.html`: `python scripts/build_qr.py` rehace el QR desde la URL del
-curso, y `SHOTS_MODULES_DIR=<dir-con-playwright-core> node tools/brochure-pdf.mjs` rehace
-`public/brochure.pdf`. Los dos necesitan algo que no está en el repo (segno y un chromium),
-y por eso el resultado se versiona en vez de construirse en CI.
+El brochure (`docs/brochure/brochure.html`) fue el material de venta de la primera edición y ya
+no se sirve desde el sitio. Si vuelve a hacer falta: `python scripts/build_qr.py` rehace el QR
+desde la URL del curso, y `SHOTS_MODULES_DIR=<dir-con-playwright-core> node tools/brochure-pdf.mjs`
+rehace el PDF. Los dos necesitan algo que no está en el repo (segno y un chromium).
 
 ## Slides
 
@@ -90,16 +94,17 @@ verifica únicamente el Worker.
 
 ### Antes de dictar
 
-Una semana antes de la primera clase, pedirle a alguien de la empresa que abra
-`<url-del-worker>/api/v1/salud` **desde la red corporativa** y mande captura. Es la única
-manera de saber si el firewall bloquea `*.workers.dev`, y no es algo que se pueda descubrir
-diez minutos antes de empezar. Si está bloqueado, la salida es mover la zona `podeley.ar` a
+Una semana antes de la primera clase, pedirle a alguien de **cada** empresa de la cohorte que
+abra `<url-del-worker>/api/v1/salud` **desde la red corporativa** y mande captura (en la
+edición 2026-09 son cuatro redes distintas, y fallan por separado). Es la única manera de saber
+si el firewall bloquea `*.workers.dev`, y no es algo que se pueda descubrir diez minutos antes
+de empezar. Si está bloqueado, la salida es mover la zona `podeley.ar` a
 Cloudflare y darle un dominio propio al Worker.
 
-Ojo con el origen: la URL canónica del curso es `mpodeley.github.io/curso-energia-ypfb`
+Ojo con el origen: la URL canónica del curso es `mpodeley.github.io/curso-ia-energia`
 (cuenta personal, sin dominio custom: sirve directo, sin redirecciones). El CI publica además
 una copia de respaldo en la organización, que por el dominio propio de esta termina servida
-en `podeley.ar/curso-energia-ypfb/` (con `podeley.github.io/...` respondiendo 301 hacia ahí).
+en `podeley.ar/curso-ia-energia/` (con `podeley.github.io/...` respondiendo 301 hacia ahí).
 `ORIGENES` en `worker/wrangler.toml` tiene que incluir los tres orígenes: `mpodeley.github.io`,
 `podeley.ar` y `podeley.github.io`. El ensayo se hace siempre desde la URL canónica, la misma
 que van a abrir los alumnos, nunca desde localhost.

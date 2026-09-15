@@ -4,14 +4,22 @@ Guidance for Claude Code when working in this repo.
 
 ## What this repo is
 
-Static site for an 8-session Spanish-language course on generative AI (LLMs + agents) for
-petroleum-industry professionals (first client: YPFB Andina). Delivered live by video; this site
-hosts the per-session materials, the slide decks, and **fully client-side interactive exercises**
-(attendees only have free-tier chatbot accounts — the exercises never call an LLM API). Deployed
-to GitHub Pages twice: the canonical site at **mpodeley.github.io/curso-energia-ypfb** (personal
-account, no custom domain, serves directly — this is the URL printed on decks, QR and brochure)
-and a backup copy in the org, which the org's custom domain serves at podeley.ar/curso-energia-ypfb.
-The Worker's ORIGENES allowlist carries all three origins.
+Static site for a Spanish-language course on generative AI (LLMs + agents) for
+petroleum-industry professionals. Delivered live by video; this site hosts the per-session
+materials, the slide decks, and **fully client-side interactive exercises** (attendees only have
+free-tier chatbot accounts — the exercises never call an LLM API). Deployed to GitHub Pages
+twice: the canonical site at **mpodeley.github.io/curso-ia-energia** (personal account, no custom
+domain, serves directly — this is the URL printed on decks and QR) and a backup copy in the org,
+which the org's custom domain serves at podeley.ar/curso-ia-energia. The Worker's ORIGENES
+allowlist carries all three origins (it compares `Origin`, i.e. host only, so a path change never
+touches it).
+
+**Editions live in git history, not in directories.** `main` is always the edition being
+prepared or taught. The first edition (YPFB Andina, 8 sessions × 2 h, August 2026) is frozen at
+tag `ypfb-2026-08` and at the archived Pages repo `mpodeley/curso-energia-ypfb`; never rebuild
+or redeploy it. The second edition (PCR, CGC, Tecpetrol, Andes Petroleum; 4 sessions × 4 h,
+2026-09-28 to 2026-10-01) is what `main` holds now; its cohort profile and programme are in
+`docs/edicion-2026-09/`.
 
 One thing *does* leave the browser, and only when the student presses a button: the session-1
 survey, the live pulsos and the open answers — plus the name typed into the identity card, which
@@ -20,8 +28,9 @@ themselves still send nothing. Keep the footer in `src/App.tsx` honest about tha
 it is a promise, not decoration.
 
 Sibling of `simulador-subastas-peru` (same Vite + React 19 + TS + Recharts skeleton and
-conventions). Curriculum design + full plan: `~/.claude/plans/flickering-floating-star.md`.
-Sales material: `docs/syllabus.md`.
+conventions). Curriculum of the first edition: `~/.claude/plans/flickering-floating-star.md`; plan
+of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md` and
+`docs/brochure/` are the first edition's sales material, kept as history.
 
 ## Architecture
 
@@ -67,28 +76,42 @@ Sales material: `docs/syllabus.md`.
   (never throws — every call returns a `Resultado`), `outbox.ts` (localStorage retry queue),
   `identidad.tsx` (PIN + name context).
 
-## Course calibration (set 2026-08-10, after S1–S2; applies to every future session and deck)
+## Course calibration (set 2026-09-15 for the second edition; supersedes the YPFB calibration frozen at tag ypfb-2026-08)
 
-- **Cadence: 8 consecutive business days, 15:00–17:00 Bolivia (16:00–18:00 Argentina) — NOT weekly.** "Next session"
-  means tomorrow. Never write "esta semana / la semana pasada / el lunes" for course cadence
-  (work-week senses like "tareas que te comen la semana" are fine). Tareas must fit the evening
-  or next morning. Consequence to design around: the S5→S8 case build has 2–3 days, not weeks,
-  and S8's "resumen publicado unos días antes" needs rethinking when S8 gets prepared.
+- **Format: 4 consecutive days, Mon 28-sep to Thu 1-oct 2026, 10:00–14:00 Argentina (8:00–12:00
+  Ecuador), 4 h each, remote.** "Next session" means tomorrow. Never write "esta semana / la
+  semana pasada" for course cadence. Each day merges two sessions of the first edition (S1+S2,
+  S3+S4, S5+S6, S7+S8) into one 240-minute agenda with **two 10-minute breaks**, shown as rows
+  of the agenda table in both the MDX and the deck. A change of mode (expo → taller → ronda) at
+  least every 25 minutes.
+- **Cohort: 6 technical staff from four companies (PCR-Ecuador, CGC, Tecpetrol, Andes
+  Petroleum), three countries (Ecuador, Argentina, Colombia), competitors.** Full rounds by name
+  are cheap — use them. Never assume shared data, systems or vocabulary; never ask for company
+  data in the shared chat. Examples and datasets come from public sources of Ecuador (ARCH
+  daily report, Petroecuador monthly) and Argentina (Capítulo IV); no third country track. The
+  two HR coordinators (PCR, Andes) do not attend.
+- **Two instructors.** Matías teaches; Martín Alvarado runs the chat, the panel (pulsos,
+  relevamiento), the timer and calls the rounds. Deck notes address Matías; anything Martín has
+  to do in a block goes in the notes prefixed `Martín:`. One hand on the panel buttons at a
+  time (Martín's).
+- **The real case is pre-built on public data** (waterflood screening, Puesto Guardián, Capítulo
+  IV). It is shown, dissected and extended live on day 4 — not assembled between sessions from
+  the survey. The survey feeds emphasis and examples; each company writes its own one-page case
+  in the day-3 workshop and gets it critiqued on day 4.
 - **Driving school, not mechanics.** The course teaches first steps in USING generative AI at
   work, not ML expertise. Mechanics appear only in service of use, and every mechanical piece
   must land on something the student does differently at work tomorrow. Depth goes to
   clearly-marked "para curiosos" material on the page, never into live minutes.
 - **Zero pre-work assumed.** Nobody arrives having read anything: everything essential happens
   live, from zero. Session pages are reinforcement and optional depth ("Antes de la sesión
-  (opcional)"), never prerequisites. The ONLY ask between sessions is the tarea, sized at ~5
+  (opcional)"), never prerequisites. The ONLY ask between days is the tarea, sized at ~5
   minutes, and every deck carries a plan B in its notes for when few did it.
-- **Resources: first-rate only.** 3Blue1Brown, Khan Academy, Anthropic, Distill, official tools
-  and data sources. No generic-divulgation YouTube channels in any language. Short lists beat
-  padded ones; a session with no external resource is fine.
-- **Cohort: 5 people, remote.** Full rounds by name are cheap — use them: everyone speaks in
-  every round, every workshop result gets read aloud. Results are pasted into the video-call
-  chat (nobody screen-shares except the instructor), the panel makes individual progress
-  visible. Five pulse votes are quorum.
+- **Resources: first-rate only.** 3Blue1Brown, Khan Academy, Anthropic, Distill, Polo Club
+  (Transformer Explainer), official tools and data sources. No generic-divulgation YouTube
+  channels in any language. Short lists beat padded ones.
+- **Speaker notes start with a timestamp (`0:00 · …`) and end with `acumulado h:mm`; each deck
+  closes at 4:00.** A note whose first line parses as `key: value` YAML is swallowed by Marpit
+  as a directive and vanishes from HTML and PDF.
 - **Every session ends with takeaways**: two or three concrete practices, said in plain words
   on a closing slide.
 
@@ -102,9 +125,9 @@ Sales material: `docs/syllabus.md`.
   a synthetic curve must never get credited to the government dataset.
 - Exercises must run 100% client-side and deterministic where demoed live (seeded RNG in
   `engine/sampling.ts`) so screen-shared runs reproduce.
-- All eight sessions are `estado: 'lista'` with `slides: true`: full prose, exercises, quizzes
-  (S1–S7) and decks. The `callout--wip` pattern is retired; if a future edition reopens a session,
-  restore both the callout and the `en-preparacion` estado together.
+- A session ships as `estado: 'lista'` with `slides: true` only when prose, exercises, quiz
+  and deck are all done. While it is being written it stays `en-preparacion` with `slides: false`
+  and a `callout--wip` at the top of its MDX: restore or retire both together.
 - A deck and its MDX share the agenda table: change both or neither.
 - The LIGHT values of `tokens.css` are restated as literal hex in **three** places
   (`src/theme.ts`, `docs/brochure/brochure.html`, `slides/themes/podeley.css`) because each one
