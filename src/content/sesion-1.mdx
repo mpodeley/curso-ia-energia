@@ -1,13 +1,12 @@
 import { DeclineDuel } from '../exercises/DeclineDuel'
-import { Quiz } from '../exercises/Quiz'
-import { EncuestaS1 } from '../exercises/EncuestaS1'
+import { TokenizerLab } from '../exercises/TokenizerLab'
+import { NextTokenLab } from '../exercises/NextTokenLab'
+import { ContextoLab } from '../exercises/ContextoLab'
 import { PulsoVivo } from '../exercises/PulsoVivo'
-import { Recursos } from '../components/Recursos'
-
-<div className="callout callout--wip">
-  Esta página todavía muestra el material de la primera edición. La prosa del día se termina antes
-  de la fecha de dictado.
-</div>
+import { EncuestaS1 } from '../exercises/EncuestaS1'
+import { Quiz } from '../exercises/Quiz'
+import { Recursos, ListaRecursos } from '../components/Recursos'
+import { RECURSOS, INTERPRETABILIDAD } from '../content/recursos'
 
 ## Antes de la sesión (opcional)
 
@@ -17,19 +16,46 @@ esto suma, en este orden:
 1. Cuenta gratuita (10 min): creá una cuenta en al menos uno de estos chatbots:
    [ChatGPT](https://chatgpt.com), [Claude](https://claude.ai) o [Gemini](https://gemini.google.com).
    Todos tienen nivel gratuito y es lo único que necesitás en todo el curso. Si no llegás, no
-   pasa nada: la necesitás recién para la tarea que dejamos al final de la sesión.
-2. Video (8 min): el primero del material previo de abajo, el de 3Blue1Brown. No hace falta
+   pasa nada: la necesitás recién para la tarea que dejamos al final del día.
+2. Video (8 min): el primero del material de abajo, el de 3Blue1Brown. No hace falta
    entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.
 3. Ejercicio (10 min): el duelo de declinación, más abajo en esta página. En vivo lo hacemos
    de cero, así que si jugás antes llegás sabiendo qué hace cada perilla.
 
+Los otros tres laboratorios de la página (el tokenizador, "adiviná el próximo token" y la
+ventana de contexto) también los recorremos juntos en vivo; están acá para volver después, o
+para adelantarte si querés. Para el más curioso, el capítulo de
+[3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) (27 min) muestra
+la maquinaria interna; tiene audio en español, elegible en el menú del reproductor.
+
 <div className="callout">
-  <strong>Regla desde el día uno:</strong> en estos ejercicios no uses datos confidenciales de la empresa:
-  ni volúmenes reales de producción, ni nombres de contratos, ni información de partners. En la sesión 3 y la
-  sesión 7 vemos en detalle por qué, y qué alternativas hay.
+  <strong>Regla desde el día uno:</strong> en la sala hay cuatro empresas, y en estos ejercicios
+  no se usan datos confidenciales de ninguna: ni volúmenes reales de producción, ni nombres de
+  contratos, ni información de partners. Los ejemplos del curso salen de fuentes públicas: el
+  reporte diario de la Agencia de Regulación y Control de Hidrocarburos (ARCH) de Ecuador y el
+  Capítulo IV de la Secretaría de Energía de Argentina. Mañana y el día 4 vemos en detalle por
+  qué, y qué alternativas hay.
 </div>
 
 <Recursos sesion={1} />
+
+## En la sesión en vivo (4 h)
+
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| Apertura: quiénes somos, regla entre empresas, entrada al sitio | 15 min | Los dos instructores, una ronda de seis con nombre y empresa, la regla de confidencialidad, el ingreso con el PIN y el primer pulso |
+| El mapa de cuatro capas | 35 min | La historia de abajo, con ejemplos de la industria en cada capa. Las dos primeras las tocamos en vivo, con el duelo de declinación |
+| Demos en vivo | 30 min | El chatbot frente a tareas reales: resumir un paper, explicar un término, escribir un correo difícil. Y verlo fallar |
+| Encuesta de relevamiento | 12 min | La completamos juntos en vivo (ver abajo) |
+| Discusión | 15 min | Qué sorprendió y qué decepcionó de lo visto hasta acá |
+| Pausa | 10 min | Si te quedó la encuesta a medias, es el momento: se guarda sola |
+| Tokens y predicción | 40 min | Los dos primeros laboratorios de la página, y un modelo real abierto en el navegador |
+| Contexto y entrenamiento | 25 min | La ventana de contexto en vivo con el tercer laboratorio, y cómo se entrena en dos etapas |
+| Pausa | 10 min | Dejá el chatbot abierto: lo usás al volver |
+| Alucinaciones en vivo | 35 min | Lo hacemos alucinar: primero el instructor, después cada uno con una pregunta de su especialidad |
+| Cierre: las cuatro maneras de fallar, takeaways, tarea | 13 min | La hoja de ruta del curso, tres prácticas para mañana y la tarea de cinco minutos |
+
+<PulsoVivo sesion={1} />
 
 ## El mapa: cuatro capas en una historia conocida
 
@@ -52,48 +78,172 @@ sesión: primero ajustás la curva a mano, después dejás que la máquina busqu
 
 Ese pozo es de escuela: la curva se generó con una fórmula, y los dos valores que buscaste estaban
 ahí para que alguien los encontrara (el tercer parámetro quedó clavado en cero). Ningún pozo real
-se porta así. En la sesión 4 volvemos con pozos de Aguaragüe, Ramos y Acambuco, con esa tercera
-perilla, y con la pregunta incómoda de cuánto de esa caída es el reservorio y cuánto es la
-operación.
+se porta así. Mañana volvemos con pozos reales del Capítulo IV (Aguaragüe, Ramos y Acambuco), con
+esa tercera perilla, y con la pregunta incómoda de cuánto de esa caída es el reservorio y cuánto es
+la operación.
 
 ¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: datos (todo el texto de internet),
-cómputo (GPUs) y una **arquitectura que escala** (el transformer, 2017). No hubo un descubrimiento
-mágico: hubo una receta que mejora de forma sorprendentemente predecible al agrandarla.
-
-<PulsoVivo sesion={1} />
-
-## En la sesión en vivo (2 h)
-
-| Bloque | Tiempo | Qué hacemos |
-| --- | --- | --- |
-| Apertura y entrada al sitio | 10 min | La regla de confidencialidad, el ingreso con el PIN y el primer pulso |
-| El mapa de cuatro capas | 35 min | La historia anterior, con ejemplos de la industria en cada capa. Las dos primeras las tocamos en vivo, con el ejercicio de esta página |
-| Demos en vivo | 30 min | El chatbot frente a tareas reales: resumir un paper de la Society of Petroleum Engineers (SPE), explicar un término, escribir un correo difícil, y también verlo fallar |
-| Encuesta de relevamiento | 15 min | La completamos juntos en vivo (ver abajo) |
-| Discusión | 20 min | Qué sorprendió y qué decepcionó de lo visto hoy |
-| Cierre y tarea | 10 min | Las cuatro maneras de fallar, y qué viene en la sesión 2 |
+cómputo (las placas gráficas, GPU) y una **arquitectura que escala** (el transformer, 2017). No hubo
+un descubrimiento mágico: hubo una receta que mejora de forma sorprendentemente predecible al
+agrandarla.
 
 ## Dos maneras distintas de equivocarse
 
 En las demos el chatbot se va a equivocar más de una vez, y no siempre por lo mismo. A veces le
-falta el dato: nunca leyó el boletín por el que le preguntás, y en lugar de decirlo escribe la
+falta el dato: nunca leyó el reporte por el que le preguntás, y en lugar de decirlo escribe la
 cifra más creíble. Otras veces el dato no existe en ninguna parte, y aun así devuelve algo con la
 forma exacta de un dato: el número de un artículo, la cita de un trabajo técnico, el inciso de una
 norma.
 
-La diferencia no es académica. A la primera se la arregla trayéndole el documento, y eso es la
-sesión 5. A la segunda no se la arregla: se la verifica, y eso es la sesión 7.
+La diferencia no es académica. A la primera se la arregla trayéndole el documento, y eso es el
+día 3. A la segunda no se la arregla: se la verifica, y eso es el día 4.
 
-## La encuesta que alimenta el final del curso
+## La encuesta que ajusta el curso
 
-Este curso termina con un **caso real construido con las necesidades de ustedes**. Para eso, en esta
-primera sesión relevamos: qué rol tiene cada uno, qué tareas repetitivas le comen la semana, qué datos
-maneja y en qué formato. Con eso, en la sesión 5 elegimos juntos un caso, y en la sesión 8 lo recorremos
-resuelto de punta a punta.
+El caso real del curso ya está armado sobre datos públicos, y lo recorremos el día 4. Para que
+los ejemplos de los otros tres días hablen de lo de ustedes, hoy relevamos: qué rol tiene cada
+uno, qué tareas repetitivas le comen la semana, qué datos maneja y en qué formato. El último
+bloque pide una sola cosa: el problema que probarías primero. Con esa respuesta arranca el taller
+del día 3, donde cada empresa escribe su caso en una página.
+
+Doce preguntas, diez minutos, nada confidencial. Si te quedó a medias, se guarda sola y la
+terminás en la pausa.
 
 <EncuestaS1 sesion={1} />
 
-<Quiz data="quiz_s1" sesion={1} />
+## El modelo no lee palabras: lee tokens
+
+Antes de procesar tu texto, el modelo lo parte en **tokens**: pedazos que pueden ser palabras enteras,
+sílabas o hasta caracteres sueltos. Las palabras frecuentes en internet (en inglés, sobre todo) son un
+solo token; las técnicas o en español suelen partirse en varios.
+
+Esto explica varias rarezas prácticas: por qué el modelo cuenta mal las letras de una palabra, por qué
+el español "rinde menos" por token que el inglés, y por qué el uso por programa (la interfaz de
+programación, API) se cobra por token.
+
+<TokenizerLab sesion={1} />
+
+## Una sola operación: predecir el próximo token
+
+Todo lo que viste hacer a un chatbot (responder preguntas, escribir informes, traducir) sale de una
+única operación repetida: **dado el texto hasta acá, asignar una probabilidad a cada token posible que
+sigue, elegir uno, y volver a empezar**. No hay una base de datos de respuestas: hay una máquina de
+continuar texto, entrenada con una fracción enorme de todo el texto humano.
+
+La **temperatura** controla cómo se elige entre esos candidatos: con temperatura baja gana siempre el
+más probable (salida estable, repetitiva); con temperatura alta, tokens poco probables tienen su
+oportunidad (salida variada, a veces brillante, a veces disparatada).
+
+<NextTokenLab sesion={1} />
+
+### Para curiosos: un modelo real corriendo en tu navegador
+
+El laboratorio de arriba usa probabilidades precalculadas. El
+[Transformer Explainer](https://poloclub.github.io/transformer-explainer/) del Polo Club de
+Georgia Tech hace lo mismo con un modelo de verdad: GPT-2, el antecesor de 2019 de los chatbots
+actuales, corriendo entero en tu navegador. Escribís una frase en inglés y ves, capa por capa, cómo
+el texto se convierte en tokens, cómo la atención decide a qué palabras anteriores mirar, y cómo
+todo termina en una lista de candidatos con su probabilidad. Tiene la misma perilla de temperatura
+del laboratorio. En vivo lo abrimos cinco minutos; solo, vale media hora. Está en inglés y pide un
+navegador de escritorio.
+
+## La ventana de contexto: la memoria de trabajo
+
+Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu pregunta, sus respuestas
+anteriores, los documentos que pegaste. Ese conjunto se llama **ventana de contexto** y tiene un
+tamaño máximo, medido en tokens. Lo que no entra ahí no existe para el modelo.
+
+Conviene pensarla como un escritorio, no como un archivo. Lo que está sobre el escritorio lo mira;
+lo que se cayó al piso no lo busca, y tampoco sabe que se cayó.
+
+<ContextoLab sesion={1} />
+
+De acá salen dos frustraciones que a esta altura ya te deben haber pasado. En una conversación
+larga, el principio se cae y el modelo deja de respetar algo que le pediste al empezar, sin avisar.
+Y en un documento grande, lo que quedó afuera no se busca solo: hay que volver a pegarlo. Al
+segundo problema le dedicamos la primera mitad del día 3, donde en vez de pegar todo buscamos el
+pedazo que hace falta.
+
+Guardá el nombre para el cierre: de las cuatro maneras de fallar, esta es "se olvida de lo que le
+dijiste". No es un olvido. Es la ventana.
+
+## Cómo se entrena: dos etapas de tamaños muy distintos
+
+Nada de lo anterior lo programó alguien. El modelo pasa por dos etapas, y la diferencia entre ellas
+explica bastante de cómo se comporta.
+
+En la **primera** lee una fracción enorme de todo el texto humano y practica una sola cosa: predecir
+lo que sigue. De ahí salen la gramática, los hechos y los patrones de razonamiento, todos como
+efecto de hacer bien esa única tarea. La consecuencia incómoda es que aprendió lo que estaba
+escrito, con sus errores y sus sesgos, y lo escrito no es lo verdadero.
+
+En la **segunda**, mucho más chica, personas le enseñan a comportarse como asistente: a responder en
+vez de continuar, a seguir instrucciones y a negarse a algunas cosas. Un modelo que solo pasó por la
+primera etapa no contesta preguntas, las continúa. Esa segunda etapa es la que convirtió una
+curiosidad de laboratorio en algo que llegó a todos los escritorios: la capacidad ya estaba, faltaba
+la interfaz.
+
+El tono servicial y seguro con el que te contesta viene de ahí, y no tiene ninguna relación con si
+lo que dice es cierto. Es una forma aprendida de hablar, no una señal de que sabe.
+
+## ¿Y adentro qué hay? Una caja negra que se puede abrir (para curiosos)
+
+Hasta acá describimos qué hace el modelo y cómo se entrenó, no qué pasa adentro cuando responde. La
+respuesta corta ya la tenés: nadie escribió esas reglas, se ajustaron solas. La respuesta larga es
+más interesante, y hay toda una disciplina dedicada a ella.
+
+El mejor lugar para verlo no es un modelo de lenguaje sino uno de imágenes, porque lo que aprende se
+puede dibujar. En 1989, en los Laboratorios Bell, Yann LeCun mostró una red que leía números escritos
+a mano. El video dura un minuto y está en el material de arriba; conviene mirarlo sabiendo que ese
+mismo mecanismo, con más datos y más cómputo, es el que hoy escribe informes.
+
+Lo que pasa adentro de esa red es lo que importa. **La red no aprende "el número 7": aprende a
+descomponer la imagen en piezas.** Las primeras capas detectan bordes y cambios de contraste. Las
+siguientes combinan esos bordes en curvas y esquinas. Las de más arriba combinan las curvas en partes
+reconocibles, y recién al final aparece algo que podríamos llamar "un siete". A cada una de esas piezas
+se la llama una *característica*, y ninguna estaba en el programa: emergieron de mirar ejemplos.
+
+Cuando la misma técnica se aplica a redes que miran fotos, aparecen detectores de texturas, de ojos, de
+ruedas de auto. Y cuando se aplica a los modelos de lenguaje de hoy, aparecen millones de conceptos
+identificables, al punto de poder amplificarlos o apagarlos y ver cómo cambia la respuesta.
+
+Esto importa por dos razones prácticas. La primera es que "caja negra" es una metáfora incompleta: se
+puede mirar adentro, con esfuerzo. La segunda es que todavía no sabemos hacerlo lo bastante bien como
+para garantizar cómo se va a comportar un modelo en una situación nueva, y esa brecha es exactamente el
+tema del día 4.
+
+{/* LeNet y AlexNet ya están en el material de arriba: acá van solo los que faltan. */}
+<ListaRecursos
+  items={INTERPRETABILIDAD.filter((r) => !RECURSOS[1].some((x) => x.url === r.url))}
+  titulo="Para ver adentro (opcional)"
+/>
+
+## De ahí salen las alucinaciones
+
+Volvé a la única operación: continuar texto de forma *plausible*. Cuando el modelo no sabe algo, no
+tiene un mecanismo natural para callarse: **genera la continuación más plausible igual**. Un número
+de norma que parece real, un paper que suena citable, una cifra de producción con tres decimales.
+Eso es una **alucinación**, y no es un bug raro: es el comportamiento por defecto del mecanismo que
+acabás de ver en los laboratorios. Peor: el tono seguro con el que la dice viene de la segunda etapa
+del entrenamiento, que enseña forma, no verdad.
+
+En la lista del cierre, esta es "inventa lo que no sabe". La consecuencia práctica que nos acompaña
+todo el curso: la salida de un modelo grande de lenguaje es un **borrador plausible**, no una fuente.
+Se verifica todo lo que importa.
+
+## Las cuatro maneras de fallar, y dónde vemos cada una
+
+Hoy viste el mecanismo de dos. Hay cuatro en total, y cada una sale de una propiedad distinta del
+modelo, así que cada una tiene su propio arreglo. El curso las recorre en este orden:
+
+- **Inventa lo que no sabe.** Sale de cómo genera el texto, token por token. Hoy.
+- **No hace lo que le pediste.** Sale de cuánto control te dan de verdad las instrucciones. Mañana.
+- **Está seguro y equivocado.** Sale de lo que aprendió y de lo que no. Día 3.
+- **Se olvida de lo que le dijiste.** Sale de cuánto puede mirar a la vez. Hoy, y de nuevo el día 3.
+
+El día 4 las juntamos en una sola tabla y las convertimos en un protocolo. No hace falta memorizar
+nada ahora: alcanza con saber que cuando algo salga mal, la primera pregunta útil no es "¿cómo lo
+reescribo?" sino "¿cuál de las cuatro fue?".
 
 ## Para discutir
 
@@ -101,24 +251,14 @@ resuelto de punta a punta.
 2. En la demo, el chatbot respondió algo incorrecto con total seguridad. ¿Fue porque le faltaba el
    dato, o porque el dato no existía y lo completó igual? No son la misma falla y no se arreglan
    igual.
-3. ¿Dónde ya hay "machine learning" escondido en el software que usás (simuladores, interpretación sísmica, mantenimiento predictivo)?
+3. Después de jugar con la temperatura: ¿para qué tareas tuyas querrías temperatura baja? ¿Alguna donde convenga alta?
+4. Si el modelo "solo continúa texto", ¿por qué a veces parece razonar? ¿Dónde está el límite?
 
-## Las cuatro maneras de fallar, y dónde vemos cada una
+## Tarea para mañana
 
-Hoy vieron dos. Hay cuatro en total, y cada una sale de una propiedad distinta del modelo, así que
-cada una tiene su propio arreglo. El curso las recorre en este orden:
+Traé **una tarea real de tu semana** que le pedirías a un chatbot. Anotá tres líneas: qué le
+pedirías, qué material tendrías que darle, y cómo te darías cuenta de si lo hizo bien. Si ya tenés
+cuenta, probala (sin datos confidenciales) y anotá qué salió mal. Cinco minutos alcanzan: mañana
+esa tarea es la materia prima del taller "tu tarea, tu prompt".
 
-- **Inventa lo que no sabe.** Sale de cómo genera el texto, palabra por palabra. Sesión 2.
-- **Está seguro y equivocado.** Sale de lo que aprendió y de lo que no. Sesión 5.
-- **Se olvida de lo que le dijiste.** Sale de cuánto puede mirar a la vez. Sesiones 2 y 6.
-- **No hace lo que le pediste.** Sale de cuánto control te dan de verdad las instrucciones. Sesión 3.
-
-En la sesión 7 las juntamos en una sola tabla y las convertimos en un protocolo. No hace falta
-memorizar nada ahora: alcanza con saber que cuando algo salga mal, la primera pregunta útil no es
-"¿cómo lo reescribo?" sino "¿cuál de las cuatro fue?".
-
-## Tarea para la sesión 2
-
-Usá el chatbot para **una tarea real** (sin datos confidenciales) y anotá: qué pediste, qué salió bien,
-qué salió mal. Si podés, arriesgá por qué salió mal. Dos minutos de notas alcanzan: las usamos para
-abrir la sesión de mañana.
+<Quiz data="quiz_s1" sesion={1} />
