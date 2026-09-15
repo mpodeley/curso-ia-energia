@@ -76,7 +76,8 @@ Ecuador. Cinco temas donde un caso con IA les habla a las cuatro:
 - Reporte diario de producción de la Agencia de Regulación y Control de Hidrocarburos (ARCH):
   PDF de una página con producción por compañía, por bloque público, estado de pozos, gas y
   novedades por pozo con causa de cierre. `https://controlhidrocarburos.gob.ec/`.
-- Producción mensual de Petroecuador: `https://datosabiertos.gob.ec/dataset/produccion-mensual-petroecuador`.
+- Producción mensual de Petroecuador en datosabiertos.gob.ec: existe, pero el portal responde 403
+  desde fuera de Ecuador (probado el 15 de septiembre de 2026), así que no se enlaza desde el sitio.
 - Capítulo IV (Secretaría de Energía, Argentina): producción e inyección mensual por pozo.
 - Reporte de sustentabilidad 2024 de PCR (Argentina y Ecuador, 174 páginas): `https://www.pcr.energy/wp-content/uploads/2025/09/PCR-Reporte-de-Sustentabilidad-2024-vf_compressed.pdf`.
 - Reglamento de Operaciones Hidrocarburíferas, versión vigente (Resolución ARCERNNR-024/2021, 191 artículos): `https://www.gob.ec/sites/default/files/regulations/2025-05/Documento_Reglamento-Operaciones-Hidrocarbur%C3%ADferas.pdf`.

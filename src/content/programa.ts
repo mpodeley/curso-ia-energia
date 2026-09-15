@@ -41,8 +41,8 @@ export const SESIONES: Sesion[] = [
       'Extraer una tabla del reporte diario de la ARCH y verificarla contra el original, número por número',
       'Ajustar una curva de declinación sobre datos públicos de un pozo',
     ],
-    estado: 'en-preparacion',
-    slides: false,
+    estado: 'lista',
+    slides: true,
   },
   {
     n: 3,

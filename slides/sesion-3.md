@@ -40,6 +40,8 @@ Bloque 1 de 10 · **15 min**
 
 ---
 
+<!-- _class: agenda -->
+
 ## Hoy
 
 | Bloque | Tiempo | Qué hacemos |

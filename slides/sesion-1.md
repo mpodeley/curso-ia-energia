@@ -39,6 +39,8 @@ Arranca 0:00, termina 0:15.
 
 ---
 
+<!-- _class: agenda -->
+
 ## Hoy
 
 | Bloque | Tiempo | Qué hacemos |

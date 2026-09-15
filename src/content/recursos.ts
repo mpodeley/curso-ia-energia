@@ -12,7 +12,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-08-19'
+export const VERIFICADO = '2026-09-15'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -201,6 +201,20 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'es',
       porque:
         'La fuente de los pozos del laboratorio. Bajate un año y probá el flujo de la sesión con datos de verdad, que es la mejor práctica antes de tocar los de tu empresa.',
+    },
+    {
+      // Segunda edición: la fuente del bloque "De PDF a tabla" del día 2. No
+      // hay página índice: los PDF viven bajo wp-content/uploads/downloads/AAAA/MM/
+      // con nombre predecible, uno por día hábil. Copias del 8 al 15 de
+      // septiembre de 2026 en public/descargas/ por si la red corporativa
+      // bloquea el sitio del regulador.
+      tipo: 'herramienta',
+      titulo: 'Reporte diario preliminar de producción y operaciones',
+      url: 'https://controlhidrocarburos.gob.ec/',
+      fuente: 'Agencia de Regulación y Control de Hidrocarburos (ARCH), Ecuador',
+      idioma: 'es',
+      porque:
+        'Una página por día: producción por compañía y por bloque, estado de pozos, gas y las novedades pozo por pozo con su causa de cierre. El PDF de cada día se llama REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-DD-DE-MES-DE-AAAA.pdf bajo wp-content/uploads/downloads/AAAA/MM/.',
     },
   ],
   3: [

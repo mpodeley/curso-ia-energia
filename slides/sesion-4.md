@@ -35,6 +35,8 @@ propio en el chat compartido.
 
 ---
 
+<!-- _class: agenda -->
+
 ## Hoy
 
 | Bloque | Tiempo | Qué hacemos |

@@ -21,11 +21,6 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
         href: 'https://controlhidrocarburos.gob.ec/cifras-del-sector-hidrocarburifero/',
         nota: 'un PDF de una página por día: producción por compañía y por bloque, estado de pozos y novedades con causa de cierre (de ahí el ejercicio del día 2)',
       },
-      {
-        nombre: 'Producción mensual de Petroecuador — datos abiertos',
-        href: 'https://datosabiertos.gob.ec/dataset/produccion-mensual-petroecuador',
-        nota: 'la serie mensual de la empresa pública, en CSV',
-      },
     ],
   },
   {
