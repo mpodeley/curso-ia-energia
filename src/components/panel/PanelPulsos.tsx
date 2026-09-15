@@ -4,11 +4,11 @@
 // forma total y ubica la nube de palabras sin azar: proyectado, cualquier
 // reacomodo entre dos polls se lee como si los datos hubieran cambiado.
 
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { PULSOS, pulsoPorId } from '../../content/pulsos'
 import { layoutNube, tallyOpciones, tallyPalabras, type Voto } from '../../engine/pulso'
 import { hace, usePoll } from '../../hooks/usePoll'
-import { panelPulso, panelRespuestas } from '../../lib/api'
+import { panelPulso, panelRespuestas, pulsoActual } from '../../lib/api'
 import { colors, radius, space } from '../../theme'
 import { ConteoBarChart, NubeDePalabras } from '../charts'
 import { Stat, StatRow } from '../ui'
@@ -33,6 +33,25 @@ export function PanelPulsos({
     [token, edicion, activo],
   )
   const { dato, desde, fallando } = usePoll(consultar, POLL_MS, Boolean(activo))
+
+  // Dos instructores, dos navegadores: el pulso abierto vive en la base, no acá.
+  // Se sigue el cambio remoto (abrió o cerró el otro) y nada más: una selección
+  // local para mirar un pulso cerrado no se pisa en cada poll.
+  const consultarAbierto = useCallback(() => pulsoActual(token), [token])
+  const remoto = usePoll(consultarAbierto, POLL_MS, true)
+  const ultimoRemoto = useRef<string | null | undefined>(undefined)
+  useEffect(() => {
+    if (!remoto.dato) return
+    const id = remoto.dato.pulsoId
+    if (id === ultimoRemoto.current) return
+    ultimoRemoto.current = id
+    if (id) {
+      setActivo(id)
+      setAbierto(true)
+    } else {
+      setAbierto(false)
+    }
+  }, [remoto.dato])
 
   const pulso = activo ? pulsoPorId(activo) : undefined
 

@@ -12,13 +12,14 @@ compatibility_date = "2026-08-01"
 #   [[routes]]
 #   pattern = "curso-api.podeley.ar"
 #   custom_domain = true
-# DESACTIVADO temporalmente (2026-08-11). Pestañas viejas del sitio —con el bug de
-# polling de usePoll ya arreglado en el cliente pero todavía corriendo en memoria—
-# golpeaban este worker a ~6-9k req/min y agotaban la cuota diaria del plan Free,
-# tirando TODOS los workers de la cuenta con 1027. Con la ruta apagada, esos
-# requests son error de borde y NO cuentan contra la cuota. Para la próxima clase:
-# volver a poner `true`, `npm run deploy`, y cerrar cualquier pestaña vieja abierta.
-workers_dev = false
+# Estuvo en false del 2026-08-11 al 2026-09-15: pestañas viejas del sitio —con el
+# bug de polling de usePoll ya arreglado en el cliente pero todavía corriendo en
+# memoria— golpeaban este worker a ~6-9k req/min y agotaban la cuota diaria del
+# plan Free, tirando TODOS los workers de la cuenta con 1027. Con la ruta apagada,
+# esos requests son error de borde y NO cuentan contra la cuota. Entre ediciones
+# conviene volver a false; antes de una clase, true + `npm run deploy` + cerrar
+# cualquier pestaña vieja abierta.
+workers_dev = true
 
 # Cada deploy publicaría además una URL propia de su versión, todas apuntando a
 # los mismos secretos y a la misma base. Para una herramienta de clase en vivo
@@ -28,8 +29,9 @@ preview_urls = false
 [vars]
 # La estampa el Worker en cada fila; el cliente no la manda y no puede falsearla.
 # Cohorte nueva = cambiar esta línea y `npm run deploy`. Las filas viejas quedan
-# consultables desde el selector de edición del panel.
-EDICION = "ypfb-andina-2026-08"
+# consultables desde el selector de edición del panel. Ediciones dictadas:
+# ypfb-andina-2026-08 (respaldo SQL fuera del repo, 2026-09-15).
+EDICION = "multiempresa-2026-09"
 
 # Allowlist exacta de CORS. Sin esto no entra ningún origen.
 # mpodeley.github.io es la URL canónica del curso (cuenta personal, sin dominio

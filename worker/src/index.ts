@@ -101,8 +101,11 @@ async function rutear(req: Request, env: Env, origen: string | null): Promise<Re
       return json({ ok: true, actualizado }, 200, origen)
     }
 
+    // También lo consulta el panel: con dos instructores (edición 2026-09), el
+    // que no apretó el botón necesita enterarse de qué pulso quedó abierto.
     case 'GET /api/v1/pulso': {
-      const sesion = await sesionDe(req, env, ahora, 'alumno')
+      const sesion =
+        (await sesionDe(req, env, ahora, 'alumno')) ?? (await sesionDe(req, env, ahora, 'instructor'))
       if (!sesion) return json({ error: 'auth' }, 401, origen)
       return json({ pulsoId: await pulsoAbierto(env) }, 200, origen)
     }
