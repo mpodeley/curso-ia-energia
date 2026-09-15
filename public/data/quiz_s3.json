@@ -1,93 +1,137 @@
 {
-  "generated_at": "2026-08-12T01:02:29+00:00",
+  "generated_at": "2026-09-15T00:00:00+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
     {
-      "pregunta": "Querés automatizar un resumen que va a correr mil veces por mes. ¿Cómo elegís el modelo?",
+      "pregunta": "En una palabra: ¿qué hace un sistema de recuperación aumentada antes de responder?",
       "opciones": [
         {
-          "texto": "El que esté primero en los benchmarks: es el mejor, punto.",
-          "explicacion": "El podio general no mide tu tarea, y el mejor del ranking puede costar cien veces más para un resumen que un modelo rápido hace igual de bien."
+          "texto": "Reentrena el modelo con tus documentos.",
+          "explicacion": "Eso es otra técnica, mucho más cara y lenta, y casi nunca es lo que se usa. El modelo no cambia en absoluto."
         },
         {
-          "texto": "El más barato siempre: total, todos hacen más o menos lo mismo.",
-          "explicacion": "No hacen lo mismo: el rápido falla más seguido en tareas difíciles. Barato sin probar sale caro apenas hay que revisar todo a mano."
-        },
-        {
-          "texto": "Pruebo la tarea real en el modelo grande y en el rápido, comparo las salidas, y me quedo con el más barato que alcanza.",
+          "texto": "Busca los fragmentos más parecidos a la pregunta y los pega adelante de la pregunta, en el mismo prompt.",
           "correcta": true,
-          "explicacion": "Tu tarea es el benchmark que importa. A mil corridas por mes, el precio por token se vuelve presupuesto: se paga capacidad solo donde hace falta."
+          "explicacion": "Nada más que eso. El modelo responde con el libro abierto: no aprendió tu manual, lo está leyendo en ese momento."
         },
         {
-          "texto": "Da igual cuál: los proveedores cobran todos lo mismo por consulta.",
-          "explicacion": "Se cobra por token, no por consulta, y entre el modelo grande y el rápido de un mismo proveedor puede haber cien veces de diferencia de precio."
+          "texto": "Le da acceso a internet para que busque la respuesta.",
+          "explicacion": "Buscar en internet es otra herramienta. Acá el corpus es tuyo y está cerrado, que es justamente la gracia."
+        },
+        {
+          "texto": "Guarda tus documentos en la memoria del modelo para las próximas consultas.",
+          "explicacion": "No hay memoria persistente. En cada pregunta se vuelve a buscar y se vuelve a pegar."
         }
       ]
     },
     {
-      "pregunta": "De las cinco piezas de un prompt, ¿cuál suele cambiar más la calidad de la salida en una tarea de oficina?",
+      "pregunta": "El buscador trae un fragmento que no responde la pregunta, pero el modelo contesta igual. ¿Cuál es el riesgo?",
       "opciones": [
         {
-          "texto": "El rol, porque define quién es el modelo.",
-          "explicacion": "Ayuda a fijar el registro, pero un rol bien puesto sobre un pedido sin contexto sigue dando un texto genérico."
-        },
-        {
-          "texto": "El contexto, cuando dice para qué se va a usar el resultado y qué decisión alimenta.",
+          "texto": "Que la respuesta salga mal y con una cita al lado, lo que la hace más creíble que una respuesta sin fuente.",
           "correcta": true,
-          "explicacion": "Es lo que le da criterio para jerarquizar: qué dejar afuera. Sin eso resume \"en general\", que es resumir para nadie."
+          "explicacion": "La cita transmite verificación aunque no la haya. Por eso hay que mirar los fragmentos recuperados, no solo la respuesta."
         },
         {
-          "texto": "Los ejemplos, siempre.",
-          "explicacion": "Un ejemplo real es muy potente, pero es opcional. El contexto no lo es: sin él, el ejemplo tampoco sabe hacia dónde apuntar."
+          "texto": "Ninguno: si el fragmento no sirve, el modelo va a decir que no sabe.",
+          "explicacion": "Debería, pero muchas veces no lo hace: arma una respuesta usando lo que tiene, porque es lo que sabe hacer."
         },
         {
-          "texto": "El largo del prompt: cuanto más detallado, mejor.",
-          "explicacion": "Un prompt largo y vago rinde menos que uno corto y específico. Lo que importa es qué piezas están, no cuántas palabras."
+          "texto": "Que el sistema se ponga más lento.",
+          "explicacion": "El costo es de confiabilidad, no de velocidad."
+        },
+        {
+          "texto": "Que se rompa la búsqueda para las próximas preguntas.",
+          "explicacion": "Cada consulta es independiente. El problema es la respuesta de esta vez."
         }
       ]
     },
     {
-      "pregunta": "Tenés que resumir el informe mensual de producción del bloque. ¿Cuál es la forma correcta de usar un chatbot gratuito?",
+      "pregunta": "En el mapa de significados, \"burro\" y \"araña\" quedaban lejos del vocabulario del yacimiento. ¿Qué muestra eso?",
       "opciones": [
         {
-          "texto": "Subir el informe completo con los datos reales: es más rápido y el resultado va a ser mejor.",
-          "explicacion": "Producción real por pozo no va a una herramienta gratuita. La ganancia de calidad no compensa el riesgo de confidencialidad."
+          "texto": "Que el mapa está mal calculado.",
+          "explicacion": "El mapa está bien: refleja fielmente lo que el modelo entiende por esas palabras."
         },
         {
-          "texto": "No usarlo: para datos de la empresa no sirve ninguna herramienta de este tipo.",
-          "explicacion": "Demasiado restrictivo. Hay formas de aprovecharlo sin exponer datos, y renunciar del todo también tiene un costo."
+          "texto": "Que hay que evitar la jerga cuando se usan estas herramientas.",
+          "explicacion": "Evitarla es un parche. La solución es darle el material donde esa jerga está definida."
         },
         {
-          "texto": "Trabajar la estructura y el estilo con datos inventados o públicos que tengan la misma forma, y poner los números reales vos, después.",
+          "texto": "Que el modelo aprendió esas palabras del lenguaje corriente y no conoce su significado en el yacimiento.",
           "correcta": true,
-          "explicacion": "Lo que aporta el modelo es la redacción y la organización, y eso se puede pedir sin datos sensibles. Los números los pegás en tu máquina."
+          "explicacion": "Y es la mejor demostración de por qué hace falta darle tus documentos: la jerga de tu empresa no está en internet."
         },
         {
-          "texto": "Subir el informe pero cambiándole el nombre a los pozos.",
-          "explicacion": "Los volúmenes, las fechas y las relaciones entre pozos siguen ahí. Anonimizar mal da una sensación de seguridad sin la seguridad."
+          "texto": "Que el modelo es malo en español.",
+          "explicacion": "Entiende bien el español general. El problema es específico del vocabulario técnico de un oficio."
         }
       ]
     },
     {
-      "pregunta": "El primer resultado no sirve. ¿Qué conviene hacer?",
+      "pregunta": "¿Qué distingue a un agente de un chatbot?",
       "opciones": [
         {
-          "texto": "Empezar de cero con un prompt completamente distinto.",
-          "explicacion": "A veces hace falta, pero tirar todo descarta la parte que sí funcionaba. Iterar suele llegar antes."
+          "texto": "Que el modelo que tiene adentro es más potente.",
+          "explicacion": "Suele ser el mismo modelo. La diferencia no está en el modelo sino en lo que lo rodea."
         },
         {
-          "texto": "Decirle qué está mal y pedirle el ajuste concreto: más corto, sin jerga, con la conclusión al principio.",
+          "texto": "Que fue entrenado específicamente para ser autónomo.",
+          "explicacion": "La autonomía viene del loop y de los permisos que le dieron, no de un entrenamiento distinto."
+        },
+        {
+          "texto": "Que no alucina, porque verifica lo que hace.",
+          "explicacion": "Alucina igual. Lo que cambia es que algunos de sus errores vuelven como resultado observable, y esos los puede corregir."
+        },
+        {
+          "texto": "Que puede ejecutar herramientas y mirar el resultado, y decidir el paso siguiente con eso a la vista.",
           "correcta": true,
-          "explicacion": "La conversación es parte del método, no señal de que fallaste. Cada corrección concreta rinde más que reescribir el prompt entero."
+          "explicacion": "Ese loop es todo. Un chatbot que se equivoca no se entera nunca; un agente recibe el error de vuelta y tiene la chance de corregirse."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Por qué un agente rinde peor en tareas largas que en tareas cortas?",
+      "opciones": [
+        {
+          "texto": "Porque se cansa y baja la calidad con el uso.",
+          "explicacion": "No hay fatiga: cada llamada es independiente. El problema es acumulativo pero por otra razón."
         },
         {
-          "texto": "Preguntarle por qué le salió mal.",
-          "explicacion": "Te va a dar una explicación plausible e inventada de su propio proceso. No tiene acceso introspectivo a por qué generó lo que generó."
+          "texto": "Porque arrastra todo lo anterior en cada vuelta: se vuelve más lento, más caro y más propenso a perder de vista el objetivo original.",
+          "correcta": true,
+          "explicacion": "El contador de contexto del ejercicio lo muestra creciendo paso a paso. Una tarea de veinte pasos no es dos veces una de diez: es bastante peor."
         },
         {
-          "texto": "Volver a mandar el mismo prompt hasta que salga algo mejor.",
-          "explicacion": "Vas a obtener variaciones del mismo error. Si el prompt no cambia, el problema no cambia."
+          "texto": "Porque las herramientas fallan más cuando se usan muchas veces.",
+          "explicacion": "Las herramientas se comportan igual. Lo que se degrada es la capacidad del modelo de sostener el hilo."
+        },
+        {
+          "texto": "Porque necesita permisos adicionales para tareas largas.",
+          "explicacion": "Los permisos son los mismos. El límite es de contexto, no de autorización."
+        }
+      ]
+    },
+    {
+      "pregunta": "En la traza, el agente filtró por \"AGUARAGUE\" sin diéresis y le volvieron cero filas. Lo importante es el paso siguiente. ¿Por qué?",
+      "opciones": [
+        {
+          "texto": "Porque probó otra grafía hasta que funcionó.",
+          "explicacion": "Eso sería adivinar de nuevo. Hizo algo mejor."
+        },
+        {
+          "texto": "Porque reintentó la misma consulta y la segunda vez anduvo.",
+          "explicacion": "La misma consulta hubiera devuelto cero filas de nuevo. El error era del filtro, no de la ejecución."
+        },
+        {
+          "texto": "Porque fue a leer los valores que realmente existen en la columna en vez de suponer otro, y ahí encontró la diéresis.",
+          "correcta": true,
+          "explicacion": "Reemplazó una suposición por un dato. Un chatbot sin herramientas hubiera seguido escribiendo con total seguridad sobre una tabla vacía."
+        },
+        {
+          "texto": "Porque avisó del error y frenó para consultar.",
+          "explicacion": "Frenar ante cada obstáculo lo volvería inútil. La gracia es que pudo resolverlo solo, con evidencia."
         }
       ]
     }

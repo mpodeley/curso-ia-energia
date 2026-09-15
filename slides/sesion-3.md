@@ -2,23 +2,40 @@
 marp: true
 theme: podeley
 paginate: true
-header: 'IA generativa · petróleo y gas · **Sesión 3**'
-footer: 'mpodeley.github.io/curso-energia-ypfb'
+header: 'IA generativa · petróleo y gas · **Día 3**'
+footer: 'mpodeley.github.io/curso-ia-energia'
 ---
 
 <!-- _class: portada -->
 
-# Uso efectivo: prompting y trabajo diario
+# Tu conocimiento y agentes
 
-Sesión 3 de 8 · 2 h en vivo · **YPFB Andina**
+Día 3 de 4 · 4 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras entra la gente
-Ventanas de hoy: A este deck, C el sitio en la sesión 3, D el chatbot (Gemini
-Flash para las demos; en el taller cada uno usa el suyo). Hoy no hay pulsos ni
-encuesta: el panel no hace falta.
-Tener a mano la lista de tareas que dejó la discusión de la sesión 1: si el
-repaso viene flojo, sirve de arranque.
+Ventanas de hoy: A este deck, C el sitio en el día 3, D NotebookLM con la
+cuenta del curso, E la terminal del agente (la que esté ensayada). Sin pulsos
+hoy: lo que se comparte va por el chat.
+Antes de clase: los tres documentos del cuaderno bajados y listos para subir
+(reglamento de operaciones de Ecuador, reporte de sustentabilidad de PCR, Ley
+17.319 de InfoLEG) más dos reportes diarios de la ARCH de ayer; el cuaderno se
+arma en vivo pero los archivos no se buscan en vivo. La terminal del agente
+probada sobre los CSV del Capítulo IV, los mismos del ejercicio de la página.
+Martín: cronómetro en cero, chat abierto, y el archivo de preguntas de la
+ronda listo para compartir pantalla cuando toque.
+-->
+
+---
+
+<!-- _class: seccion -->
+
+## Apertura y repaso de la tarea
+
+Bloque 1 de 10 · **15 min**
+
+<!--
+0:00 · arranca el bloque, termina 0:15
 -->
 
 ---
@@ -27,34 +44,42 @@ repaso viene flojo, sirve de arranque.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura y entrada al sitio | 5 min | El PIN de siempre y el mapa del día |
-| Repaso de la tarea | 10 min | Las tres tareas repetitivas de cada uno; con ellas armamos la lista del taller |
-| Elegir modelo | 12 min | Benchmarks, precios por token y la escalera grande/rápido de cada proveedor |
-| El peor prompt | 12 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
-| Anatomía de un prompt | 22 min | Las seis piezas, reescribiendo en vivo dos tareas de la lista |
-| Taller: tu tarea, tu prompt | 36 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
-| Qué no se sube a un chatbot | 13 min | La regla, el porqué y las alternativas |
-| Cierre y tarea | 10 min | La tercera manera de fallar tachada, y la tarea antes/después |
+| Apertura y repaso de la tarea | 15 min | Las ventanas del día y una ronda: la mejor de tus tres preguntas |
+| Por qué no sabe lo tuyo | 15 min | El hueco, las dos formas de cerrarlo, y qué significa "parecido" para un modelo |
+| Buscar por significado | 15 min | Las dos búsquedas del ejercicio, y el prompt aumentado que se le manda al modelo |
+| NotebookLM en vivo: el cuaderno del rubro | 32 min | Reglamento, reporte y ley interrogados con sus preguntas, mirando siempre los fragmentos |
+| Tu cuaderno: un documento público de tu empresa | 25 min | Cada uno arma el suyo y le hace sus tres preguntas; ronda de qué salió |
+| Pausa | 10 min | |
+| El loop del agente | 20 min | La traza del ejercicio paso a paso, y después en vivo sobre el Capítulo IV |
+| Sus tareas | 30 min | Las cadenas de pasos de cada uno: qué delegarían hoy y qué no |
+| Dónde se rompe, dónde mejora | 20 min | Contexto, leer contra tocar, memoria en archivos, la frontera que sube |
+| Pausa | 10 min | |
+| Taller: el caso de tu empresa, en una página | 36 min | Dolor, datos, sensibilidad, verificabilidad, primer paso; por empresa |
+| Cierre y tarea | 12 min | Lo que se llevan, y pulir la página del caso para mañana |
 
 <!--
 2 min · acumulado 0:02
-La misma tabla está en la página de la sesión 3.
-Bajada del día: dos días mirando qué es y cómo funciona; hoy es manejo puro.
-El bloque de elegir modelo es nuevo y existe porque lo pidieron ayer.
+La misma tabla está en la página del día 3.
+Bajada del día: el modelo no leyó lo de ustedes, y en la primera mitad se
+arregla eso. En la segunda, el modelo deja de responder y trabaja. Y al
+final cada empresa escribe su caso, que mañana se critica al lado del caso
+del curso.
 -->
 
 ---
 
-## Al final de esta sesión van a poder
+## Al final del día van a poder
 
-- Escribir prompts con **rol, contexto, tarea, formato y ejemplos**
-- Comparar modelos con criterio: **benchmarks, precio por token, velocidad**
-- Saber **qué información de la empresa no debe subirse** a un chatbot
+- Entender la intuición de **RAG**: buscar, traer, responder con cita
+- Armar un **cuaderno gratuito** con documentos del rubro y uno de su empresa
+- Ver el **loop** de un agente: pensar, ejecutar, mirar el resultado, repetir
+- Escribir en una página el **caso de su empresa**: dolor, datos, sensibilidad, verificabilidad
 
 <!--
 1 min · acumulado 0:03
-Hoy no se levanta el capó: es la sesión más práctica del curso hasta acá.
-Todo lo que se arma en el taller se va con ellos, funcionando.
+Cuatro cosas, dos por mitad. La cuarta es el cambio de género: el curso pasa
+de entender a construir, y lo que escriban hoy es lo que mañana se pone al
+lado del screening de waterflooding.
 -->
 
 ---
@@ -63,122 +88,109 @@ Todo lo que se arma en el taller se va con ellos, funcionando.
 
 ## Entrá al sitio, como ayer
 
-`mpodeley.github.io/curso-energia-ypfb`
+`mpodeley.github.io/curso-ia-energia`
 
-Hoy usamos la página de la sesión 3, y tu chatbot en otra pestaña: vas a trabajar con los dos.
+Hoy usamos la página del día 3. Tené a mano tus **tres preguntas** de la tarea: se usan tal cual
+las escribiste, dos veces.
 
 <!--
 2 min · acumulado 0:05
-El PIN es el mismo; dictarlo solo si alguien cambió de computadora.
-Avisar temprano: en el taller cada uno corre su propio prompt en su propio
-chatbot. El que no tenga cuenta, que la cree ahora que estamos arrancando.
+El PIN de siempre. Plan del día en una frase: primero entender cómo busca,
+después preguntarle de verdad a un cuaderno, y después de la pausa ver
+trabajar a un agente y escribir el caso de cada empresa.
+Martín: confirmar por el chat que los seis entraron; el que no, ayuda por
+privado mientras arranca la ronda.
 -->
 
 ---
 
-<!-- _class: seccion -->
+## Las tres preguntas de cada uno
 
-## Repaso de la tarea
-
-Bloque 1 de 7 · **10 min**
-
-<!--
-Arranca 0:05, termina 0:15
--->
-
----
-
-## ¿Qué tres tareas trajeron?
-
-Una ronda completa. Las anotamos: son la materia prima del taller de hoy.
+Una ronda: tu mejor pregunta a un documento de tu empresa, **sin decir cuál es el documento**.
+Las anotamos: son el cuestionario del cuaderno de hoy.
 
 <!--
 10 min · acumulado 0:15
-Con cinco personas la ronda es completa y sin apuro: las tres tareas de cada
-uno, por nombre. Anotarlas TODAS en un archivo a la vista (se puede compartir
-la ventana de notas un momento): esa lista es el menú del taller y alimenta
-la shortlist de la sesión 5.
-Plan B si alguien no la hizo: dos minutos ahí mismo para anotar las tres,
-con la consigna "lo que hacés más de una vez por semana y te aburre". Nadie
-queda afuera del taller.
-Marcar con un asterisco las dos tareas más repetidas entre personas: esas van
-al bloque del peor prompt.
+Ronda directa con nombre, la mejor de las tres por persona, y de paso una
+línea sobre el prompt antes y después de ayer si alguien lo trajo. Seis
+personas, un minuto y medio cada una.
+Martín: anota las preguntas en el archivo a la vista; ese es el guion del
+bloque de NotebookLM. Marca las dos o tres más concretas (equipo, número,
+procedimiento): esas van primero.
+La regla del chat, dicha una vez: la pregunta sí, el documento y el dato de
+la empresa no. Hay cuatro empresas competidoras en la sala.
+Plan B si pocos la hicieron: dos minutos para escribir UNA pregunta con la
+consigna "lo que le preguntarías a tus manuales si contestaran". Con seis
+personas salen seis preguntas igual.
+Cierre del bloque 1.
 -->
 
 ---
 
 <!-- _class: seccion -->
 
-## Elegir modelo
+## Por qué no sabe lo tuyo
 
-Bloque 2 de 7 · **12 min**
+Bloque 2 de 10 · **15 min**
 
 <!--
-Arranca 0:15, termina 0:27
-Este bloque salió de una pregunta de ayer: cómo se comparan los modelos y
-dónde mirar.
+0:15 · arranca el bloque, termina 0:30
 -->
 
 ---
 
-<!-- _class: acentos -->
+## El modelo no leyó tus documentos
 
-## ¿Qué modelo uso? Cuatro cosas para mirar
+Leyó una fracción enorme de internet. **No leyó tu manual de operaciones**, ni tus normas, ni el
+informe que escribió tu compañero el mes pasado.
 
-- **Capacidad en tu tarea**: los rankings generales no redactan tu minuta
-- **Ventana de contexto**: cuánto le entra de una vez
-- **Precio por token**: la entrada y la salida se cobran distinto
-- **Velocidad**: el grande piensa mejor y tarda más
-
-Todos los proveedores tienen la misma escalera: un modelo **grande** y uno **rápido**.
+Preguntarle sobre eso es pedirle la continuación más plausible. Ya sabemos cómo termina: una
+respuesta inventada, con tono seguro.
 
 <!--
-4 min · acumulado 0:19
-La escalera, con nombres: GPT y su mini, Claude y Haiku, Gemini Pro y Flash.
-Ya la usaron sin saberlo: el Flash de las demos es el rápido de Gemini.
-El selector de modelo del chatbot ES esta decisión, y hasta hoy lo dejaron
-en el que venía por defecto. Después de este bloque, que sea una elección.
+5 min · acumulado 0:20
+Conectar con la mecánica del día 1 sin reabrirla: inventa lo que no sabe,
+y lo que no sabe es exactamente lo de ustedes. El reglamento de Ecuador
+quizás lo leyó; el procedimiento interno de su campo, seguro que no.
 -->
 
 ---
 
-## Dónde mirar
+## Dos formas de cerrar el hueco
 
-- Un benchmark es un **examen estandarizado**: sirve para descartar, no para elegir fino
-- **LMArena**: miles de personas votando a ciegas entre dos respuestas
-- **Artificial Analysis**: capacidad, precio y velocidad de todos, en un solo cuadro
-- Y el benchmark que importa de verdad: **tu tarea**, corrida en dos modelos
+**Reentrenar** el modelo con tus documentos: caro, lento, casi siempre innecesario.
+
+**Traerle el documento**: buscar los fragmentos que responden la pregunta y pegarlos arriba de
+la pregunta. El modelo responde con el libro abierto.
 
 <!--
-4 min · acumulado 0:23
-Los dos sitios están en el material previo de la página, con enlace.
-Los límites de los benchmarks, dichos sin cinismo: los modelos "estudian para
-el examen" (las preguntas se filtran al entrenamiento), un punto más de
-benchmark no se nota en una minuta, y el podio cambia todos los meses. Se
-mira el cuadro general, no el ranking del día.
-La última viñeta es la que quiero que se lleven, y el taller de hoy la deja
-practicada: mismo prompt, dos modelos, comparar con tus propios ojos.
+4 min · acumulado 0:24
+La segunda es la que usa todo el mundo y la que vemos hoy. El nombre técnico
+es generación aumentada por recuperación (RAG), y una vez que la ven
+funcionar deja de parecer sofisticada: es un buscador más un pegado.
+Para buscar el fragmento correcto hace falta buscar por significado, y para
+eso hay que poder medir "parecido". Eso es lo que sigue.
 -->
 
 ---
 
-## La economía de tokens
+<!-- _class: panel -->
 
-Se cobra **por token**, y la entrada y la salida tienen precio distinto. Entre el modelo grande
-y el rápido puede haber **cien veces** de diferencia.
+## Qué significa "parecido" para un modelo
 
-Hoy no lo pagan: cuentas gratuitas. Importa el día que algo se automatiza: mil corridas por mes
-convierten el precio por token en presupuesto.
+Abrí el **mapa de significados** en la página. Clickeá términos y mirá qué le queda cerca.
+Buscá la familia de jerga: "burro", "araña", "pescado", "camisa".
 
 <!--
-4 min · acumulado 0:27
-Conectar con la sesión 2: ya saben qué es un token y por qué el español rinde
-menos por token; ahora saben que eso también es plata.
-El patrón que se usa en serio: el modelo grande para lo difícil o lo que se
-hace una vez; el rápido para lo repetitivo, después de probar que alcanza.
-Adelanto de la sesión 5: pegar el manual entero en cada pregunta también es
-plata; traer solo el fragmento que hace falta es la mitad de la gracia de lo
-que veremos pasado mañana.
+6 min · acumulado 0:30
+Ventana C, ejercicio "El mapa de significados". Cada texto convertido en una
+lista de números; textos parecidos, listas parecidas; el mapa es esa lista
+proyectada a un plano.
+El golpe está en la jerga: el modelo aprendió "burro" y "araña" del lenguaje
+corriente, así que las ubica con los objetos cotidianos y no con el
+equipamiento del yacimiento. Ahí se ve, de un vistazo, qué no sabe de tu
+trabajo. Dejar que lo encuentren ellos clickeando; pedir por el chat una
+palabra de jerga de cada país que el mapa no tenga.
 Cierre del bloque 2.
 -->
 
@@ -186,215 +198,236 @@ Cierre del bloque 2.
 
 <!-- _class: seccion -->
 
-## El peor prompt
+## Buscar por significado
 
-Bloque 3 de 7 · **12 min**
+Bloque 3 de 10 · **15 min**
 
 <!--
-Arranca 0:27, termina 0:39
+0:30 · arranca el bloque, termina 0:45
 -->
 
 ---
 
 <!-- _class: panel -->
 
-## Pidámosla de una línea
+## Dos formas de buscar, mismo manual
 
-Elegimos una tarea de la lista y se la pedimos al chatbot **de la peor manera posible**: una
-línea, sin contexto. Antes de ver la respuesta: ¿qué creen que devuelve?
+El segundo ejercicio: un manual interno que ningún modelo pudo haber leído. Probá las
+preguntas que **no comparten ninguna palabra** con su respuesta.
 
 <!--
-8 min · acumulado 0:35
-Cambiar a la ventana del chatbot (Gemini Flash, sin conexión, como en las
-demos de la sesión 1). Tomar una tarea con asterisco de la lista y pedirla
-literal en una línea: "haceme el informe mensual de producción", "escribí una
-minuta de la reunión".
-ANTES de mandar: una predicción por persona, por el chat. Con cinco entran
-todas.
-Mandar y leer la respuesta en voz alta. Suele ser: larga, genérica, con el
-contexto inventado (unidades, campos, fechas que nadie le dio) y con tono de
-mucha seguridad.
-No corregirlo todavía: dejar el resultado a la vista para compararlo en el
-bloque de anatomía.
+8 min · acumulado 0:38
+Ventana C, ejercicio "Buscar en tus documentos". El corpus es inventado a
+propósito: un documento público real podría haber estado en el entrenamiento
+y la demo no probaría nada.
+Las dos preguntas estrella: la de evitar que alguien arranque el equipo
+mientras lo reparás (la responde "bloqueo y etiquetado") y la de cuidarse los
+oídos ("protección auditiva"). El buscador de palabras no tiene con qué; el
+de significado las encuentra. Esa es toda la diferencia.
+Martín: que comparen los dos modos en su pantalla y canten por el chat qué
+pregunta rompió al buscador de palabras.
 -->
 
 ---
 
-## Hizo exactamente lo que le pediste
+## El prompt aumentado
 
-El problema no es que el modelo desobedezca: es que **obedeció una orden vacía**. Sin contexto,
-lo rellena con lo más plausible, que ya sabemos lo que significa.
-
-La salida genérica no es un límite de la herramienta. Es el espejo del pedido.
+Mirá el bloque del final del ejercicio: **lo que efectivamente se le manda al modelo**. Los
+fragmentos encontrados, pegados arriba de tu pregunta. No hay nada más que eso.
 
 <!--
-4 min · acumulado 0:39
-La frase del bloque: la salida genérica es el espejo del pedido.
-Conectar con la sesión 2 sin nombres técnicos: lo que rellenó es la
-continuación más plausible, el mismo mecanismo de las alucinaciones.
-Puente: si el problema es la orden, la solución es aprender a escribir
-órdenes. Eso es todo el prompting.
--->
-
----
-
-<!-- _class: seccion -->
-
-## Anatomía de un prompt
-
-Bloque 4 de 7 · **22 min**
-
-<!--
-Arranca 0:39, termina 1:01
--->
-
----
-
-<!-- _class: acentos -->
-
-## Una orden de trabajo bien escrita
-
-- **Rol**: quién quiere que sea. "Sos un ingeniero de producción senior que escribe para gerencia"
-- **Contexto**: lo que necesita saber. "Este resumen va al comité que decide el workover"
-- **Tarea**: el verbo concreto. Resumir, comparar, redactar, extraer, traducir, criticar
-- **Formato**: cómo querés la salida. "Tabla de dos columnas", "máximo 200 palabras"
-- **Ejemplos**: si tenés un "así me gusta", mostralo. Un ejemplo vale más que tres párrafos
-
-La sexta pieza es la conversación misma: **iterar**.
-
-<!--
-5 min · acumulado 0:44
-La metáfora que ordena todo: es la orden de trabajo que le darías a un
-analista nuevo en su primer día. Nadie le dice "haceme el informe" a alguien
-que llegó ayer; le dice quién lo lee, qué importa, cómo lo quiere.
-Recorrer las piezas con la tarea del bloque anterior en mente: ¿cuáles le
-faltaron a nuestra orden de una línea? (Todas.)
--->
-
----
-
-## Un ejemplo completo
-
-```text
-Sos un ingeniero de reservorios que escribe para un directorio no técnico.
-Contexto: adjunto las conclusiones técnicas del estudio de simulación del campo.
-Tarea: redactá un resumen ejecutivo.
-Formato: máximo una página, tres secciones (situación, opciones, recomendación),
-sin jerga; cada término técnico inevitable, explicado entre paréntesis.
-```
-
-<!--
-3 min · acumulado 0:47
-Leerlo pieza por pieza señalando cada una: rol, contexto, tarea, formato.
-No tiene ejemplo adjunto y funciona igual: no todas las piezas hacen falta
-siempre. Las dos que casi nunca pueden faltar: contexto y formato.
--->
-
----
-
-<!-- _class: panel -->
-
-## Reescribamos dos de las suyas
-
-Las mismas tareas del peor prompt, ahora con las piezas completas. Miren la diferencia contra
-lo que devolvió la orden de una línea.
-
-<!--
-11 min · acumulado 0:58
-Cambiar al chatbot. Tomar la tarea del bloque anterior y reescribirla en vivo
-preguntándole a su dueño: ¿quién lo lee? ¿qué decide con esto? ¿cómo lo
-querés? Las respuestas SON el prompt; escribirlo delante de todos.
-Mandar y comparar contra la salida genérica que quedó de antes.
-Repetir con una segunda tarea de otra persona si el tiempo da.
-El punto no es la magia del resultado: es que las preguntas que hice son las
-piezas de la slide anterior, en orden.
+4 min · acumulado 0:42
+Desmitificar del todo: el botón "Copiar prompt aumentado" muestra que RAG es
+un prompt largo con los fragmentos adelante. Toda la sofisticación está en
+encontrar el fragmento correcto; el resto es el mismo chatbot de siempre.
 -->
 
 ---
 
 <!-- _class: cita -->
 
-## La primera salida es un **borrador**. La conversación es el método.
+## RAG es responder **con el libro abierto**
 
 <!--
-3 min · acumulado 1:01
-Iterar no es señal de fracaso: "más corto", "menos jerga", "ahora en tono
-formal" son parte del uso normal, no parches.
-Cierre del bloque: ya vieron las piezas y la reescritura en vivo. Ahora les
-toca a ellos, con una tarea propia.
+3 min · acumulado 0:45
+La frase del bloque. Y la letra chica que abre el bloque siguiente: con el
+libro abierto igual hay que mirar qué página trajo.
+Cierre del bloque 3.
 -->
 
 ---
 
 <!-- _class: seccion -->
 
-## Taller: tu tarea, tu prompt
+## NotebookLM en vivo: el cuaderno del rubro
 
-Bloque 5 de 7 · **36 min**
+Bloque 4 de 10 · **32 min**
 
 <!--
-Arranca 1:01, termina 1:37
+0:45 · arranca el bloque, termina 1:17
 -->
 
 ---
 
 <!-- _class: panel -->
 
-## Armá el tuyo
+## Armamos el cuaderno
 
-Elegí **una** de tus tres tareas. Armá el prompt en el constructor de la página, pieza por
-pieza, o escribilo directo si ya lo ves. Cuando esté, apretá "Copiar prompt".
+NotebookLM, con la cuenta gratuita. Tres documentos públicos, uno por país y uno de la sala:
+
+- El **Reglamento de Operaciones Hidrocarburíferas** de Ecuador (2021, 191 artículos)
+- El **Reporte de Sustentabilidad 2024** de PCR
+- La **Ley 17.319** de hidrocarburos, texto actualizado de InfoLEG
+
+Y los reportes diarios de la **ARCH** de ayer.
 
 <!--
-13 min · acumulado 1:14
-Ventana C: página de la sesión 3, ejercicio "Constructor de prompts". Tiene
-tres casos de ejemplo (resumen ejecutivo, minuta, triaje de paper) y acepta
-pegar uno propio para ver qué le falta.
-Recordar la regla antes de que empiecen: la tarea es real pero los datos no.
-Nada confidencial: estructura real, contenido público o inventado.
-Circular por el chat mientras arman: quien se trabe, que pegue lo que tiene y
-lo miramos. El constructor puntúa piezas presentes, no calidad: decirlo para
-que nadie persiga el puntaje.
+6 min · acumulado 0:51
+Ventana D. Subir los cuatro y narrar lo que hace: los procesa, arma las
+fuentes, ofrece resumen. Decir por qué estos: el reglamento es el pariente
+real del manual inventado; el reporte es una empresa de la sala contada por
+sí misma, y es público; la ley es el marco bajo el que CGC y Tecpetrol
+reportan al Capítulo IV. Los reportes de la ARCH son los de ayer: lo que
+sacaron a mano, hoy lo pregunta el cuaderno.
+Decir en voz alta el mapeo: esto es el mismo circuito del ejercicio anterior,
+con interfaz. Buscar por significado + libro abierto + cita.
+Recordar la regla: acá también, nada confidencial en la cuenta gratuita. Para
+documentos internos existen las versiones corporativas (mañana).
 -->
 
 ---
 
 <!-- _class: panel -->
 
-## Probalo y pegá el resultado en el chat
+## Lo interrogamos con sus preguntas
 
-Corré tu prompt en tu chatbot. Pegá en el chat de la videollamada **el prompt y la primera
-respuesta**, sin editar. Si te sobra tiempo: corré el mismo prompt en el **otro modelo** de tu
-chatbot y compará.
+Las preguntas de la ronda, tal cual las escribieron. Miren dos cosas: la respuesta, y **los
+fragmentos que cita**. Y una tercera: **de cuál de los cuatro documentos** sacó cada cosa.
 
 <!--
-18 min · acumulado 1:32
-El mismo mecanismo del hacelo-alucinar de ayer: todos trabajan a la vez, el
-chat junta los resultados, nadie comparte pantalla.
-Ocho minutos de trabajo en silencio; avisar cuando queden tres.
-Con cinco personas se leen TODOS los resultados en voz alta, y se critican
-CON las piezas: ¿tiene rol? ¿el contexto dice quién lo lee? ¿pidió formato?
-La crítica con nombre de pieza es amable y transferible; "está flojo" no
-enseña nada.
-La consigna extra del cambio de modelo cierra el bloque de benchmarks: quien
-la haya probado, que cuente qué cambió entre el grande y el rápido.
+16 min · acumulado 1:07
+El corazón del bloque. Ir por la lista de preguntas de la ronda, por nombre:
+"la de Fulano". Antes de cada respuesta, predecir rápido: ¿está esto en
+alguno de los cuatro documentos? ¿En cuál?
+Arrancar con las tres de la página si las de la ronda son muy de empresa:
+abandono de un pozo (reglamento, Art. 53), producción de PCR en Ecuador
+(reporte), duración y prórroga de una concesión (ley, ojo que la original y
+las reformas dicen cosas distintas).
+Por cada respuesta, abrir la cita y leer el fragmento en voz alta: ¿de verdad
+responde la pregunta, o quedó cerca del tema nada más?
+Si una pregunta no aplica a los documentos subidos, mejor: es el ensayo
+perfecto para el límite que viene en la slide siguiente.
+Martín: va tachando en el archivo las preguntas ya hechas y anota al lado
+"bien citada", "cerca" o "no estaba".
 -->
 
 ---
 
-## Qué suele faltar
+## Cuando la cita miente
 
-En nueve de cada diez prompts flojos falta lo mismo: para quién es la salida, qué formato tiene
-que tener, y un ejemplo de cómo te gusta.
+Si el buscador trae el **fragmento equivocado**, la respuesta viene mal, y viene **con una cita
+al lado**, que es peor.
 
-El rol y la tarea casi siempre están. Lo que no está es lo que un analista nuevo preguntaría.
+Por eso la regla es mirar los fragmentos, no solo la respuesta. Una herramienta que no te los
+muestra no te da verificabilidad: te da la **apariencia** de verificabilidad.
 
 <!--
-5 min · acumulado 1:37
-Síntesis del taller con lo que apareció de verdad en el chat: nombrar los
-agujeros que se repitieron, sin nombres propios.
-La frase para llevarse: lo que le falta a tu prompt es lo que un analista
-nuevo te preguntaría antes de empezar.
+7 min · acumulado 1:14
+Provocarlo en vivo: hacer una pregunta cuya respuesta NO está en los
+documentos, o una ambigua que pesque un fragmento vecino. Con cuatro fuentes
+es fácil: preguntar por regalías y ver si contesta con la ley argentina
+cuando la pregunta era por Ecuador. Mostrar cómo la respuesta sale igual de
+prolija.
+La regla operativa: la cita no es la verificación; abrir la cita es la
+verificación. Es la regla del curso entero con traje nuevo.
+-->
+
+---
+
+## El segundo límite, más aburrido
+
+Si la respuesta **no está en los documentos**, no hay recuperación que la traiga.
+
+La herramienta no sabe lo que tu empresa nunca escribió.
+
+<!--
+3 min · acumulado 1:17
+El límite frecuente de verdad: la mitad de las preguntas interesantes no
+tienen respuesta escrita en ningún lado. Detectar ESO ya vale la
+herramienta: te dice qué falta documentar. Y es el puente al bloque que
+sigue: ahora cada uno con un documento propio.
+Cierre del bloque 4.
+-->
+
+---
+
+<!-- _class: seccion -->
+
+## Tu cuaderno: un documento público de tu empresa
+
+Bloque 5 de 10 · **25 min**
+
+<!--
+1:17 · arranca el bloque, termina 1:42
+-->
+
+---
+
+## Cuatro pasos, en la página
+
+1. NotebookLM con una cuenta **personal** de Google, y **Crear cuaderno**
+2. Una fuente: un documento **público** de tu empresa (memoria, reporte, nota de prensa)
+3. Tus **tres preguntas** de la tarea, una por vez; por cada respuesta, abrí la cita
+4. Anotá una que salió bien citada y una que salió mal o no estaba
+
+<!--
+5 min · acumulado 1:22
+Leer los pasos y señalar la lista de candidatos por empresa que está en la
+página (PCR y Tecpetrol tienen reporte de sustentabilidad; CGC, la sección de
+inversores; Andes, la nota de prensa del contrato de Tarapoa o un reporte de
+la ARCH). Cuenta personal: en varias empresas la corporativa tiene NotebookLM
+bloqueado, y lo sabemos hoy, no mañana.
+La regla, otra vez y corta: público sí, interno no, y las preguntas no se
+comparten en el chat. Se comparte cómo le fue.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Manos a la obra
+
+Catorce minutos. Armá tu cuaderno y hacele tus tres preguntas. Lo que trabe, al chat con Martín.
+
+<!--
+14 min · acumulado 1:36
+Trabajo individual, con la cámara del instructor apagada si ayuda a que
+trabajen. Matías circula por el chat también, pero el que responde es Martín.
+Martín: cronómetro a la vista, aviso a los 7 y a los 12 minutos. Las trabas
+típicas: cuenta corporativa bloqueada (que usen la personal), PDF pesado que
+no termina de procesar (que peguen la dirección de la página en vez de
+subir), y el que no encuentra un documento público (mandarle el reporte
+de la ARCH del día 2).
+Plan B si el sitio de NotebookLM no abre desde alguna red: esa persona
+sigue en el cuaderno del rubro de la ventana D, con sus preguntas, en voz
+alta.
+-->
+
+---
+
+## Ronda: qué contestó y de dónde lo sacó
+
+Por nombre, una línea: la respuesta que salió **bien citada** y la que salió **mal o no
+estaba**. Sin decir la pregunta si la pregunta dice algo de tu trabajo.
+
+<!--
+6 min · acumulado 1:42
+Un minuto por persona. Lo que se busca es el patrón: las que salieron bien
+suelen ser las que tienen una cifra o un párrafo entero en el documento;
+las que salieron mal, las que pedían algo que la empresa nunca escribió, o
+lo escribió en otro documento.
+Cerrar con la frase del bloque anterior: detectar lo que no está escrito
+ya vale la herramienta.
 Cierre del bloque 5.
 -->
 
@@ -402,51 +435,330 @@ Cierre del bloque 5.
 
 <!-- _class: seccion -->
 
-## Qué no se sube a un chatbot
+## Pausa · 10 min
 
-Bloque 6 de 7 · **13 min**
+Volvemos a las **1:52**
 
 <!--
-Arranca 1:37, termina 1:50
+10 min · acumulado 1:52
+Martín: cronómetro de diez minutos en pantalla. Mientras tanto, revisar en
+el archivo cuántas cadenas de pasos de la tarea del día 2 quedaron sin
+contar (el bloque "Sus tareas" las usa) y avisar por privado a los que no
+entregaron el cuaderno que no pasa nada: lo terminan después.
+Matías: abrir la ventana E con la terminal del agente y los CSV a la vista.
 -->
 
 ---
 
-## La regla práctica
+<!-- _class: seccion -->
 
-Si no lo pondrías en un **correo a un desconocido**, no va en el chat.
+## El loop del agente
 
-No van: producción real por pozo, reservas, precios y cláusulas de contratos, datos de partners,
-información de personas.
+Bloque 6 de 10 · **20 min**
 
 <!--
-7 min · acumulado 1:44
-La regla del día uno, ahora con criterio detrás. El porqué corto: lo que se
-sube a una cuenta gratuita sale de tu control, y el contrato de datos de una
-cuenta gratuita no promete nada.
-Preguntar por casos grises de SUS tareas del taller: ¿el borrador del informe
-mensual entra? Depende de qué números lleve. Ese "depende" es la sesión 7.
-No profundizar en política corporativa hoy: en la sesión 7 se llevan un
-borrador de política de uso entero.
+1:52 · arranca el bloque, termina 2:12
 -->
 
 ---
 
-## Las alternativas
+## Un modelo metido en un loop, con permiso para ejecutar
 
-- **Datos públicos**: boletines, datos abiertos, lo que ya está afuera
-- **Datos viejos** que dejaron de ser sensibles
-- **Estructura real, contenido inventado**: la planilla con las mismas columnas y números de fantasía
+El mismo modelo del día 1, con dos agregados: puede **ejecutar** una herramienta y puede
+**mirar lo que salió**.
 
-Y las versiones corporativas existen, con otro contrato de datos. Eso es parte de la sesión 7.
+Un chatbot que se equivoca no se entera nunca. Un agente recibe el error de vuelta.
 
 <!--
-6 min · acumulado 1:50
-La tercera alternativa es la más útil para el trabajo diario: el modelo no
-necesita tus números para ayudarte a armar el informe; necesita la estructura.
-Adelanto de mañana: la sesión 4 trabaja entera con datos públicos de
-producción, argentinos y bolivianos, justamente por esta regla.
+3 min · acumulado 1:55
+Gancho rápido: pedirle a un chatbot que cuente las palabras de un texto
+falla porque ve tokens, no palabras. El agente lo resuelve porque ejecuta
+un conteo de verdad en vez de predecirlo. Mostrarlo en la ventana E: es un
+comando de una línea.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## El loop por dentro, paso a paso
+
+Abrí el ejercicio de la página: una corrida real, congelada en diez pasos. Prestá atención al
+**tercero y al cuarto**.
+
+<!--
+9 min · acumulado 2:04
+Ventana C, ejercicio "El loop por dentro". Recorrerla juntos, paso a paso,
+leyendo qué herramienta llama y qué vuelve. Los datos son los del Capítulo
+IV de ayer.
+El corazón es el paso 3: filtra por AGUARAGUE sin diéresis y le vuelven cero
+filas. Detenerse ahí y preguntar a la sala qué haría un chatbot con eso.
+Después el paso 4: no insiste, no inventa; lista los valores que existen,
+encuentra la diéresis, corrige y sigue. Cero filas no es un fracaso, es
+información, y el agente la usa porque VE el resultado.
+El cierre del recorrido: la respuesta final llega con dos advertencias
+autoimpuestas. Eso también es el loop mirándose a sí mismo.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Ahora en vivo, sin red
+
+El mismo loop, corriendo de verdad sobre los datos de producción. Miren **qué herramienta
+llama** en cada vuelta y qué hace cuando algo **no vuelve como esperaba**.
+
+<!--
+8 min · acumulado 2:12
+Ventana E, la terminal del agente. Demo abierta, sin guion: pedirle algo real
+sobre los CSV del Capítulo IV (una declinación, un ranking, un gráfico) y
+narrar el loop mientras corre: qué pidió, qué volvió, qué decidió con eso.
+Si aparece un tropiezo (grafía, columna, unidad), es el momento bueno: es la
+traza de recién pasando en vivo.
+Plan B si la terminal falla: la traza ya hizo el trabajo pedagógico; se
+sigue sin drama y el agente reaparece mañana con el caso.
 Cierre del bloque 6.
+-->
+
+---
+
+<!-- _class: seccion -->
+
+## Sus tareas
+
+Bloque 7 de 10 · **30 min**
+
+<!--
+2:12 · arranca el bloque, termina 2:42
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Sus cadenas de pasos
+
+Ronda por nombre: una tarea tuya que hoy te lleva **varios pasos con herramientas distintas**.
+La recorremos tramo por tramo con una sola pregunta: ¿esto lo **delego hoy**, o todavía no?
+
+<!--
+20 min · acumulado 2:32
+Tres minutos por persona, con nombre. Nadie la trajo escrita (no era tarea):
+un minuto para que cada uno anote tres o cuatro pasos de una tarea real
+chica, con la consigna del analista nuevo del día 2, y después la ronda.
+Marcar cada tramo en tres montones: delegable hoy, todavía no, nunca sin
+revisión.
+Martín: anota los montones en el archivo a la vista, y aparte los tramos
+con consecuencias (mandar, cargar, aprobar): son el material del bloque 8.
+La regla del chat sigue: la tarea sí, el sistema y el dato de la empresa no.
+-->
+
+---
+
+## El patrón que apareció
+
+Lo delegable hoy es **digital, acotado y verificable**: el resultado se comprueba rápido.
+
+Lo que no: criterio, ambigüedad, y consecuencias que no vuelven como mensaje de error.
+
+<!--
+10 min · acumulado 2:42
+Sintetizar con sus ejemplos, nombrando de quién es cada tramo. La
+característica común de lo delegable es que el error se ve mirando la
+salida: si comprobar cuesta más que hacer, no se delega.
+Cierre del bloque 7.
+-->
+
+---
+
+<!-- _class: seccion -->
+
+## Dónde se rompe, dónde mejora
+
+Bloque 8 de 10 · **20 min**
+
+<!--
+2:42 · arranca el bloque, termina 3:02
+-->
+
+---
+
+## El contexto crece en cada vuelta
+
+Cada paso suma texto a la ventana: más lento, más caro, más fácil perder el objetivo.
+
+Una tarea de veinte pasos no es dos veces una de diez: es **bastante peor**.
+
+<!--
+4 min · acumulado 2:46
+El contador de contexto del ejercicio muestra esto paso a paso. Es la
+ventana del día 1 otra vez: lo que se cae del escritorio, ahora en medio
+del trabajo. De acá sale el "acotado" del patrón de recién.
+-->
+
+---
+
+## Leer no es lo mismo que tocar
+
+Todo lo que hizo el agente hoy es **reversible**: leyó archivos y guardó un gráfico.
+
+Cuando la herramienta manda un correo, escribe en un sistema o mueve una válvula, el error ya
+**no vuelve como mensaje**: queda hecho.
+
+<!--
+5 min · acumulado 2:51
+Ejemplos del rubro sin dramatizar, y con los tramos que Martín apartó en la
+ronda: una nominación, una orden de trabajo, un sistema de control. El loop
+deja de funcionar porque el paso equivocado no se corrige mirando la salida.
+La regla que mañana se vuelve protocolo: herramientas de escritura, persona
+antes del acto.
+-->
+
+---
+
+## Lo que aprende no vive en el modelo: vive en archivos
+
+La sesión se apaga y el modelo no retiene nada. Lo que queda, queda en **archivos**: las
+instrucciones del proyecto, las habilidades empaquetadas (skills), las conexiones a
+herramientas (MCP).
+
+Cambiás de modelo mañana y esos archivos siguen valiendo.
+
+<!--
+4 min · acumulado 2:55
+El punto práctico: lo que le enseñás a un agente se escribe, no se conversa.
+El archivo de instrucciones del proyecto (CLAUDE.md, AGENTS.md o parecido)
+es la biblioteca de prompts de ayer, versión agente.
+Skills: procedimientos empaquetados que carga cuando los necesita. MCP, el
+protocolo de contexto de modelo: plomería estándar para conectarle
+herramientas, no una capacidad nueva. El callout de la página lo dice en dos
+líneas.
+-->
+
+---
+
+## La frontera se corre sola
+
+METR mide el **largo de tarea** que un agente completa solo: viene duplicándose cada **siete
+meses**, de tareas de segundos a tareas de horas.
+
+Lo que hoy se rompe a los veinte pasos es lo que más rápido está mejorando.
+
+<!--
+5 min · acumulado 3:00
+Mostrar el gráfico de METR en vivo: el link está en los recursos de la
+página. Leerlo con la letra chica a la vista: es al 50% de éxito y en tareas
+de software; una curva no es una promesa.
+La lectura honesta para ellos: lo que hoy no delegás porque es largo,
+reevalualo en seis meses. La regla de verificar no cambia con el largo. La
+contracara está en los recursos: la charla de Barry Zhang, no armes un
+agente para todo.
+-->
+
+---
+
+<!-- _class: cita -->
+
+## Delegá lo que podés **corregir mirando el resultado**
+
+<!--
+2 min · acumulado 3:02
+La frase del bloque, y la vara para las cadenas de recién.
+Nota de régimen: si el día viene corto de tiempo, se comprime este bloque
+(la página lo cubre entero); el taller no se toca.
+Cierre del bloque 8.
+-->
+
+---
+
+<!-- _class: seccion -->
+
+## Pausa · 10 min
+
+Volvemos a las **3:12**
+
+<!--
+10 min · acumulado 3:12
+Martín: cronómetro de diez minutos en pantalla, y en el chat el link a la
+plantilla del taller (sección "Taller: el caso de tu empresa" de la página)
+para que la abran antes de volver.
+Matías: preparar las salas: PCR juntos, Andes juntos, CGC y Tecpetrol solos.
+Si la plataforma no tiene salas, el taller se hace en la sala principal con
+micrófonos cerrados y el chat privado entre los pares.
+-->
+
+---
+
+<!-- _class: seccion -->
+
+## Taller: el caso de tu empresa, en una página
+
+Bloque 9 de 10 · **36 min**
+
+<!--
+3:12 · arranca el bloque, termina 3:48
+-->
+
+---
+
+## La plantilla, cinco preguntas
+
+- **Dolor**: qué tarea, cuán seguido, quién la sufre
+- **Datos**: dónde viven, en qué formato, quién los tiene
+- **Sensibilidad**: qué puede salir de la empresa y qué no
+- **Verificabilidad**: cómo sabrían que el resultado está bien
+- **Primer paso**: qué probarían el lunes
+
+<!--
+6 min · acumulado 3:18
+Leer la plantilla con un ejemplo que no sea de nadie: el reporte diario de
+la ARCH a tabla, que hicieron ayer. Dolor: todos los días, el analista, media
+hora. Datos: un PDF público. Sensibilidad: ninguna. Verificabilidad: contra
+el PDF, número por número. Primer paso: cinco reportes seguidos y una serie
+de pozos cerrados por corte de agua.
+Los criterios vienen de la lista corta con la que la primera edición eligió
+su caso: frecuencia del dolor, datos accesibles y no sensibles, resultado
+verificable. Los tres o no hay caso. Y ser brutal con el lunes: un paso, no
+un plan.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## A escribir, por empresa
+
+Dieciocho minutos. PCR y Andes en pareja; CGC y Tecpetrol solos, y valen igual. Una página,
+una línea o dos por pregunta.
+
+<!--
+18 min · acumulado 3:36
+Salas por empresa. Matías pasa por cada una a mitad de tiempo con una sola
+pregunta: ¿cómo sabrían que está bien? Es la fila que siempre queda floja.
+Martín: cronómetro a la vista, aviso a los 9 y a los 15 minutos, y en el
+chat de cada sala la plantilla pegada. El que está solo trabaja igual: la
+página es suya, y mañana la lee él.
+Recordar antes de abrir las salas: el documento es de ustedes; por el chat
+general va después solo la fila del dolor y la del primer paso.
+-->
+
+---
+
+## Ronda: el dolor y el primer paso
+
+Por empresa, dos líneas al chat y en voz alta: **qué duele** y **qué probarían el lunes**. El
+resto queda en su página, y mañana se critica con el protocolo de verificación.
+
+<!--
+12 min · acumulado 3:48
+Tres minutos por empresa. Escuchar buscando lo mismo en los cuatro: ¿el
+dato existe y puede salir, o tiene análogo público? ¿el resultado se
+comprueba en menos de lo que tarda hacerlo a mano? Decirlo como pregunta,
+no como veredicto: el veredicto es mañana, con el protocolo.
+Martín: anota las cuatro filas de dolor y primer paso en el archivo; son la
+lista que mañana se proyecta al lado del screening.
+Cierre del bloque 9.
 -->
 
 ---
@@ -455,97 +767,59 @@ Cierre del bloque 6.
 
 ## Cierre y tarea
 
-Bloque 7 de 7 · **10 min**
+Bloque 10 de 10 · **12 min**
 
 <!--
-Arranca 1:50, termina 2:00
+3:48 · arranca el bloque, termina 4:00
 -->
 
 ---
 
 <!-- _class: acentos -->
 
-## Tres de las cuatro
+## Para llevarse
 
-- **Inventa lo que no sabe**: vista ayer, por diseño
-- **Se olvida de lo que le dijiste**: vista ayer, por diseño
-- **No hace lo que le pediste**: vista hoy, y el control estaba en la orden de trabajo
-- **Está seguro y equivocado**: sesión 5
+- RAG es responder **con el libro abierto**: la cita no verifica, abrir la cita verifica
+- Un agente es un modelo en un **loop** con herramientas: trabaja porque ve sus errores
+- Delegá lo **digital, acotado y verificable**; lo irreversible, nunca sin persona
+- Un cuaderno con un documento público **ya te dice qué falta documentar**
 
 <!--
-2 min · acumulado 1:52
-Volver a la hoja de ruta y tachar la tercera. La lección de hoy sobre esa
-falla: la mayoría de las veces que "no hizo lo que pediste", hizo exactamente
-lo que pediste. El control está en el prompt, y ahora saben escribirlo.
-Queda una sola, y cae en la sesión 5.
+4 min · acumulado 3:52
+Cuatro prácticas, en palabras simples. Y la quinta sin decirla: cada empresa
+ya tiene su caso escrito, y mañana se lo mira con las mismas reglas que al
+del curso.
 -->
 
 ---
 
-<!-- _class: cita -->
+## Tarea para mañana
 
-## La contracara: **"intentá en serio"**
-
-En agosto de 2026, un modelo de Anthropic sin publicar movió una cota de la hipótesis de
-Riemann que llevaba décadas casi quieta: del 41.6% al 67.2% de los ceros en la línea crítica.
-El prompt no tenía rol, ni contexto, ni formato.
+Pulí la **página del caso** de tu empresa: releé las cinco filas y completá la que quedó floja.
+Casi siempre es la de **verificabilidad**. Cinco minutos.
 
 <!--
-3 min · acumulado 1:55
-La historia, verificable (el anuncio de Anthropic está en el material previo
-de la página): un empleado sin formación matemática le pidió a un modelo
-interno que "le diera una probada en serio" a la hipótesis. Un día y medio,
-650 ideas probadas, 60 subagentes, 31 millones de tokens, y el resultado
-formalizado en Lean y revisado por dos matemáticos. No probó la hipótesis:
-movió una cota parcial.
-El contrapunto, sin desdecir la clase: el prompt fino es para controlar la
-salida en el trabajo de todos los días. En las tareas donde un modelo de
-frontera tiene talento nativo, el prompt puede ser mínimo. Lo que no fue
-mínimo ahí es lo otro que enseña este curso: la verificación, que en ese caso
-fue un asistente de pruebas formal y dos matemáticos.
+3 min · acumulado 3:55
+Cinco minutos, como siempre. El que está solo la pule solo; los de a dos, se
+la mandan entre ellos. Mañana se leen los cuatro casos al lado del caso
+prearmado del curso, con el mismo protocolo.
+Plan B si pocos la pulen: la página tal como quedó hoy sirve igual; el
+protocolo de mañana se aplica sobre lo que haya.
 -->
 
 ---
 
-## Tarea para la sesión 4
+## Mañana: riesgos, el caso y el horizonte
 
-Elegí una de tus tareas y resolvela completa con el chatbot, iterando hasta que te sirva.
-Traé el **antes** (tu primer prompt) y el **después** (el que funcionó). Diez minutos.
-
-Si tenés una planilla **no confidencial** a mano, tenela lista para mañana. Si no, mañana
-trabajamos igual con datos públicos.
-
-Y lo de hoy, en una frase: escribile como a un analista nuevo en su primer día.
+- Un **protocolo de verificación** según el costo del error, y una política de uso en una página
+- El caso del curso en vivo: **screening de waterflooding** sobre el Capítulo IV
+- La crítica: el caso del curso y **los cuatro de ustedes**, con las mismas reglas
 
 <!--
-2 min · acumulado 1:57
-El antes/después es el material del repaso de mañana: insistir en traer los
-dos, porque la distancia entre ellos es la clase de hoy funcionando.
-La planilla es opcional de verdad: el plan de mañana no depende de ella.
--->
-
----
-
-## De la ingeniería de prompts a la **ingeniería de contexto**
-
-El prompt que ve el modelo ya no es solo el que escribís: es tu pedido más todo lo que viaja
-con él.
-
-Las próximas sesiones son exactamente eso: mañana, tus datos adjuntos (sesión 4); después, los
-fragmentos recuperados de tus documentos (sesión 5); después, herramientas que trabajan
-(sesión 6).
-
-<!--
-2 min · acumulado 1:59
-El término real del rubro: la ingeniería de prompts está dando lugar a la
-ingeniería de contexto. Lo de hoy no caduca: las piezas siguen siendo la
-orden de trabajo; lo que crece es todo lo que viaja alrededor.
-Ya lo vieron sin nombre: la ventana de contexto de la sesión 2 es el lugar
-donde todo eso entra, y de donde se cae.
-Dejar la palabra sembrada y no profundizar: las sesiones 4, 5 y 6 la llenan
-de contenido concreto. Mañana arranca con el primer escalón: el modelo
-escribe código sobre una planilla que le adjuntás.
-El quiz y el constructor quedan en la página, como siempre.
+3 min · acumulado 3:58
+Mañana las piezas sueltas se vuelven política, el caso prearmado se recorre
+de punta a punta con el agente, y sus cuatro páginas se critican al lado.
+Los ejercicios y el quiz quedan en la página, como siempre.
 -->
 
 ---
@@ -554,11 +828,12 @@ El quiz y el constructor quedan en la página, como siempre.
 
 # Nos vemos mañana
 
-El quiz y el constructor quedan en la página · **mpodeley.github.io/curso-energia-ypfb**
+El quiz y los tres ejercicios quedan en la página · **mpodeley.github.io/curso-ia-energia**
 
 <!--
-1 min · acumulado 2:00
+2 min · acumulado 4:00
 Dejar proyectada mientras se despiden.
-Después de clase: pasar en limpio la lista de tareas del repaso y el chat del
-taller; los dos alimentan la shortlist de la sesión 5.
+Después de clase: guardar el archivo de la ronda (preguntas, montones, y las
+cuatro filas de dolor y primer paso) y pasarlo al deck del día 4; probar la
+terminal del agente sobre el caso de waterflooding una vez más.
 -->

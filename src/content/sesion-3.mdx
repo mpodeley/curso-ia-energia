@@ -1,129 +1,268 @@
-import { PromptBuilder } from '../exercises/PromptBuilder'
+import { EmbeddingsMap } from '../exercises/EmbeddingsMap'
+import { RagDemo } from '../exercises/RagDemo'
+import { AgentTrace } from '../exercises/AgentTrace'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos } from '../components/Recursos'
 
-<div className="callout callout--wip">
-  Esta página todavía muestra el material de la primera edición. La prosa del día se termina antes
-  de la fecha de dictado.
-</div>
-
 ## Antes de la sesión (opcional)
 
-Lo único que pide esta sesión es la tarea de ayer: tus **tres tareas repetitivas** anotadas. Son
-la materia prima del taller; si no llegaste, las anotamos en los primeros minutos de la clase.
-Si tenés un rato antes, el constructor de prompts de esta página se puede jugar solo, y la
-sección "De ahí salen las alucinaciones" de la sesión 2 explica de qué se defiende un buen
-prompt.
+Lo único que pide este día es la tarea de ayer: tu prompt antes y después, y las **tres
+preguntas** que le harías a un documento de tu empresa. Las preguntas se usan literalmente en
+vivo, dos veces: primero contra el cuaderno del rubro y después contra tu propio cuaderno. Si no
+llegaste, las escribís en los primeros minutos.
+
+Si tenés un rato antes, los tres ejercicios de esta página se juegan solos (primero el mapa,
+después la búsqueda, que usa lo que muestra el mapa, y al final la traza del agente), y podés
+curiosear [NotebookLM](https://notebooklm.google.com) con tu cuenta gratuita. Y una cosa más, de
+un minuto: elegí el documento público de tu empresa que vas a subir en el bloque "Tu cuaderno".
+Más abajo hay una lista de candidatos por empresa.
 
 <Recursos sesion={3} />
 
-## Elegir modelo: benchmarks y precios
+## El modelo no leyó tus documentos
 
-Todos los proveedores ofrecen la misma escalera: un modelo **grande** y uno **rápido y barato**
-(GPT y su mini, Claude y Haiku, Gemini Pro y Flash). El selector de modelos de tu chatbot es esa
-decisión. Al comparar, cuatro cosas: capacidad en tu tarea, ventana de contexto, precio por
-token y velocidad.
+Leyó una cantidad enorme de texto de internet. No leyó tu manual de operaciones, ni tus normas
+internas, ni el informe del campo que escribió tu compañero el mes pasado. Preguntarle sobre eso es
+pedirle que complete lo más plausible, que es exactamente la receta de una respuesta inventada con
+tono seguro.
 
-Un benchmark es un examen estandarizado: sirve para descartar, no para elegir fino. Los modelos
-"estudian para el examen", un punto más de puntaje no se nota en una minuta, y el podio cambia
-todos los meses. [LMArena](https://lmarena.ai) junta votos a ciegas de miles de usuarios;
-[Artificial Analysis](https://artificialanalysis.ai) pone capacidad, precio y velocidad en un
-solo cuadro. El benchmark que importa de verdad es tu tarea, corrida en dos modelos.
+Hay dos formas de cerrar ese hueco. Una es reentrenar el modelo con tus documentos: cara, lenta y casi
+siempre innecesaria. La otra es más simple y es la que se usa: **buscar los fragmentos que responden
+la pregunta y pegarlos arriba de la pregunta**. El modelo responde con el libro abierto. Se llama
+generación aumentada por recuperación (RAG, por su sigla en inglés), y una vez que la ves funcionar
+es difícil que te siga pareciendo sofisticada.
 
-Los precios son por token, distintos para entrada y salida, y entre el grande y el rápido de un
-mismo proveedor puede haber cien veces de diferencia. Con cuentas gratuitas no lo pagás; importa
-el día que algo se automatiza, porque mil corridas por mes convierten el precio por token en
-presupuesto. El patrón que se usa en serio: el grande para lo difícil o lo que se hace una vez,
-el rápido para lo repetitivo, después de probar que alcanza.
+## Primero, qué significa "parecido" para un modelo
 
-## Anatomía de un prompt que funciona
+Para buscar por significado hay que poder medirlo. El modelo convierte cada texto en una lista de
+números, y dos textos con sentido parecido dan listas parecidas. Todo lo demás sale de ahí.
 
-Un prompt efectivo no es magia: es una **orden de trabajo bien escrita**, como la que le darías a un
-analista nuevo el primer día. Las piezas:
+El ejercicio proyecta esas listas a un plano para que las puedas mirar. Prestá atención a la familia
+de jerga: "burro", "araña", "pescado", "camisa". El modelo aprendió esas palabras del lenguaje
+corriente, así que las ubica junto a objetos cotidianos y no junto al equipamiento del yacimiento.
+Ahí se ve, de un vistazo, qué es lo que no sabe de tu trabajo.
 
-- **Rol:** quién quiere que sea. *"Sos un ingeniero de producción senior que escribe para gerencia."*
-- **Contexto:** lo que necesita saber. *"Este resumen va al comité que decide el workover del pozo X."*
-- **Tarea:** el verbo concreto. Resumir, comparar, redactar, extraer, traducir, criticar.
-- **Formato:** cómo querés la salida. *"Tabla de dos columnas"*, *"máximo 200 palabras"*, *"en viñetas"*.
-- **Ejemplos:** si tenés un "así me gusta", mostralo. Un ejemplo vale más que tres párrafos de instrucciones.
-- **Iteración:** la primera salida es un borrador. *"Más corto"*, *"menos jerga"*, *"ahora en tono formal"*:
-  la conversación es parte del método, no señal de fracaso.
+<EmbeddingsMap sesion={3} />
 
-Un ejemplo completo:
+## Y ahora sí, buscar en tus documentos
 
-```text
-Sos un ingeniero de reservorios que escribe para un directorio no técnico.
-Contexto: adjunto las conclusiones técnicas del estudio de simulación del campo.
-Tarea: redactá un resumen ejecutivo.
-Formato: máximo una página, tres secciones (situación, opciones, recomendación),
-sin jerga; cada término técnico inevitable, explicado entre paréntesis.
-```
+El corpus del segundo ejercicio es un manual interno inventado para el curso, y es a propósito:
+cualquier documento público de verdad podría haber estado en el entrenamiento del modelo, y entonces
+la demostración no probaría nada.
 
-<PromptBuilder sesion={3} />
+Probá las preguntas que no comparten ninguna palabra con su respuesta. La que pregunta cómo evitar
+que alguien arranque el equipo mientras lo reparás la responde un fragmento que habla de "bloqueo y
+etiquetado". La de cuidarse los oídos la responde uno que dice "protección auditiva". Un buscador de
+palabras no tiene con qué encontrarlas; uno por significado sí. Esa es toda la diferencia, y es la
+razón por la que esto sirve sobre documentación técnica, que siempre está escrita en un vocabulario
+que nadie usa cuando pregunta.
 
-## Dónde rinde hoy, en la oficina
+Mirá también el bloque del final, el que dice lo que se le manda al modelo. No hay nada más que eso.
 
-Los casos de mayor retorno inmediato no son los más glamorosos: resumir informes y papers (SPE
-incluidos), redactar primeros borradores de correos, minutas e informes mensuales, traducir con
-vocabulario técnico correcto, extraer datos puntuales de documentos largos, criticar un texto
-propio antes de mandarlo. La regla común: **tareas donde el borrador cuesta y la verificación es
-rápida**.
+<RagDemo sesion={3} />
+
+## Dónde sigue fallando
+
+Recuperar fragmentos reduce las invenciones, no las elimina, y agrega un modo de falla nuevo: si el
+buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que sea el modelo, y
+va a estar mal **con una cita al lado**, que es peor. Por eso la regla es mirar siempre los fragmentos
+recuperados, no solo la respuesta. Si una herramienta no te los muestra, no te está dando
+verificabilidad: te está dando la apariencia de verificabilidad.
+
+Hay un segundo límite, más aburrido y más frecuente: si la respuesta no está en los documentos, no
+hay recuperación que la traiga. La herramienta no sabe lo que tu empresa nunca escribió.
+
+## El cuaderno del rubro
+
+El manual inventado prueba el mecanismo; el cuaderno que interrogamos en vivo se arma con
+documentos reales del rubro, públicos y con texto de sobra. Podés armarte el mismo en tu cuenta
+gratuita de NotebookLM: subí estos tres y agregale los tuyos.
+
+- [Reglamento de Operaciones Hidrocarburíferas](https://www.gob.ec/sites/default/files/regulations/2025-05/Documento_Reglamento-Operaciones-Hidrocarbur%C3%ADferas.pdf)
+  de Ecuador, resolución ARCERNNR-024/2021, Registro Oficial 514 del 12 de agosto de 2021 (PDF,
+  84 páginas, 191 artículos). Cómo se perfora, se completa, se produce, se reinyecta y se abandona
+  un pozo bajo la Agencia de Regulación y Control de Hidrocarburos (ARCH): el pariente real del
+  manual inventado de arriba.
+- [Reporte de Sustentabilidad 2024 de PCR](https://www.pcr.energy/wp-content/uploads/2025/09/PCR-Reporte-de-Sustentabilidad-2024-vf_compressed.pdf)
+  (PDF, 174 páginas). Una empresa de la sala contada por sí misma, con sus operaciones de
+  Argentina y Ecuador: producción, reservas, proyectos y resultados de 2024.
+- [Ley 17.319 de hidrocarburos](https://servicios.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16078/texact.htm),
+  texto actualizado en InfoLEG. El marco argentino desde 1967, con las reformas incorporadas:
+  permisos, concesiones, regalías, plazos y prórrogas. Es la ley bajo la que CGC y Tecpetrol
+  reportan al Capítulo IV.
+
+Los reportes diarios de la ARCH que ayer extrajeron a tabla también entran al cuaderno: preguntale
+lo que ayer sacaste a mano, y mirá de qué fragmento lo trae. Un cuaderno con cuatro fuentes
+distintas obliga, además, a la pregunta que importa: ¿de cuál de las cuatro sacó esto?
+
+Tres preguntas para arrancar, una por documento, escritas para que la respuesta no comparta
+vocabulario con la pregunta:
+
+1. Al reglamento: "¿Qué tengo que hacer antes de cerrar definitivamente un pozo que ya no produce?"
+   La respuesta está en los artículos de taponamiento y abandono, con otra palabra.
+2. Al reporte de PCR: "¿Cuánto petróleo produjo la empresa en Ecuador el año pasado, y en qué
+   campos?" Mirá si la cifra viene de una tabla o de un párrafo, y si el cuaderno la cita entera.
+3. A la ley: "¿Cuántos años dura una concesión de explotación y cuántas veces se puede prorrogar?"
+   La ley original y las reformas dicen cosas distintas: fijate de qué artículo sale la respuesta.
+
+## Tu cuaderno: un documento público de tu empresa
+
+El segundo cuaderno es tuyo, y arranca con un solo documento: uno **público** de tu empresa. La
+regla es la misma de ayer y no tiene excepciones en la cuenta gratuita: nada que no esté ya en
+internet. Candidatos por empresa, para que no pierdas el bloque buscando:
+
+- **PCR**: el reporte de sustentabilidad de arriba, o [la página que lo resume](https://www.pcr.energy/sustentabilidad-2024/).
+- **CGC**: la memoria anual o el informe de calificación, en la sección de inversores de
+  [cgc.energy](https://cgc.energy/).
+- **Tecpetrol**: el [Reporte Global de Sostenibilidad 2024](https://www.tecpetrol.com/media/ivsna4kt/teceptrol-reporte-global-de-sostenibilidad-2024.pdf)
+  (PDF, cubre Argentina, Ecuador y Colombia).
+- **Andes Petroleum**: una nota de prensa sobre la ampliación del contrato de Tarapoa, por ejemplo
+  [esta de Primicias](https://www.primicias.ec/noticias/economia/andes-petroleum-acuerdo-contratos-petroleo/),
+  o el reporte diario de la ARCH del día que quieras.
+
+Paso a paso, con Martín en el chat para lo que trabe:
+
+1. Entrá a [notebooklm.google.com](https://notebooklm.google.com) con una cuenta de Google personal
+   (no la corporativa, que en varias empresas tiene NotebookLM bloqueado). Tocá **Crear cuaderno**.
+2. En **Agregar fuente**, subí el PDF o pegá la dirección de la página. Un documento alcanza; si
+   subís dos, mejor, pero no más de tres hoy.
+3. Esperá a que aparezca el resumen automático y leelo con desconfianza: es la primera respuesta
+   sin pregunta, y ya puede estar citando de más.
+4. Hacele tus tres preguntas de la tarea, una por vez. Por cada respuesta, tocá el número de la cita
+   y leé el fragmento: ¿responde la pregunta, o quedó cerca del tema nada más?
+5. Anotá, para la ronda, dos cosas: una respuesta que salió bien citada y una que salió mal, o que
+   no estaba en el documento. Las dos valen lo mismo.
+
+Lo que se comparte por el chat es la experiencia, no el contenido: qué contestó bien, qué inventó,
+qué no encontró. El documento es público, pero la lista de preguntas que le hacés a tu propia
+empresa ya dice algo de tu trabajo, y en la sala hay cuatro empresas competidoras.
+
+## Qué es un agente, sin misterio
+
+Un agente es un modelo de lenguaje metido en un loop, con permiso para usar herramientas. Piensa qué
+le falta, ejecuta una acción, mira el resultado y vuelve a pensar. Repite hasta poder responder.
+
+Eso es todo. No hay una tecnología nueva debajo: es el mismo modelo que predice el próximo token del
+día 1, con dos agregados que cambian todo. Puede **ejecutar** (correr un comando, leer un archivo,
+buscar en internet) y puede **mirar lo que salió**. Un chatbot que se equivoca no se entera nunca. Un
+agente que se equivoca recibe el error de vuelta y tiene la chance de corregirse.
+
+Ahí está la diferencia entre un asistente que responde y uno que trabaja. Y también, exactamente, el
+motivo por el que hay que pensar bien qué herramientas se le dan.
+
+## La traza, paso a paso
+
+Abajo está una corrida sobre el mismo conjunto de datos de producción de ayer, el Capítulo IV
+argentino. El paso más interesante no es ninguno de los que salen bien: es el tercero, donde el
+agente filtra por el nombre del área, escribe "AGUARAGUE" sin diéresis y le vuelven cero filas.
+
+Mirá qué hace con eso. No insiste, no prueba otra grafía al azar y, sobre todo, no inventa un
+resultado para seguir adelante. Va a buscar los valores que existen de verdad en la columna, encuentra
+que el área lleva diéresis, corrige y continúa. Un chatbot sin herramientas hubiera seguido escribiendo
+con total seguridad sobre una tabla vacía.
+
+<AgentTrace sesion={3} />
+
+## Qué funciona hoy y qué no
+
+Funcionan bien las tareas **digitales, acotadas y verificables**: buscar información en muchos
+documentos, transformar datos de un formato a otro, escribir y corregir código, automatizar una
+secuencia repetitiva de pasos que hoy hacés a mano. La característica común es que el resultado se
+puede comprobar rápido.
+
+Funcionan mal las tareas largas y ambiguas. El agente acumula contexto en cada vuelta (el ejercicio
+lo muestra con un contador) y a medida que crece, se vuelve más lento, más caro y más propenso a
+perder el hilo del objetivo original. Una tarea de veinte pasos no es dos veces una de diez: es
+bastante peor.
+
+Y hay una tercera categoría, la que importa en esta industria: tareas con **consecuencias físicas o
+irreversibles**. Ahí el problema no es que el agente sea malo, es que el loop deja de funcionar. Todo
+lo que hace el agente del ejercicio es reversible: lee archivos y guarda un gráfico. Si se equivoca,
+el error vuelve y se corrige. Cuando la herramienta manda un correo, cierra una válvula o escribe en
+un sistema de control, el paso equivocado ya no se corrige mirando la salida. Leer no es lo mismo
+que tocar, y de eso va buena parte de mañana.
 
 <div className="callout">
-  <strong>Qué no subir a un chatbot gratuito:</strong> producción real por pozo, reservas, precios y
-  cláusulas de contratos, datos de partners, información de personas. Regla práctica: si no lo pondrías
-  en un correo a un desconocido, no va en el chat. En la sesión 7 formalizamos esto en una política de
-  uso; mientras tanto, trabajá con datos públicos, viejos o inventados con la misma estructura.
+  <strong>El protocolo de contexto de modelo</strong> (Model Context Protocol, MCP) aparece mucho en
+  estas conversaciones. Es simplemente una forma estandarizada de conectarle herramientas a un modelo,
+  para no reescribir la conexión por cada aplicación. Es plomería útil, no una capacidad nueva: no
+  cambia nada de lo que un agente puede o no puede hacer.
 </div>
 
-## La contracara: "intentá en serio"
+## Lo que aprende no vive en el modelo: vive en archivos
 
-En agosto de 2026, un modelo de Anthropic todavía sin publicar movió una cota de la hipótesis de
-Riemann que llevaba décadas casi quieta: del 41.6% al 67.2% de los ceros en la línea crítica. El
-prompt no tenía rol, ni contexto, ni formato: un empleado sin formación matemática le pidió que
-"intentara en serio". Atrás hubo un día y medio de trabajo, 650 ideas probadas, 31 millones de
-tokens, y una prueba formalizada y revisada por matemáticos. No probó la hipótesis: movió una
-cota parcial.
+La sesión de un agente se apaga y el modelo no retiene nada de lo que pasó. Lo que queda, queda en
+archivos: un archivo de instrucciones con las reglas del proyecto (en las herramientas actuales se
+llama CLAUDE.md, AGENTS.md o parecido), habilidades empaquetadas que el agente carga cuando las
+necesita (las llaman skills), y las conexiones a tus sistemas. Lo que le enseñás a un agente se
+escribe, no se conversa: es la biblioteca de prompts de ayer, versión agente. Y tiene una
+consecuencia que vale plata: podés cambiar de modelo mañana y esos archivos siguen valiendo.
 
-La lección no desdice esta sesión: el prompt fino controla la salida en el trabajo de todos los
-días. En lo que un modelo de frontera tiene talento nativo, el prompt puede ser mínimo. Lo que
-nunca es mínimo es la verificación.
+Lo otro que conviene saber es que el techo se mueve.
+[METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/), un
+instituto que mide capacidades de modelos, sigue el largo de tarea que un agente completa solo, y
+viene duplicándose cada siete meses: de tareas de segundos a tareas de horas en pocos años. La
+medición tiene su letra chica (50% de éxito, tareas de software), pero la dirección es clara: lo que
+hoy no delegás porque es largo, reevalualo en seis meses. La charla de Barry Zhang que está en los
+recursos de arriba es la contracara sensata: no armes un agente para todo, y mantenelo simple.
 
-## De la ingeniería de prompts a la ingeniería de contexto
+## Taller: el caso de tu empresa, en una página
 
-Una puerta que queda abierta para lo que viene. El prompt que ve el modelo ya no es solo el que
-escribís: es tu pedido más todo lo que viaja con él: los documentos que adjuntás (sesión 4), los
-fragmentos que un buscador recupera de tus manuales (sesión 5), los resultados de las
-herramientas que un agente usa mientras trabaja (sesión 6). En el rubro ya hay nombre para eso:
-la ingeniería de prompts está dando lugar a la **ingeniería de contexto**.
+El último bloque del día es de escritura, por empresa: los de PCR juntos, los de Andes juntos, y
+CGC y Tecpetrol cada uno por su cuenta. El resultado es una página que describe el primer caso de
+uso que probarían en su empresa, y mañana se critica al lado del caso prearmado del curso, con el
+mismo protocolo de verificación. La plantilla tiene cinco preguntas; una línea o dos por cada una
+alcanza.
 
-Las piezas de hoy no caducan: la orden de trabajo sigue en el centro. Lo que crece es todo lo
-que la acompaña, y la ventana de contexto de la sesión 2 es donde todo eso tiene que caber.
+| Pregunta | Qué tiene que decir |
+| --- | --- |
+| **Dolor** | Qué tarea, cuán seguido se hace, quién la sufre. "Todos los lunes, el ingeniero de producción, tres horas" vale más que "optimizar la gestión". |
+| **Datos** | Dónde viven (planilla, sistema, PDF, correo), en qué formato, quién los tiene. Si hay que pedírselos a otra gerencia, decilo. |
+| **Sensibilidad** | Qué puede salir de la empresa y qué no. Lo que no puede salir, ¿tiene un análogo público (Capítulo IV, reporte de la ARCH) para probar el flujo? |
+| **Verificabilidad** | Cómo sabrían que el resultado está bien: contra qué se compara, quién lo mira, cuánto tarda comprobarlo. Si comprobar cuesta más que hacer, no es un caso. |
+| **Primer paso** | Qué probarían el lunes, con qué herramienta y con qué documento o planilla. Un paso, no un plan. |
 
-## En la sesión en vivo (2 h)
+Los criterios salen de la lista corta con la que la primera edición eligió su caso real:
+frecuencia del dolor, datos disponibles y no sensibles, resultado verificable. Los tres tienen que
+estar. Un caso doloroso sin datos accesibles no se puede construir, y uno con datos pero sin forma
+de comprobar el resultado se construye y no sirve.
+
+Por el chat va solo lo que no es confidencial: la fila del dolor y la del primer paso alcanzan para
+la ronda. El resto queda en su documento, que mañana leen ustedes en voz alta si quieren, y solo la
+parte que quieran.
+
+## En la sesión en vivo (4 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura y entrada al sitio | 5 min | El PIN de siempre y el mapa del día |
-| Repaso de la tarea | 10 min | Las tres tareas repetitivas de cada uno; con ellas armamos la lista del taller |
-| Elegir modelo | 12 min | Benchmarks, precios por token y la escalera grande/rápido de cada proveedor |
-| El peor prompt | 12 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
-| Anatomía de un prompt | 22 min | Las seis piezas, reescribiendo en vivo dos tareas de la lista |
-| Taller: tu tarea, tu prompt | 36 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
-| Qué no se sube a un chatbot | 13 min | La regla, el porqué y las alternativas |
-| Cierre y tarea | 10 min | La tercera manera de fallar tachada, y la tarea antes/después |
+| Apertura y repaso de la tarea | 15 min | Las ventanas del día y una ronda: la mejor de tus tres preguntas |
+| Por qué no sabe lo tuyo | 15 min | El hueco, las dos formas de cerrarlo, y qué significa "parecido" para un modelo |
+| Buscar por significado | 15 min | Las dos búsquedas del ejercicio, y el prompt aumentado que se le manda al modelo |
+| NotebookLM en vivo: el cuaderno del rubro | 32 min | Reglamento, reporte y ley interrogados con sus preguntas, mirando siempre los fragmentos |
+| Tu cuaderno: un documento público de tu empresa | 25 min | Cada uno arma el suyo y le hace sus tres preguntas; ronda de qué salió |
+| Pausa | 10 min | |
+| El loop del agente | 20 min | La traza del ejercicio paso a paso, y después en vivo sobre el Capítulo IV |
+| Sus tareas | 30 min | Las cadenas de pasos de cada uno: qué delegarían hoy y qué no |
+| Dónde se rompe, dónde mejora | 20 min | Contexto, leer contra tocar, memoria en archivos, la frontera que sube |
+| Pausa | 10 min | |
+| Taller: el caso de tu empresa, en una página | 36 min | Dolor, datos, sensibilidad, verificabilidad, primer paso; por empresa |
+| Cierre y tarea | 12 min | Lo que se llevan, y pulir la página del caso para mañana |
 
 <Quiz data="quiz_s3" sesion={3} />
 
 ## Para discutir
 
-1. De tus tres tareas repetitivas: ¿en cuál el borrador es lo caro, y en cuál lo caro es verificar?
-2. ¿Qué haría falta para que confíes en un resumen automático de un informe que firma tu área?
-3. ¿Dónde está el límite entre "me ayudó a escribir" y "lo escribió y no lo revisé"?
+1. ¿Qué corpus de tu área (manuales, normas, informes históricos) haría más diferencia con un
+   buscador conversacional encima? ¿Quién lo consultaría?
+2. Si el buscador trae el fragmento equivocado, la respuesta viene mal y con cita. ¿Cómo te darías
+   cuenta vos, en tu tema?
+3. ¿Qué tarea de tu área delegarías a un agente si pudiera usar tus mismas herramientas? ¿Qué te
+   frenaría, la capacidad o el permiso?
+4. En la traza, el agente se dio cuenta de su error porque el resultado volvió vacío. De los errores
+   que podría cometer en tu trabajo, ¿cuáles no avisarían nada al volver?
 
-## Tarea para la sesión 4
+## Tarea para mañana
 
-Elegí una de tus tareas y resolvela completa con el chatbot, iterando hasta que la salida te sirva de
-verdad. Traé el **antes** (tu primer prompt) y el **después** (el que funcionó): diez minutos. Y si
-tenés a mano una planilla no confidencial con datos (o podés armar una de ejemplo), tenela lista
-para mañana; si no, mañana trabajamos igual con datos públicos.
+Pulí la página del caso de tu empresa: releé las cinco filas y completá la que quedó floja, que casi
+siempre es la de verificabilidad. Cinco minutos. Mañana se leen los cuatro casos al lado del caso
+prearmado del curso, y se les aplica el mismo protocolo.
