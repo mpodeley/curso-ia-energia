@@ -1,4 +1,5 @@
-// Curated pre-session material, one list per session.
+// Curated pre-session material, one list per day (second edition: four days,
+// each merging two sessions of the first edition).
 //
 // Every link here was opened and checked on the date below — titles, channels
 // and durations are the real ones, not remembered. A course that teaches
@@ -98,8 +99,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La idea de este curso es ser bien práctico, así que la matemática queda afuera. Para el más curioso, esta serie es un recurso excelente: arranca donde el video anterior (acá en su versión original) y sigue hasta adentro de los transformers de los chatbots actuales, con las mismas visualizaciones.',
     },
-  ],
-  2: [
     {
       tipo: 'video',
       titulo: '¿Qué es una Red Neuronal? | Aprendizaje Profundo, capítulo 1',
@@ -121,8 +120,20 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'Pegá cualquier texto tuyo y mirá cómo lo parte cada modelo. Probá con nombres de pozos y unidades: ahí se ve por qué el modelo se equivoca contando.',
     },
+    {
+      // Pedido por Matías el 7-sep-2026: GPT-2 corriendo en el navegador, con la
+      // atención y las probabilidades del próximo token en vivo. Se abre en el
+      // bloque de predicción del día 1 y queda acá para curiosos.
+      tipo: 'herramienta',
+      titulo: 'Transformer Explainer',
+      url: 'https://poloclub.github.io/transformer-explainer/',
+      fuente: 'Polo Club of Data Science, Georgia Tech',
+      idioma: 'en',
+      porque:
+        'Escribí una frase y mirá cómo el modelo reparte probabilidad entre las próximas palabras, capa por capa. Es el laboratorio de predicción de la sesión, pero con un modelo real adentro.',
+    },
   ],
-  3: [
+  2: [
     {
       tipo: 'video',
       titulo: 'Prompting 101 | Code w/ Claude',
@@ -170,8 +181,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La guía con la que Anthropic enseña a escribir prompts. Está pensada para gente que programa, pero las técnicas (ser claro, dar ejemplos, dejar pensar) son las mismas piezas del constructor de esta página, y sirven en cualquier chatbot. En inglés: el traductor del navegador alcanza.',
     },
-  ],
-  4: [
     {
       tipo: 'video',
       titulo: 'Introduction to residuals and least-squares regression',
@@ -205,17 +214,8 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La fuente de los pozos del laboratorio. Bajate un año y probá el flujo de la sesión con datos de verdad, que es la mejor práctica antes de tocar los de tu empresa.',
     },
-    {
-      tipo: 'lectura',
-      titulo: 'Rendición pública de cuentas final 2025',
-      url: 'https://www.ypfb.gob.bo/sites/default/files/2026-03/Presentacion.RPC%20Final%202025-versi%C3%B3n%2014-03-2026-OFICIAL-FINAL%20v8.pdf',
-      fuente: 'Yacimientos Petrolíferos Fiscales Bolivianos',
-      idioma: 'es',
-      porque:
-        'El PDF del ejercicio de extracción. En la página 8, la producción fiscalizada de gas 2006–2025 y el pronóstico oficial 2026–2040: 35 números rotulados sobre un gráfico, para sacarlos a una tabla y verificarlos uno por uno. Bonus: el pronóstico oficial es una curva de declinación.',
-    },
   ],
-  5: [
+  3: [
     {
       tipo: 'video',
       titulo: 'RAG Explained For Beginners',
@@ -236,8 +236,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La versión sin programar de todo esto. Subí dos o tres documentos públicos de tu rubro y hacele una pregunta antes de la sesión: más abajo en esta página hay tres reales para arrancar.',
     },
-  ],
-  6: [
     {
       tipo: 'video',
       titulo: 'Agentic AI: Workflows vs. agents',
@@ -290,12 +288,38 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad es el mejor antídoto que existe contra el humo del género. En inglés.',
     },
   ],
-  // La lista de la sesión 8 es deliberadamente distinta al resto: el bloque
-  // final es una conversación sobre el futuro, así que acá entran hipótesis y
-  // especulación con nombre propio, siempre presentadas como tales. La vara de
-  // "primera línea" acá significa: la fuente es quien realmente sostiene la
-  // hipótesis, y el dato duro (los gráficos) sigue siendo de primera línea.
-  8: [
+  4: [
+    {
+      tipo: 'video',
+      titulo: 'What is interpretability?',
+      url: 'https://www.youtube.com/watch?v=TxhhMTOTMDg',
+      fuente: 'Anthropic',
+      duracion: '3:53',
+      publicado: '2024-06',
+      idioma: 'en',
+      porque:
+        'La pregunta que sostiene esta sesión, contada por el equipo que la investiga: qué es mirar adentro de un modelo, y por qué todavía no alcanza para garantizar cómo se comporta. El video de abajo es la versión larga.',
+    },
+    {
+      tipo: 'video',
+      titulo: 'The Dark Matter of AI [Mechanistic Interpretability]',
+      url: 'https://www.youtube.com/watch?v=UGO_Ehywuxc',
+      fuente: 'Welch Labs',
+      duracion: '24:09',
+      publicado: '2024-12',
+      idioma: 'en',
+      porque:
+        'Para el más curioso: por qué mirar adentro de un modelo es difícil de verdad. Welch Labs explica la interpretabilidad mecanicista, la disciplina detrás de "se puede mirar adentro, pero no lo bastante para garantizar", que es el corazón de esta sesión.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'AI Incident Database',
+      url: 'https://incidentdatabase.ai',
+      fuente: 'Responsible AI Collaborative',
+      idioma: 'en',
+      porque:
+        'El registro público de incidentes de IA, con el mismo espíritu que los registros de incidentes de aviación: documentar para que otros no repitan. Buscá los de tu industria antes de la sesión y traé el que más se parezca a tu trabajo.',
+    },
     {
       tipo: 'video',
       titulo: 'We Already Built AGI | Michal Kosinski',
@@ -373,41 +397,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'en',
       porque:
         'La página hermana del conteo: qué significaría un sistema por encima del nivel humano en todo, y quiénes lo toman en serio. Material de conversación, no de planificación.',
-    },
-  ],
-  // Los otros dos recursos de primera línea de la sesión 7 (Anthropic) viven
-  // en PROPIEDADES, renderizados dentro de la prosa.
-  7: [
-    {
-      tipo: 'video',
-      titulo: 'What is interpretability?',
-      url: 'https://www.youtube.com/watch?v=TxhhMTOTMDg',
-      fuente: 'Anthropic',
-      duracion: '3:53',
-      publicado: '2024-06',
-      idioma: 'en',
-      porque:
-        'La pregunta que sostiene esta sesión, contada por el equipo que la investiga: qué es mirar adentro de un modelo, y por qué todavía no alcanza para garantizar cómo se comporta. El video de abajo es la versión larga.',
-    },
-    {
-      tipo: 'video',
-      titulo: 'The Dark Matter of AI [Mechanistic Interpretability]',
-      url: 'https://www.youtube.com/watch?v=UGO_Ehywuxc',
-      fuente: 'Welch Labs',
-      duracion: '24:09',
-      publicado: '2024-12',
-      idioma: 'en',
-      porque:
-        'Para el más curioso: por qué mirar adentro de un modelo es difícil de verdad. Welch Labs explica la interpretabilidad mecanicista, la disciplina detrás de "se puede mirar adentro, pero no lo bastante para garantizar", que es el corazón de esta sesión.',
-    },
-    {
-      tipo: 'herramienta',
-      titulo: 'AI Incident Database',
-      url: 'https://incidentdatabase.ai',
-      fuente: 'Responsible AI Collaborative',
-      idioma: 'en',
-      porque:
-        'El registro público de incidentes de IA, con el mismo espíritu que los registros de incidentes de aviación: documentar para que otros no repitan. Buscá los de tu industria antes de la sesión y traé el que más se parezca a tu trabajo.',
     },
   ],
 }

@@ -8,7 +8,9 @@
 // Esto NO vive en la base: el contenido va en git, la base guarda solo las
 // respuestas. Cambiar una pregunta es un commit, con su historia.
 //
-// De acá salen la shortlist de casos de la sesión 5 y el caso real de la 8.
+// Primera edición: de acá salían la shortlist de casos de la S5 y el caso real de
+// la S8. Segunda edición: el caso viene prearmado; la encuesta alimenta énfasis y
+// ejemplos, y el bloque D siembra el taller "el caso de tu empresa" del día 3.
 
 export type TipoPregunta = 'texto-corto' | 'texto-largo' | 'opcion-unica' | 'opcion-multiple'
 
@@ -29,14 +31,14 @@ export type Bloque = { id: string; titulo: string; minutos: number }
 export const REF_ENCUESTA = 'relevamiento-s1'
 
 export const NOTA_PRIVACIDAD =
-  'Las respuestas se usan solo para diseñar los ejercicios y el caso final del curso. ' +
+  'Las respuestas se usan solo para ajustar los ejemplos y ejercicios del curso. ' +
   'No incluyas datos confidenciales de la empresa en ninguna respuesta.'
 
 export const BLOQUES: Bloque[] = [
   { id: 'a', titulo: 'Quién sos', minutos: 2 },
   { id: 'b', titulo: 'Tu semana', minutos: 5 },
   { id: 'c', titulo: 'Tus datos', minutos: 5 },
-  { id: 'd', titulo: 'El caso final', minutos: 3 },
+  { id: 'd', titulo: 'Tu caso', minutos: 3 },
 ]
 
 export const PREGUNTAS: Pregunta[] = [
@@ -145,12 +147,14 @@ export const PREGUNTAS: Pregunta[] = [
     ayuda: 'Sin filtro. Después vemos juntos qué es viable.',
   },
   {
-    id: 'd2-datos',
+    // Segunda edición (reemplaza a d2-datos, que preguntaba por aportar datos al
+    // caso final): siembra el taller del día 3, donde cada empresa escribe su caso.
+    id: 'd4-primer-problema',
     bloque: 'd',
     texto:
-      '¿Estarías dispuesto o dispuesta a aportar datos no confidenciales o anonimizados de tu área para construir el caso final?',
-    tipo: 'opcion-unica',
-    opciones: ['Sí', 'No', 'Tendría que consultar'],
+      'Si tuvieras que elegir un solo problema de tu área para probar primero con estas herramientas, ¿cuál sería?',
+    tipo: 'texto-largo',
+    ayuda: 'Uno solo, y en una o dos líneas. El miércoles lo escribimos en una página.',
   },
   {
     id: 'd3-preocupacion',

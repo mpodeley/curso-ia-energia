@@ -8,10 +8,10 @@ describe('parseHash', () => {
     expect(parseHash('#/nada')).toEqual({ page: 'home' })
   })
 
-  it('routes sessions 1..8 and rejects out-of-range', () => {
+  it('routes sessions 1..4 and rejects out-of-range', () => {
     expect(parseHash('#/sesion/1')).toEqual({ page: 'sesion', n: 1 })
-    expect(parseHash('#/sesion/8/')).toEqual({ page: 'sesion', n: 8 })
-    expect(parseHash('#/sesion/9')).toEqual({ page: 'home' })
+    expect(parseHash('#/sesion/4/')).toEqual({ page: 'sesion', n: 4 })
+    expect(parseHash('#/sesion/5')).toEqual({ page: 'home' })
     expect(parseHash('#/sesion/0')).toEqual({ page: 'home' })
     expect(parseHash('#/sesion/x')).toEqual({ page: 'home' })
   })

@@ -14,7 +14,7 @@ export function SesionPage({ n }: { n: number }) {
     <div className="wrap">
       <header className="sess-head">
         <p className="kicker">
-          Sesión {sesion.n} de {SESIONES.length} · 2 h en vivo
+          Día {sesion.n} de {SESIONES.length} · 4 h en vivo
           {sesion.estado === 'en-preparacion' && <span className="tag t-status">en preparación</span>}
         </p>
         <h1>{sesion.titulo}</h1>
@@ -47,7 +47,7 @@ export function SesionPage({ n }: { n: number }) {
       <nav className="sess-nav" aria-label="Navegación entre sesiones">
         {prev ? (
           <a href={hrefFor({ page: 'sesion', n: prev.n })}>
-            <span className="arw">←</span> S{prev.n} · {prev.titulo}
+            <span className="arw">←</span> Día {prev.n} · {prev.titulo}
           </a>
         ) : (
           <a href={hrefFor({ page: 'home' })}>
@@ -56,7 +56,7 @@ export function SesionPage({ n }: { n: number }) {
         )}
         {next && (
           <a href={hrefFor({ page: 'sesion', n: next.n })}>
-            S{next.n} · {next.titulo} <span className="arw">→</span>
+            Día {next.n} · {next.titulo} <span className="arw">→</span>
           </a>
         )}
       </nav>

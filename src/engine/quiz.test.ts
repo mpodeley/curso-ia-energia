@@ -39,8 +39,8 @@ describe('quiz scoring', () => {
 // Guards the quiz content. A quiz with two right answers, or with an option
 // that has no explanation, teaches nothing and the component would not say so.
 describe('quiz_sN.json', () => {
-  // Globbed, not hardcoded: the day quiz_s8.json lands it is covered without
-  // anyone remembering to extend a list.
+  // Globbed, not hardcoded: a new quiz is covered without anyone remembering
+  // to extend a list. Second edition: four days, one quiz each.
   const SESIONES = readdirSync('public/data')
     .map((f) => /^quiz_s(\d+)\.json$/.exec(f)?.[1])
     .filter((n): n is string => n !== undefined)
@@ -51,7 +51,7 @@ describe('quiz_sN.json', () => {
     JSON.parse(readFileSync(`public/data/quiz_s${n}.json`, 'utf-8')).data as QuizPregunta[]
 
   it('ships a quiz for every session that has one', () => {
-    expect(SESIONES.length).toBeGreaterThanOrEqual(7)
+    expect(SESIONES.length).toBeGreaterThanOrEqual(4)
     for (const n of SESIONES) expect(cargar(n).length, `sesión ${n}`).toBeGreaterThanOrEqual(3)
   })
 

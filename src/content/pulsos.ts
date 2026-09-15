@@ -6,7 +6,11 @@
 // del sitio; no toca el Worker.
 //
 // El `id` es parte de la clave con la que se guardan las respuestas. Una vez
-// dictada la sesión, no se renombra.
+// dictada la sesión, no se renombra. Y entre ediciones: un id nombra una
+// pregunta, no un lugar en la agenda. Misma pregunta ⇒ mismo id (el panel
+// muestra ediciones viejas con el catálogo actual); pregunta distinta ⇒ slug
+// nuevo; un slug retirado no se recicla. El prefijo sN- es el día en que se
+// abre en la edición vigente; en la primera edición estos cinco vivían en S1 y S2.
 
 export type Pulso = {
   id: string
@@ -20,7 +24,7 @@ export type Pulso = {
 )
 
 export const PULSOS: Pulso[] = [
-  // --- Sesión 1 --------------------------------------------------------------
+  // --- Día 1, primera mitad (S1 de la primera edición) --------------------------------------------------------------
   {
     id: 's1-palabra-ia',
     sesion: 1,
@@ -47,12 +51,12 @@ export const PULSOS: Pulso[] = [
     ],
   },
 
-  // --- Sesión 2 --------------------------------------------------------------
+  // --- Día 1, segunda mitad (S2 de la primera edición) --------------------------------------------------------------
   {
     // Se abre ANTES del TokenizerLab: todos erran, y el ejercicio revela la
     // respuesta. Es la razón por la que los pulsos se ganan el lugar en la S2.
     id: 's2-cuantos-tokens',
-    sesion: 2,
+    sesion: 1,
     tipo: 'opcion',
     pregunta: '¿En cuántos tokens parte el modelo la frase "perforación direccional"?',
     opciones: ['2', '4', '6', '8 o más'],
@@ -60,7 +64,7 @@ export const PULSOS: Pulso[] = [
   },
   {
     id: 's2-temperatura',
-    sesion: 2,
+    sesion: 1,
     tipo: 'opcion',
     pregunta: '¿En cuál de estas tareas tuyas querrías temperatura baja?',
     opciones: [
@@ -73,7 +77,7 @@ export const PULSOS: Pulso[] = [
   },
   {
     id: 's2-palabra-alucinacion',
-    sesion: 2,
+    sesion: 1,
     tipo: 'palabra',
     maxPalabras: 1,
     pregunta: 'Una palabra: ¿qué te preocupa de que el modelo alucine?',

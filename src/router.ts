@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 // (#/sesion/3) deep-link without the 404.html SPA hack. ~11 routes total,
 // so no router dependency.
 
-export const N_SESIONES = 8
+export const N_SESIONES = 4
 
 // 'panel' es el tablero del instructor. No está en la navegación del masthead
 // —nadie lo encuentra sin que se lo digan— pero tampoco es secreto: lo que lo

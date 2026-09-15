@@ -237,9 +237,9 @@ describe('catálogo de pulsos', () => {
     }
   })
 
-  it('covers the two sessions being taught first', () => {
+  it('covers day 1, the only day with pulsos in the second edition', () => {
     expect(pulsosDeSesion(1).length).toBeGreaterThan(0)
-    expect(pulsosDeSesion(2).length).toBeGreaterThan(0)
+    expect(pulsosDeSesion(5).length).toBe(0)
   })
 
   it('finds a pulso by id', () => {
