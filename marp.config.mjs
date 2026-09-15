@@ -10,6 +10,21 @@
    que corre npm run build y por lo tanto CI— no toca navegador. */
 
 import { join } from 'node:path';
+import { readdirSync } from 'node:fs';
+
+// Playwright renumbers its chromium build on every update (chromium-1223,
+// chromium-1243, ...): pick the newest one installed instead of a fixed number.
+function playwrightChromium() {
+  const base = join(process.env.HOME ?? '', '.cache/ms-playwright');
+  let dirs = [];
+  try {
+    dirs = readdirSync(base).filter((d) => /^chromium-\d+$/.test(d)).sort();
+  } catch {
+    return undefined;
+  }
+  const last = dirs.at(-1);
+  return last ? join(base, last, 'chrome-linux64/chrome') : undefined;
+}
 
 export default {
   themeSet: ['./slides/themes'],
@@ -23,9 +38,7 @@ export default {
      comentario de notas del orador y las directivas _class. */
   html: false,
 
-  browserPath:
-    process.env.SLIDES_CHROMIUM ||
-    join(process.env.HOME ?? '', '.cache/ms-playwright/chromium-1223/chrome-linux64/chrome'),
+  browserPath: process.env.SLIDES_CHROMIUM || playwrightChromium(),
 
   bespoke: { progress: true },
 };

@@ -139,7 +139,7 @@ export function PromptBuilder({ sesion = 3 }: { sesion?: number }) {
           })}
         </>
       ) : (
-        <Field label="Pegá acá un prompt tuyo — el de la tarea de la sesión 2, por ejemplo">
+        <Field label="Pegá acá un prompt tuyo — el de la tarea de ayer, por ejemplo">
           <textarea
             value={state.propio}
             onChange={(e) => patch({ propio: e.target.value })}

@@ -27,8 +27,8 @@ export const SESIONES: Sesion[] = [
       'Ver en vivo qué puede (y qué no puede) hacer hoy un chatbot con tareas reales de la industria',
       'Entender qué es un token, cómo el modelo predice el siguiente, y derivar de ahí por qué alucina',
     ],
-    estado: 'en-preparacion',
-    slides: false,
+    estado: 'lista',
+    slides: true,
   },
   {
     n: 2,
@@ -55,8 +55,8 @@ export const SESIONES: Sesion[] = [
       'Ver el loop de un agente trabajando en vivo sobre datos de producción',
       'Escribir en una página el caso de tu empresa: dolor, datos, sensibilidad, verificabilidad',
     ],
-    estado: 'en-preparacion',
-    slides: false,
+    estado: 'lista',
+    slides: true,
   },
   {
     n: 4,
@@ -69,8 +69,8 @@ export const SESIONES: Sesion[] = [
       'Llevarse una hoja de ruta de adopción concreta',
       'Conversar el presente y futuro de la IA: la frontera, los modelos locales, los riesgos',
     ],
-    estado: 'en-preparacion',
-    slides: false,
+    estado: 'lista',
+    slides: true,
   },
 ]
 

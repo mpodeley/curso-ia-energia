@@ -107,7 +107,7 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
     <Ejercicio
       titulo="Ajustá la curva de declinación"
       sesion={sesion}
-      intro="Movés tres perillas hasta que la curva se pegue a los puntos: eso es ajustar un modelo a datos. Empezá por los pozos de escuela, que tienen respuesta exacta, y después pasá a los reales de Salta — de los mismos reservorios del subandino que se producen en Bolivia."
+      intro="Movés tres perillas hasta que la curva se pegue a los puntos: eso es ajustar un modelo a datos. Empezá por los pozos de escuela, que tienen respuesta exacta, y después pasá a los reales de Salta, que salen del dataset público Capítulo IV."
       onReset={reset}
     >
       <Field label="Pozo">

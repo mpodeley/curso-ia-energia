@@ -44,7 +44,9 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   persisted via `useExerciseState` (localStorage, hydrate-merge).
 - `public/data/*.json` — precomputed datasets with the `{generated_at, source, source_date, data}`
   envelope; regenerated offline by `scripts/build_data.py` (tiktoken for real BPE splits). Only
-  JSON ships to the browser.
+  JSON ships to the browser. Exception since 2026-09-15: the `quiz_sN.json` files are
+  hand-authored per day and `build_data.py` never touches them — `npm run data` is safe to run
+  while a quiz is being edited.
 - `public/descargas/` — files the student downloads to feed a chatbot (today: the 10-well
   production CSV for the session-4 batch-forecast exercise, built by
   `scripts/build_csv_descarga.py` from the tef-bearing Capítulo IV cache).

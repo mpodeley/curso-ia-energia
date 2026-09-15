@@ -51,7 +51,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'El video del punto 1 de la lista de arriba. Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
     },
     {
-      // Repetido a propósito en INTERPRETABILIDAD (sesión 2): acá respalda la
+      // Repetido a propósito en INTERPRETABILIDAD (día 1): acá respalda la
       // línea de la capa 3 del deck ("el video dura un minuto y está en la página").
       tipo: 'video',
       titulo: 'Convolutional Network Demo from 1989 (versión restaurada)',
@@ -73,10 +73,10 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2024-07',
       idioma: 'en',
       porque:
-        'Donde la capa 3 explota: AlexNet (2012), el mismo mecanismo de LeNet con GPUs y un millón de imágenes. El título es literal, y es el hilo que retomamos en las sesiones 2 y 7: desde acá los modelos rinden más de lo que se dejan leer.',
+        'Donde la capa 3 explota: AlexNet (2012), el mismo mecanismo de LeNet con GPUs y un millón de imágenes. El título es literal, y es el hilo que retomamos los días 1 y 4: desde acá los modelos rinden más de lo que se dejan leer.',
     },
     {
-      // Repetido a propósito en la sesión 2, donde acompaña la sección de
+      // Repetido a propósito en el día 1, donde acompaña la sección de
       // interpretabilidad: acá es el "para curiosos" de la capa 3 del mapa.
       tipo: 'video',
       titulo: '¿Qué es una Red Neuronal? | Aprendizaje Profundo, capítulo 1',
@@ -98,18 +98,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'en',
       porque:
         'La idea de este curso es ser bien práctico, así que la matemática queda afuera. Para el más curioso, esta serie es un recurso excelente: arranca donde el video anterior (acá en su versión original) y sigue hasta adentro de los transformers de los chatbots actuales, con las mismas visualizaciones.',
-    },
-    {
-      tipo: 'video',
-      titulo: '¿Qué es una Red Neuronal? | Aprendizaje Profundo, capítulo 1',
-      url: 'https://www.youtube.com/watch?v=jKCQsndqEGQ',
-      fuente: '3Blue1Brown Español',
-      duracion: '20:51',
-      publicado: '2020-09',
-      historico: true,
-      idioma: 'es',
-      porque:
-        'La mejor visualización que existe de qué hace una red por dentro, doblada al español. Usa el reconocimiento de dígitos escritos a mano, que es el mismo ejemplo del que hablamos más abajo.',
     },
     {
       tipo: 'herramienta',
@@ -336,7 +324,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       titulo: 'OpenAI: Inside the Battle for the Startup\'s Soul',
       url: 'https://www.youtube.com/watch?v=VGtOPcd33ks',
       fuente: 'Bloomberg Originals',
-      duracion: '8:15',
+      duracion: '8:14',
       publicado: '2023-11',
       idioma: 'en',
       porque:
@@ -351,7 +339,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2026-07',
       idioma: 'en',
       porque:
-        'Tres minutos del anuncio oficial: el mismo tipo de modelo que redacta informes, moviendo un cuerpo completo. Es la conversación del bloque final saliendo de la pantalla, y conecta con la regla de la sesión 7: en el mundo físico el error no vuelve como mensaje.',
+        'Tres minutos del anuncio oficial: el mismo tipo de modelo que redacta informes, moviendo un cuerpo completo. Es la conversación del bloque final saliendo de la pantalla, y conecta con la regla del día 4: en el mundo físico el error no vuelve como mensaje.',
     },
     {
       tipo: 'herramienta',
@@ -378,7 +366,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Geoffrey Litt',
       idioma: 'en',
       porque:
-        'Con lo que cierra el curso. Contra la idea cómoda de que si el agente se verifica solo entender deja de hacer falta: se entiende para participar, no solo para controlar. Su instrumento es un cuestionario de cinco preguntas después de cada explicación, que es el mismo aparato que usaron acá siete sesiones seguidas.',
+        'Con lo que cierra el curso. Contra la idea cómoda de que si el agente se verifica solo entender deja de hacer falta: se entiende para participar, no solo para controlar. Su instrumento es un cuestionario de cinco preguntas después de cada explicación, que es el mismo aparato que usaron acá cuatro días seguidos.',
     },
     {
       tipo: 'lectura',
@@ -417,7 +405,7 @@ export const INTERPRETABILIDAD: Recurso[] = [
       'Un minuto, sin narración: LeNet-1 leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy mueve todo, corriendo en una computadora de hace treinta y siete años.',
   },
   {
-    // Repetido a propósito en el material previo de la sesión 1 (capa 3).
+    // Repetido a propósito en el material previo del día 1 (capa 3).
     tipo: 'video',
     titulo: 'The moment we stopped understanding AI [AlexNet]',
     url: 'https://www.youtube.com/watch?v=UZDiGooFs54',
@@ -469,7 +457,7 @@ export const INTERPRETABILIDAD: Recurso[] = [
   },
 ]
 
-/** El marco del que sale la tabla de las cuatro propiedades de la sesión 7. En
+/** El marco del que sale la tabla de las cuatro propiedades del día 4. En
  *  inglés y opcional: se enlaza y se atribuye, no se copia. Los materiales del
  *  framework de AI Fluency de Anthropic son CC BY-NC-SA 4.0 y este curso es
  *  pago, así que toda la prosa del sitio es propia. Las ideas no se licencian;

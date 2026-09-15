@@ -167,8 +167,8 @@ export function AgentTrace({ sesion = 6 }: { sesion?: number }) {
       <Solucion titulo="Dónde esto se vuelve peligroso">
         Todo lo que hace este agente es reversible: lee archivos y escribe un gráfico. El problema aparece cuando las
         herramientas dejan de ser de lectura — mandar un correo, cerrar una válvula, escribir en un sistema de
-        control. El loop es el mismo, pero un paso equivocado ya no se corrige mirando la salida. De eso va la
-        sesión 7.
+        control. El loop es el mismo, pero un paso equivocado ya no se corrige mirando la salida. De eso va el
+        día 4.
       </Solucion>
 
       {meta.source && (

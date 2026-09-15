@@ -55,7 +55,9 @@ privado del país. Contrato de Tarapoa hasta 2040 con 21 pozos de desarrollo y 4
 comprometidos. Los reportes diarios de la ARCH de fines de 2025 listan pozos cerrados por alto
 corte de agua en Dorine, Fanny, Johanna Este y Mariann, y 22 pozos cerrados a la espera de
 reacondicionamiento. No hay fuente pública que documente un proyecto de recuperación secundaria
-de Andes: no afirmarlo en el material.
+de Andes: no afirmarlo en el material. Tampoco se encontró un reporte de sostenibilidad público
+de Andes (el sitio andespetro.com no responde; la URL amazon-andes.com que apareció en la
+búsqueda es de otra empresa).
 
 ## Qué tienen en común
 
@@ -76,8 +78,8 @@ Ecuador. Cinco temas donde un caso con IA les habla a las cuatro:
   novedades por pozo con causa de cierre. `https://controlhidrocarburos.gob.ec/`.
 - Producción mensual de Petroecuador: `https://datosabiertos.gob.ec/dataset/produccion-mensual-petroecuador`.
 - Capítulo IV (Secretaría de Energía, Argentina): producción e inyección mensual por pozo.
-- Reglamento de Operaciones Hidrocarburíferas (Ecuador, 2021): `https://www.gob.ec/regulaciones/reglamento-operaciones-hidrocarburiferas`.
-- Reporte de sostenibilidad 2025 de Andes Petroleum: `https://amazon-andes.com/REPORTE-DE-SOSTENIBILIDAD-2025-INGLES.pdf`.
+- Reporte de sustentabilidad 2024 de PCR (Argentina y Ecuador, 174 páginas): `https://www.pcr.energy/wp-content/uploads/2025/09/PCR-Reporte-de-Sustentabilidad-2024-vf_compressed.pdf`.
+- Reglamento de Operaciones Hidrocarburíferas, versión vigente (Resolución ARCERNNR-024/2021, 191 artículos): `https://www.gob.ec/sites/default/files/regulations/2025-05/Documento_Reglamento-Operaciones-Hidrocarbur%C3%ADferas.pdf`.
 
 ## Fuentes del perfil
 

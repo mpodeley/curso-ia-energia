@@ -36,8 +36,8 @@ export const NOTA_PRIVACIDAD =
 
 export const BLOQUES: Bloque[] = [
   { id: 'a', titulo: 'Quién sos', minutos: 2 },
-  { id: 'b', titulo: 'Tu semana', minutos: 5 },
-  { id: 'c', titulo: 'Tus datos', minutos: 5 },
+  { id: 'b', titulo: 'Tu semana', minutos: 4 },
+  { id: 'c', titulo: 'Tus datos', minutos: 3 },
   { id: 'd', titulo: 'Tu caso', minutos: 3 },
 ]
 
