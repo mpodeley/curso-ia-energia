@@ -1,137 +1,159 @@
 {
-  "generated_at": "2026-08-12T01:02:29+00:00",
-  "source": "elaboración propia para el curso",
+  "generated_at": "2026-09-15T15:30:00+00:00",
+  "source": "elaboración propia para el curso (segunda edición: fusión de los quizzes de las sesiones 3 y 4 de la primera)",
   "source_date": null,
   "data": [
     {
-      "pregunta": "Le pedís al modelo que cuente cuántas letras \"r\" tiene una palabra y se equivoca. ¿Por qué?",
+      "pregunta": "Querés automatizar un resumen que va a correr mil veces por mes. ¿Cómo elegís el modelo?",
       "opciones": [
         {
-          "texto": "Porque no le pusiste suficiente contexto en el prompt.",
-          "explicacion": "El contexto no cambia nada acá. El problema es anterior al prompt: está en cómo el modelo ve el texto."
+          "texto": "El que esté primero en los benchmarks: es el mejor, punto.",
+          "explicacion": "El podio general no mide tu tarea, y el mejor del ranking puede costar cien veces más para un resumen que un modelo rápido hace igual de bien."
         },
         {
-          "texto": "Porque no lee letras: lee tokens, que son pedazos de palabra. Contar caracteres exige ver algo que el modelo no tiene delante.",
+          "texto": "El más barato siempre: total, todos hacen más o menos lo mismo.",
+          "explicacion": "No hacen lo mismo: el rápido falla más seguido en tareas difíciles. Barato sin probar sale caro apenas hay que revisar todo a mano."
+        },
+        {
+          "texto": "Pruebo la tarea real en el modelo grande y en el rápido, comparo las salidas, y me quedo con el más barato que alcanza.",
           "correcta": true,
-          "explicacion": "Exacto. Para el modelo la palabra puede ser dos o tres piezas, y adentro de cada pieza no distingue letras. Por eso también falla con aritmética larga."
+          "explicacion": "Tu tarea es el benchmark que importa. A mil corridas por mes, el precio por token se vuelve presupuesto: se paga capacidad solo donde hace falta."
         },
         {
-          "texto": "Porque los modelos son malos en matemática en general.",
-          "explicacion": "Es una consecuencia, no la causa, y además no es del todo cierto: con una herramienta de cálculo aciertan. El origen del problema es la tokenización."
-        },
-        {
-          "texto": "Porque la temperatura estaba muy alta.",
-          "explicacion": "La temperatura cambia cuánto riesgo toma al elegir, no le da acceso a las letras. Con temperatura cero se equivoca igual."
+          "texto": "Da igual cuál: los proveedores cobran todos lo mismo por consulta.",
+          "explicacion": "Se cobra por token, no por consulta, y entre el modelo grande y el rápido de un mismo proveedor puede haber cien veces de diferencia de precio."
         }
       ]
     },
     {
-      "pregunta": "¿Qué hace exactamente la temperatura?",
+      "pregunta": "De las cinco piezas de un prompt, ¿cuál suele cambiar más la calidad de la salida en una tarea de oficina?",
       "opciones": [
         {
-          "texto": "Cambia cuánto riesgo toma al elegir el próximo token: baja se queda con lo más probable, alta reparte entre opciones menos probables.",
+          "texto": "El rol, porque define quién es el modelo.",
+          "explicacion": "Ayuda a fijar el registro, pero un rol bien puesto sobre un pedido sin contexto sigue dando un texto genérico."
+        },
+        {
+          "texto": "El contexto, cuando dice para qué se va a usar el resultado y qué decisión alimenta.",
           "correcta": true,
-          "explicacion": "Eso es todo lo que hace. No agrega ni quita conocimiento: solo modifica cómo elige entre las opciones que ya tenía."
+          "explicacion": "Es lo que le da criterio para jerarquizar: qué dejar afuera. Sin eso resume \"en general\", que es resumir para nadie."
         },
         {
-          "texto": "Controla cuánta información tiene en cuenta el modelo.",
-          "explicacion": "La información que tiene en cuenta la define el contexto, no la temperatura. Con cualquier temperatura ve lo mismo."
+          "texto": "Los ejemplos, siempre.",
+          "explicacion": "Un ejemplo real es muy potente, pero es opcional. El contexto no lo es: sin él, el ejemplo tampoco sabe hacia dónde apuntar."
         },
         {
-          "texto": "Hace al modelo más o menos inteligente.",
-          "explicacion": "Un modelo con temperatura alta no es más creativo en el sentido de saber más: es más propenso a elegir tokens raros, que a veces suena original y a veces es un disparate."
-        },
-        {
-          "texto": "Determina cuánto se demora en responder.",
-          "explicacion": "La velocidad depende del tamaño del modelo y del largo de la respuesta, no de la temperatura."
+          "texto": "El largo del prompt: cuanto más detallado, mejor.",
+          "explicacion": "Un prompt largo y vago rinde menos que uno corto y específico. Lo que importa es qué piezas están, no cuántas palabras."
         }
       ]
     },
     {
-      "pregunta": "En el ejercicio, \"Vaca ___\" daba 90% de probabilidad a \"Muerta\". ¿Qué significa esa seguridad?",
+      "pregunta": "Tenés que resumir el informe mensual de producción del bloque. ¿Cuál es la forma correcta de usar un chatbot gratuito?",
       "opciones": [
         {
-          "texto": "Que el modelo verificó el dato antes de responder.",
-          "explicacion": "No hay ninguna verificación en el proceso. Solo hay una distribución de probabilidad sobre el próximo token."
+          "texto": "Subir el informe completo con los datos reales: es más rápido y el resultado va a ser mejor.",
+          "explicacion": "Producción real por pozo no va a una herramienta gratuita. La ganancia de calidad no compensa el riesgo de confidencialidad."
         },
         {
-          "texto": "Que esa combinación aparece muchísimo en el texto con el que se entrenó. La seguridad viene de la frecuencia, no de la verdad.",
+          "texto": "No usarlo: para datos de la empresa no sirve ninguna herramienta de este tipo.",
+          "explicacion": "Demasiado restrictivo. Hay formas de aprovecharlo sin exponer datos, y renunciar del todo también tiene un costo."
+        },
+        {
+          "texto": "Trabajar la estructura y el estilo con datos inventados o públicos que tengan la misma forma, y poner los números reales vos, después.",
           "correcta": true,
-          "explicacion": "Y de ahí sale la trampa: el modelo suena igual de seguro cuando la frecuencia es alta y cuando está inventando, porque el tono no depende de la probabilidad."
+          "explicacion": "Lo que aporta el modelo es la redacción y la organización, y eso se puede pedir sin datos sensibles. Los números los pegás en tu máquina."
         },
         {
-          "texto": "Que el 90% de las veces que respondió esa pregunta acertó.",
-          "explicacion": "No es una tasa de acierto histórica. Es la probabilidad que le asigna al próximo token en este contexto puntual."
-        },
-        {
-          "texto": "Que hay un 10% de posibilidades de que el dato sea falso.",
-          "explicacion": "La probabilidad es sobre qué palabra sigue, no sobre si el enunciado es verdadero. Son dos cosas distintas que es fácil confundir."
+          "texto": "Subir el informe pero cambiándole el nombre a los pozos.",
+          "explicacion": "Los volúmenes, las fechas y las relaciones entre pozos siguen ahí. Anonimizar mal da una sensación de seguridad sin la seguridad."
         }
       ]
     },
     {
-      "pregunta": "En una conversación larga, el modelo dejó de respetar una regla que pusiste en el primer mensaje. ¿Qué es lo más probable?",
+      "pregunta": "El primer resultado no sirve. ¿Qué conviene hacer?",
       "opciones": [
         {
-          "texto": "Se confundió porque la temperatura estaba alta.",
-          "explicacion": "La temperatura elige entre continuaciones candidatas; no decide qué parte de la conversación tiene delante el modelo."
+          "texto": "Empezar de cero con un prompt completamente distinto.",
+          "explicacion": "A veces hace falta, pero tirar todo descarta la parte que sí funcionaba. Iterar suele llegar antes."
         },
         {
-          "texto": "El modelo se cansa en conversaciones largas y empieza a ignorar instrucciones.",
-          "explicacion": "No hay nada que se canse: cada respuesta se calcula igual que la primera. Lo que cambia no es el esfuerzo, es qué parte de la conversación entra en la ventana."
-        },
-        {
-          "texto": "La conversación creció más que la ventana de contexto y el primer mensaje quedó afuera. Para el modelo, esa regla ya no existe.",
+          "texto": "Decirle qué está mal y pedirle el ajuste concreto: más corto, sin jerga, con la conclusión al principio.",
           "correcta": true,
-          "explicacion": "Y no avisa: lo que sale de la ventana no se \"olvidó\", directamente dejó de estar, y el modelo no sabe que alguna vez estuvo. Por eso las instrucciones importantes conviene repetirlas cada tanto."
+          "explicacion": "La conversación es parte del método, no señal de que fallaste. Cada corrección concreta rinde más que reescribir el prompt entero."
         },
         {
-          "texto": "Hay que escribir la regla de nuevo, con más énfasis.",
-          "explicacion": "Repetirla sí funciona, pero no por el énfasis: funciona porque la vuelve a meter en la ventana. El subrayado no le agrega nada a un texto que el modelo ya no tiene delante."
+          "texto": "Preguntarle por qué le salió mal.",
+          "explicacion": "Te va a dar una explicación plausible e inventada de su propio proceso. No tiene acceso introspectivo a por qué generó lo que generó."
+        },
+        {
+          "texto": "Volver a mandar el mismo prompt hasta que salga algo mejor.",
+          "explicacion": "Vas a obtener variaciones del mismo error. Si el prompt no cambia, el problema no cambia."
         }
       ]
     },
     {
-      "pregunta": "De las dos etapas de entrenamiento que vimos, ¿cuál describe mejor el proceso completo?",
+      "pregunta": "Le subiste el reporte diario de la ARCH y te devolvió la tabla 1 completa y prolija, con subtotal y total nacional. ¿Qué hacés antes de usarla?",
       "opciones": [
         {
-          "texto": "Se reentrena con cada conversación: aprende de lo que le escribís.",
-          "explicacion": "Lo que le escribís no cambia sus parámetros: entra como contexto de esa conversación y nada más. Aprenderlo exigiría volver a entrenarlo."
+          "texto": "Sumar las filas: si la suma da el total nacional que figura, la tabla está bien.",
+          "explicacion": "La suma puede cerrar con dos errores que se compensan, no cubre las columnas de estimado y cumplimiento, y el modelo puede haber calculado el total en vez de copiarlo: cerraría aunque una fila esté mal."
         },
         {
-          "texto": "La segunda etapa le carga los datos que le faltaron en la primera.",
-          "explicacion": "La segunda etapa no agrega conocimiento del mundo: enseña comportamiento. Casi todo lo que el modelo \"sabe\" viene de la primera."
-        },
-        {
-          "texto": "Las dos etapas son iguales; la segunda solo usa más datos.",
-          "explicacion": "Es al revés: la segunda usa muchísimos menos datos. Y no hacen lo mismo: una aprende a continuar texto, la otra a portarse como asistente."
-        },
-        {
-          "texto": "Primero aprende a continuar texto leyendo un corpus enorme; después, con muchos menos ejemplos y preferencias humanas, aprende a comportarse como un asistente.",
+          "texto": "Verificarla contra el PDF número por número, repartiendo filas si son muchas, y mirar primero las celdas donde el original mezcla formatos, como el 23.607 sin decimales.",
           "correcta": true,
-          "explicacion": "Y el tono servicial y seguro sale de esa segunda etapa, no de haber verificado nada: por eso suena igual de convencido cuando acierta y cuando inventa."
+          "explicacion": "El error de extracción no avisa: una coma decimal leída como punto de miles, una fila de la tabla de al lado colada, un dígito bailado. Se encuentra mirando, y ochenta números entre seis personas son un par de minutos."
+        },
+        {
+          "texto": "Pedirle que la extraiga de nuevo en un chat nuevo y quedarte con la versión que se repite.",
+          "explicacion": "Dos extracciones pueden coincidir en el mismo error, porque leen la misma celda ambigua de la misma manera. Repetir no es verificar."
+        },
+        {
+          "texto": "Nada: un PDF oficial es un dato de origen, y el modelo solo lo transcribió.",
+          "explicacion": "El original es oficial; la transcripción no. Entre el PDF y tu tabla hubo una lectura automática de celdas fusionadas, formatos mezclados y texto corrido, y ahí es donde se cuelan los errores."
         }
       ]
     },
     {
-      "pregunta": "A partir de la mecánica que vimos, ¿por qué alucina un modelo?",
+      "pregunta": "Ajustaste una curva de declinación a un pozo real y el modelo pasa muy cerca de todos los puntos. ¿Qué probaste?",
       "opciones": [
         {
-          "texto": "Porque tiene errores en los datos de entrenamiento que hay que ir corrigiendo.",
-          "explicacion": "Los datos sucios agregan errores, pero un modelo entrenado con datos perfectos alucinaría igual. El mecanismo es otro."
+          "texto": "Que entendiste el comportamiento del reservorio.",
+          "explicacion": "Es la conclusión tentadora y es la equivocada. La curva medida incluye compresión, restricciones de planta y estado del pozo, no solo reservorio."
         },
         {
-          "texto": "Porque su única operación es continuar el texto de la forma más plausible, y una continuación plausible puede ser falsa.",
+          "texto": "Que la producción cayó de forma sostenida, sin interrupciones grandes. Nada más que eso.",
           "correcta": true,
-          "explicacion": "No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja, y esa continuación tiene la forma de un dato verdadero."
+          "explicacion": "Un buen ajuste dice que la serie es suave, no que sepas por qué. Separar despresurización de efectos operativos necesita caudales corregidos por horas de operación y presión de boca."
         },
         {
-          "texto": "Porque a veces se queda sin contexto y rellena.",
-          "explicacion": "Quedarse sin contexto empeora las cosas, pero alucina también con todo el contexto disponible."
+          "texto": "Que podés proyectar la producción de los próximos diez años con confianza.",
+          "explicacion": "La cola de la curva la controla b, que es justamente el parámetro peor determinado. Un ajuste bueno sobre el pasado puede dar proyecciones muy distintas."
         },
         {
-          "texto": "Porque los desarrolladores todavía no terminaron de ajustarlo.",
-          "explicacion": "Los ajustes reducen la frecuencia, no eliminan el mecanismo. Es una propiedad de cómo funciona, no un error pendiente de arreglo."
+          "texto": "Que el pozo no tuvo intervenciones.",
+          "explicacion": "Una intervención suave o un cambio gradual de restricción puede pasar desapercibido dentro de una curva que ajusta bien."
+        }
+      ]
+    },
+    {
+      "pregunta": "El chatbot te escribió código para analizar tu planilla y devolvió un número razonable. ¿Qué chequeás?",
+      "opciones": [
+        {
+          "texto": "Nada: si el número es razonable y el código corrió sin errores, está bien.",
+          "explicacion": "Un filtro mal escrito no rompe nada. Devuelve menos filas y sigue, y el resultado sigue pareciendo razonable."
+        },
+        {
+          "texto": "Le pedís que te muestre el código y el conteo de filas antes y después de cada filtro, y rastreás un caso a mano en la planilla.",
+          "correcta": true,
+          "explicacion": "Los conteos delatan los filtros que se comieron datos, y un caso rastreado a mano cierra o abre toda la discusión en dos minutos."
+        },
+        {
+          "texto": "Le preguntás si está seguro del resultado.",
+          "explicacion": "Va a decir que sí con la misma seguridad con la que se equivocó. Preguntarle al modelo por su confiabilidad no es verificar."
+        },
+        {
+          "texto": "Le pedís que lo calcule de nuevo y comparás.",
+          "explicacion": "Si el código tiene el mismo error, va a dar el mismo número las dos veces. Repetir no es verificar."
         }
       ]
     }

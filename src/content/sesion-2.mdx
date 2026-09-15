@@ -1,153 +1,482 @@
-import { TokenizerLab } from '../exercises/TokenizerLab'
-import { NextTokenLab } from '../exercises/NextTokenLab'
-import { ContextoLab } from '../exercises/ContextoLab'
-import { PulsoVivo } from '../exercises/PulsoVivo'
+import { PromptBuilder } from '../exercises/PromptBuilder'
+import { DeclineLab } from '../exercises/DeclineLab'
 import { Quiz } from '../exercises/Quiz'
-import { Recursos, ListaRecursos } from '../components/Recursos'
-import { INTERPRETABILIDAD } from '../content/recursos'
-
-<div className="callout callout--wip">
-  Esta página todavía muestra el material de la primera edición. La prosa del día se termina antes
-  de la fecha de dictado.
-</div>
+import { Recursos } from '../components/Recursos'
 
 ## Antes de la sesión (opcional)
 
-Lo único que pide esta sesión es la tarea de la anterior: una tarea real en el chatbot y dos
-minutos de notas. Los tres ejercicios de esta página (el tokenizador, "adiviná el próximo
-token" y la ventana de contexto) los recorremos juntos en vivo; están acá para volver después,
-o para adelantarte si querés. Para el más curioso, el capítulo de
-[3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) (27 min) muestra
-la maquinaria interna; tiene audio en español, elegible en el menú del reproductor.
+Lo único que pide este día es la tarea de ayer: una tarea real de tu semana, la que le pedirías
+a un chatbot, anotada en una línea. Es la materia prima del taller de la mañana; si no llegaste,
+la anotamos en los primeros minutos. Si tenés un rato antes, el constructor de prompts y el
+laboratorio de declinación de esta página se pueden jugar solos: en el laboratorio, arrancá
+por los pozos de escuela.
 
 <Recursos sesion={2} />
 
-## El modelo no lee palabras: lee tokens
+## Elegir modelo: benchmarks y precios
 
-Antes de procesar tu texto, el modelo lo parte en **tokens**: pedazos que pueden ser palabras enteras,
-sílabas o hasta caracteres sueltos. Las palabras frecuentes en internet (en inglés, sobre todo) son un
-solo token; las técnicas o en español suelen partirse en varios.
+Todos los proveedores ofrecen la misma escalera: un modelo **grande** y uno **rápido y barato**
+(GPT y su mini, Claude y Haiku, Gemini Pro y Flash). El selector de modelos de tu chatbot es esa
+decisión. Al comparar, cuatro cosas: capacidad en tu tarea, ventana de contexto, precio por
+token y velocidad.
 
-Esto explica varias rarezas prácticas: por qué el modelo cuenta mal las letras de una palabra, por qué
-el español "rinde menos" por token que el inglés, y por qué los precios de las APIs se cobran por token.
+Un benchmark es un examen estandarizado: sirve para descartar, no para elegir fino. Los modelos
+"estudian para el examen", un punto más de puntaje no se nota en una minuta, y el podio cambia
+todos los meses. [LMArena](https://lmarena.ai) junta votos a ciegas de miles de usuarios;
+[Artificial Analysis](https://artificialanalysis.ai) pone capacidad, precio y velocidad en un
+solo cuadro. El benchmark que importa de verdad es tu tarea, corrida en dos modelos.
 
-<PulsoVivo sesion={2} />
+Los precios son por token, distintos para entrada y salida, y entre el grande y el rápido de un
+mismo proveedor puede haber cien veces de diferencia. Con cuentas gratuitas no lo pagás; importa
+el día que algo se automatiza, porque mil corridas por mes convierten el precio por token en
+presupuesto. El patrón que se usa en serio: el grande para lo difícil o lo que se hace una vez,
+el rápido para lo repetitivo, después de probar que alcanza.
 
-<TokenizerLab sesion={2} />
+## Anatomía de un prompt que funciona
 
-## Una sola operación: predecir el próximo token
+Un prompt efectivo no es magia: es una **orden de trabajo bien escrita**, como la que le darías a un
+analista nuevo el primer día. Las piezas:
 
-Todo lo que viste hacer a un chatbot (responder preguntas, escribir informes, traducir) sale de una
-única operación repetida: **dado el texto hasta acá, asignar una probabilidad a cada token posible que
-sigue, elegir uno, y volver a empezar**. No hay una base de datos de respuestas: hay una máquina de
-continuar texto, entrenada con una fracción enorme de todo el texto humano.
+- **Rol:** quién quiere que sea. *"Sos un ingeniero de producción senior que escribe para gerencia."*
+- **Contexto:** lo que necesita saber. *"Este resumen va al comité que decide el workover del pozo X."*
+- **Tarea:** el verbo concreto. Resumir, comparar, redactar, extraer, traducir, criticar.
+- **Formato:** cómo querés la salida. *"Tabla de dos columnas"*, *"máximo 200 palabras"*, *"en viñetas"*.
+- **Ejemplos:** si tenés un "así me gusta", mostralo. Un ejemplo vale más que tres párrafos de instrucciones.
+- **Iteración:** la primera salida es un borrador. *"Más corto"*, *"menos jerga"*, *"ahora en tono formal"*:
+  la conversación es parte del método, no señal de fracaso.
 
-La **temperatura** controla cómo se elige entre esos candidatos: con temperatura baja gana siempre el
-más probable (salida estable, repetitiva); con temperatura alta, tokens poco probables tienen su
-oportunidad (salida variada, a veces brillante, a veces disparatada).
+Un ejemplo completo:
 
-<NextTokenLab sesion={2} />
+```text
+Sos un ingeniero de reservorios que escribe para un directorio no técnico.
+Contexto: adjunto las conclusiones técnicas del estudio de simulación del campo.
+Tarea: redactá un resumen ejecutivo.
+Formato: máximo una página, tres secciones (situación, opciones, recomendación),
+sin jerga; cada término técnico inevitable, explicado entre paréntesis.
+```
 
-## La ventana de contexto: la memoria de trabajo
+<PromptBuilder sesion={2} />
 
-Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu pregunta, sus respuestas
-anteriores, los documentos que pegaste. Ese conjunto se llama **ventana de contexto** y tiene un
-tamaño máximo, medido en tokens. Lo que no entra ahí no existe para el modelo.
+## Dónde rinde hoy, en la oficina
 
-Conviene pensarla como un escritorio, no como un archivo. Lo que está sobre el escritorio lo mira;
-lo que se cayó al piso no lo busca, y tampoco sabe que se cayó.
+Los casos de mayor retorno inmediato no son los más glamorosos: resumir informes y papers (los de
+la Society of Petroleum Engineers incluidos), redactar primeros borradores de correos, minutas e
+informes mensuales, traducir con vocabulario técnico correcto, extraer datos puntuales de
+documentos largos, criticar un texto propio antes de mandarlo. La regla común: **tareas donde el
+borrador cuesta y la verificación es rápida**.
 
-<ContextoLab sesion={2} />
+## Qué no se sube a un chatbot
 
-De acá salen dos frustraciones que a esta altura ya te deben haber pasado. En una conversación
-larga, el principio se cae y el modelo deja de respetar algo que le pediste al empezar, sin avisar.
-Y en un documento grande, lo que quedó afuera no se busca solo: hay que volver a pegarlo. Al
-segundo problema le dedicamos la sesión 5 entera, donde en vez de pegar todo buscamos el pedazo que
-hace falta.
+Regla práctica: si no lo pondrías en un correo a un desconocido, no va en el chat. No van
+producción real por pozo, reservas, precios y cláusulas de contratos, datos de socios,
+información de personas. Lo que se sube a una cuenta gratuita sale de tu control, y el contrato
+de datos de una cuenta gratuita no promete nada.
 
-De las cuatro maneras de fallar que quedaron anunciadas en la sesión 1, acabás de ver el mecanismo
-de una: "se olvida de lo que le dijiste". No es un olvido. Es la ventana.
+En este curso la regla tiene una segunda cara. En la sala hay cuatro empresas que compiten
+entre sí, y el chat de la videollamada es tan compartido como el chatbot: **ningún ejercicio
+pide un dato de tu empresa**, y ninguna ronda lo espera. Cuando necesitás una estructura real
+para practicar, las alternativas son tres: datos públicos (el reporte diario del regulador
+ecuatoriano, el Capítulo IV argentino, lo que ya está afuera), datos viejos que dejaron de ser
+sensibles, o la planilla con las mismas columnas y números inventados. El modelo no necesita tus
+números para ayudarte a armar el informe; necesita la estructura.
 
-## Cómo se entrena: dos etapas de tamaños muy distintos
+<div className="callout">
+  <strong>Los casos grises</strong> (¿el borrador del informe mensual entra?) dependen de qué
+  números lleve. Ese "depende" se resuelve el día 4, cuando cada uno se lleva un borrador de
+  política de uso para su equipo. Las versiones corporativas de estas herramientas existen, con
+  otro contrato de datos; también son parte del día 4.
+</div>
 
-Nada de lo anterior lo programó alguien. El modelo pasa por dos etapas, y la diferencia entre ellas
-explica bastante de cómo se comporta.
+## La contracara: "intentá en serio"
 
-En la **primera** lee una fracción enorme de todo el texto humano y practica una sola cosa: predecir
-lo que sigue. De ahí salen la gramática, los hechos y los patrones de razonamiento, todos como
-efecto de hacer bien esa única tarea. La consecuencia incómoda es que aprendió lo que estaba
-escrito, con sus errores y sus sesgos, y lo escrito no es lo verdadero.
+En agosto de 2026, un modelo de Anthropic todavía sin publicar movió una cota de la hipótesis de
+Riemann que llevaba décadas casi quieta: del 41.6% al 67.2% de los ceros en la línea crítica. El
+prompt no tenía rol, ni contexto, ni formato: un empleado sin formación matemática le pidió que
+"intentara en serio". Atrás hubo un día y medio de trabajo, 650 ideas probadas, 31 millones de
+tokens, y una prueba formalizada y revisada por matemáticos. No probó la hipótesis: movió una
+cota parcial.
 
-En la **segunda**, mucho más chica, personas le enseñan a comportarse como asistente: a responder en
-vez de continuar, a seguir instrucciones y a negarse a algunas cosas. Un modelo que solo pasó por la
-primera etapa no contesta preguntas, las continúa. Esa segunda etapa es la que convirtió una
-curiosidad de laboratorio en algo que llegó a todos los escritorios: la capacidad ya estaba, faltaba
-la interfaz.
+La lección no desdice la mañana: el prompt fino controla la salida en el trabajo de todos los
+días. En lo que un modelo de frontera tiene talento nativo, el prompt puede ser mínimo. Lo que
+nunca es mínimo es la verificación.
 
-El tono servicial y seguro con el que te contesta viene de ahí, y no tiene ninguna relación con si
-lo que dice es cierto. Es una forma aprendida de hablar, no una señal de que sabe.
+## El chatbot como copiloto de análisis
 
-## ¿Y adentro qué hay? Una caja negra que se puede abrir (para curiosos)
+Hasta acá el modelo escribió texto. Ahora le vamos a dar una tabla y pedirle que la analice. La
+diferencia importante es que ya no genera solo prosa: genera **código**, lo corre y te devuelve el
+resultado. Eso cambia dónde puede fallar y dónde tenés que mirar.
 
-Hasta acá describimos qué hace el modelo y cómo se entrenó, no qué pasa adentro cuando responde. La
-respuesta corta ya la tenés: nadie escribió esas reglas, se ajustaron solas. La respuesta larga es
-más interesante, y hay toda una disciplina dedicada a ella.
+Cuatro movimientos, en orden de dificultad:
 
-El mejor lugar para verlo no es un modelo de lenguaje sino uno de imágenes, porque lo que aprende se
-puede dibujar. En 1989, en los Laboratorios Bell, Yann LeCun mostró una red que leía números escritos
-a mano. El video dura un minuto y conviene mirarlo sabiendo que ese mismo mecanismo, con más datos y más
-cómputo, es el que hoy escribe informes.
+1. De un archivo separado por comas a un análisis. Subís la planilla, pedís estadísticas y
+   gráficos. El copiloto escribe el código; vos juzgás el resultado.
+2. De un archivo PDF a una tabla. La producción diaria de Ecuador se publica en un PDF de una
+   página del regulador, un reporte por día de operación. Extraemos sus tablas y las verificamos
+   contra el original, número por número.
+3. De una tabla a un modelo. Ajustar una curva de declinación: pocos parámetros, una fórmula de
+   1945 y la pregunta de siempre, que es cuánto le creés a la extrapolación.
+4. Del modelo al lote. Un prompt con reglas escritas, diez pozos, y de vuelta un Excel con
+   pronósticos, supuestos anotados y una visualización para recorrerlos.
 
-Lo que pasa adentro de esa red es lo que importa. **La red no aprende "el número 7": aprende a
-descomponer la imagen en piezas.** Las primeras capas detectan bordes y cambios de contraste. Las
-siguientes combinan esos bordes en curvas y esquinas. Las de más arriba combinan las curvas en partes
-reconocibles, y recién al final aparece algo que podríamos llamar "un siete". A cada una de esas piezas
-se la llama una *característica*, y ninguna estaba en el programa: emergieron de mirar ejemplos.
+## Verificar código es distinto de verificar texto
 
-Cuando la misma técnica se aplica a redes que miran fotos, aparecen detectores de texturas, de ojos, de
-ruedas de auto. Y cuando se aplica a los modelos de lenguaje de hoy, aparecen millones de conceptos
-identificables, al punto de poder amplificarlos o apagarlos y ver cómo cambia la respuesta.
+Cuando el modelo escribe un párrafo, el error se lee. Cuando escribe código, el error se esconde
+detrás de un número que parece razonable. Un filtro mal escrito no rompe nada: devuelve menos filas
+y sigue.
 
-Esto importa por dos razones prácticas. La primera es que "caja negra" es una metáfora incompleta: se
-puede mirar adentro, con esfuerzo. La segunda es que todavía no sabemos hacerlo lo bastante bien como
-para garantizar cómo se va a comportar un modelo en una situación nueva, y esa brecha es exactamente el
-tema de la sesión 7.
+La regla práctica es corta. Pedile siempre que te muestre el código, no solo el resultado. Pedile
+que el código informe cuántas filas entran y cuántas quedan en cada filtro: el que cuenta es el
+chatbot, no vos, y ese renglón hace visible al filtro que se comió filas de más. Y comprobá un caso
+a mano, uno solo, eligiendo un valor que puedas rastrear en la planilla original. Si ese cierra,
+casi siempre cierra el resto; si no cierra, no hay nada más que discutir.
 
-<ListaRecursos items={INTERPRETABILIDAD} titulo="Para ver adentro (opcional)" />
+## De PDF a tabla: el reporte diario de la ARCH
 
-## De ahí salen las alucinaciones
+La Agencia de Regulación y Control de Hidrocarburos de Ecuador (ARCH) publica un reporte
+preliminar de producción y operaciones por cada día de operación, en
+[controlhidrocarburos.gob.ec](https://controlhidrocarburos.gob.ec/). Es un PDF de una página,
+formulario GTRCH.GEERIH.02.FO.01, y trae cuatro tablas y un bloque de texto:
 
-Volvé a la única operación: continuar texto de forma *plausible*. Cuando el modelo no sabe algo, no
-tiene un mecanismo natural para callarse: **genera la continuación más plausible igual**. Un número
-de norma que parece real, un paper que suena citable, una cifra de producción con tres decimales.
-Eso es una **alucinación**, y no es un bug raro: es el comportamiento por defecto del mecanismo que
-acabás de ver en los ejercicios. Peor: el tono seguro con el que la dice viene de la segunda etapa
-del entrenamiento, que enseña forma, no verdad.
+1. Producción diaria de petróleo por compañía, en barriles por día: producción del día anterior,
+   producción del día de operación, incremento o pérdida, estimado del mes y cumplimiento. Una
+   fila por sujeto de control (EP Petroecuador y trece privadas, entre ellas Andes Petroleum,
+   PCR-Ecuador, PetroOriental, Gente Oil, Orion, Petrobell y Pluspetrol), el subtotal de privadas
+   y el total nacional.
+2. Producción de la empresa pública por bloque. Acá aparecen Shushufindi y Libertador (bloque 57)
+   y Bermejo (bloque 49), que Tecpetrol opera por contrato de servicios: en la tabla 1 no figura
+   por nombre.
+3. Estado de pozos: en producción, en reacondicionamiento o completación, en perforación.
+4. Producción de gas natural, en miles de pies cúbicos por día.
+5. "Novedades principales": texto libre por compañía, con pozo, campo y causa. "Cerrado 24 horas
+   por falla de equipo BES", "continúan cerrados por alto corte de agua", "en espera de
+   reacondicionamiento", "con incremento de BSW".
 
-De la lista de la sesión 1, esta es "inventa lo que no sabe". La consecuencia práctica que nos
-acompaña todo el curso: la salida de un modelo grande de lenguaje (LLM) es un **borrador
-plausible**, no una fuente. Se verifica todo lo que importa.
+El ejercicio usa el
+[reporte del 15 de septiembre de 2026](descargas/arch-reporte-diario-2026-09-15.pdf) (día de
+operación 14 de septiembre), copia local del
+[original publicado por la ARCH](https://controlhidrocarburos.gob.ec/wp-content/uploads/downloads/2026/09/REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-15-DE-SEPTIEMBRE-DE-2026.pdf),
+por si el sitio del regulador no abre desde tu red. Es un documento público oficial; los
+volúmenes son preliminares y el propio formulario dice "sujetos a revisión". Sacar esa tabla a
+mano es una tarde; extraerla con el modelo es un minuto, más la verificación, que es la parte
+que nadie cuenta.
 
-## En la sesión en vivo (2 h)
+El prompt del ejercicio, para copiar con el PDF adjunto:
 
-| Bloque | Tiempo | Qué hacemos |
-| --- | --- | --- |
-| Apertura y entrada al sitio | 8 min | Objetivos y el PIN, como ayer |
-| Repaso de la tarea | 15 min | Qué les salió bien y mal con la tarea de ayer |
-| Tokens y predicción | 33 min | Recorremos juntos los dos primeros ejercicios de esta página, con tiempo para preguntas |
-| Contexto y entrenamiento | 20 min | La ventana de contexto en vivo con el tercer ejercicio, y cómo se entrena en dos etapas |
-| Alucinaciones en vivo | 30 min | Lo hacemos alucinar: primero el instructor, después cada uno con una pregunta de su especialidad |
-| Cierre y tarea | 14 min | Dos de las cuatro maneras de fallar, y qué significa esto para usarlo bien |
+```text
+Actuá como analista de producción. Te subo el reporte diario preliminar
+de producción y operaciones de la Agencia de Regulación y Control de
+Hidrocarburos de Ecuador (ARCH), formulario GTRCH.GEERIH.02.FO.01: un
+PDF de una página con cuatro tablas y un bloque de texto "Novedades
+principales".
 
-<Quiz data="quiz_s2" sesion={2} />
+Contexto: voy a verificar lo que extraigas contra el original número por
+número, y después va a alimentar una serie de varios días. El original
+usa punto de miles y coma decimal (368.058,36 son trescientos sesenta y
+ocho mil), y en algunas celdas el punto es de miles sin decimales
+(23.607 es veintitrés mil seiscientos siete, no veintitrés coma seis).
+La tabla 2 está pegada a la derecha de la tabla 1: no mezcles filas de
+una con la otra.
+
+Tarea 1: extraé completa la tabla 1, "Producción diaria y cumplimiento
+de estimados": las 14 compañías, el subtotal de privadas y el total
+nacional.
+Formato: una tabla con las columnas fecha_operacion, tipo (pública o
+privada), compania, produccion_anterior_bppd, produccion_dia_bppd,
+incremento_bppd, estimado_bppd, cumplimiento_pct. Números con punto
+decimal y sin separador de miles. Copiá los totales del original, no los
+calcules.
+
+Tarea 2: convertí el bloque "Novedades principales" en una tabla con las
+columnas compania, bloque_o_campo, pozo, causa, horas. Una fila por pozo
+nombrado. Cuando el texto dice "11 pozos de los campos X, Y" sin
+nombrarlos, una sola fila con pozo = "(11 sin nombre)" y los campos en su
+columna. La causa va con las palabras del original, sin resumir ni
+traducir.
+
+Regla: si una celda no la pudiste leer con certeza, dejala vacía y listá
+al final qué no pudiste leer y por qué. No completes con lo que "debería"
+decir.
+```
+
+Dónde suele fallar, para saber qué mirar primero:
+
+- **El formato de los números.** Tablas 1, 2 y 3 con punto de miles y coma decimal; la tabla de
+  gas con punto decimal (24201.44) en el reporte del 15 y con coma (24.181,23) en el del 14: el
+  formato cambia de un día al otro. Y celdas sin decimales, como el estimado de Andes (23.607)
+  o el total de pozos en producción (2.616), que un lector automático convierte en 23.6 y en
+  2.6 sin avisar. Ese es el primer número que hay que buscar en la tabla extraída.
+- **Las dos tablas pegadas.** La tabla 2 vive a la derecha de la tabla 1 en la misma altura de
+  página. Una extracción apurada intercala filas de una con la otra, o le cuelga a una
+  compañía la producción de un bloque.
+- **Los nombres de pozo.** "Hormiguero-33-43" son dos pozos, 33 y 43; "Sacha: 419-400" también;
+  "Villano: 03ST2-11RE1-15H" son tres; "Fanny-18B16RE1" y "Oso-H113RE" son uno solo con
+  sufijo de reentrada. El modelo tiende a partir donde no hay que partir, y al revés.
+- **Los pozos sin nombre.** Andes reporta por cantidad: "11 pozos de los campos Alice Oeste,
+  Chorongo, Dorine y Fanny-18B continúan cerrados por alto corte de agua". Una tabla que
+  "inventa" once filas con nombres plausibles falló en silencio.
+- **El día anterior no coincide.** La columna "producción anterior" de hoy no siempre es igual a
+  la "producción del día" del reporte de ayer: los volúmenes son preliminares y se corrigen. Al
+  armar una serie, elegí una columna y anotalo.
+
+### Segunda pasada: la serie de pozos cerrados por agua
+
+Si el tiempo da en vivo, o como tarea para curiosos: cinco reportes consecutivos, uno por día
+hábil, y de ahí una serie de pozos cerrados por alto corte de agua por compañía. Los archivos
+siguen una única forma de nombre, con el día en dos cifras y el mes en mayúsculas:
+
+```text
+https://controlhidrocarburos.gob.ec/wp-content/uploads/downloads/2026/09/REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-11-DE-SEPTIEMBRE-DE-2026.pdf
+```
+
+Por si el sitio del regulador no abre desde tu red, los cinco reportes del 8 al 15 de septiembre
+de 2026 están copiados acá: [8](descargas/arch-reporte-diario-2026-09-08.pdf),
+[9](descargas/arch-reporte-diario-2026-09-09.pdf), [10](descargas/arch-reporte-diario-2026-09-10.pdf),
+[11](descargas/arch-reporte-diario-2026-09-11.pdf) y [14](descargas/arch-reporte-diario-2026-09-14.pdf),
+además del 15 de arriba.
+
+Con los cinco PDF adjuntos, el pedido es el mismo de la tarea 2 repetido por archivo, más una
+tabla final: fecha de operación, compañía, cantidad de pozos cerrados por alto corte de agua
+(nombrados y sin nombre por separado), y qué cambió respecto del día anterior. Ese conteo se
+retoma el día 4, cuando el caso de recuperación secundaria llega a la pregunta de qué se hace
+con un pozo que produce agua.
+
+## La curva de declinación, y lo que la curva no dice
+
+Ayer, en la capa de aprendizaje automático, el pozo era de escuela: dos perillas y una respuesta
+exacta escondida, que la máquina encontró sola. Acá se termina esa comodidad: aparecen la
+tercera perilla, el eje logarítmico, la acumulada a 30 años y, sobre todo, seis pozos que nadie
+diseñó para que ajustaran.
+
+El ejercicio tiene dos grupos de pozos, y el orden importa.
+
+Los **pozos de escuela** están generados a partir de parámetros conocidos. Sirven para aprender qué
+hace cada perilla contra una curva que tiene respuesta exacta: si ponés los valores con los que se
+generó, el modelo pasa por el medio de los puntos.
+
+Los **pozos reales** son de Aguaragüe, Ramos y Acambuco, en Salta, y producen de huamampampa,
+tupambi, icla y santa rosa. La serie es la producción mensual declarada al Estado argentino entre
+2019 y 2026, sin retocar, del Capítulo IV de la Secretaría de Energía. Aguaragüe lo opera
+Tecpetrol y CGC tiene el 5%: para dos empresas de la sala es dato propio, publicado por el
+Estado, y nadie tiene que agregarle nada.
+
+Y acá está lo que hay que decir en voz alta, porque es donde este ejercicio se separa de un tutorial
+cualquiera. **Arps describe un reservorio que se despresuriza solo, y ningún pozo real hace eso.** Lo
+que se mide en la boca es el reservorio más la compresión disponible ese mes, más las restricciones
+de planta, más la contrapresión de línea, más el líquido que se acumula y ahoga el pozo. Un ajuste
+que cierra no prueba que entendiste la geología, y uno que no cierra no prueba que el reservorio se
+haya portado mal. Un análisis serio se hace sobre caudales corregidos por horas de operación y
+presión de boca, no sobre el volumen mensual crudo.
+
+Eso no invalida el método: lo ubica. La curva sirve para ordenar una conversación y para acotar un
+número, no para cerrarla.
+
+<DeclineLab sesion={2} />
+
+## Del ajuste a mano al pronóstico en lote
+
+El laboratorio ajusta de a un pozo, con tus dedos en las perillas. El trabajo real rara vez es
+así: son diez, cuarenta o doscientos pozos, y el pronóstico se entrega en una planilla. Ese
+salto es el último movimiento del día.
+
+La planilla del ejercicio es
+[produccion_noroeste_10pozos.csv](descargas/produccion_noroeste_10pozos.csv): los seis pozos
+del laboratorio más cuatro nuevos, 90 meses cada uno, 2019 a 2026, del mismo Capítulo IV. Trae
+una columna que el laboratorio no tenía: `dias_efectivos`, los días del mes que el pozo produjo
+de verdad. Con ella el ajuste se hace sobre **caudal efectivo**, no sobre volumen calendario, y
+el serrucho de los febreros desaparece solo.
+
+Entre los cuatro nuevos hay un pozo que murió, uno que produce cada vez más y uno que cambió de
+régimen a mitad de la serie. Están porque tu campo también los tiene: un prompt de pronóstico se
+mide en qué hace cuando el modelo no corresponde.
+
+El prompt completo, para copiar:
+
+```text
+Actuá como ingeniero de reservorios. Te subo un CSV con la producción mensual
+de 10 pozos de gas convencional de la cuenca Noroeste argentina (fuente:
+Capítulo IV, Secretaría de Energía; datos públicos). Columnas: idpozo, pozo,
+yacimiento, formacion, mes (AAAA-MM), gas_miles_m3 (producción del mes, en
+miles de m³), petroleo_m3, agua_m3, dias_efectivos (días del mes que el pozo
+produjo de verdad).
+
+Tarea: ajustá curvas de declinación de Arps por pozo y pronosticá el gas.
+
+Antes de analizar: describí el archivo (filas, columnas, rango de fechas,
+meses por pozo, huecos) y mostrame esa tabla de control. Recién después
+seguí con el análisis.
+
+Reglas del análisis:
+1. Trabajá sobre caudal efectivo: q = gas_miles_m3 / dias_efectivos, en
+   miles de m³/día. Los meses con dias_efectivos < 10 quedan en la historia
+   pero fuera de todos los ajustes.
+2. Si el caudal salta más de 2 veces de forma sostenida, para arriba o para
+   abajo, es un cambio de régimen: ajustá solo el tramo posterior al último
+   salto y anotalo en las notas del pozo.
+3. Ventana de ajuste: desde el pico de la mediana móvil de 3 meses en
+   adelante. Si quedan menos de 24 meses útiles, reportá "sin ajuste" con el
+   motivo. No fuerces ningún ajuste.
+4. Ajustá tres variantes: exponencial (b = 0), hiperbólica (0 < b <= 1.2) y
+   armónica (b = 1), minimizando el error sobre log(q).
+5. Elegí por menor error, pero la hiperbólica tiene que mejorar a la
+   exponencial en más de 2% para ganarse su parámetro extra. Si b queda en
+   el tope, marcá el ajuste como dudoso.
+6. Confiabilidad por R² sobre log(q): 0.6 o más, confiable; entre 0.25 y
+   0.6, pronóstico de orden de magnitud, marcado "dudoso"; menos de 0.25,
+   no ajustable. Si la producción sube, decilo: Arps no aplica.
+7. Backtest por pozo: reajustá sin los últimos 12 meses, pronosticá esos 12
+   e informá el error absoluto medio en volumen. Es la medida de cuánto
+   creerle a cada pronóstico.
+8. Pronóstico mensual desde 2026-07 hasta 2036-12 o hasta el límite
+   económico de 2 miles de m³/día, lo que llegue primero. Volumen del mes =
+   q × días del mes × factor de servicio (mediana de dias_efectivos / días
+   del mes de los últimos 24 meses).
+
+Entregables:
+1. Un Excel: hoja "Resumen" con una fila por pozo (estado, modelo elegido,
+   qi, Di anual, b, R², error de backtest, acumulada histórica, EUR
+   restante, fin del pronóstico, notas); una hoja por pozo con historia y
+   pronóstico mensual; hoja "Supuestos" con todas las reglas que aplicaste.
+2. Un gráfico panel con los 10 pozos en escala semilogarítmica: puntos de
+   historia, las tres curvas, la elegida resaltada y el pronóstico.
+3. Un artifact interactivo: selector de pozo, escala lineal/log, historia,
+   ajustes, pronóstico y la tabla resumen.
+
+En todo el proceso: mostrá el código que corras y el conteo de filas antes
+y después de cada filtro. Si no podés generar archivos descargables,
+entregá el Resumen como tabla y cada pronóstico como CSV en un bloque de
+código.
+```
+
+Cada regla numerada es una decisión de ingeniería de reservorios, no un truco de prompt: qué
+meses valen, cuándo un salto parte la historia, cuánta historia pide un ajuste, cuándo decir que
+no. Lo que en el laboratorio era una perilla acá es una regla escrita, auditable y repetible.
+
+Cuando vuelva el resultado, las tres reglas del día siguen mandando. Pedí el conteo de filas.
+Elegí un pozo que hayas ajustado a mano y compará qi y la declinación anual: son los mismos
+datos, tienen que contar la misma historia. Y buscá la fila de YPF.St.SP.x-1: si el Excel le
+inventa un EUR en lugar de decir "sin ajuste", el archivo entero pierde crédito.
+
+<div className="callout">
+  <strong>Si tu cuenta no genera archivos:</strong> no todos los chatbots gratuitos escriben un
+  Excel o una página interactiva. El prompt ya trae el plan B: las mismas tablas como CSV en
+  bloques de código, para pegar en tu planilla.
+</div>
+
+### Para curiosos: cuando además hay presiones
+
+Todo lo de arriba usa caudales solos, porque es lo que publica el Capítulo IV. Equinor liberó
+los datos completos del campo Volve (Mar del Norte, 2008–2016) bajo una licencia abierta que
+permite usarlos y compartirlos con crédito, y ahí está lo que acá falta:
+[producción diaria con presión de fondo, presión de boca y horas en
+línea](https://www.equinor.com/energy/volve-data-sharing), pozo por pozo.
+
+El dataset completo pide registro; para este ejercicio no hace falta. La planilla
+[volve_diario_2pozos.csv](descargas/volve_diario_2pozos.csv) trae el recorte listo: los dos
+productores con mejor cobertura de presión, 15/9-F-14 (2008–2016) y 15/9-F-11 (2013–2016), día
+por día. Datos del campo Volve de Equinor y los ex socios de la licencia (ExxonMobil Exploration
+& Production Norway AS, Bayerngas Norge AS), compartidos acá bajo
+[sus términos](https://cdn.equinor.com/files/h61q9gi9/global/de6532f6134b9a953f6c41bac47a0c055a3712d3.pdf):
+usarlos y compartirlos con crédito está permitido; venderlos, no.
+
+Con ese archivo el pedido al chatbot ya no es aplicar Arps: es construir el diagnóstico que
+Arps no puede dar. El prompt completo:
+
+```text
+Te subo volve_diario_2pozos.csv: producción diaria real de dos pozos de
+petróleo del campo Volve (Mar del Norte), una fila por pozo y día.
+Columnas: fecha, pozo, horas_linea (horas en producción ese día),
+p_fondo_bar (presión de fondo fluyente promedio), p_boca_bar (presión de
+boca), oil_sm3, gas_sm3, agua_sm3 (volúmenes del día).
+
+Antes de analizar: describí el archivo (filas y rango de fechas por pozo,
+cobertura de presión de fondo) y esperá mi ok.
+
+Reglas:
+1. Día productivo: horas_linea > 0 y petróleo > 0. Normalizá los
+   caudales a 24 horas en línea. Día de cierre: horas_linea = 0.
+2. La presión de fondo de los días de cierre es tu proxy de presión de
+   reservorio: descartá los ceros de sensor (< 50 bar), tomá la mediana
+   mensual e interpolá los meses sin cierres. Graficala junto a la
+   presión fluyente de los días productivos.
+3. Armá series mensuales por pozo: caudal de petróleo, caudal de líquido,
+   corte de agua, presión fluyente y proxy de reservorio.
+4. Índice de productividad: PI = caudal de líquido / (pR − pwf), en los
+   días que tienen las dos presiones. Seguilo en el tiempo.
+5. Ajustá una curva de Arps al caudal de petróleo desde su pico, como
+   referencia, e informá qi, Di, b y R².
+6. El entregable central es un diagnóstico por pozo, en una tabla de
+   cuatro filas: depresionamiento (¿pR cae?), pérdida de productividad
+   (¿PI cae?), avance de agua (¿el corte sube?), manejo del drawdown
+   (¿pR − pwf cae?). Cada fila con su evidencia numérica: valor al
+   principio, valor al final.
+7. Cerrá comparando: ¿qué acierta la Arps del punto 5 y qué no puede ver?
+   ¿Qué habría pronosticado para 15/9-F-11 una Arps ajustada solo hasta
+   fines de 2015, y qué pasó de verdad en 2016?
+
+Mostrá el código y el conteo de filas después de cada filtro. Si no podés
+generar archivos, las tablas van como CSV en bloques de código. Cerrá con
+un gráfico de cuatro paneles por pozo: caudales y corte de agua,
+presiones, PI, y el semilog con la Arps.
+```
+
+Lo que ese diagnóstico tiene que mostrar, para controlar al copiloto: la presión de reservorio
+de los dos pozos no cae nunca (la inyección de agua la sostiene cerca de 300 bar), el índice de
+productividad no se pierde, y el corte de agua sube de 8% a 94% en 15/9-F-14 y de 9% a 81% en
+15/9-F-11. Mientras tanto una Arps ajusta el petróleo de 15/9-F-14 con R² de 0.96. La curva
+describe la caída sin ver el mecanismo, y la meseta de 15/9-F-11 hasta 2015 no anuncia en nada
+el barranco de 2016.
+
+Sobre volumen mensual crudo este análisis es imposible. Con presiones diarias es una tarde de
+trabajo con el copiloto, y es la diferencia entre extrapolar una curva y entender por qué
+declina. Para un campo con inyección de agua, como Pindo o Libertador, es el análisis que
+importa.
+
+## De la ingeniería de prompts a la ingeniería de contexto
+
+Una puerta que queda abierta para mañana. El prompt que ve el modelo ya no es solo el que
+escribís: es tu pedido más todo lo que viaja con él: los archivos que adjuntaste hoy, los
+fragmentos que un buscador recupera de tus manuales (mañana a la mañana), los resultados de
+las herramientas que un agente usa mientras trabaja (mañana a la tarde). En el rubro ya hay
+nombre para eso: la ingeniería de prompts está dando lugar a la **ingeniería de contexto**.
+
+Las piezas de hoy no caducan: la orden de trabajo sigue en el centro. Lo que crece es todo lo
+que la acompaña, y la ventana de contexto de ayer es donde todo eso tiene que caber.
+
+## En la sesión en vivo (4 h)
+
+| Bloque | min |
+| --- | --- |
+| Apertura y repaso de la tarea | 15 |
+| Elegir modelo | 12 |
+| El peor prompt | 12 |
+| Anatomía de un prompt | 22 |
+| Taller: tu tarea, tu prompt | 36 |
+| Pausa | 10 |
+| Qué no se sube a un chatbot | 13 |
+| La planilla y el copiloto | 30 |
+| De PDF a tabla: el reporte diario de la ARCH | 35 |
+| Pausa | 10 |
+| Declinación en vivo | 25 |
+| Qué se puede afirmar | 10 |
+| Cierre y tarea | 10 |
 
 ## Para discutir
 
-1. Después de jugar con la temperatura: ¿para qué tareas tuyas querrías temperatura baja? ¿Alguna donde convenga alta?
-2. Si el modelo "solo continúa texto", ¿por qué a veces parece razonar? ¿Dónde está el límite?
-3. ¿En qué tarea tuya alcanza con un borrador plausible, y en cuál no sirve ni con verificación?
+1. De tu tarea de la semana: ¿lo caro es el borrador, o lo caro es verificar?
+2. ¿Qué dato de tu área vive hoy atrapado en archivos PDF o en escaneos? ¿Cuánto valdría tenerlo en
+   una tabla, y quién lo usaría?
+3. Cuando el chatbot escribe código de análisis: ¿revisás el código o el resultado? ¿Alcanza con uno
+   de los dos?
+4. En el pozo que no ajusta con ningún parámetro: ¿qué información tenés vos que el modelo no puede
+   tener? Esa pregunta es el resumen del curso entero.
 
-## Tarea para la sesión 3
+## Tarea para el día 3
 
-Traé anotadas **tres tareas repetitivas de tu semana** que involucren texto, planillas o documentos.
-En la sesión 3 las convertimos en prompts bien escritos.
+Dos cosas, cinco minutos en total. Primero, tu prompt **antes y después**: el de una línea con el
+que arrancaste hoy y el que funcionó, pegados uno debajo del otro. Segundo, pensá en un documento
+de tu empresa que consultás seguido y que no es confidencial (un manual, una norma, un
+procedimiento, un instructivo) y anotá **tres preguntas concretas** que le harías si pudieras
+preguntarle en lugar de buscar. "¿Cada cuánto se calibra la válvula X?" sirve; "¿qué dice el
+manual?" no. Mañana ese documento y esas preguntas van a un cuaderno de verdad.
+
+<Quiz data="quiz_s2" sesion={2} />
