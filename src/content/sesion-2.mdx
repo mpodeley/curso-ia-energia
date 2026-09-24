@@ -1,6 +1,8 @@
 import { TokenizerLab } from '../exercises/TokenizerLab'
 import { NextTokenLab } from '../exercises/NextTokenLab'
 import { ContextoLab } from '../exercises/ContextoLab'
+import { EjerciciosGratis } from '../exercises/EjerciciosGratis'
+import { EscalaDeLosModelos } from '../exercises/EscalaDeLosModelos'
 import { PulsoVivo } from '../exercises/PulsoVivo'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos, ListaRecursos } from '../components/Recursos'
@@ -8,9 +10,10 @@ import { RECURSOS, INTERPRETABILIDAD } from '../content/recursos'
 
 ## Antes de la sesión (opcional)
 
-Esta sesión arranca después de la pausa y no pide nada previo. Los tres laboratorios de la página
-(el tokenizador, "adiviná el próximo token" y la ventana de contexto) los recorremos juntos en
-vivo; están acá para volver después, o para adelantarte si querés. Para el más curioso, el
+Esta sesión arranca después de la pausa y no pide nada previo. Los laboratorios de la página (el
+tokenizador, "adiviná el próximo token", los ejercicios que trae cada oración, el gráfico de escala
+y la ventana de contexto) los recorremos juntos en vivo; están acá para volver después, o para
+adelantarte si querés. Para el más curioso, el
 capítulo de [3Blue1Brown sobre transformers](https://www.youtube.com/watch?v=wjZofJX0v4M) (27 min)
 muestra la maquinaria interna; tiene audio en español, elegible en el menú del reproductor.
 
@@ -20,11 +23,12 @@ muestra la maquinaria interna; tiene audio en español, elegible en el menú del
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Tokens y predicción | 38 min | Los dos primeros laboratorios de la página, y un modelo real abierto en el navegador |
-| Contexto y entrenamiento | 25 min | La ventana de contexto en vivo con el tercer laboratorio, y cómo se entrena en dos etapas |
+| Tokens y predicción | 33 min | Los dos primeros laboratorios de la página, y un modelo real abierto en el navegador |
+| De predecir palabras a un asistente general | 20 min | Cómo aprende de texto sin que nadie lo etiquete, la escala, la etapa que lo vuelve asistente, y de ahí a los agentes |
+| Contexto: la memoria de trabajo | 15 min | La ventana de contexto en vivo con el laboratorio de la página |
 | Pausa | 10 min | Dejá el chatbot abierto: lo usás al volver |
-| Alucinaciones en vivo | 35 min | Lo hacemos alucinar: primero el instructor, después cada uno con una pregunta de su especialidad |
-| Cierre: las cuatro maneras de fallar, takeaways, tarea | 12 min | La hoja de ruta del curso, tres prácticas para mañana y la tarea de cinco minutos |
+| Alucinaciones en vivo | 30 min | Lo hacemos alucinar: primero el instructor, después cada uno con una pregunta de su especialidad |
+| Cierre: cuatro maneras de fallar, ¿cambiarías tu definición?, tarea | 12 min | La hoja de ruta del curso, tu definición de la mañana revisada, tres prácticas para mañana y la tarea de cinco minutos |
 
 <PulsoVivo sesion={2} />
 
@@ -65,6 +69,112 @@ todo termina en una lista de candidatos con su probabilidad. Tiene la misma peri
 del laboratorio. En vivo lo abrimos cinco minutos; si tenés media hora, vale la pena recorrerlo
 solo. Está en inglés y pide un navegador de escritorio.
 
+## De predecir palabras a un asistente general
+
+Hasta acá viste una máquina que continúa texto. Falta ver cómo se llegó de eso a un asistente que
+resume, traduce, escribe código y analiza una planilla.
+
+### El texto trae sus propias respuestas
+
+En la sesión 1 viste aprendizaje supervisado: para que la máquina aprendiera a clasificar pozos,
+alguien tuvo que declarar antes el tipo de cada uno. Con texto pasa algo distinto. Si tapás la
+palabra siguiente de cualquier oración, la respuesta ya está escrita en el texto original. Cada
+oración trae decenas de ejercicios con su respuesta, y nadie tuvo que etiquetar nada. A eso se lo
+llama aprendizaje **autosupervisado**, y es la primera etapa del entrenamiento de todos los LLM
+(modelos grandes de lenguaje).
+
+<figure className="figura">
+  <img
+    src="slides/img/tres-maneras.svg"
+    alt="Tres columnas: supervisado, con pozos que traen su tipo declarado; no supervisado, con puntos grises agrupados; autosupervisado, con una oración a la que se le tapa la palabra siguiente."
+  />
+  <figcaption>
+    Tres maneras de aprender. Las dos primeras las viste con los pozos de la sesión 1; la tercera es
+    la de los LLM.
+  </figcaption>
+</figure>
+
+<EjerciciosGratis sesion={2} />
+
+La consecuencia es de escala: el único límite a la cantidad de ejemplos es cuánto texto existe.
+GPT-3 se entrenó en 2020 con 300,000 millones de tokens; Llama 3, en 2024, con más de 15 billones.
+
+### Cada palabra mira a las demás
+
+La pieza que permitió aprovechar tanto texto es el **transformer**, una arquitectura que publicaron
+investigadores de Google en 2017. Su idea central es la **atención**: para decidir qué palabra
+sigue, cada palabra del texto mira a todas las otras y pesa cuáles importan. En "la presión del
+reservorio cae porque", lo que viene depende mucho más de "presión" y de "reservorio" que de "la".
+Es la columna de atención del Transformer Explainer. Además se entrena mucho más rápido que las
+arquitecturas anteriores, porque procesa el texto en paralelo.
+
+### La escala
+
+Con texto sin etiquetar de sobra y una arquitectura rápida de entrenar, el camino fue agrandar. En
+2019, GPT-2 se entrenó con un solo objetivo, predecir la palabra siguiente, y sin ningún
+entrenamiento específico ya mostraba capacidades rudimentarias de comprensión de lectura,
+traducción y respuesta a preguntas. En 2020, GPT-3, con 175,000 millones de parámetros, resolvía
+tareas nuevas con pocos ejemplos escritos en el mismo pedido.
+
+El gráfico muestra cuánto cómputo hizo falta para entrenar cada modelo notable, según las
+estimaciones de Epoch AI. El eje vertical es logarítmico: cada línea es diez veces la de abajo.
+
+<EscalaDeLosModelos sesion={2} />
+
+### Dos etapas de tamaños muy distintos
+
+Nada de lo anterior lo programó alguien. El modelo pasa por dos etapas, y la diferencia entre ellas
+explica bastante de cómo se comporta.
+
+En la **primera** lee una fracción enorme de todo el texto humano y practica una sola cosa: predecir
+lo que sigue. De ahí salen la gramática, los hechos y los patrones de razonamiento, todos como
+efecto de hacer bien esa única tarea. La consecuencia incómoda es que aprendió lo que estaba
+escrito, con sus errores y sus sesgos, sea cierto o no.
+
+En la **segunda**, mucho más chica, personas le enseñan a comportarse como asistente: escriben
+ejemplos de buenas respuestas y comparan respuestas del modelo para marcar cuál es mejor. La técnica
+se llama aprendizaje por refuerzo con retroalimentación humana (RLHF, por su sigla en inglés). En
+marzo de 2022, OpenAI mostró que un modelo de 1,300 millones de parámetros ajustado así daba
+respuestas preferidas a las de GPT-3, que tenía 100 veces más. En noviembre de ese año salió
+ChatGPT, entrenado de la misma manera.
+
+<figure className="figura">
+  <img
+    src="slides/img/dos-etapas.svg"
+    alt="Un recuadro grande, el preentrenamiento, lleva con una flecha a uno mucho más chico, el ajuste como asistente."
+  />
+  <figcaption>
+    La primera etapa es enorme y enseña a continuar textos. La segunda es chica y enseña a responder
+    como asistente.
+  </figcaption>
+</figure>
+
+A un modelo que solo pasó por la primera etapa le hacés una pregunta y la continúa, como si fuera el
+principio de un texto. Esa segunda etapa es la que convirtió una curiosidad de laboratorio en algo
+que llegó a todos los escritorios: la capacidad venía de la primera, y la segunda la volvió usable.
+
+El tono servicial y seguro con el que te contesta viene de ahí. Es una forma de hablar que aprendió
+en esa etapa, y la usa igual cuando acierta que cuando se equivoca.
+
+### De conversar a hacer
+
+Desde 2024 aparecen dos novedades sobre la misma base. En septiembre de ese año, OpenAI presentó o1,
+entrenado con aprendizaje por refuerzo para razonar paso a paso antes de dar la respuesta: su
+desempeño mejora con más tiempo para pensar, una palanca que se suma a la de agrandar el modelo. Y en
+febrero de 2025, Anthropic presentó Claude Code, un agente que trabaja en la terminal: busca y lee
+código, edita archivos, corre pruebas y usa herramientas de línea de comandos. Es el mismo tipo de
+modelo general, con herramientas y un ciclo que le permite actuar. Qué hace bien un agente hoy, y
+dónde se rompe, lo vemos en la sesión 6.
+
+### Por qué termina siendo general
+
+Durante décadas, la IA fue un modelo por tarea: un filtro de spam hacía una cosa, un clasificador de
+pozos hacía otra. Es lo que en la sesión 1 llamamos IA estrecha. Un LLM también hace una sola cosa,
+predecir la palabra siguiente, pero para hacerla bien en cualquier texto tiene que aprender un poco de
+todo. Por eso un mismo modelo resume, traduce, escribe código y analiza una planilla, y por eso le
+decimos IA de propósito general. Si alguna vez va a igualar a una persona en casi todo (lo que se
+llama AGI, inteligencia artificial general) es otra discusión, y la tenemos en la sesión 8.
+
 ## La ventana de contexto: la memoria de trabajo
 
 Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu pregunta, sus respuestas
@@ -84,25 +194,6 @@ falta.
 
 Guardá el nombre para el cierre: de las cuatro maneras de fallar, esta es "se olvida de lo que le
 dijiste", y lo que la produce es el tamaño de la ventana.
-
-## Cómo se entrena: dos etapas de tamaños muy distintos
-
-Nada de lo anterior lo programó alguien. El modelo pasa por dos etapas, y la diferencia entre ellas
-explica bastante de cómo se comporta.
-
-En la **primera** lee una fracción enorme de todo el texto humano y practica una sola cosa: predecir
-lo que sigue. De ahí salen la gramática, los hechos y los patrones de razonamiento, todos como
-efecto de hacer bien esa única tarea. La consecuencia incómoda es que aprendió lo que estaba
-escrito, con sus errores y sus sesgos, sea cierto o no.
-
-En la **segunda**, mucho más chica, personas le enseñan a comportarse como asistente: a responder en
-vez de continuar, a seguir instrucciones y a negarse a algunas cosas. A un modelo que solo pasó por
-la primera etapa le hacés una pregunta y la continúa, como si fuera el principio de un texto. Esa
-segunda etapa es la que convirtió una curiosidad de laboratorio en algo que llegó a todos los
-escritorios: la capacidad venía de la primera, y la segunda la volvió usable.
-
-El tono servicial y seguro con el que te contesta viene de ahí. Es una forma de hablar que aprendió
-en esa etapa, y la usa igual cuando acierta que cuando se equivoca.
 
 ## ¿Y adentro qué hay? Una caja negra que se puede abrir (para curiosos)
 
@@ -169,6 +260,8 @@ fue, antes de ponerte a reescribir el pedido.
 
 1. Después de jugar con la temperatura: ¿para qué tareas tuyas querrías temperatura baja? ¿Alguna donde convenga alta?
 2. Si el modelo "solo continúa texto", ¿por qué a veces parece razonar? ¿Dónde está el límite?
+3. A la mañana escribiste qué es la IA para vos. Con lo que viste de cómo funciona, ¿le agregarías o
+   le sacarías algo?
 
 ## Tarea para mañana
 

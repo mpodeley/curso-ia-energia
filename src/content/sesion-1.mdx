@@ -1,4 +1,6 @@
 import { DeclineDuel } from '../exercises/DeclineDuel'
+import { ConYSinEtiquetas } from '../exercises/ConYSinEtiquetas'
+import { LineaDeTiempo } from '../exercises/LineaDeTiempo'
 import { PulsoVivo } from '../exercises/PulsoVivo'
 import { EncuestaS1 } from '../exercises/EncuestaS1'
 import { Quiz } from '../exercises/Quiz'
@@ -33,31 +35,94 @@ esto suma, en este orden:
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura: quiénes somos, regla entre empresas, entrada al sitio | 15 min | Los dos instructores, una ronda de seis con nombre y empresa, la regla de confidencialidad, el ingreso con el PIN y el primer pulso |
-| El mapa de cuatro capas | 35 min | La historia de abajo, con ejemplos de la industria en cada capa. Las dos primeras las tocamos en vivo, con el duelo de declinación |
-| Demos en vivo | 30 min | El chatbot frente a tareas reales: resumir un paper, explicar un término, escribir un correo difícil. Y verlo fallar |
-| Encuesta de relevamiento | 15 min | La completamos juntos en vivo (ver abajo) |
-| Discusión | 15 min | Qué sorprendió y qué decepcionó de lo visto hasta acá |
+| Apertura: quiénes somos, regla entre empresas, entrada al sitio | 12 min | Los dos instructores, una ronda de seis con nombre y empresa, la regla de confidencialidad y el ingreso con el PIN |
+| ¿Qué es IA para vos? Definiciones en vivo y conversación | 12 min | Cada uno escribe su definición en una oración, las proyectamos con nombre y de ahí sale la diferencia entre IA estrecha e IA de propósito general |
+| Setenta años en quince minutos: la línea de tiempo | 15 min | De Dartmouth y los sistemas expertos a ChatGPT y Claude Code, con los dos inviernos en el medio y un sistema experto que interpretaba perfiles de pozo |
+| Cómo aprende una máquina: reglas, supervisado, no supervisado, capas | 25 min | Reglas escritas y reglas aprendidas: el duelo de declinación y 84 pozos reales, con etiquetas y sin etiquetas |
+| Demos en vivo | 22 min | El chatbot frente a tareas reales: resumir un paper, explicar un término, escribir un correo difícil. Y verlo fallar |
+| Encuesta de relevamiento | 12 min | La completamos juntos en vivo (ver abajo) |
+| Discusión | 12 min | Qué sorprendió y qué decepcionó de lo visto hasta acá |
 | Pausa | 10 min | Si te quedó la encuesta a medias, es el momento: se guarda sola |
+
+## ¿Qué es la inteligencia artificial para vos?
+
+La sesión arranca con una pregunta que no tiene respuesta oficial. Cuando el instructor abra el
+pulso, escribí en el recuadro de abajo tu definición de inteligencia artificial (IA) en una
+oración, sin buscar. Las de todos se proyectan con el nombre de cada uno y las conversamos.
 
 <PulsoVivo sesion={1} />
 
-## El mapa: cuatro capas en una historia conocida
+Las definiciones suelen caer en cuatro familias: las que hablan de hacer tareas, las que hablan de
+imitar a una persona, las que hablan de aprender de datos y las que hablan de pensar. El campo
+tampoco tiene una sola. Alan Turing la planteó en 1950 como un juego de imitación, una
+conversación escrita donde la máquina intenta pasar por persona. En Dartmouth, en 1956, el
+proyecto que le dio nombre al campo se propuso describir la inteligencia con tanta precisión que
+una máquina pudiera simularla.
 
-Para alguien que trabajó con ingeniería de reservorios, nada de esto es tan nuevo como parece:
+### Una tarea o muchas
 
-- **Data science** es lo que siempre hicimos: mirar datos, limpiarlos, graficarlos, sacar conclusiones.
-  Una curva de declinación ajustada a mano ya es un modelo.
-- **Machine learning** invierte la lógica: en vez de escribir la fórmula, mostrás ejemplos y la máquina
-  encuentra el patrón. Útil cuando la fórmula no existe o no la conocemos.
-- **Deep learning** es machine learning con redes neuronales grandes: más datos y más cómputo, patrones
-  más complejos (imágenes sísmicas, registros de pozo, texto).
-- **IA generativa** es la capa nueva: modelos tan grandes, entrenados con tanto texto, que en lugar de
-  solo clasificar o predecir un número, *generan*: texto, código, imágenes. Los modelos grandes de
-  lenguaje (LLM, por *large language models*) son el caso que nos ocupa.
+Casi todas las definiciones describen algo que resuelve una tarea. La diferencia que importa para
+este curso es cuántas.
 
-Las dos primeras capas se pueden tocar acá mismo, con el mismo pozo, y conviene hacerlo antes de la
-sesión: primero ajustás la curva a mano, después dejás que la máquina busque sola.
+- **IA estrecha**: un modelo por tarea. El filtro de spam, el clasificador de imágenes, el modelo
+  que pronostica la declinación de un pozo. Deep Blue le ganó al campeón mundial de ajedrez en
+  1997 y es el ejemplo clásico: un sistema construido para una sola tarea.
+- **IA de propósito general**: un mismo modelo resume, traduce, escribe código, analiza una
+  planilla y redacta un correo. Es lo que llegó a todos los escritorios con ChatGPT, a fines de
+  2022, y es la tecnología de la que trata el curso.
+
+<figure className="figura">
+  <img
+    src="slides/img/estrecha-vs-general.svg"
+    alt="A la izquierda, cuatro modelos de una sola tarea cada uno. A la derecha, un modelo grande de lenguaje conectado a seis tareas distintas."
+  />
+  <figcaption>IA estrecha, un modelo por tarea; IA de propósito general, un modelo para muchas tareas.</figcaption>
+</figure>
+
+En este curso, "general" quiere decir de propósito general. La inteligencia artificial general
+(AGI), la que igualaría a una persona en casi todo, es otra discusión, y la tenemos en la sesión 8.
+
+## Setenta años en quince minutos
+
+La historia de la IA se puede contar en cuatro eras, y lo que cambia de una a otra es quién pone
+las reglas. En la primera las escribe una persona: los sistemas expertos de los ochenta sacaban el
+conocimiento de un especialista y lo escribían como reglas del tipo "si pasa esto, hacé aquello".
+Uno de ellos, el Dipmeter Advisor del Instituto Tecnológico de Massachusetts (MIT) y Schlumberger,
+presentado en 1981, infería la estructura geológica del subsuelo a partir del perfil de
+buzamiento de un pozo. Esa época tuvo dos inviernos: en 1973 el informe Lighthill concluyó en el
+Reino Unido que la IA había decepcionado lo esperado, y en 1984 investigadores de la Asociación
+Estadounidense de IA (AAAI) advirtieron que las expectativas estaban demasiado altas.
+
+Desde mediados de los ochenta, la regla la encuentra la máquina mirando ejemplos. La
+retropropagación (1986) permitió entrenar redes con capas ocultas, y en 1989 una red de los
+Laboratorios Bell ya leía los dígitos de los códigos postales. En 2012 AlexNet ganó el concurso
+ImageNet con 15.3% de error, contra 26.2% del segundo, entrenada en dos unidades de procesamiento
+gráfico (GPU): desde ahí las redes profundas se comen la década. En 2017 aparece el transformer,
+la arquitectura de los modelos de lenguaje actuales. Después vienen GPT, GPT-2 y GPT-3, que
+aprenden prediciendo la palabra siguiente; en 2022 personas les enseñan a seguir instrucciones, y
+el 30 de noviembre de ese año sale ChatGPT. En 2024 llegan los modelos que razonan paso a paso
+antes de responder, y en 2025 los agentes como Claude Code, que buscan, leen y editan archivos en
+la terminal.
+
+<LineaDeTiempo sesion={1} />
+
+¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: datos (todo el texto de internet),
+cómputo (las placas gráficas, GPU) y una **arquitectura que escala** (el transformer, 2017). Con
+esa receta, el modelo mejora de forma sorprendentemente predecible a medida que se lo agranda.
+
+## Cómo aprende una máquina
+
+En un sistema experto, la regla la escribe una persona. En el aprendizaje automático (*machine
+learning*), la máquina encuentra la regla mirando ejemplos, y eso sirve cuando la fórmula no existe
+o no la conocemos. En el medio está lo que la ingeniería de reservorios hace hace décadas: una
+curva de declinación ajustada a mano ya es un modelo. La fórmula la ponés vos, y los datos ponen
+los parámetros.
+
+### Supervisado: los ejemplos traen la respuesta
+
+En el ejercicio que sigue ajustás la curva a mano y después dejás que la máquina busque sola. Cada
+punto de la curva trae su respuesta, el caudal que el pozo produjo ese mes, y la máquina busca los
+parámetros que mejor la reproducen. Eso es aprendizaje supervisado.
 
 <DeclineDuel sesion={1} />
 
@@ -67,9 +132,55 @@ se porta así. Mañana, en la sesión 4, volvemos con pozos reales del Capítulo
 Acambuco), con esa tercera perilla, y con la pregunta incómoda de cuánto de esa caída es el
 reservorio y cuánto es la operación.
 
-¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: datos (todo el texto de internet),
-cómputo (las placas gráficas, GPU) y una **arquitectura que escala** (el transformer, 2017). Con
-esa receta, el modelo mejora de forma sorprendentemente predecible a medida que se lo agranda.
+### Con etiquetas y sin etiquetas
+
+El ejercicio siguiente usa 84 pozos activos de la cuenca Noroeste, descritos por dos números que se
+leen de un vistazo: la relación gas-petróleo (RGP) y el corte de agua. Con etiquetas, cada pozo
+trae el tipo que declaró la operadora, petrolífero o gasífero, y la máquina aprende a clasificar
+un pozo nuevo por sus vecinos. Sin etiquetas, la máquina solo ve los puntos y arma grupos por su
+cuenta: eso es aprendizaje no supervisado. El ejercicio calcula en vivo cuántas veces acierta cada
+uno, y compara los grupos con las etiquetas.
+
+<ConYSinEtiquetas sesion={1} />
+
+Ponerle nombre a un grupo sigue siendo trabajo de una persona, y los pozos que caen en el grupo
+equivocado son los que merecen una pregunta.
+
+Hay una tercera manera de aprender, la que usan los modelos de lenguaje: el aprendizaje
+autosupervisado, donde la respuesta sale del propio dato. Se tapa la palabra siguiente de un texto
+y el modelo intenta adivinarla. La sesión 2 arranca por ahí.
+
+<figure className="figura">
+  <img
+    src="slides/img/tres-maneras.svg"
+    alt="Tres columnas: supervisado, con pozos que traen su tipo; no supervisado, con puntos grises agrupados; autosupervisado, con la palabra siguiente de una oración tapada."
+  />
+  <figcaption>Supervisado, no supervisado y autosupervisado: quién pone la respuesta en cada caso.</figcaption>
+</figure>
+
+### Cuatro capas, una dentro de otra
+
+<figure className="figura">
+  <img
+    src="slides/img/capas.svg"
+    alt="Recuadros anidados: inteligencia artificial, aprendizaje automático, redes profundas e IA generativa, con un ejemplo del rubro en cada uno."
+  />
+  <figcaption>Cada capa se apoya en la anterior, que sigue vigente.</figcaption>
+</figure>
+
+- **Inteligencia artificial** es el conjunto entero, y todavía incluye los sistemas de reglas
+  escritas a mano.
+- **Aprendizaje automático** es la parte donde la máquina encuentra el patrón en los ejemplos, como
+  en los dos ejercicios de arriba.
+- **Redes profundas** (*deep learning*) son aprendizaje automático con redes neuronales de muchas
+  capas: más datos y más cómputo, patrones más complejos (imágenes sísmicas, registros de pozo,
+  texto). La red aprende hasta la forma de la función.
+- **IA generativa** es la capa nueva: modelos tan grandes, entrenados con tanto texto, que además
+  de clasificar o predecir un número *generan* texto, código o imágenes. Los modelos grandes de
+  lenguaje (LLM, por *large language models*) son el caso que nos ocupa.
+
+La ciencia de datos, lo de mirar datos, limpiarlos, graficarlos y sacar conclusiones, cruza las
+dos primeras capas y es lo que la industria viene haciendo desde siempre.
 
 ## Dos maneras distintas de equivocarse
 
@@ -102,7 +213,7 @@ te quedó a medias, se guarda sola y la terminás en la pausa.
    dato, o porque el dato no existía y lo completó igual? Según cuál haya sido, el arreglo es
    distinto.
 
-Después de la pausa sigue la sesión 2: tokens, predicción, la ventana de contexto y de dónde salen
-las alucinaciones.
+Después de la pausa sigue la sesión 2: cómo se pasa de predecir la palabra siguiente a un
+asistente de propósito general, la ventana de contexto y de dónde salen las alucinaciones.
 
 <Quiz data="quiz_s1" sesion={1} />

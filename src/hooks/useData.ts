@@ -13,6 +13,10 @@ import type {
 import type { Conversacion } from '../engine/contexto'
 import type { QuizPregunta } from '../engine/quiz'
 import type { Informe } from '../engine/hunt'
+import type { Pozo } from '../engine/aprendizaje'
+import type { ModeloEscala } from '../engine/escala'
+import type { DatosAutosupervisado } from '../engine/autosupervisado'
+import type { LineaDeTiempo } from '../engine/lineaDeTiempo'
 
 /**
  * Loads a JSON file from ./data/ and unwraps the {generated_at, source,
@@ -79,3 +83,7 @@ export const useAlucinaciones = () => useJson<Informe[]>('./data/alucinaciones.j
 export const useEmbeddings = () => useJson<TerminoEmbebido[]>('./data/embeddings_2d.json')
 export const useRagCorpus = () => useJson<RagCorpus>('./data/rag_corpus.json')
 export const useContexto = () => useJson<Conversacion>('./data/contexto_conversacion.json')
+export const usePozosAprendizaje = () => useJson<Pozo[]>('./data/pozos_aprendizaje.json')
+export const useEscala = () => useJson<ModeloEscala[]>('./data/escala.json')
+export const useAutosupervisado = () => useJson<DatosAutosupervisado>('./data/autosupervisado.json')
+export const useLineaDeTiempo = () => useJson<LineaDeTiempo>('./data/linea_de_tiempo.json')

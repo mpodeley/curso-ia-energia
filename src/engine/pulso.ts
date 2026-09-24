@@ -5,7 +5,7 @@
 // cloud layout were unstable, bars would swap places and words would jump
 // between polls, and the room would read the motion as data changing.
 
-export type Voto = { alumnoId: string; nombre: string; payload: unknown }
+export type Voto = { alumnoId: string; nombre: string; payload: unknown; creado?: string }
 export type Conteo = { clave: string; etiqueta: string; n: number; pct: number }
 
 /** Lowercase, accent-stripped, whitespace-collapsed. So "Incertidumbre" and
@@ -159,4 +159,24 @@ export function layoutNube(
   }
 
   return { palabras, omitidas }
+}
+
+export type TextoFirmado = { alumnoId: string; nombre: string; texto: string }
+
+/** Free-text answers (tipo 'texto'), one card per student, for the projector.
+ *  Whitespace collapsed, empty or non-string answers dropped, long ones capped
+ *  with an ellipsis. Ordered by arrival (then id): a new answer lands at the end
+ *  and nothing already on screen moves. */
+export function textosDePulso(votos: Voto[], tope = 280): TextoFirmado[] {
+  const out: (TextoFirmado & { creado: string })[] = []
+  for (const v of votos) {
+    const p = v.payload as { texto?: unknown } | null
+    if (!p || typeof p.texto !== 'string') continue
+    const limpio = p.texto.replace(/\s+/g, ' ').trim()
+    if (!limpio) continue
+    const texto = limpio.length > tope ? `${limpio.slice(0, tope - 1).trimEnd()}…` : limpio
+    out.push({ alumnoId: v.alumnoId, nombre: v.nombre, texto, creado: v.creado ?? '' })
+  }
+  out.sort((a, b) => (a.creado === b.creado ? (a.alumnoId < b.alumnoId ? -1 : 1) : a.creado < b.creado ? -1 : 1))
+  return out.map(({ alumnoId, nombre, texto }) => ({ alumnoId, nombre, texto }))
 }

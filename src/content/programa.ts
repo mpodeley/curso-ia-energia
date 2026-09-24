@@ -25,11 +25,12 @@ export const SESIONES: Sesion[] = [
     dia: 1,
     titulo: 'De los datos a la IA generativa',
     resumen:
-      'El mapa de la IA generativa con los pies en la industria, y un chatbot frente a tareas reales: qué hace bien, dónde falla y de qué dos maneras se equivoca.',
+      'Qué entendemos por IA, cómo se llegó de los sistemas expertos a los modelos de hoy y cómo aprende una máquina, con pozos reales; y un chatbot frente a tareas reales, incluido verlo fallar.',
     objetivos: [
-      'Ubicar data science, machine learning e IA generativa en un solo mapa',
-      'Ver en vivo qué puede (y qué no puede) hacer hoy un chatbot con tareas reales de la industria',
-      'Distinguir las dos maneras de equivocarse de un chatbot: le faltaba el dato, o el dato no existe',
+      'Distinguir una IA estrecha de una IA de propósito general',
+      'Contar cómo se llegó de los sistemas expertos a los modelos de hoy',
+      'Distinguir aprendizaje supervisado de no supervisado, con pozos reales',
+      'Ver en vivo qué puede y qué no puede hacer hoy un chatbot, y por qué se equivoca',
     ],
     estado: 'lista',
     slides: true,
@@ -38,10 +39,12 @@ export const SESIONES: Sesion[] = [
     n: 2,
     dia: 1,
     titulo: 'Cómo funciona un LLM',
-    resumen: 'Lo justo del motor para manejarlo: por qué cuenta mal, por qué se olvida y por qué inventa.',
+    resumen:
+      'Lo justo del motor para manejarlo: cómo aprende de texto sin etiquetas y se vuelve un asistente general, por qué se olvida y por qué inventa.',
     objetivos: [
       'Entender qué es un token, cómo el modelo predice el siguiente y qué controla la temperatura',
-      'Ver qué entra en la ventana de contexto, qué se cae, y cómo se entrena el modelo',
+      'Explicar cómo aprende de texto sin etiquetas y por qué termina siendo de propósito general',
+      'Ver qué entra en la ventana de contexto y qué se cae',
       'Derivar de esa mecánica por qué alucina',
     ],
     estado: 'lista',

@@ -17,6 +17,7 @@ import {
   EnviarButton,
   NotaSinServidor,
   RadioGroup,
+  TextArea,
   TextInput,
   type EstadoEnvio,
 } from '../components/forms'
@@ -112,7 +113,14 @@ export function PulsoVivo({ sesion }: { sesion: number }) {
         />
       )}
 
-      {yaVoto && <Resultado pulsoId={pulso.id} token={identidad.token} />}
+      {/* Un pulso de texto no tiene agregado que mostrar: las definiciones se
+          leen en la pantalla del instructor, con nombre, y se conversan. */}
+      {yaVoto && pulso.tipo === 'texto' && (
+        <p style={{ margin: 0, color: colors.textMuted, fontSize: 15 }}>
+          Listo, quedó registrada. Las de todos aparecen en la pantalla del instructor.
+        </p>
+      )}
+      {yaVoto && pulso.tipo !== 'texto' && <Resultado pulsoId={pulso.id} token={identidad.token} />}
     </Ejercicio>
   )
 }
@@ -133,8 +141,13 @@ function FormularioVoto({
   const [borrador, setBorrador] = useState<string | number | undefined>()
 
   const votar = async () => {
-    if (borrador === undefined || borrador === '') return
-    const payload = pulso.tipo === 'opcion' ? { opcion: Number(borrador) } : { palabra: String(borrador) }
+    if (borrador === undefined || String(borrador).trim() === '') return
+    const payload =
+      pulso.tipo === 'opcion'
+        ? { opcion: Number(borrador) }
+        : pulso.tipo === 'texto'
+          ? { texto: String(borrador).trim() }
+          : { palabra: String(borrador) }
 
     setEnvio('enviando')
     const r = await enviarRespuesta(token, {
@@ -163,6 +176,16 @@ function FormularioVoto({
           value={typeof borrador === 'number' ? borrador : undefined}
           onChange={setBorrador}
         />
+      ) : pulso.tipo === 'texto' ? (
+        <div style={{ maxWidth: 560, marginBottom: space.md }}>
+          <TextArea
+            value={String(borrador ?? '')}
+            onChange={setBorrador}
+            placeholder={`En una oración, hasta ${pulso.maxPalabras} palabras`}
+            filas={3}
+            maxLength={240}
+          />
+        </div>
       ) : (
         <div style={{ maxWidth: 340, marginBottom: space.md }}>
           <TextInput
@@ -173,8 +196,12 @@ function FormularioVoto({
           />
         </div>
       )}
-      <EnviarButton estado={envio} onClick={() => void votar()} disabled={borrador === undefined || borrador === ''}>
-        Votar
+      <EnviarButton
+        estado={envio}
+        onClick={() => void votar()}
+        disabled={borrador === undefined || String(borrador).trim() === ''}
+      >
+        {pulso.tipo === 'texto' ? 'Enviar' : 'Votar'}
       </EnviarButton>
       <Aviso estado={envio} mensaje={mensaje} />
     </>

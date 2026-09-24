@@ -1,0 +1,763 @@
+{
+  "generated_at": "2026-09-24T13:47:43+00:00",
+  "source": "Secretaría de Energía, Capítulo IV (producción por pozo), cuenca Noroeste. RGP y corte de agua de los últimos 12 meses con producción; tipo de pozo declarado por la operadora.",
+  "source_date": "2026-07",
+  "data": [
+    {
+      "id": "10536",
+      "sigla": "TPT.St.Po.x-1001",
+      "area": "SAN ANTONIO SUR",
+      "tipo": "gasifero",
+      "rgp": 14194.4,
+      "corte": 0.9312,
+      "meses": 12
+    },
+    {
+      "id": "10639",
+      "sigla": "CD-12",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 8096.0,
+      "corte": 0.1567,
+      "meses": 12
+    },
+    {
+      "id": "10645",
+      "sigla": "CD-17bis",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 4146.5,
+      "corte": 0.288,
+      "meses": 12
+    },
+    {
+      "id": "10656",
+      "sigla": "CD-27",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 5643.3,
+      "corte": 0.3742,
+      "meses": 12
+    },
+    {
+      "id": "10685",
+      "sigla": "CD-56",
+      "area": "AGUARAGÜE",
+      "tipo": "petrolifero",
+      "rgp": 822.3,
+      "corte": 0.2173,
+      "meses": 12
+    },
+    {
+      "id": "10690",
+      "sigla": "CD-8",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 9251.1,
+      "corte": 0.1235,
+      "meses": 12
+    },
+    {
+      "id": "10693",
+      "sigla": "TPT.St.CD-1003",
+      "area": "AGUARAGÜE",
+      "tipo": "petrolifero",
+      "rgp": 2274.0,
+      "corte": 0.1032,
+      "meses": 12
+    },
+    {
+      "id": "10694",
+      "sigla": "TPT.St.CD-1004",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 6972.3,
+      "corte": 0.4854,
+      "meses": 12
+    },
+    {
+      "id": "10695",
+      "sigla": "TPT.St.CD-1005",
+      "area": "AGUARAGÜE",
+      "tipo": "petrolifero",
+      "rgp": 1790.1,
+      "corte": 0.0,
+      "meses": 12
+    },
+    {
+      "id": "10924",
+      "sigla": "TPT.St.Ag.ap-1002",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 21905.2,
+      "corte": 0.9578,
+      "meses": 12
+    },
+    {
+      "id": "10927",
+      "sigla": "YPF.St.Ag.xp-1",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 177066.3,
+      "corte": 0.9449,
+      "meses": 12
+    },
+    {
+      "id": "10931",
+      "sigla": "TPT.St.CN.a-2",
+      "area": "SAN ANTONIO SUR",
+      "tipo": "gasifero",
+      "rgp": 16565.1,
+      "corte": 0.9779,
+      "meses": 12
+    },
+    {
+      "id": "10934",
+      "sigla": "TPT.St.CN.x-1",
+      "area": "SAN ANTONIO SUR",
+      "tipo": "gasifero",
+      "rgp": 36609.1,
+      "corte": 0.9942,
+      "meses": 12
+    },
+    {
+      "id": "10935",
+      "sigla": "TPT.St.CN.a-5",
+      "area": "SAN ANTONIO SUR",
+      "tipo": "gasifero",
+      "rgp": 10230.1,
+      "corte": 0.9595,
+      "meses": 12
+    },
+    {
+      "id": "127112",
+      "sigla": "TPT.St.Ag.xp-1(ST4)",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 177068.6,
+      "corte": 0.9449,
+      "meses": 12
+    },
+    {
+      "id": "129889",
+      "sigla": "TPT.St.Ag.ap-1002(ST1)",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 14464.6,
+      "corte": 0.9382,
+      "meses": 12
+    },
+    {
+      "id": "130789",
+      "sigla": "GTE.FR.Proa.x-1",
+      "area": "SURUBI",
+      "tipo": "petrolifero",
+      "rgp": 0.0,
+      "corte": 0.9332,
+      "meses": 12
+    },
+    {
+      "id": "131683",
+      "sigla": "TPT.St.Ag.ap-1001(ST1)",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 30403.9,
+      "corte": 0.9265,
+      "meses": 12
+    },
+    {
+      "id": "135774",
+      "sigla": "TPT.St.CD.xp-1001(r)",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 3845.4,
+      "corte": 0.2188,
+      "meses": 12
+    },
+    {
+      "id": "135983",
+      "sigla": "PAE.St.Mac-1006(d)",
+      "area": "ACAMBUCO",
+      "tipo": "gasifero",
+      "rgp": 7059.3,
+      "corte": 0.8772,
+      "meses": 12
+    },
+    {
+      "id": "137309",
+      "sigla": "GTE.FR.Proa-2",
+      "area": "SURUBI",
+      "tipo": "petrolifero",
+      "rgp": 0.0,
+      "corte": 0.962,
+      "meses": 12
+    },
+    {
+      "id": "137458",
+      "sigla": "SJO.St.DP.a-1001(d)",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 123.3,
+      "corte": 0.9259,
+      "meses": 12
+    },
+    {
+      "id": "145201",
+      "sigla": "TPT.St.CD-1007",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 3801.3,
+      "corte": 0.0932,
+      "meses": 12
+    },
+    {
+      "id": "145627",
+      "sigla": "TPT.St.CD-1008",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 6589.3,
+      "corte": 0.663,
+      "meses": 12
+    },
+    {
+      "id": "147346",
+      "sigla": "GTE.Fr.Proa-3",
+      "area": "SURUBI",
+      "tipo": "petrolifero",
+      "rgp": 0.0,
+      "corte": 0.9792,
+      "meses": 12
+    },
+    {
+      "id": "153360",
+      "sigla": "TPT.St.CD-1009",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 2914.7,
+      "corte": 0.2678,
+      "meses": 12
+    },
+    {
+      "id": "153510",
+      "sigla": "PAE.St.Mac-1004(d)",
+      "area": "ACAMBUCO",
+      "tipo": "gasifero",
+      "rgp": 12043.3,
+      "corte": 0.6268,
+      "meses": 12
+    },
+    {
+      "id": "153843",
+      "sigla": "TPT.St.AdY-2",
+      "area": "AGUARAGÜE",
+      "tipo": "petrolifero",
+      "rgp": 206.4,
+      "corte": 0.1412,
+      "meses": 12
+    },
+    {
+      "id": "154216",
+      "sigla": "TPT.St.CD-1011",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 5839.0,
+      "corte": 0.992,
+      "meses": 12
+    },
+    {
+      "id": "155093",
+      "sigla": "TPT.St.CD-1010",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 4845.3,
+      "corte": 0.5332,
+      "meses": 12
+    },
+    {
+      "id": "159335",
+      "sigla": "TPT.St.CD-1017",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 7952.8,
+      "corte": 0.3455,
+      "meses": 12
+    },
+    {
+      "id": "159907",
+      "sigla": "HLG.St.LB.x-2001",
+      "area": "LOS BLANCOS",
+      "tipo": "petrolifero",
+      "rgp": 8.4,
+      "corte": 0.0,
+      "meses": 12
+    },
+    {
+      "id": "161702",
+      "sigla": "TPT.St.CD-1018(d)",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 1612.7,
+      "corte": 0.6287,
+      "meses": 12
+    },
+    {
+      "id": "162931",
+      "sigla": "PPSA.St.DP-2001",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 122.0,
+      "corte": 0.9448,
+      "meses": 12
+    },
+    {
+      "id": "162977",
+      "sigla": "PPSA.St.DP-2003",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 123.2,
+      "corte": 0.9644,
+      "meses": 12
+    },
+    {
+      "id": "163204",
+      "sigla": "PPSA.St.PGu-13",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 44.0,
+      "corte": 0.8961,
+      "meses": 12
+    },
+    {
+      "id": "165382",
+      "sigla": "TPT.St.CD-1026(d)",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 8309.2,
+      "corte": 0.8236,
+      "meses": 12
+    },
+    {
+      "id": "165475",
+      "sigla": "TPT.St.CD-1023(d)",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 8044.7,
+      "corte": 0.1481,
+      "meses": 12
+    },
+    {
+      "id": "29086",
+      "sigla": "D.P. 12",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 122.8,
+      "corte": 0.9784,
+      "meses": 12
+    },
+    {
+      "id": "30644",
+      "sigla": "P.E. a-7",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 113.9,
+      "corte": 0.0241,
+      "meses": 12
+    },
+    {
+      "id": "30645",
+      "sigla": "P.E. 8",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 112.4,
+      "corte": 0.5532,
+      "meses": 12
+    },
+    {
+      "id": "30647",
+      "sigla": "P.E.E. X-1",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 26.0,
+      "corte": 0.9906,
+      "meses": 12
+    },
+    {
+      "id": "30667",
+      "sigla": "P.Gu. 19",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 80.0,
+      "corte": 0.9214,
+      "meses": 12
+    },
+    {
+      "id": "30669",
+      "sigla": "P.Gu. 21",
+      "area": "PUESTO GUARDIAN",
+      "tipo": "petrolifero",
+      "rgp": 6.2,
+      "corte": 0.9814,
+      "meses": 12
+    },
+    {
+      "id": "33378",
+      "sigla": "JCa.-02",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 305.7,
+      "corte": 0.5395,
+      "meses": 12
+    },
+    {
+      "id": "33886",
+      "sigla": "JCa.-04",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 306.6,
+      "corte": 0.2451,
+      "meses": 12
+    },
+    {
+      "id": "33897",
+      "sigla": "JCa.-10",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 311.9,
+      "corte": 0.5296,
+      "meses": 12
+    },
+    {
+      "id": "33901",
+      "sigla": "JCa.-15",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 311.4,
+      "corte": 0.9607,
+      "meses": 12
+    },
+    {
+      "id": "33905",
+      "sigla": "JCa.-23",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 306.7,
+      "corte": 0.7203,
+      "meses": 12
+    },
+    {
+      "id": "33907",
+      "sigla": "JCa.-30",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 307.3,
+      "corte": 0.5608,
+      "meses": 12
+    },
+    {
+      "id": "34531",
+      "sigla": "JCa.-32",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 328.4,
+      "corte": 0.5065,
+      "meses": 12
+    },
+    {
+      "id": "34533",
+      "sigla": "JCa.-35",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 331.3,
+      "corte": 0.7844,
+      "meses": 12
+    },
+    {
+      "id": "34535",
+      "sigla": "JCa.-37",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 306.6,
+      "corte": 0.443,
+      "meses": 12
+    },
+    {
+      "id": "34536",
+      "sigla": "JCa.-38",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 271.2,
+      "corte": 0.1991,
+      "meses": 12
+    },
+    {
+      "id": "34537",
+      "sigla": "JCa.-39",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 307.0,
+      "corte": 0.7207,
+      "meses": 12
+    },
+    {
+      "id": "34538",
+      "sigla": "JCa.-40",
+      "area": "CAIMANCITO",
+      "tipo": "petrolifero",
+      "rgp": 306.6,
+      "corte": 0.8923,
+      "meses": 12
+    },
+    {
+      "id": "34585",
+      "sigla": "PAE.St.Mac.x-1001 bis",
+      "area": "ACAMBUCO",
+      "tipo": "gasifero",
+      "rgp": 11658.1,
+      "corte": 0.6794,
+      "meses": 12
+    },
+    {
+      "id": "34663",
+      "sigla": "YPF.St.SP.x-1",
+      "area": "ACAMBUCO",
+      "tipo": "gasifero",
+      "rgp": 11115.6,
+      "corte": 0.3719,
+      "meses": 12
+    },
+    {
+      "id": "34664",
+      "sigla": "PAE.St.SP.x-2",
+      "area": "ACAMBUCO",
+      "tipo": "gasifero",
+      "rgp": 5532.8,
+      "corte": 0.5125,
+      "meses": 12
+    },
+    {
+      "id": "530",
+      "sigla": "YPF.Fr.EChi.x-1(bis)",
+      "area": "EL CHIVIL",
+      "tipo": "petrolifero",
+      "rgp": 0.0,
+      "corte": 0.9617,
+      "meses": 12
+    },
+    {
+      "id": "533",
+      "sigla": "YPF.Fr.EChi-4",
+      "area": "EL CHIVIL",
+      "tipo": "petrolifero",
+      "rgp": 0.0,
+      "corte": 0.9729,
+      "meses": 12
+    },
+    {
+      "id": "79107",
+      "sigla": "Pp.Fr.RL-1001",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 543.8,
+      "corte": 0.9694,
+      "meses": 12
+    },
+    {
+      "id": "79123",
+      "sigla": "YPF.Fr.EPo.x-1(2D)",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 112.1,
+      "corte": 0.0565,
+      "meses": 12
+    },
+    {
+      "id": "79133",
+      "sigla": "YPF.Fr.PL.a-14",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 85.4,
+      "corte": 0.9597,
+      "meses": 12
+    },
+    {
+      "id": "79137",
+      "sigla": "YPF.Fr.PL.a-6(H)",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 80.0,
+      "corte": 0.97,
+      "meses": 12
+    },
+    {
+      "id": "79138",
+      "sigla": "YPF.Fr.PL.a-9",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 294.3,
+      "corte": 0.9795,
+      "meses": 12
+    },
+    {
+      "id": "79139",
+      "sigla": "YPF.Fr.PL.x-1",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 140.9,
+      "corte": 0.9787,
+      "meses": 12
+    },
+    {
+      "id": "79140",
+      "sigla": "YPF.Fr.PL.x-5",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 212.9,
+      "corte": 0.9455,
+      "meses": 12
+    },
+    {
+      "id": "79144",
+      "sigla": "YPF.Fr.PL-18",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 264.2,
+      "corte": 0.9056,
+      "meses": 12
+    },
+    {
+      "id": "79154",
+      "sigla": "YPF.Fr.PLE.a-2",
+      "area": "PALMAR LARGO",
+      "tipo": "petrolifero",
+      "rgp": 167.8,
+      "corte": 0.9317,
+      "meses": 12
+    },
+    {
+      "id": "79164",
+      "sigla": "Pp.St.R-1003-h",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 12189.9,
+      "corte": 0.2844,
+      "meses": 12
+    },
+    {
+      "id": "79165",
+      "sigla": "Pp.St.R-1003-h",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 12189.8,
+      "corte": 0.2843,
+      "meses": 12
+    },
+    {
+      "id": "79166",
+      "sigla": "Pp.St.R-1003-h",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 12189.8,
+      "corte": 0.2843,
+      "meses": 12
+    },
+    {
+      "id": "79167",
+      "sigla": "Pp.St.R-1004",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 12520.8,
+      "corte": 0.2919,
+      "meses": 12
+    },
+    {
+      "id": "79168",
+      "sigla": "Pp.St.R-1005",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 10680.9,
+      "corte": 0.3825,
+      "meses": 12
+    },
+    {
+      "id": "79169",
+      "sigla": "Pp.St.R-1005",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 10680.6,
+      "corte": 0.3825,
+      "meses": 12
+    },
+    {
+      "id": "79172",
+      "sigla": "Pp.St.R-1007",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 10918.0,
+      "corte": 0.3097,
+      "meses": 12
+    },
+    {
+      "id": "79174",
+      "sigla": "Pp.St.R-1009",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 10764.4,
+      "corte": 0.2779,
+      "meses": 12
+    },
+    {
+      "id": "79176",
+      "sigla": "Pp.St.R-1010-hI",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 10457.2,
+      "corte": 0.4056,
+      "meses": 12
+    },
+    {
+      "id": "79177",
+      "sigla": "Pp.St.R-1011-I",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 11904.4,
+      "corte": 0.7636,
+      "meses": 12
+    },
+    {
+      "id": "79178",
+      "sigla": "Pp.St.R-1011-I",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 11904.5,
+      "corte": 0.7636,
+      "meses": 12
+    },
+    {
+      "id": "79190",
+      "sigla": "YPF.St.R.xp-11",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 8001.2,
+      "corte": 0.35,
+      "meses": 12
+    },
+    {
+      "id": "79193",
+      "sigla": "YPF.St.R.es-15-hIII",
+      "area": "RAMOS",
+      "tipo": "gasifero",
+      "rgp": 8248.9,
+      "corte": 0.7461,
+      "meses": 12
+    },
+    {
+      "id": "79444",
+      "sigla": "YPF.St.SaAg-4",
+      "area": "AGUARAGÜE",
+      "tipo": "gasifero",
+      "rgp": 9574.0,
+      "corte": 0.9532,
+      "meses": 12
+    }
+  ]
+}

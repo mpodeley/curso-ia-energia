@@ -6,7 +6,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { PULSOS, pulsoPorId } from '../../content/pulsos'
-import { layoutNube, tallyOpciones, tallyPalabras, type Voto } from '../../engine/pulso'
+import { layoutNube, tallyOpciones, tallyPalabras, textosDePulso, type Voto } from '../../engine/pulso'
 import { hace, usePoll } from '../../hooks/usePoll'
 import { panelPulso, panelRespuestas, pulsoActual } from '../../lib/api'
 import { colors, radius, space } from '../../theme'
@@ -69,6 +69,7 @@ export function PanelPulsos({
     alumnoId: f.alumnoId,
     nombre: f.nombre,
     payload: f.payload,
+    creado: f.creado,
   }))
 
   return (
@@ -120,10 +121,14 @@ export function PanelPulsos({
                 disabled={ocupado}
                 onClick={() => void marcar(pulso.id, false)}
               >
-                Cerrar y mostrar a los alumnos
+                {pulso.tipo === 'texto' ? 'Cerrar' : 'Cerrar y mostrar a los alumnos'}
               </button>
               <span style={{ color: colors.textDim, fontSize: 13, alignSelf: 'center' }}>
-                {abierto ? 'Abierto: están votando.' : 'Al cerrarlo, los alumnos ven el resultado.'}
+                {abierto
+                  ? 'Abierto: están respondiendo.'
+                  : pulso.tipo === 'texto'
+                    ? 'Al cerrarlo no entran más respuestas; esta lista se proyecta igual.'
+                    : 'Al cerrarlo, los alumnos ven el resultado.'}
               </span>
             </div>
           )}
@@ -147,6 +152,8 @@ export function PanelPulsos({
                 }))}
                 grande={proyeccion}
               />
+            ) : pulso.tipo === 'texto' ? (
+              <Textos votos={votos} proyeccion={proyeccion} />
             ) : (
               <Nube votos={votos} proyeccion={proyeccion} />
             )}
@@ -186,6 +193,72 @@ function Nube({ votos, proyeccion }: { votos: Voto[]; proyeccion: boolean }) {
         <p style={{ color: colors.textDim, fontSize: 13, margin: `${space.sm}px 0 0` }}>
           {omitidas} {omitidas === 1 ? 'palabra no entró' : 'palabras no entraron'} en el recuadro.
         </p>
+      )}
+    </div>
+  )
+}
+
+/** Las respuestas de un pulso de texto, una tarjeta por persona y con su nombre:
+ *  es material para conversar en ronda. Llegan en orden de llegada, así que lo
+ *  que ya está en pantalla no se mueve cuando entra una nueva. */
+function Textos({ votos, proyeccion }: { votos: Voto[]; proyeccion: boolean }) {
+  const textos = textosDePulso(votos)
+  const [copiado, setCopiado] = useState(false)
+
+  if (textos.length === 0) {
+    return <p style={{ color: colors.textMuted }}>Todavía no respondió nadie.</p>
+  }
+
+  const copiar = async () => {
+    try {
+      await navigator.clipboard.writeText(textos.map((t) => `- ${t.nombre}: ${t.texto}`).join('\n'))
+      setCopiado(true)
+    } catch {
+      setCopiado(false)
+    }
+  }
+
+  return (
+    <div>
+      <ul
+        style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: 0,
+          display: 'grid',
+          gridTemplateColumns: `repeat(auto-fill, minmax(${proyeccion ? 420 : 300}px, 1fr))`,
+          gap: space.md,
+        }}
+      >
+        {textos.map((t) => (
+          <li
+            key={t.alumnoId}
+            style={{
+              background: colors.surfaceAlt,
+              border: `1px solid ${colors.border}`,
+              borderRadius: radius.md,
+              padding: proyeccion ? space.lg : space.md,
+            }}
+          >
+            <span
+              style={{
+                fontFamily: 'var(--pd-font-mono)',
+                fontSize: proyeccion ? 18 : 12,
+                color: colors.accent.orange,
+                display: 'block',
+                marginBottom: space.xs,
+              }}
+            >
+              {t.nombre}
+            </span>
+            <span style={{ fontSize: proyeccion ? 28 : 16, lineHeight: 1.4 }}>{t.texto}</span>
+          </li>
+        ))}
+      </ul>
+      {!proyeccion && (
+        <button type="button" className="tbtn" style={{ marginTop: space.md }} onClick={() => void copiar()}>
+          {copiado ? 'Copiado' : 'Copiar todo como texto'}
+        </button>
       )}
     </div>
   )

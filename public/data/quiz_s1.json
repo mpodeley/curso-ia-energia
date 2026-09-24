@@ -1,8 +1,74 @@
 {
-  "generated_at": "2026-09-15T00:00:00+00:00",
+  "generated_at": "2026-09-24T00:00:00+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
+    {
+      "pregunta": "¿Cuál de estos es un ejemplo de IA de propósito general, en el sentido que usa el curso?",
+      "opciones": [
+        {
+          "texto": "Deep Blue, que le ganó al campeón mundial de ajedrez en 1997.",
+          "explicacion": "Es el ejemplo clásico de IA estrecha: un sistema construido para una sola tarea, que en esa tarea le gana al campeón del mundo."
+        },
+        {
+          "texto": "Un modelo que pronostica la declinación de los pozos de un yacimiento.",
+          "explicacion": "Es IA estrecha: un modelo entrenado para una tarea. Para otra tarea, como clasificar perfiles, hace falta otro modelo."
+        },
+        {
+          "texto": "Un sistema que iguala a una persona en casi cualquier tarea intelectual.",
+          "explicacion": "Esa es la idea de inteligencia artificial general (AGI), una discusión distinta que tenemos en la sesión 8. Propósito general quiere decir algo más modesto: un modelo para muchas tareas."
+        },
+        {
+          "texto": "Un chatbot que, con el mismo modelo, resume un informe, traduce un correo y escribe código para analizar una planilla.",
+          "correcta": true,
+          "explicacion": "Exacto: un mismo modelo, muchas tareas. Es lo que llegó a todos los escritorios con ChatGPT, a fines de 2022."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Qué cambió entre los sistemas expertos de los años ochenta, como el Dipmeter Advisor, y los modelos de hoy?",
+      "opciones": [
+        {
+          "texto": "Quién pone las reglas: en los sistemas expertos las escribía una persona a partir del conocimiento de un especialista, y hoy el modelo las encuentra en los datos.",
+          "correcta": true,
+          "explicacion": "Es el hilo de la línea de tiempo. El Dipmeter Advisor imitaba a los intérpretes de perfiles con reglas escritas a mano; un modelo de lenguaje aprendió sus patrones leyendo enormes cantidades de texto."
+        },
+        {
+          "texto": "Nada importante: los modelos de hoy son sistemas expertos con más reglas.",
+          "explicacion": "Los parámetros de un modelo de lenguaje se ajustaron solos durante el entrenamiento, mirando ejemplos; ninguna persona los escribió uno por uno."
+        },
+        {
+          "texto": "Los sistemas expertos fracasaron por falta de computadoras rápidas, y hoy las hay.",
+          "explicacion": "Los inviernos de la IA tuvieron que ver con expectativas más altas que los resultados, según el informe Lighthill (1973) y la advertencia de la AAAI (1984). El cómputo pesó después, en el salto de las redes profundas."
+        },
+        {
+          "texto": "Los modelos de hoy ya no se equivocan.",
+          "explicacion": "Se equivocan, y de maneras nuevas: inventan datos con la forma exacta de un dato real. Por eso la salida de un LLM es un borrador plausible y se verifica antes de usarlo."
+        }
+      ]
+    },
+    {
+      "pregunta": "En el ejercicio de los pozos, ¿qué diferencia al aprendizaje supervisado del no supervisado?",
+      "opciones": [
+        {
+          "texto": "En el supervisado cada pozo trae el tipo que declaró la operadora y la máquina aprende a repetir ese criterio; en el no supervisado la máquina solo ve los números y arma grupos por su cuenta.",
+          "correcta": true,
+          "explicacion": "Exacto. La etiqueta es la respuesta que alguien ya escribió. Sin ella, la máquina encuentra grupos por cercanía, y ponerles nombre sigue siendo trabajo de una persona."
+        },
+        {
+          "texto": "El supervisado lo vigila una persona mientras corre; el no supervisado corre solo.",
+          "explicacion": "El nombre confunde: \"supervisado\" se refiere a que los ejemplos traen la respuesta. En los dos casos la máquina corre sola."
+        },
+        {
+          "texto": "El no supervisado es más preciso, porque no depende de etiquetas que pueden estar mal.",
+          "explicacion": "Sin etiquetas, la máquina agrupa por cercanía, y los grupos dependen de cómo se mide la distancia. En el ejercicio coinciden con el tipo declarado en la mayoría de los pozos, y los que no coinciden piden una revisión humana."
+        },
+        {
+          "texto": "Son lo mismo con dos algoritmos distintos: vecinos más cercanos y k-means.",
+          "explicacion": "Esos son los algoritmos del ejercicio. Lo que separa a los dos tipos de aprendizaje es si los ejemplos traen la respuesta, y hay muchos algoritmos de cada uno."
+        }
+      ]
+    },
     {
       "pregunta": "¿Cuál de estas frases describe mejor la relación entre machine learning e IA generativa?",
       "opciones": [

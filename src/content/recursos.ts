@@ -12,7 +12,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-09-15'
+export const VERIFICADO = '2026-09-24'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -98,6 +98,17 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'en',
       porque:
         'La idea de este curso es ser bien práctico, así que la matemática queda afuera. Para el más curioso, esta serie es un recurso excelente: arranca donde el video anterior (acá en su versión original) y sigue hasta adentro de los transformers de los chatbots actuales, con las mismas visualizaciones.',
+    },
+    {
+      // Agregado el 2026-09-24 con la línea de tiempo de la sesión 1: el mismo
+      // recorrido en una página, con los gráficos de Our World in Data.
+      tipo: 'lectura',
+      titulo: 'The brief history of artificial intelligence: the world has changed fast',
+      url: 'https://ourworldindata.org/brief-history-of-ai',
+      fuente: 'Max Roser, Our World in Data (6 de diciembre de 2022)',
+      idioma: 'en',
+      porque:
+        'La historia de la IA en una sola página, con gráficos: de las primeras redes a los modelos que escriben, y cuánto se aceleró todo. Complementa la línea de tiempo de la sesión; es de 2022, así que termina justo cuando sale ChatGPT.',
     },
   ],
   2: [

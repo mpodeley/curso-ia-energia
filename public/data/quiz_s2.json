@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T00:00:00+00:00",
+  "generated_at": "2026-09-24T00:00:00+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
@@ -44,6 +44,72 @@
         {
           "texto": "Que hay un 10% de posibilidades de que el dato sea falso.",
           "explicacion": "La probabilidad mide qué palabra sigue. Si el enunciado es verdadero es otra pregunta, y es fácil confundirlas."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Por qué un LLM puede entrenarse con muchísimo texto sin que nadie lo etiquete antes?",
+      "opciones": [
+        {
+          "texto": "Porque hay personas que etiquetan todo el texto de internet antes del entrenamiento.",
+          "explicacion": "Etiquetar a mano esa cantidad de texto sería imposible. Las personas aparecen recién en la segunda etapa, que es mucho más chica."
+        },
+        {
+          "texto": "Porque la respuesta de cada ejercicio ya está en el texto: se tapa la palabra siguiente y el original dice cuál era.",
+          "correcta": true,
+          "explicacion": "Eso es el aprendizaje autosupervisado. Cada oración trae sus ejercicios con la respuesta, así que el único límite a la cantidad de ejemplos es cuánto texto existe."
+        },
+        {
+          "texto": "Porque solo lee textos verificados, que no necesitan etiquetas.",
+          "explicacion": "Lee una fracción enorme del texto escrito, con sus errores y sus sesgos. Nadie lo verificó antes, y por eso aprende también lo que está mal."
+        },
+        {
+          "texto": "Porque el modelo inventa sus propias respuestas y las da por buenas.",
+          "explicacion": "Durante el entrenamiento cada predicción se compara con la palabra que de verdad seguía en el texto. Esa comparación es la que le enseña."
+        }
+      ]
+    },
+    {
+      "pregunta": "A un modelo que solo pasó por la primera etapa del entrenamiento le hacés una pregunta. ¿Qué hace?",
+      "opciones": [
+        {
+          "texto": "Responde igual que ChatGPT, porque toda la capacidad está en la primera etapa.",
+          "explicacion": "La capacidad viene casi toda de la primera etapa, pero el formato de asistente lo aprende en la segunda. Sin ella, la pregunta es solo el principio de un texto."
+        },
+        {
+          "texto": "No genera nada, porque sin la segunda etapa no sabe escribir.",
+          "explicacion": "Escribe perfectamente: continuar texto es justo lo que aprendió en la primera etapa. Lo que le falta es la costumbre de responder."
+        },
+        {
+          "texto": "Busca la respuesta en internet antes de contestar.",
+          "explicacion": "El modelo no busca nada por su cuenta: solo tiene lo que aprendió y lo que está en la ventana de contexto."
+        },
+        {
+          "texto": "La continúa como si fuera el principio de un texto; responder como asistente lo aprende en la segunda etapa, con personas que escriben y comparan respuestas.",
+          "correcta": true,
+          "explicacion": "Esa segunda etapa se llama aprendizaje por refuerzo con retroalimentación humana (RLHF). Es la que convirtió la capacidad del modelo en un asistente, y de ahí sale también su tono seguro."
+        }
+      ]
+    },
+    {
+      "pregunta": "Si un LLM se entrenó solo para predecir la palabra siguiente, ¿por qué termina resumiendo, traduciendo y escribiendo código?",
+      "opciones": [
+        {
+          "texto": "Porque tiene un módulo aparte para cada tarea.",
+          "explicacion": "Es una sola red con una sola operación. Un modelo por tarea es la IA estrecha, que es justamente lo que un LLM dejó atrás."
+        },
+        {
+          "texto": "Porque para predecir bien la palabra siguiente en cualquier texto tiene que aprender un poco de todo, y esas tareas salen de ahí.",
+          "correcta": true,
+          "explicacion": "Por eso decimos que es de propósito general: un mismo modelo resuelve muchas tareas sin que nadie se las enseñe una por una. GPT-2 ya mostraba algo de esto en 2019."
+        },
+        {
+          "texto": "Porque la segunda etapa le enseña cada tarea, una por una.",
+          "explicacion": "La segunda etapa le enseña a comportarse como asistente. Las capacidades vienen de la primera, de predecir texto a una escala enorme."
+        },
+        {
+          "texto": "Porque ya es una AGI, capaz de igualar a una persona en todo.",
+          "explicacion": "Propósito general quiere decir que un mismo modelo hace muchas tareas. Si va a igualar a una persona en casi todo es otra discusión, y la tenemos en la sesión 8."
         }
       ]
     },

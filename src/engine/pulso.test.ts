@@ -7,6 +7,7 @@ import {
   normalizarPalabra,
   tallyOpciones,
   tallyPalabras,
+  textosDePulso,
   type Voto,
 } from './pulso'
 
@@ -214,6 +215,43 @@ describe('layoutNube', () => {
   })
 })
 
+describe('textosDePulso', () => {
+  const firmado = (i: number, texto: unknown, creado: string): Voto => ({ ...voto(i, { texto }), creado })
+
+  it('collapses whitespace and drops empty or malformed answers', () => {
+    const r = textosDePulso([
+      firmado(1, '  Una   máquina\nque aprende  ', '2026-09-28T13:01:00Z'),
+      firmado(2, '   ', '2026-09-28T13:02:00Z'),
+      voto(3, { palabra: 'suelta' }),
+      voto(4, null),
+    ])
+    expect(r).toEqual([{ alumnoId: 'a1', nombre: 'Alumno 1', texto: 'Una máquina que aprende' }])
+  })
+
+  it('orders by arrival, so a new answer never moves the ones on screen', () => {
+    const r = textosDePulso([
+      firmado(2, 'segunda', '2026-09-28T13:05:00Z'),
+      firmado(1, 'primera', '2026-09-28T13:01:00Z'),
+      firmado(3, 'tercera', '2026-09-28T13:09:00Z'),
+    ])
+    expect(r.map((t) => t.texto)).toEqual(['primera', 'segunda', 'tercera'])
+  })
+
+  it('breaks arrival ties by id, deterministically', () => {
+    const t = '2026-09-28T13:01:00Z'
+    const a = textosDePulso([firmado(2, 'b', t), firmado(1, 'a', t)])
+    const b = textosDePulso([firmado(1, 'a', t), firmado(2, 'b', t)])
+    expect(a).toEqual(b)
+    expect(a[0].alumnoId).toBe('a1')
+  })
+
+  it('caps a long answer with an ellipsis', () => {
+    const r = textosDePulso([firmado(1, 'palabra '.repeat(80), '2026-09-28T13:01:00Z')], 60)
+    expect(r[0].texto.length).toBeLessThanOrEqual(60)
+    expect(r[0].texto.endsWith('…')).toBe(true)
+  })
+})
+
 // Guards the shipped content the same way quiz.test.ts guards the quiz JSON:
 // a typo in an id silently orphans every answer already stored under it.
 describe('catálogo de pulsos', () => {
@@ -237,13 +275,19 @@ describe('catálogo de pulsos', () => {
     }
   })
 
+  it('gives every free-text pulso room for a sentence', () => {
+    for (const p of PULSOS) {
+      if (p.tipo === 'texto') expect(p.maxPalabras).toBeGreaterThanOrEqual(10)
+    }
+  })
+
   it('covers day 1, the only day with pulsos in the second edition', () => {
     expect(pulsosDeSesion(1).length).toBeGreaterThan(0)
     expect(pulsosDeSesion(5).length).toBe(0)
   })
 
   it('finds a pulso by id', () => {
-    expect(pulsoPorId('s1-palabra-ia')?.tipo).toBe('palabra')
+    expect(pulsoPorId('s1-definicion-ia')?.tipo).toBe('texto')
     expect(pulsoPorId('no-existe')).toBeUndefined()
   })
 })

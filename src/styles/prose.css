@@ -108,6 +108,26 @@
   margin: var(--pd-sp-6) 0;
 }
 
+/* Figures: the same SVGs the decks show (slides/img/, copied to public/slides/img/
+   by tools/slides-assets.mjs), embedded as <figure className="figura">. */
+.prose figure.figura {
+  margin: var(--pd-sp-5) 0;
+}
+.prose figure.figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--pd-border-soft);
+  border-radius: var(--pd-r-2);
+  background: var(--pd-bg);
+}
+.prose figure.figura figcaption {
+  font-size: var(--pd-fs-sm);
+  color: var(--pd-text-muted);
+  margin-top: var(--pd-sp-2);
+  line-height: 1.5;
+}
+
 /* callouts */
 .callout {
   border: 1px solid var(--pd-border-soft);

@@ -30,22 +30,25 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 
 | Bloque | min |
 |---|---|
-| Apertura: quiénes somos, regla entre empresas, entrada al sitio | 15 |
-| El mapa de cuatro capas: datos, aprendizaje automático, redes profundas, IA generativa | 35 |
-| Demos en vivo: el chatbot frente a tareas reales, y cómo hacerlo fallar | 30 |
-| Encuesta de relevamiento | 15 |
-| Discusión | 15 |
+| Apertura: quiénes somos, regla entre empresas, entrada al sitio | 12 |
+| ¿Qué es IA para vos? Definiciones en vivo y conversación | 12 |
+| Setenta años en quince minutos: la línea de tiempo | 15 |
+| Cómo aprende una máquina: reglas, supervisado, no supervisado, capas | 25 |
+| Demos en vivo | 22 |
+| Encuesta de relevamiento | 12 |
+| Discusión | 12 |
 | Pausa | 10 |
 
 #### Sesión 2 · 12:00–14:00 · Cómo funciona un LLM
 
 | Bloque | min |
 |---|---|
-| Tokens y predicción, con el Transformer Explainer en pantalla | 38 |
-| Contexto y entrenamiento | 25 |
+| Tokens y predicción | 33 |
+| De predecir palabras a un asistente general | 20 |
+| Contexto: la memoria de trabajo | 15 |
 | Pausa | 10 |
-| Alucinaciones en vivo | 35 |
-| Cierre: las cuatro maneras de fallar, prácticas para mañana, tarea | 12 |
+| Alucinaciones en vivo | 30 |
+| Cierre: cuatro maneras de fallar, ¿cambiarías tu definición?, tarea | 12 |
 
 ### Día 2, martes 29
 

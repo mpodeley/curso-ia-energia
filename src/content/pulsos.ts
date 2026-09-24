@@ -21,17 +21,25 @@ export type Pulso = {
 } & (
   | { tipo: 'opcion'; opciones: string[] }
   | { tipo: 'palabra'; maxPalabras: number }
+  // Una oración libre por persona. El panel la proyecta con el nombre, para
+  // conversarla; el alumno no ve un resultado agregado, porque el /tally del
+  // Worker solo cuenta opciones y palabras.
+  | { tipo: 'texto'; maxPalabras: number }
 )
 
 export const PULSOS: Pulso[] = [
   // --- Sesión 1 (día 1, primera mitad) ------------------------------------------------------------------------------
   {
-    id: 's1-palabra-ia',
+    // Abre el bloque "¿Qué es IA para vos?". Reemplaza a s1-palabra-ia (la nube de
+    // una palabra del arranque, retirada el 2026-09-24): una definición entera da
+    // para conversar y para separar IA estrecha de IA general. El slug viejo no se
+    // recicla; sus respuestas de la primera edición siguen en la base y en el export.
+    id: 's1-definicion-ia',
     sesion: 1,
-    tipo: 'palabra',
-    maxPalabras: 1,
-    pregunta: 'En una palabra: ¿qué te viene a la cabeza con "inteligencia artificial"?',
-    ayuda: 'No lo pienses mucho. La primera que se te ocurra.',
+    tipo: 'texto',
+    maxPalabras: 25,
+    pregunta: 'En una oración: ¿qué es la inteligencia artificial para vos?',
+    ayuda: 'Sin buscar: la que te salga. Después la conversamos entre todos.',
   },
   {
     // Se abre al terminar las demos: la confianza declarada DESPUÉS de ver al

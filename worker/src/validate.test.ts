@@ -163,4 +163,14 @@ describe('validarRespuesta', () => {
     expect(validarRespuesta(null).ok).toBe(false)
     expect(validarRespuesta('cadena').ok).toBe(false)
   })
+
+  // The free-text pulso (s1-definicion-ia) shipped without touching the Worker:
+  // this pins the contract it relies on, a sentence-long `texto` payload.
+  it('accepts a free-text pulso answer of a full sentence', () => {
+    const texto =
+      'Una herramienta que aprende patrones de muchos datos y los usa para responder, predecir o generar texto nuevo sin que nadie le escriba las reglas'
+    const r = validarRespuesta({ ...base, ref: 's1-definicion-ia', payload: { texto } })
+    expect(r.ok).toBe(true)
+    if (r.ok) expect(JSON.parse(r.valor.json)).toEqual({ texto })
+  })
 })
