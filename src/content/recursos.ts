@@ -1,5 +1,5 @@
-// Curated pre-session material, one list per day (second edition: four days,
-// each merging two sessions of the first edition).
+// Curated pre-session material, one list per session (second edition: eight
+// sessions of 2 h, two per day).
 //
 // Every link here was opened and checked on the date below — titles, channels
 // and durations are the real ones, not remembered. A course that teaches
@@ -48,10 +48,10 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2024-11',
       idioma: 'en',
       porque:
-        'El video del punto 1 de la lista de arriba. Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
+        'El video del punto 2 de la lista de arriba. Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
     },
     {
-      // Repetido a propósito en INTERPRETABILIDAD (día 1): acá respalda la
+      // Repetido a propósito en INTERPRETABILIDAD (sesión 2): acá respalda la
       // línea de la capa 3 del deck ("el video dura un minuto y está en la página").
       tipo: 'video',
       titulo: 'Convolutional Network Demo from 1989 (versión restaurada)',
@@ -73,10 +73,10 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2024-07',
       idioma: 'en',
       porque:
-        'Donde la capa 3 explota: AlexNet (2012), el mismo mecanismo de LeNet con GPUs y un millón de imágenes. El título es literal, y es el hilo que retomamos los días 1 y 4: desde acá los modelos rinden más de lo que se dejan leer.',
+        'Donde la capa 3 explota: AlexNet (2012), el mismo mecanismo de LeNet con GPUs y un millón de imágenes. El título es literal, y es el hilo que retomamos en las sesiones 2 y 7: desde acá los modelos rinden más de lo que se dejan leer.',
     },
     {
-      // Repetido a propósito en el día 1, donde acompaña la sección de
+      // Repetido a propósito en la sesión 2, donde acompaña la sección de
       // interpretabilidad: acá es el "para curiosos" de la capa 3 del mapa.
       tipo: 'video',
       titulo: '¿Qué es una Red Neuronal? | Aprendizaje Profundo, capítulo 1',
@@ -99,6 +99,8 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La idea de este curso es ser bien práctico, así que la matemática queda afuera. Para el más curioso, esta serie es un recurso excelente: arranca donde el video anterior (acá en su versión original) y sigue hasta adentro de los transformers de los chatbots actuales, con las mismas visualizaciones.',
     },
+  ],
+  2: [
     {
       tipo: 'herramienta',
       titulo: 'Tiktokenizer',
@@ -111,7 +113,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
     {
       // Pedido por Matías el 7-sep-2026: GPT-2 corriendo en el navegador, con la
       // atención y las probabilidades del próximo token en vivo. Se abre en el
-      // bloque de predicción del día 1 y queda acá para curiosos.
+      // bloque de predicción de la sesión 2 y queda acá para curiosos.
       tipo: 'herramienta',
       titulo: 'Transformer Explainer',
       url: 'https://poloclub.github.io/transformer-explainer/',
@@ -121,7 +123,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Escribí una frase y mirá cómo el modelo reparte probabilidad entre las próximas palabras, capa por capa. Es el laboratorio de predicción de la sesión, pero con un modelo real adentro.',
     },
   ],
-  2: [
+  3: [
     {
       tipo: 'video',
       titulo: 'Prompting 101 | Code w/ Claude',
@@ -169,6 +171,8 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La guía con la que Anthropic enseña a escribir prompts. Está pensada para gente que programa, pero las técnicas (ser claro, dar ejemplos, dejar pensar) son las mismas piezas del constructor de esta página, y sirven en cualquier chatbot. En inglés: el traductor del navegador alcanza.',
     },
+  ],
+  4: [
     {
       tipo: 'video',
       titulo: 'Introduction to residuals and least-squares regression',
@@ -203,7 +207,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'La fuente de los pozos del laboratorio. Bajate un año y probá el flujo de la sesión con datos de verdad, que es la mejor práctica antes de tocar los de tu empresa.',
     },
     {
-      // Segunda edición: la fuente del bloque "De PDF a tabla" del día 2. No
+      // Segunda edición: la fuente del bloque "De PDF a tabla" de la sesión 4. No
       // hay página índice: los PDF viven bajo wp-content/uploads/downloads/AAAA/MM/
       // con nombre predecible, uno por día hábil. Copias del 8 al 15 de
       // septiembre de 2026 en public/descargas/ por si la red corporativa
@@ -217,7 +221,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Una página por día: producción por compañía y por bloque, estado de pozos, gas y las novedades pozo por pozo con su causa de cierre. El PDF de cada día se llama REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-DD-DE-MES-DE-AAAA.pdf bajo wp-content/uploads/downloads/AAAA/MM/.',
     },
   ],
-  3: [
+  5: [
     {
       tipo: 'video',
       titulo: 'RAG Explained For Beginners',
@@ -238,6 +242,8 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La versión sin programar de todo esto. Subí dos o tres documentos públicos de tu rubro y hacele una pregunta antes de la sesión: más abajo en esta página hay tres reales para arrancar.',
     },
+  ],
+  6: [
     {
       tipo: 'video',
       titulo: 'Agentic AI: Workflows vs. agents',
@@ -290,7 +296,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad es el mejor antídoto que existe contra el humo del género. En inglés.',
     },
   ],
-  4: [
+  7: [
     {
       tipo: 'video',
       titulo: 'What is interpretability?',
@@ -322,6 +328,8 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'El registro público de incidentes de IA, con el mismo espíritu que los registros de incidentes de aviación: documentar para que otros no repitan. Buscá los de tu industria antes de la sesión y traé el que más se parezca a tu trabajo.',
     },
+  ],
+  8: [
     {
       tipo: 'video',
       titulo: 'We Already Built AGI | Michal Kosinski',
@@ -353,7 +361,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2026-07',
       idioma: 'en',
       porque:
-        'Tres minutos del anuncio oficial: el mismo tipo de modelo que redacta informes, moviendo un cuerpo completo. Es la conversación del bloque final saliendo de la pantalla, y conecta con la regla del día 4: en el mundo físico el error no vuelve como mensaje.',
+        'Tres minutos del anuncio oficial: el mismo tipo de modelo que redacta informes, moviendo un cuerpo completo. Es la conversación del bloque final saliendo de la pantalla, y conecta con la regla de la sesión 7: en el mundo físico el error no vuelve como mensaje.',
     },
     {
       tipo: 'herramienta',
@@ -419,7 +427,7 @@ export const INTERPRETABILIDAD: Recurso[] = [
       'Un minuto, sin narración: LeNet-1 leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy mueve todo, corriendo en una computadora de hace treinta y siete años.',
   },
   {
-    // Repetido a propósito en el material previo del día 1 (capa 3).
+    // Repetido a propósito en el material previo de la sesión 1 (capa 3).
     tipo: 'video',
     titulo: 'The moment we stopped understanding AI [AlexNet]',
     url: 'https://www.youtube.com/watch?v=UZDiGooFs54',
@@ -471,7 +479,7 @@ export const INTERPRETABILIDAD: Recurso[] = [
   },
 ]
 
-/** El marco del que sale la tabla de las cuatro propiedades del día 4. En
+/** El marco del que sale la tabla de las cuatro propiedades de la sesión 7. En
  *  inglés y opcional: se enlaza y se atribuye, no se copia. Los materiales del
  *  framework de AI Fluency de Anthropic son CC BY-NC-SA 4.0 y este curso es
  *  pago, así que toda la prosa del sitio es propia. Las ideas no se licencian;

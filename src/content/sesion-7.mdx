@@ -1,0 +1,189 @@
+import { HallucinationHunt } from '../exercises/HallucinationHunt'
+import { Quiz } from '../exercises/Quiz'
+import { ListaRecursos, Recursos } from '../components/Recursos'
+import { PROPIEDADES } from '../content/recursos'
+
+## Antes de la sesión (opcional)
+
+Si tenés un rato antes, esto suma, en este orden:
+
+1. Ejercicio de esta página (20 min): la cacería, los tres informes. Hacelos antes de leer el
+   resto de la página, porque el ejercicio pierde gracia si sabés qué buscar.
+2. Lectura (10 min): la sección de las cuatro propiedades y la de política de uso, para
+   llegar con vocabulario y con opinión formada.
+
+Tené a mano **tu caso en una página**, la tarea de ayer: en la sesión 8 pasa por el protocolo
+que se arma acá.
+
+<Recursos sesion={7} />
+
+## Todo el curso venía sembrando esto
+
+Alucinaciones el lunes, confidencialidad y verificación número por número el martes, agentes que
+actúan ayer. Hoy los junta y los convierte en reglas que se puedan aplicar el lunes a la mañana.
+En la sesión 8 esas reglas se usan dos veces: contra el caso prearmado y contra el caso de cada
+empresa.
+
+## Cazar antes de teorizar
+
+La forma más rápida de entender cómo se equivoca un modelo es leer con atención algo que escribió.
+Los tres informes del ejercicio tienen errores plantados, y todos son de los que aparecen de
+verdad: cifras inventadas con demasiada precisión, causas que suenan razonables y no salen de
+ningún dato, citas completas de artículos que no existen, y normativa recitada de memoria.
+
+El puntaje mide dos cosas a propósito: cuántas invenciones encontraste y cuántas afirmaciones sanas
+marcaste de más. Desconfiar de todo no es prudencia, es otra forma de no leer.
+
+<HallucinationHunt sesion={7} />
+
+## Cuatro propiedades, y cómo falla cada una
+
+El lunes anunciamos cuatro maneras de fallar como hoja de ruta del curso. Acá tienen nombre, y el
+nombre no es una etiqueta: es la propiedad del modelo de la que sale cada una. No son cuatro
+defectos, son cuatro capacidades miradas desde el borde, donde se terminan. Por eso el arreglo
+cambia según cuál te tocó, y por eso conviene diagnosticar antes de reescribir el prompt por
+cuarta vez.
+
+| La propiedad | Cómo se ve la falla | El arreglo |
+| --- | --- | --- |
+| **Predice el próximo token** (sesión 2) | Escribe algo que no existe con el mismo tono con el que escribe lo que sí. La forma del dato queda impecable. | No lo uses de fuente. El dato lo traés vos, él lo redacta. |
+| **Conocimiento** (sesión 5) | Seguro y equivocado sobre un hecho puntual: lo reciente, lo local, lo interno, lo tuyo. | Adjuntale el documento. Con el texto delante deja de recordar y pasa a leer. |
+| **Memoria de trabajo** (sesiones 2 y 6) | Se olvida de una instrucción de hace veinte mensajes, se contradice, pierde de vista el objetivo. | Conversaciones cortas, una tarea por vez, y repetile lo que no puede perder. |
+| **Control de la salida** (sesión 3) | Hace algo parecido a lo que pediste y no lo que pediste: cambia el formato, se pasa de largo, vuelve al tono de siempre. | Describí mejor el resultado, o mostrale un ejemplo. |
+
+La tabla es el índice del curso leído al revés. Cada fila se trabajó donde correspondía, con su
+ejercicio al lado. Lo que faltaba era verlas juntas y poder preguntarse, frente a un error
+concreto, cuál de las cuatro se activó.
+
+En el trabajo real casi nunca viene una sola. Una consulta larga sobre una norma que no le
+adjuntaste falla por conocimiento, porque nunca leyó esa norma, y también por memoria, porque la
+instrucción de citar textual quedó doce mensajes atrás. El resultado se lee como una única
+respuesta mala. Ahí está el valor de separar las causas: si le atribuís al prompt lo que era falta
+de documento, vas a reescribirlo cuatro veces y el modelo va a seguir inventando con prolijidad.
+
+El diagnóstico te dice qué arreglo aplicar. No te dice cuánto conviene verificar antes de mandar el
+texto, porque eso ya no depende del modelo: depende de dónde termina lo que escribiste. De eso se
+ocupa la sección que sigue.
+
+Esta forma de ordenar los errores por su causa sale de un curso corto y gratuito de Anthropic. Está
+en inglés, es opcional, y no hace falta para seguir leyendo.
+
+<ListaRecursos items={PROPIEDADES} titulo="El marco original (opcional, en inglés)" />
+
+## El protocolo de verificación
+
+La regla que deja la cacería es corta: **lo verificable es lo que se deriva de lo que le diste; lo
+inventado es lo que tuvo que completar**. Un resumen de tu planilla suele estar bien. Una causa,
+una cita, un artículo de una norma o una estimación de beneficio casi nunca lo están.
+
+De ahí sale un protocolo corto, que se ajusta al costo del error:
+
+- **Borrador que vas a reescribir igual:** no se verifica, se reescribe. Un correo, un primer
+  esquema.
+- **Texto que sale con tu nombre:** se verifica contra la fuente todo dato puntual (cifras, fechas,
+  nombres). La prosa es tuya, los datos son de alguien.
+- **Cifra que entra en un informe firmado, una decisión o un documento contractual:** fuente
+  primaria a la vista, sin excepción. Si no podés abrir la fuente en dos minutos, el número no
+  entra.
+- **Cualquier cosa sobre normativa:** con el texto de la norma adjunto, nunca de memoria. El costo
+  del error acá es legal, no reputacional.
+
+## Confidencialidad, en concreto
+
+La regla del primer día, si no lo pondrías en un correo a un desconocido no va al chat, alcanza
+para empezar y no alcanza para una empresa. La versión operativa es un mapa de tres niveles:
+
+**Nunca, en ninguna herramienta externa:** producción real por pozo, reservas, precios y cláusulas
+de contratos, datos de socios, información de personas, cualquier cosa bajo acuerdo de
+confidencialidad.
+
+**Solo en herramientas contratadas por la empresa**, con acuerdo de tratamiento de datos y sin
+entrenamiento sobre lo que subís: documentos internos no críticos, procedimientos, correspondencia
+ordinaria.
+
+**En cualquier herramienta, incluso gratuita:** información pública, datos históricos ya
+publicados, textos sin datos propios, y datos inventados que imiten la estructura de los tuyos.
+Esta última categoría es más útil de lo que parece: para probar un análisis o afinar un prompt,
+una planilla sintética con las mismas columnas funciona igual de bien.
+
+Esta cohorte tiene un borde más que otras: en la sala hay cuatro empresas que compiten entre sí, y
+en algún bloque son socias. El chat compartido del curso es una herramienta externa para las otras
+tres. Lo que va al primer nivel no se dice ahí, y la ronda de datos de hoy se hace con la
+categoría del dato, no con el dato: "el pronóstico mensual de un campo", no el pronóstico.
+
+## Infraestructura crítica
+
+Acá hay que ser directo. "Conectemos un agente al sistema de control" es una frase que tiene que
+encender todas las alarmas, y no porque el modelo sea tonto.
+
+El motivo es el de ayer. El loop del agente funciona porque el error vuelve y se corrige: leyó mal,
+el resultado salió vacío, reintentó. Ese mecanismo supone que equivocarse es barato y reversible.
+En un sistema que opera equipos, ninguna de las dos cosas es cierta. Un paso equivocado no vuelve
+como mensaje de error: vuelve como una válvula en la posición que no era.
+
+A eso se suma que un modelo de lenguaje no tiene garantías de comportamiento. No podés demostrar
+que nunca va a hacer algo; podés observar que hasta ahora no lo hizo. Los sistemas de seguridad
+industriales se diseñan al revés, sobre garantías demostrables y modos de falla conocidos. Son dos
+culturas de ingeniería incompatibles, y la incompatibilidad no se arregla con un prompt mejor.
+
+La separación práctica es clara: los asistentes trabajan sobre **copias de datos**, del lado de la
+oficina, y producen recomendaciones que una persona ejecuta. Los sistemas de supervisión y
+adquisición de datos (SCADA) y el resto de la tecnología de operaciones (OT) quedan en su propia
+red, y el asistente no la toca. Entre el modelo y cualquier cosa que se mueva en el campo hay un
+humano con nombre y apellido. Eso no es desconfianza en la tecnología, es la misma lógica por la
+que un cálculo de ingeniería lo firma alguien.
+
+## Esto ya pasó, con fuentes
+
+Nada de esta página es hipotético. Cinco incidentes documentados, cada uno pegado a una regla de
+las de arriba:
+
+- **Deloitte, octubre de 2025.** Un informe de AU$ 440,000 para el gobierno australiano salió con
+  citas académicas inventadas y una cita judicial falsa; la firma
+  [devolvió parte de los honorarios](https://www.theguardian.com/australia-news/2025/oct/06/deloitte-to-pay-money-back-to-albanese-government-after-using-ai-in-440000-report).
+  Lo destapó un investigador que abrió las citas.
+- **Los abogados sancionados, 2023 a hoy.** Un
+  [registro público](https://www.damiencharlotin.com/hallucinations/) junta los fallos judiciales
+  con citas inventadas por inteligencia artificial: ya pasa los 1,900 casos. La fila de normativa
+  del protocolo existe por esto.
+- **Replit, julio de 2025.** Un agente de programación
+  [borró la base de datos de producción](https://incidentdatabase.ai/cite/1152/) de una empresa en
+  pleno congelamiento de cambios, y después informó que la recuperación era imposible (no lo era).
+  El error que no vuelve como mensaje, en versión de manual.
+- **Air Canada, febrero de 2024.** Su chatbot inventó una política de descuentos y
+  [un tribunal obligó a la aerolínea a cumplirla](https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know).
+  Lo que tu herramienta dice, lo dijo tu empresa.
+- **Anthropic, noviembre de 2025.** El
+  [primer caso reportado](https://www.anthropic.com/news/disrupting-AI-espionage) de espionaje
+  informático orquestado con agentes de inteligencia artificial, contra unas treinta
+  organizaciones, varias de infraestructura. La sección de arriba no es exceso de cautela.
+
+## La política de uso, en una página
+
+Salimos del bloque con un borrador editable que cubre cinco puntos: qué herramientas están
+aprobadas y cuáles no; el mapa de datos de tres niveles de más arriba; el protocolo de
+verificación según el destino del texto; qué hay que declarar cuando un documento se hizo con
+asistencia; y a quién se le consulta cuando aparece un caso nuevo. Ese último punto es el que más
+se olvida y el que hace que la política siga viva.
+
+El borrador está acá:
+[politica-uso-ia-borrador.docx](descargas/politica-uso-ia-borrador.docx). Se abre en Word o en
+cualquier procesador, y los corchetes marcan lo que cada empresa completa. En la sesión lo
+llenamos con lo que salga de los bloques: los datos clasificados entran al punto 2, el protocolo
+al punto 3. Cada empresa se lleva su copia y la termina con su gente.
+
+## En la sesión en vivo (2 h)
+
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| Apertura | 8 min | Las ventanas del día y el caso de cada uno a mano |
+| La cacería | 20 min | Invenciones cazadas en vivo, cada una con su causa |
+| El protocolo | 25 min | Cuánto verificar según el costo del error |
+| Datos de la empresa | 20 min | Datos reales en los tres niveles, y el borde entre cuatro empresas |
+| Agentes y operación | 20 min | Donde el error no es reversible, el loop no sirve |
+| La política | 17 min | El borrador de una página, redactado en vivo |
+| Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 8 |
+
+<Quiz data="quiz_s7" sesion={7} />
+
+Después de la pausa, la sesión 8 le aplica estas reglas al caso prearmado y al caso de tu empresa.

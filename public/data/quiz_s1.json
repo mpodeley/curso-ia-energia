@@ -48,112 +48,24 @@
       ]
     },
     {
-      "pregunta": "Le pedís al modelo que cuente cuántas letras \"r\" tiene una palabra y se equivoca. ¿Por qué?",
+      "pregunta": "En la demo, el chatbot citó tres papers de la SPE con su número, y ninguno existe. ¿Qué tipo de falla es, y qué se hace con ella?",
       "opciones": [
         {
-          "texto": "Porque no lee letras: lee tokens, que son pedazos de palabra. Contar caracteres exige ver algo que el modelo no tiene delante.",
+          "texto": "Le faltaba el dato: con los papers correctos pegados en la conversación, no vuelve a pasar.",
+          "explicacion": "Eso sirve cuando el dato existe y el modelo nunca lo leyó, como la cifra del reporte diario de la ARCH. Acá no hay documento que traerle: los papers no existen."
+        },
+        {
+          "texto": "El dato no existe en ninguna parte y el modelo igual produjo algo con la forma exacta de una cita. No se arregla: se verifica, buscando cada número en la fuente.",
           "correcta": true,
-          "explicacion": "Exacto. Para el modelo la palabra puede ser dos o tres piezas, y adentro de cada pieza no distingue letras. Por eso también falla con aritmética larga."
+          "explicacion": "Es la segunda de las dos maneras de equivocarse. Traerle documentos no la elimina, porque el modelo completa la forma de un dato aunque el dato no exista. La defensa es verificar, y la sesión 7 convierte eso en un protocolo."
         },
         {
-          "texto": "Porque no le pusiste suficiente contexto en el prompt.",
-          "explicacion": "El contexto no cambia nada acá. El problema es anterior al prompt: está en cómo el modelo ve el texto."
+          "texto": "Es un error de tipeo: los papers existen, con números parecidos.",
+          "explicacion": "A veces algún número coincide con un paper real sobre otro tema, pero eso no lo vuelve una cita correcta. El modelo no buscó nada: armó la cita más plausible."
         },
         {
-          "texto": "Porque los modelos son malos en matemática en general.",
-          "explicacion": "Es una consecuencia, no la causa, y además no es del todo cierto: con una herramienta de cálculo aciertan. El origen del problema es la tokenización."
-        },
-        {
-          "texto": "Porque la temperatura estaba muy alta.",
-          "explicacion": "La temperatura cambia cuánto riesgo toma al elegir, no le da acceso a las letras. Con temperatura cero se equivoca igual."
-        }
-      ]
-    },
-    {
-      "pregunta": "En el laboratorio, \"Vaca ___\" daba 90% de probabilidad a \"Muerta\". ¿Qué significa esa seguridad?",
-      "opciones": [
-        {
-          "texto": "Que el modelo verificó el dato antes de responder.",
-          "explicacion": "No hay ninguna verificación en el proceso. Solo hay una distribución de probabilidad sobre el próximo token."
-        },
-        {
-          "texto": "Que el 90% de las veces que respondió esa pregunta acertó.",
-          "explicacion": "No es una tasa de acierto histórica. Es la probabilidad que le asigna al próximo token en este contexto puntual."
-        },
-        {
-          "texto": "Que esa combinación aparece muchísimo en el texto con el que se entrenó. La seguridad viene de la frecuencia, no de la verdad.",
-          "correcta": true,
-          "explicacion": "Y de ahí sale la trampa: el modelo suena igual de seguro cuando la frecuencia es alta y cuando está inventando, porque el tono no depende de la probabilidad."
-        },
-        {
-          "texto": "Que hay un 10% de posibilidades de que el dato sea falso.",
-          "explicacion": "La probabilidad es sobre qué palabra sigue, no sobre si el enunciado es verdadero. Son dos cosas distintas que es fácil confundir."
-        }
-      ]
-    },
-    {
-      "pregunta": "En una conversación larga, el modelo dejó de respetar una regla que pusiste en el primer mensaje. ¿Qué es lo más probable?",
-      "opciones": [
-        {
-          "texto": "Se confundió porque la temperatura estaba alta.",
-          "explicacion": "La temperatura elige entre continuaciones candidatas; no decide qué parte de la conversación tiene delante el modelo."
-        },
-        {
-          "texto": "El modelo se cansa en conversaciones largas y empieza a ignorar instrucciones.",
-          "explicacion": "No hay nada que se canse: cada respuesta se calcula igual que la primera. Lo que cambia no es el esfuerzo, es qué parte de la conversación entra en la ventana."
-        },
-        {
-          "texto": "La conversación creció más que la ventana de contexto y el primer mensaje quedó afuera. Para el modelo, esa regla ya no existe.",
-          "correcta": true,
-          "explicacion": "Y no avisa: lo que sale de la ventana no se \"olvidó\", directamente dejó de estar, y el modelo no sabe que alguna vez estuvo. Por eso las instrucciones importantes conviene repetirlas cada tanto."
-        },
-        {
-          "texto": "Hay que escribir la regla de nuevo, con más énfasis.",
-          "explicacion": "Repetirla sí funciona, pero no por el énfasis: funciona porque la vuelve a meter en la ventana. El subrayado no le agrega nada a un texto que el modelo ya no tiene delante."
-        }
-      ]
-    },
-    {
-      "pregunta": "A partir de la mecánica que vimos, ¿por qué alucina un modelo?",
-      "opciones": [
-        {
-          "texto": "Porque tiene errores en los datos de entrenamiento que hay que ir corrigiendo.",
-          "explicacion": "Los datos sucios agregan errores, pero un modelo entrenado con datos perfectos alucinaría igual. El mecanismo es otro."
-        },
-        {
-          "texto": "Porque a veces se queda sin contexto y rellena.",
-          "explicacion": "Quedarse sin contexto empeora las cosas, pero alucina también con todo el contexto disponible."
-        },
-        {
-          "texto": "Porque los desarrolladores todavía no terminaron de ajustarlo.",
-          "explicacion": "Los ajustes reducen la frecuencia, no eliminan el mecanismo. Es una propiedad de cómo funciona, no un error pendiente de arreglo."
-        },
-        {
-          "texto": "Porque su única operación es continuar el texto de la forma más plausible, y una continuación plausible puede ser falsa.",
-          "correcta": true,
-          "explicacion": "No hay un paso donde consulte si algo es cierto. Cuando no tiene el dato, igual produce la continuación que mejor encaja, y esa continuación tiene la forma de un dato verdadero."
-        }
-      ]
-    },
-    {
-      "pregunta": "Le preguntás al chatbot la profundidad de un pozo del campo Sacha y te da una cifra exacta, con tono seguro. ¿Qué corresponde hacer?",
-      "opciones": [
-        {
-          "texto": "Tratarla como no verificada: el tono no es evidencia. Buscar la fuente primaria antes de usar la cifra en nada que importe.",
-          "correcta": true,
-          "explicacion": "Regla de oro del curso: la salida de un modelo grande de lenguaje es un borrador plausible, no una fuente. Datos puntuales y citas se verifican siempre."
-        },
-        {
-          "texto": "Usarla: si la dice con esa seguridad, la sabe.",
-          "explicacion": "El tono seguro es un estilo aprendido en la segunda etapa del entrenamiento, no una medida de confianza. El modelo genera la continuación más plausible, aunque sea inventada."
-        },
-        {
-          "texto": "Preguntarle si está seguro, y confiar si dice que sí.",
-          "explicacion": "Te va a decir que sí con la misma seguridad con la que inventó la cifra. Preguntarle al modelo por su propia confiabilidad no es verificación."
-        },
-        {
-          "texto": "Pedirle la cifra dos veces y quedarse con el promedio.",
-          "explicacion": "Dos muestras de la misma máquina de plausibilidad no hacen una verificación. Puede darte el mismo número inventado dos veces."
+          "texto": "Pasó porque la pregunta estaba en español y los papers están en inglés.",
+          "explicacion": "El idioma cambia cuántos tokens ocupa la pregunta, no si el modelo inventa. En inglés las citas inventadas salen igual de prolijas."
         }
       ]
     },

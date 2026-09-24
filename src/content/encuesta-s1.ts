@@ -10,7 +10,7 @@
 //
 // Primera edición: de acá salían la shortlist de casos de la S5 y el caso real de
 // la S8. Segunda edición: el caso viene prearmado; la encuesta alimenta énfasis y
-// ejemplos, y el bloque D siembra el taller "el caso de tu empresa" del día 3.
+// ejemplos, y el bloque D siembra el taller "el caso de tu empresa" de la sesión 6.
 
 export type TipoPregunta = 'texto-corto' | 'texto-largo' | 'opcion-unica' | 'opcion-multiple'
 
@@ -148,7 +148,7 @@ export const PREGUNTAS: Pregunta[] = [
   },
   {
     // Segunda edición (reemplaza a d2-datos, que preguntaba por aportar datos al
-    // caso final): siembra el taller del día 3, donde cada empresa escribe su caso.
+    // caso final): siembra el taller de la sesión 6, donde cada empresa escribe su caso.
     id: 'd4-primer-problema',
     bloque: 'd',
     texto:

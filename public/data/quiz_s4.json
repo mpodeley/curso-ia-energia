@@ -1,137 +1,71 @@
 {
-  "generated_at": "2026-09-15T00:00:00+00:00",
-  "source": "elaboración propia para el curso",
+  "generated_at": "2026-09-24T12:00:00+00:00",
+  "source": "elaboración propia para el curso (segunda edición: las preguntas de análisis de datos del quiz del día 2)",
   "source_date": null,
   "data": [
     {
-      "pregunta": "De estas cuatro afirmaciones de un informe generado con tu planilla adjunta, ¿cuál es la que más probablemente esté inventada?",
+      "pregunta": "Le subiste el reporte diario de la ARCH y te devolvió la tabla 1 completa y prolija, con subtotal y total nacional. ¿Qué hacés antes de usarla?",
       "opciones": [
         {
-          "texto": "\"La producción de gas del bloque en junio fue de 1,847,320 metros cúbicos.\"",
-          "explicacion": "Sale de la planilla y la podés recalcular en dos minutos. Cuando el modelo suma números que le diste, suele acertar."
+          "texto": "Sumar las filas: si la suma da el total nacional que figura, la tabla está bien.",
+          "explicacion": "La suma puede cerrar con dos errores que se compensan, no cubre las columnas de estimado y cumplimiento, y el modelo puede haber calculado el total en vez de copiarlo: cerraría aunque una fila esté mal."
         },
         {
-          "texto": "\"Esto representa una caída del 4.2% respecto de mayo.\"",
-          "explicacion": "También se deriva de los mismos datos. Una cuenta simple sobre lo que le entregaste es terreno seguro."
+          "texto": "Pedirle que la extraiga de nuevo en un chat nuevo y quedarte con la versión que se repite.",
+          "explicacion": "Dos extracciones pueden coincidir en el mismo error, porque leen la misma celda ambigua de la misma manera. Repetir no es verificar."
         },
         {
-          "texto": "\"La caída se explica por la parada programada de la planta compresora entre el 8 y el 11 de junio.\"",
+          "texto": "Verificarla contra el PDF número por número, repartiendo filas si son muchas, y mirar primero las celdas donde el original mezcla formatos, como el 23.607 sin decimales.",
           "correcta": true,
-          "explicacion": "En la planilla hay caudales, no eventos operativos. El modelo no puede saber que hubo una parada ni sus fechas: construyó la explicación más plausible y la escribió con el mismo tono que las cifras reales."
+          "explicacion": "El error de extracción no avisa: una coma decimal leída como punto de miles, una fila de la tabla de al lado colada, un dígito bailado. Se encuentra mirando, y ochenta números entre seis personas son un par de minutos."
         },
         {
-          "texto": "\"Dos pozos no reportaron producción durante la segunda quincena.\"",
-          "explicacion": "Los huecos están en la planilla y se ven contando filas vacías. El modelo describe lo que ve, y ahí acierta."
+          "texto": "Nada: un PDF oficial es un dato de origen, y el modelo solo lo transcribió.",
+          "explicacion": "El original es oficial; la transcripción no. Entre el PDF y tu tabla hubo una lectura automática de celdas fusionadas, formatos mezclados y texto corrido, y ahí es donde se cuelan los errores."
         }
       ]
     },
     {
-      "pregunta": "En la cacería marcaste todas las afirmaciones como sospechosas y encontraste todas las invenciones. ¿Por qué el puntaje no es perfecto?",
+      "pregunta": "Ajustaste una curva de declinación a un pozo real y el modelo pasa muy cerca de todos los puntos. ¿Qué probaste?",
       "opciones": [
         {
-          "texto": "Por un detalle del puntaje que no importa en la práctica.",
-          "explicacion": "Importa, y bastante: es la diferencia entre una herramienta que te ahorra tiempo y una que no."
+          "texto": "Que entendiste el comportamiento del reservorio.",
+          "explicacion": "Es la conclusión tentadora y es la equivocada. La curva medida incluye compresión, restricciones de planta y estado del pozo, no solo reservorio."
         },
         {
-          "texto": "Porque desconfiar de todo cuesta el mismo tiempo que escribirlo a mano, y hace que la herramienta deje de servir.",
+          "texto": "Que podés proyectar la producción de los próximos diez años con confianza.",
+          "explicacion": "La cola de la curva la controla b, que es justamente el parámetro peor determinado. Un ajuste bueno sobre el pasado puede dar proyecciones muy distintas."
+        },
+        {
+          "texto": "Que el pozo no tuvo intervenciones.",
+          "explicacion": "Una intervención suave o un cambio gradual de restricción puede pasar desapercibido dentro de una curva que ajusta bien."
+        },
+        {
+          "texto": "Que la producción cayó de forma sostenida, sin interrupciones grandes. Nada más que eso.",
           "correcta": true,
-          "explicacion": "La habilidad que se entrena es la puntería: saber qué clase de afirmación exige fuente. Sin eso, o confiás de más o verificás todo, y las dos salen caras."
-        },
-        {
-          "texto": "Porque el ejercicio premia la velocidad.",
-          "explicacion": "El tiempo no entra en el puntaje. Lo que se mide es cuántas invenciones encontraste y cuántas afirmaciones sanas marcaste de más."
-        },
-        {
-          "texto": "Porque siempre hay que dejar alguna afirmación sin marcar.",
-          "explicacion": "No es una cuota. Si un texto tuviera todo inventado, marcarlo todo sería correcto."
+          "explicacion": "Un buen ajuste dice que la serie es suave, no que sepas por qué. Separar despresurización de efectos operativos necesita caudales corregidos por horas de operación y presión de boca."
         }
       ]
     },
     {
-      "pregunta": "Alguien propone conectar un agente al sistema de control de la planta para que optimice en tiempo real. ¿Cuál es la objeción más fuerte?",
+      "pregunta": "El chatbot te escribió código para analizar tu planilla y devolvió un número razonable. ¿Qué chequeás?",
       "opciones": [
         {
-          "texto": "Que los modelos todavía no son lo bastante precisos para esa tarea.",
-          "explicacion": "La precisión mejora todos los años. Si el problema fuera ese, alcanzaría con esperar, y no alcanza."
-        },
-        {
-          "texto": "Que el loop del agente funciona porque el error vuelve y se corrige, y ahí un paso equivocado no vuelve como mensaje de error sino como una válvula en la posición que no era.",
+          "texto": "Le pedís que te muestre el código y el conteo de filas antes y después de cada filtro, y rastreás un caso a mano en la planilla.",
           "correcta": true,
-          "explicacion": "Toda la utilidad del agente supone que equivocarse es barato y reversible. En un sistema que opera equipos, ninguna de las dos cosas es cierta."
+          "explicacion": "Los conteos delatan los filtros que se comieron datos, y un caso rastreado a mano cierra o abre toda la discusión en dos minutos."
         },
         {
-          "texto": "Que es caro de implementar.",
-          "explicacion": "El costo es un problema de proyecto. Acá el problema es de seguridad, y no se arregla con presupuesto."
+          "texto": "Nada: si el número es razonable y el código corrió sin errores, está bien.",
+          "explicacion": "Un filtro mal escrito no rompe nada. Devuelve menos filas y sigue, y el resultado sigue pareciendo razonable."
         },
         {
-          "texto": "Que la empresa no tiene todavía una política de uso.",
-          "explicacion": "La política hace falta, pero escribirla no vuelve segura una arquitectura que no lo es."
-        }
-      ]
-    },
-    {
-      "pregunta": "Tenés que responder una consulta sobre qué obliga la normativa para informar un venteo. ¿Cómo lo hacés?",
-      "opciones": [
-        {
-          "texto": "Le preguntás al chatbot y usás la respuesta, que suele citar el decreto y el artículo.",
-          "explicacion": "Que cite un número de decreto y un artículo no significa que existan. Las respuestas normativas de memoria son el peor caso de uso, porque el costo del error es legal."
+          "texto": "Le preguntás si está seguro del resultado.",
+          "explicacion": "Va a decir que sí con la misma seguridad con la que se equivocó. Preguntarle al modelo por su confiabilidad no es verificar."
         },
         {
-          "texto": "Le adjuntás el texto de la norma y le pedís que responda solo con eso, citando el artículo, y después abrís el artículo citado.",
-          "correcta": true,
-          "explicacion": "Con el texto a la vista el modelo pasa de recordar a leer, que es donde es confiable. El chequeo final del artículo cuesta un minuto y cierra el tema."
-        },
-        {
-          "texto": "Le preguntás y después le pedís que confirme si está seguro.",
-          "explicacion": "Va a confirmar con la misma seguridad con la que inventó. La confirmación no agrega información."
-        },
-        {
-          "texto": "Le preguntás a dos chatbots distintos y comparás.",
-          "explicacion": "Dos modelos entrenados con textos parecidos pueden coincidir en el mismo invento plausible. Coincidir no es verificar."
-        }
-      ]
-    },
-    {
-      "pregunta": "En el Capítulo IV, seis pozos de la cuenca Noroeste figuran como inyección de agua y uno solo tiene volumen inyectado en 91 meses. ¿Qué te dice eso sobre la mitad del screening que revisa la inyección existente?",
-      "opciones": [
-        {
-          "texto": "Que el dataset está mal cargado y hay que pedir otra fuente.",
-          "explicacion": "El dato es coherente con el resto del registro: tres de los seis están abandonados y el único activo figura parado. Antes de dudar de la fuente, se lee la columna de tipo de pozo."
-        },
-        {
-          "texto": "Que sobre este análogo esa mitad no se puede correr, porque la recuperación secundaria en el norte argentino está en pasado; queda la otra mitad, dónde tendría sentido inyectar.",
-          "correcta": true,
-          "explicacion": "Es el hallazgo del caso. Un análogo público sirve para lo que sus datos contienen, y decir con precisión qué parte de la pregunta no contesta es parte del resultado."
-        },
-        {
-          "texto": "Que la inyección de agua no sirve en campos maduros.",
-          "explicacion": "Una cuenca donde el waterflooding ya terminó no prueba nada sobre su rendimiento: prueba que un proyecto de recuperación secundaria tiene un final, que es otra cosa."
-        },
-        {
-          "texto": "Que los 26 sumideros son inyectores y el screening puede usarlos.",
-          "explicacion": "Un sumidero dispone agua producida en una formación que no produce. No empuja petróleo, así que no entra en un screening de recuperación secundaria."
-        }
-      ]
-    },
-    {
-      "pregunta": "Tu empresa propone un piloto de noventa días: \"usar más inteligencia artificial en el área de reservorios\". ¿Qué le falta para que sea una fila válida de la hoja de ruta?",
-      "opciones": [
-        {
-          "texto": "Un presupuesto para licencias.",
-          "explicacion": "Las licencias son la fila de decisión corporativa, no la del piloto. Un piloto de noventa días puede correr con lo que ya está aprobado."
-        },
-        {
-          "texto": "Un modelo más potente que el que hay disponible hoy.",
-          "explicacion": "La capacidad es lo único que mejora sola. Lo que no se construye solo es lo que falta acá."
-        },
-        {
-          "texto": "Que lo apruebe el área de sistemas antes de arrancar.",
-          "explicacion": "Puede hacer falta según la herramienta, pero no convierte el enunciado en algo que se pueda cerrar: sigue sin decir cuándo funcionó."
-        },
-        {
-          "texto": "Un dueño con nombre, y un criterio de éxito observable escrito antes de arrancar, como \"los informes de turno salen con borrador asistido desde el lunes\".",
-          "correcta": true,
-          "explicacion": "Un piloto sin criterio de éxito escrito no termina nunca: se diluye y después nadie sabe si funcionó. Y el criterio se cuenta, no se estima: informes, consultas resueltas, horas de un análisis concreto."
+          "texto": "Le pedís que lo calcule de nuevo y comparás.",
+          "explicacion": "Si el código tiene el mismo error, va a dar el mismo número las dos veces. Repetir no es verificar."
         }
       ]
     }

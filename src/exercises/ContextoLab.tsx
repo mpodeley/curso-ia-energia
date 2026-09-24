@@ -178,7 +178,7 @@ export function ContextoLab({ sesion = 2 }: { sesion?: number }) {
           Tres cosas, en orden de esfuerzo. Conversaciones cortas y una tarea por vez: si cambiaste
           de tema, abrí un chat nuevo. Repetir lo que no se puede perder, en el mismo mensaje donde
           hacés el pedido importante, aunque ya lo hayas dicho. Y para documentos largos, no pegar
-          todo: buscar el pedazo que hace falta y pegar solo eso, que es el día 3.
+          todo: buscar el pedazo que hace falta y pegar solo eso, que es la sesión 5.
         </p>
         <p style={{ margin: `${space.sm}px 0 0` }}>
           Las ventanas de hoy son mucho más grandes que las de este ejercicio, del orden de cientos

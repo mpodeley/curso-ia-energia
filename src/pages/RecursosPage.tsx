@@ -5,7 +5,7 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       { nombre: 'ChatGPT', href: 'https://chatgpt.com', nota: 'chatbot de OpenAI — el nivel gratuito alcanza para todo el curso' },
       { nombre: 'Claude', href: 'https://claude.ai', nota: 'chatbot de Anthropic — fuerte en documentos largos y redacción' },
       { nombre: 'Gemini', href: 'https://gemini.google.com', nota: 'chatbot de Google — integrado con el ecosistema Google' },
-      { nombre: 'NotebookLM', href: 'https://notebooklm.google.com', nota: 'conversar con tus propios documentos, con citas (día 3)' },
+      { nombre: 'NotebookLM', href: 'https://notebooklm.google.com', nota: 'conversar con tus propios documentos, con citas (sesión 5)' },
     ],
   },
   {
@@ -19,7 +19,7 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       {
         nombre: 'Reporte diario de producción — Ecuador (ARCH)',
         href: 'https://controlhidrocarburos.gob.ec/cifras-del-sector-hidrocarburifero/',
-        nota: 'un PDF de una página por día: producción por compañía y por bloque, estado de pozos y novedades con causa de cierre (de ahí el ejercicio del día 2)',
+        nota: 'un PDF de una página por día: producción por compañía y por bloque, estado de pozos y novedades con causa de cierre (de ahí el ejercicio de la sesión 4)',
       },
     ],
   },
@@ -39,12 +39,12 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       {
         nombre: 'Anthropic — Prompt engineering overview',
         href: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview',
-        nota: 'la guía oficial de escritura de prompts (día 2); pensada para programadores, las técnicas sirven en cualquier chatbot, en inglés',
+        nota: 'la guía oficial de escritura de prompts (sesión 3); pensada para programadores, las técnicas sirven en cualquier chatbot, en inglés',
       },
       {
         nombre: 'Anthropic — Building effective agents',
         href: 'https://www.anthropic.com/engineering/building-effective-agents',
-        nota: 'qué es un agente y cuándo no conviene armar uno (día 3); el mejor antídoto contra el humo del género, en inglés',
+        nota: 'qué es un agente y cuándo no conviene armar uno (sesión 6); el mejor antídoto contra el humo del género, en inglés',
       },
       {
         nombre: 'BlueDot — Future of AI (curso corto)',
@@ -54,7 +54,7 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       {
         nombre: 'Anthropic — The four properties of AI',
         href: 'https://claude.com/resources/tutorials/the-4-properties-of-ai',
-        nota: 'las cuatro propiedades de la tabla del día 4, en cinco minutos, en inglés y sin registrarse',
+        nota: 'las cuatro propiedades de la tabla de la sesión 7, en cinco minutos, en inglés y sin registrarse',
       },
       {
         nombre: 'Anthropic — AI Capabilities and Limitations (curso corto)',
@@ -64,7 +64,7 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
     ],
   },
   {
-    titulo: 'Mirar adentro del modelo (día 1)',
+    titulo: 'Mirar adentro del modelo (sesión 2)',
     items: [
       {
         nombre: 'LeNet leyendo números escritos a mano, 1989',

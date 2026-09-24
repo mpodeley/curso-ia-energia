@@ -17,8 +17,8 @@ touches it).
 **Editions live in git history, not in directories.** `main` is always the edition being
 prepared or taught. The first edition (YPFB Andina, 8 sessions × 2 h, August 2026) is frozen at
 tag `ypfb-2026-08` and at the archived Pages repo `mpodeley/curso-energia-ypfb`; never rebuild
-or redeploy it. The second edition (PCR, CGC, Tecpetrol, Andes Petroleum; 4 sessions × 4 h,
-2026-09-28 to 2026-10-01) is what `main` holds now; its cohort profile and programme are in
+or redeploy it. The second edition (PCR, CGC, Tecpetrol, Andes Petroleum; 8 sessions × 2 h,
+two per day, 2026-09-28 to 2026-10-01) is what `main` holds now; its cohort profile and programme are in
 `docs/edicion-2026-09/`.
 
 One thing *does* leave the browser, and only when the student presses a button: the session-1
@@ -45,7 +45,7 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
 - `public/data/*.json` — precomputed datasets with the `{generated_at, source, source_date, data}`
   envelope; regenerated offline by `scripts/build_data.py` (tiktoken for real BPE splits). Only
   JSON ships to the browser. Exception since 2026-09-15: the `quiz_sN.json` files are
-  hand-authored per day and `build_data.py` never touches them — `npm run data` is safe to run
+  hand-authored per session and `build_data.py` never touches them — `npm run data` is safe to run
   while a quiz is being edited.
 - `public/descargas/` — files the student downloads to feed a chatbot (today: the 10-well
   production CSV for the session-4 batch-forecast exercise, built by
@@ -80,11 +80,15 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
 
 ## Course calibration (set 2026-09-15 for the second edition; supersedes the YPFB calibration frozen at tag ypfb-2026-08)
 
-- **Format: 4 consecutive days, Mon 28-sep to Thu 1-oct 2026, 10:00–14:00 Argentina (8:00–12:00
-  Ecuador), 4 h each, remote.** "Next session" means tomorrow. Never write "esta semana / la
-  semana pasada" for course cadence. Each day merges two sessions of the first edition (S1+S2,
-  S3+S4, S5+S6, S7+S8) into one 240-minute agenda with **two 10-minute breaks**, shown as rows
-  of the agenda table in both the MDX and the deck. A change of mode (expo → taller → ronda) at
+- **Format: 8 sessions × 2 h, two per day on 4 consecutive days, Mon 28-sep to Thu 1-oct 2026,
+  10:00–14:00 Argentina (8:00–12:00 Ecuador and Colombia), remote.** Odd session 10:00–12:00,
+  even session 12:00–14:00; same numbering and topics as the first edition (day 1 = S1+S2, day
+  2 = S3+S4, ...). Each session has 110 minutes of content and **one 10-minute break**: the odd
+  one ends with it (11:50–12:00), the even one keeps it mid-session (~13:00). Breaks are rows of
+  the agenda table in both the MDX and the deck. Split decided 2026-09-24; from 2026-09-15 to
+  then the site had four 4-hour day pages. The tarea and "Para discutir" live in the even
+  session; "tomorrow" is the next day, not the next session. Never write "esta semana / la
+  semana pasada" for course cadence. A change of mode (expo → taller → ronda) at
   least every 25 minutes.
 - **Cohort: 6 technical staff from four companies (PCR-Ecuador, CGC, Tecpetrol, Andes
   Petroleum), three countries (Ecuador, Argentina, Colombia), competitors.** Full rounds by name
@@ -97,9 +101,9 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   to do in a block goes in the notes prefixed `Martín:`. One hand on the panel buttons at a
   time (Martín's).
 - **The real case is pre-built on public data** (waterflood screening, Puesto Guardián, Capítulo
-  IV). It is shown, dissected and extended live on day 4 — not assembled between sessions from
-  the survey. The survey feeds emphasis and examples; each company writes its own one-page case
-  in the day-3 workshop and gets it critiqued on day 4.
+  IV). It is shown, dissected and extended live in session 8 — not assembled between sessions
+  from the survey. The survey feeds emphasis and examples; each company writes its own one-page
+  case in the session-6 workshop and gets it critiqued in session 8.
 - **Driving school, not mechanics.** The course teaches first steps in USING generative AI at
   work, not ML expertise. Mechanics appear only in service of use, and every mechanical piece
   must land on something the student does differently at work tomorrow. Depth goes to
@@ -112,7 +116,7 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   (Transformer Explainer), official tools and data sources. No generic-divulgation YouTube
   channels in any language. Short lists beat padded ones.
 - **Speaker notes start with a timestamp (`0:00 · …`) and end with `acumulado h:mm`; each deck
-  closes at 4:00.** A note whose first line parses as `key: value` YAML is swallowed by Marpit
+  closes at 2:00.** A note whose first line parses as `key: value` YAML is swallowed by Marpit
   as a directive and vanishes from HTML and PDF.
 - **Every session ends with takeaways**: two or three concrete practices, said in plain words
   on a closing slide.

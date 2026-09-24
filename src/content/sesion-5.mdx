@@ -1,0 +1,153 @@
+import { EmbeddingsMap } from '../exercises/EmbeddingsMap'
+import { RagDemo } from '../exercises/RagDemo'
+import { Quiz } from '../exercises/Quiz'
+import { Recursos } from '../components/Recursos'
+
+## Antes de la sesión (opcional)
+
+Lo único que pide esta sesión es la tarea de ayer: tu prompt antes y después, y las **tres
+preguntas** que le harías a un documento de tu empresa. Las preguntas se usan literalmente en
+vivo, dos veces: primero contra el cuaderno del rubro y después contra tu propio cuaderno. Si no
+llegaste, las escribís en los primeros minutos.
+
+Si tenés un rato antes, los dos ejercicios de esta página se juegan solos (primero el mapa,
+después la búsqueda, que usa lo que muestra el mapa), y podés curiosear
+[NotebookLM](https://notebooklm.google.com) con tu cuenta gratuita. Y una cosa más, de un minuto:
+elegí el documento público de tu empresa que vas a subir en el bloque "Tu cuaderno". Más abajo hay
+una lista de candidatos por empresa.
+
+<Recursos sesion={5} />
+
+## El modelo no leyó tus documentos
+
+Leyó una cantidad enorme de texto de internet. No leyó tu manual de operaciones, ni tus normas
+internas, ni el informe del campo que escribió tu compañero el mes pasado. Preguntarle sobre eso es
+pedirle que complete lo más plausible, que es exactamente la receta de una respuesta inventada con
+tono seguro.
+
+Hay dos formas de cerrar ese hueco. Una es reentrenar el modelo con tus documentos: cara, lenta y casi
+siempre innecesaria. La otra es más simple y es la que se usa: **buscar los fragmentos que responden
+la pregunta y pegarlos arriba de la pregunta**. El modelo responde con el libro abierto. Se llama
+generación aumentada por recuperación (RAG, por su sigla en inglés), y una vez que la ves funcionar
+es difícil que te siga pareciendo sofisticada.
+
+## Primero, qué significa "parecido" para un modelo
+
+Para buscar por significado hay que poder medirlo. El modelo convierte cada texto en una lista de
+números, y dos textos con sentido parecido dan listas parecidas. Todo lo demás sale de ahí.
+
+El ejercicio proyecta esas listas a un plano para que las puedas mirar. Prestá atención a la familia
+de jerga: "burro", "araña", "pescado", "camisa". El modelo aprendió esas palabras del lenguaje
+corriente, así que las ubica junto a objetos cotidianos y no junto al equipamiento del yacimiento.
+Ahí se ve, de un vistazo, qué es lo que no sabe de tu trabajo.
+
+<EmbeddingsMap sesion={5} />
+
+## Y ahora sí, buscar en tus documentos
+
+El corpus del segundo ejercicio es un manual interno inventado para el curso, y es a propósito:
+cualquier documento público de verdad podría haber estado en el entrenamiento del modelo, y entonces
+la demostración no probaría nada.
+
+Probá las preguntas que no comparten ninguna palabra con su respuesta. La que pregunta cómo evitar
+que alguien arranque el equipo mientras lo reparás la responde un fragmento que habla de "bloqueo y
+etiquetado". La de cuidarse los oídos la responde uno que dice "protección auditiva". Un buscador de
+palabras no tiene con qué encontrarlas; uno por significado sí. Esa es toda la diferencia, y es la
+razón por la que esto sirve sobre documentación técnica, que siempre está escrita en un vocabulario
+que nadie usa cuando pregunta.
+
+Mirá también el bloque del final, el que dice lo que se le manda al modelo. No hay nada más que eso.
+
+<RagDemo sesion={5} />
+
+## Dónde sigue fallando
+
+Recuperar fragmentos reduce las invenciones, no las elimina, y agrega un modo de falla nuevo: si el
+buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que sea el modelo, y
+va a estar mal **con una cita al lado**, que es peor. Por eso la regla es mirar siempre los fragmentos
+recuperados, no solo la respuesta. Si una herramienta no te los muestra, no te está dando
+verificabilidad: te está dando la apariencia de verificabilidad.
+
+Hay un segundo límite, más aburrido y más frecuente: si la respuesta no está en los documentos, no
+hay recuperación que la traiga. La herramienta no sabe lo que tu empresa nunca escribió.
+
+## El cuaderno del rubro
+
+El manual inventado prueba el mecanismo; el cuaderno que interrogamos en vivo se arma con
+documentos reales del rubro, públicos y con texto de sobra. Podés armarte el mismo en tu cuenta
+gratuita de NotebookLM: subí estos tres y agregale los tuyos.
+
+- [Reglamento de Operaciones Hidrocarburíferas](https://www.gob.ec/sites/default/files/regulations/2025-05/Documento_Reglamento-Operaciones-Hidrocarbur%C3%ADferas.pdf)
+  de Ecuador, resolución ARCERNNR-024/2021, Registro Oficial 514 del 12 de agosto de 2021 (PDF,
+  84 páginas, 191 artículos). Cómo se perfora, se completa, se produce, se reinyecta y se abandona
+  un pozo bajo la Agencia de Regulación y Control de Hidrocarburos (ARCH): el pariente real del
+  manual inventado de arriba.
+- [Reporte de Sustentabilidad 2024 de PCR](https://www.pcr.energy/wp-content/uploads/2025/09/PCR-Reporte-de-Sustentabilidad-2024-vf_compressed.pdf)
+  (PDF, 174 páginas). Una empresa de la sala contada por sí misma, con sus operaciones de
+  Argentina y Ecuador: producción, reservas, proyectos y resultados de 2024.
+- [Ley 17.319 de hidrocarburos](https://servicios.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16078/texact.htm),
+  texto actualizado en InfoLEG. El marco argentino desde 1967, con las reformas incorporadas:
+  permisos, concesiones, regalías, plazos y prórrogas. Es la ley bajo la que CGC y Tecpetrol
+  reportan al Capítulo IV.
+
+Los reportes diarios de la ARCH que ayer extrajeron a tabla también entran al cuaderno: preguntale
+lo que ayer sacaste a mano, y mirá de qué fragmento lo trae. Un cuaderno con cuatro fuentes
+distintas obliga, además, a la pregunta que importa: ¿de cuál de las cuatro sacó esto?
+
+Tres preguntas para arrancar, una por documento, escritas para que la respuesta no comparta
+vocabulario con la pregunta:
+
+1. Al reglamento: "¿Qué tengo que hacer antes de cerrar definitivamente un pozo que ya no produce?"
+   La respuesta está en los artículos de taponamiento y abandono, con otra palabra.
+2. Al reporte de PCR: "¿Cuánto petróleo produjo la empresa en Ecuador el año pasado, y en qué
+   campos?" Mirá si la cifra viene de una tabla o de un párrafo, y si el cuaderno la cita entera.
+3. A la ley: "¿Cuántos años dura una concesión de explotación y cuántas veces se puede prorrogar?"
+   La ley original y las reformas dicen cosas distintas: fijate de qué artículo sale la respuesta.
+
+## Tu cuaderno: un documento público de tu empresa
+
+El segundo cuaderno es tuyo, y arranca con un solo documento: uno **público** de tu empresa. La
+regla es la misma de ayer y no tiene excepciones en la cuenta gratuita: nada que no esté ya en
+internet. Candidatos por empresa, para que no pierdas el bloque buscando:
+
+- **PCR**: el reporte de sustentabilidad de arriba, o [la página que lo resume](https://www.pcr.energy/sustentabilidad-2024/).
+- **CGC**: la memoria anual o el informe de calificación, en la sección de inversores de
+  [cgc.energy](https://cgc.energy/).
+- **Tecpetrol**: el [Reporte Global de Sostenibilidad 2024](https://www.tecpetrol.com/media/ivsna4kt/teceptrol-reporte-global-de-sostenibilidad-2024.pdf)
+  (PDF, cubre Argentina, Ecuador y Colombia).
+- **Andes Petroleum**: una nota de prensa sobre la ampliación del contrato de Tarapoa, por ejemplo
+  [esta de Primicias](https://www.primicias.ec/noticias/economia/andes-petroleum-acuerdo-contratos-petroleo/),
+  o el reporte diario de la ARCH del día que quieras.
+
+Paso a paso, con Martín en el chat para lo que trabe:
+
+1. Entrá a [notebooklm.google.com](https://notebooklm.google.com) con una cuenta de Google personal
+   (no la corporativa, que en varias empresas tiene NotebookLM bloqueado). Tocá **Crear cuaderno**.
+2. En **Agregar fuente**, subí el PDF o pegá la dirección de la página. Un documento alcanza; si
+   subís dos, mejor, pero no más de tres hoy.
+3. Esperá a que aparezca el resumen automático y leelo con desconfianza: es la primera respuesta
+   sin pregunta, y ya puede estar citando de más.
+4. Hacele tus tres preguntas de la tarea, una por vez. Por cada respuesta, tocá el número de la cita
+   y leé el fragmento: ¿responde la pregunta, o quedó cerca del tema nada más?
+5. Anotá, para la ronda, dos cosas: una respuesta que salió bien citada y una que salió mal, o que
+   no estaba en el documento. Las dos valen lo mismo.
+
+Lo que se comparte por el chat es la experiencia, no el contenido: qué contestó bien, qué inventó,
+qué no encontró. El documento es público, pero la lista de preguntas que le hacés a tu propia
+empresa ya dice algo de tu trabajo, y en la sala hay cuatro empresas competidoras.
+
+## En la sesión en vivo (2 h)
+
+| Bloque | Tiempo | Qué hacemos |
+| --- | --- | --- |
+| Apertura y repaso de la tarea | 15 min | Las ventanas de la sesión y una ronda: la mejor de tus tres preguntas |
+| Por qué no sabe lo tuyo | 15 min | El hueco, las dos formas de cerrarlo, y qué significa "parecido" para un modelo |
+| Buscar por significado | 15 min | Las dos búsquedas del ejercicio, y el prompt aumentado que se le manda al modelo |
+| NotebookLM en vivo: el cuaderno del rubro | 32 min | Reglamento, reporte y ley interrogados con sus preguntas, mirando siempre los fragmentos |
+| Tu cuaderno: un documento público de tu empresa | 28 min | Cada uno arma el suyo y le hace sus tres preguntas; ronda de qué salió |
+| Cierre | 5 min | Lo que se llevan de la búsqueda, y qué viene después de la pausa |
+| Pausa | 10 min | A las 12:00 de Argentina (10:00 de Ecuador y Colombia) sigue la sesión 6 |
+
+<Quiz data="quiz_s5" sesion={5} />
+
+Después de la pausa, en la sesión 6, el mismo modelo deja de responder y se pone a trabajar.

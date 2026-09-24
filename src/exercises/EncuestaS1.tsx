@@ -1,8 +1,8 @@
-// La encuesta de relevamiento del día 1.
+// La encuesta de relevamiento de la sesión 1.
 //
 // Reemplaza el "(El enlace a la encuesta se comparte en vivo)" que estuvo en
 // sesion-1.mdx desde el primer commit. En la primera edición de acá salía el caso
-// real; hoy ajusta ejemplos y siembra el taller del día 3. Lo que más importa no es que
+// real; hoy ajusta ejemplos y siembra el taller de la sesión 6. Lo que más importa no es que
 // se vea linda: es que nadie pierda lo que escribió. El borrador se guarda en
 // cada tecla y, si el servidor no está, la respuesta va a la cola de reintentos.
 
@@ -44,7 +44,7 @@ export function EncuestaS1({ sesion = 1 }: { sesion?: number }) {
   if (!apiHabilitada) {
     return (
       <NotaSinServidor titulo="Encuesta de relevamiento.">
-        Se completa en el día 1 en vivo. Esta copia del sitio corre sin el servidor del curso,
+        Se completa en vivo en la sesión 1. Esta copia del sitio corre sin el servidor del curso,
         así que el formulario no está disponible acá.
       </NotaSinServidor>
     )
