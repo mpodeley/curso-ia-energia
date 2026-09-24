@@ -94,7 +94,7 @@ primera distinción práctica del curso, y la sesión 2 explica de dónde sale.
 
 ### Matías Podeley
 
-**Dicta.** Ingeniero en petróleo e industrial (ITBA). Hizo el programa Energy Innovation and
+Ingeniero en petróleo e industrial (ITBA). Hizo el programa Energy Innovation and
 Emerging Technologies de Stanford y un intercambio en informática en el INSA de Lyon, y cursa la
 certificación AI Security Professional de Practical DevSecOps. Ayuda a equipos de petróleo, gas y
 minería a convertir ideas en oportunidades de negocio, herramientas internas y proyectos concretos
@@ -102,7 +102,7 @@ con IA, datos, ingeniería y ciberseguridad.
 
 ### Martín Alvarado
 
-**Lleva el chat, los pulsos y las rondas.** Ingeniero de reservorios senior, con más de 25 años de
+Ingeniero de reservorios senior, con más de 25 años de
 trabajo para operadoras y consultoras de todo el mundo: Halliburton, Petrobras, Pluspetrol y
 Beicip-Franlab (IFPEN), y como consultor para Netherland, Sewell & Associates, Gazprom Neft, PDVSA,
 GeoPark y Wintershall Noordzee, entre otras. Simulación de yacimientos, ajuste histórico,
