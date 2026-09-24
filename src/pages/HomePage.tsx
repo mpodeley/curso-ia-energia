@@ -29,10 +29,10 @@ export function HomePage() {
           <p className="eyebrow">Programa</p>
           <h2>Ocho sesiones, un arco</h2>
           <p className="intro">
-            Este es un curso de conducir, no de mecánica: el objetivo es dar los primeros pasos con la
-            IA generativa en el trabajo, y de cómo funciona por dentro se ve solo lo que ayuda a
-            manejar mejor. El arco: entender qué es esto (sesiones 1–2), usarlo bien con datos y
-            documentos propios (3–6), y usarlo con cabeza, cerrando con el caso real (7–8).
+            Es un curso para aprender a manejar: del motor vemos solo lo que ayuda a manejar mejor.
+            El objetivo es dar los primeros pasos con la IA generativa en el trabajo. El arco:
+            entender qué es esto (sesiones 1–2), usarlo bien con datos y documentos propios (3–6), y
+            usarlo con cabeza, cerrando con el caso real (7–8).
           </p>
         </div>
         <div className="prog-grid">
@@ -68,8 +68,8 @@ export function HomePage() {
             <p>
               Por videollamada, de 10:00 a 14:00 de Argentina (8:00 a 12:00 en Ecuador y Colombia),
               con una pausa entre sesiones y otra a mitad de la segunda: exposición con demos en
-              vivo, taller hands-on con las herramientas y discusión estructurada. Solo hace falta una cuenta gratuita de chatbot
-              y una de Google para NotebookLM.
+              vivo, taller hands-on con las herramientas y discusión estructurada. Solo hace falta
+              una cuenta gratuita de chatbot y una de Google para NotebookLM.
             </p>
           </div>
           <div className="how-item">

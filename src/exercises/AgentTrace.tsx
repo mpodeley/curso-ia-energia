@@ -51,7 +51,7 @@ export function AgentTrace({ sesion = 6 }: { sesion?: number }) {
     <Ejercicio
       titulo="El loop por dentro"
       sesion={sesion}
-      intro="Un agente no es magia: es un modelo que piensa, ejecuta una herramienta, mira el resultado y vuelve a pensar. Recorré la traza paso a paso y mirá la mecánica, incluido el momento en que se equivoca."
+      intro="Un agente es un modelo que piensa, ejecuta una herramienta, mira el resultado y vuelve a pensar. Recorré la traza paso a paso y mirá la mecánica, incluido el momento en que se equivoca."
       onReset={reset}
     >
       <div
@@ -127,15 +127,15 @@ export function AgentTrace({ sesion = 6 }: { sesion?: number }) {
 
       <div>
         <div style={{ fontSize: 12, color: esError ? colors.status.err : colors.textDim, fontFamily: 'var(--pd-font-mono)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 4 }}>
-          {esFinal ? 'Responde' : esError ? 'Observa — no era lo que esperaba' : 'Observa'}
+          {esFinal ? 'Responde' : esError ? 'Observa: no era lo que esperaba' : 'Observa'}
         </div>
         <pre style={{ ...bloqueMono, borderColor: esError ? colors.status.err : colors.border }}>{paso.salida}</pre>
       </div>
 
       {esError && (
         <p style={{ fontSize: 'var(--pd-fs-sm)', color: colors.status.err, marginTop: space.md, maxWidth: '70ch' }}>
-          Acá el agente se equivocó: dio por sentado cómo se escribía el nombre del área. Fijate en el paso siguiente
-          qué hace con el error — no vuelve a adivinar, va a mirar los datos.
+          Acá el agente se equivocó: dio por sentado cómo se escribía el nombre del área. Fijate
+          en el paso siguiente qué hace con el error: va a mirar los datos.
         </p>
       )}
 
@@ -153,22 +153,21 @@ export function AgentTrace({ sesion = 6 }: { sesion?: number }) {
 
       <Solucion titulo="El loop, en una línea">
         Objetivo → pensar qué falta → elegir una herramienta → ejecutarla → mirar el resultado → repetir hasta poder
-        responder. Eso es todo. Lo único que agrega el agente sobre un chatbot es la capacidad de <em>ejecutar</em> y
-        de <em>mirar lo que salió</em>, y esa diferencia es la que lo vuelve útil y la que lo vuelve riesgoso.
+        responder. Lo que el agente agrega sobre un chatbot es la capacidad de <em>ejecutar</em> y de
+        <em>mirar lo que salió</em>. Eso lo vuelve útil, y también riesgoso.
       </Solucion>
 
       <Solucion titulo="Qué mirar en esta traza">
-        Tres cosas. Primero, el agente no arranca escribiendo código: arranca mirando qué hay. Segundo, cuando el
-        filtro devuelve cero no insiste ni inventa un resultado — va a buscar los valores reales y encuentra que el
-        área lleva diéresis. Tercero, en la respuesta final aclara qué no verificó. Un agente que no puede ejecutar
-        nunca se entera de que se equivocó; este se entera porque el resultado vuelve.
+        Tres cosas. Primero, antes de escribir código el agente mira qué hay. Segundo, cuando el filtro devuelve cero,
+        va a buscar los valores reales y encuentra que el área lleva diéresis. Tercero, en la respuesta final aclara
+        qué no verificó. Se enteró de que se había equivocado porque ve el resultado de cada paso; un modelo que no
+        puede ejecutar no tiene cómo enterarse.
       </Solucion>
 
       <Solucion titulo="Dónde esto se vuelve peligroso">
         Todo lo que hace este agente es reversible: lee archivos y escribe un gráfico. El problema aparece cuando las
-        herramientas dejan de ser de lectura — mandar un correo, cerrar una válvula, escribir en un sistema de
-        control. El loop es el mismo, pero un paso equivocado ya no se corrige mirando la salida. De eso va la
-        sesión 7.
+        herramientas dejan de ser de lectura: mandar un correo, cerrar una válvula, escribir en un sistema de control.
+        El loop es el mismo, pero un paso equivocado ya no se corrige mirando la salida. De eso va la sesión 7.
       </Solucion>
 
       {meta.source && (

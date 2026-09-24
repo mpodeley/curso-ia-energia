@@ -59,7 +59,7 @@
           "p": 0.01
         }
       ],
-      "note": "Cuando el contexto apunta a un hecho muy repetido en el entrenamiento, la distribución se concentra: acá el modelo está «casi seguro». La seguridad viene de la frecuencia en los datos, no de haber verificado nada."
+      "note": "Cuando el contexto apunta a un hecho muy repetido en el entrenamiento, la distribución se concentra: acá el modelo está «casi seguro». Esa seguridad sale de cuántas veces vio el dato en el entrenamiento, y el modelo no verificó nada."
     },
     {
       "id": "valvula",

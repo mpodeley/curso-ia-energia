@@ -26,7 +26,7 @@ export function TokenizerLab({ sesion = 2 }: { sesion?: number }) {
     <Ejercicio
       titulo="El texto que ve el modelo: tokens"
       sesion={sesion}
-      intro="Un LLM no lee letras ni palabras: lee tokens. Cada bloque de color es un token — exactamente como lo parte un tokenizador real. El símbolo ␣ marca el espacio que viaja pegado al token."
+      intro="Un LLM lee el texto partido en tokens, que no coinciden ni con las letras ni con las palabras. Cada bloque de color es un token, tal como lo parte un tokenizador real. El símbolo ␣ marca el espacio que viaja pegado al token."
       onReset={reset}
     >
       <Field label="Elegí un texto">

@@ -17,7 +17,7 @@
         {
           "texto": "\"La caída se explica por la parada programada de la planta compresora entre el 8 y el 11 de junio.\"",
           "correcta": true,
-          "explicacion": "En la planilla hay caudales, no eventos operativos. El modelo no puede saber que hubo una parada ni sus fechas: construyó la explicación más plausible y la escribió con el mismo tono que las cifras reales."
+          "explicacion": "La planilla trae caudales, sin eventos operativos. El modelo no puede saber que hubo una parada ni sus fechas: construyó la explicación más plausible y la escribió con el mismo tono que las cifras reales."
         },
         {
           "texto": "\"Dos pozos no reportaron producción durante la segunda quincena.\"",
@@ -52,10 +52,10 @@
       "opciones": [
         {
           "texto": "Que los modelos todavía no son lo bastante precisos para esa tarea.",
-          "explicacion": "La precisión mejora todos los años. Si el problema fuera ese, alcanzaría con esperar, y no alcanza."
+          "explicacion": "La precisión mejora todos los años, así que si el problema fuera ese alcanzaría con esperar. La objeción de fondo sigue en pie con cualquier modelo."
         },
         {
-          "texto": "Que el loop del agente funciona porque el error vuelve y se corrige, y ahí un paso equivocado no vuelve como mensaje de error sino como una válvula en la posición que no era.",
+          "texto": "Que el loop del agente funciona porque el error vuelve y se corrige, y en un sistema que opera equipos un paso equivocado termina en una válvula en la posición que no era.",
           "correcta": true,
           "explicacion": "Toda la utilidad del agente supone que equivocarse es barato y reversible. En un sistema que opera equipos, ninguna de las dos cosas es cierta."
         },
@@ -87,7 +87,7 @@
         },
         {
           "texto": "Le preguntás a dos chatbots distintos y comparás.",
-          "explicacion": "Dos modelos entrenados con textos parecidos pueden coincidir en el mismo invento plausible. Coincidir no es verificar."
+          "explicacion": "Dos modelos entrenados con textos parecidos pueden coincidir en el mismo invento plausible, así que la coincidencia no confirma el dato."
         }
       ]
     }

@@ -9,8 +9,9 @@ las rondas.
 
 ## Qué es
 
-Un curso de conducir, no de mecánica: primeros pasos para usar IA generativa en el trabajo de
-una petrolera, con datos públicos de Ecuador y Argentina en cada ejercicio. Nadie llega con nada
+Es un curso para aprender a manejar: del motor vemos solo lo que ayuda a manejar mejor. Son los
+primeros pasos para usar IA generativa en el trabajo de una petrolera, con datos públicos de
+Ecuador y Argentina en cada ejercicio. Nadie llega con nada
 leído; todo lo esencial pasa en vivo. Entre día y día hay una sola tarea de unos cinco minutos.
 
 Los asistentes solo necesitan un navegador, una cuenta gratuita de chatbot y una cuenta de

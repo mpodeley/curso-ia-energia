@@ -28,7 +28,7 @@ muestra la maquinaria interna; tiene audio en español, elegible en el menú del
 
 <PulsoVivo sesion={2} />
 
-## El modelo no lee palabras: lee tokens
+## El modelo lee tokens
 
 Antes de procesar tu texto, el modelo lo parte en **tokens**: pedazos que pueden ser palabras enteras,
 sílabas o hasta caracteres sueltos. Las palabras frecuentes en internet (en inglés, sobre todo) son un
@@ -44,8 +44,9 @@ programación, API) se cobra por token.
 
 Todo lo que viste hacer a un chatbot (responder preguntas, escribir informes, traducir) sale de una
 única operación repetida: **dado el texto hasta acá, asignar una probabilidad a cada token posible que
-sigue, elegir uno, y volver a empezar**. No hay una base de datos de respuestas: hay una máquina de
-continuar texto, entrenada con una fracción enorme de todo el texto humano.
+sigue, elegir uno, y volver a empezar**. Mucha gente se lo imagina consultando una base de datos de
+respuestas. Lo que hay es una máquina de continuar texto, entrenada con una fracción enorme de todo el
+texto humano.
 
 La **temperatura** controla cómo se elige entre esos candidatos: con temperatura baja gana siempre el
 más probable (salida estable, repetitiva); con temperatura alta, tokens poco probables tienen su
@@ -61,8 +62,8 @@ Georgia Tech hace lo mismo con un modelo de verdad: GPT-2, el antecesor de 2019 
 actuales, corriendo entero en tu navegador. Escribís una frase en inglés y ves, capa por capa, cómo
 el texto se convierte en tokens, cómo la atención decide a qué palabras anteriores mirar, y cómo
 todo termina en una lista de candidatos con su probabilidad. Tiene la misma perilla de temperatura
-del laboratorio. En vivo lo abrimos cinco minutos; solo, vale media hora. Está en inglés y pide un
-navegador de escritorio.
+del laboratorio. En vivo lo abrimos cinco minutos; si tenés media hora, vale la pena recorrerlo
+solo. Está en inglés y pide un navegador de escritorio.
 
 ## La ventana de contexto: la memoria de trabajo
 
@@ -70,8 +71,8 @@ Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu preg
 anteriores, los documentos que pegaste. Ese conjunto se llama **ventana de contexto** y tiene un
 tamaño máximo, medido en tokens. Lo que no entra ahí no existe para el modelo.
 
-Conviene pensarla como un escritorio, no como un archivo. Lo que está sobre el escritorio lo mira;
-lo que se cayó al piso no lo busca, y tampoco sabe que se cayó.
+Conviene pensarla como un escritorio. Lo que está arriba del escritorio el modelo lo mira; lo que se
+cayó al piso no lo busca, y tampoco sabe que se cayó.
 
 <ContextoLab sesion={2} />
 
@@ -82,7 +83,7 @@ segundo problema le dedicamos la sesión 5, donde en vez de pegar todo buscamos 
 falta.
 
 Guardá el nombre para el cierre: de las cuatro maneras de fallar, esta es "se olvida de lo que le
-dijiste". No es un olvido. Es la ventana.
+dijiste", y lo que la produce es el tamaño de la ventana.
 
 ## Cómo se entrena: dos etapas de tamaños muy distintos
 
@@ -92,30 +93,29 @@ explica bastante de cómo se comporta.
 En la **primera** lee una fracción enorme de todo el texto humano y practica una sola cosa: predecir
 lo que sigue. De ahí salen la gramática, los hechos y los patrones de razonamiento, todos como
 efecto de hacer bien esa única tarea. La consecuencia incómoda es que aprendió lo que estaba
-escrito, con sus errores y sus sesgos, y lo escrito no es lo verdadero.
+escrito, con sus errores y sus sesgos, sea cierto o no.
 
 En la **segunda**, mucho más chica, personas le enseñan a comportarse como asistente: a responder en
-vez de continuar, a seguir instrucciones y a negarse a algunas cosas. Un modelo que solo pasó por la
-primera etapa no contesta preguntas, las continúa. Esa segunda etapa es la que convirtió una
-curiosidad de laboratorio en algo que llegó a todos los escritorios: la capacidad ya estaba, faltaba
-la interfaz.
+vez de continuar, a seguir instrucciones y a negarse a algunas cosas. A un modelo que solo pasó por
+la primera etapa le hacés una pregunta y la continúa, como si fuera el principio de un texto. Esa
+segunda etapa es la que convirtió una curiosidad de laboratorio en algo que llegó a todos los
+escritorios: la capacidad venía de la primera, y la segunda la volvió usable.
 
-El tono servicial y seguro con el que te contesta viene de ahí, y no tiene ninguna relación con si
-lo que dice es cierto. Es una forma aprendida de hablar, no una señal de que sabe.
+El tono servicial y seguro con el que te contesta viene de ahí. Es una forma de hablar que aprendió
+en esa etapa, y la usa igual cuando acierta que cuando se equivoca.
 
 ## ¿Y adentro qué hay? Una caja negra que se puede abrir (para curiosos)
 
-Hasta acá describimos qué hace el modelo y cómo se entrenó, no qué pasa adentro cuando responde. La
-respuesta corta ya la tenés: nadie escribió esas reglas, se ajustaron solas. La respuesta larga es
-más interesante, y hay toda una disciplina dedicada a ella.
+Hasta acá describimos qué hace el modelo y cómo se entrenó. Falta qué pasa adentro cuando responde.
+La respuesta corta ya la tenés: esas reglas se ajustaron solas, mirando ejemplos. La respuesta larga
+es más interesante, y hay toda una disciplina dedicada a ella.
 
-El mejor lugar para verlo no es un modelo de lenguaje sino uno de imágenes, porque lo que aprende se
-puede dibujar. En 1989, en los Laboratorios Bell, Yann LeCun mostró una red que leía números escritos
+Donde mejor se ve es en un modelo de imágenes, porque lo que aprende se puede dibujar. En 1989, en los Laboratorios Bell, Yann LeCun mostró una red que leía números escritos
 a mano. El video dura un minuto y está en la lista del final de esta sección; conviene mirarlo
 sabiendo que ese mismo mecanismo, con más datos y más cómputo, es el que hoy escribe informes.
 
-Lo que pasa adentro de esa red es lo que importa. **La red no aprende "el número 7": aprende a
-descomponer la imagen en piezas.** Las primeras capas detectan bordes y cambios de contraste. Las
+Adentro, **la red aprende a descomponer la imagen en piezas.** Las primeras capas detectan bordes y
+cambios de contraste. Las
 siguientes combinan esos bordes en curvas y esquinas. Las de más arriba combinan las curvas en partes
 reconocibles, y recién al final aparece algo que podríamos llamar "un siete". A cada una de esas piezas
 se la llama una *característica*, y ninguna estaba en el programa: emergieron de mirar ejemplos.
@@ -141,13 +141,14 @@ tema de la sesión 7.
 Volvé a la única operación: continuar texto de forma *plausible*. Cuando el modelo no sabe algo, no
 tiene un mecanismo natural para callarse: **genera la continuación más plausible igual**. Un número
 de norma que parece real, un paper que suena citable, una cifra de producción con tres decimales.
-Eso es una **alucinación**, y no es un bug raro: es el comportamiento por defecto del mecanismo que
-acabás de ver en los laboratorios. Peor: el tono seguro con el que la dice viene de la segunda etapa
-del entrenamiento, que enseña forma, no verdad.
+Eso es una **alucinación**, y es el comportamiento por defecto del mecanismo que acabás de ver en los
+laboratorios, aunque se la suela tratar como una falla rara. Encima, el tono seguro con el que la dice
+viene de la segunda etapa del entrenamiento, que le enseña la forma de una buena respuesta sin
+chequear si es cierta.
 
-En la lista del cierre, esta es "inventa lo que no sabe". La consecuencia práctica que nos acompaña
-todo el curso: la salida de un modelo grande de lenguaje es un **borrador plausible**, no una fuente.
-Se verifica todo lo que importa.
+En la lista del cierre, esta es "inventa lo que no sabe". La consecuencia práctica nos acompaña todo
+el curso. La salida de un LLM (modelo grande de lenguaje) es un **borrador plausible**: se verifica
+antes de usarlo.
 
 ## Las cuatro maneras de fallar, y dónde vemos cada una
 
@@ -161,8 +162,8 @@ modelo, así que cada una tiene su propio arreglo. El curso las recorre en este 
   sesión 5.
 
 En la sesión 7 las juntamos en una sola tabla y las convertimos en un protocolo. No hace falta
-memorizar nada ahora: alcanza con saber que cuando algo salga mal, la primera pregunta útil no es
-"¿cómo lo reescribo?" sino "¿cuál de las cuatro fue?".
+memorizar nada ahora. Alcanza con que, cuando algo salga mal, te preguntes primero cuál de las cuatro
+fue, antes de ponerte a reescribir el pedido.
 
 ## Para discutir
 

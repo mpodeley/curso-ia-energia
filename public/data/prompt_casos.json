@@ -125,7 +125,7 @@
         }
       ],
       "modelo": "Sos un ingeniero de producción senior que le escribe al comité de operaciones: gente técnica, con poco tiempo y sin el detalle del día a día.\nContexto: te paso el informe mensual del bloque. El comité lo usa para decidir si adelanta el workover del pozo con mayor caída de caudal, así que lo que importa son los desvíos contra el mes anterior y sus causas.\nTarea: redactá el resumen ejecutivo, y marcá aparte cualquier cifra del informe que no puedas ubicar en una tabla.\nFormato: máximo 300 palabras, en tres secciones — qué pasó, por qué, qué se propone. Cada cifra con su unidad y el mes al que corresponde.\nPor ejemplo, así abría el mes pasado: \"La producción del bloque cayó 4% contra septiembre, explicado casi por completo por la parada programada de la planta compresora.\"",
-      "note": "Fijate que la pieza que más cambia la salida no es el rol: es el contexto que dice qué se decide con el resumen. Sin eso, el modelo no tiene con qué jerarquizar."
+      "note": "Fijate que la pieza que más cambia la salida es el contexto que dice qué se decide con el resumen, más que el rol. Sin eso, el modelo no tiene con qué jerarquizar."
     },
     {
       "id": "minuta",
@@ -185,7 +185,7 @@
               "calidad": "ninguna",
               "etiqueta": "Sin verbo",
               "texto": "",
-              "comentario": "Pegar las notas sin pedido explícito suele devolver las notas ordenadas, no una minuta."
+              "comentario": "Pegar las notas sin pedido explícito suele devolver las mismas notas ordenadas, sin forma de minuta."
             },
             {
               "calidad": "floja",
@@ -275,7 +275,7 @@
               "calidad": "buena",
               "etiqueta": "Especialidad y propósito",
               "texto": "Sos un ingeniero de terminación de pozos que hace triaje de bibliografía para su equipo.",
-              "comentario": "La especialidad fija qué es obvio y qué es novedad. El propósito de triaje fija que el resumen sirve para decidir, no para reemplazar la lectura."
+              "comentario": "La especialidad fija qué es obvio y qué es novedad. El propósito de triaje fija que el resumen sirve para decidir si el paper merece una lectura completa."
             }
           ]
         },
@@ -292,7 +292,7 @@
               "calidad": "floja",
               "etiqueta": "Sin el problema propio",
               "texto": "Contexto: es un paper sobre control de arena.",
-              "comentario": "Eso ya está en el título del paper. El contexto que sirve es el tuyo, no el del documento."
+              "comentario": "Eso ya está en el título del paper. El contexto que le sirve al modelo es el tuyo."
             },
             {
               "calidad": "buena",

@@ -3121,7 +3121,7 @@
       "formacion": "tupambi",
       "empresa": "TECPETROL S.A.",
       "verdad": null,
-      "nota": "Casi no declina: en siete años perdió menos de un quinto de su caudal. Necesita un Di muy chico. Un pozo así vale por su permanencia, no por su caudal inicial.",
+      "nota": "Casi no declina: en siete años perdió menos de un quinto de su caudal. Necesita un Di muy chico. Un pozo así vale por su permanencia más que por su caudal inicial.",
       "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {
@@ -3674,7 +3674,7 @@
       "formacion": "huamampampa",
       "empresa": "PAN AMERICAN ENERGY SL",
       "verdad": null,
-      "nota": "Acá ningún juego de parámetros ajusta bien, y ese es el punto. Seis años de meseta y después un derrumbe en doce meses no es una declinación: es una intervención, un cierre o la entrada de agua. Arps describe un reservorio que se despresuriza solo, y no fue lo que pasó. El modelo no sabe nada de la operación del pozo — eso lo sabés vos.",
+      "nota": "Acá ningún juego de parámetros ajusta bien. Seis años de meseta y después un derrumbe en doce meses es la huella de una intervención, un cierre o la entrada de agua. Arps describe un reservorio que se despresuriza solo, y acá pasó otra cosa. La operación del pozo la conocés vos; el modelo no tiene ese dato.",
       "fuente": "Capítulo IV — producción de pozos de gas y petróleo, Secretaría de Energía (Argentina), datos.energia.gob.ar, cuenca Noroeste (Salta).",
       "serie": [
         {

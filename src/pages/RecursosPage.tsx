@@ -2,9 +2,9 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
   {
     titulo: 'Las herramientas del curso (todas gratuitas)',
     items: [
-      { nombre: 'ChatGPT', href: 'https://chatgpt.com', nota: 'chatbot de OpenAI — el nivel gratuito alcanza para todo el curso' },
-      { nombre: 'Claude', href: 'https://claude.ai', nota: 'chatbot de Anthropic — fuerte en documentos largos y redacción' },
-      { nombre: 'Gemini', href: 'https://gemini.google.com', nota: 'chatbot de Google — integrado con el ecosistema Google' },
+      { nombre: 'ChatGPT', href: 'https://chatgpt.com', nota: 'chatbot de OpenAI; el nivel gratuito alcanza para todo el curso' },
+      { nombre: 'Claude', href: 'https://claude.ai', nota: 'chatbot de Anthropic, fuerte en documentos largos y redacción' },
+      { nombre: 'Gemini', href: 'https://gemini.google.com', nota: 'chatbot de Google, integrado con el ecosistema Google' },
       { nombre: 'NotebookLM', href: 'https://notebooklm.google.com', nota: 'conversar con tus propios documentos, con citas (sesión 5)' },
     ],
   },
@@ -44,12 +44,12 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       {
         nombre: 'Anthropic — Building effective agents',
         href: 'https://www.anthropic.com/engineering/building-effective-agents',
-        nota: 'qué es un agente y cuándo no conviene armar uno (sesión 6); el mejor antídoto contra el humo del género, en inglés',
+        nota: 'qué es un agente y cuándo no conviene armar uno (sesión 6); sirve para separar lo que funciona del humo, en inglés',
       },
       {
         nombre: 'BlueDot — Future of AI (curso corto)',
         href: 'https://bluedot.org/courses/future-of-ai',
-        nota: 'panorama de hacia dónde va la IA, en inglés — inspiración del formato de este curso',
+        nota: 'panorama de hacia dónde va la IA, en inglés; inspiró el formato de este curso',
       },
       {
         nombre: 'Anthropic — The four properties of AI',

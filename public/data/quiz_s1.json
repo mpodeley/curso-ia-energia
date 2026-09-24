@@ -13,7 +13,7 @@
         {
           "texto": "La IA generativa es un tipo de machine learning: modelos entrenados con enormes cantidades de datos que aprenden a generar contenido nuevo.",
           "correcta": true,
-          "explicacion": "Exacto: es la capa más nueva del mapa, machine learning llevado a una escala donde el modelo ya no solo clasifica o predice: genera."
+          "explicacion": "Exacto: es la capa más nueva del mapa, machine learning llevado a una escala donde el modelo, además de clasificar o predecir, genera."
         },
         {
           "texto": "El machine learning es un tipo de IA generativa.",
@@ -21,7 +21,7 @@
         },
         {
           "texto": "No tienen relación: la IA generativa reemplazó al machine learning.",
-          "explicacion": "El machine learning \"clásico\" sigue vivo y muy usado (mantenimiento predictivo, interpretación sísmica). La IA generativa se suma, no reemplaza."
+          "explicacion": "El machine learning \"clásico\" sigue vivo y muy usado (mantenimiento predictivo, interpretación sísmica). La IA generativa se suma a lo que ya había."
         }
       ]
     },
@@ -30,7 +30,7 @@
       "opciones": [
         {
           "texto": "Se descubrió hace poco un algoritmo secreto que lo cambió todo.",
-          "explicacion": "La arquitectura clave (el transformer) es pública desde 2017. No hubo magia: hubo escala."
+          "explicacion": "La arquitectura clave (el transformer) es pública desde 2017. Lo que cambió fue la escala."
         },
         {
           "texto": "Las computadoras cuánticas lo hicieron posible.",
@@ -38,7 +38,7 @@
         },
         {
           "texto": "Los gobiernos liberaron datos que antes eran secretos.",
-          "explicacion": "El combustible fue el texto público de internet (y libros, y código), no datos gubernamentales."
+          "explicacion": "El combustible fue el texto público de internet, más libros y código. Los datos de gobierno no tuvieron un papel especial."
         },
         {
           "texto": "Se juntaron tres cosas: enormes cantidades de texto disponible, cómputo (GPU) y una arquitectura que mejora de forma predecible al escalarla.",
@@ -55,17 +55,17 @@
           "explicacion": "Eso sirve cuando el dato existe y el modelo nunca lo leyó, como la cifra del reporte diario de la ARCH. Acá no hay documento que traerle: los papers no existen."
         },
         {
-          "texto": "El dato no existe en ninguna parte y el modelo igual produjo algo con la forma exacta de una cita. No se arregla: se verifica, buscando cada número en la fuente.",
+          "texto": "El dato no existe en ninguna parte y el modelo igual produjo algo con la forma exacta de una cita. La defensa es verificarlo, buscando cada número en la fuente.",
           "correcta": true,
           "explicacion": "Es la segunda de las dos maneras de equivocarse. Traerle documentos no la elimina, porque el modelo completa la forma de un dato aunque el dato no exista. La defensa es verificar, y la sesión 7 convierte eso en un protocolo."
         },
         {
           "texto": "Es un error de tipeo: los papers existen, con números parecidos.",
-          "explicacion": "A veces algún número coincide con un paper real sobre otro tema, pero eso no lo vuelve una cita correcta. El modelo no buscó nada: armó la cita más plausible."
+          "explicacion": "A veces algún número coincide con un paper real sobre otro tema, pero eso no lo vuelve una cita correcta. El modelo armó la cita más plausible, sin buscar nada."
         },
         {
           "texto": "Pasó porque la pregunta estaba en español y los papers están en inglés.",
-          "explicacion": "El idioma cambia cuántos tokens ocupa la pregunta, no si el modelo inventa. En inglés las citas inventadas salen igual de prolijas."
+          "explicacion": "El idioma cambia cuántos tokens ocupa la pregunta, y la tendencia a inventar es la misma: en inglés las citas inventadas salen igual de prolijas."
         }
       ]
     },
@@ -78,12 +78,12 @@
         },
         {
           "texto": "Decidir el punto óptimo de inyección de agua del bloque.",
-          "explicacion": "Decisiones de ingeniería con consecuencias físicas y económicas necesitan modelos, datos y responsables. El chatbot puede ayudar a redactar el informe, no a decidir."
+          "explicacion": "Decisiones de ingeniería con consecuencias físicas y económicas necesitan modelos, datos y responsables. El chatbot puede ayudar a redactar el informe; la decisión es de las personas responsables."
         },
         {
           "texto": "Resumir un paper de la SPE de 40 páginas en una página, para decidir si vale la pena leerlo entero.",
           "correcta": true,
-          "explicacion": "El punto dulce: el borrador cuesta mucho, la verificación es rápida (si el resumen interesa, vas al paper), y el documento no es confidencial."
+          "explicacion": "Es el caso ideal: el borrador cuesta mucho, la verificación es rápida (si el resumen interesa, vas al paper) y el documento no es confidencial."
         },
         {
           "texto": "Llevar el registro oficial de producción del campo.",

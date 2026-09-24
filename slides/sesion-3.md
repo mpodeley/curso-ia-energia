@@ -65,7 +65,7 @@ quedan.
 <!--
 2 min · acumulado 0:02
 La misma tabla está en la página de la sesión 3.
-Bajada del día: ayer, qué es y cómo funciona; hoy, manejo puro. En esta
+Bajada del día: ayer vimos qué es y cómo funciona; hoy aprendemos a usarlo. En esta
 sesión el modelo escribe texto y aprendemos a pedírselo bien. En la sesión
 4, después de la pausa, le damos tablas y PDF, y para analizarlos escribe
 código: eso cambia dónde puede fallar y dónde hay que mirar.
@@ -83,8 +83,8 @@ sesión 4 con su propio deck. Martín la avisa.
 
 <!--
 1 min · acumulado 0:03
-Los ejemplos salen de sus tareas, no de las mías: la ronda que sigue arma
-el menú del taller. La regla entre empresas de ayer sigue en pie: nadie trae
+Los ejemplos salen de sus tareas: la ronda que sigue arma el menú del
+taller. La regla entre empresas de ayer sigue en pie: nadie trae
 nada propio.
 -->
 
@@ -124,8 +124,8 @@ Martín: llama la ronda por nombre, seis personas, una tarea cada una, sin
 apuro. Anota TODAS en un archivo a la vista (compartir la ventana de notas
 un momento): esa lista es el menú del taller y alimenta el cuaderno de
 mañana.
-Regla dicha una vez y en voz alta: la tarea es real, los datos no. Nadie
-describe un pozo, un contrato ni un número propio; alcanza con "el informe
+Regla dicha una vez y en voz alta: la tarea tiene que ser real, sin datos
+propios. Nadie describe un pozo, un contrato ni un número propio; alcanza con "el informe
 mensual de producción" o "la minuta del comité".
 Plan B si alguien no la hizo: un minuto ahí mismo para anotar una, con la
 consigna "lo que hacés más de una vez por semana y te aburre". Nadie queda
@@ -156,7 +156,7 @@ decirlo.
 
 ## ¿Qué modelo uso? Cuatro cosas para mirar
 
-- **Capacidad en tu tarea**: los rankings generales no redactan tu minuta
+- **Capacidad en tu tarea**: cómo resuelve lo que vos le vas a pedir
 - **Ventana de contexto**: cuánto le entra de una vez
 - **Precio por token**: la entrada y la salida se cobran distinto
 - **Velocidad**: el grande piensa mejor y tarda más
@@ -176,10 +176,10 @@ en el que venía por defecto. Después de este bloque, que sea una elección.
 
 ## Dónde mirar
 
-- Un benchmark es un **examen estandarizado**: sirve para descartar, no para elegir fino
+- Un benchmark es un **examen estandarizado**: sirve para descartar modelos
 - **LMArena**: miles de personas votando a ciegas entre dos respuestas
 - **Artificial Analysis**: capacidad, precio y velocidad de todos, en un solo cuadro
-- Y el benchmark que importa de verdad: **tu tarea**, corrida en dos modelos
+- Para elegir entre los que quedan, **tu tarea**, corrida en dos modelos
 
 <!--
 4 min · acumulado 0:23
@@ -187,7 +187,7 @@ Los dos sitios están en el material previo de la página, con enlace.
 Los límites de los benchmarks, dichos sin cinismo: los modelos "estudian para
 el examen" (las preguntas se filtran al entrenamiento), un punto más de
 benchmark no se nota en una minuta, y el podio cambia todos los meses. Se
-mira el cuadro general, no el ranking del día.
+mira el cuadro general.
 La última viñeta es la que quiero que se lleven, y el taller de hoy la deja
 practicada: mismo prompt, dos modelos, comparar con tus propios ojos.
 -->
@@ -199,8 +199,8 @@ practicada: mismo prompt, dos modelos, comparar con tus propios ojos.
 Se cobra **por token**, y la entrada y la salida tienen precio distinto. Entre el modelo grande
 y el rápido puede haber **cien veces** de diferencia.
 
-Hoy no lo pagan: cuentas gratuitas. Importa el día que algo se automatiza: mil corridas por mes
-convierten el precio por token en presupuesto.
+Con cuentas gratuitas hoy no lo pagan. Importa el día que algo se automatiza: mil corridas por
+mes convierten el precio por token en presupuesto.
 
 <!--
 4 min · acumulado 0:27
@@ -254,18 +254,19 @@ bloque de anatomía.
 
 ## Hizo exactamente lo que le pediste
 
-El problema no es que el modelo desobedezca: es que **obedeció una orden vacía**. Sin contexto,
-lo rellena con lo más plausible, que ya sabemos lo que significa.
+El modelo **obedeció una orden vacía**. Sin contexto, la rellena con lo más plausible, y ya
+sabemos lo que eso significa.
 
-La salida genérica no es un límite de la herramienta. Es el espejo del pedido.
+Si la salida es genérica, casi siempre es porque el pedido también lo era.
 
 <!--
 4 min · acumulado 0:39
-La frase del bloque: la salida genérica es el espejo del pedido.
+La frase del bloque: si la salida es genérica, casi siempre el pedido
+también lo era.
 Conectar con ayer sin nombres técnicos: lo que rellenó es la continuación
 más plausible, el mismo mecanismo de las alucinaciones.
-Puente: si el problema es la orden, la solución es aprender a escribir
-órdenes. Eso es todo el prompting.
+Puente: si el problema es la orden, hay que aprender a escribir órdenes, y
+de eso se trata el prompting.
 -->
 
 ---
@@ -341,20 +342,20 @@ produce?" jamás. Si el dueño empieza a dar un número, cortarlo con
 amabilidad: la regla de la sala.
 Mandar y comparar contra la salida genérica que quedó de antes.
 Repetir con una segunda tarea de otra empresa si el tiempo da.
-El punto no es la magia del resultado: es que las preguntas que hice son las
-piezas de la slide anterior, en orden.
+Lo que importa mostrar: las preguntas que hice son las piezas de la slide
+anterior, en orden.
 -->
 
 ---
 
 <!-- _class: cita -->
 
-## La primera salida es un **borrador**. La conversación es el método.
+## La primera salida es un **borrador**: se corrige conversando
 
 <!--
 3 min · acumulado 1:01
-Iterar no es señal de fracaso: "más corto", "menos jerga", "ahora en tono
-formal" son parte del uso normal, no parches.
+Iterar es parte del uso normal: "más corto", "menos jerga", "ahora en tono
+formal".
 Cierre del bloque: ya vieron las piezas y la reescritura en vivo. Ahora les
 toca a ellos, con la tarea propia.
 -->
@@ -385,12 +386,12 @@ escribilo directo si ya lo ves. Cuando esté, apretá "Copiar prompt".
 Ventana C: página de la sesión 3, ejercicio "Constructor de prompts". Tiene
 tres casos de ejemplo (resumen ejecutivo, minuta, triaje de paper) y acepta
 pegar uno propio para ver qué le falta.
-Recordar la regla antes de que empiecen: la tarea es real pero los datos no.
-Nada confidencial: estructura real, contenido público o inventado. Y lo que
-peguen en el chat lo leen las otras tres empresas.
+Recordar la regla antes de que empiecen: la tarea es real y los datos son
+públicos o inventados. Nada confidencial. Y lo que peguen en el chat lo leen
+las otras tres empresas.
 Martín: circula por el chat mientras arman; quien se trabe, que pegue lo que
-tiene y lo miramos. El constructor puntúa piezas presentes, no calidad:
-decirlo para que nadie persiga el puntaje.
+tiene y lo miramos. El puntaje del constructor solo cuenta qué piezas están
+presentes; decirlo para que nadie lo persiga.
 -->
 
 ---
@@ -423,7 +424,8 @@ la haya probado, que cuente qué cambió entre el grande y el rápido.
 En nueve de cada diez prompts flojos falta lo mismo: para quién es la salida, qué formato tiene
 que tener, y un ejemplo de cómo te gusta.
 
-El rol y la tarea casi siempre están. Lo que no está es lo que un analista nuevo preguntaría.
+El rol y la tarea casi siempre están. Faltan las cosas que un analista nuevo te preguntaría antes
+de empezar.
 
 <!--
 5 min · acumulado 1:37
@@ -487,8 +489,8 @@ Y las versiones corporativas existen, con otro contrato de datos. Eso es parte d
 
 <!--
 6 min · acumulado 1:50
-La tercera alternativa es la más útil para el trabajo diario: el modelo no
-necesita tus números para ayudarte a armar el informe; necesita la estructura.
+La tercera alternativa es la más útil para el trabajo diario: para ayudarte
+a armar el informe, al modelo le alcanza con la estructura.
 Puente a lo que sigue: la sesión 4 entera trabaja con datos públicos de
 producción, argentinos y ecuatorianos, justamente por esta regla. Y para dos
 empresas de la sala el Capítulo IV es su propio dato, publicado por el

@@ -291,8 +291,8 @@ def build_embeddings_map(embed) -> None:
     write_json(
         os.path.join(ROOT, 'embeddings_2d.json'),
         salida,
-        source=f'embeddings de {MODELO}, proyectados a 2D por PCA. Los vecinos se calculan en '
-        'las 1024 dimensiones originales, no en el mapa.',
+        source=f'embeddings de {MODELO}, proyectados a 2D por PCA. Los vecinos se calculan en las '
+        '1024 dimensiones originales; el mapa es una proyección para poder verlos.',
     )
     print(f'  embeddings_2d: {len(salida)} términos en {len(TERMINOS)} familias')
 

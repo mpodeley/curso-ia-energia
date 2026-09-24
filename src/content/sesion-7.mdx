@@ -32,15 +32,15 @@ verdad: cifras inventadas con demasiada precisión, causas que suenan razonables
 ningún dato, citas completas de artículos que no existen, y normativa recitada de memoria.
 
 El puntaje mide dos cosas a propósito: cuántas invenciones encontraste y cuántas afirmaciones sanas
-marcaste de más. Desconfiar de todo no es prudencia, es otra forma de no leer.
+marcaste de más. Marcar todo como sospechoso también resta, porque es otra manera de leer mal.
 
 <HallucinationHunt sesion={7} />
 
 ## Cuatro propiedades, y cómo falla cada una
 
-El lunes anunciamos cuatro maneras de fallar como hoja de ruta del curso. Acá tienen nombre, y el
-nombre no es una etiqueta: es la propiedad del modelo de la que sale cada una. No son cuatro
-defectos, son cuatro capacidades miradas desde el borde, donde se terminan. Por eso el arreglo
+El lunes anunciamos cuatro maneras de fallar como hoja de ruta del curso. Acá cada una recibe el
+nombre de la propiedad del modelo de la que sale. Son cuatro capacidades miradas desde el borde,
+donde se terminan. Por eso el arreglo
 cambia según cuál te tocó, y por eso conviene diagnosticar antes de reescribir el prompt por
 cuarta vez.
 
@@ -49,7 +49,7 @@ cuarta vez.
 | **Predice el próximo token** (sesión 2) | Escribe algo que no existe con el mismo tono con el que escribe lo que sí. La forma del dato queda impecable. | No lo uses de fuente. El dato lo traés vos, él lo redacta. |
 | **Conocimiento** (sesión 5) | Seguro y equivocado sobre un hecho puntual: lo reciente, lo local, lo interno, lo tuyo. | Adjuntale el documento. Con el texto delante deja de recordar y pasa a leer. |
 | **Memoria de trabajo** (sesiones 2 y 6) | Se olvida de una instrucción de hace veinte mensajes, se contradice, pierde de vista el objetivo. | Conversaciones cortas, una tarea por vez, y repetile lo que no puede perder. |
-| **Control de la salida** (sesión 3) | Hace algo parecido a lo que pediste y no lo que pediste: cambia el formato, se pasa de largo, vuelve al tono de siempre. | Describí mejor el resultado, o mostrale un ejemplo. |
+| **Control de la salida** (sesión 3) | Hace algo parecido a lo que pediste: cambia el formato, se pasa de largo, vuelve al tono de siempre. | Describí mejor el resultado, o mostrale un ejemplo. |
 
 La tabla es el índice del curso leído al revés. Cada fila se trabajó donde correspondía, con su
 ejercicio al lado. Lo que faltaba era verlas juntas y poder preguntarse, frente a un error
@@ -61,9 +61,8 @@ instrucción de citar textual quedó doce mensajes atrás. El resultado se lee c
 respuesta mala. Ahí está el valor de separar las causas: si le atribuís al prompt lo que era falta
 de documento, vas a reescribirlo cuatro veces y el modelo va a seguir inventando con prolijidad.
 
-El diagnóstico te dice qué arreglo aplicar. No te dice cuánto conviene verificar antes de mandar el
-texto, porque eso ya no depende del modelo: depende de dónde termina lo que escribiste. De eso se
-ocupa la sección que sigue.
+El diagnóstico te dice qué arreglo aplicar. Cuánto conviene verificar antes de mandar el texto
+depende de dónde termina lo que escribiste, y de eso se ocupa la sección que sigue.
 
 Esta forma de ordenar los errores por su causa sale de un curso corto y gratuito de Anthropic. Está
 en inglés, es opcional, y no hace falta para seguir leyendo.
@@ -78,20 +77,20 @@ una cita, un artículo de una norma o una estimación de beneficio casi nunca lo
 
 De ahí sale un protocolo corto, que se ajusta al costo del error:
 
-- **Borrador que vas a reescribir igual:** no se verifica, se reescribe. Un correo, un primer
-  esquema.
+- **Borrador que vas a reescribir igual:** lo reescribís y no hace falta verificarlo. Un correo,
+  un primer esquema.
 - **Texto que sale con tu nombre:** se verifica contra la fuente todo dato puntual (cifras, fechas,
-  nombres). La prosa es tuya, los datos son de alguien.
+  nombres). La redacción es tuya; cada dato tiene que salir de una fuente que puedas mostrar.
 - **Cifra que entra en un informe firmado, una decisión o un documento contractual:** fuente
   primaria a la vista, sin excepción. Si no podés abrir la fuente en dos minutos, el número no
   entra.
-- **Cualquier cosa sobre normativa:** con el texto de la norma adjunto, nunca de memoria. El costo
-  del error acá es legal, no reputacional.
+- **Cualquier cosa sobre normativa:** siempre con el texto de la norma adjunto. Acá el error ya
+  tiene costo legal, además del reputacional.
 
 ## Confidencialidad, en concreto
 
-La regla del primer día, si no lo pondrías en un correo a un desconocido no va al chat, alcanza
-para empezar y no alcanza para una empresa. La versión operativa es un mapa de tres niveles:
+La regla del primer día (si no lo pondrías en un correo a un desconocido, no va al chat) sirve
+para empezar. Una empresa necesita una versión operativa, que es un mapa de tres niveles:
 
 **Nunca, en ninguna herramienta externa:** producción real por pozo, reservas, precios y cláusulas
 de contratos, datos de socios, información de personas, cualquier cosa bajo acuerdo de
@@ -108,35 +107,34 @@ una planilla sintética con las mismas columnas funciona igual de bien.
 
 Esta cohorte tiene un borde más que otras: en la sala hay cuatro empresas que compiten entre sí, y
 en algún bloque son socias. El chat compartido del curso es una herramienta externa para las otras
-tres. Lo que va al primer nivel no se dice ahí, y la ronda de datos de hoy se hace con la
-categoría del dato, no con el dato: "el pronóstico mensual de un campo", no el pronóstico.
+tres. Lo que va al primer nivel no se dice ahí, y en la ronda de datos de hoy se nombra solo la
+categoría del dato, por ejemplo "el pronóstico mensual de un campo", sin decir el pronóstico.
 
 ## Infraestructura crítica
 
 Acá hay que ser directo. "Conectemos un agente al sistema de control" es una frase que tiene que
-encender todas las alarmas, y no porque el modelo sea tonto.
+encender todas las alarmas, por más capaz que sea el modelo.
 
 El motivo es el de ayer. El loop del agente funciona porque el error vuelve y se corrige: leyó mal,
 el resultado salió vacío, reintentó. Ese mecanismo supone que equivocarse es barato y reversible.
-En un sistema que opera equipos, ninguna de las dos cosas es cierta. Un paso equivocado no vuelve
-como mensaje de error: vuelve como una válvula en la posición que no era.
+En un sistema que opera equipos, ninguna de las dos cosas es cierta. Ahí un paso equivocado
+termina en una válvula en la posición que no era.
 
-A eso se suma que un modelo de lenguaje no tiene garantías de comportamiento. No podés demostrar
-que nunca va a hacer algo; podés observar que hasta ahora no lo hizo. Los sistemas de seguridad
-industriales se diseñan al revés, sobre garantías demostrables y modos de falla conocidos. Son dos
-culturas de ingeniería incompatibles, y la incompatibilidad no se arregla con un prompt mejor.
+A eso se suma que un modelo de lenguaje no tiene garantías de comportamiento. Podés observar que
+hasta ahora no hizo algo, pero no podés demostrar que nunca lo va a hacer. Los sistemas de
+seguridad industriales se diseñan al revés, sobre garantías demostrables y modos de falla
+conocidos. Son dos culturas de ingeniería incompatibles, y escribir mejor el prompt no cambia eso.
 
 La separación práctica es clara: los asistentes trabajan sobre **copias de datos**, del lado de la
 oficina, y producen recomendaciones que una persona ejecuta. Los sistemas de supervisión y
 adquisición de datos (SCADA) y el resto de la tecnología de operaciones (OT) quedan en su propia
 red, y el asistente no la toca. Entre el modelo y cualquier cosa que se mueva en el campo hay un
-humano con nombre y apellido. Eso no es desconfianza en la tecnología, es la misma lógica por la
-que un cálculo de ingeniería lo firma alguien.
+humano con nombre y apellido, por la misma lógica por la que un cálculo de ingeniería lo firma
+alguien.
 
 ## Esto ya pasó, con fuentes
 
-Nada de esta página es hipotético. Cinco incidentes documentados, cada uno pegado a una regla de
-las de arriba:
+Cinco incidentes documentados, cada uno pegado a una regla de las de arriba:
 
 - **Deloitte, octubre de 2025.** Un informe de AU$ 440,000 para el gobierno australiano salió con
   citas académicas inventadas y una cita judicial falsa; la firma
@@ -149,14 +147,15 @@ las de arriba:
 - **Replit, julio de 2025.** Un agente de programación
   [borró la base de datos de producción](https://incidentdatabase.ai/cite/1152/) de una empresa en
   pleno congelamiento de cambios, y después informó que la recuperación era imposible (no lo era).
-  El error que no vuelve como mensaje, en versión de manual.
+  Es el ejemplo más claro de un paso equivocado que pega directo en un sistema real.
 - **Air Canada, febrero de 2024.** Su chatbot inventó una política de descuentos y
   [un tribunal obligó a la aerolínea a cumplirla](https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know).
-  Lo que tu herramienta dice, lo dijo tu empresa.
+  Para el tribunal, lo que dijo el chatbot lo dijo la empresa.
 - **Anthropic, noviembre de 2025.** El
   [primer caso reportado](https://www.anthropic.com/news/disrupting-AI-espionage) de espionaje
   informático orquestado con agentes de inteligencia artificial, contra unas treinta
-  organizaciones, varias de infraestructura. La sección de arriba no es exceso de cautela.
+  organizaciones, varias de infraestructura. Por eso la sección de infraestructura crítica pide
+  tanta cautela.
 
 ## La política de uso, en una página
 

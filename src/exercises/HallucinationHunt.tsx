@@ -83,9 +83,9 @@ export function HallucinationHunt({ sesion = 7 }: { sesion?: number }) {
   const marca = (i: number) => {
     const s = informe.segmentos[i]
     if (!corregido) return marcados.has(i) ? 'marcada' : ''
-    if (s.inventada && marcados.has(i)) return 'inventada — la encontraste'
-    if (s.inventada) return 'inventada — se te pasó'
-    if (marcados.has(i)) return 'era correcta — falsa alarma'
+    if (s.inventada && marcados.has(i)) return 'inventada: la encontraste'
+    if (s.inventada) return 'inventada: se te pasó'
+    if (marcados.has(i)) return 'era correcta: falsa alarma'
     return 'correcta'
   }
 
@@ -102,7 +102,7 @@ export function HallucinationHunt({ sesion = 7 }: { sesion?: number }) {
     <Ejercicio
       titulo="Cacería de alucinaciones"
       sesion={sesion}
-      intro="Tres textos generados por un modelo. Algunas afirmaciones son sólidas y otras están inventadas con total seguridad. Marcá las que no usarías sin verificar antes — y ojo, marcar todo no cuenta como acertar."
+      intro="Tres textos generados por un modelo. Algunas afirmaciones son sólidas y otras están inventadas con total seguridad. Marcá las que no usarías sin verificar antes. Ojo: marcar todo no cuenta como acertar."
       onReset={reset}
       done={corregido}
     >
@@ -192,14 +192,14 @@ export function HallucinationHunt({ sesion = 7 }: { sesion?: number }) {
         Es lo que te llevás de esta sesión, más que el puntaje. Ante cualquier afirmación de un modelo, preguntate:
         ¿esto se puede derivar de lo que le di, o lo completó por su cuenta? ¿Qué fuente primaria lo confirmaría, y
         cuánto tardo en abrirla? ¿Qué pasa si es falso y nadie lo nota? Y la más útil: ¿por qué sonaba creíble? Las
-        invenciones peligrosas no son las absurdas, son las que tienen la forma exacta de un dato verdadero.
+        invenciones más peligrosas son las que tienen la forma exacta de un dato verdadero.
       </Solucion>
 
       <Solucion titulo="Por qué marcar todo tampoco sirve">
         Si desconfiás de cada frase, la herramienta deja de ahorrarte tiempo y volvés a escribir todo a mano. El
-        objetivo no es la desconfianza, es la puntería: saber qué clase de afirmación exige fuente. Las cifras que
-        salen de datos que vos entregaste casi siempre están bien; las causas, las citas, la normativa y las
-        estimaciones de beneficio casi nunca.
+        objetivo es la puntería: saber qué clase de afirmación exige fuente. Las cifras que salen de datos que vos
+        entregaste casi siempre están bien; las causas, las citas, la normativa y las estimaciones de beneficio casi
+        nunca.
       </Solucion>
 
       {meta.source && (

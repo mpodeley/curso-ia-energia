@@ -22,14 +22,13 @@ una lista de candidatos por empresa.
 
 Leyó una cantidad enorme de texto de internet. No leyó tu manual de operaciones, ni tus normas
 internas, ni el informe del campo que escribió tu compañero el mes pasado. Preguntarle sobre eso es
-pedirle que complete lo más plausible, que es exactamente la receta de una respuesta inventada con
-tono seguro.
+pedirle que complete lo más plausible, y así sale una respuesta inventada con tono seguro.
 
-Hay dos formas de cerrar ese hueco. Una es reentrenar el modelo con tus documentos: cara, lenta y casi
-siempre innecesaria. La otra es más simple y es la que se usa: **buscar los fragmentos que responden
-la pregunta y pegarlos arriba de la pregunta**. El modelo responde con el libro abierto. Se llama
-generación aumentada por recuperación (RAG, por su sigla en inglés), y una vez que la ves funcionar
-es difícil que te siga pareciendo sofisticada.
+Hay dos formas de cerrar ese hueco. Una es reentrenar el modelo con tus documentos, que es caro,
+lento y casi siempre innecesario. La otra es más simple y es la que se usa: **buscar los fragmentos
+que responden la pregunta y pegarlos arriba de la pregunta**. El modelo responde con el libro
+abierto. Se llama generación aumentada por recuperación (RAG, por su sigla en inglés), y una vez que
+la ves funcionar es difícil que te siga pareciendo sofisticada.
 
 ## Primero, qué significa "parecido" para un modelo
 
@@ -38,7 +37,7 @@ números, y dos textos con sentido parecido dan listas parecidas. Todo lo demás
 
 El ejercicio proyecta esas listas a un plano para que las puedas mirar. Prestá atención a la familia
 de jerga: "burro", "araña", "pescado", "camisa". El modelo aprendió esas palabras del lenguaje
-corriente, así que las ubica junto a objetos cotidianos y no junto al equipamiento del yacimiento.
+corriente, así que las ubica junto a objetos cotidianos, lejos del equipamiento del yacimiento.
 Ahí se ve, de un vistazo, qué es lo que no sabe de tu trabajo.
 
 <EmbeddingsMap sesion={5} />
@@ -52,24 +51,23 @@ la demostración no probaría nada.
 Probá las preguntas que no comparten ninguna palabra con su respuesta. La que pregunta cómo evitar
 que alguien arranque el equipo mientras lo reparás la responde un fragmento que habla de "bloqueo y
 etiquetado". La de cuidarse los oídos la responde uno que dice "protección auditiva". Un buscador de
-palabras no tiene con qué encontrarlas; uno por significado sí. Esa es toda la diferencia, y es la
-razón por la que esto sirve sobre documentación técnica, que siempre está escrita en un vocabulario
-que nadie usa cuando pregunta.
+palabras no tiene con qué encontrarlas y uno por significado sí. Por eso esto sirve sobre
+documentación técnica, que siempre está escrita en un vocabulario que nadie usa cuando pregunta.
 
-Mirá también el bloque del final, el que dice lo que se le manda al modelo. No hay nada más que eso.
+Mirá también el bloque del final, que muestra todo lo que se le manda al modelo.
 
 <RagDemo sesion={5} />
 
 ## Dónde sigue fallando
 
-Recuperar fragmentos reduce las invenciones, no las elimina, y agrega un modo de falla nuevo: si el
-buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que sea el modelo, y
-va a estar mal **con una cita al lado**, que es peor. Por eso la regla es mirar siempre los fragmentos
-recuperados, no solo la respuesta. Si una herramienta no te los muestra, no te está dando
-verificabilidad: te está dando la apariencia de verificabilidad.
+Recuperar fragmentos reduce las invenciones pero no las elimina, y además agrega un modo de falla
+nuevo: si el buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que
+sea el modelo, y va a estar mal **con una cita al lado**, que es peor. Por eso la regla es mirar
+siempre los fragmentos recuperados además de la respuesta. Si una herramienta no te los muestra, la
+cita parece verificable pero no tenés cómo verificarla.
 
-Hay un segundo límite, más aburrido y más frecuente: si la respuesta no está en los documentos, no
-hay recuperación que la traiga. La herramienta no sabe lo que tu empresa nunca escribió.
+Hay un segundo límite, más aburrido y más frecuente: si la respuesta no está en los documentos,
+ninguna búsqueda la va a traer, porque la herramienta solo sabe lo que tu empresa escribió.
 
 ## El cuaderno del rubro
 
@@ -91,8 +89,8 @@ gratuita de NotebookLM: subí estos tres y agregale los tuyos.
   reportan al Capítulo IV.
 
 Los reportes diarios de la ARCH que ayer extrajeron a tabla también entran al cuaderno: preguntale
-lo que ayer sacaste a mano, y mirá de qué fragmento lo trae. Un cuaderno con cuatro fuentes
-distintas obliga, además, a la pregunta que importa: ¿de cuál de las cuatro sacó esto?
+lo que ayer sacaste a mano, y mirá de qué fragmento lo trae. Con cuatro fuentes
+distintas en el cuaderno, además, conviene preguntarse siempre de cuál de las cuatro sacó cada cosa.
 
 Tres preguntas para arrancar, una por documento, escritas para que la respuesta no comparta
 vocabulario con la pregunta:
@@ -121,8 +119,8 @@ internet. Candidatos por empresa, para que no pierdas el bloque buscando:
 
 Paso a paso, con Martín en el chat para lo que trabe:
 
-1. Entrá a [notebooklm.google.com](https://notebooklm.google.com) con una cuenta de Google personal
-   (no la corporativa, que en varias empresas tiene NotebookLM bloqueado). Tocá **Crear cuaderno**.
+1. Entrá a [notebooklm.google.com](https://notebooklm.google.com) con una cuenta de Google personal,
+   porque en varias empresas la corporativa tiene NotebookLM bloqueado. Tocá **Crear cuaderno**.
 2. En **Agregar fuente**, subí el PDF o pegá la dirección de la página. Un documento alcanza; si
    subís dos, mejor, pero no más de tres hoy.
 3. Esperá a que aparezca el resumen automático y leelo con desconfianza: es la primera respuesta
@@ -132,9 +130,9 @@ Paso a paso, con Martín en el chat para lo que trabe:
 5. Anotá, para la ronda, dos cosas: una respuesta que salió bien citada y una que salió mal, o que
    no estaba en el documento. Las dos valen lo mismo.
 
-Lo que se comparte por el chat es la experiencia, no el contenido: qué contestó bien, qué inventó,
-qué no encontró. El documento es público, pero la lista de preguntas que le hacés a tu propia
-empresa ya dice algo de tu trabajo, y en la sala hay cuatro empresas competidoras.
+Por el chat contá cómo te fue: qué contestó bien, qué inventó y qué no encontró. Las preguntas y
+las respuestas guardalas para vos. El documento es público, pero la lista de preguntas que le hacés
+a tu propia empresa ya dice algo de tu trabajo, y en la sala hay cuatro empresas competidoras.
 
 ## En la sesión en vivo (2 h)
 
@@ -150,4 +148,4 @@ empresa ya dice algo de tu trabajo, y en la sala hay cuatro empresas competidora
 
 <Quiz data="quiz_s5" sesion={5} />
 
-Después de la pausa, en la sesión 6, el mismo modelo deja de responder y se pone a trabajar.
+Después de la pausa, en la sesión 6, vemos al mismo modelo trabajar por su cuenta, con herramientas.

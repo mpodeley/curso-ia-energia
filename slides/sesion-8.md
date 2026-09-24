@@ -49,8 +49,8 @@ cuatro empresas para las rondas.
 La misma tabla está en la página de la sesión 8.
 Dos partes. Primero el caso, y las reglas de la sesión 7 se le aplican al
 caso y a las cuatro páginas que escribieron ayer. Después de la pausa, la
-última hora es levantar la vista, y no es relleno: sin una idea de dónde va
-a estar la herramienta, el proyecto se dimensiona contra la de hoy.
+última hora levanta la vista, y tiene un motivo práctico: sin una idea de
+dónde va a estar la herramienta, el proyecto se dimensiona contra la de hoy.
 -->
 
 ---
@@ -92,16 +92,17 @@ Prearmado antes del curso, sobre datos públicos. Hoy se muestra y se critica.
 
 <!--
 3 min · acumulado 0:06
-Decir de entrada qué es y qué no es: lo armó el instructor antes del curso,
-con el mismo loop de agente de ayer, sobre datos públicos. No se construyó
-con datos ni preguntas de ninguna de las cuatro empresas. Por eso se
-critica, no se celebra.
+Decir de entrada de dónde sale: lo armó el instructor antes del curso, con
+el mismo loop de agente de ayer, sobre datos públicos. No se construyó con
+datos ni preguntas de ninguna de las cuatro empresas. Por eso hoy se
+critica.
 La pregunta les habla a dos de las cuatro por su nombre: Pindo tiene 17
 productores, 1 inyector y 3 reinyectores con recobro 28%; Libertador tiene
 16 pozos en inyección secundaria. Todo público. Y a las otras dos les habla
 por la ARCH: un pozo cerrado por alto corte de agua es un pozo sobre el que
 alguien tiene que decidir algo.
-El techo, fijado de antemano: screening con criterios, no simulación.
+El alcance, fijado de antemano: un screening con criterios; la simulación
+queda para los reservoristas.
 -->
 
 ---
@@ -123,8 +124,9 @@ vivo, ahora bajado entero: ocho años de archivos anuales, filtrados por
 cuenca al vuelo.
 Decir el precio: 2.5 GB de descarga y un script de sesenta líneas. Eso es
 todo lo que hizo falta para tener el dato público.
-La lista del martes es el principio de un screening, no el final: dice qué
-pozos ya están fuera por agua, no qué hacer con el patrón.
+La lista del martes es el punto de partida de un screening: dice qué pozos
+ya están fuera por agua, y qué hacer con ese patrón es la pregunta del
+screening.
 -->
 
 ---
@@ -134,7 +136,7 @@ pozos ya están fuera por agua, no qué hacer con el patrón.
 ## Primer resultado, y no es el que esperábamos
 
 De los **5.6 millones de m³** de agua inyectada en la cuenca, el 97.3% entra por pozos
-**Sumidero**: disposición de agua producida, no recuperación secundaria.
+**Sumidero**, que disponen del agua producida. Solo el 2.7% va a recuperación secundaria.
 
 Seis pozos figuran como inyección de agua en toda la cuenca. **Uno solo inyectó** algo en
 91 meses.
@@ -196,8 +198,8 @@ Ventana D, en orden:
 2. La conversión, que es donde se cuela el primer error posible: el tef de
    Capítulo IV cuenta días de PRODUCCIÓN, así que un inyector informa
    siempre cero. Cargado sin mirar eso, los inyectores desaparecen del
-   libro y el screening se queda sin la mitad que le importa. Pasó acá, y lo
-   agarró una persona contando filas, no el modelo.
+   libro y el screening se queda sin la mitad que le importa. Pasó acá: el
+   modelo siguió de largo y lo agarró una persona contando filas.
 3. El Libro A cargado: 8 pozos, 340 filas, 300 de yacoraite. La tercera
    tabla de la página es este campo, pozo por pozo.
 4. Los diagnósticos: clasificador de Chan da DESPLAZAMIENTO NORMAL, la
@@ -219,13 +221,13 @@ en ninguna fuente pública.
 5 min · acumulado 0:30
 Mostrar la hoja de completitud de datos: el libro dice en la cara qué
 porcentaje tiene y se niega a calcular el índice sin eso.
-Y ese es el punto que vale para las cuatro: lo que traba el screening no es
-la capacidad del modelo. Es la volumetría, los fluidos y la roca. Ningún
-modelo nuevo los va a inventar, y ese Nivel 2 es primer nivel del mapa de
-datos: corrido con datos propios, el libro viaja adentro de la red.
+Y ese es el punto que vale para las cuatro: lo que traba el screening es la
+falta de volumetría, fluidos y roca, datos que ningún modelo nuevo puede
+inventar. Y ese Nivel 2 es primer nivel del mapa de datos: corrido con datos
+propios, el libro viaja adentro de la red.
 Decir el costo real: horas del instructor, y qué haría falta para repetirlo
 adentro con datos propios.
-Cierre del bloque 6.
+Cierre del bloque 1.
 -->
 
 ---
@@ -246,7 +248,7 @@ Bloque 2 de 5 · **22 min**
 
 ## El caso prearmado, por el protocolo
 
-- **Dónde puede alucinar**: en la conversión y en el tiempo efectivo, no en las cifras
+- **Dónde puede alucinar**: en la conversión y en el tiempo efectivo; las cifras salen de filas que se pueden abrir
 - **Qué dato no puede salir**: ninguno, es público; con datos propios, el Nivel 2 entero
 - **Cómo se verifica**: la fuente abierta al lado, y un script que compara
 
@@ -273,12 +275,12 @@ Si esa respuesta es grave, el flujo necesita otro control antes de usarse.
 
 <!--
 4 min · acumulado 0:40
-Aplicada al caso: el screening es una lista de dónde mirar primero, no una
-decisión de inversión. El control que le sigue es el de siempre, la lupa del
-reservorista antes de mover un peso.
+Aplicada al caso: el screening es una lista de dónde mirar primero. Antes de
+cualquier decisión de inversión viene el control de siempre, la lupa del
+reservorista.
 Y el error concreto del caso sirve de ejemplo: el inyector que desaparecía
-por una columna mal leída no daba error, daba un libro prolijo con la mitad
-de los pozos. Los errores caros no se anuncian.
+por una columna mal leída dejaba un libro prolijo con la mitad de los pozos,
+sin ningún aviso.
 Esta pregunta es la tercera de la grilla que sigue: cada empresa se la hace
 a su caso.
 -->
@@ -292,7 +294,7 @@ a su caso.
 Ronda por empresa, **tres minutos** cada una, con la página de ayer y la misma grilla:
 dónde puede alucinar, qué dato no puede salir, cómo se verifica.
 
-Se lee la **estructura** del caso, no el dato.
+Se lee la **estructura** del caso: nadie dice un dato de su empresa.
 
 <!--
 12 min · acumulado 0:52
@@ -300,8 +302,8 @@ Cuatro empresas, tres minutos cada una: PCR, CGC, Tecpetrol, Andes. Donde
 hay más de una persona por empresa, una presenta y la otra suma.
 La grilla es la misma tabla de la página. La página de cada uno tiene
 dolor, datos, sensibilidad, verificabilidad y primer paso; la crítica se
-hace sobre la categoría del dato, nunca sobre el dato: nadie dice un
-número de su empresa en la sala.
+hace sobre la categoría del dato, y nadie dice un número de su empresa en
+la sala.
 Plan B si alguna empresa no trae la página: dos minutos para escribir UNA
 objeción a su propio caso de ayer, y se critica esa.
 Lo que salga se anota: la crítica es lo que cada empresa se lleva para
@@ -373,14 +375,15 @@ anotada.
 
 <!--
 7 min · acumulado 1:12
-Ronda por empresa, cuatro. Empujar hacia lo observable: no "usar más IA"
-sino "los informes de turno salen con borrador asistido desde el lunes".
+Ronda por empresa, cuatro. Empujar hacia lo observable: si alguien pone
+"usar más IA", pedir algo como "los informes de turno salen con borrador
+asistido desde el lunes".
 Las filas de todos van al chat: cada empresa se lleva la suya y ve las de
 las demás, que es de donde salen las mejores ideas, y ninguna fila lleva un
 dato propio.
 El pase al bloque siguiente, y decirlo con estas palabras: esa fila de
-noventa días se escribe contra la herramienta que va a existir a los noventa
-días, no contra la de hoy. De eso va la última hora.
+noventa días se escribe pensando en la herramienta que va a existir dentro
+de noventa días. De eso va la última hora.
 Martín: llama a las cuatro empresas en orden y confirma que las tres filas
 de cada una quedaron pegadas.
 Cierre del bloque 3.
@@ -402,12 +405,12 @@ Bloque 4 de 5 · **33 min**
 
 <!-- _class: acentos -->
 
-## Por qué esto no es entretenimiento
+## Un proyecto largo termina con otra herramienta
 
 Un proyecto dura. El que arranca **dentro de un mes** con el flujo de ese momento puede
 terminar antes que el que arranca hoy.
 
-Pero esperar tampoco es una estrategia: lo único que mejora solo es la **capacidad**.
+Pero esperar sin hacer nada tampoco sirve: lo único que mejora solo es la **capacidad**.
 
 <!--
 4 min · acumulado 1:16
@@ -416,11 +419,11 @@ herramienta con la que lo vas a terminar no es la que usaste para
 dimensionarlo. La ventaja de haber salido primero se la come la diferencia
 de herramienta.
 Y enseguida la contracara, para que nadie se vaya con la excusa: los datos,
-los permisos y los criterios no se construyen solos. La regla que sale de
+los permisos y los criterios los tiene que construir alguien. La regla que sale de
 las dos mitades: arrancá YA con lo que no se abarata (el mapa de datos, la
 política, las preguntas de aceptación) y postergá lo que sí (la
 construcción).
-El caso lo probó: lo que faltaba no era modelo, era Nivel 2.
+El caso lo mostró: lo que faltaba era el Nivel 2.
 La vara del bloque, declarada: de acá en adelante es especulación con nombre
 propio, para conversar. Las reglas de verificación valen también para los
 pronósticos.
@@ -440,14 +443,14 @@ después la opinión.
 <!--
 7 min · acumulado 1:23
 Pestañas abiertas de antes. Our World in Data tiene 35 gráficos y Epoch
-once exploradores al día. Hoy alcanzan dos, no tres.
+once exploradores al día. Hoy alcanzan dos.
 Recorrido: desempeño en pruebas contra la línea humana (años por debajo,
 cruce, saturación), y demanda eléctrica de los centros de datos, que se
-retoma al final del bloque. El cómputo de entrenamiento se nombra, no se
-abre.
-La advertencia honesta antes de opinar: un benchmark no es un puesto de
-trabajo, y las pruebas se eligen porque se pueden medir. Aun así, la
-pendiente es el dato.
+retoma al final del bloque. El cómputo de entrenamiento se nombra sin
+abrirlo.
+Antes de opinar, una advertencia: un benchmark mide una tarea acotada, muy
+lejos de un puesto de trabajo completo, y las pruebas se eligen porque se
+pueden medir. Aun así, conviene mirar la pendiente.
 Si preguntan por el largo de tarea que un agente completa, se duplica cada
 siete meses y ya lo vieron ayer.
 -->
@@ -466,7 +469,7 @@ Reproducir el video entero, tres minutos, desde la pestaña ya cargada, con
 el audio de la pestaña compartido.
 El comentario después, en dos frases: es el mismo tipo de modelo que redacta
 un informe, moviendo un cuerpo completo. Y ahí la regla de la sesión 7
-vale doble, porque en el mundo físico el error no vuelve como mensaje.
+vale doble, porque en el mundo físico un paso equivocado mueve algo real.
 -->
 
 ---
@@ -483,14 +486,14 @@ adentro de la red.
 
 <!--
 3 min · acumulado 1:30
-Contado, no mostrado. La experiencia propia sirve de anécdota: un modelo
+Esto se cuenta, sin demo. La experiencia propia sirve de anécdota: un modelo
 abierto de 27 mil millones de parámetros corriendo en la máquina del
 instructor, respondiendo sobre documentos que nunca salieron del disco.
 Las familias abiertas chicas (Llama, Qwen, Gemma, Phi) son las de este
-mundo. La brecha con la frontera sigue existiendo; la sorpresa es la
-velocidad con la que lo de ayer se vuelve local.
-Si alguna empresa quiere seguirla, es un proyecto de sistemas con el mapa de
-datos como requisito, no un experimento de escritorio.
+mundo. La brecha con la frontera sigue existiendo, pero lo de hace dos años
+se vuelve local cada vez más rápido.
+Si alguna empresa quiere seguirla, es un proyecto de sistemas, con el mapa
+de datos como requisito.
 -->
 
 ---
@@ -501,15 +504,15 @@ datos como requisito, no un experimento de escritorio.
 **Superinteligencia**: por encima del mejor humano en casi todas.
 
 La hipótesis que las conecta, I. J. Good (1965): una máquina que **diseña máquinas mejores**
-dispara una explosión de inteligencia. Hoy, sin ciencia ficción: los laboratorios ya usan sus
-modelos para construir los siguientes.
+dispara una explosión de inteligencia. Hoy, en concreto: los laboratorios ya usan sus modelos
+para construir los siguientes.
 
 <!--
 4 min · acumulado 1:34
 Los dos términos, definidos, y la letra chica: no hay definición única, y
 por eso se discute tanto si la primera ya llegó. El conteo de LifeArchitect
-queda en la pestaña y en la página: se lee como pronóstico, mirando los
-supuestos, no como consenso. Abrirlo solo si sobra tiempo.
+queda en la pestaña y en la página: se lee como un pronóstico, mirando los
+supuestos. Abrirlo solo si sobra tiempo.
 Good era matemático, colega de Turing. El dato aterrizado: buena parte del
 código de los laboratorios ya lo escriben sus propios modelos, y la curva
 del largo de tarea es el indicador que más miran los que toman esta
@@ -527,7 +530,7 @@ definición fuera "hace tu trabajo de hoy"?
 Vos escribís cuatro puntos. Un modelo los estira a un mail cortés. Del otro lado, otro modelo
 lo vuelve a **cuatro puntos**.
 
-Pero quizás no los tuyos: **los que le importan al receptor**.
+Y quizás sean **los que le importan al receptor**, que pueden ser otros.
 
 <!--
 4 min · acumulado 1:38
@@ -549,15 +552,15 @@ parecer un protocolo entre máquinas.
 El número con el que el rubro resume su miedo: la probabilidad que le asignás a una
 **catástrofe existencial** por inteligencia artificial.
 
-Va de casi cero a casi seguro según a quién le preguntes. **La dispersión es el dato.**
+Va de casi cero a casi seguro según a quién le preguntes: **no hay consenso**.
 
 <!--
 3 min · acumulado 1:41
 Nombres para la conversación, sin caricaturizar: pioneros que se volvieron
 cautos (Hinton dejó Google para poder hablar de esto), gente que lo
-considera manejable, gente que lo descarta. No hay consenso: hay apuestas
+considera manejable, gente que lo descarta. Lo que hay son apuestas
 razonadas, y la página linkea el panorama.
-La pregunta para la sala no es el número ajeno sino el propio: ¿te preocupa?
+La pregunta para la sala es por el número propio: ¿te preocupa?
 ¿cambia algo de lo que hacés el lunes?
 -->
 
@@ -574,8 +577,8 @@ esa electricidad es gas.
 <!--
 4 min · acumulado 1:45
 El ensayo está linkeado en la página; el argumento fuerte es biología y
-salud. Honestidad hasta en el optimismo: el mismo autor toma el riesgo en
-serio. Optimismo y cautela no son bandos, son la misma persona.
+salud. El mismo autor toma el riesgo en serio: optimismo y cautela conviven
+en la misma persona.
 El ángulo propio: volver al gráfico de demanda eléctrica de los centros de
 datos que vimos al principio del bloque. Para una empresa de gas, el futuro
 de la inteligencia artificial también es un mercado.
@@ -600,14 +603,15 @@ Bloque 5 de 5 · **15 min**
 
 ## Lo que se llevan del curso
 
-- La salida de un modelo es un **borrador plausible**: la verificación es tuya
+- La salida de un LLM es un **borrador plausible**: se verifica antes de usarlo
 - Delegá lo **digital, acotado y verificable**, con el mapa de datos en la mano
 - Arrancá ya con **lo que no se abarata**: los datos, los permisos, los criterios
 
 <!--
 3 min · acumulado 1:48
 Los cuatro días en tres frases. La tercera es la del bloque anterior y es la
-más accionable: la capacidad mejora sola, tu mapa de datos no.
+más accionable: la capacidad mejora sola, y el mapa de datos lo tiene que
+armar cada empresa.
 Las cuatro maneras de fallar quedaron cerradas: nombre, causa y arreglo
 para cada una, más el protocolo para dosificar la desconfianza.
 -->
@@ -648,25 +652,24 @@ directorio de OpenAI, en los recursos.
 Cuando la máquina hace el trabajo, le queda un trabajo más: **explicarlo**. Y a vos te queda
 el de **entenderlo**.
 
-No alcanza con aprobar lo que no entendés. Eso es el gerente que asiente.
+Si aprobás algo que no entendés, estás firmando sin saber qué.
 
 <!--
 4 min · acumulado 1:55
 Fuente: Geoffrey Litt, "Understanding is the new bottleneck", julio de 2026,
 linkeado en la página.
-Su tesis, que es más filosa que "hay que seguirle el ritmo": la idea cómoda
-es que si el agente se verifica solo, entender deja de hacer falta. Litt
-dice lo contrario, y no por desconfianza: se entiende para PARTICIPAR. Sin
+Su tesis: la idea cómoda es que si el agente se verifica solo, entender deja
+de hacer falta. Litt dice lo contrario: se entiende para PARTICIPAR. Sin
 fluidez conceptual no podés intervenir, ni pedir la variante, ni ver la
 opción que el modelo no consideró.
 Su instrumento es un quiz de cinco preguntas después de cada explicación,
 con una regla dura: no le manda código a nadie hasta que puede aprobarlo.
-Trabajar y cursar a la vez.
-Y acá el gancho: eso es lo que vinieron haciendo. Cuatro días de
-quizzes. Están en las páginas y no caducan.
-El remate, con Alan Kay de fondo: la computación se pensó siempre como
-aumento, no como reemplazo. No hace falta que nos saquemos del loop, también
-podemos meternos más adentro.
+Es trabajar y cursar a la vez.
+Es lo mismo que vinieron haciendo con el quiz de cada sesión, y los quizzes
+quedan en las páginas.
+Para terminar, con Alan Kay de fondo: la computación se pensó siempre como
+una forma de aumentar lo que puede hacer una persona. Con estas herramientas
+también podemos meternos más adentro del loop.
 -->
 
 ---

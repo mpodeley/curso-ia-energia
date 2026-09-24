@@ -142,8 +142,8 @@ NEXT_TOKEN = [
             {'token': ' Loca', 'p': 0.01},
         ],
         'note': 'Cuando el contexto apunta a un hecho muy repetido en el entrenamiento, la '
-        'distribución se concentra: acá el modelo está «casi seguro». La seguridad viene de la '
-        'frecuencia en los datos, no de haber verificado nada.',
+        'distribución se concentra: acá el modelo está «casi seguro». Esa seguridad sale de '
+        'cuántas veces vio el dato en el entrenamiento, y el modelo no verificó nada.',
     },
     {
         'id': 'valvula',
@@ -302,8 +302,8 @@ PROMPT_CASOS = [
         'cifra con su unidad y el mes al que corresponde.\n'
         'Por ejemplo, así abría el mes pasado: "La producción del bloque cayó 4% contra septiembre, '
         'explicado casi por completo por la parada programada de la planta compresora."',
-        'note': 'Fijate que la pieza que más cambia la salida no es el rol: es el contexto que dice '
-        'qué se decide con el resumen. Sin eso, el modelo no tiene con qué jerarquizar.',
+        'note': 'Fijate que la pieza que más cambia la salida es el contexto que dice qué se '
+        'decide con el resumen, más que el rol. Sin eso, el modelo no tiene con qué jerarquizar.',
     },
     {
         'id': 'minuta',
@@ -349,8 +349,8 @@ PROMPT_CASOS = [
                 'componente': 'tarea',
                 'opciones': [
                     {'calidad': 'ninguna', 'etiqueta': 'Sin verbo', 'texto': '',
-                     'comentario': 'Pegar las notas sin pedido explícito suele devolver las notas '
-                     'ordenadas, no una minuta.'},
+                     'comentario': 'Pegar las notas sin pedido explícito suele devolver las mismas '
+                     'notas ordenadas, sin forma de minuta.'},
                     {'calidad': 'floja', 'etiqueta': 'Ambiguo',
                      'texto': 'Pasá esto en limpio.',
                      'comentario': '"En limpio" puede significar corregir la ortografía o reescribir '
@@ -433,8 +433,8 @@ PROMPT_CASOS = [
                      'texto': 'Sos un ingeniero de terminación de pozos que hace triaje de '
                      'bibliografía para su equipo.',
                      'comentario': 'La especialidad fija qué es obvio y qué es novedad. El propósito '
-                     'de triaje fija que el resumen sirve para decidir, no para reemplazar la '
-                     'lectura.'},
+                     'de triaje fija que el resumen sirve para decidir si el paper merece una '
+                     'lectura completa.'},
                 ],
             },
             {
@@ -445,8 +445,8 @@ PROMPT_CASOS = [
                      'algo que no tengas.'},
                     {'calidad': 'floja', 'etiqueta': 'Sin el problema propio',
                      'texto': 'Contexto: es un paper sobre control de arena.',
-                     'comentario': 'Eso ya está en el título del paper. El contexto que sirve es el '
-                     'tuyo, no el del documento.'},
+                     'comentario': 'Eso ya está en el título del paper. El contexto que le sirve '
+                     'al modelo es el tuyo.'},
                     {'calidad': 'buena', 'etiqueta': 'Tu problema como filtro',
                      'texto': 'Contexto: en nuestros pozos usamos mallas ranuradas en arenas poco '
                      'consolidadas y tenemos problemas de taponamiento. Quiero saber si este paper '
@@ -607,14 +607,14 @@ DECLINE_POZOS = [
     {
         'idpozo': '10639',
         'nota': 'Casi no declina: en siete años perdió menos de un quinto de su caudal. Necesita un '
-        'Di muy chico. Un pozo así vale por su permanencia, no por su caudal inicial.',
+        'Di muy chico. Un pozo así vale por su permanencia más que por su caudal inicial.',
     },
     {
         'idpozo': '34663',
-        'nota': 'Acá ningún juego de parámetros ajusta bien, y ese es el punto. Seis años de meseta '
-        'y después un derrumbe en doce meses no es una declinación: es una intervención, un cierre o '
-        'la entrada de agua. Arps describe un reservorio que se despresuriza solo, y no fue lo que '
-        'pasó. El modelo no sabe nada de la operación del pozo — eso lo sabés vos.',
+        'nota': 'Acá ningún juego de parámetros ajusta bien. Seis años de meseta y después un '
+        'derrumbe en doce meses es la huella de una intervención, un cierre o la entrada de agua. '
+        'Arps describe un reservorio que se despresuriza solo, y acá pasó otra cosa. La operación '
+        'del pozo la conocés vos; el modelo no tiene ese dato.',
     },
 ]
 
@@ -868,8 +868,8 @@ def build_agent_trace():
         os.path.join(ROOT, 'agent_trace.json'),
         AGENT_TRACE,
         source='traza curada para el curso. Reconstruye una corrida real sobre el dataset de '
-        'Capítulo IV: los comandos, el error de la diéresis y las salidas son representativos, no '
-        'una captura literal de pantalla.',
+        'Capítulo IV: los comandos, el error de la diéresis y las salidas se reescribieron a '
+        'partir de esa corrida, sin copiar la pantalla literal.',
     )
 
 
@@ -916,7 +916,8 @@ ALUCINACIONES = [
                 'inventada': True,
                 'porque': 'Falsa precisión con nombre propio. El número termina en cifras redondas '
                 'sospechosas y el identificador del pozo puede no existir en tu planilla. Los '
-                'modelos completan nombres con el patrón que vieron, no con tu nomenclatura.',
+                'modelos completan nombres con el patrón que vieron en el entrenamiento, que puede '
+                'no coincidir con tu nomenclatura.',
                 'comoVerificar': 'Buscá "AG-14" en la planilla original. Si no está, el modelo '
                 'inventó el pozo. Si está, ordená por producción y comprobá que sea el primero.',
             },
@@ -940,8 +941,8 @@ ALUCINACIONES = [
                 'tiene. Una cifra de beneficio inventada es la más peligrosa de todas, porque es la '
                 'que termina en una presentación a gerencia.',
                 'comoVerificar': 'Preguntale de dónde salió el número. Si no puede señalar un dato '
-                'de la planilla ni un cálculo explícito, no existe. Una estimación así se hace con '
-                'análisis nodal, no con una frase.',
+                'de la planilla ni un cálculo explícito, el número es inventado. Una estimación '
+                'así se hace con un análisis nodal.',
             },
         ],
         'note': 'Fijate el patrón: las tres invenciones son las tres afirmaciones que NO se pueden '
@@ -964,7 +965,8 @@ ALUCINACIONES = [
             {
                 'texto': 'Las dos familias principales de solución son las mallas o filtros y el '
                 'empaque de grava.',
-                'porque': 'También conocimiento general y correcto. Sirve como marco, no como dato.',
+                'porque': 'También conocimiento general y correcto. Sirve como marco; si necesitás '
+                'una cifra, buscala en la fuente.',
             },
             {
                 'texto': 'Según Al-Rashidi et al. (2019), publicado en el Journal of Petroleum '
@@ -1015,8 +1017,8 @@ ALUCINACIONES = [
             {
                 'texto': 'En general, los marcos regulatorios de hidrocarburos exigen registrar y '
                 'reportar los eventos de venteo a la autoridad de aplicación.',
-                'porque': 'Afirmación general y prudente, con el "en general" que corresponde. Sirve '
-                'para orientarse, no para cumplir.',
+                'porque': 'Afirmación general y prudente, con el "en general" que corresponde. '
+                'Sirve para orientarse; para cumplir la norma hay que leer su texto.',
             },
             {
                 'texto': 'El Decreto Supremo 28397, artículo 14, obliga a informar todo venteo mayor '
@@ -1027,8 +1029,8 @@ ALUCINACIONES = [
                 'son el peor caso de uso de un chatbot sin documentos adjuntos, porque el costo del '
                 'error es legal.',
                 'comoVerificar': 'Buscá el texto de la norma en el boletín oficial o en la página de '
-                'la autoridad. Cualquier consulta normativa se responde con el texto a la vista, no '
-                'de memoria — ni la del modelo ni la tuya.',
+                'la autoridad. Cualquier consulta normativa se responde con el texto a la vista, y '
+                'eso vale tanto para la memoria del modelo como para la tuya.',
             },
             {
                 'texto': 'La obligación alcanza tanto al venteo por emergencia como al venteo '
@@ -1119,7 +1121,7 @@ CONVERSACION = [
         'rol': 'modelo',
         'texto': 'Con nueve días de operación efectiva, el Ramos-14 promedió 3,467 metros '
         'cúbicos por día. Ojo con comparar ese promedio mensual contra el del Ramos-12: la '
-        'diferencia es de disponibilidad, no de reservorio.',
+        'diferencia la explican los días de operación, y sobre el reservorio no dice nada.',
     },
     {
         'rol': 'usuario',

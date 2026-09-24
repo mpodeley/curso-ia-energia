@@ -68,20 +68,19 @@ Acambuco), con esa tercera perilla, y con la pregunta incómoda de cuánto de es
 reservorio y cuánto es la operación.
 
 ¿Por qué explotó ahora y no en 2010? Tres cosas se juntaron: datos (todo el texto de internet),
-cómputo (las placas gráficas, GPU) y una **arquitectura que escala** (el transformer, 2017). No hubo
-un descubrimiento mágico: hubo una receta que mejora de forma sorprendentemente predecible al
-agrandarla.
+cómputo (las placas gráficas, GPU) y una **arquitectura que escala** (el transformer, 2017). Con
+esa receta, el modelo mejora de forma sorprendentemente predecible a medida que se lo agranda.
 
 ## Dos maneras distintas de equivocarse
 
-En las demos el chatbot se va a equivocar más de una vez, y no siempre por lo mismo. A veces le
+En las demos el chatbot se va a equivocar más de una vez, por dos motivos distintos. A veces le
 falta el dato: nunca leyó el reporte por el que le preguntás, y en lugar de decirlo escribe la
 cifra más creíble. Otras veces el dato no existe en ninguna parte, y aun así devuelve algo con la
 forma exacta de un dato: el número de un artículo, la cita de un trabajo técnico, el inciso de una
 norma.
 
-La diferencia no es académica. A la primera se la arregla trayéndole el documento, y de eso se
-ocupa la sesión 5. A la segunda no se la arregla: se la verifica, y de eso se ocupa la sesión 7.
+Distinguirlas cambia lo que hay que hacer. La primera se arregla trayéndole el documento, y de eso
+se ocupa la sesión 5. La segunda hay que verificarla, y de eso se ocupa la sesión 7.
 
 ## La encuesta que ajusta el curso
 
@@ -91,8 +90,8 @@ uno, qué tareas repetitivas le comen la semana, qué datos maneja y en qué for
 bloque pide una sola cosa: el problema que probarías primero. Con esa respuesta arranca el taller
 de la sesión 6, donde cada empresa escribe su caso en una página.
 
-Doce preguntas, diez minutos, nada confidencial. Si te quedó a medias, se guarda sola y la
-terminás en la pausa.
+Son doce preguntas, se completan en unos diez minutos y ninguna pide información confidencial. Si
+te quedó a medias, se guarda sola y la terminás en la pausa.
 
 <EncuestaS1 sesion={1} />
 
@@ -100,8 +99,8 @@ terminás en la pausa.
 
 1. ¿Qué tarea de tu semana laboral te parece **más** automatizable con lo que viste hoy? ¿Y cuál menos?
 2. En la demo, el chatbot respondió algo incorrecto con total seguridad. ¿Fue porque le faltaba el
-   dato, o porque el dato no existía y lo completó igual? No son la misma falla y no se arreglan
-   igual.
+   dato, o porque el dato no existía y lo completó igual? Según cuál haya sido, el arreglo es
+   distinto.
 
 Después de la pausa sigue la sesión 2: tokens, predicción, la ventana de contexto y de dónde salen
 las alucinaciones.

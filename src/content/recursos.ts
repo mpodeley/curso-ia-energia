@@ -142,7 +142,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'LMArena',
       idioma: 'en',
       porque:
-        'El ranking de chatbots hecho con votos a ciegas: miles de personas eligen entre dos respuestas sin saber de qué modelo es cada una. Sirve para el pulso general; tu tarea sigue siendo el benchmark que importa.',
+        'El ranking de chatbots hecho con votos a ciegas: miles de personas eligen entre dos respuestas sin saber de qué modelo es cada una. Sirve como referencia general; para elegir, probá los modelos con tu propia tarea.',
     },
     {
       tipo: 'herramienta',
@@ -160,7 +160,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Anthropic',
       idioma: 'en',
       porque:
-        'El anuncio original de la contracara de esta sesión: la cota de Riemann movida de 41.6% a 67.2% con un prompt de aliento, y 31 millones de tokens y una prueba formal atrás. Con sus advertencias a la vista: no prueba la hipótesis.',
+        'El anuncio original de la contracara de esta sesión: la cota de Riemann movida de 41.6% a 67.2% con un prompt de aliento, y 31 millones de tokens y una prueba formal atrás. El anuncio aclara que el resultado no prueba la hipótesis.',
     },
     {
       tipo: 'lectura',
@@ -253,7 +253,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2025-03',
       idioma: 'en',
       porque:
-        'La distinción que ordena el tema en cinco minutos: un flujo fijo que usa un modelo no es lo mismo que un modelo que decide sus propios pasos. Es el mismo eje de la lectura de Anthropic de abajo, en video.',
+        'Cinco minutos sobre la distinción que ordena el tema: un flujo fijo que usa un modelo, frente a un modelo que decide sus propios pasos. Es el mismo eje de la lectura de Anthropic de abajo, en video.',
     },
     {
       tipo: 'lectura',
@@ -262,7 +262,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'METR',
       idioma: 'en',
       porque:
-        'La medición detrás de "el techo sube solo": el largo de tarea que un agente completa viene duplicándose cada siete meses. Con su letra chica a la vista (50% de éxito, tareas de software), que es lo que la hace confiable.',
+        'La medición detrás de "el techo sube solo": el largo de tarea que un agente completa viene duplicándose cada siete meses. Publica la letra chica: la cifra corresponde a un 50% de éxito, en tareas de software.',
     },
     {
       tipo: 'video',
@@ -293,7 +293,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Anthropic',
       idioma: 'en',
       porque:
-        'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad es el mejor antídoto que existe contra el humo del género. En inglés.',
+        'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad le sirve a cualquiera para separar lo que funciona del humo. En inglés.',
     },
   ],
   7: [
@@ -317,7 +317,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2024-12',
       idioma: 'en',
       porque:
-        'Para el más curioso: por qué mirar adentro de un modelo es difícil de verdad. Welch Labs explica la interpretabilidad mecanicista, la disciplina detrás de "se puede mirar adentro, pero no lo bastante para garantizar", que es el corazón de esta sesión.',
+        'Para el más curioso: por qué mirar adentro de un modelo es difícil de verdad. Welch Labs explica la interpretabilidad mecanicista: se puede mirar adentro de un modelo, pero todavía no lo bastante para garantizar cómo se comporta. Esa idea atraviesa esta sesión.',
     },
     {
       tipo: 'herramienta',
@@ -339,7 +339,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2026-07',
       idioma: 'en',
       porque:
-        'Especulativo a propósito: es para el bloque de conversación. Lo mejor está en los últimos diez minutos: la hipótesis de que la inteligencia artificial reemplaza el trabajo científico y la mayoría de los usos prácticos del lenguaje, con el ejemplo del mail de cuatro puntos que conversamos en vivo.',
+        'Es especulativo a propósito, porque acompaña el bloque de conversación. Lo mejor está en los últimos diez minutos: la hipótesis de que la inteligencia artificial reemplaza el trabajo científico y la mayoría de los usos prácticos del lenguaje, con el ejemplo del mail de cuatro puntos que conversamos en vivo.',
     },
     {
       tipo: 'video',
@@ -350,7 +350,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2023-11',
       idioma: 'en',
       porque:
-        'Ocho minutos sobre los cinco días de noviembre de 2023 en que echaron y repusieron al director ejecutivo de OpenAI. Ilya Sutskever, el científico jefe, votó por echarlo y después se fue de la empresa; nunca dijo del todo por qué, y de ahí salió la pregunta que quedó dando vueltas en el rubro: qué vio. Sirve para ver que las discusiones sobre riesgo no son abstractas: se pelean adentro de las empresas que construyen esto.',
+        'Ocho minutos sobre los cinco días de noviembre de 2023 en que echaron y repusieron al director ejecutivo de OpenAI. Ilya Sutskever, el científico jefe, votó por echarlo y después se fue de la empresa; nunca dijo del todo por qué, y de ahí salió la pregunta que quedó dando vueltas en el rubro: qué vio. Sirve para ver que las discusiones sobre riesgo se pelean adentro de las empresas que construyen esto.',
     },
     {
       tipo: 'video',
@@ -361,7 +361,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2026-07',
       idioma: 'en',
       porque:
-        'Tres minutos del anuncio oficial: el mismo tipo de modelo que redacta informes, moviendo un cuerpo completo. Es la conversación del bloque final saliendo de la pantalla, y conecta con la regla de la sesión 7: en el mundo físico el error no vuelve como mensaje.',
+        'Tres minutos del anuncio oficial: el mismo tipo de modelo que redacta informes, moviendo un cuerpo completo. Muestra en concreto lo que se conversa en el bloque final, y se conecta con la regla de la sesión 7: en el mundo físico, un error ya no se corrige releyendo un texto.',
     },
     {
       tipo: 'herramienta',
@@ -370,7 +370,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Our World in Data',
       idioma: 'en',
       porque:
-        'Los 35 gráficos que hacen falta para discutir el futuro con datos y no con anécdotas: cómputo de entrenamiento, desempeño en pruebas contra la línea humana, inversión, adopción entre trabajadores y demanda eléctrica de los centros de datos. En clase se recorre en vivo.',
+        'Los 35 gráficos que hacen falta para discutir el futuro con datos: cómputo de entrenamiento, desempeño en pruebas contra la línea humana, inversión, adopción entre trabajadores y demanda eléctrica de los centros de datos. En clase se recorre en vivo.',
     },
     {
       tipo: 'herramienta',
@@ -388,7 +388,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Geoffrey Litt',
       idioma: 'en',
       porque:
-        'Con lo que cierra el curso. Contra la idea cómoda de que si el agente se verifica solo entender deja de hacer falta: se entiende para participar, no solo para controlar. Su instrumento es un cuestionario de cinco preguntas después de cada explicación, que es el mismo aparato que usaron acá cuatro días seguidos.',
+        'El texto con el que cierra el curso. Discute la idea cómoda de que, si el agente se verifica solo, ya no hace falta entender: sostiene que entender sirve para participar del trabajo, además de para controlarlo. Su instrumento es un cuestionario de cinco preguntas después de cada explicación, como los quizzes que hicieron acá en cada sesión.',
     },
     {
       tipo: 'lectura',
@@ -397,7 +397,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'LifeArchitect (Alan D. Thompson)',
       idioma: 'en',
       porque:
-        'Un analista que mantiene, con criterio propio y explícito, un porcentaje de cuán cerca está la inteligencia artificial general. Es una opinión con método a la vista, no un consenso: leelo como se lee un pronóstico, mirando los supuestos.',
+        'Un analista que mantiene, con criterio propio y explícito, un porcentaje de cuán cerca está la inteligencia artificial general. Es la opinión de una persona, con el método a la vista: leelo como se lee un pronóstico, mirando los supuestos.',
     },
     {
       tipo: 'lectura',
@@ -406,7 +406,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'LifeArchitect (Alan D. Thompson)',
       idioma: 'en',
       porque:
-        'La página hermana del conteo: qué significaría un sistema por encima del nivel humano en todo, y quiénes lo toman en serio. Material de conversación, no de planificación.',
+        'La página hermana del conteo: qué significaría un sistema por encima del nivel humano en todo, y quiénes lo toman en serio. Sirve para la conversación sobre escenarios; no lo uses para planificar.',
     },
   ],
 }
@@ -456,7 +456,7 @@ export const INTERPRETABILIDAD: Recurso[] = [
     historico: true,
     idioma: 'en',
     porque:
-      'Va un paso más allá: no solo qué detecta cada neurona, sino cómo se conectan entre sí para formar un detector. Es el origen del programa de investigación que hoy se aplica a los modelos de lenguaje.',
+      'Va un paso más allá de qué detecta cada neurona: muestra cómo se conectan entre sí para formar un detector. Es el origen del programa de investigación que hoy se aplica a los modelos de lenguaje.',
   },
   {
     tipo: 'lectura',

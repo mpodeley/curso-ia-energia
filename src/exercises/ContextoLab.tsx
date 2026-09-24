@@ -40,7 +40,7 @@ export function ContextoLab({ sesion = 2 }: { sesion?: number }) {
     <Ejercicio
       titulo="Qué se cae del escritorio"
       sesion={sesion}
-      intro="Una conversación de trabajo, con el conteo real de tokens de cada mensaje. Achicá la ventana de contexto y mirá qué deja de ver el modelo. No se olvida: lo que quedó afuera nunca estuvo."
+      intro="Una conversación de trabajo, con el conteo real de tokens de cada mensaje. Achicá la ventana de contexto y mirá qué deja de ver el modelo. Lo que queda afuera de la ventana, el modelo directamente no lo recibe."
       onReset={reset}
     >
       <Slider
@@ -163,9 +163,8 @@ export function ContextoLab({ sesion = 2 }: { sesion?: number }) {
         <p style={{ margin: 0 }}>
           La ventana se llena desde el final: lo último que se dijo es lo que seguro está. Cuando no
           entra todo, lo que se descarta es lo más viejo, y en una conversación de trabajo lo más
-          viejo son las reglas, porque las reglas se dan al principio. Por eso la falla típica no es
-          que el modelo pierda un dato del medio: es que deje de respetar algo que le pediste hace
-          media hora.
+          viejo son las reglas, porque las reglas se dan al principio. Por eso la falla típica es
+          que el modelo deje de respetar algo que le pediste hace media hora.
         </p>
         <p style={{ margin: `${space.sm}px 0 0` }}>
           Y no hay aviso. El modelo no sabe que había algo antes, así que no puede echarlo de menos.
@@ -177,13 +176,13 @@ export function ContextoLab({ sesion = 2 }: { sesion?: number }) {
         <p style={{ margin: 0 }}>
           Tres cosas, en orden de esfuerzo. Conversaciones cortas y una tarea por vez: si cambiaste
           de tema, abrí un chat nuevo. Repetir lo que no se puede perder, en el mismo mensaje donde
-          hacés el pedido importante, aunque ya lo hayas dicho. Y para documentos largos, no pegar
-          todo: buscar el pedazo que hace falta y pegar solo eso, que es la sesión 5.
+          hacés el pedido importante, aunque ya lo hayas dicho. Y para documentos largos, buscar el
+          pedazo que hace falta y pegar solo ese, que es la sesión 5.
         </p>
         <p style={{ margin: `${space.sm}px 0 0` }}>
           Las ventanas de hoy son mucho más grandes que las de este ejercicio, del orden de cientos
-          de miles de tokens en los modelos más grandes. Lo que no cambió es el mecanismo: sigue
-          habiendo un borde, sigue cayéndose lo más viejo primero, y sigue sin avisar.
+          de miles de tokens en los modelos más grandes. El mecanismo es el mismo: hay
+          un borde, lo más viejo se cae primero y el modelo no avisa.
         </p>
       </Solucion>
 

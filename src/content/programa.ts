@@ -25,7 +25,7 @@ export const SESIONES: Sesion[] = [
     dia: 1,
     titulo: 'De los datos a la IA generativa',
     resumen:
-      'El mapa de la IA generativa con los pies en la industria, y un chatbot frente a tareas reales: qué hace bien, dónde falla y por qué no siempre por lo mismo.',
+      'El mapa de la IA generativa con los pies en la industria, y un chatbot frente a tareas reales: qué hace bien, dónde falla y de qué dos maneras se equivoca.',
     objetivos: [
       'Ubicar data science, machine learning e IA generativa en un solo mapa',
       'Ver en vivo qué puede (y qué no puede) hacer hoy un chatbot con tareas reales de la industria',
@@ -80,7 +80,7 @@ export const SESIONES: Sesion[] = [
     dia: 3,
     titulo: 'Tu conocimiento: RAG y NotebookLM',
     resumen:
-      'Que el modelo responda con tus documentos, no con lo que recuerda de internet: buscar por significado, responder con el libro abierto y abrir cada cita.',
+      'Cómo hacer que el modelo responda a partir de tus documentos: buscar por significado, responder con el libro abierto y abrir cada cita.',
     objetivos: [
       'Entender la intuición de RAG: buscar → traer → responder',
       'Armar un cuaderno de NotebookLM con documentos públicos del rubro y uno de tu empresa',

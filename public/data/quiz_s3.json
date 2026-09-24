@@ -12,7 +12,7 @@
         },
         {
           "texto": "El más barato siempre: total, todos hacen más o menos lo mismo.",
-          "explicacion": "No hacen lo mismo: el rápido falla más seguido en tareas difíciles. Barato sin probar sale caro apenas hay que revisar todo a mano."
+          "explicacion": "No hacen lo mismo: el rápido falla más seguido en tareas difíciles. Si no lo probaste, el ahorro se pierde apenas hay que revisar todo a mano."
         },
         {
           "texto": "Pruebo la tarea real en el modelo grande y en el rápido, comparo las salidas, y me quedo con el más barato que alcanza.",
@@ -21,7 +21,7 @@
         },
         {
           "texto": "Da igual cuál: los proveedores cobran todos lo mismo por consulta.",
-          "explicacion": "Se cobra por token, no por consulta, y entre el modelo grande y el rápido de un mismo proveedor puede haber cien veces de diferencia de precio."
+          "explicacion": "El cobro es por token, lo que entra y lo que sale, y entre el modelo grande y el rápido de un mismo proveedor puede haber cien veces de diferencia de precio."
         }
       ]
     },
@@ -35,15 +35,15 @@
         {
           "texto": "El contexto, cuando dice para qué se va a usar el resultado y qué decisión alimenta.",
           "correcta": true,
-          "explicacion": "Es lo que le da criterio para jerarquizar: qué dejar afuera. Sin eso resume \"en general\", que es resumir para nadie."
+          "explicacion": "Es lo que le da criterio para jerarquizar: qué dejar afuera. Sin eso resume \"en general\", y el resumen no le sirve a ningún lector en particular."
         },
         {
           "texto": "Los ejemplos, siempre.",
-          "explicacion": "Un ejemplo real es muy potente, pero es opcional. El contexto no lo es: sin él, el ejemplo tampoco sabe hacia dónde apuntar."
+          "explicacion": "Un ejemplo real es muy potente, pero es opcional. El contexto hace falta siempre: sin él, el ejemplo tampoco sabe hacia dónde apuntar."
         },
         {
           "texto": "El largo del prompt: cuanto más detallado, mejor.",
-          "explicacion": "Un prompt largo y vago rinde menos que uno corto y específico. Lo que importa es qué piezas están, no cuántas palabras."
+          "explicacion": "Un prompt largo y vago rinde menos que uno corto y específico. Lo que cambia la salida son las piezas que están."
         }
       ]
     },
@@ -65,7 +65,7 @@
         },
         {
           "texto": "Subir el informe pero cambiándole el nombre a los pozos.",
-          "explicacion": "Los volúmenes, las fechas y las relaciones entre pozos siguen ahí. Anonimizar mal da una sensación de seguridad sin la seguridad."
+          "explicacion": "Los volúmenes, las fechas y las relaciones entre pozos siguen ahí. Anonimizar mal hace sentir seguro a quien sube el archivo, pero los datos siguen expuestos."
         }
       ]
     },
@@ -79,7 +79,7 @@
         {
           "texto": "Decirle qué está mal y pedirle el ajuste concreto: más corto, sin jerga, con la conclusión al principio.",
           "correcta": true,
-          "explicacion": "La conversación es parte del método, no señal de que fallaste. Cada corrección concreta rinde más que reescribir el prompt entero."
+          "explicacion": "Corregir conversando es parte normal del método, y cada corrección concreta rinde más que reescribir el prompt entero."
         },
         {
           "texto": "Preguntarle por qué le salió mal.",
@@ -87,7 +87,7 @@
         },
         {
           "texto": "Volver a mandar el mismo prompt hasta que salga algo mejor.",
-          "explicacion": "Vas a obtener variaciones del mismo error. Si el prompt no cambia, el problema no cambia."
+          "explicacion": "Vas a obtener variaciones del mismo error, porque el problema está en el prompt."
         }
       ]
     }

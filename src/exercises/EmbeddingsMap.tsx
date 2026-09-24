@@ -30,7 +30,7 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
     <Ejercicio
       titulo="El mapa de significados"
       sesion={sesion}
-      intro="Cada término de la industria convertido en un vector, y esos vectores proyectados a un plano. Las flechas salen del promedio de todos los términos: dos con sentido parecido apuntan para el mismo lado. Clickeá cualquier punto para ver qué términos le quedan más cerca según el modelo. Buscá los de la familia «jerga»: ahí está lo interesante."
+      intro="Cada término de la industria convertido en un vector, y esos vectores proyectados a un plano. Las flechas salen del promedio de todos los términos: dos con sentido parecido apuntan para el mismo lado. Clickeá cualquier punto para ver qué términos le quedan más cerca según el modelo. Empezá por los de la familia «jerga», que son los que más muestran."
       onReset={reset}
     >
       <div style={{ display: 'flex', gap: space.md, flexWrap: 'wrap', marginBottom: space.md }}>
@@ -62,7 +62,7 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
         <Select
           value={sel?.id ?? ''}
           options={[
-            { value: '', label: '— ninguno —' },
+            { value: '', label: '(ninguno)' },
             ...terminos.map((t) => ({ value: t.id, label: `${t.termino} · ${t.familia}` })),
           ]}
           onChange={(v) => patch({ termino: v })}
@@ -108,8 +108,7 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
                 color: colors.textSecondary,
               }}
             >
-              <strong>En el yugo:</strong> {sel.glosa} El modelo no tiene idea de esto: aprendió la palabra del
-              lenguaje corriente, no de tu campo.
+              <strong>En el yugo:</strong> {sel.glosa} El modelo no tiene idea de esto: aprendió la palabra del lenguaje corriente.
             </div>
           )}
 
@@ -136,19 +135,18 @@ export function EmbeddingsMap({ sesion = 5 }: { sesion?: number }) {
       )}
 
       <Solucion titulo="Qué es un embedding, sin metáforas de más">
-        El modelo convierte cada palabra o frase en una lista de 1024 números. Esa lista no significa nada por sí
-        sola: lo único que importa es que dos textos con sentido parecido den listas parecidas. Todo lo que ves acá
-        sale de una sola operación, medir cuán parecidas son dos listas. Y eso alcanza para buscar por significado en
-        vez de por palabras, que es lo que hace posible el próximo ejercicio.
+        El modelo convierte cada palabra o frase en una lista de 1024 números. Lo que sirve de esa lista es
+        compararla: dos textos con sentido parecido dan listas parecidas. Todo lo que ves acá sale de una sola
+        operación, medir cuán parecidas son dos listas. Y eso alcanza para buscar por significado, más allá de las
+        palabras exactas, que es lo que hace posible el próximo ejercicio.
       </Solucion>
 
       <Solucion titulo="Dónde falla, y por qué te conviene saberlo">
         Dos límites, los dos visibles en este mapa. El primero: el modelo aprendió del lenguaje general, así que la
         jerga del yacimiento le suena a lo que significa afuera. Buscá «burro», «araña» o «pescado» y mirá con quién
-        se juntan. El segundo, más sutil: a veces acerca palabras por cómo se escriben y no por lo que quieren decir
-        — «derrame de hidrocarburo» y «regalías hidrocarburíferas» comparten raíz y poco más, y el modelo las pone
-        cerca igual. Un buscador que se apoya en esto va a traer, cada tanto, algo que se parece pero no sirve. Por
-        eso en la sesión que viene el fragmento recuperado se muestra siempre: para que lo puedas descartar.
+        se juntan. El segundo, más sutil: a veces acerca palabras solo porque se escriben parecido. «Derrame de hidrocarburo» y «regalías hidrocarburíferas» comparten raíz y poco más, y el modelo las pone cerca igual. Un
+        buscador que se apoya en esto va a traer, cada tanto, algo que se parece pero no sirve. Por eso en el
+        ejercicio que sigue el fragmento recuperado se muestra siempre: para que lo puedas descartar.
       </Solucion>
 
       {meta.source && (

@@ -17,7 +17,7 @@
         },
         {
           "texto": "Que la inyección de agua no sirve en campos maduros.",
-          "explicacion": "Una cuenca donde el waterflooding ya terminó no prueba nada sobre su rendimiento: prueba que un proyecto de recuperación secundaria tiene un final, que es otra cosa."
+          "explicacion": "Una cuenca donde el waterflooding ya terminó dice poco sobre su rendimiento. Lo que muestra es que un proyecto de recuperación secundaria tiene un final."
         },
         {
           "texto": "Que los 26 sumideros son inyectores y el screening puede usarlos.",
@@ -31,7 +31,7 @@
         {
           "texto": "Porque el tiempo efectivo del Capítulo IV cuenta días de producción, y un inyector informa siempre cero.",
           "correcta": true,
-          "explicacion": "Es el error del caso, y no se anunció: daba un libro prolijo con la mitad de los pozos. Lo agarró una persona mirando la cuenta de filas, no el modelo."
+          "explicacion": "Es el error del caso, y pasó sin ningún aviso: quedaba un libro prolijo con la mitad de los pozos. El modelo siguió de largo y lo agarró una persona mirando la cuenta de filas."
         },
         {
           "texto": "Porque el Capítulo IV no publica los volúmenes inyectados.",
@@ -43,7 +43,7 @@
         },
         {
           "texto": "Porque en la cuenca Noroeste no hay inyectores.",
-          "explicacion": "Hay seis declarados y uno que inyectó 154,484 metros cúbicos. Pocos no es ninguno, y el campo del caso se eligió justamente por ese inyector."
+          "explicacion": "Hay seis declarados y uno que inyectó 154,484 metros cúbicos. Son pocos, y el campo del caso se eligió justamente por ese inyector."
         }
       ]
     },
@@ -52,11 +52,11 @@
       "opciones": [
         {
           "texto": "Un presupuesto para licencias.",
-          "explicacion": "Las licencias son la fila de decisión corporativa, no la del piloto. Un piloto de noventa días puede correr con lo que ya está aprobado."
+          "explicacion": "Las licencias van en la fila de decisión corporativa. Un piloto de noventa días puede correr con lo que ya está aprobado."
         },
         {
           "texto": "Un modelo más potente que el que hay disponible hoy.",
-          "explicacion": "La capacidad es lo único que mejora sola. Lo que no se construye solo es lo que falta acá."
+          "explicacion": "La capacidad es lo único que mejora sola; lo que falta acá lo tiene que construir alguien."
         },
         {
           "texto": "Que lo apruebe el área de sistemas antes de arrancar.",
@@ -65,7 +65,7 @@
         {
           "texto": "Un dueño con nombre, y un criterio de éxito observable escrito antes de arrancar, como \"los informes de turno salen con borrador asistido desde el lunes\".",
           "correcta": true,
-          "explicacion": "Un piloto sin criterio de éxito escrito no termina nunca: se diluye y después nadie sabe si funcionó. Y el criterio se cuenta, no se estima: informes, consultas resueltas, horas de un análisis concreto."
+          "explicacion": "Un piloto sin criterio de éxito escrito no termina nunca: se diluye y después nadie sabe si funcionó. Y el criterio se cuenta: informes, consultas resueltas, horas de un análisis concreto."
         }
       ]
     },
@@ -83,7 +83,7 @@
         {
           "texto": "Arrancar ya con lo que no se abarata (el mapa de datos, la política, las preguntas de aceptación, el criterio de éxito) y postergar la construcción.",
           "correcta": true,
-          "explicacion": "El caso lo mostró sin forzarlo: lo que faltaba para completar el screening no era un modelo mejor, era el Nivel 2. Eso no lo trae ninguna versión nueva."
+          "explicacion": "El caso lo mostró sin forzarlo: lo que faltaba para completar el screening era el Nivel 2, y eso no lo trae ninguna versión nueva de un modelo."
         },
         {
           "texto": "Depende del proveedor que elija la empresa.",

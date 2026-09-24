@@ -12,7 +12,7 @@
         },
         {
           "texto": "Pedirle que la extraiga de nuevo en un chat nuevo y quedarte con la versión que se repite.",
-          "explicacion": "Dos extracciones pueden coincidir en el mismo error, porque leen la misma celda ambigua de la misma manera. Repetir no es verificar."
+          "explicacion": "Dos extracciones pueden coincidir en el mismo error, porque leen la misma celda ambigua de la misma manera. Para verificar hay que mirar el original."
         },
         {
           "texto": "Verificarla contra el PDF número por número, repartiendo filas si son muchas, y mirar primero las celdas donde el original mezcla formatos, como el 23.607 sin decimales.",
@@ -21,7 +21,7 @@
         },
         {
           "texto": "Nada: un PDF oficial es un dato de origen, y el modelo solo lo transcribió.",
-          "explicacion": "El original es oficial; la transcripción no. Entre el PDF y tu tabla hubo una lectura automática de celdas fusionadas, formatos mezclados y texto corrido, y ahí es donde se cuelan los errores."
+          "explicacion": "El original es oficial, pero la transcripción la hizo el modelo. Entre el PDF y tu tabla hubo una lectura automática de celdas fusionadas, formatos mezclados y texto corrido, y ahí es donde se cuelan los errores."
         }
       ]
     },
@@ -30,7 +30,7 @@
       "opciones": [
         {
           "texto": "Que entendiste el comportamiento del reservorio.",
-          "explicacion": "Es la conclusión tentadora y es la equivocada. La curva medida incluye compresión, restricciones de planta y estado del pozo, no solo reservorio."
+          "explicacion": "Es tentador, pero la curva medida incluye, además del reservorio, compresión, restricciones de planta y estado del pozo."
         },
         {
           "texto": "Que podés proyectar la producción de los próximos diez años con confianza.",
@@ -43,7 +43,7 @@
         {
           "texto": "Que la producción cayó de forma sostenida, sin interrupciones grandes. Nada más que eso.",
           "correcta": true,
-          "explicacion": "Un buen ajuste dice que la serie es suave, no que sepas por qué. Separar despresurización de efectos operativos necesita caudales corregidos por horas de operación y presión de boca."
+          "explicacion": "Un buen ajuste solo dice que la serie es suave. Separar despresurización de efectos operativos necesita caudales corregidos por horas de operación y presión de boca."
         }
       ]
     },
@@ -57,15 +57,15 @@
         },
         {
           "texto": "Nada: si el número es razonable y el código corrió sin errores, está bien.",
-          "explicacion": "Un filtro mal escrito no rompe nada. Devuelve menos filas y sigue, y el resultado sigue pareciendo razonable."
+          "explicacion": "Un filtro mal escrito devuelve menos filas y sigue sin error, y el resultado sigue pareciendo razonable."
         },
         {
           "texto": "Le preguntás si está seguro del resultado.",
-          "explicacion": "Va a decir que sí con la misma seguridad con la que se equivocó. Preguntarle al modelo por su confiabilidad no es verificar."
+          "explicacion": "Va a decir que sí con la misma seguridad con la que se equivocó. Para verificar hay que ir a los datos."
         },
         {
           "texto": "Le pedís que lo calcule de nuevo y comparás.",
-          "explicacion": "Si el código tiene el mismo error, va a dar el mismo número las dos veces. Repetir no es verificar."
+          "explicacion": "Si el código tiene el mismo error, va a dar el mismo número las dos veces, y la coincidencia no prueba nada."
         }
       ]
     }

@@ -69,14 +69,14 @@ bloque se pasa cinco minutos.
 
 <!--
 1 min · acumulado 0:02
-El primero y el último son una cadena, no una lista de curiosidades: si
-entienden el token entienden la predicción, y si entienden la predicción la
-alucinación deja de ser un misterio y pasa a ser una consecuencia.
+El primero y el último forman una cadena: si entienden el token entienden la
+predicción, y si entienden la predicción, la alucinación se vuelve una
+consecuencia esperable.
 -->
 
 ---
 
-## El modelo no lee palabras: lee **tokens**
+## El modelo lee **tokens**
 
 Antes de procesar nada, parte el texto en pedazos. Pueden ser palabras enteras, sílabas o
 letras sueltas.
@@ -88,8 +88,8 @@ en varios.
 3 min · acumulado 0:05
 No decir todavía cuántos tokens tiene nada. La gracia del bloque es que lo
 adivinen primero y lo vean después.
-Si preguntan quién decide el corte: nadie lo escribió a mano, se calculó
-buscando los pedazos más frecuentes en un montón de texto.
+Si preguntan quién decide el corte: se calculó automáticamente, buscando los
+pedazos más frecuentes en un montón de texto.
 -->
 
 ---
@@ -134,16 +134,16 @@ un nombre de pozo o una unidad de su rutina y cuenten las fichas.
 
 ## Tres consecuencias que ya vieron sin saberlo
 
-- **Cuenta mal las letras** de una palabra, porque nunca ve letras: ve pedazos
+- **Cuenta mal las letras** de una palabra, porque lo que ve son pedazos
 - **El español rinde menos**: la misma frase cuesta más tokens que en inglés
 - **El uso por programa se cobra por token**, así que trabajar en español sale más caro
 
 <!--
 3 min · acumulado 0:18
 El dato para decir en voz alta: "perforación direccional" son seis tokens y
-"directional drilling" son tres. La mitad, para la misma idea.
-Aclarar que no es una decisión contra el español: es que había mucho más inglés
-cuando se armó el tokenizador.
+"directional drilling" son tres: la misma idea en la mitad de tokens.
+Aclarar por qué pasa: cuando se armó el tokenizador había mucho más texto en
+inglés.
 Si alguien pregunta por el costo: hoy con cuentas gratuitas no lo pagan, pero
 importa apenas alguien piense en automatizar algo, y eso aparece en la sesión 6.
 -->
@@ -155,7 +155,7 @@ importa apenas alguien piense en automatizar algo, y eso aparece en la sesión 6
 Un **modelo grande de lenguaje** (LLM) hace una sola cosa.
 
 Dado el texto hasta acá, le pone una probabilidad a cada token que podría seguir, elige uno,
-y vuelve a empezar. **No hay una base de datos de respuestas**: hay una máquina de continuar texto.
+y vuelve a empezar. Mucha gente se imagina una base de datos de respuestas; lo que hay es **una máquina de continuar texto**.
 
 <!--
 3 min · acumulado 0:21
@@ -180,8 +180,8 @@ El segundo laboratorio de la página. Movele a la temperatura y mirá qué cambi
 Ventana C, ejercicio "Adiviná el próximo token".
 Recorrer primero con temperatura baja: gana siempre el más probable, la salida
 es estable y aburrida. Después subirla y mostrar que aparecen candidatos raros.
-El ejemplo "Vaca ___": 90% para "Muerta". Esa seguridad viene de la frecuencia
-en el texto de entrenamiento, no de haber verificado nada; volvemos a eso en
+El ejemplo "Vaca ___": 90% para "Muerta". Esa seguridad sale de la frecuencia
+en el texto de entrenamiento, y el modelo no verificó nada; volvemos a eso en
 el bloque de alucinaciones.
 Dejarlos jugar. La pregunta para tirar mientras juegan: ¿en qué caso querrían
 la versión aburrida?
@@ -215,12 +215,13 @@ tocar nada que no esté en esta lista:
 Puente a lo que sigue: todo lo que el modelo mira para armar esa lista es la
 ventana de contexto, y es el próximo bloque.
 El enlace está en la página de la sesión 2, en el material de arriba y en el
-párrafo "para curiosos" debajo del laboratorio: solo, vale media hora.
+párrafo "para curiosos" debajo del laboratorio: si alguien tiene media hora,
+vale la pena recorrerlo solo.
 -->
 
 ---
 
-## La temperatura elige entre candidatos, no inventa candidatos
+## La temperatura elige entre los candidatos que ya hay
 
 Temperatura baja: gana casi siempre el más probable. Salida estable y repetitiva.
 
@@ -229,8 +230,9 @@ y a veces disparatada.
 
 <!--
 2 min · acumulado 0:35
-Precisión que vale la pena: la temperatura no hace al modelo más creativo ni más
-tonto. Solo cambia cuánto se aparta del candidato más probable.
+Precisión que vale la pena: la temperatura solo cambia cuánto se aparta del
+candidato más probable. Suele presentarse como una perilla de creatividad, y
+conviene corregirlo.
 En los chatbots gratuitos no hay perilla de temperatura a la vista. Se controla
 indirectamente, pidiendo en el prompt salidas más literales o más exploratorias.
 -->
@@ -276,8 +278,8 @@ Tiene un tamaño máximo, medido en tokens. Lo que queda afuera, **no existe** p
 El tamaño cambia todo el tiempo y por modelo, así que no dar una cifra exacta:
 hoy es del orden de cientos de miles de tokens en los modelos grandes.
 Lo que no cambia es el mecanismo, y es lo único que tienen que llevarse.
-Metáfora útil: es un escritorio, no un archivo. Lo que está sobre el escritorio
-lo mira; lo que se cayó al piso no lo busca.
+Metáfora útil: es un escritorio. Lo que está arriba lo mira; lo que se cayó al
+piso no lo busca.
 No explicar la consecuencia todavía: la van a ver ellos en el ejercicio.
 -->
 
@@ -296,14 +298,14 @@ Bajá el tamaño de la ventana y mirá cuál es el mensaje que se cae primero.
 Ventana C, sesión 2, ejercicio "Qué se cae del escritorio".
 Antes de proyectar: "Reiniciar ejercicio", por si quedó movido del ensayo.
 Abre en 520 tokens, con la instrucción inicial ya caída y todos los datos
-adentro. Ese es el caso limpio: los datos siguen ahí, la regla no.
+adentro. Ese es el caso limpio: los datos siguen ahí y la regla ya se cayó.
 Pedirles que primero lo lleven al máximo para leer la conversación entera, y
 que después bajen de a poco. La pregunta es qué se pierde primero.
 Sale solo: las reglas, porque las reglas se dan al principio.
 Después bajar hasta 200 y mostrar que también se caen los datos.
 Martín: ronda de tres nombres: "¿a quién le pasó que el chatbot dejó de
-respetar algo que le pidió al principio?". Es exactamente esto, y no fue un
-olvido.
+respetar algo que le pidió al principio?". Es exactamente esto: la regla se
+cayó de la ventana.
 -->
 
 ---
@@ -317,7 +319,7 @@ Y en un documento grande, lo que se cayó tampoco se busca solo. Hay que volver 
 
 <!--
 2 min · acumulado 0:51
-Es la lectura de lo que acaban de ver, no material nuevo. Ir rápido.
+Resume lo que acaban de ver en el ejercicio. Ir rápido.
 La solución de verdad al segundo caso es la sesión 5: en vez de
 pegar todo, buscar el pedazo que hace falta y pegar solo eso.
 -->
@@ -328,9 +330,9 @@ pegar todo, buscar el pedazo que hace falta y pegar solo eso.
 
 ## Qué hacer con esto un martes a la mañana
 
-- **Conversación nueva por tarea**: lo viejo no ayuda, ocupa lugar
-- **Repetí la regla** cada tanto en una conversación larga: no es énfasis, es volver a ponerla en la ventana
-- **Pegá el material**, no confíes en que lo recuerda
+- **Conversación nueva por tarea**: lo de antes ocupa lugar en la ventana
+- **Repetí la regla** cada tanto en una conversación larga: así vuelve a entrar en la ventana
+- **Pegá el material**: lo que no está en la ventana, el modelo no lo tiene
 
 <!--
 3 min · acumulado 0:54
@@ -348,18 +350,19 @@ Primero **lee** una fracción enorme de todo el texto humano, practicando una so
 predecir lo que sigue. De ahí salen la gramática, los hechos y los patrones.
 
 Después, una etapa **mucho más chica**: personas le enseñan a comportarse como asistente.
-El tono servicial y seguro sale de acá, y no tiene relación con si lo que dice es cierto.
+El tono servicial y seguro sale de acá, y lo usa igual cuando acierta que cuando se equivoca.
 
 <!--
 6 min · acumulado 1:00
 Lo único que hay que llevarse para manejar: el objetivo del entrenamiento es
-continuar texto, y el tono seguro viene del ajuste posterior, no de saber.
-Aprendió lo que había escrito, con sus errores y sesgos: lo escrito no es lo
-verdadero.
-Un modelo que solo pasó por la primera etapa no responde preguntas, las
-continúa. La capacidad ya estaba; la segunda etapa le puso la interfaz.
-Pregunta que suele aparecer: ¿aprende de lo que le escribo? No: lo que le
-escribís entra como contexto de esa conversación, no cambia el modelo. Lo que
+continuar texto, y el tono seguro viene del ajuste posterior y aparece aunque
+no sepa. Aprendió lo que había escrito, con sus errores y sesgos, sea cierto o
+no.
+A un modelo que solo pasó por la primera etapa le hacés una pregunta y la
+continúa como si fuera un texto. La capacidad venía de la primera etapa; la
+segunda la volvió usable como asistente.
+Pregunta que suele aparecer: ¿aprende de lo que le escribo? Lo que le escribís
+entra como contexto de esa conversación, y el modelo queda igual. Lo que
 sí puede pasar con cuentas gratuitas es que la empresa use la conversación
 para entrenar la versión siguiente, y eso es mañana, en la sesión 3 ("qué no
 se sube").
@@ -370,7 +373,7 @@ Volvemos al tono seguro en el bloque de alucinaciones.
 
 <!-- _class: cita -->
 
-## Nadie escribió esas reglas: **se ajustaron solas** mirando ejemplos
+## Esas reglas **se ajustaron solas**, mirando ejemplos
 
 <!--
 3 min · acumulado 1:03
@@ -389,7 +392,7 @@ Volvemos a la 1:13 del cronómetro. Dejá el chatbot abierto: lo usás al volver
 
 <!--
 10 min · acumulado 1:13
-Cortar el audio, no la pantalla.
+Cortar el audio y dejar la pantalla compartida.
 Martín: pasar por el chat la consigna del bloque siguiente, para que la lean
 en la pausa: "pensá una pregunta de tu especialidad cuya respuesta sepas de
 memoria y sea pública: una norma, una cifra del regulador, un nombre. Nada de
@@ -423,9 +426,9 @@ tres decimales.
 Acá se cierra la cadena que abrimos a las 0:02: token, predicción, alucinación.
 Y se explica lo que vieron fallar en la sesión 1: la cifra del campo Sacha y los
 papers inventados salieron de esto.
-Decirlo explícito: esto no es un bug que alguien vaya a arreglar el año que
-viene. Es el comportamiento por defecto del mecanismo que acaban de ver.
-Lo que sí mejora es la frecuencia. Lo que no cambia es que hay que verificar.
+Decirlo explícito: es el comportamiento por defecto del mecanismo que acaban
+de ver, y la versión del año que viene no lo va a eliminar. Con cada versión
+baja la frecuencia, pero hay que seguir verificando.
 -->
 
 ---
@@ -468,8 +471,8 @@ más evidente; ninguna sobre un campo de las empresas de la sala:
    una cita y no va a resistir abrir el PDF. Es la mezcla de las dos causas, la
    peor: el marco real hace creíble al dato inventado)
 
-Verificar UNA en vivo, buscándola delante de ellos. Que vean el chequeo, no la
-afirmación de que hay que chequear.
+Verificar UNA en vivo, buscándola delante de ellos. Mostrar el chequeo hecho:
+decir que hay que chequear no alcanza.
 Preguntar quién le habría creído a la primera respuesta si la veía sola.
 Seguir a la slide siguiente sin volver al deck de fondo: ahora les toca a ellos.
 -->
@@ -504,7 +507,7 @@ de errores de la sesión 7.
 
 <!-- _class: cita -->
 
-## La salida de un LLM es un **borrador plausible**, no una fuente
+## La salida de un LLM es un **borrador plausible**: se verifica antes de usarlo
 
 <!--
 3 min · acumulado 1:44
@@ -518,7 +521,7 @@ voz alta.
 
 ## Esto no se arregla con más cómputo
 
-La ventana de contexto crece, los modelos mejoran, la frecuencia baja. El mecanismo no cambia.
+La ventana de contexto crece, los modelos mejoran y la frecuencia baja, pero el mecanismo sigue siendo el mismo.
 
 Lo que sí se puede cambiar es **de dónde saca el material**, y eso es la sesión 5.
 
@@ -527,7 +530,7 @@ Lo que sí se puede cambiar es **de dónde saca el material**, y eso es la sesi�
 Dejar sembradas las dos salidas que trabajamos más adelante: darle las fuentes
 buenas en vez de confiar en lo que recuerda (sesión 5), y armar un protocolo de
 verificación propio (sesión 7).
-No prometer que resuelven el problema. Lo acotan.
+Aclarar que acotan el problema, sin prometer que lo resuelven.
 Cierre del bloque 3.
 -->
 
@@ -558,13 +561,12 @@ Arranca 1:48, termina 2:00.
 <!--
 4 min · acumulado 1:52
 Hoy vieron el mecanismo de dos: la predicción y la ventana. Esta es la hoja de
-ruta del curso, no materia; de la sesión 3 a la 6 no usamos estos nombres, y
-en la sesión 7 los juntamos en una tabla con el arreglo de cada uno.
+ruta del curso, para ubicarse; de la sesión 3 a la 6 no usamos estos nombres,
+y en la sesión 7 los juntamos en una tabla con el arreglo de cada uno.
 No hay que memorizar nada. Lo único que quiero que se lleven: cuando algo salga
-mal, la primera pregunta útil no es "¿cómo lo reescribo?" sino "¿cuál de las
-cuatro fue?".
-Ninguna de las dos de hoy es un bug: salen del mecanismo que acabamos de
-recorrer, y no las va a arreglar la próxima versión del modelo.
+mal, preguntarse primero cuál de las cuatro fue, antes de reescribir el pedido.
+Las dos de hoy salen del mecanismo que acabamos de recorrer, y la próxima
+versión del modelo no las va a arreglar.
 La misma lista está en la página de la sesión 2.
 -->
 
@@ -575,7 +577,7 @@ La misma lista está en la página de la sesión 2.
 ## Qué hacer con esto desde mañana
 
 - **Tareas donde podés verificar rápido**: ahí rinde y el riesgo es bajo
-- **Poné el material en la ventana**: pegá el texto en vez de confiar en su memoria
+- **Poné el material en la ventana**: pegá el texto que necesita
 - **Desconfiá de todo número, cita o norma** que no hayas visto con tus ojos
 
 <!--

@@ -53,7 +53,7 @@ Bloque 1 de 5 · **20 min**
 2 min · acumulado 0:02
 La misma tabla está en la página de la sesión 6.
 Retomar en una frase: antes de la pausa el modelo respondía con el libro
-abierto; ahora deja de responder y trabaja. Y al final cada empresa escribe
+abierto; ahora trabaja por su cuenta, con herramientas. Y al final cada empresa escribe
 su caso, que mañana se critica al lado del caso del curso.
 -->
 
@@ -67,9 +67,8 @@ su caso, que mañana se critica al lado del caso del curso.
 
 <!--
 1 min · acumulado 0:03
-Tres cosas. La tercera es el cambio de género: el curso pasa de entender a
-construir, y lo que escriban hoy es lo que mañana se pone al lado del
-screening de waterflooding.
+Tres cosas. La tercera es distinta de las otras dos: cada empresa escribe algo
+propio, y eso mañana se pone al lado del screening de waterflooding.
 Martín: avisar por el chat que la página de la sesión 6 ya está abierta en
 el sitio, para el que siga en la de la sesión 5.
 -->
@@ -86,8 +85,8 @@ Un chatbot que se equivoca no se entera nunca. Un agente recibe el error de vuel
 <!--
 3 min · acumulado 0:06
 Gancho rápido: pedirle a un chatbot que cuente las palabras de un texto
-falla porque ve tokens, no palabras. El agente lo resuelve porque ejecuta
-un conteo de verdad en vez de predecirlo. Mostrarlo en la ventana E: es un
+falla porque el modelo lee tokens (sesión 2). El agente lo resuelve
+corriendo un conteo de verdad. Mostrarlo en la ventana E: es un
 comando de una línea.
 -->
 
@@ -107,11 +106,12 @@ leyendo qué herramienta llama y qué vuelve. Los datos son los del Capítulo
 IV de ayer.
 El corazón es el paso 3: filtra por AGUARAGUE sin diéresis y le vuelven cero
 filas. Detenerse ahí y preguntar a la sala qué haría un chatbot con eso.
-Después el paso 4: no insiste, no inventa; lista los valores que existen,
-encuentra la diéresis, corrige y sigue. Cero filas no es un fracaso, es
-información, y el agente la usa porque VE el resultado.
+Después el paso 4: lista los valores que existen, encuentra la diéresis,
+corrige y sigue, sin inventar nada. Las cero filas le sirven de información,
+y el agente las usa porque VE el resultado.
 El cierre del recorrido: la respuesta final llega con dos advertencias
-autoimpuestas. Eso también es el loop mirándose a sí mismo.
+autoimpuestas. También eso sale del loop: el agente revisa lo que hizo antes
+de responder.
 -->
 
 ---
@@ -175,7 +175,8 @@ La regla del chat sigue: la tarea sí, el sistema y el dato de la empresa no.
 
 Lo delegable hoy es **digital, acotado y verificable**: el resultado se comprueba rápido.
 
-Lo que no: criterio, ambigüedad, y consecuencias que no vuelven como mensaje de error.
+Todavía no: lo que pide criterio, lo ambiguo y lo que tiene consecuencias que no vuelven como
+mensaje de error.
 
 <!--
 10 min · acumulado 0:50
@@ -203,7 +204,7 @@ Bloque 3 de 5 · **15 min**
 
 Cada paso suma texto a la ventana: más lento, más caro, más fácil perder el objetivo.
 
-Una tarea de veinte pasos no es dos veces una de diez: es **bastante peor**.
+Una tarea de veinte pasos sale **bastante peor** que dos de diez.
 
 <!--
 3 min · acumulado 0:53
@@ -214,12 +215,12 @@ medio del trabajo. De acá sale el "acotado" del patrón de recién.
 
 ---
 
-## Leer no es lo mismo que tocar
+## Cuando el agente pasa de leer a actuar
 
 Todo lo que hizo el agente hoy es **reversible**: leyó archivos y guardó un gráfico.
 
-Cuando la herramienta manda un correo, escribe en un sistema o mueve una válvula, el error ya
-**no vuelve como mensaje**: queda hecho.
+Cuando la herramienta manda un correo, escribe en un sistema o mueve una válvula, el error **queda
+hecho** y ya no hay salida que mirar para corregirlo.
 
 <!--
 4 min · acumulado 0:57
@@ -232,9 +233,9 @@ antes del acto.
 
 ---
 
-## Lo que aprende no vive en el modelo: vive en archivos
+## Lo que aprende un agente vive en archivos
 
-La sesión se apaga y el modelo no retiene nada. Lo que queda, queda en **archivos**: las
+La sesión se apaga y el modelo no retiene nada. Lo que queda se guarda en **archivos**: las
 instrucciones del proyecto, las habilidades empaquetadas (skills), las conexiones a
 herramientas (MCP).
 
@@ -242,12 +243,12 @@ Cambiás de modelo mañana y esos archivos siguen valiendo.
 
 <!--
 3 min · acumulado 1:00
-El punto práctico: lo que le enseñás a un agente se escribe, no se conversa.
+El punto práctico: a un agente se le enseña por escrito.
 El archivo de instrucciones del proyecto (CLAUDE.md, AGENTS.md o parecido)
 es la biblioteca de prompts de ayer, versión agente.
 Skills: procedimientos empaquetados que carga cuando los necesita. MCP, el
 protocolo de contexto de modelo: plomería estándar para conectarle
-herramientas, no una capacidad nueva. El callout de la página lo dice en dos
+herramientas; lo que el agente puede hacer no cambia. El callout de la página lo dice en dos
 líneas.
 -->
 
@@ -264,7 +265,7 @@ Lo que hoy se rompe a los veinte pasos es lo que más rápido está mejorando.
 4 min · acumulado 1:04
 Mostrar el gráfico de METR en vivo: el link está en los recursos de la
 página. Leerlo con la letra chica a la vista: es al 50% de éxito y en tareas
-de software; una curva no es una promesa.
+de software, y describe lo que pasó hasta ahora.
 La lectura honesta para ellos: lo que hoy no delegás porque es largo,
 reevalualo en seis meses. La regla de verificar no cambia con el largo. La
 contracara está en los recursos: la charla de Barry Zhang, no armes un
@@ -334,8 +335,8 @@ el PDF, número por número. Primer paso: cinco reportes seguidos y una serie
 de pozos cerrados por corte de agua.
 Los criterios vienen de la lista corta con la que la primera edición eligió
 su caso: frecuencia del dolor, datos accesibles y no sensibles, resultado
-verificable. Los tres o no hay caso. Y ser brutal con el lunes: un paso, no
-un plan.
+verificable. Tienen que estar los tres. Y ser exigente con el lunes: alcanza
+con un solo paso concreto.
 -->
 
 ---
@@ -369,8 +370,8 @@ resto queda en su página, y mañana se critica con el protocolo de verificació
 12 min · acumulado 1:51
 Tres minutos por empresa. Escuchar buscando lo mismo en los cuatro: ¿el
 dato existe y puede salir, o tiene análogo público? ¿el resultado se
-comprueba en menos de lo que tarda hacerlo a mano? Decirlo como pregunta,
-no como veredicto: el veredicto es mañana, con el protocolo.
+comprueba en menos de lo que tarda hacerlo a mano? Decirlo como pregunta;
+el veredicto queda para mañana, con el protocolo.
 Martín: anota las cuatro filas de dolor y primer paso en el archivo; son la
 lista que mañana se proyecta al lado del screening.
 Cierre del bloque 4.

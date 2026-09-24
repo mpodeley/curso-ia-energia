@@ -72,7 +72,7 @@ bloque se pase cinco minutos.
 - Ver en vivo qué puede y qué **no** puede hacer hoy un chatbot con tareas reales de la industria
 - Distinguir las dos maneras de equivocarse: le **faltaba el dato**, o el dato **no existe**
 
-Este es un curso de conducir, no de mecánica: de cómo funciona por dentro, solo lo que ayude a manejar mejor.
+Es un curso para aprender a manejar: del motor vemos solo lo que ayuda a manejar mejor.
 
 <!--
 2 min · acumulado 0:04
@@ -109,7 +109,7 @@ funcionar las rondas: él nombra, el nombrado habla.
 
 ## Ronda: nombre, empresa y a qué te dedicás
 
-Seis personas, medio minuto cada una. Sin datos de la empresa: solo el rol.
+Seis personas, medio minuto cada una. Contá tu rol, sin datos de la empresa.
 
 <!--
 4 min · acumulado 0:10
@@ -137,11 +137,11 @@ fuentes públicas: el reporte diario de la ARCH y el Capítulo IV.
 3 min · acumulado 0:13
 La regla del día uno, temprano y grande, y hoy con una razón extra: en la
 sala hay competidores. Ninguna ronda pide un dato propio; cuando pida "una
-tarea de tu semana" es el tipo de tarea, no el contenido.
+tarea de tu semana", alcanza con describir el tipo de tarea, sin su contenido.
 ARCH: Agencia de Regulación y Control de Hidrocarburos, Ecuador. Capítulo IV:
 producción por pozo de la Secretaría de Energía, Argentina. Decir los nombres
 completos una vez.
-No es burocracia: en la sesión 7 mostramos qué pasa con lo que se sube a un
+La razón la mostramos en la sesión 7: qué pasa con lo que se sube a un
 chatbot gratuito. Si alguien pregunta por la versión empresarial: existe, cambia
 el contrato de datos, lo vemos mañana en la sesión 3. Hoy trabajamos con cuentas gratuitas.
 -->
@@ -201,12 +201,12 @@ verdaderamente nueva.
 - **Data science**: mirar datos, limpiarlos, graficarlos, sacar conclusiones
 - **Machine learning**: en vez de escribir la fórmula, mostrás ejemplos y la máquina encuentra el patrón
 - **Deep learning**: machine learning con redes neuronales grandes (más datos, más cómputo, patrones más complejos)
-- **IA generativa**: modelos tan grandes que ya no solo clasifican o predicen un número: *generan*
+- **IA generativa**: modelos tan grandes que, además de clasificar o predecir un número, *generan*
 
 <!--
 3 min · acumulado 0:19
 Presentar las cuatro juntas y después una por una con su ejemplo.
-Insistir en que están anidadas: cada capa usa la anterior, no la reemplaza.
+Insistir en que están anidadas: cada capa se apoya en la anterior, que sigue vigente.
 -->
 
 ---
@@ -226,8 +226,8 @@ tendencia en Excel es el mismo gesto, sobre costos, demanda o avance de obra.
 Si preguntan por la regresión lineal: vive en las capas 1 y 2. Es estadística
 cuando la usás para entender (coeficientes, significancia) y es machine
 learning cuando la máquina elige sola los parámetros para predecir y se la
-valida con datos que no vio. La diferencia no es la matemática: es la
-intención, y el ritual de validar.
+valida con datos que no vio. La matemática es la misma; cambian la intención
+y el ritual de validar.
 Preguntar quién ajustó una declinación o una tendencia a mano, y con qué.
 Cortar corto: la conversación larga sobre esto va en la discusión.
 Entregar al ejercicio: "no se los voy a contar, lo van a hacer ustedes".
@@ -273,7 +273,7 @@ Sirve cuando la fórmula no existe, o existe pero no la conocemos. Mantenimiento
 nadie sabe escribir la ecuación de "esta bomba va a fallar en tres semanas", pero hay miles de
 bombas que fallaron y sus datos previos.
 
-Tu correo hace esto hace veinte años: nadie escribió la regla de qué es spam. Vio ejemplos.
+El filtro de spam de tu correo hace esto hace veinte años: aprendió qué es spam mirando ejemplos, sin que nadie escribiera la regla.
 
 <!--
 3 min · acumulado 0:31
@@ -292,7 +292,7 @@ mal en el campo.
 
 ## Ahora que la busque la máquina
 
-El botón está abajo del gráfico. Nadie le dijo los valores: tiene los puntos y un criterio.
+El botón está abajo del gráfico. La máquina tiene los puntos y un criterio, y los valores los encuentra sola.
 
 <!--
 5 min · acumulado 0:36
@@ -303,7 +303,7 @@ Abrir el desplegable "Los valores con los que se generó esta curva": qi 320 y
 Di 2.1%/mes. La máquina cayó justo encima sin que nadie se los dijera.
 La frase del bloque: ni con los valores exactos el error da cero. Queda 1.06%,
 que es el ruido de medición. Un modelo que llega a cero está copiando el ruido.
-Si alguien le ganó a la máquina, mostrarlo: barre una grilla finita, no es magia.
+Si alguien le ganó a la máquina, mostrarlo: barre una grilla finita, y por eso a veces se le puede ganar.
 Puente a mañana: este pozo es de escuela. En la sesión 4, con pozos reales del
 Capítulo IV, aparece la tercera perilla y la pregunta de cuánto es reservorio y
 cuánto es operación.
@@ -325,8 +325,8 @@ explota en 2012 (**AlexNet**, el mismo mecanismo con placas gráficas). Los dos 
 <!--
 2 min · acumulado 0:38
 No entrar en arquitectura. Lo único que tiene que quedar: "grande" quiere decir
-muchas capas de transformación aprendidas de los datos. Acá ni la forma de la
-función la escribe nadie: la aprende la red.
+muchas capas de transformación aprendidas de los datos. Acá la red aprende
+hasta la forma de la función.
 El arco: LeNet (Bell Labs, 1989) es donde empieza; AlexNet (2012, GPU y un
 millón de imágenes) es donde deja de ser curiosidad y se come la década. Ojo
 con decir que la capa "termina" ahí: la capa 4 es esta misma receta llevada al
@@ -360,7 +360,7 @@ Martín: ronda corta, tres nombres, una hipótesis cada uno.
 
 <!-- _class: acentos -->
 
-## Tres cosas, ninguna mágica
+## Tres cosas que se juntaron
 
 - **Datos**: todo el texto de internet, disponible y digitalizado
 - **Cómputo**: las placas gráficas (GPU), que resultaron ser justo la máquina que estos modelos necesitaban
@@ -370,8 +370,8 @@ Martín: ronda corta, tres nombres, una hipótesis cada uno.
 4 min · acumulado 0:45
 Esta slide responde la pregunta que quedó proyectada en la anterior. En las
 hipótesis suele salir "más computadoras", que es un tercio de la respuesta.
-Lo importante del transformer no es cómo funciona sino que **mejora al agrandarlo**,
-de forma predecible. Eso convirtió la investigación en ingeniería: si duplico
+Lo importante del transformer es que **mejora al agrandarlo**, de forma
+predecible. Eso convirtió la investigación en ingeniería: si duplico
 datos y cómputo, sé aproximadamente cuánto mejora.
 Si alguien pregunta qué tiene de especial la arquitectura: el mecanismo de
 atención, que mira todo el contexto a la vez y se paraleliza bien. Con el
@@ -383,7 +383,7 @@ mecánica completa está en la serie de 3Blue1Brown de la página.
 
 <!-- _class: cita -->
 
-## No hubo un descubrimiento mágico: hubo una **receta que mejora al agrandarla**
+## Se encontró una **receta que mejora al agrandarla**
 
 <!--
 2 min · acumulado 0:47
@@ -400,8 +400,8 @@ alucinaciones) no se arregla solo agrandando.
 Machine learning lleva años escondido en herramientas de la industria: simuladores,
 interpretación sísmica, mantenimiento predictivo, control de procesos.
 
-Lo nuevo desde fines de 2022 no es la IA. Es que **una parte de la IA se volvió conversacional**,
-y por eso llegó a todos los escritorios de golpe.
+Desde fines de 2022, **una parte de la IA se volvió conversacional**, y por eso llegó a todos los
+escritorios de golpe.
 
 <!--
 3 min · acumulado 0:50
@@ -431,7 +431,7 @@ Arranca 0:50, termina 1:20.
 - Explicar un **término técnico** a alguien no técnico
 - Redactar un **correo difícil**
 
-Y una cuarta, la más importante: **verlo fallar**.
+Y la cuarta, la más importante, es **verlo fallar**.
 
 <!--
 2 min · acumulado 0:52
@@ -464,8 +464,8 @@ Cambiar a la ventana D (chatbot). Prompts exactos, en orden:
    intervención dos semanas por disponibilidad de equipo. Tono cordial pero firme,
    sin comprometer fecha nueva."
 
-El término de la demo 2 no es casual: es el tema del caso de la sesión 8, y dos de
-las cuatro empresas tienen inyección de agua en campos maduros. No nombrarlas.
+El término de la demo 2 está elegido a propósito: es el tema del caso de la sesión 8,
+y dos de las cuatro empresas tienen inyección de agua en campos maduros. No nombrarlas.
 Martín: pegar cada prompt en el chat apenas lo corro, para que lo tengan a
 mano después. Entre demo y demo, un nombre: "¿te sirve tal cual, o qué le
 cambiarías?". Un minuto por respuesta, no más.
@@ -476,7 +476,7 @@ Volver al deck en la slide siguiente.
 
 ## Qué acabamos de ver
 
-Rápido, ordenado, con buen tono. Y **sin ninguna garantía de que sea cierto**.
+Respondió rápido, ordenado y con buen tono, **sin ninguna garantía de que sea cierto**.
 
 El chatbot no tiene un botón de "no sé". Cuando no sabe, sigue escribiendo igual.
 
@@ -510,13 +510,12 @@ alucinaciones de la sesión 2.
    (los números de paper suelen ser inventados y son verificables al instante)
 
 Verificar UNA en vivo, buscándola: la del reporte diario, abriendo el PDF de
-la ARCH en controlhidrocarburos.gob.ec. Que vean el chequeo, no solo la
-afirmación.
+la ARCH en controlhidrocarburos.gob.ec. Que vean el chequeo completo.
 Comentar al pasar, sin slide, las dos causas: a una le faltaba el dato (nunca
 leyó ese reporte, y en vez de decirlo escribió la cifra más creíble) y en la
 otra el dato no existe en ninguna parte, y aun así salió con la forma exacta
 de una cita. La primera se arregla trayéndole el documento (sesión 5); la
-segunda no se arregla: se verifica (sesión 7). La segunda pregunta de la discusión
+segunda hay que verificarla (sesión 7). La segunda pregunta de la discusión
 retoma esta distinción. El POR QUÉ viene después de la pausa: no adelantarlo.
 Volver al deck.
 -->
@@ -525,13 +524,13 @@ Volver al deck.
 
 <!-- _class: cita -->
 
-## La salida de un LLM es un **borrador plausible**, no una fuente
+## La salida de un LLM es un **borrador plausible**: se verifica antes de usarlo
 
 <!--
 2 min · acumulado 1:18
 La regla que nos acompaña los cuatro días.
-En la sesión 2, después de la pausa, vemos POR QUÉ pasa esto: sale del mecanismo mismo, no es
-un bug que alguien vaya a arreglar.
+En la sesión 2, después de la pausa, vemos POR QUÉ pasa esto: sale del mecanismo mismo, así que
+nadie lo va a arreglar con un parche.
 -->
 
 ---
@@ -590,7 +589,7 @@ otra empresa las ve.
 
 `mpodeley.github.io/curso-ia-energia`
 
-Son doce preguntas y unos diez minutos. Sin datos confidenciales.
+Son doce preguntas y unos diez minutos, y ninguna pide datos confidenciales.
 
 <!--
 13 min · acumulado 1:35
@@ -628,8 +627,8 @@ Primera pregunta de discusión. Dejarla proyectada mientras hablan.
 Martín: ronda completa con nombre, un minuto cada uno; no preguntar al aire.
 Con seis alcanza el tiempo para que hablen todos.
 Si nadie arranca, empezar por la de "menos": es más fácil y suele destrabar.
-Anotar todo: esto alimenta los ejemplos de mañana igual que la encuesta. Son
-tipos de tarea, no contenido de la empresa.
+Anotar todo: esto alimenta los ejemplos de mañana igual que la encuesta. Solo
+tipos de tarea, sin contenido de la empresa.
 -->
 
 ---
@@ -640,8 +639,8 @@ tipos de tarea, no contenido de la empresa.
 
 <!--
 8 min · acumulado 1:50
-Segunda pregunta. Ahora es un diagnóstico, no una opinión: que clasifiquen cada
-error que vieron en una de las dos causas.
+Segunda pregunta. Esta pide un diagnóstico: que clasifiquen cada error que
+vieron en una de las dos causas.
 Buscar que salga la idea de "verificable": las tareas donde puedo comprobar el
 resultado rápido son las tareas seguras.
 Si sale "entonces no sirve", repreguntar: ¿un borrador de un pasante sirve?
@@ -659,7 +658,7 @@ Si te quedó la encuesta a medias, es el momento.
 
 <!--
 10 min · acumulado 2:00
-Cortar el audio, no la pantalla: dejar esta slide proyectada.
+Cortar el audio y dejar la pantalla compartida, con esta slide proyectada.
 En la pausa, abrir el deck de la sesión 2 en la ventana A y dejarlo en la
 portada; las otras tres ventanas quedan como están.
 Martín: revisar en el panel quién terminó la encuesta y recordarle por chat

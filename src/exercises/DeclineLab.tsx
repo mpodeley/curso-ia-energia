@@ -137,7 +137,7 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
             maxWidth: '72ch',
           }}
         >
-          Este es un pozo real, y su curva no es solo el reservorio. Ahí adentro también están la
+          Este es un pozo real, y en su curva, además del reservorio, están la
           disponibilidad de compresión, las restricciones de planta, la contrapresión de línea y la carga de
           líquido en el pozo. Arps describe un reservorio que se despresuriza solo; lo que medís es eso más
           todo lo demás.
@@ -236,16 +236,16 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
                   {(pozo.verdad.Di * 100).toFixed(1)} %/mes, b = {pozo.verdad.b.toFixed(2)}
                 </strong>
                 : con esos valores se generó la curva, y el modelo va a pasar por el medio de los puntos. Lo único
-                que sobra es el ruido de medición. El orden importa — esos números son caudal diario, y en volumen
+                que sobra es el ruido de medición. El orden importa: esos números son caudal diario, y en volumen
                 mensual el calendario mete un serrucho que no está en el reservorio.
               </p>
             )}
           </Solucion>
 
           <Solucion titulo="Por qué febrero siempre parece un mal mes">
-            En metros cúbicos por mes vas a ver un serrucho: cada febrero cae y cada mes de 31 días sube. No es el
-            reservorio, son los días del calendario. La declinación describe un caudal, así que el serrucho desaparece
-            en cuanto pasás a {fluido.unidad}/día — y el error del ajuste baja sin que toques ninguna perilla. Es el
+            En metros cúbicos por mes vas a ver un serrucho: cada febrero cae y cada mes de 31 días sube. Eso
+            lo ponen los días del calendario. La declinación describe un caudal, así que el serrucho desaparece
+            en cuanto pasás a {fluido.unidad}/día, y el error del ajuste baja sin que toques ninguna perilla. Es el
             error más común al mirar datos de producción crudos.
           </Solucion>
 
@@ -253,19 +253,18 @@ export function DeclineLab({ sesion = 4 }: { sesion?: number }) {
             <strong>qi</strong> es dónde arranca la curva: subirlo o bajarlo la mueve entera. <strong>Di</strong> es
             cuán rápido cae al principio. <strong>b</strong> es la forma de la cola: en 0 la caída es exponencial y el
             pozo se apaga rápido; en 1 es armónica y la cola se estira. Cambiar b casi no mueve los primeros meses,
-            pero cambia enormemente la acumulada a 30 años — por eso una reserva estimada con pocos años de historia
+            pero cambia enormemente la acumulada a 30 años. Por eso una reserva estimada con pocos años de historia
             es un número frágil.
           </Solucion>
 
           <Solucion titulo="Por qué los pozos de escuela vienen primero">
             Arps describe un reservorio que se despresuriza sin que nadie lo toque. Ningún pozo real cumple eso: lo
             que se mide en la boca es el reservorio más la compresión disponible ese mes, más las restricciones de
-            planta, más la contrapresión de línea, más el líquido que se acumula en el pozo y lo ahoga. Por eso un
-            ajuste que cierra no prueba que entendiste el reservorio, y uno que no cierra no prueba que el reservorio
-            se portó mal. Los pozos de escuela existen para que aprendas a mover las perillas contra una curva que sí
-            tiene respuesta; los reales, para que veas cuánto de lo que medís no es geología. Un ingeniero de
-            reservorios trabaja con datos corregidos por horas de operación y presión de boca, no con el volumen
-            mensual crudo que ves acá.
+            planta, más la contrapresión de línea, más el líquido que se acumula en el pozo y lo ahoga. Por eso el
+            ajuste, bueno o malo, dice poco sobre el reservorio en sí. Los pozos de escuela existen para que
+            aprendas a mover las perillas contra una curva que sí tiene respuesta; los reales, para que veas cuánto
+            pesa en lo que medís todo lo que no es geología. Un ingeniero de reservorios corrige los datos por
+            horas de operación y presión de boca antes de ajustar; acá ves el volumen mensual crudo.
           </Solucion>
         </>
       )}

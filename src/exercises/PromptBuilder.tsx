@@ -139,7 +139,7 @@ export function PromptBuilder({ sesion = 3 }: { sesion?: number }) {
           })}
         </>
       ) : (
-        <Field label="Pegá acá un prompt tuyo — el de la tarea de ayer, por ejemplo">
+        <Field label="Pegá acá un prompt tuyo (por ejemplo, el de la tarea de ayer)">
           <textarea
             value={state.propio}
             onChange={(e) => patch({ propio: e.target.value })}
@@ -224,7 +224,7 @@ export function PromptBuilder({ sesion = 3 }: { sesion?: number }) {
             Copiar prompt
           </button>
           <span style={{ fontSize: 13, color: copiado ? colors.status.ok : colors.textMuted }}>
-            {copiado ? 'Copiado. Pegalo en tu chatbot y compará la salida.' : 'Pegalo en tu chatbot con un documento tuyo, no confidencial.'}
+            {copiado ? 'Copiado. Pegalo en tu chatbot y compará la salida.' : 'Pegalo en tu chatbot junto con un documento tuyo que no sea confidencial.'}
           </span>
         </div>
       )}
@@ -250,10 +250,10 @@ export function PromptBuilder({ sesion = 3 }: { sesion?: number }) {
       )}
 
       <Solucion titulo="Qué NO mide este puntaje">
-        La rúbrica detecta estructura, no calidad. Podés escribir las cinco piezas y tener un prompt inútil: un rol
-        decorativo, un contexto que repite lo que ya está en el documento, un ejemplo que contradice el formato. Al
-        revés también pasa — un prompt de dos líneas escrito por alguien que sabe exactamente qué quiere puede ganarle
-        a uno de veinte. Usá el puntaje para no olvidarte piezas, no para creer que ya está.
+        La rúbrica solo detecta si están las cinco piezas. Podés escribir las cinco piezas y tener un prompt inútil:
+        un rol decorativo, un contexto que repite lo que ya está en el documento, un ejemplo que contradice el
+        formato. Al revés también pasa: un prompt de dos líneas escrito por alguien que sabe exactamente qué quiere
+        puede ganarle a uno de veinte. Usá el puntaje como lista de control, para no olvidarte ninguna pieza.
       </Solucion>
 
       {meta.source && (

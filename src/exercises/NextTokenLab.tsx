@@ -169,9 +169,9 @@ export function NextTokenLab({ sesion = 2 }: { sesion?: number }) {
           </div>
           <Solucion titulo="¿Qué mirar acá?">
             Con temperatura 0 el modelo elige siempre el token más probable (salida «segura» y repetitiva). Cerca de 1
-            respeta las probabilidades aprendidas. Por encima de 1 aplana la distribución: aparecen tokens raros — más
-            «creativo», pero también más propenso a decir cualquier cosa. La temperatura no agrega conocimiento: solo
-            cambia cuánto riesgo toma al elegir.
+            respeta las probabilidades aprendidas. Por encima de 1 aplana la distribución: aparecen tokens raros, y
+            la salida se vuelve más «creativa» pero también más propensa a decir cualquier cosa. La temperatura solo
+            cambia cuánto riesgo toma el modelo al elegir.
           </Solucion>
         </>
       )}

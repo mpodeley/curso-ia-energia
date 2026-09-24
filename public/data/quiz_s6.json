@@ -8,11 +8,11 @@
       "opciones": [
         {
           "texto": "Que el modelo que tiene adentro es más potente.",
-          "explicacion": "Suele ser el mismo modelo. La diferencia no está en el modelo sino en lo que lo rodea."
+          "explicacion": "Suele ser el mismo modelo. La diferencia está en lo que lo rodea."
         },
         {
           "texto": "Que fue entrenado específicamente para ser autónomo.",
-          "explicacion": "La autonomía viene del loop y de los permisos que le dieron, no de un entrenamiento distinto."
+          "explicacion": "La autonomía viene del loop y de los permisos que le dieron; el entrenamiento es el mismo."
         },
         {
           "texto": "Que no alucina, porque verifica lo que hace.",
@@ -21,7 +21,7 @@
         {
           "texto": "Que puede ejecutar herramientas y mirar el resultado, y decidir el paso siguiente con eso a la vista.",
           "correcta": true,
-          "explicacion": "Ese loop es todo. Un chatbot que se equivoca no se entera nunca; un agente recibe el error de vuelta y tiene la chance de corregirse."
+          "explicacion": "Un chatbot que se equivoca no se entera nunca; un agente recibe el error de vuelta y tiene la chance de corregirse."
         }
       ]
     },
@@ -35,7 +35,7 @@
         {
           "texto": "Porque arrastra todo lo anterior en cada vuelta: se vuelve más lento, más caro y más propenso a perder de vista el objetivo original.",
           "correcta": true,
-          "explicacion": "El contador de contexto del ejercicio lo muestra creciendo paso a paso. Una tarea de veinte pasos no es dos veces una de diez: es bastante peor."
+          "explicacion": "El contador de contexto del ejercicio lo muestra creciendo paso a paso. Una tarea de veinte pasos sale bastante peor que dos de diez."
         },
         {
           "texto": "Porque las herramientas fallan más cuando se usan muchas veces.",
@@ -43,7 +43,7 @@
         },
         {
           "texto": "Porque necesita permisos adicionales para tareas largas.",
-          "explicacion": "Los permisos son los mismos. El límite es de contexto, no de autorización."
+          "explicacion": "Los permisos son los mismos. El límite es de contexto."
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "texto": "Porque reintentó la misma consulta y la segunda vez anduvo.",
-          "explicacion": "La misma consulta hubiera devuelto cero filas de nuevo. El error era del filtro, no de la ejecución."
+          "explicacion": "El error estaba en el filtro, así que la misma consulta hubiera devuelto cero filas de nuevo."
         },
         {
           "texto": "Porque fue a leer los valores que realmente existen en la columna en vez de suponer otro, y ahí encontró la diéresis.",
@@ -65,7 +65,7 @@
         },
         {
           "texto": "Porque avisó del error y frenó para consultar.",
-          "explicacion": "Frenar ante cada obstáculo lo volvería inútil. La gracia es que pudo resolverlo solo, con evidencia."
+          "explicacion": "Frenar ante cada obstáculo lo volvería inútil. Acá pudo resolverlo solo, con evidencia."
         }
       ]
     }

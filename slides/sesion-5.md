@@ -59,8 +59,8 @@ Bloque 1 de 6 · **15 min**
 2 min · acumulado 0:02
 La misma tabla está en la página de la sesión 5.
 Bajada del día: el modelo no leyó lo de ustedes, y en esta sesión se arregla
-eso. En la sesión 6, después de la pausa, el modelo deja de responder y
-trabaja. Y al final cada empresa escribe su caso, que mañana se critica al
+eso. En la sesión 6, después de la pausa, el modelo trabaja por su cuenta,
+con herramientas. Y al final cada empresa escribe su caso, que mañana se critica al
 lado del caso del curso.
 -->
 
@@ -74,8 +74,8 @@ lado del caso del curso.
 
 <!--
 1 min · acumulado 0:03
-Tres cosas. La tercera es la regla del curso con traje nuevo: la cita no
-verifica, abrir la cita verifica. Las otras dos del día (el loop del agente y
+Tres cosas. La tercera es la regla del curso aplicada a las citas: lo que
+verifica es abrir la cita y leer el fragmento. Las otras dos del día (el loop del agente y
 el caso de cada empresa) son de la sesión 6.
 -->
 
@@ -142,13 +142,13 @@ Bloque 2 de 6 · **15 min**
 Leyó una fracción enorme de internet. **No leyó tu manual de operaciones**, ni tus normas, ni el
 informe que escribió tu compañero el mes pasado.
 
-Preguntarle sobre eso es pedirle la continuación más plausible. Ya sabemos cómo termina: una
-respuesta inventada, con tono seguro.
+Preguntarle sobre eso es pedirle la continuación más plausible, que termina en una respuesta
+inventada con tono seguro.
 
 <!--
 5 min · acumulado 0:20
-Conectar con la mecánica de la sesión 2 sin reabrirla: inventa lo que no
-sabe, y lo que no sabe es exactamente lo de ustedes. El reglamento de
+Conectar con la mecánica de la sesión 2 sin reabrirla: cuando no sabe algo,
+lo inventa, y lo de ustedes no lo sabe. El reglamento de
 Ecuador quizás lo leyó; el procedimiento interno de su campo, seguro que no.
 -->
 
@@ -184,8 +184,8 @@ Buscá la familia de jerga: "burro", "araña", "pescado", "camisa".
 Ventana C, ejercicio "El mapa de significados". Cada texto convertido en una
 lista de números; textos parecidos, listas parecidas; el mapa es esa lista
 proyectada a un plano.
-El golpe está en la jerga: el modelo aprendió "burro" y "araña" del lenguaje
-corriente, así que las ubica con los objetos cotidianos y no con el
+Detenerse en la jerga: el modelo aprendió "burro" y "araña" del lenguaje
+corriente, así que las ubica con los objetos cotidianos, lejos del
 equipamiento del yacimiento. Ahí se ve, de un vistazo, qué no sabe de tu
 trabajo. Dejar que lo encuentren ellos clickeando; pedir por el chat una
 palabra de jerga de cada país que el mapa no tenga.
@@ -220,8 +220,8 @@ propósito: un documento público real podría haber estado en el entrenamiento
 y la demo no probaría nada.
 Las dos preguntas estrella: la de evitar que alguien arranque el equipo
 mientras lo reparás (la responde "bloqueo y etiquetado") y la de cuidarse los
-oídos ("protección auditiva"). El buscador de palabras no tiene con qué; el
-de significado las encuentra. Esa es toda la diferencia.
+oídos ("protección auditiva"). El buscador de palabras no tiene con qué
+encontrarlas y el de significado sí.
 Martín: que comparen los dos modos en su pantalla y canten por el chat qué
 pregunta rompió al buscador de palabras.
 -->
@@ -230,8 +230,8 @@ pregunta rompió al buscador de palabras.
 
 ## El prompt aumentado
 
-Mirá el bloque del final del ejercicio: **lo que efectivamente se le manda al modelo**. Los
-fragmentos encontrados, pegados arriba de tu pregunta. No hay nada más que eso.
+Mirá el bloque del final del ejercicio: es **todo lo que se le manda al modelo**, los fragmentos
+encontrados pegados arriba de tu pregunta.
 
 <!--
 4 min · acumulado 0:42
@@ -299,8 +299,8 @@ documentos internos existen las versiones corporativas (mañana).
 
 ## Lo interrogamos con sus preguntas
 
-Las preguntas de la ronda, tal cual las escribieron. Miren dos cosas: la respuesta, y **los
-fragmentos que cita**. Y una tercera: **de cuál de los cuatro documentos** sacó cada cosa.
+Las preguntas de la ronda, tal cual las escribieron. Miren tres cosas: la respuesta, **los
+fragmentos que cita** y **de cuál de los cuatro documentos** sacó cada cosa.
 
 <!--
 16 min · acumulado 1:07
@@ -326,8 +326,8 @@ Martín: va tachando en el archivo las preguntas ya hechas y anota al lado
 Si el buscador trae el **fragmento equivocado**, la respuesta viene mal, y viene **con una cita
 al lado**, que es peor.
 
-Por eso la regla es mirar los fragmentos, no solo la respuesta. Una herramienta que no te los
-muestra no te da verificabilidad: te da la **apariencia** de verificabilidad.
+Por eso la regla es mirar los fragmentos además de la respuesta. Con una herramienta que no te
+los muestra, la cita **parece** verificable pero no tenés cómo verificarla.
 
 <!--
 7 min · acumulado 1:14
@@ -336,17 +336,16 @@ documentos, o una ambigua que pesque un fragmento vecino. Con cuatro fuentes
 es fácil: preguntar por regalías y ver si contesta con la ley argentina
 cuando la pregunta era por Ecuador. Mostrar cómo la respuesta sale igual de
 prolija.
-La regla operativa: la cita no es la verificación; abrir la cita es la
-verificación. Es la regla del curso entero con traje nuevo.
+La regla operativa: lo que verifica es abrir la cita y leer el fragmento.
+Es la regla del curso entero aplicada a las citas.
 -->
 
 ---
 
 ## El segundo límite, más aburrido
 
-Si la respuesta **no está en los documentos**, no hay recuperación que la traiga.
-
-La herramienta no sabe lo que tu empresa nunca escribió.
+Si la respuesta **no está en los documentos**, ninguna búsqueda la va a traer, porque la
+herramienta solo sabe lo que tu empresa escribió.
 
 <!--
 3 min · acumulado 1:17
@@ -384,9 +383,9 @@ Leer los pasos y señalar la lista de candidatos por empresa que está en la
 página (PCR y Tecpetrol tienen reporte de sustentabilidad; CGC, la sección de
 inversores; Andes, la nota de prensa del contrato de Tarapoa o un reporte de
 la ARCH). Cuenta personal: en varias empresas la corporativa tiene NotebookLM
-bloqueado, y lo sabemos hoy, no mañana.
-La regla, otra vez y corta: público sí, interno no, y las preguntas no se
-comparten en el chat. Se comparte cómo le fue.
+bloqueado, y mejor descubrirlo hoy.
+La regla, otra vez y corta: solo documentos públicos, y en el chat cada uno
+cuenta cómo le fue, sin las preguntas.
 -->
 
 ---
@@ -447,8 +446,8 @@ Bloque 6 de 6 · **5 min**
 
 ## Para llevarse
 
-- RAG es responder **con el libro abierto**: la cita no verifica, abrir la cita verifica
-- La jerga de tu oficio **no está en internet**: el modelo la lee en el documento que le das
+- RAG es responder **con el libro abierto**, y lo que verifica es abrir la cita
+- El modelo **no conoce la jerga de tu oficio** hasta que le das un documento que la usa
 - Un cuaderno con un documento público **ya te dice qué falta documentar**
 
 <!--
@@ -461,7 +460,7 @@ queda en la página, junto con los dos ejercicios.
 
 ## Después de la pausa: sesión 6
 
-- El mismo modelo, metido en un **loop** con herramientas: deja de responder y trabaja
+- El mismo modelo, metido en un **loop** con herramientas, trabajando por su cuenta
 - Sus tareas de varios pasos: qué se **delega hoy** y qué todavía no
 - El **caso de tu empresa**, escrito en una página, para criticarlo mañana
 

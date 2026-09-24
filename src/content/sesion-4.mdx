@@ -14,7 +14,7 @@ por los pozos de escuela.
 ## El chatbot como copiloto de análisis
 
 Hasta acá el modelo escribió texto. Ahora le vamos a dar una tabla y pedirle que la analice. La
-diferencia importante es que ya no genera solo prosa: genera **código**, lo corre y te devuelve el
+diferencia importante es que, para analizarla, escribe **código**, lo corre y te devuelve el
 resultado. Eso cambia dónde puede fallar y dónde tenés que mirar.
 
 Cuatro movimientos, en orden de dificultad:
@@ -32,14 +32,14 @@ Cuatro movimientos, en orden de dificultad:
 ## Verificar código es distinto de verificar texto
 
 Cuando el modelo escribe un párrafo, el error se lee. Cuando escribe código, el error se esconde
-detrás de un número que parece razonable. Un filtro mal escrito no rompe nada: devuelve menos filas
-y sigue.
+detrás de un número que parece razonable. Un filtro mal escrito devuelve menos filas y sigue, sin
+avisar.
 
-La regla práctica es corta. Pedile siempre que te muestre el código, no solo el resultado. Pedile
-que el código informe cuántas filas entran y cuántas quedan en cada filtro: el que cuenta es el
-chatbot, no vos, y ese renglón hace visible al filtro que se comió filas de más. Y comprobá un caso
-a mano, uno solo, eligiendo un valor que puedas rastrear en la planilla original. Si ese cierra,
-casi siempre cierra el resto; si no cierra, no hay nada más que discutir.
+La regla práctica es corta. Pedile siempre que te muestre el código junto con el resultado.
+Pedile que el código informe cuántas filas entran y cuántas quedan en cada filtro: las cuenta el
+chatbot, y ese renglón hace visible al filtro que se comió filas de más. Y comprobá un caso a
+mano, uno solo, eligiendo un valor que puedas rastrear en la planilla original. Si ese cierra,
+casi siempre cierra el resto; si no cierra, el resultado no sirve y hay que buscar el error.
 
 ## De PDF a tabla: el reporte diario de la ARCH
 
@@ -68,8 +68,8 @@ operación 14 de septiembre), copia local del
 [original publicado por la ARCH](https://controlhidrocarburos.gob.ec/wp-content/uploads/downloads/2026/09/REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-15-DE-SEPTIEMBRE-DE-2026.pdf),
 por si el sitio del regulador no abre desde tu red. Es un documento público oficial; los
 volúmenes son preliminares y el propio formulario dice "sujetos a revisión". Sacar esa tabla a
-mano es una tarde; extraerla con el modelo es un minuto, más la verificación, que es la parte
-que nadie cuenta.
+mano lleva una tarde; extraerla con el modelo lleva un minuto, y a eso hay que sumarle la
+verificación.
 
 El prompt del ejercicio, para copiar con el PDF adjunto:
 
@@ -154,8 +154,8 @@ hace con un pozo que produce agua.
 ## La curva de declinación, y lo que la curva no dice
 
 Ayer, en la capa de aprendizaje automático de la sesión 1, el pozo era de escuela: dos perillas y
-una respuesta exacta escondida, que la máquina encontró sola. Acá se termina esa comodidad: aparecen la
-tercera perilla, el eje logarítmico, la acumulada a 30 años y, sobre todo, seis pozos que nadie
+una respuesta exacta escondida, que la máquina encontró sola. Acá aparecen la tercera perilla, el
+eje logarítmico, la acumulada a 30 años y, sobre todo, seis pozos que nadie
 diseñó para que ajustaran.
 
 El ejercicio tiene dos grupos de pozos, y el orden importa.
@@ -175,11 +175,11 @@ cualquiera. **Arps describe un reservorio que se despresuriza solo, y ningún po
 que se mide en la boca es el reservorio más la compresión disponible ese mes, más las restricciones
 de planta, más la contrapresión de línea, más el líquido que se acumula y ahoga el pozo. Un ajuste
 que cierra no prueba que entendiste la geología, y uno que no cierra no prueba que el reservorio se
-haya portado mal. Un análisis serio se hace sobre caudales corregidos por horas de operación y
-presión de boca, no sobre el volumen mensual crudo.
+haya portado mal. Para un análisis serio hay que corregir los caudales por horas de operación y
+presión de boca antes de ajustar.
 
-Eso no invalida el método: lo ubica. La curva sirve para ordenar una conversación y para acotar un
-número, no para cerrarla.
+El método sigue siendo útil dentro de ese límite. La curva sirve para ordenar una conversación y
+acotar un número; para cerrarla hacen falta otros datos.
 
 <DeclineLab sesion={4} />
 
@@ -193,8 +193,8 @@ La planilla del ejercicio es
 [produccion_noroeste_10pozos.csv](descargas/produccion_noroeste_10pozos.csv): los seis pozos
 del laboratorio más cuatro nuevos, 90 meses cada uno, 2019 a 2026, del mismo Capítulo IV. Trae
 una columna que el laboratorio no tenía: `dias_efectivos`, los días del mes que el pozo produjo
-de verdad. Con ella el ajuste se hace sobre **caudal efectivo**, no sobre volumen calendario, y
-el serrucho de los febreros desaparece solo.
+de verdad. Con ella el ajuste se hace sobre **caudal efectivo** en lugar de volumen calendario,
+y el serrucho de los febreros desaparece solo.
 
 Entre los cuatro nuevos hay un pozo que murió, uno que produce cada vez más y uno que cambió de
 régimen a mitad de la serie. Están porque tu campo también los tiene: un prompt de pronóstico se
@@ -258,9 +258,9 @@ entregá el Resumen como tabla y cada pronóstico como CSV en un bloque de
 código.
 ```
 
-Cada regla numerada es una decisión de ingeniería de reservorios, no un truco de prompt: qué
-meses valen, cuándo un salto parte la historia, cuánta historia pide un ajuste, cuándo decir que
-no. Lo que en el laboratorio era una perilla acá es una regla escrita, auditable y repetible.
+Cada regla numerada es una decisión de ingeniería de reservorios: qué meses valen, cuándo un salto
+parte la historia, cuánta historia pide un ajuste, cuándo decir que no. Lo que en el laboratorio
+era una perilla acá es una regla escrita, auditable y repetible.
 
 Cuando vuelva el resultado, las tres reglas del día siguen mandando. Pedí el conteo de filas.
 Elegí un pozo que hayas ajustado a mano y compará qi y la declinación anual: son los mismos
@@ -287,10 +287,10 @@ productores con mejor cobertura de presión, 15/9-F-14 (2008–2016) y 15/9-F-11
 por día. Datos del campo Volve de Equinor y los ex socios de la licencia (ExxonMobil Exploration
 & Production Norway AS, Bayerngas Norge AS), compartidos acá bajo
 [sus términos](https://cdn.equinor.com/files/h61q9gi9/global/de6532f6134b9a953f6c41bac47a0c055a3712d3.pdf):
-usarlos y compartirlos con crédito está permitido; venderlos, no.
+está permitido usarlos y compartirlos con crédito, y está prohibido venderlos.
 
-Con ese archivo el pedido al chatbot ya no es aplicar Arps: es construir el diagnóstico que
-Arps no puede dar. El prompt completo:
+Con ese archivo el pedido al chatbot pasa de aplicar Arps a construir el diagnóstico que Arps
+no puede dar. El prompt completo:
 
 ```text
 Te subo volve_diario_2pozos.csv: producción diaria real de dos pozos de
@@ -337,21 +337,21 @@ productividad no se pierde, y el corte de agua sube de 8% a 94% en 15/9-F-14 y d
 describe la caída sin ver el mecanismo, y la meseta de 15/9-F-11 hasta 2015 no anuncia en nada
 el barranco de 2016.
 
-Sobre volumen mensual crudo este análisis es imposible. Con presiones diarias es una tarde de
-trabajo con el copiloto, y es la diferencia entre extrapolar una curva y entender por qué
-declina. Para un campo con inyección de agua, como Pindo o Libertador, es el análisis que
+Con volumen mensual crudo este análisis no se puede hacer. Con presiones diarias lleva una tarde
+de trabajo con el copiloto, y además de extrapolar la curva permite entender por qué declina el
+pozo. Para un campo con inyección de agua, como Pindo o Libertador, es el análisis que
 importa.
 
 ## De la ingeniería de prompts a la ingeniería de contexto
 
-Una puerta que queda abierta para mañana. El prompt que ve el modelo ya no es solo el que
-escribís: es tu pedido más todo lo que viaja con él: los archivos que adjuntaste hoy, los
+Una puerta que queda abierta para mañana. El prompt que ve el modelo es tu pedido más todo lo
+que viaja con él: los archivos que adjuntaste hoy, los
 fragmentos que un buscador recupera de tus manuales (mañana, en la sesión 5), los resultados
 de las herramientas que un agente usa mientras trabaja (en la sesión 6). En el rubro ya hay
 nombre para eso: la ingeniería de prompts está dando lugar a la **ingeniería de contexto**.
 
-Las piezas de hoy no caducan: la orden de trabajo sigue en el centro. Lo que crece es todo lo
-que la acompaña, y la ventana de contexto de ayer es donde todo eso tiene que caber.
+Las piezas de hoy siguen valiendo, con la orden de trabajo en el centro. Alrededor crece todo lo
+que la acompaña, y todo eso tiene que caber en la ventana de contexto de ayer.
 
 ## En la sesión en vivo (2 h)
 
@@ -374,7 +374,7 @@ que la acompaña, y la ventana de contexto de ayer es donde todo eso tiene que c
 3. Cuando el chatbot escribe código de análisis: ¿revisás el código o el resultado? ¿Alcanza con uno
    de los dos?
 4. En el pozo que no ajusta con ningún parámetro: ¿qué información tenés vos que el modelo no puede
-   tener? Esa pregunta es el resumen del curso entero.
+   tener? La misma pregunta vuelve en todo el curso.
 
 ## Tarea para mañana
 
@@ -382,5 +382,6 @@ Dos cosas, cinco minutos en total. Primero, tu prompt **antes y después**: el d
 que arrancaste hoy y el que funcionó, pegados uno debajo del otro. Segundo, pensá en un documento
 de tu empresa que consultás seguido y que no es confidencial (un manual, una norma, un
 procedimiento, un instructivo) y anotá **tres preguntas concretas** que le harías si pudieras
-preguntarle en lugar de buscar. "¿Cada cuánto se calibra la válvula X?" sirve; "¿qué dice el
-manual?" no. Mañana ese documento y esas preguntas van a un cuaderno de verdad.
+preguntarle en lugar de buscar. "¿Cada cuánto se calibra la válvula X?" es una pregunta
+concreta; "¿qué dice el manual?" es demasiado general. Mañana ese documento y esas preguntas van
+a un cuaderno de verdad.

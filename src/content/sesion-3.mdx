@@ -18,22 +18,23 @@ Todos los proveedores ofrecen la misma escalera: un modelo **grande** y uno **r�
 decisión. Al comparar, cuatro cosas: capacidad en tu tarea, ventana de contexto, precio por
 token y velocidad.
 
-Un benchmark es un examen estandarizado: sirve para descartar, no para elegir fino. Los modelos
-"estudian para el examen", un punto más de puntaje no se nota en una minuta, y el podio cambia
-todos los meses. [LMArena](https://lmarena.ai) junta votos a ciegas de miles de usuarios;
-[Artificial Analysis](https://artificialanalysis.ai) pone capacidad, precio y velocidad en un
-solo cuadro. El benchmark que importa de verdad es tu tarea, corrida en dos modelos.
+Un benchmark es un examen estandarizado, útil para descartar modelos y poco fino para elegir entre
+los que quedan. Los modelos "estudian para el examen", un punto más de puntaje no se nota en una
+minuta, y el podio cambia todos los meses. [LMArena](https://lmarena.ai) junta votos a ciegas de
+miles de usuarios; [Artificial Analysis](https://artificialanalysis.ai) pone capacidad, precio y
+velocidad en un solo cuadro. El benchmark que importa de verdad es tu tarea, corrida en dos
+modelos.
 
 Los precios son por token, distintos para entrada y salida, y entre el grande y el rápido de un
 mismo proveedor puede haber cien veces de diferencia. Con cuentas gratuitas no lo pagás; importa
 el día que algo se automatiza, porque mil corridas por mes convierten el precio por token en
-presupuesto. El patrón que se usa en serio: el grande para lo difícil o lo que se hace una vez,
-el rápido para lo repetitivo, después de probar que alcanza.
+presupuesto. Lo habitual es usar el grande para lo difícil o lo que se hace una vez, y el
+rápido para lo repetitivo, después de probar que alcanza.
 
 ## Anatomía de un prompt que funciona
 
-Un prompt efectivo no es magia: es una **orden de trabajo bien escrita**, como la que le darías a un
-analista nuevo el primer día. Las piezas:
+Un prompt efectivo es una **orden de trabajo bien escrita**, como la que le darías a un analista
+nuevo el primer día. Las piezas:
 
 - **Rol:** quién quiere que sea. *"Sos un ingeniero de producción senior que escribe para gerencia."*
 - **Contexto:** lo que necesita saber. *"Este resumen va al comité que decide el workover del pozo X."*
@@ -41,7 +42,7 @@ analista nuevo el primer día. Las piezas:
 - **Formato:** cómo querés la salida. *"Tabla de dos columnas"*, *"máximo 200 palabras"*, *"en viñetas"*.
 - **Ejemplos:** si tenés un "así me gusta", mostralo. Un ejemplo vale más que tres párrafos de instrucciones.
 - **Iteración:** la primera salida es un borrador. *"Más corto"*, *"menos jerga"*, *"ahora en tono formal"*:
-  la conversación es parte del método, no señal de fracaso.
+  corregir sobre la marcha es parte normal del trabajo.
 
 Un ejemplo completo:
 
@@ -57,7 +58,7 @@ sin jerga; cada término técnico inevitable, explicado entre paréntesis.
 
 ## Dónde rinde hoy, en la oficina
 
-Los casos de mayor retorno inmediato no son los más glamorosos: resumir informes y papers (los de
+Los casos de mayor retorno inmediato son tareas de todos los días: resumir informes y papers (los de
 la Society of Petroleum Engineers incluidos), redactar primeros borradores de correos, minutas e
 informes mensuales, traducir con vocabulario técnico correcto, extraer datos puntuales de
 documentos largos, criticar un texto propio antes de mandarlo. La regla común: **tareas donde el
@@ -75,8 +76,8 @@ entre sí, y el chat de la videollamada es tan compartido como el chatbot: **nin
 pide un dato de tu empresa**, y ninguna ronda lo espera. Cuando necesitás una estructura real
 para practicar, las alternativas son tres: datos públicos (el reporte diario del regulador
 ecuatoriano, el Capítulo IV argentino, lo que ya está afuera), datos viejos que dejaron de ser
-sensibles, o la planilla con las mismas columnas y números inventados. El modelo no necesita tus
-números para ayudarte a armar el informe; necesita la estructura.
+sensibles, o la planilla con las mismas columnas y números inventados. Para ayudarte a armar el
+informe, al modelo le alcanza con la estructura.
 
 <div className="callout">
   <strong>Los casos grises</strong> (¿el borrador del informe mensual entra?) dependen de qué
@@ -91,12 +92,12 @@ En agosto de 2026, un modelo de Anthropic todavía sin publicar movió una cota 
 Riemann que llevaba décadas casi quieta: del 41.6% al 67.2% de los ceros en la línea crítica. El
 prompt no tenía rol, ni contexto, ni formato: un empleado sin formación matemática le pidió que
 "intentara en serio". Atrás hubo un día y medio de trabajo, 650 ideas probadas, 31 millones de
-tokens, y una prueba formalizada y revisada por matemáticos. No probó la hipótesis: movió una
-cota parcial.
+tokens, y una prueba formalizada y revisada por matemáticos. Lo que movió fue una cota parcial;
+la hipótesis sigue abierta.
 
-La lección no desdice la anatomía: el prompt fino controla la salida en el trabajo de todos los
-días. En lo que un modelo de frontera tiene talento nativo, el prompt puede ser mínimo. Lo que
-nunca es mínimo es la verificación.
+La anatomía sigue valiendo: en el trabajo de todos los días, el prompt fino es lo que controla
+la salida. Cuando la tarea cae en algo para lo que un modelo de frontera tiene talento nativo, el
+prompt puede ser mínimo. La verificación hace falta en los dos casos.
 
 ## En la sesión en vivo (2 h)
 

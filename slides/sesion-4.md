@@ -90,8 +90,8 @@ tiene que traer nada propio.
 
 ## Ahora el modelo escribe código
 
-Le das una tabla y le pedís un análisis. Ya no genera solo prosa: **genera código, lo corre y te
-devuelve el resultado**.
+Le das una tabla y le pedís un análisis. Para eso **escribe código, lo corre y te devuelve el
+resultado**.
 
 Cuando escribía un párrafo, el error se leía. Ahora el error se esconde detrás de un número que
 parece razonable.
@@ -99,8 +99,8 @@ parece razonable.
 <!--
 4 min · acumulado 0:06
 El cambio de régimen de esta sesión, dicho antes de la demo para que sepan qué
-mirar. Un filtro mal escrito no rompe nada: devuelve menos filas y sigue.
-Esa es la diferencia con el texto, y la razón de las reglas que vienen
+mirar. Un filtro mal escrito devuelve menos filas y sigue, sin ningún
+error. Esa es la diferencia con el texto, y la razón de las reglas que vienen
 después de la demo.
 Si preguntan por el costo de automatizar esto: la cuenta quedó en la sesión 3,
 precio por token por mil corridas. La demo de hoy es gratis; el presupuesto
@@ -142,23 +142,25 @@ alta: "esto queda corriendo, volvemos después de la pausa".
 
 ---
 
-## Leé el código, no solo el resultado
+## Pedí el código y leelo
 
-- Pedile **siempre** que muestre el código, no solo la respuesta
+- Pedile **siempre** que muestre el código junto con la respuesta
 - Pedile que el código **informe cuántas filas** entran y cuántas quedan en cada filtro
 - Comprobá **un caso a mano**, uno solo, que puedas rastrear en la planilla original
 
-Si ese caso cierra, casi siempre cierra el resto. Si no cierra, no hay nada más que discutir.
+Si ese caso cierra, casi siempre cierra el resto. Si no cierra, el resultado no sirve y hay que
+buscar el error.
 
 <!--
 8 min · acumulado 0:27
 Las tres reglas de la sesión, sobre la demo fresca. Aplicarlas en vivo: elegir
 un pozo del gráfico, pedirle al chatbot su serie, y comprobar UN mes contra
-el CSV abierto en otra ventana. Que vean el gesto completo, no la teoría.
-La regla de las filas, dicha completa porque el título solo no alcanza: el
-que cuenta es el chatbot, no ustedes. Se le pide que cada filtro del código
-imprima cuántas filas recibió y cuántas dejó. Un filtro mal escrito no tira
-error: se come filas en silencio y el gráfico sale igual de lindo. Ejemplo
+el CSV abierto en otra ventana. Que vean el gesto completo, de punta a
+punta.
+La regla de las filas, dicha completa porque el título solo no alcanza: las
+filas las cuenta el chatbot. Se le pide que cada filtro del código imprima
+cuántas filas recibió y cuántas dejó. Un filtro mal escrito se come filas en
+silencio, sin tirar error, y el gráfico sale igual de lindo. Ejemplo
 con el CSV de 10 pozos: 900 filas; "excluí los meses con menos de 10 días
 efectivos" tiene que dejar 885. Si el conteo dice 400, el filtro quedó mal
 escrito, y ningún gráfico lo iba a mostrar.
@@ -168,13 +170,13 @@ escrito, y ningún gráfico lo iba a mostrar.
 
 <!-- _class: cita -->
 
-## Un número que parece razonable no es un número **verificado**
+## Un número que parece razonable también hay que **verificarlo**
 
 <!--
 3 min · acumulado 0:30
 La frase del bloque. Es la misma regla del borrador plausible de ayer, ahora
-para código: la salida viene con la forma de un análisis, no con la garantía
-de uno.
+para código: la salida tiene forma de análisis, y la garantía la pone la
+verificación.
 Cierre del bloque 1.
 -->
 
@@ -197,14 +199,14 @@ Bloque 2 de 6 · **35 min**
 La Agencia de Regulación y Control de Hidrocarburos (ARCH) publica cada día hábil **una página**:
 producción por compañía, por bloque público, estado de pozos, gas, y las novedades pozo por pozo.
 
-Sacar esa tabla a mano es una tarde. Extraerla con el modelo es un minuto, más **la
-verificación**, que es la parte que nadie cuenta.
+Sacar esa tabla a mano lleva una tarde. Con el modelo, extraerla lleva un minuto, y a eso hay
+que sumarle **la verificación**.
 
 <!--
 4 min · acumulado 0:34
 Por qué este ejercicio es el más honesto del curso: es exactamente el flujo
-que cualquiera de ellos haría el lunes con un dato que necesita, y expone el
-costo real de la herramienta, que no es extraer sino verificar.
+que cualquiera de ellos haría el lunes con un dato que necesita, y muestra
+que el costo real de la herramienta está en verificar lo que extrae.
 Abrir el PDF del 15 de septiembre (día de operación 14) en el visor y
 recorrerlo 30 segundos: tabla 1 a la izquierda, tabla 2 pegada a la derecha,
 estado de pozos y gas abajo, y el bloque de novedades en texto corrido.
@@ -238,8 +240,8 @@ original dice 23.607 sin decimales, y es veintitrés mil seiscientos siete;
 un lector apurado devuelve 23.6. Lo segundo: que no se haya colado ninguna
 fila de la tabla 2 (los bloques de Petroecuador van pegados a la derecha).
 Pedir una segunda pasada si hace falta ("ese 23.607 es miles", "te
-mezclaste con los bloques"). Iterar acá es normal: es la conversación como
-método, de la sesión 3.
+mezclaste con los bloques"). Iterar acá es normal, como vimos en la
+sesión 3.
 Martín: pega en el chat la tabla extraída, en texto, para que todos la
 tengan a mano en el bloque siguiente.
 -->
@@ -308,14 +310,13 @@ recuperación secundaria.
 Lo típico: casi todo cierra, y **algo no cierra**. Una coma decimal leída como punto de miles, dos
 pozos pegados en uno, once pozos con nombres inventados.
 
-El error de extracción no avisa. Por eso la verificación no es opcional, y por eso se hace
-número por número.
+El error de extracción no avisa, así que la verificación se hace siempre, número por número.
 
 <!--
 4 min · acumulado 1:05
 Cerrar con lo que haya salido de verdad en la verificación. Si TODO cerró,
 decirlo también: hoy cerró todo, y no había forma de saberlo sin mirar. La
-confianza sale de la verificación, no de la herramienta.
+confianza sale de haber verificado.
 Una advertencia más para la serie de varios días: la columna "producción
 anterior" de hoy no siempre coincide con la "producción del día" del
 reporte de ayer (Andes: 23,816.18 en el del 15 contra 23,814.41 en el del
@@ -427,7 +428,7 @@ Que lo intenten en su pantalla un par de minutos: la frustración es parte de
 la lección. Después juntar hipótesis por el chat.
 La respuesta honesta: la curva no lo dice. Un pozo que se rompió, una
 intervención, un cambio de destino del gas; el dato de qué pasó no está en la
-serie. Ese es el límite del método, mostrado y no contado.
+serie. Ese es el límite del método, y acá lo ven con sus propios ojos.
 -->
 
 ---
@@ -439,13 +440,13 @@ mide en boca es reservorio más compresión, más restricciones de planta, más 
 línea.
 
 Un ajuste que cierra no prueba que entendiste la geología. La curva ordena la conversación y
-acota un número; no la cierra.
+acota un número; para cerrarla hacen falta otros datos.
 
 <!--
 4 min · acumulado 1:40
 El párrafo serio de la sesión, el que separa esto de un tutorial. Un análisis
 de verdad se hace sobre caudales corregidos por horas de operación y presión
-de boca, no sobre el volumen mensual crudo. En un campo con inyección de
+de boca. En un campo con inyección de
 agua, como Pindo o Libertador, la curva sola dice todavía menos: ahí manda
 la presión, y eso es el "para curiosos" de Volve en la página.
 COSECHA de la corrida sembrada en el bloque 1: abrir el Excel que devolvió
@@ -455,9 +456,9 @@ solo), y el qi/declinación de un pozo que ajustaron a mano, comparado con lo
 que dio la sala. Referencia del instructor: dca_referencia.xlsx. Si el
 artifact salió, mostrarlo 30 segundos. Plan B si la corrida falló o quedó a
 medias: abrir dca_referencia.xlsx y leer las mismas dos filas ahí.
-La pregunta de discusión de la página lo remata: en el pozo que no ajusta,
-¿qué información tenés vos que el modelo no puede tener? Esa pregunta es el
-resumen del curso entero.
+La pregunta de discusión de la página cierra el bloque: en el pozo que no
+ajusta, ¿qué información tenés vos que el modelo no puede tener? Vuelve en
+todo el curso.
 Cierre del bloque 4.
 -->
 
@@ -517,8 +518,8 @@ Bloque 6 de 6 · **10 min**
 Tres prácticas, una de la sesión 3 y dos de esta. Son baratas, no piden
 saber programar, y cazan la mayoría de los errores del trabajo asistido.
 La contracara de la página de la sesión 3 ("intentá en serio", la cota de
-Riemann) queda para quien la lea: el prompt fino controla la salida de todos los días; lo
-que nunca es mínimo es la verificación.
+Riemann) queda para quien la lea: el prompt fino controla la salida de todos los días, y la
+verificación hace falta siempre.
 -->
 
 ---
@@ -535,10 +536,10 @@ buscar.
 <!--
 3 min · acumulado 1:56
 El antes/después ya está medio hecho: el "antes" quedó en el chat del
-taller. Insistir en traer los dos, porque la distancia entre ellos es la
-clase de hoy funcionando.
-Las preguntas, "concretas": "¿cada cuánto se calibra la válvula X?" sirve;
-"¿qué dice el manual?" no. Mañana el documento y las preguntas van a un
+taller. Insistir en traer los dos, porque la distancia entre uno y otro
+muestra lo que aprendieron hoy.
+Las preguntas, "concretas": "¿cada cuánto se calibra la válvula X?" es
+concreta; "¿qué dice el manual?" es demasiado general. Mañana el documento y las preguntas van a un
 cuaderno de verdad, así que la calidad de la pregunta se paga sola. No
 confidencial: mañana ese documento se sube a una herramienta gratuita.
 Plan B para mañana si pocos la hicieron: el cuaderno del rubro arranca con
@@ -550,8 +551,8 @@ se escriben en vivo en dos minutos.
 
 ## Mañana: de la ingeniería de prompts a la **ingeniería de contexto**
 
-El prompt que ve el modelo ya no es solo el que escribís: es tu pedido más todo lo que viaja
-con él. Hoy fueron tus archivos adjuntos.
+El prompt que ve el modelo es tu pedido más todo lo que viaja con él. Hoy fueron tus archivos
+adjuntos.
 
 Mañana: los fragmentos recuperados de tus documentos en la sesión 5, y herramientas que
 trabajan solas en la sesión 6.
@@ -559,8 +560,8 @@ trabajan solas en la sesión 6.
 <!--
 3 min · acumulado 1:59
 El término real del rubro: la ingeniería de prompts está dando lugar a la
-ingeniería de contexto. Lo de hoy no caduca: las piezas siguen siendo la
-orden de trabajo; lo que crece es todo lo que viaja alrededor.
+ingeniería de contexto. Lo de hoy sigue valiendo: las piezas siguen siendo
+la orden de trabajo, y alrededor crece todo lo que viaja con ella.
 Ya lo vieron sin nombre: la ventana de contexto de ayer es el lugar donde
 todo eso entra, y de donde se cae.
 Dejar la palabra sembrada y no profundizar: mañana la llena de contenido

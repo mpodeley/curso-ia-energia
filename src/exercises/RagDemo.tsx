@@ -97,7 +97,7 @@ export function RagDemo({ sesion = 5 }: { sesion?: number }) {
           value={esLibre ? '__libre' : (actual?.id ?? preguntas[0].id)}
           options={[
             ...preguntas.map((p) => ({ value: p.id, label: p.texto })),
-            { value: '__libre', label: '— escribir la mía —' },
+            { value: '__libre', label: '(escribir la mía)' },
           ]}
           onChange={(v) => patch({ pregunta: v })}
         />
@@ -231,7 +231,7 @@ export function RagDemo({ sesion = 5 }: { sesion?: number }) {
                 Copiar prompt aumentado
               </button>
               <span style={{ fontSize: 13, color: copiado ? colors.status.ok : colors.textMuted }}>
-                {copiado ? 'Copiado. Pegalo en tu chatbot y mirá la respuesta.' : 'Esto es todo lo que hace un sistema RAG.'}
+                {copiado ? 'Copiado. Pegalo en tu chatbot y mirá la respuesta.' : 'Este texto es todo lo que recibe el modelo en un sistema RAG.'}
               </span>
             </div>
           </div>
@@ -239,25 +239,26 @@ export function RagDemo({ sesion = 5 }: { sesion?: number }) {
       )}
 
       <Solucion titulo="Entonces, ¿qué es RAG?">
-        Tres pasos, ninguno mágico. Buscar los fragmentos de tus documentos que más se parecen a la pregunta; pegarlos
-        arriba de la pregunta; mandarle todo eso al modelo. El modelo nunca "aprendió" tu manual: lo está leyendo en
-        ese momento, como quien responde con el libro abierto. Por eso puede citar la fuente, y por eso si el buscador
-        trae el fragmento equivocado la respuesta va a estar mal aunque el modelo sea excelente.
+        Son tres pasos: buscar los fragmentos de tus documentos que más se parecen a la pregunta; pegarlos arriba de
+        la pregunta; mandarle todo eso al modelo. El modelo lee los fragmentos de tu manual en el momento de
+        responder, como quien contesta con el libro abierto; su entrenamiento no cambia. Por eso puede citar la
+        fuente, y por eso si el buscador trae el fragmento equivocado la respuesta va a estar mal aunque el modelo sea
+        excelente.
       </Solucion>
 
       <Solucion titulo="Por qué buscar por palabras no alcanza">
         Probá la pregunta sobre cuidarse los oídos, o la de que nadie arranque el equipo mientras lo reparás. Ninguna
         comparte palabras con el fragmento que la responde: el manual dice "protección auditiva" y "bloqueo y
-        etiquetado". Un buscador de palabras no tiene con qué encontrarlas. Uno por significado sí, porque compara
-        vectores y no letras. Esa es toda la diferencia, y es la razón por la que esta tecnología sirve sobre
+        etiquetado". Un buscador de palabras no tiene con qué encontrarlas. Uno por significado sí las encuentra,
+        porque compara el sentido de los textos a través de sus vectores. Por eso esta tecnología sirve sobre
         documentación técnica escrita en un vocabulario que nadie usa al preguntar.
       </Solucion>
 
       <Solucion titulo="Qué mirar cuando lo uses en serio">
-        Fijate siempre en los fragmentos recuperados, no solo en la respuesta. Si el sistema no te los muestra,
+        Fijate siempre en los fragmentos recuperados, además de la respuesta. Si el sistema no te los muestra,
         desconfiá: sin ver de dónde salió, una respuesta con RAG es tan verificable como una sin RAG. Y notá que la
-        similitud nunca es cero — siempre hay un fragmento "más parecido", aunque ninguno sirva. Un buen sistema
-        avisa cuando el mejor candidato es malo; uno malo responde igual.
+        similitud nunca es cero: siempre hay un fragmento "más parecido", aunque ninguno sirva. Un buen sistema avisa
+        cuando el mejor candidato es malo.
       </Solucion>
 
       {meta.source && (

@@ -134,7 +134,7 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
     <Ejercicio
       titulo="Ajustala vos, después que la busque la máquina"
       sesion={sesion}
-      intro="Un pozo, dos perillas y un número que tiene que bajar: el error. Primero movelas vos. Después apretás un botón y la máquina hace la misma búsqueda, sin que nadie le diga los valores."
+      intro="Tenés un pozo y dos perillas, y el objetivo es bajar el error. Primero movelas vos. Después apretás un botón y la máquina hace la misma búsqueda, sin que nadie le diga los valores."
       onReset={reset}
       done={Boolean(state.maquina)}
     >
@@ -264,8 +264,8 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
                 <p style={{ margin: `${space.sm}px 0 0` }}>
                   Fijate en algo más: ni siquiera con los valores exactos el error da cero. Queda{' '}
                   {pct(errorDe(pozo.verdad?.qi ?? 0, pozo.verdad?.Di ?? 0))}, el residuo que deja ese ruido. Ese es el piso, y
-                  abajo no hay nada que ganar. Un modelo que llega a cero contra datos con ruido no entendió mejor el
-                  pozo: está copiando el ruido.
+                  abajo no hay nada que ganar. Si un modelo llega a cero contra
+                  datos con ruido, es porque está copiando el ruido.
                 </p>
               </Solucion>
 
@@ -291,9 +291,9 @@ export function DeclineDuel({ sesion = 1 }: { sesion?: number }) {
                 </p>
                 <p style={{ margin: `${space.sm}px 0 0` }}>
                   La máquina tampoco probó todo. Probó grueso, miró dónde caía el mejor resultado y volvió a probar
-                  fino alrededor: tres pasadas, y en cada una la grilla se cierra. No es más inteligente que vos, es
-                  incansable. Y ese es el punto, porque el problema real no es este pozo. Es el mismo trabajo sobre
-                  todos los pozos de un área, todos los meses.
+                  fino alrededor: tres pasadas, y en cada una la grilla se cierra. Su ventaja es que no se cansa, y
+                  eso importa porque en el trabajo real el mismo ajuste se repite sobre todos los pozos de un área,
+                  todos los meses.
                 </p>
               </Solucion>
             </>
