@@ -10,7 +10,7 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 # Riesgos, límites y gobernanza
 
-Sesión 7 de 8 · día 4 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
+Sesión 7 de 8 · día 4: riesgos y el caso real · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras entra la gente

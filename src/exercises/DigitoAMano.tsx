@@ -14,6 +14,7 @@ import {
   type Red,
 } from '../engine/digitos'
 import { useRedDigitos } from '../hooks/useData'
+import { AZUL, GRIS, NARANJA, TINTA, enLienzo, prepararLienzo, rgba, tinte } from '../components/lienzo'
 import { chart, colors, radius, space } from '../theme'
 
 // Draw a digit, a small MNIST network reads it. Everything runs in the page:
@@ -238,19 +239,6 @@ const GRILLA = { x: 20, y: 70 } // top-left of the 28x28 input
 const OCULTA = { xs: [440, 464], y0: 44, y1: 384, r: 4.5 }
 const SALIDA = { x: 640, y0: 62, paso: 32, r: 12 }
 
-const AZUL = rgb(chart.line[0])
-const NARANJA = rgb(chart.line[1])
-const GRIS = rgb(chart.tick)
-
-function rgb(hex: string): [number, number, number] {
-  const n = parseInt(hex.slice(1), 16)
-  return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
-}
-const rgba = ([r, g, b]: [number, number, number], a: number) => `rgba(${r},${g},${b},${a})`
-/** White paper → full colour, for neuron fills. */
-const tinte = ([r, g, b]: [number, number, number], t: number) =>
-  `rgb(${Math.round(255 + (r - 255) * t)},${Math.round(255 + (g - 255) * t)},${Math.round(255 + (b - 255) * t)})`
-
 function posOculta(j: number) {
   const col = j % 2
   const fila = Math.floor(j / 2)
@@ -275,21 +263,13 @@ function DiagramaRed({
 
   useEffect(() => {
     const c = ref.current
-    const ctx = c?.getContext('2d')
+    const ctx = c && prepararLienzo(c, D.ancho, D.alto)
     if (!c || !ctx) return
-    const dpr = Math.min(2, window.devicePixelRatio || 1)
-    if (c.width !== D.ancho * dpr) {
-      c.width = D.ancho * dpr
-      c.height = D.alto * dpr
-    }
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     dibujarRed(ctx, red, entrada, act, neurona, getComputedStyle(c).fontFamily)
   }, [red, entrada, act, neurona])
 
   const elegir = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    const r = e.currentTarget.getBoundingClientRect()
-    const x = ((e.clientX - r.left) / r.width) * D.ancho
-    const y = ((e.clientY - r.top) / r.height) * D.alto
+    const { x, y } = enLienzo(e, D.ancho, D.alto)
     let mejor: number | null = null
     let dmin = 9
     for (let j = 0; j < red.oculta; j++) {
@@ -329,7 +309,6 @@ function dibujarRed(
   sel: number | null,
   fuente: string,
 ) {
-  ctx.clearRect(0, 0, D.ancho, D.alto)
   const h = act?.oculta
   const maxH = h ? Math.max(1e-6, ...h) : 1
 
@@ -346,7 +325,7 @@ function dibujarRed(
   for (let y = 0; y < LADO; y++)
     for (let x = 0; x < LADO; x++) {
       const v = entrada ? entrada[y * LADO + x] : 0
-      ctx.fillStyle = tinte([20, 20, 20], v)
+      ctx.fillStyle = tinte(TINTA, v)
       ctx.fillRect(GRILLA.x + x * CELDA, GRILLA.y + y * CELDA, CELDA, CELDA)
     }
   ctx.strokeStyle = rgba(GRIS, 0.4)
@@ -428,7 +407,7 @@ function dibujarRed(
     ctx.strokeStyle = rgba(GRIS, 0.7)
     ctx.lineWidth = 1
     ctx.stroke()
-    ctx.fillStyle = rgba(k === ganador ? [20, 20, 20] : GRIS, 1)
+    ctx.fillStyle = rgba(k === ganador ? TINTA : GRIS, 1)
     ctx.font = `${k === ganador ? 'bold ' : ''}15px ${fuente}`
     ctx.fillText(String(k), q.x + SALIDA.r + 10, q.y + 5)
     if (act) {

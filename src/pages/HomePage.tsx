@@ -41,8 +41,9 @@ export function HomePage() {
         {Object.keys(DIAS).map(Number).map((dia) => (
           <div key={dia}>
             <p className="prog-dia">
-              Día {dia} · {DIAS[dia]}
+              Día {dia} · {DIAS[dia].fecha}
             </p>
+            <h3 className="prog-dia-titulo">{DIAS[dia].titulo}</h3>
             <div className="prog-grid">
               {SESIONES.filter((s) => s.dia === dia).map((s) => (
                 <a key={s.n} className="sess-card" href={hrefFor({ page: 'sesion', n: s.n })}>

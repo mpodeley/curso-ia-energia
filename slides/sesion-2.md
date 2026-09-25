@@ -10,7 +10,7 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 # Cómo funciona un LLM
 
-Sesión 2 de 8 · día 1 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
+Sesión 2 de 8 · día 1: qué es y cómo funciona · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras vuelven de la pausa

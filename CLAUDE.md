@@ -47,8 +47,9 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
 
 ## Architecture
 
-- `src/content/programa.ts` — session registry (titles, objectives, estado); grid + headers render
-  from here. Prose bodies are `src/content/sesion-N.mdx` (compiled by @mdx-js/rollup, lazy-loaded).
+- `src/content/programa.ts` — session registry (titles, objectives, estado) and `DIAS` (date and
+  title of each day: the two sessions of a day belong together, and the landing groups them under
+  that title; deck covers and the session-1 map repeat it); grid + headers render from here. Prose bodies are `src/content/sesion-N.mdx` (compiled by @mdx-js/rollup, lazy-loaded).
 - `src/router.ts` — hand-rolled hash routing (`#/sesion/3`); no react-router. Works under
   GitHub Pages subpath with `base:'./'` and no 404.html hack.
 - `src/engine/` — framework-free, vitest-tested exercise logic (sampling/temperature math, quiz

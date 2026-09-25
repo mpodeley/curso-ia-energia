@@ -10,7 +10,7 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 # De los datos a la IA generativa
 
-Sesión 1 de 8 · día 1 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
+Sesión 1 de 8 · día 1: qué es y cómo funciona · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras entra la gente
@@ -179,12 +179,12 @@ la slide que sigue. Cortar al minuto con amabilidad.
 
 ## Cuatro días, un arco
 
-| Día | Sesiones | De qué se trata |
+| Día | De qué se trata | Sesiones |
 | --- | --- | --- |
-| Lunes 28 | 1 y 2 | De los datos a la IA generativa; cómo funciona un LLM |
-| Martes 29 | 3 y 4 | Prompting y trabajo diario; análisis asistido de datos |
-| Miércoles 30 | 5 y 6 | Tus documentos con RAG y Gemini Notebook; agentes y el caso de tu empresa |
-| Jueves 1 | 7 y 8 | Riesgos, límites y gobernanza; el caso y el horizonte |
+| Lunes 28 | **Qué es y cómo funciona** | 1 · De los datos a la IA generativa; 2 · Cómo funciona un LLM |
+| Martes 29 | **Usarlo bien, con prompts y datos** | 3 · Prompting y trabajo diario; 4 · Análisis asistido de datos |
+| Miércoles 30 | **Tus documentos y los agentes** | 5 · RAG y Gemini Notebook; 6 · Agentes y el caso de tu empresa |
+| Jueves 1 | **Riesgos y el caso real** | 7 · Riesgos, límites y gobernanza; 8 · El caso y el horizonte |
 
 Te llevás criterio para delegar y verificar, un cuaderno con documentos del rubro, un borrador de política de uso y el caso de tu empresa escrito en una página.
 

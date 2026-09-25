@@ -249,7 +249,15 @@ button {
   font-size: var(--pd-fs-sm);
   color: var(--pd-text-muted);
 }
-.prog-dia + .prog-grid {
+.prog-dia-titulo {
+  margin: var(--pd-sp-1) 0 0;
+  font-family: var(--pd-font-display);
+  font-weight: 500;
+  font-size: var(--pd-fs-h3);
+  color: var(--pd-text);
+}
+.prog-dia + .prog-grid,
+.prog-dia-titulo + .prog-grid {
   margin-top: var(--pd-sp-3);
 }
 .sess-card {

@@ -224,8 +224,15 @@ export function decodificarGenerativa(r: RedGenerativa): Generadora {
   }
 }
 
-/** Draw a digit (0-9) in the handwriting given by the style numbers. Ink in [0, 1]. */
-export function imaginar(g: Generadora, digito: number, estilo: number[]): Float32Array {
+export type Dibujo = {
+  /** Hidden layer after ReLU. */
+  oculta: Float32Array
+  /** 784 pixels of ink in [0, 1]. */
+  img: Float32Array
+}
+
+/** Draw a digit (0-9) in the handwriting given by the style numbers, keeping the hidden layer. */
+export function imaginarPorDentro(g: Generadora, digito: number, estilo: number[]): Dibujo {
   const entrada = [...estilo, ...Array.from({ length: 10 }, (_, d) => (d === digito ? 1 : 0))]
   const h = new Float32Array(g.oculta)
   for (let j = 0; j < g.oculta; j++) h[j] = g.b1[j]
@@ -235,16 +242,22 @@ export function imaginar(g: Generadora, digito: number, estilo: number[]): Float
     const fila = i * g.oculta
     for (let j = 0; j < g.oculta; j++) h[j] += v * g.w1[fila + j]
   }
+  for (let j = 0; j < g.oculta; j++) if (h[j] < 0) h[j] = 0
   const out = new Float32Array(g.salida)
   for (let k = 0; k < g.salida; k++) out[k] = g.b2[k]
   for (let j = 0; j < g.oculta; j++) {
     const a = h[j]
-    if (a <= 0) continue
+    if (a === 0) continue
     const fila = j * g.salida
     for (let k = 0; k < g.salida; k++) out[k] += a * g.w2[fila + k]
   }
   for (let k = 0; k < g.salida; k++) out[k] = 1 / (1 + Math.exp(-out[k]))
-  return out
+  return { oculta: h, img: out }
+}
+
+/** Draw a digit (0-9) in the handwriting given by the style numbers. Ink in [0, 1]. */
+export function imaginar(g: Generadora, digito: number, estilo: number[]): Float32Array {
+  return imaginarPorDentro(g, digito, estilo).img
 }
 
 /** n style vectors drawn from a standard normal (Box-Muller), reproducible by seed. */
@@ -255,4 +268,9 @@ export function estilosAlAzar(rng: () => number, n: number, dims: number): numbe
       return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * rng())
     }),
   )
+}
+
+/** The 784 outgoing weights of hidden neuron j: the stroke it adds to (or erases from) the drawing. */
+export function trazoDeNeurona(g: Generadora, j: number): Float32Array {
+  return g.w2.slice(j * g.salida, (j + 1) * g.salida)
 }

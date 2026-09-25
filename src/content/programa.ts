@@ -136,12 +136,12 @@ export const SESIONES: Sesion[] = [
   },
 ]
 
-/** Fecha de cada día de la edición vigente; la portada agrupa la grilla con esto. */
-export const DIAS: Record<number, string> = {
-  1: 'lunes 28 de septiembre',
-  2: 'martes 29 de septiembre',
-  3: 'miércoles 30 de septiembre',
-  4: 'jueves 1 de octubre',
+/** Fecha y título de cada día de la edición vigente: las dos sesiones de un día van juntas. */
+export const DIAS: Record<number, { fecha: string; titulo: string }> = {
+  1: { fecha: 'lunes 28 de septiembre', titulo: 'Qué es y cómo funciona' },
+  2: { fecha: 'martes 29 de septiembre', titulo: 'Usarlo bien, con prompts y datos' },
+  3: { fecha: 'miércoles 30 de septiembre', titulo: 'Tus documentos y los agentes' },
+  4: { fecha: 'jueves 1 de octubre', titulo: 'Riesgos y el caso real' },
 }
 
 export const MDX_SESIONES: Record<number, LazyExoticComponent<ComponentType>> = {

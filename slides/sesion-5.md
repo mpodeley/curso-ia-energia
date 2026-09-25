@@ -10,7 +10,7 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 # Tu conocimiento: RAG y Gemini Notebook (antes NotebookLM)
 
-Sesión 5 de 8 · día 3 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
+Sesión 5 de 8 · día 3: tus documentos y los agentes · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras entra la gente

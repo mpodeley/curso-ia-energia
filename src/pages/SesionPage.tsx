@@ -1,7 +1,9 @@
 import { Suspense } from 'react'
 import { Loading } from '../components/ui'
-import { MDX_SESIONES, SESIONES } from '../content/programa'
+import { DIAS, MDX_SESIONES, SESIONES } from '../content/programa'
 import { hrefFor } from '../router'
+
+const minuscula = (s: string) => s.charAt(0).toLowerCase() + s.slice(1)
 
 export function SesionPage({ n }: { n: number }) {
   const sesion = SESIONES.find((s) => s.n === n)
@@ -14,7 +16,7 @@ export function SesionPage({ n }: { n: number }) {
     <div className="wrap">
       <header className="sess-head">
         <p className="kicker">
-          Sesión {sesion.n} de {SESIONES.length} · día {sesion.dia} · 2 h en vivo
+          Sesión {sesion.n} de {SESIONES.length} · día {sesion.dia}: {minuscula(DIAS[sesion.dia].titulo)} · 2 h en vivo
           {sesion.estado === 'en-preparacion' && <span className="tag t-status">en preparación</span>}
         </p>
         <h1>{sesion.titulo}</h1>

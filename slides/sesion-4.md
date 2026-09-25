@@ -10,7 +10,7 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 # Análisis asistido de datos
 
-Sesión 4 de 8 · día 2 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
+Sesión 4 de 8 · día 2: usarlo bien, con prompts y datos · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras vuelven de la pausa

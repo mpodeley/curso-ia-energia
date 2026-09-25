@@ -8,6 +8,8 @@ import {
   decodificarGenerativa,
   estilosAlAzar,
   imaginar,
+  imaginarPorDentro,
+  trazoDeNeurona,
   masProbable,
   pesosDeNeurona,
   pesoDeSalida,
@@ -131,6 +133,14 @@ describe('la red al revés', () => {
     expect(Math.max(...img)).toBeLessThanOrEqual(1)
   })
 
+  it('keeps a hidden layer of switched-on and switched-off neurons', () => {
+    const { oculta, img } = imaginarPorDentro(gen, 5, [0.3, -0.7])
+    expect(oculta).toHaveLength(rawGen.oculta)
+    expect(Math.min(...oculta)).toBeGreaterThanOrEqual(0)
+    expect(oculta.some((a) => a === 0)).toBe(true)
+    expect(img).toEqual(imaginar(gen, 5, [0.3, -0.7]))
+  })
+
   it('changes the handwriting when the style numbers change', () => {
     const a = imaginar(gen, 3, [-1.5, 0])
     const b = imaginar(gen, 3, [1.5, 0])
@@ -144,6 +154,12 @@ describe('la red al revés', () => {
     for (let d = 0; d < 10; d++)
       for (const e of estilos) if (masProbable(predecir(red, imaginar(gen, d, e))) === d) bien++
     expect(bien / 120).toBeGreaterThanOrEqual(0.85)
+  })
+
+  it('exposes the stroke each hidden neuron paints', () => {
+    const t = trazoDeNeurona(gen, 9)
+    expect(t).toHaveLength(784)
+    expect(t[100]).toBe(gen.w2[9 * 784 + 100])
   })
 
   it('draws the same digits for the same seed', () => {

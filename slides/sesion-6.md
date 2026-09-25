@@ -10,7 +10,7 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 # Agentes y el caso de tu empresa
 
-Sesión 6 de 8 · día 3 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
+Sesión 6 de 8 · día 3: tus documentos y los agentes · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras vuelven de la pausa

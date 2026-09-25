@@ -10,7 +10,7 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 # El caso y el horizonte
 
-Sesión 8 de 8 · día 4 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
+Sesión 8 de 8 · día 4: riesgos y el caso real · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras vuelven de la pausa
