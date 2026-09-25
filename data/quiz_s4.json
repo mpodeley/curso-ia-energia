@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-09-24T12:00:00+00:00",
+  "source": "elaboración propia para el curso (segunda edición: las preguntas de análisis de datos del quiz del día 2)",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "Le subiste el reporte diario de la ARCH y te devolvió la tabla 1 completa y prolija, con subtotal y total nacional. ¿Qué hacés antes de usarla?",
+      "opciones": [
+        {
+          "texto": "Sumar las filas: si la suma da el total nacional que figura, la tabla está bien.",
+          "explicacion": "La suma puede cerrar con dos errores que se compensan, no cubre las columnas de estimado y cumplimiento, y el modelo puede haber calculado el total en vez de copiarlo: cerraría aunque una fila esté mal."
+        },
+        {
+          "texto": "Pedirle que la extraiga de nuevo en un chat nuevo y quedarte con la versión que se repite.",
+          "explicacion": "Dos extracciones pueden coincidir en el mismo error, porque leen la misma celda ambigua de la misma manera. Para verificar hay que mirar el original."
+        },
+        {
+          "texto": "Verificarla contra el PDF número por número, repartiendo filas si son muchas, y mirar primero las celdas donde el original mezcla formatos, como el 23.607 sin decimales.",
+          "correcta": true,
+          "explicacion": "El error de extracción no avisa: una coma decimal leída como punto de miles, una fila de la tabla de al lado colada, un dígito bailado. Se encuentra mirando, y ochenta números entre seis personas son un par de minutos."
+        },
+        {
+          "texto": "Nada: un PDF oficial es un dato de origen, y el modelo solo lo transcribió.",
+          "explicacion": "El original es oficial, pero la transcripción la hizo el modelo. Entre el PDF y tu tabla hubo una lectura automática de celdas fusionadas, formatos mezclados y texto corrido, y ahí es donde se cuelan los errores."
+        }
+      ]
+    },
+    {
+      "pregunta": "Ajustaste una curva de declinación a un pozo real y el modelo pasa muy cerca de todos los puntos. ¿Qué probaste?",
+      "opciones": [
+        {
+          "texto": "Que entendiste el comportamiento del reservorio.",
+          "explicacion": "Es tentador, pero la curva medida incluye, además del reservorio, compresión, restricciones de planta y estado del pozo."
+        },
+        {
+          "texto": "Que podés proyectar la producción de los próximos diez años con confianza.",
+          "explicacion": "La cola de la curva la controla b, que es justamente el parámetro peor determinado. Un ajuste bueno sobre el pasado puede dar proyecciones muy distintas."
+        },
+        {
+          "texto": "Que el pozo no tuvo intervenciones.",
+          "explicacion": "Una intervención suave o un cambio gradual de restricción puede pasar desapercibido dentro de una curva que ajusta bien."
+        },
+        {
+          "texto": "Que la producción cayó de forma sostenida, sin interrupciones grandes. Nada más que eso.",
+          "correcta": true,
+          "explicacion": "Un buen ajuste solo dice que la serie es suave. Separar despresurización de efectos operativos necesita caudales corregidos por horas de operación y presión de boca."
+        }
+      ]
+    },
+    {
+      "pregunta": "El chatbot te escribió código para analizar tu planilla y devolvió un número razonable. ¿Qué chequeás?",
+      "opciones": [
+        {
+          "texto": "Le pedís que te muestre el código y el conteo de filas antes y después de cada filtro, y rastreás un caso a mano en la planilla.",
+          "correcta": true,
+          "explicacion": "Los conteos delatan los filtros que se comieron datos, y un caso rastreado a mano cierra o abre toda la discusión en dos minutos."
+        },
+        {
+          "texto": "Nada: si el número es razonable y el código corrió sin errores, está bien.",
+          "explicacion": "Un filtro mal escrito devuelve menos filas y sigue sin error, y el resultado sigue pareciendo razonable."
+        },
+        {
+          "texto": "Le preguntás si está seguro del resultado.",
+          "explicacion": "Va a decir que sí con la misma seguridad con la que se equivocó. Para verificar hay que ir a los datos."
+        },
+        {
+          "texto": "Le pedís que lo calcule de nuevo y comparás.",
+          "explicacion": "Si el código tiene el mismo error, va a dar el mismo número las dos veces, y la coincidencia no prueba nada."
+        }
+      ]
+    }
+  ]
+}

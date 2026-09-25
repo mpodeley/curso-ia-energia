@@ -1,0 +1,4241 @@
+{
+  "generated_at": "2026-09-24T13:44:40+00:00",
+  "source": "Epoch AI, \"Notable AI Models\" (licencia CC BY), https://epoch.ai/data/ai-models. El cómputo de entrenamiento es una estimación de Epoch; cada modelo lleva su nivel de confianza.",
+  "source_date": "2026-09",
+  "data": [
+    {
+      "modelo": "Pandemonium (morse)",
+      "organizacion": "Massachusetts Institute of Technology (MIT)",
+      "fecha": "1959-02-01",
+      "flop": 600000000.0,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Samuel Neural Checkers",
+      "organizacion": "IBM",
+      "fecha": "1959-07-01",
+      "flop": 428400000.0,
+      "parametros": 16.0,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Perceptron (1960)",
+      "organizacion": "Cornell Aeronautical Laboratory",
+      "fecha": "1960-03-30",
+      "flop": 720000000.0,
+      "parametros": 1000.0,
+      "dominio": "Visión",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "ADALINE",
+      "organizacion": "Stanford University",
+      "fecha": "1960-06-30",
+      "flop": 6600.0,
+      "parametros": 17.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Print Recognition Logic",
+      "organizacion": "IBM",
+      "fecha": "1963-01-01",
+      "flop": 22500000.0,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "LTE speaker verification system",
+      "organizacion": "IBM",
+      "fecha": "1966-11-01",
+      "flop": 105917060.0,
+      "parametros": 2061.0,
+      "dominio": "Habla",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Neocognitron",
+      "organizacion": "NHK Broadcasting Science Research Laboratories",
+      "fecha": "1980-04-01",
+      "flop": 273738240.0,
+      "parametros": 1140576.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NetTalk (dictionary)",
+      "organizacion": "Princeton University",
+      "fecha": "1987-06-06",
+      "flop": 27664065000.0,
+      "parametros": 18629.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NetTalk (transcription)",
+      "organizacion": "Princeton University",
+      "fecha": "1987-06-06",
+      "flop": 28328002560.0,
+      "parametros": 18629.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "MLN-ASR",
+      "organizacion": "McGill University",
+      "fecha": "1988-08-01",
+      "flop": 296425000.0,
+      "parametros": 10000.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Invariant image recognition",
+      "organizacion": "Complutense University of Madrid",
+      "fecha": "1989-06-18",
+      "flop": 27000000000.0,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Handwritten digit recognition network",
+      "organizacion": "AT&T",
+      "fecha": "1989-11-27",
+      "flop": 181440000000.0,
+      "parametros": 2578.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Speaker-independent vowel classification",
+      "organizacion": "University of Washington",
+      "fecha": "1989-11-27",
+      "flop": 7485696000.0,
+      "parametros": 3040.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Zip CNN",
+      "organizacion": "AT&T,Bell Laboratories",
+      "fecha": "1989-12-01",
+      "flop": 1496338054440.0,
+      "parametros": 9760.0,
+      "dominio": "Visión",
+      "confianza": "confiable",
+      "destacado": true,
+      "etiqueta": "LeNet, 1989"
+    },
+    {
+      "modelo": "NETtalk reimplementation",
+      "organizacion": "Oregon State University",
+      "fecha": "1990-06-01",
+      "flop": 35811936000.0,
+      "parametros": 27480.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SexNet compression",
+      "organizacion": "",
+      "fecha": "1990-10-01",
+      "flop": 78775200000.0,
+      "parametros": 72940.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Weight Decay",
+      "organizacion": "",
+      "fecha": "1991-12-02",
+      "flop": 75474000000.0,
+      "parametros": 8386.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "TD-Gammon",
+      "organizacion": "IBM",
+      "fecha": "1992-05-01",
+      "flop": 18232157622832.703,
+      "parametros": 25000.0,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Siamese-TDNN",
+      "organizacion": "Bell Laboratories",
+      "fecha": "1993-08-01",
+      "flop": 12869570138112.0,
+      "parametros": 744.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ANN Eye Tracker",
+      "organizacion": "",
+      "fecha": "1993-11-29",
+      "flop": 17534400000.0,
+      "parametros": 5620.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "JPMAX",
+      "organizacion": "",
+      "fecha": "1994-12-02",
+      "flop": 80828280.0,
+      "parametros": 4446.0,
+      "dominio": "Visión",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Mixture of linear models",
+      "organizacion": "",
+      "fecha": "1994-12-02",
+      "flop": 453600000000.0,
+      "parametros": 384000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "NeuroChess",
+      "organizacion": "",
+      "fecha": "1994-12-02",
+      "flop": 858730812676.0,
+      "parametros": 72251.0,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Predictive Coding NN",
+      "organizacion": "Technical University of Munich",
+      "fecha": "1994-12-02",
+      "flop": 18621900000000.0,
+      "parametros": 206910.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LISSOM",
+      "organizacion": "University of Texas at Austin",
+      "fecha": "1995-11-27",
+      "flop": 195544800000.0,
+      "parametros": 432800.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "MUSIC perceptron",
+      "organizacion": "",
+      "fecha": "1996-06-03",
+      "flop": 881733600000.0,
+      "parametros": 13607.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "System 11",
+      "organizacion": "Carnegie Mellon University (CMU)",
+      "fecha": "1996-06-18",
+      "flop": 25859616000.0,
+      "parametros": 6452.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SOM-CNN",
+      "organizacion": "",
+      "fecha": "1997-01-31",
+      "flop": 31431600000.0,
+      "parametros": 32015.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LSTM",
+      "organizacion": "Technical University of Munich",
+      "fecha": "1997-11-15",
+      "flop": 31512000000000.0,
+      "parametros": 10504.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LeNet-5",
+      "organizacion": "AT&T",
+      "fecha": "1998-11-01",
+      "flop": 2810937600000.0,
+      "parametros": 60000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RECONTRA-categorized",
+      "organizacion": "",
+      "fecha": "1999-06-02",
+      "flop": 8013600000000.0,
+      "parametros": 66780.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "RECONTRA-uncategorized",
+      "organizacion": "",
+      "fecha": "1999-06-02",
+      "flop": 3864000000000.0,
+      "parametros": 112000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Neural LM",
+      "organizacion": "University of Montreal / Université de Montréal",
+      "fecha": "2000-11-28",
+      "flop": 6339000000000000.0,
+      "parametros": 6906980.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "PoE MNIST",
+      "organizacion": "University College London (UCL)",
+      "fecha": "2000-11-28",
+      "flop": 51810000000000.0,
+      "parametros": 3925310.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Decision tree (classification)",
+      "organizacion": "Mitsubishi Electric Research Labs,Compaq CRL",
+      "fecha": "2001-12-08",
+      "flop": 63000000000000.0,
+      "parametros": 12000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "NPLM (AP News)",
+      "organizacion": "University of Montreal / Université de Montréal",
+      "fecha": "2003-03-15",
+      "flop": 1666869200000000.0,
+      "parametros": 11904264.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NPLM (Brown)",
+      "organizacion": "University of Montreal / Université de Montréal",
+      "fecha": "2003-03-15",
+      "flop": 132076260000000.0,
+      "parametros": 4124233.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Invariant CNN",
+      "organizacion": "New York University (NYU)",
+      "fecha": "2004-06-27",
+      "flop": 974230000000.0,
+      "parametros": 90575.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LMICA",
+      "organizacion": "",
+      "fecha": "2004-12-01",
+      "flop": 2782080000000000.0,
+      "parametros": 4096000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Hierarchical LM",
+      "organizacion": "",
+      "fecha": "2005-01-06",
+      "flop": 115848000000000.0,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SVM-CNN",
+      "organizacion": "New York University (NYU)",
+      "fecha": "2006-06-17",
+      "flop": 745200000000000.0,
+      "parametros": 90857.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "KN-LM",
+      "organizacion": "Google",
+      "fecha": "2007-06-22",
+      "flop": 7.7303808e+17,
+      "parametros": 21000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "SB-LM",
+      "organizacion": "Google",
+      "fecha": "2007-06-22",
+      "flop": 1.4494464e+18,
+      "parametros": 300000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Two Stage Feature Extraction (MNIST)",
+      "organizacion": "New York University (NYU)",
+      "fecha": "2009-09-01",
+      "flop": 20754000000000.0,
+      "parametros": 258800.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LCNP LabelMe",
+      "organizacion": "University of Bonn",
+      "fecha": "2009-11-22",
+      "flop": 3295150080000000.0,
+      "parametros": 13729792.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LCNP MNIST",
+      "organizacion": "",
+      "fecha": "2009-11-22",
+      "flop": 4181852160000000.0,
+      "parametros": 11616256.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LCNP NORB",
+      "organizacion": "",
+      "fecha": "2009-11-22",
+      "flop": 2452090060800000.0,
+      "parametros": 16818176.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Feedforward NN",
+      "organizacion": "University of Montreal / Université de Montréal",
+      "fecha": "2010-05-13",
+      "flop": 350000000000000.0,
+      "parametros": 7082000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "iCCCP",
+      "organizacion": "Massachusetts Institute of Technology (MIT)",
+      "fecha": "2010-06-13",
+      "flop": 1080000000000000.0,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Pooling CNN (Caltech 101)",
+      "organizacion": "University of Bonn",
+      "fecha": "2010-09-15",
+      "flop": 1221124128768000.0,
+      "parametros": 294912.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Pooling CNN (NORB)",
+      "organizacion": "University of Bonn",
+      "fecha": "2010-09-15",
+      "flop": 1456277227200000.0,
+      "parametros": 268664.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RNN LM",
+      "organizacion": "Johns Hopkins University",
+      "fecha": "2010-09-26",
+      "flop": 5.396e+16,
+      "parametros": 70265000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Deep Autoencoders",
+      "organizacion": "University of Toronto",
+      "fecha": "2011-04-29",
+      "flop": 3.672864e+16,
+      "parametros": 139808256.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "High Performance CNN (NORB)",
+      "organizacion": "IDSIA,SUPSI",
+      "fecha": "2011-07-16",
+      "flop": 2.57985e+16,
+      "parametros": 4878300.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "CNN Committee (MNIST)",
+      "organizacion": "IDSIA",
+      "fecha": "2011-09-18",
+      "flop": 5.2e+16,
+      "parametros": 120620.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "CNN Committee (NIST)",
+      "organizacion": "IDSIA",
+      "fecha": "2011-09-18",
+      "flop": 2.6e+16,
+      "parametros": 128420.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "CNN committee (traffic sign)",
+      "organizacion": "IDSIA",
+      "fecha": "2011-10-03",
+      "flop": 991981425600000.0,
+      "parametros": 1388800.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Dropout (CIFAR)",
+      "organizacion": "University of Toronto",
+      "fecha": "2012-06-03",
+      "flop": 4268700000000000.0,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Dropout (ImageNet)",
+      "organizacion": "University of Toronto",
+      "fecha": "2012-06-03",
+      "flop": 2.731968e+17,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Dropout (MNIST)",
+      "organizacion": "University of Toronto",
+      "fecha": "2012-06-03",
+      "flop": 6039370800000000.0,
+      "parametros": 5594010.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Unsupervised High-level Feature Learner",
+      "organizacion": "Google",
+      "fecha": "2012-07-12",
+      "flop": 6e+17,
+      "parametros": 1000000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "LSTM LM",
+      "organizacion": "RWTH Aachen University",
+      "fecha": "2012-09-09",
+      "flop": 1.66e+16,
+      "parametros": 102720000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "AlexNet",
+      "organizacion": "University of Toronto",
+      "fecha": "2012-09-30",
+      "flop": 4.7e+17,
+      "parametros": 60000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable",
+      "destacado": true,
+      "etiqueta": "AlexNet"
+    },
+    {
+      "modelo": "DNN EM segmentation",
+      "organizacion": "IDSIA,SUPSI",
+      "fecha": "2012-12-03",
+      "flop": 4.78e+17,
+      "parametros": 218896.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DistBelief Speech",
+      "organizacion": "Google",
+      "fecha": "2012-12-03",
+      "flop": 3.114e+17,
+      "parametros": 47185920.0,
+      "dominio": "Habla",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "DistBelief NNLM",
+      "organizacion": "Google",
+      "fecha": "2013-01-16",
+      "flop": 2.612736e+18,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ReLU-Speech",
+      "organizacion": "Google,University of Toronto,New York University (NYU)",
+      "fecha": "2013-05-26",
+      "flop": 1.2773376e+17,
+      "parametros": 101706240.0,
+      "dominio": "Habla",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Hierarchical Scene Labeling (Stanford Background)",
+      "organizacion": "New York University (NYU)",
+      "fecha": "2013-08-01",
+      "flop": 2.3774688e+17,
+      "parametros": 51609600.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RCTM",
+      "organizacion": "University of Oxford",
+      "fecha": "2013-10-01",
+      "flop": 9331200000000000.0,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "RNTN",
+      "organizacion": "Stanford University",
+      "fecha": "2013-10-01",
+      "flop": 1.422e+16,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Word2Vec (large)",
+      "organizacion": "Google",
+      "fecha": "2013-10-16",
+      "flop": 3.888e+16,
+      "parametros": 692000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Visualizing CNNs",
+      "organizacion": "New York University (NYU)",
+      "fecha": "2013-11-12",
+      "flop": 5.32e+17,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "TransE",
+      "organizacion": "Universite de Technologie de Compiègne – CNRS,Google",
+      "fecha": "2013-12-05",
+      "flop": 1.340928e+18,
+      "parametros": 942000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "DQN",
+      "organizacion": "DeepMind",
+      "fecha": "2013-12-19",
+      "flop": 2846883840000000.0,
+      "parametros": 836096.0,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Image generation",
+      "organizacion": "University of Amsterdam",
+      "fecha": "2013-12-20",
+      "flop": 475200000000000.0,
+      "parametros": 784000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GANs",
+      "organizacion": "University of Montreal / Université de Montréal",
+      "fecha": "2014-06-10",
+      "flop": 5.184e+17,
+      "parametros": null,
+      "dominio": "Generación de imágenes",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "SPPNet",
+      "organizacion": "Microsoft,Xi’an Jiaotong University,University of Science and Technology of China (USTC)",
+      "fecha": "2014-06-18",
+      "flop": 3.411072e+18,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SmooCT",
+      "organizacion": "University College London (UCL)",
+      "fecha": "2014-07-01",
+      "flop": 6.9e+16,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ACF-WIDER",
+      "organizacion": "Chinese Academy of Sciences",
+      "fecha": "2014-07-15",
+      "flop": 76380000000000.0,
+      "parametros": 6144.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RNNsearch-50*",
+      "organizacion": "Jacobs University Bremen,University of Montreal / Université de Montréal",
+      "fecha": "2014-09-01",
+      "flop": 1.5552e+18,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "VGG16",
+      "organizacion": "University of Oxford",
+      "fecha": "2014-09-04",
+      "flop": 1.2291e+19,
+      "parametros": 138000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "VGG19",
+      "organizacion": "University of Oxford",
+      "fecha": "2014-09-04",
+      "flop": 1.1e+19,
+      "parametros": 144000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Seq2Seq LSTM",
+      "organizacion": "Google",
+      "fecha": "2014-09-10",
+      "flop": 5.6e+19,
+      "parametros": 1920000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SPN-4+KN5",
+      "organizacion": "Singapore University of Technology & Design,DSO National Laboratories",
+      "fecha": "2014-09-14",
+      "flop": 4.4e+16,
+      "parametros": 5000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GoogLeNet / InceptionV1",
+      "organizacion": "Google,University of Michigan,University of North Carolina",
+      "fecha": "2014-09-17",
+      "flop": 1.51e+18,
+      "parametros": 6797700.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "TA-CNN",
+      "organizacion": "Chinese University of Hong Kong (CUHK)",
+      "fecha": "2014-11-29",
+      "flop": 1.0854e+16,
+      "parametros": 706048.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "SNM-skip",
+      "organizacion": "Google",
+      "fecha": "2014-12-03",
+      "flop": 2.97600000001e+20,
+      "parametros": 62000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Fractional Max-Pooling",
+      "organizacion": "University of Warwick",
+      "fecha": "2014-12-18",
+      "flop": 1e+17,
+      "parametros": 27000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ADAM (CIFAR-10)",
+      "organizacion": "University of Amsterdam,OpenAI,University of Toronto",
+      "fecha": "2014-12-22",
+      "flop": 624979800000000.0,
+      "parametros": 2370000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "MSRA (C, PReLU)",
+      "organizacion": "Microsoft Research",
+      "fecha": "2015-02-06",
+      "flop": 2.397403008e+19,
+      "parametros": 87048800.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "genCNN + dyn eval",
+      "organizacion": "Chinese Academy of Sciences,Huawei Noah's Ark Lab,Dublin City University",
+      "fecha": "2015-03-17",
+      "flop": 3.4153451e+16,
+      "parametros": 8000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "TC-DNN-BLSTM-DNN",
+      "organizacion": "Carnegie Mellon University (CMU)",
+      "fecha": "2015-04-06",
+      "flop": 1.9410191999999997e+17,
+      "parametros": 18413568.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "U-Net",
+      "organizacion": "University of Freiburg",
+      "fecha": "2015-05-18",
+      "flop": 5.0832252e+16,
+      "parametros": 37676160.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DCNN",
+      "organizacion": "University of Maryland,Rutgers University",
+      "fecha": "2015-08-07",
+      "flop": 4.8098691e+17,
+      "parametros": 5006000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AlphaGo Fan",
+      "organizacion": "DeepMind",
+      "fecha": "2015-10-01",
+      "flop": 3.8e+20,
+      "parametros": 8209984.0,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "SAF R-CNN",
+      "organizacion": "Beijing Institute of Technology,Sun Yat-sen University,Panasonic R&D,National University of Singapore",
+      "fecha": "2015-10-28",
+      "flop": 1.2311081250000001e+19,
+      "parametros": 138000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Inception v3",
+      "organizacion": "Google,University College London (UCL)",
+      "fecha": "2015-12-02",
+      "flop": 1e+20,
+      "parametros": 23626728.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ResNet-101 (ImageNet)",
+      "organizacion": "Microsoft",
+      "fecha": "2015-12-10",
+      "flop": 7.004e+18,
+      "parametros": 44500000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ResNet-152 (ImageNet)",
+      "organizacion": "Microsoft",
+      "fecha": "2015-12-10",
+      "flop": 1.041408e+19,
+      "parametros": 60200000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Variational (untied weights, MC) LSTM (Large)",
+      "organizacion": "University of Cambridge",
+      "fecha": "2015-12-16",
+      "flop": 5886144000000000.0,
+      "parametros": 66000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AlphaGo Lee",
+      "organizacion": "DeepMind",
+      "fecha": "2016-01-27",
+      "flop": 1.9e+21,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Named Entity Recognition model",
+      "organizacion": "Carnegie Mellon University (CMU)",
+      "fecha": "2016-03-04",
+      "flop": 9.69408e+16,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "R-FCN",
+      "organizacion": "Tsinghua University,Microsoft Research",
+      "fecha": "2016-06-21",
+      "flop": 7.1935776e+17,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ResNet-200",
+      "organizacion": "Microsoft Research Asia",
+      "fecha": "2016-09-17",
+      "flop": 2.9741645e+19,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "GNMT",
+      "organizacion": "Google",
+      "fecha": "2016-09-26",
+      "flop": 6.620000000001e+21,
+      "parametros": 278000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Pointer Sentinel-LSTM (medium)",
+      "organizacion": "MetaMind Inc,Salesforce",
+      "fecha": "2016-09-26",
+      "flop": 7490000000000000.0,
+      "parametros": 21000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Xception",
+      "organizacion": "Google",
+      "fecha": "2016-10-07",
+      "flop": 4.36e+20,
+      "parametros": 22855952.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "VD-LSTM+REAL Large",
+      "organizacion": "Salesforce Research,Stanford University",
+      "fecha": "2016-11-04",
+      "flop": 2.13e+16,
+      "parametros": 51000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "BIDAF",
+      "organizacion": "University of Washington,Allen Institute for AI",
+      "fecha": "2016-11-05",
+      "flop": 3.4686144e+18,
+      "parametros": 2600000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NAS with base 8 and shared embeddings",
+      "organizacion": "Google Brain",
+      "fecha": "2016-11-05",
+      "flop": 1.05e+16,
+      "parametros": 54000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NASv3 (CIFAR-10)",
+      "organizacion": "Google Brain",
+      "fecha": "2016-11-05",
+      "flop": 2.2e+21,
+      "parametros": 37400000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ResNeXt-101 (64×4d)",
+      "organizacion": "University of California San Diego,Facebook",
+      "fecha": "2016-11-16",
+      "flop": 1.2e+19,
+      "parametros": 83000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "PolyNet",
+      "organizacion": "Chinese University of Hong Kong (CUHK)",
+      "fecha": "2016-11-17",
+      "flop": 6.4e+19,
+      "parametros": 92000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "HR-ResNet101",
+      "organizacion": "Carnegie Mellon University (CMU)",
+      "fecha": "2016-12-13",
+      "flop": 7.077e+18,
+      "parametros": 44500000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EnhanceNet",
+      "organizacion": "Max Planck Institute for Intelligent Systems",
+      "fecha": "2016-12-23",
+      "flop": 1.3079231999999998e+17,
+      "parametros": 814464.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeepStack",
+      "organizacion": "University of Alberta,Charles University,Czech Technical University",
+      "fecha": "2017-01-06",
+      "flop": 1.446336e+19,
+      "parametros": 2500000.0,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "MoE-Multi",
+      "organizacion": "Jagiellonian University,Google Brain",
+      "fecha": "2017-01-23",
+      "flop": 9.393905664e+19,
+      "parametros": 8700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Transformer",
+      "organizacion": "Google Research,Google Brain",
+      "fecha": "2017-06-12",
+      "flop": 7.4245248e+18,
+      "parametros": 213000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable",
+      "destacado": true,
+      "etiqueta": "Transformer"
+    },
+    {
+      "modelo": "JFT",
+      "organizacion": "Google Research,Carnegie Mellon University (CMU)",
+      "fecha": "2017-07-10",
+      "flop": 8.43e+20,
+      "parametros": 44654504.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ConvS2S (ensemble of 8 models)",
+      "organizacion": "Meta AI",
+      "fecha": "2017-07-25",
+      "flop": 5.64e+19,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "AWD-LSTM - 3-layer LSTM (tied) + continuous cache pointer (WT2)",
+      "organizacion": "Salesforce Research",
+      "fecha": "2017-08-07",
+      "flop": 2.97e+17,
+      "parametros": 33000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RetinaNet-R101",
+      "organizacion": "Facebook AI Research",
+      "fecha": "2017-08-07",
+      "flop": 2.065392e+18,
+      "parametros": 53000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "OpenAI TI7 DOTA 1v1",
+      "organizacion": "OpenAI",
+      "fecha": "2017-08-11",
+      "flop": 6.046095222592002e+20,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EI-REHN-1000D",
+      "organizacion": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "fecha": "2017-08-14",
+      "flop": 1.06e+16,
+      "parametros": 19000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Libratus",
+      "organizacion": "Carnegie Mellon University (CMU)",
+      "fecha": "2017-08-19",
+      "flop": 5.51e+20,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GL-LWGC-AWD-MoS-LSTM + dynamic evaluation (WT2)",
+      "organizacion": "Ben-Gurion University of the Negev",
+      "fecha": "2017-08-29",
+      "flop": 4.56e+17,
+      "parametros": 38000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "PyramidNet",
+      "organizacion": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "fecha": "2017-09-06",
+      "flop": 2340000000000000.0,
+      "parametros": 26000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ISS",
+      "organizacion": "Duke University,Microsoft",
+      "fecha": "2017-09-15",
+      "flop": 3400000000000000.0,
+      "parametros": 11100000.000000002,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AWD-LSTM+WT+Cache+IOG (WT2)",
+      "organizacion": "NTT Communication Science Laboratories",
+      "fecha": "2017-09-26",
+      "flop": 3180000000000000.0,
+      "parametros": 53000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AlphaGo Zero",
+      "organizacion": "DeepMind",
+      "fecha": "2017-10-18",
+      "flop": 6.49439910290227e+20,
+      "parametros": 46400244.0,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AlphaGo Master",
+      "organizacion": "DeepMind",
+      "fecha": "2017-10-19",
+      "flop": 3.4100000001e+20,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Fraternal dropout + AWD-LSTM 3-layer (WT2)",
+      "organizacion": "Jagiellonian University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal",
+      "fecha": "2017-10-31",
+      "flop": 3.06e+17,
+      "parametros": 34000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "AWD-LSTM-MoS + dynamic evaluation (WT2, 2017)",
+      "organizacion": "Carnegie Mellon University (CMU)",
+      "fecha": "2017-11-10",
+      "flop": 3.36e+18,
+      "parametros": 35000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "AlphaZero",
+      "organizacion": "DeepMind",
+      "fecha": "2017-12-05",
+      "flop": 1.0600000001e+20,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ELMo",
+      "organizacion": "University of Washington,Allen Institute for AI",
+      "fecha": "2018-02-01",
+      "flop": 3300100000000010.0,
+      "parametros": 94000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "QRNN",
+      "organizacion": "Salesforce Research",
+      "fecha": "2018-02-01",
+      "flop": 6.8866472e+17,
+      "parametros": 135000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "IMPALA",
+      "organizacion": "DeepMind",
+      "fecha": "2018-02-05",
+      "flop": 1.68e+20,
+      "parametros": 1600000.0,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "4 layer QRNN (h=2500)",
+      "organizacion": "Salesforce Research",
+      "fecha": "2018-03-22",
+      "flop": 5.9158815e+17,
+      "parametros": 151000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "YOLOv3",
+      "organizacion": "University of Washington",
+      "fecha": "2018-04-08",
+      "flop": 1.3416380824e+19,
+      "parametros": 56933216.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ResNeXt-101 32x48d",
+      "organizacion": "Facebook",
+      "fecha": "2018-05-02",
+      "flop": 8.74395e+21,
+      "parametros": 829000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Dropout-LSTM+Noise(Bernoulli) (WT2)",
+      "organizacion": "Columbia University,New York University (NYU),Princeton University",
+      "fecha": "2018-05-03",
+      "flop": 1.27e+17,
+      "parametros": 51000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "aLSTM(depth-2)+RecurrentPolicy (WT2)",
+      "organizacion": "University of Manchester,Alan Turing Institute",
+      "fecha": "2018-05-22",
+      "flop": 7.296e+16,
+      "parametros": 32000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GPT-1",
+      "organizacion": "OpenAI",
+      "fecha": "2018-06-01",
+      "flop": 1.7578125e+19,
+      "parametros": 117000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable",
+      "destacado": true,
+      "etiqueta": "GPT-1"
+    },
+    {
+      "modelo": "FTW (For The Win)",
+      "organizacion": "DeepMind",
+      "fecha": "2018-07-03",
+      "flop": 3.49e+19,
+      "parametros": 126001330.0,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Big-Little Net",
+      "organizacion": "IBM",
+      "fecha": "2018-07-10",
+      "flop": 2.46048e+17,
+      "parametros": 77360000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Big-Little Net (speech)",
+      "organizacion": "IBM",
+      "fecha": "2018-07-10",
+      "flop": 4.290048e+17,
+      "parametros": 3320000.0,
+      "dominio": "Habla",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Big Transformer for Back-Translation",
+      "organizacion": "Facebook AI Research,Google Brain",
+      "fecha": "2018-08-28",
+      "flop": 4.7808e+20,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "(ensemble): AWD-LSTM-DOC (fin) × 5 (WT2)",
+      "organizacion": "NTT Communication Science Laboratories,Tohoku University",
+      "fecha": "2018-08-30",
+      "flop": 6.66e+17,
+      "parametros": 185000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Transformer + Simple Recurrent Unit",
+      "organizacion": "ASAPP,Cornell University,Google,Princeton University",
+      "fecha": "2018-09-17",
+      "flop": 1.1e+19,
+      "parametros": 90000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LSTM+NeuralCache",
+      "organizacion": "KU Leuven,ESAT - PSI,Apple",
+      "fecha": "2018-09-24",
+      "flop": 982800000000000.0,
+      "parametros": 2100000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Transformer (Adaptive Input Embeddings) WT103",
+      "organizacion": "Facebook AI Research",
+      "fecha": "2018-09-28",
+      "flop": 4.47e+19,
+      "parametros": 247000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "BERT-Large",
+      "organizacion": "Google",
+      "fecha": "2018-10-11",
+      "flop": 2.85e+20,
+      "parametros": 340000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable",
+      "destacado": true,
+      "etiqueta": "BERT"
+    },
+    {
+      "modelo": "TrellisNet",
+      "organizacion": "Carnegie Mellon University (CMU),Bosch Center for Artificial Intelligence,Intel Labs",
+      "fecha": "2018-10-15",
+      "flop": 2.78e+18,
+      "parametros": 180000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Mesh-TensorFlow Transformer 2.9B (translation)",
+      "organizacion": "Google Brain",
+      "fecha": "2018-11-05",
+      "flop": 6.84288e+19,
+      "parametros": 2900000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Mesh-TensorFlow Transformer 4.9B (language)",
+      "organizacion": "Google Brain",
+      "fecha": "2018-11-05",
+      "flop": 1.617408e+20,
+      "parametros": 4900000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Fine-tuned-AWD-LSTM-DOC (fin)",
+      "organizacion": "Samsung R&D Institute Russia",
+      "fecha": "2018-11-12",
+      "flop": 5.188e+16,
+      "parametros": 46000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Multi-cell LSTM",
+      "organizacion": "University of Hyderabad",
+      "fecha": "2018-11-15",
+      "flop": 2006640000000000.0,
+      "parametros": 7200000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "StyleGAN",
+      "organizacion": "Nvidia",
+      "fecha": "2018-12-12",
+      "flop": 3.93e+16,
+      "parametros": 26200000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Transformer-XL (257M)",
+      "organizacion": "Carnegie Mellon University (CMU),Google Brain",
+      "fecha": "2019-01-09",
+      "flop": 3.7832771e+20,
+      "parametros": 256999999.99999997,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Hanabi 4 player",
+      "organizacion": "DeepMind,University of Oxford,Carnegie Mellon University (CMU),Google Brain",
+      "fecha": "2019-02-01",
+      "flop": 4.3e+18,
+      "parametros": 764000.0,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GPT-2 (1.5B)",
+      "organizacion": "OpenAI",
+      "fecha": "2019-02-14",
+      "flop": 1.920000000001e+21,
+      "parametros": 1500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa",
+      "destacado": true,
+      "etiqueta": "GPT-2"
+    },
+    {
+      "modelo": "KataGo",
+      "organizacion": "Jane Street",
+      "fecha": "2019-02-27",
+      "flop": 2.32e+19,
+      "parametros": 2500000.0,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "SciBERT",
+      "organizacion": "Allen Institute for AI",
+      "fecha": "2019-03-26",
+      "flop": 8.926848e+19,
+      "parametros": 110000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Cross-lingual alignment",
+      "organizacion": "Tel Aviv University,Massachusetts Institute of Technology (MIT)",
+      "fecha": "2019-04-04",
+      "flop": 2.56e+18,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "WeNet (Penn Treebank)",
+      "organizacion": "Amazon",
+      "fecha": "2019-04-08",
+      "flop": 7.30000001e+17,
+      "parametros": 23000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "BERT-Large-CAS (PTB+WT2+WT103)",
+      "organizacion": "Amazon",
+      "fecha": "2019-04-20",
+      "flop": 1.5405e+20,
+      "parametros": 395000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "AWD-LSTM-DRILL + dynamic evaluation† (WT2)",
+      "organizacion": "IDIAP",
+      "fecha": "2019-05-14",
+      "flop": 4.08e+17,
+      "parametros": 34000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "XLNet",
+      "organizacion": "Carnegie Mellon University (CMU),Google Brain",
+      "fecha": "2019-06-01",
+      "flop": 6.19e+21,
+      "parametros": 340000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Transformer-XL Large + Phrase Induction",
+      "organizacion": "Massachusetts Institute of Technology (MIT),University of Illinois Urbana-Champaign (UIUC)",
+      "fecha": "2019-06-04",
+      "flop": 3.7848651e+20,
+      "parametros": 256999999.99999997,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "AWD-LSTM + MoS + Partial Shuffled",
+      "organizacion": "University of Texas at Austin",
+      "fecha": "2019-06-10",
+      "flop": 3.15e+17,
+      "parametros": 35000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RoBERTa Large",
+      "organizacion": "Facebook,University of Washington",
+      "fecha": "2019-07-01",
+      "flop": 8.5067e+21,
+      "parametros": 355000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Pluribus",
+      "organizacion": "Facebook AI Research",
+      "fecha": "2019-07-11",
+      "flop": 6.6e+16,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Megatron-BERT",
+      "organizacion": "Nvidia",
+      "fecha": "2019-09-17",
+      "flop": 2.2e+22,
+      "parametros": 3900000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Megatron-LM (1.2B)",
+      "organizacion": "Nvidia",
+      "fecha": "2019-09-17",
+      "flop": 1.1304e+21,
+      "parametros": 1200000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Megatron-LM (8.3B)",
+      "organizacion": "Nvidia",
+      "fecha": "2019-09-17",
+      "flop": 9.1e+21,
+      "parametros": 8300000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "AlphaX-1",
+      "organizacion": "Facebook AI Research,Brown University",
+      "fecha": "2019-10-02",
+      "flop": 8.89344e+17,
+      "parametros": 5400000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DistilBERT",
+      "organizacion": "Hugging Face",
+      "fecha": "2019-10-02",
+      "flop": 1.24416e+19,
+      "parametros": 66000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "T5-11B",
+      "organizacion": "Google",
+      "fecha": "2019-10-23",
+      "flop": 3.3e+22,
+      "parametros": 11000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "T5-3B",
+      "organizacion": "Google",
+      "fecha": "2019-10-23",
+      "flop": 9.0000000001e+21,
+      "parametros": 2800000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AlphaStar",
+      "organizacion": "DeepMind",
+      "fecha": "2019-10-30",
+      "flop": 1.0773400001e+23,
+      "parametros": 139000000.0,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Base LM + kNN LM + Continuous Cache",
+      "organizacion": "Stanford University,Facebook AI Research",
+      "fecha": "2019-11-01",
+      "flop": 3.05292e+19,
+      "parametros": 247000000.00000003,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "XLM-RoBERTa",
+      "organizacion": "Facebook AI",
+      "fecha": "2019-11-05",
+      "flop": 2.076e+22,
+      "parametros": 550000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CamemBERT",
+      "organizacion": "Facebook,INRIA,Sorbonne University",
+      "fecha": "2019-11-10",
+      "flop": 8.3e+20,
+      "parametros": 335000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Sandwich Transformer",
+      "organizacion": "Allen Institute for AI,Facebook AI Research",
+      "fecha": "2019-11-10",
+      "flop": 2.3504093e+19,
+      "parametros": 209000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Noisy Student (L2)",
+      "organizacion": "Carnegie Mellon University (CMU),Google",
+      "fecha": "2019-11-11",
+      "flop": 2.612e+22,
+      "parametros": 480000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "MuZero",
+      "organizacion": "DeepMind",
+      "fecha": "2019-11-19",
+      "flop": 4.8e+19,
+      "parametros": 36864000.0,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Transformer-XL DeFINE (141M)",
+      "organizacion": "University of Washington,Allen Institute for AI",
+      "fecha": "2019-11-27",
+      "flop": 1.74276e+18,
+      "parametros": 141000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "MMLSTM (PTB)",
+      "organizacion": "Beijing University of Posts and Telecommunications,University of West London",
+      "fecha": "2019-12-05",
+      "flop": 5.8298782e+16,
+      "parametros": 21300000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "MMLSTM (WT-2)",
+      "organizacion": "Beijing University of Posts and Telecommunications,University of West London",
+      "fecha": "2019-12-05",
+      "flop": 1.938e+17,
+      "parametros": 32300000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "OpenAI Five",
+      "organizacion": "OpenAI",
+      "fecha": "2019-12-13",
+      "flop": 6.7e+22,
+      "parametros": 159000000.0,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "OpenAI Five Rerun",
+      "organizacion": "OpenAI",
+      "fecha": "2019-12-13",
+      "flop": 1.3e+22,
+      "parametros": 159000000.0,
+      "dominio": "Juegos",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ContextNet + Noisy Student",
+      "organizacion": "Google",
+      "fecha": "2020-01-19",
+      "flop": 8.16e+21,
+      "parametros": null,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Meena",
+      "organizacion": "Google Brain",
+      "fecha": "2020-01-28",
+      "flop": 1.12e+23,
+      "parametros": 2600000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "TaLK Convolution",
+      "organizacion": "Carleton University",
+      "fecha": "2020-02-08",
+      "flop": 2.6990346e+19,
+      "parametros": 240000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ALBERT-xxlarge",
+      "organizacion": "Toyota Technological Institute at Chicago,Google",
+      "fecha": "2020-02-09",
+      "flop": 2.39e+21,
+      "parametros": 235000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Turing-NLG",
+      "organizacion": "Microsoft",
+      "fecha": "2020-02-13",
+      "flop": 1.57e+22,
+      "parametros": 17000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "FFN SwiGLU",
+      "organizacion": "Google",
+      "fecha": "2020-02-14",
+      "flop": 3.3687317e+19,
+      "parametros": 220000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Feedback Transformer",
+      "organizacion": "LORIA,University of Lorraine,Facebook AI Research",
+      "fecha": "2020-02-21",
+      "flop": 7.690547e+18,
+      "parametros": 126000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "TransformerXL + spectrum control",
+      "organizacion": "University of California Los Angeles (UCLA),JD.com",
+      "fecha": "2020-03-11",
+      "flop": 2.6289761e+19,
+      "parametros": 151000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Tensor-Transformer(1core)+PN (WT103)",
+      "organizacion": "University of California (UC) Berkeley",
+      "fecha": "2020-03-17",
+      "flop": 1.58e+18,
+      "parametros": 85300000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ELECTRA",
+      "organizacion": "Stanford University,Google,Google Brain",
+      "fecha": "2020-03-23",
+      "flop": 3.1e+21,
+      "parametros": 335000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Once for All",
+      "organizacion": "MIT-IBM Watson AI Lab,Massachusetts Institute of Technology (MIT),IBM",
+      "fecha": "2020-04-29",
+      "flop": 6.237e+20,
+      "parametros": 7700000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "UnifiedQA",
+      "organizacion": "Allen Institute for AI,University of Washington",
+      "fecha": "2020-05-02",
+      "flop": 1.65e+19,
+      "parametros": 11000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DETR",
+      "organizacion": "Facebook",
+      "fecha": "2020-05-26",
+      "flop": 4e+20,
+      "parametros": 60000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GPT-3 175B (davinci)",
+      "organizacion": "OpenAI",
+      "fecha": "2020-05-28",
+      "flop": 3.14e+23,
+      "parametros": 174600000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable",
+      "destacado": true,
+      "etiqueta": "GPT-3"
+    },
+    {
+      "modelo": "GShard (dense)",
+      "organizacion": "Google",
+      "fecha": "2020-06-30",
+      "flop": 4.765e+22,
+      "parametros": 2300000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeLighT",
+      "organizacion": "University of Washington,Allen Institute for AI,Facebook AI Research",
+      "fecha": "2020-08-03",
+      "flop": 3.8016e+18,
+      "parametros": 99000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ERNIE-GEN (large)",
+      "organizacion": "Baidu",
+      "fecha": "2020-08-06",
+      "flop": 2e+20,
+      "parametros": 340000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "LUKE",
+      "organizacion": "University of Washington,National Institute of Informatics",
+      "fecha": "2020-10-02",
+      "flop": 1.8144e+22,
+      "parametros": 483000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Conformer + Wav2vec 2.0 + Noisy Student",
+      "organizacion": "Google,Google Research,Google Brain",
+      "fecha": "2020-10-20",
+      "flop": 7.6e+21,
+      "parametros": 1000000000.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "mT5-XXL",
+      "organizacion": "Google,Google Research",
+      "fecha": "2020-10-20",
+      "flop": 8.2e+22,
+      "parametros": 13000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "German ELECTRA Large",
+      "organizacion": "deepset,Bayerische Staatsbibliothek Muenchen",
+      "fecha": "2020-10-21",
+      "flop": 1.42829568e+21,
+      "parametros": 335000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ViT-Huge/14",
+      "organizacion": "Google Brain,Google Research",
+      "fecha": "2020-10-22",
+      "flop": 4.262e+21,
+      "parametros": 632000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "wave2vec 2.0 LARGE",
+      "organizacion": "Facebook",
+      "fecha": "2020-10-22",
+      "flop": 3.87072e+21,
+      "parametros": 317000000.0,
+      "dominio": "Habla",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "KEPLER",
+      "organizacion": "Tsinghua University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),HEC,CIFAR AI Research,Princeton University,University of Montreal / Université de Montréal",
+      "fecha": "2020-11-23",
+      "flop": 1.66e+21,
+      "parametros": 125000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CPM-Large",
+      "organizacion": "Tsinghua University,Beijing Academy of Artificial Intelligence / BAAI",
+      "fecha": "2020-12-01",
+      "flop": 2.6052e+20,
+      "parametros": 2600000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DensePhrases",
+      "organizacion": "Korea University,Princeton University",
+      "fecha": "2020-12-23",
+      "flop": 2.09952e+18,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "CT-MoS (WT2)",
+      "organizacion": "Google,National Tsing Hua University",
+      "fecha": "2020-12-25",
+      "flop": 5.4e+17,
+      "parametros": 45000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ERNIE-Doc (247M)",
+      "organizacion": "Baidu",
+      "fecha": "2020-12-31",
+      "flop": 3.0302798e+19,
+      "parametros": 247000000.00000003,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CLIP (ViT L/14@336px)",
+      "organizacion": "OpenAI",
+      "fecha": "2021-01-05",
+      "flop": 1.05e+22,
+      "parametros": 370000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DALL-E",
+      "organizacion": "OpenAI",
+      "fecha": "2021-01-05",
+      "flop": 4.7e+22,
+      "parametros": 12000000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Switch",
+      "organizacion": "Google",
+      "fecha": "2021-01-11",
+      "flop": 8.22e+22,
+      "parametros": 1571000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeiT-B",
+      "organizacion": "Meta AI,Sorbonne University",
+      "fecha": "2021-01-15",
+      "flop": 7.884e+19,
+      "parametros": 86000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SRU++ Large",
+      "organizacion": "ASAPP",
+      "fecha": "2021-02-24",
+      "flop": 2.1173704e+19,
+      "parametros": 234000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Meta Pseudo Labels",
+      "organizacion": "Google Brain,Google AI",
+      "fecha": "2021-03-01",
+      "flop": 4.79e+22,
+      "parametros": 480000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Generative BST",
+      "organizacion": "Facebook AI Research",
+      "fecha": "2021-03-05",
+      "flop": 1.449e+22,
+      "parametros": 9431810048.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "M6-T",
+      "organizacion": "Alibaba",
+      "fecha": "2021-03-05",
+      "flop": 5.5e+21,
+      "parametros": 1002700000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "PLUG",
+      "organizacion": "Alibaba",
+      "fecha": "2021-04-19",
+      "flop": 3.5997696e+22,
+      "parametros": 27000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ADM",
+      "organizacion": "OpenAI",
+      "fecha": "2021-05-11",
+      "flop": 6.2e+21,
+      "parametros": 559000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CogView",
+      "organizacion": "Tsinghua University,Alibaba DAMO Academy",
+      "fecha": "2021-05-26",
+      "flop": 2.68e+22,
+      "parametros": 4000000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Transformer local-attention (NesT-B)",
+      "organizacion": "Google Cloud,Google Research",
+      "fecha": "2021-05-26",
+      "flop": 2.40576e+19,
+      "parametros": 90100000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ByT5-XXL",
+      "organizacion": "Google,Google Research",
+      "fecha": "2021-05-28",
+      "flop": 8.1e+22,
+      "parametros": 12900000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ViT-G/14",
+      "organizacion": "Google Brain,Google Research",
+      "fecha": "2021-06-08",
+      "flop": 5.85e+22,
+      "parametros": 1843000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CoAtNet",
+      "organizacion": "Google,Google Research,Google Brain",
+      "fecha": "2021-06-09",
+      "flop": 4.27e+22,
+      "parametros": 2440000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EMDR",
+      "organizacion": "Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),McGill University,DeepMind",
+      "fecha": "2021-06-09",
+      "flop": 1.91e+21,
+      "parametros": 440000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeBERTa",
+      "organizacion": "Microsoft",
+      "fecha": "2021-06-10",
+      "flop": 2.588e+22,
+      "parametros": 1500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ALIGN",
+      "organizacion": "Google Research",
+      "fecha": "2021-06-11",
+      "flop": 2.598670000001e+22,
+      "parametros": 820000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Denoising Diffusion Probabilistic Models (LSUN Bedroom)",
+      "organizacion": "University of California (UC) Berkeley",
+      "fecha": "2021-06-11",
+      "flop": 7.840125000000001e+19,
+      "parametros": 256000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "StyleGAN3-R",
+      "organizacion": "Nvidia,Aalto University",
+      "fecha": "2021-06-21",
+      "flop": 2.42784e+21,
+      "parametros": 1580000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "StyleGAN3-T",
+      "organizacion": "Nvidia,Aalto University",
+      "fecha": "2021-06-21",
+      "flop": 1.70208e+21,
+      "parametros": 2230000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EfficientNetV2-XL",
+      "organizacion": "Google,Google Brain",
+      "fecha": "2021-06-23",
+      "flop": 9.56e+19,
+      "parametros": 208000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Adaptive Input Transformer + RD",
+      "organizacion": "Microsoft Research Asia,Soochow University",
+      "fecha": "2021-06-28",
+      "flop": 8.58e+19,
+      "parametros": 247000000.00000003,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ERNIE 3.0",
+      "organizacion": "Baidu",
+      "fecha": "2021-07-05",
+      "flop": 2.25e+22,
+      "parametros": 10000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Codex",
+      "organizacion": "OpenAI",
+      "fecha": "2021-07-07",
+      "flop": 7.344e+22,
+      "parametros": 12000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GOAT",
+      "organizacion": "DeepMind",
+      "fecha": "2021-07-27",
+      "flop": 2.412e+22,
+      "parametros": 3472816.0,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "HuBERT",
+      "organizacion": "Facebook AI Research",
+      "fecha": "2021-07-27",
+      "flop": 5.54e+21,
+      "parametros": 1000000000.0,
+      "dominio": "Habla",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "SEER",
+      "organizacion": "Facebook AI Research,INRIA",
+      "fecha": "2021-07-29",
+      "flop": 1.8e+22,
+      "parametros": 1300000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "YOLOX-X",
+      "organizacion": "Megvii Inc",
+      "fecha": "2021-08-06",
+      "flop": 6.34275e+20,
+      "parametros": 99100000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Jurassic-1-Jumbo",
+      "organizacion": "AI21 Labs",
+      "fecha": "2021-08-11",
+      "flop": 3.7e+23,
+      "parametros": 178000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Zidong Taichu",
+      "organizacion": "Chinese Academy of Sciences,Wuhan AI Computing Center",
+      "fecha": "2021-08-11",
+      "flop": 8.016e+20,
+      "parametros": 3200000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "XLMR-XXL",
+      "organizacion": "Facebook AI Research",
+      "fecha": "2021-08-17",
+      "flop": 3.366e+22,
+      "parametros": 10700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "FLAN 137B",
+      "organizacion": "Google Research",
+      "fecha": "2021-09-03",
+      "flop": 2.047e+24,
+      "parametros": 137000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "PermuteFormer",
+      "organizacion": "Peking University",
+      "fecha": "2021-09-06",
+      "flop": 2.775e+18,
+      "parametros": 149697024.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "HyperCLOVA 204B",
+      "organizacion": "NAVER",
+      "fecha": "2021-09-10",
+      "flop": 2.0000000001e+23,
+      "parametros": 204000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "PLATO-XL",
+      "organizacion": "Baidu",
+      "fecha": "2021-09-20",
+      "flop": 9.9e+21,
+      "parametros": 11000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Turing ULRv5",
+      "organizacion": "Microsoft",
+      "fecha": "2021-09-28",
+      "flop": 2.8983951e+22,
+      "parametros": 2200000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Megatron-Turing NLG 530B",
+      "organizacion": "Microsoft,Nvidia",
+      "fecha": "2021-10-11",
+      "flop": 8.586e+23,
+      "parametros": 530000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Yuan 1.0",
+      "organizacion": "Inspur",
+      "fecha": "2021-10-12",
+      "flop": 3.5380000000001e+23,
+      "parametros": 245730000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "base LM+GNN+kNN",
+      "organizacion": "Shannon.AI,Nanjing University,Nanyang Technological University,Zhejiang University (ZJU)",
+      "fecha": "2021-10-17",
+      "flop": 5.2587456e+19,
+      "parametros": 274000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "S4",
+      "organizacion": "Stanford University",
+      "fecha": "2021-10-31",
+      "flop": 7.8328627e+19,
+      "parametros": 249000000.00000003,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "CodeT5-base",
+      "organizacion": "Salesforce,Nanyang Technological University",
+      "fecha": "2021-11-01",
+      "flop": 1.56e+21,
+      "parametros": 220000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Projected GAN",
+      "organizacion": "Heidelberg University",
+      "fecha": "2021-11-01",
+      "flop": 1.05e+19,
+      "parametros": null,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Masked Autoencoders ViT-H",
+      "organizacion": "Facebook AI Research",
+      "fecha": "2021-11-11",
+      "flop": 4.6e+20,
+      "parametros": 632000000.0,
+      "dominio": "Visión",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Swin Transformer V2 (SwinV2-G)",
+      "organizacion": "Microsoft Research Asia",
+      "fecha": "2021-11-18",
+      "flop": 1.1e+21,
+      "parametros": 3000000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "BASIC-L",
+      "organizacion": "Google",
+      "fecha": "2021-11-19",
+      "flop": 4.12e+22,
+      "parametros": 3070000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Florence",
+      "organizacion": "Microsoft",
+      "fecha": "2021-11-22",
+      "flop": 4.831e+22,
+      "parametros": 893000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NÜWA",
+      "organizacion": "Microsoft Research,Peking University",
+      "fecha": "2021-11-24",
+      "flop": 7.24598784e+21,
+      "parametros": 870000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Student of Games",
+      "organizacion": "DeepMind",
+      "fecha": "2021-12-06",
+      "flop": 3.6679273004682866e+22,
+      "parametros": null,
+      "dominio": "Juegos",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Gopher (280B)",
+      "organizacion": "DeepMind",
+      "fecha": "2021-12-08",
+      "flop": 6.31e+23,
+      "parametros": 280000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GLaM",
+      "organizacion": "Google",
+      "fecha": "2021-12-13",
+      "flop": 3.6363112434e+23,
+      "parametros": 1200000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Contriever",
+      "organizacion": "Meta AI,University College London (UCL),PSL University,Université Grenoble Alpes",
+      "fecha": "2021-12-16",
+      "flop": 1.57e+20,
+      "parametros": 110000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "XGLM-7.5B",
+      "organizacion": "Meta AI,Facebook AI Research",
+      "fecha": "2021-12-20",
+      "flop": 2.25e+22,
+      "parametros": 7500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ERNIE 3.0 Titan",
+      "organizacion": "Baidu,Peng Cheng Laboratory",
+      "fecha": "2021-12-23",
+      "flop": 1.0421e+24,
+      "parametros": 260000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Detic",
+      "organizacion": "Meta AI,University of Texas at Austin",
+      "fecha": "2022-01-07",
+      "flop": 2.34399744e+19,
+      "parametros": 88000000.0,
+      "dominio": "Visión",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "InstructGPT 175B",
+      "organizacion": "OpenAI",
+      "fecha": "2022-01-27",
+      "flop": 3.19181e+23,
+      "parametros": 175000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AlphaCode",
+      "organizacion": "DeepMind",
+      "fecha": "2022-02-02",
+      "flop": 2.38010000000001e+23,
+      "parametros": 41100000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RETRO-7B",
+      "organizacion": "DeepMind",
+      "fecha": "2022-02-07",
+      "flop": 1.68e+22,
+      "parametros": 7500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GPT-NeoX-20B",
+      "organizacion": "EleutherAI",
+      "fecha": "2022-02-09",
+      "flop": 9.31627008e+22,
+      "parametros": 20000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LaMDA",
+      "organizacion": "Google",
+      "fecha": "2022-02-10",
+      "flop": 3.55e+23,
+      "parametros": 137000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ST-MoE",
+      "organizacion": "Google,Google Brain,Google Research",
+      "fecha": "2022-02-17",
+      "flop": 2.9e+23,
+      "parametros": 269000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "PolyCoder",
+      "organizacion": "Carnegie Mellon University (CMU)",
+      "fecha": "2022-02-26",
+      "flop": 1.1e+21,
+      "parametros": 2700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Statement Curriculum Learning",
+      "organizacion": "OpenAI",
+      "fecha": "2022-03-02",
+      "flop": 1.7901648e+22,
+      "parametros": 774000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "ViT-G (model soup)",
+      "organizacion": "University of Washington,Columbia University,Google,Meta AI,Tel Aviv University",
+      "fecha": "2022-03-10",
+      "flop": 3.4e+21,
+      "parametros": 1843000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GPT-3.5 (davinci-002)",
+      "organizacion": "OpenAI",
+      "fecha": "2022-03-15",
+      "flop": 2.578e+24,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Segatron-XL large, M=384 + HCP",
+      "organizacion": "Microsoft Research,University of Waterloo",
+      "fecha": "2022-03-21",
+      "flop": 2.65e+19,
+      "parametros": 256999999.99999997,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Make-A-Scene",
+      "organizacion": "Meta AI",
+      "fecha": "2022-03-24",
+      "flop": 6.4172851e+21,
+      "parametros": 4000000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Chinchilla",
+      "organizacion": "DeepMind",
+      "fecha": "2022-03-29",
+      "flop": 5.76e+23,
+      "parametros": 70000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "PaLM (540B)",
+      "organizacion": "Google Research",
+      "fecha": "2022-04-04",
+      "flop": 2.5272e+24,
+      "parametros": 540350000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DALL·E 2",
+      "organizacion": "OpenAI",
+      "fecha": "2022-04-06",
+      "flop": 3.3695784e+23,
+      "parametros": 3500000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Stable Diffusion (LDM-KL-8-G)",
+      "organizacion": "Runway,Ludwig Maximilian University of Munich,Heidelberg University",
+      "fecha": "2022-04-13",
+      "flop": 5.0000000000000004e+22,
+      "parametros": 1450000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Sparse all-MLP",
+      "organizacion": "Meta AI",
+      "fecha": "2022-04-14",
+      "flop": 5.32224e+20,
+      "parametros": 9410000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Flamingo",
+      "organizacion": "DeepMind",
+      "fecha": "2022-04-29",
+      "flop": 2.18972000000001e+23,
+      "parametros": 80000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "OPT-175B",
+      "organizacion": "Meta AI",
+      "fecha": "2022-05-02",
+      "flop": 4.3e+23,
+      "parametros": 175000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "UL2",
+      "organizacion": "Google Research,Google Brain",
+      "fecha": "2022-05-10",
+      "flop": 1.2e+23,
+      "parametros": 20000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Gato",
+      "organizacion": "DeepMind",
+      "fecha": "2022-05-12",
+      "flop": 4.02e+21,
+      "parametros": 1180000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Imagen",
+      "organizacion": "Google Brain",
+      "fecha": "2022-05-23",
+      "flop": 1.46e+22,
+      "parametros": 7762000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GPT-2 Medium (FlashAttention)",
+      "organizacion": "Stanford University,University at Buffalo",
+      "fecha": "2022-05-27",
+      "flop": 8.9280922e+20,
+      "parametros": 355000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DITTO",
+      "organizacion": "Tsinghua University,Apple,Westlake University,Chinese University of Hong Kong (CUHK)",
+      "fecha": "2022-06-06",
+      "flop": 3.31776e+18,
+      "parametros": 750000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CoCa",
+      "organizacion": "Google Research",
+      "fecha": "2022-06-14",
+      "flop": 7.3e+22,
+      "parametros": 2100000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Parti",
+      "organizacion": "Google Research",
+      "fecha": "2022-06-22",
+      "flop": 5.09607936e+23,
+      "parametros": 20000000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Minerva (540B)",
+      "organizacion": "Google",
+      "fecha": "2022-06-29",
+      "flop": 2.7415e+24,
+      "parametros": 540350000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CodeT5-large",
+      "organizacion": "Salesforce",
+      "fecha": "2022-07-05",
+      "flop": 2.72e+21,
+      "parametros": 770000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "NLLB",
+      "organizacion": "Meta AI",
+      "fecha": "2022-07-06",
+      "flop": 1.751113728e+22,
+      "parametros": 54500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "BLOOM-176B",
+      "organizacion": "Hugging Face,BigScience",
+      "fecha": "2022-07-11",
+      "flop": 3.65664e+23,
+      "parametros": 176247271424.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AlexaTM 20B",
+      "organizacion": "Amazon",
+      "fecha": "2022-08-02",
+      "flop": 2.04374016e+23,
+      "parametros": 19750000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GLM-130B",
+      "organizacion": "Tsinghua University",
+      "fecha": "2022-08-04",
+      "flop": 3.5490054945e+23,
+      "parametros": 130000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "BlenderBot 3",
+      "organizacion": "McGill University,Meta AI,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)",
+      "fecha": "2022-08-10",
+      "flop": 4.3e+23,
+      "parametros": 175000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "BEIT-3",
+      "organizacion": "Microsoft",
+      "fecha": "2022-08-22",
+      "flop": 7e+19,
+      "parametros": 1900000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "PaLI",
+      "organizacion": "Google",
+      "fecha": "2022-09-14",
+      "flop": 1.69e+23,
+      "parametros": 16900000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Whisper",
+      "organizacion": "OpenAI",
+      "fecha": "2022-09-21",
+      "flop": 4.2072663e+21,
+      "parametros": 1550000000.0,
+      "dominio": "Habla",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Flan-PaLM 540B",
+      "organizacion": "Google",
+      "fecha": "2022-10-20",
+      "flop": 2.540000000001e+24,
+      "parametros": 540000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "U-PaLM (540B)",
+      "organizacion": "Google",
+      "fecha": "2022-10-20",
+      "flop": 2.53e+24,
+      "parametros": 540000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "eDiff-I",
+      "organizacion": "Nvidia",
+      "fecha": "2022-11-02",
+      "flop": 5.46e+19,
+      "parametros": 9100000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Mogrifier RLSTM (WT2)",
+      "organizacion": "DeepMind",
+      "fecha": "2022-11-03",
+      "flop": 1.4e+17,
+      "parametros": 35000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "InternImage",
+      "organizacion": "Shanghai AI Lab,Tsinghua University,Nanjing University,SenseTime,Chinese University of Hong Kong (CUHK)",
+      "fecha": "2022-11-10",
+      "flop": 2.408e+21,
+      "parametros": 1080000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EVA-01",
+      "organizacion": "Beijing Academy of Artificial Intelligence / BAAI,Huazhong University of Science and Technology,Zhejiang University (ZJU),Beijing Institute of Technology",
+      "fecha": "2022-11-14",
+      "flop": 1.501e+22,
+      "parametros": 1011000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Galactica",
+      "organizacion": "Meta AI",
+      "fecha": "2022-11-16",
+      "flop": 3.24e+23,
+      "parametros": 120000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Fusion in Encoder",
+      "organizacion": "Samsung",
+      "fecha": "2022-11-18",
+      "flop": 1.3e+20,
+      "parametros": 330000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "AR-LDM",
+      "organizacion": "Alibaba,University of Waterloo,Vector Institute",
+      "fecha": "2022-11-20",
+      "flop": 5.1e+20,
+      "parametros": 1500000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Discriminator Guidance",
+      "organizacion": "Korea Advanced Institute of Science and Technology (KAIST),NAVER",
+      "fecha": "2022-11-28",
+      "flop": 2.1570000001e+20,
+      "parametros": null,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Vega v2",
+      "organizacion": "Wuhan University,JD Explore Academy,Shanghai AI Lab,Nanyang Technological University,Washington University in St Louis,Chongqing University of Posts and Telecommunications,University of Sydney",
+      "fecha": "2022-12-04",
+      "flop": 7.76e+22,
+      "parametros": 6000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Hybrid H3-2.7B",
+      "organizacion": "Stanford University,University at Buffalo",
+      "fecha": "2022-12-28",
+      "flop": 6.48e+21,
+      "parametros": 2700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "DreamerV3",
+      "organizacion": "DeepMind,University of Toronto",
+      "fecha": "2023-01-10",
+      "flop": 2.2032e+20,
+      "parametros": 200000000.0,
+      "dominio": "Juegos",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "DDPM-IP (CelebA)",
+      "organizacion": "Utrecht University",
+      "fecha": "2023-01-27",
+      "flop": 3.5e+20,
+      "parametros": 295000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "BLIP-2 (Q-Former)",
+      "organizacion": "Salesforce Research",
+      "fecha": "2023-01-30",
+      "flop": 1.20000000001e+21,
+      "parametros": 1480000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ViT-22B",
+      "organizacion": "Google",
+      "fecha": "2023-02-10",
+      "flop": 1.93248e+23,
+      "parametros": 21743000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LLaMA-65B",
+      "organizacion": "Meta AI",
+      "fecha": "2023-02-24",
+      "flop": 5.5e+23,
+      "parametros": 65200000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DiT-XL/2",
+      "organizacion": "New York University (NYU),University of California (UC) Berkeley",
+      "fecha": "2023-03-02",
+      "flop": 6e+20,
+      "parametros": 675000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Falcon-40B",
+      "organizacion": "Technology Innovation Institute",
+      "fecha": "2023-03-15",
+      "flop": 2.4e+23,
+      "parametros": 40000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GPT-4 (Mar 2023)",
+      "organizacion": "OpenAI",
+      "fecha": "2023-03-15",
+      "flop": 2.1e+25,
+      "parametros": 1800000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable",
+      "destacado": true,
+      "etiqueta": "GPT-4"
+    },
+    {
+      "modelo": "PanGu-Σ",
+      "organizacion": "Huawei Noah's Ark Lab",
+      "fecha": "2023-03-20",
+      "flop": 4.67e+23,
+      "parametros": 1085000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SigLIP 400M",
+      "organizacion": "Google DeepMind",
+      "fecha": "2023-03-27",
+      "flop": 4.9467301e+21,
+      "parametros": 400000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "BloombergGPT",
+      "organizacion": "Bloomberg,Johns Hopkins University",
+      "fecha": "2023-03-30",
+      "flop": 2.36e+23,
+      "parametros": 50558868480.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Segment Anything Model",
+      "organizacion": "Meta AI",
+      "fecha": "2023-04-05",
+      "flop": 7.8e+21,
+      "parametros": 636000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Incoder-6.7B",
+      "organizacion": "Facebook AI Research,University of Washington,University of California (UC) Berkeley,Carnegie Mellon University (CMU),Toyota Technological Institute at Chicago",
+      "fecha": "2023-04-09",
+      "flop": 3.00001e+21,
+      "parametros": 6700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DINOv2",
+      "organizacion": "Facebook AI Research,INRIA",
+      "fecha": "2023-04-14",
+      "flop": 7.41851136e+21,
+      "parametros": 1140000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "LLaVA",
+      "organizacion": "University of Wisconsin Madison,Microsoft Research,Columbia University",
+      "fecha": "2023-04-17",
+      "flop": 7.8049e+22,
+      "parametros": 13000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "StarCoder",
+      "organizacion": "Hugging Face,ServiceNow,Northeastern University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),Carnegie Mellon University (CMU),Johns Hopkins University,Leipzig University,ScaDS.AI,Queen Mary University of London,Roblox,Sea AI Lab,Technion - Israel Institute of Technology,Monash University,CSIRO,Data61,McGill University,Saama,University of British Columbia (UBC),Massachusetts Institute of Technology (MIT),Technical University of Munich,IBM,University of Vermont,UnfoldML,SAP,University of Notre Dame,Columbia University,New York University (NYU),University of Allahabad,Discover Dollar,Toloka,Telefonica,Stanford University,Weizmann Institute of Science,Alan Turing Institute,Wellesley College,EleutherAI,Forschungszentrum Julich",
+      "fecha": "2023-05-09",
+      "flop": 8.46e+22,
+      "parametros": 15500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "PaLM 2",
+      "organizacion": "Google",
+      "fecha": "2023-05-10",
+      "flop": 7.34e+24,
+      "parametros": 340000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "InstructBLIP",
+      "organizacion": "Salesforce Research,Hong Kong University of Science and Technology (HKUST),Nanyang Technological University",
+      "fecha": "2023-05-11",
+      "flop": 1.94e+20,
+      "parametros": 13000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ONE-PEACE",
+      "organizacion": "Alibaba,Huazhong University of Science and Technology",
+      "fecha": "2023-05-18",
+      "flop": 1.8e+20,
+      "parametros": 4000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "PaLI-X",
+      "organizacion": "Google Research",
+      "fecha": "2023-05-29",
+      "flop": 5.6e+23,
+      "parametros": 55000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GPT-4 (Jun 2023)",
+      "organizacion": "OpenAI",
+      "fecha": "2023-06-13",
+      "flop": 2.1e+25,
+      "parametros": 1800000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "InternLM",
+      "organizacion": "Shanghai AI Lab,SenseTime",
+      "fecha": "2023-07-06",
+      "flop": 9.984e+23,
+      "parametros": 104000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Claude 2",
+      "organizacion": "Anthropic",
+      "fecha": "2023-07-11",
+      "flop": 3.866e+24,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Llama 2-70B",
+      "organizacion": "Meta AI",
+      "fecha": "2023-07-18",
+      "flop": 8.1e+23,
+      "parametros": 70000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Llama 2-7B",
+      "organizacion": "Meta AI",
+      "fecha": "2023-07-18",
+      "flop": 8.4e+22,
+      "parametros": 7000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Jais",
+      "organizacion": "Cerebras Systems,Mohamed bin Zayed University of Artificial Intelligence (MBZUAI),Inception G42",
+      "fecha": "2023-08-29",
+      "flop": 4.8946763e+22,
+      "parametros": 13000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Falcon-180B",
+      "organizacion": "Technology Innovation Institute",
+      "fecha": "2023-09-06",
+      "flop": 3.76e+24,
+      "parametros": 180000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Amazon Titan",
+      "organizacion": "Amazon",
+      "fecha": "2023-09-28",
+      "flop": 4.8e+24,
+      "parametros": 200000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "FinGPT-13B",
+      "organizacion": "University of California Los Angeles (UCLA),Columbia University,New York University (NYU)",
+      "fecha": "2023-10-07",
+      "flop": 1.6e+23,
+      "parametros": 13000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "CODEFUSION (Python)",
+      "organizacion": "Microsoft,Microsoft Research",
+      "fecha": "2023-10-26",
+      "flop": 7.92e+18,
+      "parametros": 75000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "ChatGLM3-6B",
+      "organizacion": "Z.ai (Zhipu AI)",
+      "fecha": "2023-10-27",
+      "flop": 5.04e+22,
+      "parametros": 6000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Skywork-13B",
+      "organizacion": "Kunlun Inc.",
+      "fecha": "2023-10-30",
+      "flop": 2.5e+23,
+      "parametros": 13000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Yi-34B",
+      "organizacion": "01.AI",
+      "fecha": "2023-11-02",
+      "flop": 6.1e+23,
+      "parametros": 34000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Grok-1",
+      "organizacion": "xAI",
+      "fecha": "2023-11-04",
+      "flop": 2.90000000001e+24,
+      "parametros": 314000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "LLaVA 1.5",
+      "organizacion": "University of Wisconsin Madison,Microsoft Research",
+      "fecha": "2023-11-05",
+      "flop": 7.807e+22,
+      "parametros": 13000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CogVLM-17B",
+      "organizacion": "Tsinghua University,Z.ai (Zhipu AI),Beihang University",
+      "fecha": "2023-11-06",
+      "flop": 6.331e+22,
+      "parametros": 17000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "RoFormer",
+      "organizacion": "Zhuiyi Technology",
+      "fecha": "2023-11-08",
+      "flop": 2.162688e+18,
+      "parametros": 110000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "SPHINX (Llama 2 13B)",
+      "organizacion": "Shanghai AI Lab,Chinese University of Hong Kong (CUHK),ShanghaiTech University",
+      "fecha": "2023-11-13",
+      "flop": 3.04e+22,
+      "parametros": 19900000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Volcano 13B",
+      "organizacion": "Korea University,Korea Advanced Institute of Science and Technology (KAIST),LG",
+      "fecha": "2023-11-13",
+      "flop": 4.56e+22,
+      "parametros": 13000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Nemotron-3-8B",
+      "organizacion": "Nvidia",
+      "fecha": "2023-11-15",
+      "flop": 1.8e+23,
+      "parametros": 8000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Inflection-2",
+      "organizacion": "Inflection AI",
+      "fecha": "2023-11-22",
+      "flop": 1.001e+25,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen-72B",
+      "organizacion": "Alibaba",
+      "fecha": "2023-11-30",
+      "flop": 1.3e+24,
+      "parametros": 72000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Gemini 1.0 Ultra",
+      "organizacion": "Google DeepMind",
+      "fecha": "2023-12-06",
+      "flop": 5.0000000001e+25,
+      "parametros": null,
+      "dominio": "Multimodal",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Llama Guard",
+      "organizacion": "Meta AI",
+      "fecha": "2023-12-07",
+      "flop": 1.6e+23,
+      "parametros": 7000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Mixtral 8x7B",
+      "organizacion": "Mistral AI",
+      "fecha": "2023-12-11",
+      "flop": 7.74e+23,
+      "parametros": 46700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "VILA-13B",
+      "organizacion": "Nvidia,Massachusetts Institute of Technology (MIT)",
+      "fecha": "2023-12-12",
+      "flop": 2.3003136e+21,
+      "parametros": 13350839296.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "CogAgent",
+      "organizacion": "Tsinghua University,Z.ai (Zhipu AI)",
+      "fecha": "2023-12-14",
+      "flop": 6.707e+22,
+      "parametros": 18000000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "FunSearch",
+      "organizacion": "Google DeepMind",
+      "fecha": "2023-12-14",
+      "flop": 3.87e+23,
+      "parametros": 15000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "nekomata-14b",
+      "organizacion": "rinna",
+      "fecha": "2023-12-21",
+      "flop": 2.5562e+23,
+      "parametros": 14200000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GQA-8-XXL",
+      "organizacion": "Google Research",
+      "fecha": "2023-12-23",
+      "flop": 3.4912896e+22,
+      "parametros": 11000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen1.5-72B",
+      "organizacion": "Alibaba",
+      "fecha": "2024-02-04",
+      "flop": 1.3e+24,
+      "parametros": 72000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Stable Diffusion 3",
+      "organizacion": "Stability AI",
+      "fecha": "2024-02-22",
+      "flop": 5.0000000000000004e+22,
+      "parametros": 8000000000.0,
+      "dominio": "Generación de imágenes",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "MegaScale (Production)",
+      "organizacion": "ByteDance,Peking University",
+      "fecha": "2024-02-23",
+      "flop": 3.9e+24,
+      "parametros": 530000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Aramco Metabrain AI",
+      "organizacion": "Saudi Aramco",
+      "fecha": "2024-03-04",
+      "flop": 1.05e+25,
+      "parametros": 250000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Inflection-2.5",
+      "organizacion": "Inflection AI",
+      "fecha": "2024-03-07",
+      "flop": 8.000001e+24,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "MM1-30B",
+      "organizacion": "Apple",
+      "fecha": "2024-03-14",
+      "flop": 4.86e+23,
+      "parametros": 30000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "DBRX",
+      "organizacion": "Databricks",
+      "fecha": "2024-03-27",
+      "flop": 2.6e+24,
+      "parametros": 132000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Reka Core",
+      "organizacion": "Reka AI",
+      "fecha": "2024-04-15",
+      "flop": 8.400010000000001e+24,
+      "parametros": 67000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Llama 3-70B",
+      "organizacion": "Meta AI",
+      "fecha": "2024-04-18",
+      "flop": 7.861e+24,
+      "parametros": 70000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "VILA1.5-13B",
+      "organizacion": "Nvidia,Massachusetts Institute of Technology (MIT)",
+      "fecha": "2024-05-03",
+      "flop": 2.3003136e+21,
+      "parametros": 13493916736.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Yi-Large",
+      "organizacion": "01.AI",
+      "fecha": "2024-05-13",
+      "flop": 1.8e+24,
+      "parametros": 100000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "ALLaM adapted 70B",
+      "organizacion": "Saudi Data and Artificial Intelligence Authority",
+      "fecha": "2024-05-21",
+      "flop": 1.062e+24,
+      "parametros": 70000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen2-72B",
+      "organizacion": "Alibaba",
+      "fecha": "2024-06-07",
+      "flop": 3.02e+24,
+      "parametros": 72710000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Nemotron-4 340B",
+      "organizacion": "Nvidia",
+      "fecha": "2024-06-14",
+      "flop": 1.8e+25,
+      "parametros": 340000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeepSeek-Coder-V2 236B",
+      "organizacion": "DeepSeek",
+      "fecha": "2024-06-17",
+      "flop": 1.2852e+24,
+      "parametros": 236000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Claude 3.5 Sonnet",
+      "organizacion": "Anthropic",
+      "fecha": "2024-06-20",
+      "flop": 2.700000000000001e+25,
+      "parametros": null,
+      "dominio": "Multimodal",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Llama 3.1-405B",
+      "organizacion": "Meta AI",
+      "fecha": "2024-07-23",
+      "flop": 3.8e+25,
+      "parametros": 405000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable",
+      "destacado": true,
+      "etiqueta": "Llama 3.1"
+    },
+    {
+      "modelo": "AFM-on-device",
+      "organizacion": "Apple",
+      "fecha": "2024-07-29",
+      "flop": 4.5126e+23,
+      "parametros": 2730000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "AFM-server",
+      "organizacion": "Apple",
+      "fecha": "2024-07-29",
+      "flop": 4.3e+24,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "LLaVA-OV-72B",
+      "organizacion": "ByteDance,Nanyang Technological University,Chinese University of Hong Kong (CUHK),Hong Kong University of Science and Technology (HKUST)",
+      "fecha": "2024-08-06",
+      "flop": 3.036551985824e+24,
+      "parametros": 72000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Grok-2",
+      "organizacion": "xAI",
+      "fecha": "2024-08-13",
+      "flop": 2.96e+25,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeepSeek-V2.5",
+      "organizacion": "DeepSeek",
+      "fecha": "2024-09-06",
+      "flop": 1.7892e+24,
+      "parametros": 236000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen2.5-32B",
+      "organizacion": "Alibaba",
+      "fecha": "2024-09-17",
+      "flop": 3.51e+24,
+      "parametros": 32500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen2.5 Instruct (72B)",
+      "organizacion": "Alibaba",
+      "fecha": "2024-09-19",
+      "flop": 7.8516e+24,
+      "parametros": 72700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen2.5-72B",
+      "organizacion": "Alibaba",
+      "fecha": "2024-09-19",
+      "flop": 7.8e+24,
+      "parametros": 72700000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Telechat2-115B",
+      "organizacion": "China Telecom",
+      "fecha": "2024-09-20",
+      "flop": 6.9e+24,
+      "parametros": 115000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Llama 3.2 11B",
+      "organizacion": "Meta AI",
+      "fecha": "2024-09-24",
+      "flop": 5.79e+23,
+      "parametros": 10600000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Llama-3.1-Nemotron-70B-Instruct",
+      "organizacion": "Nvidia,Meta AI",
+      "fecha": "2024-10-12",
+      "flop": 7.929e+24,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Yi-Lightning",
+      "organizacion": "01.AI",
+      "fecha": "2024-10-16",
+      "flop": 1.5e+24,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NVLM-D 72B",
+      "organizacion": "Nvidia",
+      "fecha": "2024-10-22",
+      "flop": 3.02e+24,
+      "parametros": 72000000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "NVLM-H 72B",
+      "organizacion": "Nvidia",
+      "fecha": "2024-10-22",
+      "flop": 3.02e+24,
+      "parametros": 72000000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "NVLM-X 72B",
+      "organizacion": "Nvidia",
+      "fecha": "2024-10-22",
+      "flop": 3.0398181e+24,
+      "parametros": 72000000000.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Doubao-pro",
+      "organizacion": "ByteDance",
+      "fecha": "2024-10-28",
+      "flop": 2.505e+25,
+      "parametros": 500000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Hunyuan-Large",
+      "organizacion": "Tencent",
+      "fecha": "2024-11-06",
+      "flop": 3.49237e+24,
+      "parametros": 389000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Amazon Nova Pro",
+      "organizacion": "Amazon",
+      "fecha": "2024-12-03",
+      "flop": 6.000010000000001e+24,
+      "parametros": null,
+      "dominio": "Multimodal",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Llama 3.3 70B",
+      "organizacion": "Meta AI",
+      "fecha": "2024-12-06",
+      "flop": 6.8649768e+24,
+      "parametros": 70000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EXAONE 3.5 32B",
+      "organizacion": "LG AI Research",
+      "fecha": "2024-12-09",
+      "flop": 1.25e+24,
+      "parametros": 32000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeepSeek-V3",
+      "organizacion": "DeepSeek",
+      "fecha": "2024-12-24",
+      "flop": 3.3e+24,
+      "parametros": 671000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeepSeek-R1",
+      "organizacion": "DeepSeek",
+      "fecha": "2025-01-20",
+      "flop": 3.5e+24,
+      "parametros": 671000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Eagle 2",
+      "organizacion": "Nvidia,Nanjing University,Tsinghua University,Hong Kong Polytechnic University,Johns Hopkins University,New York University (NYU)",
+      "fecha": "2025-01-20",
+      "flop": 4.7156e+22,
+      "parametros": 8930000000.0,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Grok 3",
+      "organizacion": "xAI",
+      "fecha": "2025-02-17",
+      "flop": 3.5e+26,
+      "parametros": 3000000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Claude 3.7 Sonnet",
+      "organizacion": "Anthropic",
+      "fecha": "2025-02-24",
+      "flop": 3.35e+25,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable",
+      "destacado": true,
+      "etiqueta": "Claude 3.7 Sonnet"
+    },
+    {
+      "modelo": "GPT-4.5",
+      "organizacion": "OpenAI",
+      "fecha": "2025-02-27",
+      "flop": 3.8e+26,
+      "parametros": null,
+      "dominio": "Lenguaje",
+      "confianza": "probable",
+      "destacado": true,
+      "etiqueta": "GPT-4.5"
+    },
+    {
+      "modelo": "QwQ-32B",
+      "organizacion": "Alibaba",
+      "fecha": "2025-03-06",
+      "flop": 3.51e+24,
+      "parametros": 32500000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Hunyuan-TurboS",
+      "organizacion": "Tencent",
+      "fecha": "2025-03-11",
+      "flop": 5.4e+24,
+      "parametros": 560000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EXAONE Deep 32B",
+      "organizacion": "LG AI Research",
+      "fecha": "2025-03-16",
+      "flop": 1.26e+24,
+      "parametros": 32000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeepSeek-V3 (Mar 2025)",
+      "organizacion": "DeepSeek",
+      "fecha": "2025-03-24",
+      "flop": 3.3e+24,
+      "parametros": 671000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Llama 4 Behemoth (preview)",
+      "organizacion": "Meta AI",
+      "fecha": "2025-04-05",
+      "flop": 5.18400000000001e+25,
+      "parametros": 2000000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Llama 4 Maverick",
+      "organizacion": "Meta AI",
+      "fecha": "2025-04-05",
+      "flop": 2.244000000001e+24,
+      "parametros": 400000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Llama 4 Scout",
+      "organizacion": "Meta AI",
+      "fecha": "2025-04-05",
+      "flop": 4.08e+24,
+      "parametros": 109000000000.0,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Pangu Ultra",
+      "organizacion": "Huawei",
+      "fecha": "2025-04-10",
+      "flop": 1.0692e+25,
+      "parametros": 135000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen3-235B-A22B",
+      "organizacion": "Alibaba",
+      "fecha": "2025-04-29",
+      "flop": 4.752e+24,
+      "parametros": 235000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Seed1.5-VL",
+      "organizacion": "ByteDance",
+      "fecha": "2025-05-11",
+      "flop": 1.388556e+24,
+      "parametros": null,
+      "dominio": "Visión",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "DeepSeek-R1 (May 2025)",
+      "organizacion": "DeepSeek",
+      "fecha": "2025-05-28",
+      "flop": 4.020010000000001e+24,
+      "parametros": 671000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Grok 4",
+      "organizacion": "xAI",
+      "fecha": "2025-07-09",
+      "flop": 5.0000000000001e+26,
+      "parametros": 3000000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "Kimi K2",
+      "organizacion": "Moonshot",
+      "fecha": "2025-07-11",
+      "flop": 2.976e+24,
+      "parametros": 1000000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "EXAONE 4.0 (32B)",
+      "organizacion": "LG AI Research",
+      "fecha": "2025-07-15",
+      "flop": 2.69000000000001e+24,
+      "parametros": 32000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen3-Coder-480B-A35B",
+      "organizacion": "Alibaba",
+      "fecha": "2025-07-22",
+      "flop": 1.575e+24,
+      "parametros": 480000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen3-235B-A22B (Jul 2025)",
+      "organizacion": "Alibaba",
+      "fecha": "2025-07-25",
+      "flop": 4.752e+24,
+      "parametros": 235000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Qwen3-235B-A22B-Thinking (Jul 2025)",
+      "organizacion": "Alibaba",
+      "fecha": "2025-07-25",
+      "flop": 4.752e+24,
+      "parametros": 235000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GLM-4.5",
+      "organizacion": "Z.ai (Zhipu AI),Tsinghua University",
+      "fecha": "2025-07-28",
+      "flop": 4.42e+24,
+      "parametros": 355000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "gpt-oss-120b",
+      "organizacion": "OpenAI",
+      "fecha": "2025-08-05",
+      "flop": 4.94e+24,
+      "parametros": 116830000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "gpt-oss-20b",
+      "organizacion": "OpenAI",
+      "fecha": "2025-08-05",
+      "flop": 5.49e+23,
+      "parametros": 20910000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GPT-5",
+      "organizacion": "OpenAI",
+      "fecha": "2025-08-07",
+      "flop": 6.6e+25,
+      "parametros": null,
+      "dominio": "Multimodal",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "LongCat-Flash",
+      "organizacion": "Meituan Inc",
+      "fecha": "2025-09-01",
+      "flop": 3.726e+24,
+      "parametros": 560000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Qwen3-Max",
+      "organizacion": "Alibaba",
+      "fecha": "2025-09-05",
+      "flop": 1.512e+25,
+      "parametros": 1000000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "AgentFounder-30B",
+      "organizacion": "Alibaba",
+      "fecha": "2025-09-16",
+      "flop": 6.5367e+23,
+      "parametros": 30000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Qwen3-Omni-30B-A3B",
+      "organizacion": "Alibaba",
+      "fecha": "2025-09-22",
+      "flop": 3.6e+22,
+      "parametros": 35300000000.0,
+      "dominio": "Multimodal",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GLM-4.6",
+      "organizacion": "Z.ai (Zhipu AI),Tsinghua University",
+      "fecha": "2025-09-30",
+      "flop": 4.42e+24,
+      "parametros": 357000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Ling-1T",
+      "organizacion": "Ant Group",
+      "fecha": "2025-10-10",
+      "flop": 6.000001e+24,
+      "parametros": 1000000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Kimi K2 Thinking",
+      "organizacion": "Moonshot",
+      "fecha": "2025-11-06",
+      "flop": 4.2e+24,
+      "parametros": 1000000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Olmo 3",
+      "organizacion": "Allen Institute for AI",
+      "fecha": "2025-11-20",
+      "flop": 1.1e+24,
+      "parametros": 32000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Nemotron 3-Nano-30B-A3B",
+      "organizacion": "Nvidia",
+      "fecha": "2025-12-15",
+      "flop": 4.8e+23,
+      "parametros": 31600000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GLM-4.7",
+      "organizacion": "Z.ai (Zhipu AI)",
+      "fecha": "2025-12-22",
+      "flop": 4.42e+24,
+      "parametros": 358000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "K-EXAONE",
+      "organizacion": "LG AI Research",
+      "fecha": "2025-12-31",
+      "flop": 1.52e+24,
+      "parametros": 236000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Solar Open 100B",
+      "organizacion": "Upstage",
+      "fecha": "2025-12-31",
+      "flop": 1.4e+24,
+      "parametros": 102000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Kimi K2.5",
+      "organizacion": "Moonshot",
+      "fecha": "2026-02-02",
+      "flop": 5.8e+24,
+      "parametros": 1040000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GLM-5",
+      "organizacion": "Z.ai (Zhipu AI)",
+      "fecha": "2026-02-12",
+      "flop": 6.84e+24,
+      "parametros": 744000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Composer 2",
+      "organizacion": "Cursor",
+      "fecha": "2026-03-19",
+      "flop": 2.32e+25,
+      "parametros": 1040000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "MolmoAct 2",
+      "organizacion": "Allen Institute for AI,University of Washington,National University of Singapore,University of Pennsylvania,Johns Hopkins University,Amazon,Cortex AI",
+      "fecha": "2026-04-05",
+      "flop": 1.1e+22,
+      "parametros": 5485309424.0,
+      "dominio": "Visión",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "EXAONE 4.5",
+      "organizacion": "LG AI Research",
+      "fecha": "2026-04-09",
+      "flop": 3.85e+24,
+      "parametros": 33200000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "MiMo-V2.5-Pro",
+      "organizacion": "Xiaomi Corp",
+      "fecha": "2026-04-23",
+      "flop": 6.804e+24,
+      "parametros": 1020000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "DeepSeek-V4-Flash",
+      "organizacion": "DeepSeek",
+      "fecha": "2026-04-24",
+      "flop": 2.496e+24,
+      "parametros": 284000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "DeepSeek-V4-Pro",
+      "organizacion": "DeepSeek",
+      "fecha": "2026-04-24",
+      "flop": 9.702e+24,
+      "parametros": 1600000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Composer 2.5",
+      "organizacion": "Cursor",
+      "fecha": "2026-05-18",
+      "flop": 3.87e+25,
+      "parametros": 1040000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Nemotron 3 Ultra",
+      "organizacion": "Nvidia",
+      "fecha": "2026-06-04",
+      "flop": 6.6e+24,
+      "parametros": 550000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Solar Open2 250B",
+      "organizacion": "Upstage",
+      "fecha": "2026-06-28",
+      "flop": 1.05e+24,
+      "parametros": 250300000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "LongCat-2.0",
+      "organizacion": "Meituan Inc",
+      "fecha": "2026-06-29",
+      "flop": 1.008e+25,
+      "parametros": 1600000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Inkling",
+      "organizacion": "Thinking Machines",
+      "fecha": "2026-07-15",
+      "flop": 1.845e+24,
+      "parametros": 975000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "Kimi K3",
+      "organizacion": "Moonshot",
+      "fecha": "2026-07-16",
+      "flop": 2.0001e+25,
+      "parametros": 2800000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "especulativa"
+    },
+    {
+      "modelo": "A.X K2",
+      "organizacion": "SK Telecom",
+      "fecha": "2026-07-29",
+      "flop": 1.8e+24,
+      "parametros": 688000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "K-EXAONE 2.0",
+      "organizacion": "LG AI Research",
+      "fecha": "2026-07-31",
+      "flop": 3.55e+24,
+      "parametros": 750000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "Motif-3",
+      "organizacion": "Motif Technologies",
+      "fecha": "2026-08-07",
+      "flop": 1.1e+24,
+      "parametros": 314000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "confiable"
+    },
+    {
+      "modelo": "GLM-5.3-Flash",
+      "organizacion": "Z.ai (Zhipu AI)",
+      "fecha": "2026-08-20",
+      "flop": 3.24e+24,
+      "parametros": 320000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "GPT-6 Astra",
+      "organizacion": "OpenAI",
+      "fecha": "2026-09-03",
+      "flop": 1.0001e+27,
+      "parametros": null,
+      "dominio": "Multimodal",
+      "confianza": "probable"
+    },
+    {
+      "modelo": "DeepSeek V4.1 Flash",
+      "organizacion": "DeepSeek",
+      "fecha": "2026-09-09",
+      "flop": 4.32e+24,
+      "parametros": 748000000000.0,
+      "dominio": "Lenguaje",
+      "confianza": "probable"
+    }
+  ]
+}

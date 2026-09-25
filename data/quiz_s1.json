@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-09-25T00:00:00+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "¿Cuál de estos es un ejemplo de IA de propósito general, en el sentido que usa el curso?",
+      "opciones": [
+        {
+          "texto": "Deep Blue, que le ganó al campeón mundial de ajedrez en 1997.",
+          "explicacion": "Es el ejemplo clásico de IA de propósito específico: un sistema construido para una sola tarea, que en esa tarea le gana al campeón del mundo."
+        },
+        {
+          "texto": "Un modelo que pronostica la declinación de los pozos de un yacimiento.",
+          "explicacion": "Es IA de propósito específico: un modelo entrenado para una tarea. Para otra tarea, como clasificar perfiles, hace falta otro modelo."
+        },
+        {
+          "texto": "Un sistema que iguala a una persona en casi cualquier tarea intelectual.",
+          "explicacion": "Esa es la idea de inteligencia artificial general (AGI), una discusión distinta que tenemos en la sesión 8. Propósito general quiere decir algo más modesto: un modelo para muchas tareas."
+        },
+        {
+          "texto": "Un chatbot que, con el mismo modelo, resume un informe, traduce un correo y escribe código para analizar una planilla.",
+          "correcta": true,
+          "explicacion": "Exacto: un mismo modelo, muchas tareas. Es lo que llegó a todos los escritorios con ChatGPT, a fines de 2022."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Qué cambió entre los sistemas expertos de los años ochenta, como el Dipmeter Advisor, y los modelos de hoy?",
+      "opciones": [
+        {
+          "texto": "Quién pone las reglas: en los sistemas expertos las escribía una persona a partir del conocimiento de un especialista, y hoy el modelo las encuentra en los datos.",
+          "correcta": true,
+          "explicacion": "Es el hilo de la línea de tiempo. El Dipmeter Advisor imitaba a los intérpretes de perfiles con reglas escritas a mano; un modelo de lenguaje aprendió sus patrones leyendo enormes cantidades de texto."
+        },
+        {
+          "texto": "Nada importante: los modelos de hoy son sistemas expertos con más reglas.",
+          "explicacion": "Los parámetros de un modelo de lenguaje se ajustaron solos durante el entrenamiento, mirando ejemplos; ninguna persona los escribió uno por uno."
+        },
+        {
+          "texto": "Los sistemas expertos fracasaron por falta de computadoras rápidas, y hoy las hay.",
+          "explicacion": "Los inviernos de la IA tuvieron que ver con expectativas más altas que los resultados, según el informe Lighthill (1973) y la advertencia de la AAAI (1984). El cómputo pesó después, en el salto de las redes profundas."
+        },
+        {
+          "texto": "Los modelos de hoy ya no se equivocan.",
+          "explicacion": "Se equivocan, y de maneras nuevas: inventan datos con la forma exacta de un dato real. Por eso la salida de un LLM es un borrador plausible y se verifica antes de usarlo."
+        }
+      ]
+    },
+    {
+      "pregunta": "En el ejercicio de los pozos, ¿qué diferencia al aprendizaje supervisado del no supervisado?",
+      "opciones": [
+        {
+          "texto": "En el supervisado cada pozo trae el tipo que declaró la operadora y la máquina aprende a repetir ese criterio; en el no supervisado la máquina solo ve los números y arma grupos por su cuenta.",
+          "correcta": true,
+          "explicacion": "Exacto. La etiqueta es la respuesta que alguien ya escribió. Sin ella, la máquina encuentra grupos por cercanía, y ponerles nombre sigue siendo trabajo de una persona."
+        },
+        {
+          "texto": "El supervisado lo vigila una persona mientras corre; el no supervisado corre solo.",
+          "explicacion": "El nombre confunde: \"supervisado\" se refiere a que los ejemplos traen la respuesta. En los dos casos la máquina corre sola."
+        },
+        {
+          "texto": "El no supervisado es más preciso, porque no depende de etiquetas que pueden estar mal.",
+          "explicacion": "Sin etiquetas, la máquina agrupa por cercanía, y los grupos dependen de cómo se mide la distancia. En el ejercicio coinciden con el tipo declarado en la mayoría de los pozos, y los que no coinciden piden una revisión humana."
+        },
+        {
+          "texto": "Son lo mismo con dos algoritmos distintos: vecinos más cercanos y k-means.",
+          "explicacion": "Esos son los algoritmos del ejercicio. Lo que separa a los dos tipos de aprendizaje es si los ejemplos traen la respuesta, y hay muchos algoritmos de cada uno."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Cuál de estas frases describe mejor la relación entre machine learning e IA generativa?",
+      "opciones": [
+        {
+          "texto": "Son lo mismo con distinto nombre de marketing.",
+          "explicacion": "No: todo lo generativo es machine learning, pero el machine learning clásico (clasificar, predecir un número) no genera contenido nuevo."
+        },
+        {
+          "texto": "La IA generativa es un tipo de machine learning: modelos entrenados con enormes cantidades de datos que aprenden a generar contenido nuevo.",
+          "correcta": true,
+          "explicacion": "Exacto: es la capa más nueva del mapa, machine learning llevado a una escala donde el modelo, además de clasificar o predecir, genera."
+        },
+        {
+          "texto": "El machine learning es un tipo de IA generativa.",
+          "explicacion": "Es al revés: la IA generativa es un subconjunto (reciente) del machine learning."
+        },
+        {
+          "texto": "No tienen relación: la IA generativa reemplazó al machine learning.",
+          "explicacion": "El machine learning \"clásico\" sigue vivo y muy usado (mantenimiento predictivo, interpretación sísmica). La IA generativa se suma a lo que ya había."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Por qué esta tecnología explotó ahora y no hace 20 años?",
+      "opciones": [
+        {
+          "texto": "Se descubrió hace poco un algoritmo secreto que lo cambió todo.",
+          "explicacion": "La arquitectura clave (el transformer) es pública desde 2017. Lo que cambió fue la escala."
+        },
+        {
+          "texto": "Las computadoras cuánticas lo hicieron posible.",
+          "explicacion": "Nada de esto usa computación cuántica: son placas gráficas (GPU), el mismo hardware de los videojuegos."
+        },
+        {
+          "texto": "Los gobiernos liberaron datos que antes eran secretos.",
+          "explicacion": "El combustible fue el texto público de internet, más libros y código. Los datos de gobierno no tuvieron un papel especial."
+        },
+        {
+          "texto": "Se juntaron tres cosas: enormes cantidades de texto disponible, cómputo (GPU) y una arquitectura que mejora de forma predecible al escalarla.",
+          "correcta": true,
+          "explicacion": "Esa es la receta. Y como sigue mejorando con escala, conviene asumir que lo que hoy \"no puede hacer\" quizás lo haga en la próxima generación."
+        }
+      ]
+    },
+    {
+      "pregunta": "En septiembre de 2026 salieron GPT-6 Astra, Claude Opus 5.5 y Gemini 3.8 Flash. ¿Qué te conviene hacer con esa lista?",
+      "opciones": [
+        {
+          "texto": "Aprenderla de memoria: el modelo del mes decide qué conviene usar.",
+          "explicacion": "En unos meses esa lista ya es otra: los nombres de los modelos envejecen rápido."
+        },
+        {
+          "texto": "Esperar a que salga el siguiente, que va a ser mejor.",
+          "explicacion": "Siempre va a salir uno mejor. Lo que aprendés hoy a pedir y a verificar sirve con cualquiera."
+        },
+        {
+          "texto": "Probar tu propia tarea en el chatbot que tengas a mano y mirar qué puede hacer.",
+          "correcta": true,
+          "explicacion": "Exacto: la cuenta gratuita alcanza para todo el curso, y tu tarea es la mejor prueba. Lo hacemos mañana en la sesión 3."
+        },
+        {
+          "texto": "Pagar el más caro, porque es el único que sirve para trabajo técnico.",
+          "explicacion": "Para las tareas del curso alcanza la cuenta gratuita. El más caro también se equivoca, y también hay que verificarlo."
+        }
+      ]
+    },
+    {
+      "pregunta": "En la demo, el chatbot citó tres papers de la SPE con su número, y ninguno existe. ¿Qué tipo de falla es, y qué se hace con ella?",
+      "opciones": [
+        {
+          "texto": "Le faltaba el dato: con los papers correctos pegados en la conversación, no vuelve a pasar.",
+          "explicacion": "Eso sirve cuando el dato existe y el modelo nunca lo leyó, como la cifra del reporte diario de la ARCH. Acá no hay documento que traerle: los papers no existen."
+        },
+        {
+          "texto": "El dato no existe en ninguna parte y el modelo igual produjo algo con la forma exacta de una cita. La defensa es verificarlo, buscando cada número en la fuente.",
+          "correcta": true,
+          "explicacion": "Es la segunda de las dos maneras de equivocarse. Traerle documentos no la elimina, porque el modelo completa la forma de un dato aunque el dato no exista. La defensa es verificar, y la sesión 7 convierte eso en un protocolo."
+        },
+        {
+          "texto": "Es un error de tipeo: los papers existen, con números parecidos.",
+          "explicacion": "A veces algún número coincide con un paper real sobre otro tema, pero eso no lo vuelve una cita correcta. El modelo armó la cita más plausible, sin buscar nada."
+        },
+        {
+          "texto": "Pasó porque la pregunta estaba en español y los papers están en inglés.",
+          "explicacion": "El idioma cambia cuántos tokens ocupa la pregunta, y la tendencia a inventar es la misma: en inglés las citas inventadas salen igual de prolijas."
+        }
+      ]
+    },
+    {
+      "pregunta": "Un chatbot te devuelve la lista de pendientes que armó con la foto de tus notas de reunión. ¿Qué chequeás primero?",
+      "opciones": [
+        {
+          "texto": "Que esté prolija y ordenada por fecha.",
+          "explicacion": "El formato es lo que mejor hace. El riesgo está en lo que agregó."
+        },
+        {
+          "texto": "Que cada pendiente, responsable y fecha esté en la hoja: lo que no está, lo completó él.",
+          "correcta": true,
+          "explicacion": "Exacto. Cuando le falta un dato, lo más probable es que lo complete con algo creíble. Por eso el pedido de la demo le pide marcar con [?] lo que no se lee."
+        },
+        {
+          "texto": "Nada: si la foto se lee bien, el resultado es confiable.",
+          "explicacion": "Aun con la foto nítida puede agregar un responsable o una fecha que no estaban. La salida es un borrador plausible."
+        },
+        {
+          "texto": "Le pido al mismo chatbot que confirme que no inventó nada.",
+          "explicacion": "Te va a contestar que no, con el mismo tono seguro. Se verifica contra el original: la hoja."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Cuál de estas tareas es HOY el mejor caso de uso para un chatbot gratuito?",
+      "opciones": [
+        {
+          "texto": "Calcular el balance de materiales del campo con los datos reales de producción.",
+          "explicacion": "Dos problemas: aritmética compleja (donde el mecanismo de tokens falla) y datos confidenciales que no deben subirse a una herramienta gratuita."
+        },
+        {
+          "texto": "Decidir el punto óptimo de inyección de agua del bloque.",
+          "explicacion": "Decisiones de ingeniería con consecuencias físicas y económicas necesitan modelos, datos y responsables. El chatbot puede ayudar a redactar el informe; la decisión es de las personas responsables."
+        },
+        {
+          "texto": "Resumir un paper de la SPE de 40 páginas en una página, para decidir si vale la pena leerlo entero.",
+          "correcta": true,
+          "explicacion": "Es el caso ideal: el borrador cuesta mucho, la verificación es rápida (si el resumen interesa, vas al paper) y el documento no es confidencial."
+        },
+        {
+          "texto": "Llevar el registro oficial de producción del campo.",
+          "explicacion": "Un sistema de registro necesita exactitud y trazabilidad garantizadas, exactamente lo que una máquina de texto plausible no ofrece."
+        }
+      ]
+    }
+  ]
+}

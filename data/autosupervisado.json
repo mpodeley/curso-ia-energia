@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-09-24T13:47:05+00:00",
+  "source": "Oración y noticia: Secretaría de Energía de la Nación (Argentina), argentina.gob.ar, licencia Creative Commons Atribución 4.0. Escalas: cada una con su fuente.",
+  "source_date": "2026-09",
+  "data": {
+    "oracion": "La producción de petróleo alcanzó en julio los 916,2 mil barriles diarios, un 17,2% más que el mismo mes de 2025, y logró así otra marca récord a nivel nacional.",
+    "fuente": {
+      "titulo": "La producción de petróleo registró otro mes de crecimiento en julio (Secretaría de Energía, Argentina, 4 de septiembre de 2026)",
+      "url": "https://www.argentina.gob.ar/noticias/la-produccion-de-petroleo-registro-otro-mes-de-crecimiento-en-julio"
+    },
+    "escalas": [
+      {
+        "que": "La noticia completa de la que sale la oración",
+        "palabras_o_tokens": 136,
+        "unidad": "palabras",
+        "fuente": {
+          "titulo": "La producción de petróleo registró otro mes de crecimiento en julio (argentina.gob.ar); conteo propio de los cuatro párrafos",
+          "url": "https://www.argentina.gob.ar/noticias/la-produccion-de-petroleo-registro-otro-mes-de-crecimiento-en-julio"
+        }
+      },
+      {
+        "que": "Todos los artículos de la Wikipedia en inglés, a marzo de 2026",
+        "palabras_o_tokens": 5000000000,
+        "unidad": "palabras",
+        "fuente": {
+          "titulo": "Wikipedia: Size of Wikipedia, sección \"Number of words\"",
+          "url": "https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia"
+        }
+      },
+      {
+        "que": "El texto con el que se entrenó GPT-3, en 2020",
+        "palabras_o_tokens": 300000000000,
+        "unidad": "tokens",
+        "fuente": {
+          "titulo": "Brown et al., \"Language Models are Few-Shot Learners\" (2020): \"All models were trained for a total of 300 billion tokens\"",
+          "url": "https://arxiv.org/abs/2005.14165"
+        }
+      },
+      {
+        "que": "El texto con el que se preentrenó Llama 3, en 2024",
+        "palabras_o_tokens": 15000000000000,
+        "unidad": "tokens",
+        "fuente": {
+          "titulo": "Meta, \"Introducing Meta Llama 3\" (2024): \"Llama 3 is pretrained on over 15T tokens\"",
+          "url": "https://ai.meta.com/blog/meta-llama-3/"
+        }
+      }
+    ]
+  }
+}
