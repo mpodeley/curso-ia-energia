@@ -132,8 +132,15 @@ export function preprocesar(tinta: ArrayLike<number>, ancho: number, alto: numbe
   return out
 }
 
-/** Forward pass: ten probabilities, one per digit, that add up to 1. */
-export function predecir(red: Red, x: ArrayLike<number>): number[] {
+export type Activaciones = {
+  /** Hidden layer after ReLU: 0 means the neuron stayed off. */
+  oculta: Float32Array
+  /** Ten probabilities, one per digit, that add up to 1. */
+  probs: number[]
+}
+
+/** Forward pass, keeping the hidden layer so the page can draw it. */
+export function activar(red: Red, x: ArrayLike<number>): Activaciones {
   const h = new Float32Array(red.oculta)
   for (let j = 0; j < red.oculta; j++) h[j] = red.b1[j]
   for (let i = 0; i < red.entrada; i++) {
@@ -142,9 +149,10 @@ export function predecir(red: Red, x: ArrayLike<number>): number[] {
     const fila = i * red.oculta
     for (let j = 0; j < red.oculta; j++) h[j] += v * red.w1[fila + j]
   }
+  for (let j = 0; j < red.oculta; j++) if (h[j] < 0) h[j] = 0
   const z = Array.from(red.b2)
   for (let j = 0; j < red.oculta; j++) {
-    const a = h[j] > 0 ? h[j] : 0
+    const a = h[j]
     if (a === 0) continue
     const fila = j * red.salida
     for (let k = 0; k < red.salida; k++) z[k] += a * red.w2[fila + k]
@@ -152,9 +160,99 @@ export function predecir(red: Red, x: ArrayLike<number>): number[] {
   const max = Math.max(...z)
   const e = z.map((v) => Math.exp(v - max))
   const s = e.reduce((a, b) => a + b, 0)
-  return e.map((v) => v / s)
+  return { oculta: h, probs: e.map((v) => v / s) }
 }
+
+/** Ten probabilities, one per digit, that add up to 1. */
+export function predecir(red: Red, x: ArrayLike<number>): number[] {
+  return activar(red, x).probs
+}
+
+/** The 784 weights that feed hidden neuron j: the pattern it responds to. */
+export function pesosDeNeurona(red: Red, j: number): Float32Array {
+  const w = new Float32Array(red.entrada)
+  for (let i = 0; i < red.entrada; i++) w[i] = red.w1[i * red.oculta + j]
+  return w
+}
+
+/** Weight from hidden neuron j to output k. */
+export const pesoDeSalida = (red: Red, j: number, k: number) => red.w2[j * red.salida + k]
 
 export function masProbable(p: number[]): number {
   return p.reduce((best, v, i) => (v > p[best] ? i : best), 0)
+}
+
+// ---- the network in reverse --------------------------------------------------
+// The decoder half of a conditional variational autoencoder, trained on the same
+// MNIST digits by scripts/build_mnist_generativa.py. It takes a digit plus a few
+// "style" numbers and draws a 28x28 image: (style + one-hot) -> hidden -> 784,
+// ReLU then sigmoid. Style numbers drawn from a normal distribution give a
+// different handwriting of the same digit each time.
+
+export type RedGenerativa = {
+  estilo: number
+  oculta: number
+  salida: number
+  w1: string
+  w1_escala: number
+  b1: number[]
+  w2: string
+  w2_escala: number
+  b2: number[]
+  leidos_por_la_clasificadora: number
+}
+
+export type Generadora = {
+  estilo: number
+  oculta: number
+  salida: number
+  w1: Float32Array
+  b1: Float32Array
+  w2: Float32Array
+  b2: Float32Array
+}
+
+export function decodificarGenerativa(r: RedGenerativa): Generadora {
+  return {
+    estilo: r.estilo,
+    oculta: r.oculta,
+    salida: r.salida,
+    w1: pesos(r.w1, r.w1_escala),
+    b1: Float32Array.from(r.b1),
+    w2: pesos(r.w2, r.w2_escala),
+    b2: Float32Array.from(r.b2),
+  }
+}
+
+/** Draw a digit (0-9) in the handwriting given by the style numbers. Ink in [0, 1]. */
+export function imaginar(g: Generadora, digito: number, estilo: number[]): Float32Array {
+  const entrada = [...estilo, ...Array.from({ length: 10 }, (_, d) => (d === digito ? 1 : 0))]
+  const h = new Float32Array(g.oculta)
+  for (let j = 0; j < g.oculta; j++) h[j] = g.b1[j]
+  for (let i = 0; i < entrada.length; i++) {
+    const v = entrada[i]
+    if (v === 0) continue
+    const fila = i * g.oculta
+    for (let j = 0; j < g.oculta; j++) h[j] += v * g.w1[fila + j]
+  }
+  const out = new Float32Array(g.salida)
+  for (let k = 0; k < g.salida; k++) out[k] = g.b2[k]
+  for (let j = 0; j < g.oculta; j++) {
+    const a = h[j]
+    if (a <= 0) continue
+    const fila = j * g.salida
+    for (let k = 0; k < g.salida; k++) out[k] += a * g.w2[fila + k]
+  }
+  for (let k = 0; k < g.salida; k++) out[k] = 1 / (1 + Math.exp(-out[k]))
+  return out
+}
+
+/** n style vectors drawn from a standard normal (Box-Muller), reproducible by seed. */
+export function estilosAlAzar(rng: () => number, n: number, dims: number): number[][] {
+  return Array.from({ length: n }, () =>
+    Array.from({ length: dims }, () => {
+      const u = Math.max(rng(), 1e-12)
+      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * rng())
+    }),
+  )
 }

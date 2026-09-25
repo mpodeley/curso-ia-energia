@@ -8,4 +8,5 @@ requests          # descarga por stream del dataset Capítulo IV
 sentence-transformers  # embeddings multilingües para EmbeddingsMap y RagDemo
 scikit-learn      # PCA para proyectar los embeddings a 2D; la red de dígitos (build_mnist.py)
 scipy             # aumentos de MNIST en build_mnist.py
+torch             # build_mnist_generativa.py; la rueda CPU alcanza (ver su docstring)
 segno             # QR del brochure (build_qr.py)

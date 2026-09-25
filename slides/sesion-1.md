@@ -16,10 +16,9 @@ Sesión 1 de 8 · día 1 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Pe
 0:00 · portada mientras entra la gente
 Antes de arrancar: chequear que se vea la pantalla y que se escuche.
 Tener abiertas cuatro ventanas: este deck (A), el sitio del curso (C), el
-chatbot (D) y WebLLM Chat (E, chat.webllm.ai) con Llama 3.2 1B ya cargado: la
-primera carga baja cerca de 1 GB, hacerla antes de clase. Esta edición no usa
-servidor ni PIN: todo lo que se pregunta a la sala va por el chat de la
-videollamada o de viva voz.
+chatbot (D) y duck.ai (E) con Mistral Small 4 elegido y la búsqueda web
+apagada (en Tools). Esta edición no usa servidor ni PIN: todo lo que se
+pregunta a la sala va por el chat de la videollamada o de viva voz.
 En el escritorio, para las demos: el abstract público de SPE copiado y la foto
 de la hoja de notas de reunión (a mano, inventada, sin nada de ninguna empresa).
 El deck está publicado en el sitio; si alguien se cae de la videollamada,
@@ -54,7 +53,7 @@ Arranca 0:00, termina 0:20.
 | Apertura: quiénes somos, qué esperan, el mapa del curso | 20 min | Los dos instructores, lo que cada uno se quiere llevar, una ronda de seis con nombre, empresa y rol, el mapa de los cuatro días y la regla entre empresas |
 | ¿Qué es IA para vos? | 10 min | Cada uno escribe su definición en una oración, las leemos con nombre y de ahí sale la diferencia entre IA de propósito específico e IA de propósito general |
 | De 1950 a hoy | 20 min | De Dartmouth y los sistemas expertos a ChatGPT, con los dos inviernos en el medio y un sistema experto que interpretaba perfiles de pozo; y dónde estamos en septiembre de 2026 |
-| Cómo aprende una máquina | 23 min | Reglas escritas y reglas aprendidas: el duelo de declinación, 84 pozos reales con etiquetas y sin etiquetas, y una red que lee dígitos |
+| Cómo aprende una máquina | 23 min | Reglas escritas y reglas aprendidas: el duelo de declinación, 84 pozos reales con etiquetas y sin etiquetas, una red que lee dígitos y otra que los dibuja |
 | Demos en vivo | 19 min | El chatbot frente a tareas reales: resumir un paper, escribir un correo difícil y pasar a limpio la foto de unas notas de reunión. Y verlo fallar, al lado de un modelo chico |
 | Ronda de relevamiento | 10 min | Cada uno cuenta la tarea que más le come la semana y el problema que probaría primero |
 | Cierre | 8 min | Por qué se equivocó el chatbot, y tres prácticas para llevarse |
@@ -724,25 +723,30 @@ Puente: una red de verdad, en la página.
 
 <!-- _class: panel -->
 
-## Una red que lee dígitos
+## Una red que lee dígitos, y otra que los dibuja
 
 En la página de la sesión 1, abajo de las cuatro capas.
 
-Dibujá un dígito del 0 al 9, con el mouse o con el dedo, y mirá qué lee la red.
+Dibujá un dígito del 0 al 9, con el mouse o con el dedo, y mirá cómo se encienden las neuronas.
 
 <!--
 3 min · acumulado 1:13
-Ventana C, ejercicio "Una red que lee dígitos". Dibujo un 3 y un 7 en vivo y
-leo el porcentaje de cada uno.
-Mostrar el recuadro chico: así recibe la red el dibujo, 28 × 28 cuadraditos,
-784 números. Nadie le escribió qué forma tiene un 3: ajustó casi 51,000 pesos
-mirando 60,000 dígitos que traían su respuesta. Es el problema de la red de
-los Laboratorios Bell de 1989, la de los códigos postales, que vimos en la
-línea de tiempo.
-Si preguntan: esta red tiene una sola capa oculta; las profundas apilan
-decenas, con el mismo principio.
-Si lee mal alguno, comentarlo al pasar: en los 10,000 dígitos de prueba
-acierta el 97.9%. No forzar la falla.
+Ventana C, ejercicio "Una red que lee dígitos". Dibujo un 3 en vivo: mientras
+dibujo se encienden las neuronas del medio y cambia el porcentaje.
+Leer el diagrama de izquierda a derecha: el dibujo como lo recibe la red (784
+números), las 64 neuronas que se encienden, los diez dígitos. Tocar una
+neurona: el patrón de trazos al que responde. Nadie se lo asignó; la red
+ajustó casi 51,000 pesos mirando 60,000 dígitos que traían su respuesta. Es el
+problema de la red de los Laboratorios Bell de 1989, la de los códigos
+postales, que vimos en la línea de tiempo.
+Minuto y medio para eso, y bajar al ejercicio siguiente, "La red al revés":
+elegir el 7 y apretar "Imaginar otros" dos veces. Otra red, con los mismos
+dígitos, hace el camino inverso: recibe el número y lo dibuja, cada vez
+distinto. Es la capa de IA generativa en miniatura, y el puente al chatbot:
+un modelo de lenguaje hace lo mismo con texto.
+Si preguntan: la que lee tiene una sola capa oculta; las profundas apilan
+decenas, con el mismo principio. Si lee mal alguno, comentarlo al pasar: en
+los 10,000 dígitos de prueba acierta el 97.9%. No forzar la falla.
 Martín: pedir que cada uno dibuje un dígito y escriba en el chat si lo leyó bien.
 Puente a las demos: ahora sí, el chatbot.
 Cierre del bloque 4.
@@ -841,9 +845,9 @@ foto, lo más común es un responsable o una fecha que no estaban en la hoja.
 <!--
 7 min · acumulado 1:29
 Dos modelos lado a lado: la cuenta gratuita de Gemini (Flash, ventana D) y
-Llama 3.2 1B en WebLLM Chat (ventana E), un modelo chico que corre en este
-navegador. A Gemini, en el primer mensaje, pedirle que no use búsqueda ni se
-conecte a internet. La tercera familia (la norma real con contenido inventado)
+Mistral Small 4 en duck.ai (ventana E), un modelo más chico, gratis y sin
+cuenta. A los dos, sin búsqueda: a Gemini se lo pido en el primer mensaje; en
+duck.ai, Web Search queda apagado en Tools. La tercera familia (la norma real con contenido inventado)
 queda para el bloque de alucinaciones de la sesión 2.
 
 1) En Gemini: "¿Cuánto produjo el campo Sacha el 15 de septiembre de 2026
@@ -852,12 +856,13 @@ queda para el bloque de alucinaciones de la sesión 2.
    2023, y hay que decirlo así. Sacha es de Petroecuador, público, y de nadie
    en la sala.
 
-2) En el de 1B: "¿Quién descubrió el campo Sacha, en qué año, y cuánto produce
-   hoy?" y "¿Qué significa la sigla ARCH en el sector petrolero de Ecuador?"
-   Ensayado el 25-sep en Ollama con el mismo modelo: inventó en 6 de 6. Sacha
-   salió cancha de fútbol en Mar del Plata, mina de sal en Chile, campo
-   agrícola en Mendoza; ARCH, una asociación de cera de árbol o de recursos
-   hidroeléctricos. Todo con total seguridad.
+2) En Mistral: "¿Quién descubrió el campo Sacha, en qué año, y cuánto produce
+   hoy?" y "Citame tres papers de la SPE sobre recuperación secundaria en
+   areniscas de la cuenca Oriente, con su número de SPE."
+   SIN ENSAYAR (duck.ai no deja automatizar): probarlo antes del lunes y
+   quedarse con la que falle. Si Mistral acierta todo, Gemma 4 31B en el mismo
+   selector. Como referencia, Llama 3.2 1B (local, en Ollama) inventó en 6 de
+   6: Sacha salió cancha de fútbol, mina de sal y campo agrícola.
 
 3) La primera de la 2 en Gemini. Lo real: el consorcio Texaco-Gulf lo
    descubrió con el pozo Sacha-1 en febrero de 1969, y según Primicias
@@ -865,16 +870,15 @@ queda para el bloque de alucinaciones de la sesión 2.
    agosto. Si da una cifra "de hoy", preguntarle de qué fecha es: sale de su
    entrenamiento.
 
-Qué decir: el mecanismo que inventa es el mismo en los dos. El chico inventa
-disparates que cualquiera caza; el grande, cuando inventa, inventa algo
-creíble, y ese es el que hay que verificar.
-Plan B si WebLLM no carga (pide WebGPU): duck.ai, sin cuenta, con GPT-5.4 nano.
+Qué decir: el mecanismo que inventa es el mismo en los dos. Al grande le
+enseñaron a frenarse cuando le falta el dato, y aun así, cuando inventa,
+inventa algo creíble: ese es el que hay que verificar.
 Verificar UNA en vivo, buscándola: la del reporte diario, abriendo el PDF de
 la ARCH en controlhidrocarburos.gob.ec. Que vean el chequeo completo.
 Comentar al pasar, sin slide, las dos causas. A Gemini le faltaba el dato:
 nunca leyó el reporte de hoy, y si da una cifra es la más creíble de su
-entrenamiento. Al de 1B le pasó lo otro: el descubridor y el año que puso no
-existen en ninguna parte, y aun así salieron con la forma exacta de un dato. La primera
+entrenamiento. Los números de SPE inventados son lo otro: no existen en
+ninguna parte, y aun así salen con la forma exacta de una cita. La primera
 se arregla trayéndole el documento (sesión 5); la segunda hay que verificarla
 (sesión 7). El cierre retoma esta distinción.
 El POR QUÉ viene después de la pausa: no adelantarlo.

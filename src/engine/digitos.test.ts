@@ -1,13 +1,21 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
+import { makeRng } from './sampling'
 import {
   LADO,
+  activar,
   decodificar,
+  decodificarGenerativa,
+  estilosAlAzar,
+  imaginar,
   masProbable,
+  pesosDeNeurona,
+  pesoDeSalida,
   pixelesDeMuestra,
   predecir,
   preprocesar,
   type RedDigitos,
+  type RedGenerativa,
 } from './digitos'
 
 const raw = JSON.parse(readFileSync('public/data/red_digitos.json', 'utf-8')).data as RedDigitos
@@ -48,6 +56,23 @@ describe('predecir', () => {
     const p = predecir(red, pixelesDeMuestra(raw.muestras[0].pixeles))
     expect(p).toHaveLength(10)
     expect(p.reduce((a, b) => a + b, 0)).toBeCloseTo(1, 5)
+  })
+
+  it('keeps a hidden layer that is never negative and explains the output', () => {
+    const x = pixelesDeMuestra(raw.muestras[0].pixeles)
+    const { oculta, probs } = activar(red, x)
+    expect(oculta).toHaveLength(raw.oculta)
+    expect(Math.min(...oculta)).toBeGreaterThanOrEqual(0)
+    expect(oculta.some((a) => a === 0)).toBe(true) // ReLU switches some neurons off
+    // rebuilding the output from the hidden layer gives the same winner
+    const z = raw.b2.map((b, k) => b + oculta.reduce((acc, a, j) => acc + a * pesoDeSalida(red, j, k), 0))
+    expect(z.indexOf(Math.max(...z))).toBe(masProbable(probs))
+  })
+
+  it('exposes the 784 incoming weights of each hidden neuron', () => {
+    const w = pesosDeNeurona(red, 5)
+    expect(w).toHaveLength(784)
+    expect(w[10]).toBe(red.w1[10 * raw.oculta + 5])
   })
 
   it('reads the MNIST sample digits', () => {
@@ -92,5 +117,36 @@ describe('preprocesar', () => {
       })
       expect(bien.length).toBeGreaterThanOrEqual(17)
     }
+  })
+})
+
+describe('la red al revés', () => {
+  const rawGen = JSON.parse(readFileSync('public/data/red_generativa.json', 'utf-8')).data as RedGenerativa
+  const gen = decodificarGenerativa(rawGen)
+
+  it('draws 784 pixels of ink between 0 and 1', () => {
+    const img = imaginar(gen, 3, [0, 0])
+    expect(img).toHaveLength(784)
+    expect(Math.min(...img)).toBeGreaterThanOrEqual(0)
+    expect(Math.max(...img)).toBeLessThanOrEqual(1)
+  })
+
+  it('changes the handwriting when the style numbers change', () => {
+    const a = imaginar(gen, 3, [-1.5, 0])
+    const b = imaginar(gen, 3, [1.5, 0])
+    const diff = a.reduce((acc, v, i) => acc + Math.abs(v - b[i]), 0)
+    expect(diff).toBeGreaterThan(20)
+  })
+
+  it('draws digits the reading network recognises as the one asked for', () => {
+    const estilos = estilosAlAzar(makeRng(7), 12, gen.estilo)
+    let bien = 0
+    for (let d = 0; d < 10; d++)
+      for (const e of estilos) if (masProbable(predecir(red, imaginar(gen, d, e))) === d) bien++
+    expect(bien / 120).toBeGreaterThanOrEqual(0.85)
+  })
+
+  it('draws the same digits for the same seed', () => {
+    expect(estilosAlAzar(makeRng(3), 4, 2)).toEqual(estilosAlAzar(makeRng(3), 4, 2))
   })
 })

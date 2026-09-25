@@ -17,7 +17,7 @@ import type { Pozo } from '../engine/aprendizaje'
 import type { ModeloEscala } from '../engine/escala'
 import type { DatosAutosupervisado } from '../engine/autosupervisado'
 import type { LineaDeTiempo } from '../engine/lineaDeTiempo'
-import type { RedDigitos } from '../engine/digitos'
+import type { RedDigitos, RedGenerativa } from '../engine/digitos'
 
 /**
  * Loads a JSON file from ./data/ and unwraps the {generated_at, source,
@@ -89,3 +89,4 @@ export const useEscala = () => useJson<ModeloEscala[]>('./data/escala.json')
 export const useAutosupervisado = () => useJson<DatosAutosupervisado>('./data/autosupervisado.json')
 export const useLineaDeTiempo = () => useJson<LineaDeTiempo>('./data/linea_de_tiempo.json')
 export const useRedDigitos = () => useJson<RedDigitos>('./data/red_digitos.json')
+export const useRedGenerativa = () => useJson<RedGenerativa>('./data/red_generativa.json')
