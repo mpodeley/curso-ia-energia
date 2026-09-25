@@ -15,7 +15,8 @@ Ecuador y Argentina en cada ejercicio. Nadie llega con nada
 leído; todo lo esencial pasa en vivo. Entre día y día hay una sola tarea de unos cinco minutos.
 
 Los asistentes solo necesitan un navegador, una cuenta gratuita de chatbot y una cuenta de
-Google para NotebookLM. Ningún dato confidencial entra a una herramienta gratuita: se trabaja
+Google para Gemini Notebook (antes NotebookLM). El sitio no pide usuario ni clave: las preguntas a
+la sala van por el chat de la videollamada o de viva voz. Ningún dato confidencial entra a una herramienta gratuita: se trabaja
 con fuentes públicas del regulador ecuatoriano (ARCH) y de la Secretaría de Energía argentina
 (Capítulo IV).
 
@@ -30,13 +31,13 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 
 | Bloque | min |
 |---|---|
-| Apertura: quiénes somos, regla entre empresas, entrada al sitio | 12 |
-| ¿Qué es IA para vos? Definiciones en vivo y conversación | 12 |
-| Setenta años en quince minutos: la línea de tiempo | 15 |
-| Cómo aprende una máquina: reglas, supervisado, no supervisado, capas | 25 |
+| Apertura: quiénes somos, qué esperan, el mapa del curso | 20 |
+| ¿Qué es IA para vos? | 10 |
+| De 1950 a hoy | 20 |
+| Cómo aprende una máquina | 20 |
 | Demos en vivo | 22 |
-| Encuesta de relevamiento | 12 |
-| Discusión | 12 |
+| Ronda de relevamiento | 10 |
+| Cierre | 8 |
 | Pausa | 10 |
 
 #### Sesión 2 · 12:00–14:00 · Cómo funciona un LLM
@@ -69,7 +70,7 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 | Bloque | min |
 |---|---|
 | La planilla y el copiloto | 30 |
-| De PDF a tabla: el reporte diario de la ARCH, verificado número por número | 35 |
+| De PDF a tabla: el reporte diario de la ARCH | 35 |
 | Pausa | 10 |
 | Declinación en vivo | 25 |
 | Qué se puede afirmar | 10 |
@@ -77,14 +78,14 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 
 ### Día 3, miércoles 30
 
-#### Sesión 5 · 10:00–12:00 · Tu conocimiento: RAG y NotebookLM
+#### Sesión 5 · 10:00–12:00 · Tu conocimiento: RAG y Gemini Notebook
 
 | Bloque | min |
 |---|---|
 | Apertura y repaso de la tarea | 15 |
-| Por qué el modelo no sabe lo tuyo | 15 |
+| Por qué no sabe lo tuyo | 15 |
 | Buscar por significado | 15 |
-| NotebookLM en vivo: el cuaderno del rubro | 32 |
+| Gemini Notebook en vivo: el cuaderno del rubro | 32 |
 | Tu cuaderno: un documento público de tu empresa | 28 |
 | Cierre | 5 |
 | Pausa | 10 |
@@ -107,18 +108,18 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 | Bloque | min |
 |---|---|
 | Apertura | 8 |
-| La cacería de errores | 20 |
-| El protocolo de verificación | 25 |
+| La cacería | 20 |
+| El protocolo | 25 |
 | Datos de la empresa | 20 |
 | Agentes y operación | 20 |
-| La política de uso, en una página | 17 |
+| La política | 17 |
 | Pausa | 10 |
 
 #### Sesión 8 · 12:00–14:00 · El caso y el horizonte
 
 | Bloque | min |
 |---|---|
-| El caso, en vivo: screening de waterflooding sobre datos públicos | 30 |
+| El caso, en vivo | 30 |
 | La crítica: el caso y los cuatro de ustedes | 22 |
 | Pausa | 10 |
 | Hoja de ruta | 10 |
@@ -128,7 +129,7 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 ## Qué se llevan
 
 - Criterio: qué delegar hoy a un chatbot o a un agente, qué verificar y cómo.
-- Un cuaderno de NotebookLM con documentos del rubro y uno propio.
+- Un cuaderno de Gemini Notebook (antes NotebookLM) con documentos del rubro y uno propio.
 - Un borrador de política de uso interna, de una página.
 - El caso de waterflooding recorrido de punta a punta, y el caso de su empresa escrito en una
   página y criticado con las reglas de la sesión 7.

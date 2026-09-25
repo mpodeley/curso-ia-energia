@@ -155,7 +155,7 @@
         "fecha": "1997-05",
         "titulo": "Deep Blue le gana a Kasparov",
         "que": "La computadora de IBM vence al campeón mundial de ajedrez Garry Kasparov por 3.5 a 2.5, en un match con tiempos de torneo.",
-        "porque": "Es el ejemplo clásico de IA estrecha: un sistema construido para una sola tarea, que en esa tarea le gana al campeón del mundo.",
+        "porque": "Es el ejemplo clásico de IA de propósito específico: un sistema construido para una sola tarea, que en esa tarea le gana al campeón del mundo.",
         "era": "datos",
         "fuente": {
           "titulo": "IBM, \"Deep Blue\"",

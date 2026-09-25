@@ -96,7 +96,7 @@
       "opciones": [
         {
           "texto": "Porque tiene un módulo aparte para cada tarea.",
-          "explicacion": "Es una sola red con una sola operación. Un modelo por tarea es la IA estrecha, que es justamente lo que un LLM dejó atrás."
+          "explicacion": "Es una sola red con una sola operación. Un modelo por tarea es la IA de propósito específico, que es justamente lo que un LLM dejó atrás."
         },
         {
           "texto": "Porque para predecir bien la palabra siguiente en cualquier texto tiene que aprender un poco de todo, y esas tareas salen de ahí.",

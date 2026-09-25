@@ -32,7 +32,7 @@ export const PULSOS: Pulso[] = [
   {
     // Abre el bloque "¿Qué es IA para vos?". Reemplaza a s1-palabra-ia (la nube de
     // una palabra del arranque, retirada el 2026-09-24): una definición entera da
-    // para conversar y para separar IA estrecha de IA general. El slug viejo no se
+    // para conversar y para separar IA de propósito específico de IA de propósito general. El slug viejo no se
     // recicla; sus respuestas de la primera edición siguen en la base y en el export.
     id: 's1-definicion-ia',
     sesion: 1,

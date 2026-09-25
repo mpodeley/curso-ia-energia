@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T00:00:00+00:00",
+  "generated_at": "2026-09-25T00:00:00+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
@@ -8,11 +8,11 @@
       "opciones": [
         {
           "texto": "Deep Blue, que le ganó al campeón mundial de ajedrez en 1997.",
-          "explicacion": "Es el ejemplo clásico de IA estrecha: un sistema construido para una sola tarea, que en esa tarea le gana al campeón del mundo."
+          "explicacion": "Es el ejemplo clásico de IA de propósito específico: un sistema construido para una sola tarea, que en esa tarea le gana al campeón del mundo."
         },
         {
           "texto": "Un modelo que pronostica la declinación de los pozos de un yacimiento.",
-          "explicacion": "Es IA estrecha: un modelo entrenado para una tarea. Para otra tarea, como clasificar perfiles, hace falta otro modelo."
+          "explicacion": "Es IA de propósito específico: un modelo entrenado para una tarea. Para otra tarea, como clasificar perfiles, hace falta otro modelo."
         },
         {
           "texto": "Un sistema que iguala a una persona en casi cualquier tarea intelectual.",
@@ -114,6 +114,28 @@
       ]
     },
     {
+      "pregunta": "En septiembre de 2026 salieron GPT-6 Astra, Claude Opus 5.5 y Gemini 3.8 Flash. ¿Qué te conviene hacer con esa lista?",
+      "opciones": [
+        {
+          "texto": "Aprenderla de memoria: el modelo del mes decide qué conviene usar.",
+          "explicacion": "En unos meses esa lista ya es otra: los nombres de los modelos envejecen rápido."
+        },
+        {
+          "texto": "Esperar a que salga el siguiente, que va a ser mejor.",
+          "explicacion": "Siempre va a salir uno mejor. Lo que aprendés hoy a pedir y a verificar sirve con cualquiera."
+        },
+        {
+          "texto": "Probar tu propia tarea en el chatbot que tengas a mano y mirar qué puede hacer.",
+          "correcta": true,
+          "explicacion": "Exacto: la cuenta gratuita alcanza para todo el curso, y tu tarea es la mejor prueba. Lo hacemos mañana en la sesión 3."
+        },
+        {
+          "texto": "Pagar el más caro, porque es el único que sirve para trabajo técnico.",
+          "explicacion": "Para las tareas del curso alcanza la cuenta gratuita. El más caro también se equivoca, y también hay que verificarlo."
+        }
+      ]
+    },
+    {
       "pregunta": "En la demo, el chatbot citó tres papers de la SPE con su número, y ninguno existe. ¿Qué tipo de falla es, y qué se hace con ella?",
       "opciones": [
         {
@@ -132,6 +154,28 @@
         {
           "texto": "Pasó porque la pregunta estaba en español y los papers están en inglés.",
           "explicacion": "El idioma cambia cuántos tokens ocupa la pregunta, y la tendencia a inventar es la misma: en inglés las citas inventadas salen igual de prolijas."
+        }
+      ]
+    },
+    {
+      "pregunta": "Un chatbot te devuelve la lista de pendientes que armó con la foto de tus notas de reunión. ¿Qué chequeás primero?",
+      "opciones": [
+        {
+          "texto": "Que esté prolija y ordenada por fecha.",
+          "explicacion": "El formato es lo que mejor hace. El riesgo está en lo que agregó."
+        },
+        {
+          "texto": "Que cada pendiente, responsable y fecha esté en la hoja: lo que no está, lo completó él.",
+          "correcta": true,
+          "explicacion": "Exacto. Cuando le falta un dato, lo más probable es que lo complete con algo creíble. Por eso el pedido de la demo le pide marcar con [?] lo que no se lee."
+        },
+        {
+          "texto": "Nada: si la foto se lee bien, el resultado es confiable.",
+          "explicacion": "Aun con la foto nítida puede agregar un responsable o una fecha que no estaban. La salida es un borrador plausible."
+        },
+        {
+          "texto": "Le pido al mismo chatbot que confirme que no inventó nada.",
+          "explicacion": "Te va a contestar que no, con el mismo tono seguro. Se verifica contra el original: la hoja."
         }
       ]
     },

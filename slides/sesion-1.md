@@ -15,13 +15,17 @@ Sesión 1 de 8 · día 1 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Pe
 <!--
 0:00 · portada mientras entra la gente
 Antes de arrancar: chequear que se vea la pantalla y que se escuche.
-Tener abiertas cuatro ventanas: este deck (A), el panel (B), el sitio del
-curso (C) y el chatbot (D). El panel lo maneja Martín desde su máquina; en la
-mía queda abierto solo para proyectar resultados.
+Tener abiertas tres ventanas: este deck (A), el sitio del curso (C) y el
+chatbot (D). Esta edición no usa servidor ni PIN: todo lo que se pregunta a la
+sala va por el chat de la videollamada o de viva voz.
+En el escritorio, para las demos: el abstract público de SPE copiado y la foto
+de la hoja de notas de reunión (a mano, inventada, sin nada de ninguna empresa).
 El deck está publicado en el sitio; si alguien se cae de la videollamada,
 puede seguir las slides desde ahí.
 Martín: confirmar en el chat quién entró y quién falta; a las 10:03 arrancamos
-con los que estén.
+con los que estén. Abrir un documento propio para anotar lo que la sala escribe
+en el chat: expectativas, definiciones y la ronda de relevamiento. Ese documento
+vuelve en la sesión 2, en la 6 y en la 8.
 -->
 
 ---
@@ -30,11 +34,11 @@ con los que estén.
 
 ## Apertura
 
-Bloque 1 de 7 · **12 min**
+Bloque 1 de 7 · **20 min**
 
 <!--
 0 min · acumulado 0:00
-Arranca 0:00, termina 0:12.
+Arranca 0:00, termina 0:20.
 -->
 
 ---
@@ -45,23 +49,21 @@ Arranca 0:00, termina 0:12.
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura: quiénes somos, regla entre empresas, entrada al sitio | 12 min | Los dos instructores, una ronda de seis con nombre y empresa, la regla de confidencialidad y el ingreso con el PIN |
-| ¿Qué es IA para vos? Definiciones en vivo y conversación | 12 min | Cada uno escribe su definición en una oración, las proyectamos con nombre y de ahí sale la diferencia entre IA estrecha e IA de propósito general |
-| Setenta años en quince minutos: la línea de tiempo | 15 min | De Dartmouth y los sistemas expertos a ChatGPT y Claude Code, con los dos inviernos en el medio y un sistema experto que interpretaba perfiles de pozo |
-| Cómo aprende una máquina: reglas, supervisado, no supervisado, capas | 25 min | Reglas escritas y reglas aprendidas: el duelo de declinación y 84 pozos reales, con etiquetas y sin etiquetas |
-| Demos en vivo | 22 min | El chatbot frente a tareas reales: resumir un paper, explicar un término, escribir un correo difícil. Y verlo fallar |
-| Encuesta de relevamiento | 12 min | La completamos juntos en vivo |
-| Discusión | 12 min | Qué sorprendió y qué decepcionó de lo visto hasta acá |
-| Pausa | 10 min | Si te quedó la encuesta a medias, es el momento: se guarda sola |
+| Apertura: quiénes somos, qué esperan, el mapa del curso | 20 min | Los dos instructores, lo que cada uno se quiere llevar, una ronda de seis con nombre, empresa y rol, el mapa de los cuatro días y la regla entre empresas |
+| ¿Qué es IA para vos? | 10 min | Cada uno escribe su definición en una oración, las leemos con nombre y de ahí sale la diferencia entre IA de propósito específico e IA de propósito general |
+| De 1950 a hoy | 20 min | De Dartmouth y los sistemas expertos a ChatGPT, con los dos inviernos en el medio y un sistema experto que interpretaba perfiles de pozo; y dónde estamos en septiembre de 2026 |
+| Cómo aprende una máquina | 20 min | Reglas escritas y reglas aprendidas: el duelo de declinación y 84 pozos reales, con etiquetas y sin etiquetas |
+| Demos en vivo | 22 min | El chatbot frente a tareas reales: resumir un paper, escribir un correo difícil y pasar a limpio la foto de unas notas de reunión. Y verlo fallar |
+| Ronda de relevamiento | 10 min | Cada uno cuenta la tarea que más le come la semana y el problema que probaría primero |
+| Cierre | 8 min | Por qué se equivocó el chatbot, y tres prácticas para llevarse |
+| Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 2 |
 
 <!--
 1 min · acumulado 0:01
 Bajada: son cuatro días de cuatro horas, cada uno en dos sesiones de dos: de 10
 a 12 y de 12 a 14 (de 8 a 10 y de 10 a 12 en Ecuador y Colombia). Hay una pausa
-al final de la primera sesión y otra a mitad de la segunda. Esta sesión es qué
-entendemos por IA, de dónde viene, cómo aprende una máquina, las demos y el
-relevamiento; después de la pausa, en la sesión 2, una mirada bajo el capó,
-lo justo.
+al final de la primera sesión y otra a mitad de la segunda. El mapa completo de
+los cuatro días viene en unos minutos.
 La misma tabla está en la página de la sesión 1: deck y sitio no se contradicen.
 Martín: el cronómetro arranca acá; avisarme por el chat privado cuando un
 bloque se pase cinco minutos.
@@ -71,8 +73,8 @@ bloque se pase cinco minutos.
 
 ## Al final de esta sesión van a poder
 
-- Distinguir una **IA estrecha** de una **IA de propósito general**
-- Contar cómo se llegó de los **sistemas expertos** a los modelos de hoy
+- Distinguir una **IA de propósito específico** de una **IA de propósito general**
+- Contar cómo se llegó de los **sistemas expertos** a los modelos de hoy, y **dónde estamos** en septiembre de 2026
 - Distinguir aprendizaje **supervisado** de **no supervisado**, con pozos reales
 - Ver en vivo qué puede y qué **no** puede hacer hoy un chatbot, y por qué se equivoca
 
@@ -82,8 +84,8 @@ Es un curso para aprender a manejar: del motor vemos solo lo que ayuda a manejar
 1 min · acumulado 0:02
 La frase del auto es el encuadre de los cuatro días: decirla y dejarla. Nadie
 sale de acá experto en machine learning; salen manejando mejor la herramienta.
-El cuarto punto se arma en las demos y se cierra en la discusión: es la
-primera distinción práctica del curso, y la sesión 2 explica de dónde sale.
+El cuarto punto se arma en las demos y se cierra al final: es la primera
+distinción práctica del curso, y la sesión 2 explica de dónde sale.
 -->
 
 ---
@@ -122,20 +124,86 @@ funcionar las rondas: él nombra, el nombrado habla.
 
 <!-- _class: panel -->
 
-## Ronda: nombre, empresa y a qué te dedicás
+## Entrá al sitio y dejalo abierto
 
-Seis personas, medio minuto cada una. Contá tu rol, sin datos de la empresa.
+`mpodeley.github.io/curso-ia-energia`
+
+La página de la sesión 1 la usamos varias veces hoy. No hace falta usuario ni clave.
 
 <!--
-4 min · acumulado 0:08
-Martín: llamar por nombre, en el orden de la lista de asistentes, y anotar en
-el chat rol y país de cada uno. Esa lista es la que usa después para las
-rondas del día.
+1 min · acumulado 0:05
+Martín pega la dirección en el chat. Que abran la página de la sesión 1 y la
+dejen en una pestaña.
+Si alguien no puede entrar (firewall de la empresa), que siga desde el
+celular: los ejercicios de hoy andan en el teléfono.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## ¿Qué te querés llevar de estos cuatro días?
+
+Escribilo en el chat en una oración, y mandalo cuando Martín diga "ya".
+
+<!--
+2 min · acumulado 0:07
+Un minuto para escribir sin mandar. Martín dice "ya" y mandan todos a la vez:
+así nadie arrastra la expectativa del de al lado.
+No dar ejemplos mientras escriben: cualquier ejemplo mío se copia.
+Martín: copiar las seis oraciones, con nombre, a su documento. Vuelven el
+último día, en la ronda de cierre de la sesión 8.
+-->
+
+---
+
+<!-- _class: panel -->
+
+## Ronda: nombre, empresa, a qué te dedicás y qué esperás
+
+Un minuto cada uno. Contá tu rol, sin datos de la empresa, y leé tu oración del chat.
+
+<!--
+7 min · acumulado 0:14
+Martín: llamar por nombre, en el orden de la lista de asistentes, y anotar
+rol y país de cada uno. Esa lista es la que usa después para las rondas del día.
 Son 4 personas en Ecuador, 1 en Argentina y 1 en Colombia; cuatro empresas.
 Escuchar qué hace cada uno: los ejemplos de las demos se eligen con eso
 (reservorios, producción, planificación).
-Cortar a los treinta segundos con amabilidad: la ronda larga es la de la
-discusión, a la 1:38.
+Mientras hablan, anotar en qué sesión cae cada expectativa: es el material de
+la slide que sigue. Cortar al minuto con amabilidad.
+-->
+
+---
+
+## Cuatro días, un arco
+
+| Día | Sesiones | De qué se trata |
+| --- | --- | --- |
+| Lunes 28 | 1 y 2 | De los datos a la IA generativa; cómo funciona un LLM |
+| Martes 29 | 3 y 4 | Prompting y trabajo diario; análisis asistido de datos |
+| Miércoles 30 | 5 y 6 | Tus documentos con RAG y Gemini Notebook; agentes y el caso de tu empresa |
+| Jueves 1 | 7 y 8 | Riesgos, límites y gobernanza; el caso y el horizonte |
+
+Te llevás criterio para delegar y verificar, un cuaderno con documentos del rubro, un borrador de política de uso y el caso de tu empresa escrito en una página.
+
+<!--
+4 min · acumulado 0:18
+Cada día, la primera sesión de 10 a 12 y la segunda de 12 a 14 (de 8 a 10 y de
+10 a 12 en Ecuador y Colombia).
+Recorrer el arco en una frase por día: el lunes entender qué es esto y cómo
+funciona; el martes usarlo bien, con prompts y con datos; el miércoles darle
+tus documentos y ver trabajar a un agente; el jueves usarlo con cabeza, y el
+caso real de punta a punta.
+Después, ubicar en el mapa las expectativas que acabamos de escuchar, con
+nombre: "lo de Fulano cae el martes". Si alguna no cae en ningún día, decirlo
+de frente: el curso no entrena modelos, no conecta sistemas de la empresa y
+trabaja con datos públicos.
+Cómo funciona: cada sesión tiene su página, su deck y un quiz para repasar;
+entre día y día hay una sola tarea, de cinco minutos; las preguntas que no
+quieran hacer en voz alta van por el chat, y Martín decide cuándo entran.
+Gemini Notebook es el nombre nuevo de NotebookLM, desde julio: si alguien lo
+conoce por el viejo, es lo mismo.
 -->
 
 ---
@@ -149,7 +217,7 @@ información de partners: nada de eso va al chat ni a un chatbot gratuito. Los e
 fuentes públicas: el reporte diario de la ARCH y el Capítulo IV.
 
 <!--
-2 min · acumulado 0:10
+2 min · acumulado 0:20
 La regla del día uno, temprano y grande, y hoy con una razón extra: en la
 sala hay competidores. Ninguna ronda pide un dato propio; cuando pida "una
 tarea de tu semana", alcanza con describir el tipo de tarea, sin su contenido.
@@ -159,27 +227,7 @@ completos una vez.
 La razón la mostramos en la sesión 7: qué pasa con lo que se sube a un
 chatbot gratuito. Si alguien pregunta por la versión empresarial: existe, cambia
 el contrato de datos, lo vemos mañana en la sesión 3. Hoy trabajamos con cuentas gratuitas.
--->
-
----
-
-<!-- _class: panel -->
-
-## Antes de empezar, entrá al sitio
-
-`mpodeley.github.io/curso-ia-energia`
-
-Vamos a usar la página de la sesión 1 varias veces. El PIN del curso lo dicto en voz alta.
-
-<!--
-2 min · acumulado 0:12
-Dictar el PIN y esperar a que todos entren. Que escriban nombre y apellido:
-las respuestas de hoy se cruzan con las del taller de la sesión 6, y el nombre
-es el que aparece en la tarjeta de su definición en el bloque que sigue.
-Martín: confirmar por el chat que los seis ven la página de la sesión 1 con su
-nombre arriba. Si alguien no puede entrar (firewall de la empresa), que siga
-desde el celular; el pulso del bloque siguiente también se contesta desde ahí.
-Pedirles que dejen la página abierta: la usamos enseguida.
+Cierre del bloque 1.
 -->
 
 ---
@@ -188,11 +236,11 @@ Pedirles que dejen la página abierta: la usamos enseguida.
 
 ## ¿Qué es IA para vos?
 
-Bloque 2 de 7 · **12 min**
+Bloque 2 de 7 · **10 min**
 
 <!--
-0 min · acumulado 0:12
-Arranca 0:12, termina 0:24.
+0 min · acumulado 0:20
+Arranca 0:20, termina 0:30.
 -->
 
 ---
@@ -201,17 +249,15 @@ Arranca 0:12, termina 0:24.
 
 ## En una oración: ¿qué es la inteligencia artificial para vos?
 
-Escribila en la página de la sesión 1, en el recuadro de pulsos. Sin buscar: la que te salga.
+Escribila en el chat, sin buscar, y mandala cuando Martín diga "ya".
 
 <!--
-3 min · acumulado 0:15
-Martín: abrir el pulso "s1-definicion-ia". Tres minutos para escribir. El
-panel muestra las tarjetas a medida que llegan, con el nombre de cada uno; no
-hace falta cerrarlo para proyectar. Cerrarlo cuando hayan respondido los seis.
-Mientras escriben, no dar ejemplos de definiciones: cualquier ejemplo mío
-arrastra las de ellos.
-Plan B si el pulso no anda (firewall): que la escriban en el chat de la
-videollamada y Martín las lee en voz alta.
+2 min · acumulado 0:22
+Un minuto y medio para escribir sin mandar; Martín dice "ya" y mandan todos a
+la vez. Mientras escriben, no dar ejemplos de definiciones: cualquier ejemplo
+mío arrastra las de ellos.
+Martín: copiar las seis, con nombre, a su documento. Vuelven al cierre de la
+sesión 2 ("¿cambiarías tu definición?").
 -->
 
 ---
@@ -223,15 +269,13 @@ videollamada y Martín las lee en voz alta.
 Una por persona, con su nombre. Las leemos y las agrupamos.
 
 <!--
-5 min · acumulado 0:20
-Proyectar el panel desde la ventana B, en modo proyección: una tarjeta por
-persona. Leerlas en voz alta y agruparlas en familias, sin corregir ninguna:
+4 min · acumulado 0:26
+Leerlas en voz alta desde el chat y agruparlas en familias, sin corregir ninguna:
 - las que hablan de hacer tareas (resolver, automatizar, ayudar);
 - las que hablan de imitar a una persona;
 - las que hablan de aprender de datos o de patrones;
 - las que hablan de pensar, entender o razonar.
-Martín: llamar a dos o tres por nombre, con una repregunta: "¿por qué esa
-palabra?". Anotar en el chat las palabras que se repiten.
+Martín: llamar a dos por nombre, con una repregunta: "¿por qué esa palabra?".
 El campo tampoco tiene una definición cerrada: Turing la planteó en 1950 como
 un juego de imitación, una conversación escrita donde la máquina intenta pasar
 por persona; en Dartmouth, en 1956, el proyecto se propuso describir la
@@ -247,21 +291,21 @@ resuelve una tarea. La pregunta es cuántas.
 
 ## Una tarea o muchas
 
-![IA estrecha: un modelo por tarea. IA de propósito general: un modelo, muchas tareas](img/estrecha-vs-general.svg)
+![IA de propósito específico: un modelo por tarea. IA de propósito general: un modelo, muchas tareas](img/estrecha-vs-general.svg)
 
 En este curso, general quiere decir de propósito general: un mismo modelo para muchas tareas.
 
 <!--
-4 min · acumulado 0:24
-IA estrecha: un modelo por tarea. El filtro de spam, el clasificador de
-imágenes, el modelo que pronostica una declinación. Deep Blue, que le ganó a
-Kasparov en 1997, es el ejemplo clásico: un sistema construido para una sola
-tarea (hito de la línea de tiempo).
+4 min · acumulado 0:30
+IA de propósito específico: un modelo por tarea. El filtro de spam, el
+clasificador de imágenes, el modelo que pronostica una declinación. Deep Blue,
+que le ganó a Kasparov en 1997, es el ejemplo clásico: un sistema construido
+para una sola tarea (hito de la línea de tiempo).
 IA de propósito general: el mismo modelo resume, traduce, escribe código,
 analiza una planilla y redacta un correo. Eso es lo que llegó a todos los
 escritorios con ChatGPT, a fines de 2022.
-Volver a las definiciones proyectadas: ¿cuáles describían una IA estrecha y
-cuáles una general? Una o dos, no más.
+Volver a las definiciones del chat: ¿cuáles describían una IA de propósito
+específico y cuáles una de propósito general? Una o dos, no más.
 Si alguien pregunta por la AGI: la definición y la discusión están en la
 sesión 8; hoy alcanza con separar las dos ideas.
 Cierre del bloque 2.
@@ -271,13 +315,13 @@ Cierre del bloque 2.
 
 <!-- _class: seccion -->
 
-## Setenta años en quince minutos
+## De 1950 a hoy
 
-Bloque 3 de 7 · **15 min**
+Bloque 3 de 7 · **20 min**
 
 <!--
-0 min · acumulado 0:24
-Arranca 0:24, termina 0:39.
+0 min · acumulado 0:30
+Arranca 0:30, termina 0:50. Doce minutos de historia y ocho de presente.
 -->
 
 ---
@@ -291,54 +335,39 @@ Arranca 0:24, termina 0:39.
 Cada hito tiene su fuente en la línea de tiempo interactiva de la página de la sesión 1.
 
 <!--
-3 min · acumulado 0:27
+2 min · acumulado 0:32
 Recorrer las cuatro bandas de izquierda a derecha, sin leer los hitos: lo que
 cambia de una era a la otra es quién escribe las reglas. En la primera las
 escribe una persona; en la segunda la máquina las encuentra en los datos; en
 la tercera, con redes de muchas capas, aprende hasta la forma de la función;
 en la cuarta, un mismo modelo sirve para muchas tareas.
-Los detalles vienen en las slides que siguen. La línea completa, con cada
-hito y su fuente, queda en la página para verla después.
+La línea completa, con cada hito y su fuente, queda en la página para verla
+después.
 -->
 
 ---
 
-## Reglas escritas a mano
+## Reglas escritas a mano, y dos inviernos
 
 - **1956, Dartmouth**: un proyecto de verano busca describir la inteligencia con tanta precisión que una máquina pueda simularla. De ahí sale el nombre del campo
-- **Sistemas expertos**: sacarle el conocimiento a un especialista y escribirlo como reglas del tipo *si pasa esto, hacé aquello*. R1, en 1980, tenía 772 reglas
 - **1981, Dipmeter Advisor**: el MIT y Schlumberger arman un sistema experto que infiere la estructura geológica a partir del perfil de buzamiento
+- **1973 y 1984, dos inviernos**: el informe Lighthill en el Reino Unido, y la Asociación Estadounidense de IA (AAAI) advirtiendo que las expectativas estaban demasiado altas
 
 <!--
-3 min · acumulado 0:30
+3 min · acumulado 0:35
+Sistemas expertos: sacarle el conocimiento a un especialista y escribirlo
+como reglas del tipo "si pasa esto, hacé aquello". R1, en 1980, configuraba
+computadoras con 772 reglas.
 El ancla de la industria es el Dipmeter Advisor: la IA llegó al pozo hace más
 de cuarenta años, imitando a los intérpretes expertos en una tarea que se
 aprende con años de práctica. Preguntar si alguien trabajó con perfiles de
-buzamiento.
-R1 (John McDermott, Carnegie Mellon) configuraba las computadoras VAX de
-Digital Equipment Corporation. La receta de la época: el conocimiento lo pone
-una persona, regla por regla.
-MIT: Instituto Tecnológico de Massachusetts. Decirlo completo una vez.
--->
-
----
-
-<!-- _class: acentos -->
-
-## Dos inviernos
-
-- **1973, informe Lighthill**: el consejo de investigación científica británico concluye que la IA decepcionó lo esperado. En el Reino Unido, la confianza en el campo cae por casi una década
-- **1984, la Asociación Estadounidense de IA (AAAI)** advierte que las expectativas están demasiado altas. El peor escenario que describen incluye a Schlumberger y Texas Instruments perdiendo interés
-
-<!--
-2 min · acumulado 0:32
+buzamiento. MIT: Instituto Tecnológico de Massachusetts.
 Un invierno es un período en que el campo pierde la confianza de quienes lo
-financian y lo usan. Los dos datos salen de la línea de tiempo, con su fuente.
-El detalle que le habla a esta sala: en 1984 la industria ya era cliente de
-los sistemas expertos, y los investigadores la nombran en su advertencia.
+financian y lo usan. El detalle que le habla a esta sala: en 1984 la
+industria ya era cliente de los sistemas expertos, y la advertencia de la AAAI
+nombra a Schlumberger y a Texas Instruments perdiendo interés.
 Pregunta para la sala, sin responderla yo: ¿se parece en algo al momento
-actual? Una o dos voces, un minuto. No abrir debate largo: la conversación
-sobre el futuro está en la sesión 8.
+actual? Una voz, medio minuto. La conversación sobre el futuro es de la sesión 8.
 -->
 
 ---
@@ -347,12 +376,12 @@ sobre el futuro está en la sesión 8.
 
 - **1986**: la retropropagación entrena redes con capas ocultas a partir de sus errores
 - **1989**: una red de los Laboratorios Bell lee los códigos postales
-- **1997**: Deep Blue le gana a Kasparov; IA estrecha, una sola tarea
+- **1997**: Deep Blue le gana a Kasparov; IA de propósito específico, una sola tarea
 - **2009**: ImageNet, 3.2 millones de imágenes etiquetadas por personas
 - **2012**: AlexNet gana ImageNet con 15.3% de error contra 26.2%, en dos placas gráficas (GPU)
 
 <!--
-2 min · acumulado 0:34
+2 min · acumulado 0:37
 La regla pasa a encontrarla la máquina mirando ejemplos. Deep Blue queda como
 contraejemplo: gana al campeón del mundo en una sola tarea.
 AlexNet junta los tres ingredientes de lo que sigue: muchos datos etiquetados,
@@ -372,7 +401,7 @@ GPU: unidad de procesamiento gráfico, las placas de los videojuegos.
 2017, el transformer. 2022, ChatGPT. 2024, modelos que razonan antes de responder. 2025, agentes como Claude Code.
 
 <!--
-3 min · acumulado 0:37
+3 min · acumulado 0:40
 Leer el camino en cinco pasos, con el dedo en la figura:
 1) 2017, el transformer (Google): una arquitectura más paralelizable y mucho
    más rápida de entrenar. Todo lo que sigue se construye sobre ella.
@@ -383,9 +412,9 @@ Leer el camino en cinco pasos, con el dedo en la figura:
    noviembre de 2022 sale ChatGPT, con ese mismo entrenamiento.
 4) 2024, o1: modelos que razonan paso a paso antes de responder.
 5) 2025, Claude Code: el modelo general con herramientas y un loop, que pasa
-   de conversar a hacer (lo vemos en la sesión 6). En 2026, Anthropic reserva
-   Claude Mythos Preview por seguridad y OpenAI presenta GPT-6 Astra.
-Cómo funciona cada paso es la sesión 2. Hoy alcanza con el mapa.
+   de conversar a hacer (lo vemos en la sesión 6).
+Los dos últimos hitos, de 2026, son el puente a lo que sigue: hoy.
+Cómo funciona cada paso es la sesión 2. Acá alcanza con el mapa.
 -->
 
 ---
@@ -399,7 +428,7 @@ Cómo funciona cada paso es la sesión 2. Hoy alcanza con el mapa.
 - **Una arquitectura que escala**: el *transformer*, 2017
 
 <!--
-2 min · acumulado 0:39
+2 min · acumulado 0:42
 La respuesta a "¿por qué ahora y no en 2010?". En las hipótesis suele salir
 "más computadoras", que es un tercio de la respuesta.
 Lo importante del transformer es que mejora al agrandarlo, de forma
@@ -407,6 +436,108 @@ predecible. Eso convirtió la investigación en ingeniería: si duplico datos y
 cómputo, sé aproximadamente cuánto mejora. Consecuencia práctica: lo que hoy
 no funciona bien probablemente funcione mejor en un año; lo que falla por
 diseño (las alucinaciones, sesión 2) no se arregla solo agrandando.
+-->
+
+---
+
+## Dónde estamos hoy: la frontera se movió este mes
+
+- **2 de septiembre**: Google presenta Gemini 3.8 Flash
+- **3 de septiembre**: OpenAI presenta GPT-6 Astra, solo para planes pagos
+- **22 de septiembre**: Anthropic presenta Claude Opus 5.5
+- Los **modelos abiertos**, que cualquiera descarga y corre en una máquina propia, quedaron cerca: Kimi K3, Qwen3.8, DeepSeek V4
+
+El nombre del modelo envejece en meses. Lo que conviene seguir es qué puede hacer.
+
+<!--
+2 min · acumulado 0:44
+Foto al 25 de septiembre de 2026; las fuentes están en la página.
+Los modelos grandes de OpenAI y de Anthropic leen hasta un millón de tokens de
+una vez (qué es un token, en la sesión 2): un informe de cientos de páginas
+entra entero.
+Un dato que no estaba hace un año: los laboratorios guardan sus modelos más
+fuertes por riesgo de ciberseguridad. Anthropic no publicó Claude Mythos
+Preview en abril porque encontraba y explotaba fallas de seguridad en sistemas
+operativos y navegadores; se lo dio primero a quienes defienden esos sistemas.
+Es el hito de 2026 de la línea de tiempo, y vuelve en la sesión 7.
+No hace falta retener un solo nombre de esta slide.
+-->
+
+---
+
+<!-- _class: acentos -->
+
+## Qué cambió desde 2024
+
+- **Piensa antes de responder**: los modelos de razonamiento se toman tiempo, y con más tiempo aciertan más
+- **Hace**: los agentes buscan, leen, editan archivos y usan programas, y ya trabajan desde el escritorio de la computadora
+- **Ve y escucha**: fotos, documentos escaneados, voz
+- **Cuesta cada vez menos**: el mismo desempeño se abarata cerca de 47% por trimestre (Epoch AI, septiembre de 2026)
+
+<!--
+2 min · acumulado 0:46
+Razonar: lo que abrió o1 en 2024 hoy lo traen todos los grandes.
+Hacer: ChatGPT Work y Claude Cowork trabajan sobre los archivos de la
+computadora; Claude Code, en la terminal. En mayo de 2026, METR midió que el
+modelo más fuerte de Anthropic completaba la mitad de las veces tareas que a un
+experto le llevan al menos 16 horas, el techo de lo que su batería de pruebas
+puede medir. Qué se le delega hoy a un agente y dónde se rompe es la sesión 6.
+Ver y escuchar: la demo de la foto de este mismo bloque de demos sale de acá.
+Costo: Epoch AI midió que el costo de llegar a un mismo nivel de desempeño cae
+cerca de 47% por trimestre, unas 13 veces por año. Lo que hoy es caro para
+automatizar en una empresa, en un año cuesta una fracción.
+-->
+
+---
+
+## Qué trae hoy una cuenta gratuita
+
+| Chatbot | Modelo | Lo que suma |
+| --- | --- | --- |
+| ChatGPT | el chico de OpenAI | Búsqueda, voz, archivos e investigación profunda, con límites |
+| Claude | Sonnet y Haiku | Búsqueda, voz, y crea planillas y documentos |
+| Gemini | Flash y algo de Pro | Deep Research y conversación por voz; lee menos texto por vez |
+| Gemini Notebook, antes NotebookLM | Gemini | Responde a partir de tus documentos, hasta 50 por cuaderno |
+
+Foto al 25 de septiembre de 2026: los límites cambian seguido.
+
+<!--
+3 min · acumulado 0:49
+Lo que trae la cuenta gratuita alcanza para todo el curso. Conviene tener dos,
+para comparar: lo hacemos mañana en la sesión 3.
+"Lee menos texto por vez": la ventana de contexto de la cuenta gratuita de
+Gemini es de 32,000 tokens, contra un millón de los modelos grandes. Qué es la
+ventana y por qué importa es la sesión 2.
+Gemini Notebook es el cuaderno del miércoles (sesión 5).
+Si preguntan por las versiones pagas o empresariales: cambian el modelo, los
+límites y el contrato de datos; lo del contrato es la sesión 3.
+Preguntar a la sala, a mano alzada: ¿quién usa alguno de estos todas las
+semanas? Martín cuenta en voz alta.
+-->
+
+---
+
+## Quién lo usa, y qué ya rinde en la industria
+
+- **Más de 1,000 millones de personas por semana** usan productos de OpenAI (septiembre de 2026)
+- **Equinor** ahorró **USD 130 millones** con IA en 2025, sobre todo con aprendizaje automático sobre sus datos de operación
+- **ADNOC** contrató en 2025 agentes para interpretación sísmica y modelado de reservorios en más de 28 campos
+- **Petrobras** tiene desde 2023 un chatbot interno para más de 100 mil personas
+
+<!--
+1 min · acumulado 0:50
+Lo que ya rinde plata en la industria es, en su mayoría, el aprendizaje
+automático de la próxima media hora: sísmica, mantenimiento predictivo,
+optimización. La IA generativa se suma a eso, y los casos con resultado
+medido todavía son pocos.
+Fuentes en la página: Equinor (enero de 2026), el contrato de AIQ con ADNOC
+(marzo de 2025) y Petrobras (diciembre de 2023).
+Si hay tiempo, dos datos para la sala: según el Stanford AI Index 2026, la IA
+generativa llegó a 53% de adopción en tres años, más rápido que la computadora
+personal o internet; y en la encuesta de McKinsey de agosto, 80% de los que la
+usan dicen que les subió la productividad personal, pero solo 37% de las
+empresas ve impacto en el resultado. La distancia entre las dos cifras es el
+trabajo de la sesión 6 y de la hoja de ruta de la sesión 8.
 Cierre del bloque 3.
 -->
 
@@ -416,11 +547,11 @@ Cierre del bloque 3.
 
 ## Cómo aprende una máquina
 
-Bloque 4 de 7 · **25 min**
+Bloque 4 de 7 · **20 min**
 
 <!--
-0 min · acumulado 0:39
-Arranca 0:39, termina 1:04.
+0 min · acumulado 0:50
+Arranca 0:50, termina 1:10.
 -->
 
 ---
@@ -436,13 +567,12 @@ Y en el medio está lo que siempre hicimos: **una curva de declinación ajustada
 modelo**. La fórmula la ponés vos, y los datos ponen los parámetros.
 
 <!--
-2 min · acumulado 0:41
+1 min · acumulado 0:51
 Para los que no son de reservorios (planning, administración): la línea de
 tendencia en Excel es el mismo gesto, sobre costos, demanda o avance de obra.
 Si preguntan por la regresión lineal: es estadística cuando la usás para
 entender (coeficientes, significancia) y es machine learning cuando la máquina
 elige sola los parámetros para predecir y se la valida con datos que no vio.
-La matemática es la misma; cambian la intención y el ritual de validar.
 Entregar al ejercicio: "no se los voy a contar, lo van a hacer ustedes".
 -->
 
@@ -459,7 +589,7 @@ Dos perillas y un número que tiene que bajar: el error. Bajalo todo lo que pued
 Si ya lo hiciste antes de hoy, apretá "Reiniciar ejercicio" y arrancá de cero.
 
 <!--
-5 min · acumulado 0:46
+5 min · acumulado 0:56
 Ventana C (el sitio), página de la sesión 1, ejercicio "Ajustala vos, después que
 la busque la máquina".
 ANTES de proyectar: apretar "Reiniciar ejercicio". Si ensayé antes de la clase,
@@ -469,8 +599,6 @@ a algo entre 3% y 8%. El mejor ajuste posible con estas perillas es 2.17%.
 Que aprieten "Listo, este es mi ajuste" antes de seguir.
 Mientras trabajan, decir en voz alta que esto es la regla escrita a mano:
 eligieron una forma funcional y estimaron los parámetros a ojo.
-Este ejercicio no depende del Worker: si el firewall bloquea los pulsos, esto
-funciona igual.
 Martín: pedir por el chat que cada uno escriba su error cuando aprieta
 "Listo"; leo los seis números en voz alta antes de pasar a la máquina.
 -->
@@ -484,7 +612,7 @@ Martín: pedir por el chat que cada uno escriba su error cuando aprieta
 El botón está abajo del gráfico. La máquina tiene los puntos y un criterio, y los valores los encuentra sola.
 
 <!--
-4 min · acumulado 0:50
+3 min · acumulado 0:59
 Ventana C otra vez. Que aprieten "Que la busque la máquina".
 Leer la tabla en voz alta: su ajuste contra el de ella. Casi siempre gana la
 máquina, y por el doble: 1.06% contra el 2.17% del mejor ajuste posible a mano.
@@ -492,8 +620,6 @@ Abrir el desplegable "Los valores con los que se generó esta curva": qi 320 y
 Di 2.1%/mes. La máquina cayó justo encima sin que nadie se los dijera.
 Ni con los valores exactos el error da cero: queda 1.06%, que es el ruido de
 medición. Un modelo que llega a cero está copiando el ruido.
-Si alguien le ganó a la máquina, mostrarlo: barre una grilla finita, y por eso
-a veces se le puede ganar.
 Puente: esto ya es aprendizaje supervisado. Cada punto trae su respuesta, el
 caudal que el pozo produjo ese mes, y la máquina busca la curva que mejor la
 reproduce.
@@ -510,15 +636,14 @@ reproduce.
 Hoy vemos las dos primeras con pozos reales. La tercera es la que usan los modelos de lenguaje: la sesión 2 arranca por ahí.
 
 <!--
-3 min · acumulado 0:53
+2 min · acumulado 1:01
 Supervisado: los ejemplos traen la respuesta. El duelo que acaban de hacer, y
 los pozos con el tipo que declaró la operadora.
 No supervisado: los ejemplos vienen sin respuesta; la máquina arma grupos por
 su cuenta, y ponerles nombre queda para una persona.
 Autosupervisado: la respuesta sale del propio dato. Se tapa la palabra
-siguiente de un texto y el modelo intenta adivinarla. Nadie tuvo que etiquetar
-nada, y por eso alcanza con tener mucho texto. Una línea y nada más: es el
-arranque de la sesión 2.
+siguiente de un texto y el modelo intenta adivinarla. Una línea y nada más:
+es el arranque de la sesión 2.
 -->
 
 ---
@@ -532,7 +657,7 @@ En la página de la sesión 1, abajo del duelo.
 84 pozos activos de la cuenca Noroeste, del Capítulo IV. Probá las dos pestañas.
 
 <!--
-5 min · acumulado 0:58
+5 min · acumulado 1:06
 Ventana C, ejercicio "Los mismos pozos, con etiquetas y sin etiquetas". Dos
 ejes que cualquier ingeniero lee de un vistazo: la relación gas-petróleo
 (RGP, escala logarítmica) y el corte de agua de los últimos doce meses.
@@ -558,7 +683,7 @@ Martín: pedir que uno por empresa diga en el chat qué predijo su pozo nuevo.
 Los que caen en el grupo equivocado son los interesantes: petrolíferos con relación gas-petróleo de pozo de gas.
 
 <!--
-2 min · acumulado 1:00
+2 min · acumulado 1:08
 Preguntar a la sala qué puede explicar esos tres pozos: casquete de gas, una
 etiqueta vieja que nadie actualizó, un pozo que cambió con los años. Para
 responderlo hace falta conocer el yacimiento. Ponerles nombre a los grupos es
@@ -579,35 +704,17 @@ otra escala, los grupos cambian. Está explicado en la página.
 Cada capa se apoya en la anterior, que sigue vigente.
 
 <!--
-2 min · acumulado 1:02
+2 min · acumulado 1:10
 Recorrer de afuera hacia adentro con el ejemplo de cada capa. La inteligencia
 artificial incluye los sistemas expertos de reglas escritas; el aprendizaje
-automático, lo que acabamos de hacer con los pozos; las redes profundas, lo
-que viene en la slide siguiente; la IA generativa, el chatbot.
+automático, lo que acabamos de hacer con los pozos; las redes profundas son
+aprendizaje automático con muchas capas, donde entran la sísmica, los
+registros de pozo y el texto, y la red aprende hasta la forma de la función;
+la IA generativa, el chatbot. Los modelos grandes de lenguaje (LLM) son redes
+profundas llevadas al extremo.
 Todo lo de afuera sigue siendo la herramienta correcta para la mayoría de los
-problemas con números: el chatbot se suma a lo que ya había.
--->
-
----
-
-## Redes profundas
-
-Aprendizaje automático con **redes neuronales de muchas capas**: más datos y más cómputo, y a
-cambio patrones mucho más complejos.
-
-Acá entran las imágenes sísmicas, los registros de pozo, el texto. La red aprende hasta **la
-forma de la función**.
-
-Los **modelos grandes de lenguaje (LLM)** son redes profundas llevadas al extremo, y son el caso
-que nos ocupa el resto del curso.
-
-<!--
-2 min · acumulado 1:04
-No entrar en arquitectura. Lo único que tiene que quedar: "profunda" quiere
-decir muchas capas de transformación aprendidas de los datos.
-El video de Welch Labs de la página ("el momento en que dejamos de entender")
-es el hilo que se retoma en la sesión 2 (mirar adentro) y en la sesión 7
-(verificar porque no se puede mirar todo).
+problemas con números: el chatbot se suma a lo que ya había. Es lo mismo que
+dijimos de Equinor hace veinte minutos.
 Puente a las demos: ahora sí, el chatbot.
 Cierre del bloque 4.
 -->
@@ -621,8 +728,8 @@ Cierre del bloque 4.
 Bloque 5 de 7 · **22 min**
 
 <!--
-0 min · acumulado 1:04
-Arranca 1:04, termina 1:26.
+0 min · acumulado 1:10
+Arranca 1:10, termina 1:32.
 -->
 
 ---
@@ -630,18 +737,19 @@ Arranca 1:04, termina 1:26.
 ## Tres tareas reales
 
 - Resumir un **paper de la Society of Petroleum Engineers (SPE)**
-- Explicar un **término técnico** a alguien no técnico
 - Redactar un **correo difícil**
+- Pasar a limpio la **foto de unas notas de reunión** escritas a mano
 
 Y la cuarta, la más importante, es **verlo fallar**.
 
 <!--
-1 min · acumulado 1:05
+1 min · acumulado 1:11
 Avisar que las tres las hago en vivo y que van a ver los errores también.
 La tabla de producción sale de acá a propósito: es el bloque "de PDF a tabla"
 de mañana (sesión 4), sobre el reporte diario de la ARCH, y hacerla dos veces no
 agrega nada.
 Pedir que mientras miran anoten: ¿esto me serviría mañana en mi trabajo?
+Los tres prompts quedan en la página de la sesión 1, listos para copiar.
 -->
 
 ---
@@ -653,25 +761,30 @@ Pedir que mientras miran anoten: ¿esto me serviría mañana en mi trabajo?
 Miren tres cosas: qué tan rápido responde, qué tan seguro suena, y si lo que dice es **verdad**.
 
 <!--
-9 min · acumulado 1:14
+9 min · acumulado 1:20
 Cambiar a la ventana D (chatbot). Prompts exactos, en orden:
 
 1) "Resumí este resumen de paper de la SPE en cinco viñetas para un gerente que
    no es ingeniero de reservorios: <pegar abstract público>"
 
-2) "Explicá qué es la recuperación secundaria por inyección de agua como si le
-   hablaras a un directorio no técnico. Máximo 150 palabras, sin fórmulas."
-
-3) "Redactá un correo para avisarle a un contratista que vamos a postergar una
+2) "Redactá un correo para avisarle a un contratista que vamos a postergar una
    intervención dos semanas por disponibilidad de equipo. Tono cordial pero firme,
    sin comprometer fecha nueva."
 
-El término de la demo 2 está elegido a propósito: es el tema del caso de la sesión 8,
-y dos de las cuatro empresas tienen inyección de agua en campos maduros. No nombrarlas.
-Martín: pegar cada prompt en el chat apenas lo corro, para que lo tengan a
-mano después. Entre demo y demo, un nombre: "¿te sirve tal cual, o qué le
-cambiarías?". Un minuto por respuesta, no más; si el tiempo aprieta, la
-ronda va solo después de la tercera.
+3) Subir la foto de la hoja de notas y pedir: "Estas son mis notas de una
+   reunión. Pasalas a una lista de pendientes con responsable y fecha. Si algo
+   no se lee o no tiene responsable, marcalo con [?] en lugar de completarlo."
+   Después, con la foto al lado, verificar pendiente por pendiente: ¿inventó un
+   responsable, una fecha o un pendiente que no estaba? Es el chequeo que tiene
+   que quedar. Decir al pasar que lo mismo se hace desde el celular: la app del
+   chatbot tiene la cámara.
+
+Reserva, si una demo falla por algo técnico: "Explicá qué es la recuperación
+secundaria por inyección de agua como si le hablaras a un directorio no técnico.
+Máximo 150 palabras, sin fórmulas." (es el tema del caso de la sesión 8).
+Martín: pegar cada prompt en el chat apenas lo corro. Entre demo y demo, un
+nombre: "¿te sirve tal cual, o qué le cambiarías?". Un minuto por respuesta, no
+más; si el tiempo aprieta, la ronda va solo después de la tercera.
 Volver al deck en la slide siguiente.
 -->
 
@@ -684,9 +797,10 @@ Respondió rápido, ordenado y con buen tono, **sin ninguna garantía de que sea
 El chatbot no tiene un botón de "no sé". Cuando no sabe, sigue escribiendo igual.
 
 <!--
-1 min · acumulado 1:15
+1 min · acumulado 1:21
 Puente al fallo deliberado. Preguntar si alguien notó algo raro en las respuestas
-anteriores; a veces ya lo cazaron solos y es mejor si sale de ellos.
+anteriores; a veces ya lo cazaron solos y es mejor si sale de ellos. En la
+foto, lo más común es un responsable o una fecha que no estaban en la hoja.
 -->
 
 ---
@@ -696,12 +810,12 @@ anteriores; a veces ya lo cazaron solos y es mejor si sale de ellos.
 ## Ahora, a hacerlo fallar
 
 <!--
-8 min · acumulado 1:23
-Demo en Gemini Flash, pidiéndole en el primer mensaje que no use búsqueda ni
-se conecte a internet: sin conexión no puede apoyarse en fuentes y la falla
-sale reproducible. Dos preguntas acá, de más sutil a más evidente; la tercera
-familia (la norma real con contenido inventado) queda para el bloque de
-alucinaciones de la sesión 2.
+8 min · acumulado 1:29
+Demo en la cuenta gratuita de Gemini (Flash), pidiéndole en el primer mensaje
+que no use búsqueda ni se conecte a internet: sin conexión no puede apoyarse
+en fuentes y la falla sale reproducible. Dos preguntas acá, de más sutil a más
+evidente; la tercera familia (la norma real con contenido inventado) queda
+para el bloque de alucinaciones de la sesión 2.
 
 1) "¿Cuánto produjo el campo Sacha el 15 de septiembre de 2026 según el
    reporte diario de la ARCH?"
@@ -712,14 +826,16 @@ alucinaciones de la sesión 2.
    la cuenca Oriente, con su número de SPE."
    (los números de paper suelen ser inventados y son verificables al instante)
 
+Plan B si contesta "no tengo ese dato": es el avance desde 2023, y hay que
+decirlo así. Pasar a la segunda pregunta, que falla más seguido.
 Verificar UNA en vivo, buscándola: la del reporte diario, abriendo el PDF de
 la ARCH en controlhidrocarburos.gob.ec. Que vean el chequeo completo.
 Comentar al pasar, sin slide, las dos causas: a una le faltaba el dato (nunca
 leyó ese reporte, y en vez de decirlo escribió la cifra más creíble) y en la
 otra el dato no existe en ninguna parte, y aun así salió con la forma exacta
 de una cita. La primera se arregla trayéndole el documento (sesión 5); la
-segunda hay que verificarla (sesión 7). La segunda pregunta de la discusión
-retoma esta distinción. El POR QUÉ viene después de la pausa: no adelantarlo.
+segunda hay que verificarla (sesión 7). El cierre retoma esta distinción.
+El POR QUÉ viene después de la pausa: no adelantarlo.
 Volver al deck.
 -->
 
@@ -730,7 +846,7 @@ Volver al deck.
 ## La salida de un LLM es un **borrador plausible**: se verifica antes de usarlo
 
 <!--
-1 min · acumulado 1:24
+1 min · acumulado 1:30
 La regla que nos acompaña los cuatro días.
 En la sesión 2, después de la pausa, vemos POR QUÉ pasa esto: sale del mecanismo mismo, así que
 nadie lo va a arreglar con un parche.
@@ -742,95 +858,80 @@ nadie lo va a arreglar con un parche.
 
 ## ¿Cuánto confiarías ahora?
 
+Del 1 (nada) al 5 (mucho): ¿cuánto confiarías en una respuesta sin verificarla? Un número en el chat, cuando Martín diga "ya".
+
 <!--
-2 min · acumulado 1:26
-Martín: abrir el pulso "s1-confianza".
+2 min · acumulado 1:32
+Martín dice "ya" y mandan todos a la vez, para que nadie ancle su número en el
+de los demás. Leer los seis en voz alta.
 Es la confianza declarada después de ver fallar al modelo: contrastarla con el
 tono de las definiciones del arranque.
-No proyectar las barras mientras votan (el que mira ancla su voto en el de los
-demás): Martín cierra el pulso cuando votaron los seis y recién ahí muestro el
-resultado desde la ventana B. Cierre del bloque 5.
+Cierre del bloque 5.
 -->
 
 ---
 
 <!-- _class: seccion -->
 
-## Encuesta de relevamiento
+## Ronda de relevamiento
 
-Bloque 6 de 7 · **12 min**
+Bloque 6 de 7 · **10 min**
 
 <!--
-0 min · acumulado 1:26
-Arranca 1:26, termina 1:38.
+0 min · acumulado 1:32
+Arranca 1:32, termina 1:42.
 -->
 
 ---
 
-## La encuesta que ajusta el curso
+## Lo que falta saber es lo de ustedes
 
-El caso real de la sesión 8 ya está armado sobre datos públicos. Lo que falta saber es lo de ustedes:
-qué rol tiene cada uno, qué tareas repetitivas le comen la semana, qué datos maneja y en qué formato.
+El caso real de la sesión 8 ya está armado sobre datos públicos. Para que los ejemplos de estos
+cuatro días hablen de su trabajo, dos preguntas para cada uno:
 
-El último bloque pide una sola cosa: **el problema que probarías primero**. Con eso arranca el
-taller de la sesión 6, donde cada empresa escribe su caso en una página.
+1. ¿Qué **tarea repetitiva** te come más tiempo en la semana?
+2. Si tuvieras que elegir **un solo problema** de tu área para probar primero con estas herramientas, ¿cuál sería?
 
 <!--
-1 min · acumulado 1:27
+1 min · acumulado 1:33
 Este es el bloque que hace que el curso valga distinto a un tutorial de YouTube.
 Decirlo así, sin vueltas.
-Aclarar la nota de privacidad: las respuestas las leemos Martín y yo, se usan
-para elegir ejemplos y énfasis, y no hay que poner nada confidencial. Nadie de
-otra empresa las ve.
+Solo el tipo de tarea y de problema, sin contenido de la empresa: hay cuatro en
+la sala. La segunda respuesta es la semilla del taller de la sesión 6, donde
+cada empresa escribe su caso en una página.
 -->
 
 ---
 
 <!-- _class: panel -->
 
-## La encuesta está en la página de la sesión 1
+## Ronda: tu tarea y tu problema
 
-`mpodeley.github.io/curso-ia-energia`
-
-Son doce preguntas y unos diez minutos, y ninguna pide datos confidenciales.
+Un minuto y medio cada uno. Martín llama por nombre.
 
 <!--
-11 min · acumulado 1:38
-Dejar esta slide proyectada mientras la completan. No cambiar de ventana: que
-tengan la URL a la vista todo el bloque.
-Martín: mirar el panel; con seis personas se ve al instante quién va
-completando, y se puede preguntar por nombre si alguien se trabó. A los 8 min
-avisar por el chat que quedan 3.
-El que no llegue la termina en la pausa: se guarda sola.
+9 min · acumulado 1:42
+Martín: ronda completa con nombre, en el mismo orden de la apertura, y anotar
+las dos respuestas de cada uno en su documento. No preguntar al aire.
+Repreguntar una sola cosa por persona, la que más ayude a elegir ejemplos:
+"¿en qué formato viven esos datos?" (planilla, PDF, sistema, papel).
+Anotar todo: esto alimenta los ejemplos de mañana y el taller del miércoles.
+Si alguien no tiene un problema claro, que arranque por la tarea repetitiva:
+alcanza.
+Cierre del bloque 6.
 -->
 
 ---
 
 <!-- _class: seccion -->
 
-## Discusión
+## Cierre
 
-Bloque 7 de 7 · **12 min**
-
-<!--
-0 min · acumulado 1:38
-Arranca 1:38, termina 1:50.
--->
-
----
-
-## ¿Qué tarea de tu semana laboral te parece **más** automatizable con lo que viste hoy?
-
-¿Y cuál **menos**?
+Bloque 7 de 7 · **8 min**
 
 <!--
-6 min · acumulado 1:44
-Primera pregunta de discusión. Dejarla proyectada mientras hablan.
-Martín: ronda completa con nombre, un minuto cada uno; no preguntar al aire.
-Con seis alcanza el tiempo para que hablen todos.
-Si nadie arranca, empezar por la de "menos": es más fácil y suele destrabar.
-Anotar todo: esto alimenta los ejemplos de mañana igual que la encuesta. Solo
-tipos de tarea, sin contenido de la empresa.
+0 min · acumulado 1:42
+Arranca 1:42, termina 1:50.
 -->
 
 ---
@@ -840,14 +941,29 @@ tipos de tarea, sin contenido de la empresa.
 ¿Le **faltaba el dato**, o el dato **no existía** y lo completó igual?
 
 <!--
-6 min · acumulado 1:50
-Segunda pregunta. Esta pide un diagnóstico: que clasifiquen cada error que
-vieron en una de las dos causas.
+5 min · acumulado 1:47
+Pide un diagnóstico: que clasifiquen cada error que vieron en una de las dos
+causas. Dos o tres voces; Martín las llama por nombre.
 Buscar que salga la idea de "verificable": las tareas donde puedo comprobar el
-resultado rápido son las tareas seguras.
+resultado rápido son las tareas seguras. La foto de las notas es el ejemplo:
+el original está al lado.
 Si sale "entonces no sirve", repreguntar: ¿un borrador de un pasante sirve?
-Pregunta de reserva si sobra tiempo: ¿dónde ya hay machine learning escondido
-en el software que usás? (simuladores, sísmica, mantenimiento predictivo).
+-->
+
+---
+
+<!-- _class: acentos -->
+
+## Qué te llevás de esta sesión
+
+- **Pedile un borrador, y verificalo** contra el original antes de usarlo
+- **Probá con una foto**: tus notas de la próxima reunión, pasadas a pendientes con responsable
+- **Nada de la empresa** en una cuenta gratuita
+
+<!--
+3 min · acumulado 1:50
+Tres prácticas en palabras llanas, para aplicar mañana mismo. La segunda es
+la más fácil de probar: la próxima reunión que tengan.
 Cierre del bloque 7 y de la sesión 1.
 -->
 
@@ -856,15 +972,14 @@ Cierre del bloque 7 y de la sesión 1.
 ## Pausa · 10 min
 
 A las 12:00 (10:00 en Ecuador y Colombia) sigue la **sesión 2**, con su propio deck.
-Si te quedó la encuesta a medias, es el momento.
+Dejá abierta la página de la sesión 2 y el chatbot.
 
 <!--
 10 min · acumulado 2:00
 Cortar el audio y dejar la pantalla compartida, con esta slide proyectada.
 En la pausa, abrir el deck de la sesión 2 en la ventana A y dejarlo en la
-portada; las otras tres ventanas quedan como están.
-Martín: revisar en el panel quién terminó la encuesta y recordarle por chat
-privado a quien no. Exportar lo que haya hasta ahora y leer por arriba el
-bloque D: si alguien escribió algo que sirve como ejemplo para la sesión 2, me
-lo pasa en una línea. Avisar por el chat un minuto antes de volver.
+portada; las otras ventanas quedan como están.
+Martín: releer lo que anotó de la ronda de relevamiento y pasarme en una línea
+cualquier tarea que sirva de ejemplo para la sesión 2. Avisar por el chat un
+minuto antes de volver.
 -->

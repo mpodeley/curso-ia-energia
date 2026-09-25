@@ -25,10 +25,10 @@ export const SESIONES: Sesion[] = [
     dia: 1,
     titulo: 'De los datos a la IA generativa',
     resumen:
-      'Qué entendemos por IA, cómo se llegó de los sistemas expertos a los modelos de hoy y cómo aprende una máquina, con pozos reales; y un chatbot frente a tareas reales, incluido verlo fallar.',
+      'Quiénes somos y qué esperamos del curso; de los sistemas expertos a dónde estamos hoy; cómo aprende una máquina, con pozos reales; y un chatbot frente a tareas reales, incluido verlo fallar.',
     objetivos: [
-      'Distinguir una IA estrecha de una IA de propósito general',
-      'Contar cómo se llegó de los sistemas expertos a los modelos de hoy',
+      'Distinguir una IA de propósito específico de una IA de propósito general',
+      'Contar cómo se llegó de los sistemas expertos a los modelos de hoy, y dónde estamos en septiembre de 2026',
       'Distinguir aprendizaje supervisado de no supervisado, con pozos reales',
       'Ver en vivo qué puede y qué no puede hacer hoy un chatbot, y por qué se equivoca',
     ],
@@ -81,12 +81,12 @@ export const SESIONES: Sesion[] = [
   {
     n: 5,
     dia: 3,
-    titulo: 'Tu conocimiento: RAG y NotebookLM',
+    titulo: 'Tu conocimiento: RAG y Gemini Notebook',
     resumen:
       'Cómo hacer que el modelo responda a partir de tus documentos: buscar por significado, responder con el libro abierto y abrir cada cita.',
     objetivos: [
       'Entender la intuición de RAG: buscar → traer → responder',
-      'Armar un cuaderno de NotebookLM con documentos públicos del rubro y uno de tu empresa',
+      'Armar un cuaderno de Gemini Notebook (antes NotebookLM) con documentos públicos del rubro y uno de tu empresa',
       'Abrir cada cita y juzgar si el fragmento responde la pregunta o solo queda cerca',
     ],
     estado: 'lista',
@@ -135,6 +135,14 @@ export const SESIONES: Sesion[] = [
     slides: true,
   },
 ]
+
+/** Fecha de cada día de la edición vigente; la portada agrupa la grilla con esto. */
+export const DIAS: Record<number, string> = {
+  1: 'lunes 28 de septiembre',
+  2: 'martes 29 de septiembre',
+  3: 'miércoles 30 de septiembre',
+  4: 'jueves 1 de octubre',
+}
 
 export const MDX_SESIONES: Record<number, LazyExoticComponent<ComponentType>> = {
   1: lazy(() => import('./sesion-1.mdx')),

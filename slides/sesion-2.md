@@ -14,8 +14,9 @@ Sesión 2 de 8 · día 1 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Pe
 
 <!--
 0:00 · portada mientras vuelven de la pausa
-Este deck se abrió en la ventana A durante la pausa; las otras tres ventanas
-siguen como estaban: el panel (B), el sitio del curso (C) y el chatbot (D).
+Este deck se abrió en la ventana A durante la pausa; las otras ventanas
+siguen como estaban: el sitio del curso (C) y el chatbot (D). Todo lo que se
+pregunta a la sala va por el chat de la videollamada.
 Martín: confirmar en el chat que volvieron los seis; a las 12:01 arrancamos
 con los que estén.
 -->
@@ -54,8 +55,7 @@ en el trabajo.
 <!--
 1 min · acumulado 0:01
 La misma tabla está en la página de la sesión 2. Pedir que pasen a esa
-página: los laboratorios de esta sesión están ahí, y el PIN ya quedó guardado
-en el navegador.
+página: los laboratorios de esta sesión están ahí.
 Martín: el cronómetro vuelve a cero; el mismo aviso por el chat privado si un
 bloque se pasa cinco minutos.
 -->
@@ -101,15 +101,15 @@ pedazos más frecuentes en un montón de texto.
 
 ## Antes de mirar: adiviná
 
-¿En cuántos tokens parte el modelo la frase **perforación direccional**?
+¿En cuántos tokens parte el modelo la frase **perforación direccional**? ¿2, 4, 6, u 8 o más?
+
+Un número en el chat, cuando Martín diga "ya".
 
 <!--
 3 min · acumulado 0:08
-Martín: abrir el pulso "s2-cuantos-tokens".
+Martín dice "ya" y mandan todos a la vez; después lee los números en voz alta.
 NO adelantar la respuesta: el laboratorio la muestra en la slide siguiente y el
-golpe está en la distancia entre lo que votaron y lo que ven.
-Este pulso es la excepción: las barras se pueden dejar a la vista mientras
-votan. Martín lo cierra recién después de que hayan visto el conteo real.
+golpe está en la distancia entre lo que dijeron y lo que ven.
 -->
 
 ---
@@ -125,7 +125,7 @@ Está en la página de la sesión 2. Empezá por **perforación direccional**.
 Ventana C, sesión 2, ejercicio "El texto que ve el modelo: tokens".
 Empezar por el ejemplo "Dos palabras que usás todos los días": son seis fichas
 para dos palabras. Contarlas en voz alta, despacio.
-Martín: cerrar el pulso y decir cuánta gente había votado 2 o 4.
+Martín: decir cuántos habían escrito 2 o 4.
 Después recorrer los otros ejemplos, sobre todo el par español/inglés y el
 número largo. Que jueguen dos minutos solos antes de seguir: que peguen un
 nombre de pozo o una unidad de su rutina y cuenten las fichas.
@@ -244,11 +244,13 @@ indirectamente, pidiendo en el prompt salidas más literales o más exploratoria
 
 ## ¿En cuál de tus tareas querrías la versión aburrida?
 
+Una tarea tuya, en el chat, donde querrías la misma respuesta cada vez.
+
 <!--
 2 min · acumulado 0:33
-Martín: abrir el pulso "s2-temperatura" y cerrarlo apenas voten los seis.
-Comentar el resultado en treinta segundos: casi todo el trabajo técnico quiere
-temperatura baja, y eso es una pista de para qué sirve esta herramienta acá.
+Martín lee tres en voz alta, con nombre.
+Comentar en treinta segundos: casi todo el trabajo técnico quiere temperatura
+baja, y eso es una pista de para qué sirve esta herramienta acá.
 Cierre del bloque 1.
 -->
 
@@ -396,6 +398,7 @@ con el video de LeCun de 1989 y los enlaces de interpretabilidad.
 
 - **2024 · Piensa antes de responder.** o1 se entrenó con aprendizaje por refuerzo para razonar paso a paso antes de contestar
 - **2025 · Usa herramientas.** Claude Code trabaja en la terminal: lee código, edita archivos, corre pruebas
+- **2026 · Trabaja solo, y por más tiempo.** Los agentes se instalan en el escritorio, y completan tareas que a un experto le llevan horas
 
 El mismo tipo de modelo general, con herramientas y un ciclo que le permite actuar.
 
@@ -406,6 +409,11 @@ pensar, una palanca que se suma a la de agrandar el modelo.
 Claude Code: Anthropic, 24 de febrero de 2025; disponible para todos desde el
 22 de mayo de 2025. Busca y lee código, edita archivos, corre pruebas y usa
 herramientas de línea de comandos. Con eso ya no conversa: hace.
+2026: ChatGPT Work y Claude Cowork trabajan sobre los archivos de la
+computadora. METR mide cuánto dura, en tiempo de un experto, una tarea que el
+agente completa la mitad de las veces: en mayo de 2026 llegó a al menos 16
+horas, el techo de lo que su batería de pruebas puede medir. Desde 2024 ese
+largo se duplicó cada tres meses, más o menos.
 Qué hace bien un agente hoy y dónde se rompe es la sesión 6; acá solo
 nombrarlo.
 -->
@@ -422,7 +430,7 @@ Para predecir bien la palabra siguiente en cualquier texto, tiene que aprender u
 
 <!--
 3 min · acumulado 0:53
-La figura es la de la mañana, cuando separamos IA estrecha de IA general con
+La figura es la de la mañana, cuando separamos IA de propósito específico de IA de propósito general con
 sus definiciones. Ahora tienen el porqué: una sola tarea, predecir, hecha a esa
 escala sobre cualquier texto, obliga a aprender de todo un poco.
 "General" acá quiere decir de propósito general. La AGI, igualar a una persona
@@ -455,9 +463,11 @@ Tiene un tamaño máximo, medido en tokens. Lo que queda afuera, **no existe** p
 
 <!--
 3 min · acumulado 0:56
-El tamaño cambia todo el tiempo y por modelo, así que no dar una cifra exacta:
-hoy es del orden de cientos de miles de tokens en los modelos grandes.
-Lo que no cambia es el mecanismo, y es lo único que tienen que llevarse.
+El tamaño cambia por modelo y por cuenta. En septiembre de 2026: hasta un
+millón de tokens en los modelos grandes de OpenAI y de Anthropic, y 32,000 en
+la cuenta gratuita de Gemini (unas cuarenta páginas de texto). En una cuenta gratuita
+el escritorio es chico, y eso le da más peso a las tres prácticas del final del
+bloque. Lo que no cambia es el mecanismo, y es lo único que tienen que llevarse.
 Metáfora útil: es un escritorio. Lo que está arriba lo mira; lo que se cayó al
 piso no lo busca.
 No explicar la consecuencia todavía: la van a ver ellos en el ejercicio.
@@ -576,11 +586,12 @@ baja la frecuencia, pero hay que seguir verificando.
 
 ## Una palabra: ¿qué te preocupa de que alucine?
 
+Escribila en el chat.
+
 <!--
 2 min · acumulado 1:23
-Martín: abrir el pulso "s2-palabra-alucinacion" y dejarlo abierto.
-Dejar la nube a la vista mientras la completan; sirve de telón para lo que sigue.
-No cerrar el pulso todavía: se cierra al volver de la demo, y ahí se comenta.
+Martín: juntar las palabras en su documento y avisar cuáles se repiten. Se
+comentan al volver de la demo, en la cita del borrador plausible.
 -->
 
 ---
@@ -594,7 +605,9 @@ Miren dos cosas: qué **seguro** suena, y cuánto tardamos en **verificarlo**.
 <!--
 10 min · acumulado 1:33
 Ventana D (chatbot), otra vez sin búsqueda. Preguntas en orden, de más sutil a
-más evidente; ninguna sobre un campo de las empresas de la sala:
+más evidente; ninguna sobre un campo de las empresas de la sala. Plan B si el
+modelo contesta "no tengo ese dato": es lo que mejoró desde 2023, decirlo así,
+y pasar a la pregunta 3, la que más falla:
 
 1) "¿Cuál fue la producción de petróleo de Argentina en junio de 2026 según el
    Capítulo IV de la Secretaría de Energía?"
@@ -652,8 +665,7 @@ final: esos ejemplos alimentan la cacería de errores de la sesión 7.
 3 min · acumulado 1:44
 La misma regla de la sesión 1, ahora con la explicación atrás. Vale la pena
 decirlo así: en la sesión 1 era una advertencia, ahora es una conclusión.
-Martín: cerrar el pulso de alucinación. Leo dos o tres palabras de la nube en
-voz alta.
+Martín: leer las dos o tres palabras que más se repitieron en el chat.
 -->
 
 ---
@@ -695,7 +707,7 @@ Arranca 1:48, termina 2:00.
 - **Inventa lo que no sabe**: de cómo genera el texto, token por token · hoy
 - **No hace lo que le pediste**: de cuánto control dan las instrucciones · mañana
 - **Está seguro y equivocado**: de lo que aprendió y de lo que no · sesión 5
-- **Se olvida de lo que le dijiste**: de cuánto puede mirar a la vez · hoy y sesión 5
+- **Se olvida de lo que le dijiste**: de cuánto puede mirar a la vez · hoy y sesión 6
 
 <!--
 3 min · acumulado 1:51
@@ -717,16 +729,12 @@ A la mañana escribiste qué es la IA para vos. Con lo que viste de cómo funcio
 
 <!--
 3 min · acumulado 1:54
-Martín: en el panel, pestaña Pulsos, elegir "s1-definicion-ia" SIN tocar
-"Abrir": elegirlo alcanza para ver las respuestas, y abrirlo aceptaría
-respuestas nuevas. Pasar a modo proyección. Se ven las definiciones de la
-mañana, con nombre.
-Leer dos en voz alta y preguntarle a cada autor si la sostiene después de ver
+Martín: pegar en el chat dos de las definiciones de la mañana, con nombre, de
+las que guardó en su documento.
+Leer esas dos en voz alta y preguntarle a cada autor si la sostiene después de ver
 tokens, predicción, las dos etapas y la escala. Lo esperable: las que decían
 "piensa" o "entiende" se vuelven "predice muy bien", y las que decían "hace
 una tarea" se quedan cortas para un modelo general.
-Plan B si el panel no carga: Martín pega en el chat dos definiciones que copió
-a la mañana con "Copiar todo como texto".
 -->
 
 ---
@@ -798,7 +806,7 @@ El quiz, los recursos y los laboratorios quedan en la página · **mpodeley.gith
 <!--
 1 min · acumulado 2:00
 Dejar proyectada mientras se despiden y responder lo que quede suelto.
-Después de la clase: Martín exporta el CSV del relevamiento y el chat de la
-ronda de alucinaciones; leemos juntos el bloque D de la encuesta y elegimos
-los ejemplos de mañana con eso.
+Después de la clase: Martín guarda el chat de la ronda de alucinaciones;
+leemos juntos lo que anotó de la ronda de relevamiento y elegimos los ejemplos
+de mañana con eso.
 -->

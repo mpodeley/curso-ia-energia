@@ -3,7 +3,6 @@ import { NextTokenLab } from '../exercises/NextTokenLab'
 import { ContextoLab } from '../exercises/ContextoLab'
 import { EjerciciosGratis } from '../exercises/EjerciciosGratis'
 import { EscalaDeLosModelos } from '../exercises/EscalaDeLosModelos'
-import { PulsoVivo } from '../exercises/PulsoVivo'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos, ListaRecursos } from '../components/Recursos'
 import { RECURSOS, INTERPRETABILIDAD } from '../content/recursos'
@@ -30,7 +29,7 @@ muestra la maquinaria interna; tiene audio en español, elegible en el menú del
 | Alucinaciones en vivo | 30 min | Lo hacemos alucinar: primero el instructor, después cada uno con una pregunta de su especialidad |
 | Cierre: cuatro maneras de fallar, ¿cambiarías tu definición?, tarea | 12 min | La hoja de ruta del curso, tu definición de la mañana revisada, tres prácticas para mañana y la tarea de cinco minutos |
 
-<PulsoVivo sesion={2} />
+Las preguntas cortas a la sala van por el chat de la videollamada.
 
 ## El modelo lee tokens
 
@@ -163,13 +162,17 @@ entrenado con aprendizaje por refuerzo para razonar paso a paso antes de dar la 
 desempeño mejora con más tiempo para pensar, una palanca que se suma a la de agrandar el modelo. Y en
 febrero de 2025, Anthropic presentó Claude Code, un agente que trabaja en la terminal: busca y lee
 código, edita archivos, corre pruebas y usa herramientas de línea de comandos. Es el mismo tipo de
-modelo general, con herramientas y un ciclo que le permite actuar. Qué hace bien un agente hoy, y
-dónde se rompe, lo vemos en la sesión 6.
+modelo general, con herramientas y un ciclo que le permite actuar. En 2026 los agentes se
+instalaron en el escritorio de la computadora y trabajan solos durante más tiempo:
+[METR](https://metr.org/time-horizons/) mide cuánto le lleva a un experto una tarea que el agente
+completa la mitad de las veces, y en mayo de 2026 esa cifra llegó a al menos 16 horas, el techo de
+lo que su batería de pruebas puede medir. Qué hace bien un agente hoy, y dónde se rompe, lo vemos
+en la sesión 6.
 
 ### Por qué termina siendo general
 
 Durante décadas, la IA fue un modelo por tarea: un filtro de spam hacía una cosa, un clasificador de
-pozos hacía otra. Es lo que en la sesión 1 llamamos IA estrecha. Un LLM también hace una sola cosa,
+pozos hacía otra. Es lo que en la sesión 1 llamamos IA de propósito específico. Un LLM también hace una sola cosa,
 predecir la palabra siguiente, pero para hacerla bien en cualquier texto tiene que aprender un poco de
 todo. Por eso un mismo modelo resume, traduce, escribe código y analiza una planilla, y por eso le
 decimos IA de propósito general. Si alguna vez va a igualar a una persona en casi todo (lo que se
@@ -179,7 +182,10 @@ llama AGI, inteligencia artificial general) es otra discusión, y la tenemos en 
 
 Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu pregunta, sus respuestas
 anteriores, los documentos que pegaste. Ese conjunto se llama **ventana de contexto** y tiene un
-tamaño máximo, medido en tokens. Lo que no entra ahí no existe para el modelo.
+tamaño máximo, medido en tokens. Lo que no entra ahí no existe para el modelo. El tamaño cambia
+según el modelo y la cuenta: en septiembre de 2026, los modelos grandes de OpenAI y de Anthropic
+leen hasta un millón de tokens, y la cuenta gratuita de Gemini,
+[32,000](https://support.google.com/gemini/answer/16275805).
 
 Conviene pensarla como un escritorio. Lo que está arriba del escritorio el modelo lo mira; lo que se
 cayó al piso no lo busca, y tampoco sabe que se cayó.
@@ -250,7 +256,7 @@ modelo, así que cada una tiene su propio arreglo. El curso las recorre en este 
 - **No hace lo que le pediste.** Sale de cuánto control te dan de verdad las instrucciones. Mañana.
 - **Está seguro y equivocado.** Sale de lo que aprendió y de lo que no. Sesión 5.
 - **Se olvida de lo que le dijiste.** Sale de cuánto puede mirar a la vez. Hoy, y de nuevo en la
-  sesión 5.
+  sesión 6.
 
 En la sesión 7 las juntamos en una sola tabla y las convertimos en un protocolo. No hace falta
 memorizar nada ahora. Alcanza con que, cuando algo salga mal, te preguntes primero cuál de las cuatro
