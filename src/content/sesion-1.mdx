@@ -1,6 +1,7 @@
 import { DeclineDuel } from '../exercises/DeclineDuel'
 import { ConYSinEtiquetas } from '../exercises/ConYSinEtiquetas'
 import { LineaDeTiempo } from '../exercises/LineaDeTiempo'
+import { DigitoAMano } from '../exercises/DigitoAMano'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos } from '../components/Recursos'
 
@@ -36,8 +37,8 @@ esto suma, en este orden:
 | Apertura: quiénes somos, qué esperan, el mapa del curso | 20 min | Los dos instructores, lo que cada uno se quiere llevar, una ronda de seis con nombre, empresa y rol, el mapa de los cuatro días y la regla entre empresas |
 | ¿Qué es IA para vos? | 10 min | Cada uno escribe su definición en una oración, las leemos con nombre y de ahí sale la diferencia entre IA de propósito específico e IA de propósito general |
 | De 1950 a hoy | 20 min | De Dartmouth y los sistemas expertos a ChatGPT, con los dos inviernos en el medio y un sistema experto que interpretaba perfiles de pozo; y dónde estamos en septiembre de 2026 |
-| Cómo aprende una máquina | 20 min | Reglas escritas y reglas aprendidas: el duelo de declinación y 84 pozos reales, con etiquetas y sin etiquetas |
-| Demos en vivo | 22 min | El chatbot frente a tareas reales: resumir un paper, escribir un correo difícil y pasar a limpio la foto de unas notas de reunión. Y verlo fallar |
+| Cómo aprende una máquina | 23 min | Reglas escritas y reglas aprendidas: el duelo de declinación, 84 pozos reales con etiquetas y sin etiquetas, y una red que lee dígitos |
+| Demos en vivo | 19 min | El chatbot frente a tareas reales: resumir un paper, escribir un correo difícil y pasar a limpio la foto de unas notas de reunión. Y verlo fallar, al lado de un modelo chico |
 | Ronda de relevamiento | 10 min | Cada uno cuenta la tarea que más le come la semana y el problema que probaría primero |
 | Cierre | 8 min | Por qué se equivocó el chatbot, y tres prácticas para llevarse |
 | Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 2 |
@@ -257,6 +258,19 @@ y el modelo intenta adivinarla. La sesión 2 arranca por ahí.
 La ciencia de datos, lo de mirar datos, limpiarlos, graficarlos y sacar conclusiones, cruza las
 dos primeras capas y es lo que la industria viene haciendo desde siempre.
 
+### Una red que lee dígitos
+
+En 1989, una red de los Laboratorios Bell leía los códigos postales escritos a mano en los sobres
+del correo de Estados Unidos. El ejercicio que sigue resuelve el mismo problema con una red chica,
+entrenada con MNIST: 70,000 dígitos escritos a mano que Yann LeCun, Corinna Cortes y Christopher
+Burges publicaron en 1998. Nadie le escribió a la red qué forma tiene un 3; la aprendió de ejemplos
+que traían su respuesta.
+
+<DigitoAMano sesion={1} />
+
+Esta red tiene una sola capa oculta de 64 neuronas. Las redes profundas apilan decenas de capas
+como esa y aprenden con el mismo principio.
+
 ## Las tres demos, para repetirlas
 
 Las tres tareas de la demo en vivo, con el pedido tal como lo escribimos. Sirven igual en
@@ -288,6 +302,28 @@ en lugar de completarlo.
 La última pide marcar lo que no se lee porque, si no se lo pedís, el modelo completa: pone un
 responsable o una fecha que no estaban en la hoja. Con la foto al lado, verificar pendiente por
 pendiente lleva un minuto.
+
+### Para verlo inventar
+
+Los chatbots grandes aprendieron a contestar "no tengo ese dato" cuando les preguntás por una
+cifra puntual, y en la demo es probable que Gemini conteste así. Un modelo chico no tiene ese
+freno. [WebLLM Chat](https://chat.webllm.ai) corre uno dentro de tu navegador, sin cuenta y sin
+mandar tus preguntas afuera: elegí Llama 3.2 1B y probá con estas dos.
+
+```text
+¿Quién descubrió el campo Sacha, en qué año, y cuánto produce hoy?
+```
+
+```text
+¿Qué significa la sigla ARCH en el sector petrolero de Ecuador?
+```
+
+Al ensayarlas con ese modelo inventó las seis veces: Sacha salió cancha de fútbol, mina de sal y
+campo agrícola, y ARCH, una asociación de cera de árbol. Los disparates de un modelo chico se
+cazan enseguida; los de uno grande suenan creíbles, y por eso se verifican. WebLLM pide Chrome o
+Edge actualizados y la primera vez baja cerca de 1 GB, así que en la computadora de la empresa
+puede no andar. Sin eso, [duck.ai](https://duck.ai) ofrece modelos chicos sin cuenta, como GPT-5.4
+nano.
 
 ## Dos maneras distintas de equivocarse
 
