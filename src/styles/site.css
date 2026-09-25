@@ -243,6 +243,15 @@ button {
   gap: var(--pd-sp-4);
   margin-top: var(--pd-sp-6);
 }
+.prog-dia {
+  margin: var(--pd-sp-6) 0 0;
+  font-family: var(--pd-font-mono);
+  font-size: var(--pd-fs-sm);
+  color: var(--pd-text-muted);
+}
+.prog-dia + .prog-grid {
+  margin-top: var(--pd-sp-3);
+}
 .sess-card {
   display: flex;
   gap: var(--pd-sp-4);
