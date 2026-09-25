@@ -34,8 +34,11 @@ empty `VITE_API_URL`, and the MDX pages no longer mount `PulsoVivo` or `Encuesta
 PIN; the definitions, the expectations, the confidence vote, the S2 polls and the session-1
 survey (now a spoken two-question round) all go through the video-call chat or by voice, and
 Martín keeps them in his own document. The footer switches on `apiHabilitada`. Components,
-panel and Worker stay in the repo for a future edition: restoring them is the URL, `true` and a
-deploy, plus the two MDX mounts.
+panel and Worker code stay in the repo for a future edition. The deployed script itself was
+deleted from Cloudflare on 2026-09-25 at 16:58 UTC (another session, `wrangler delete --force`);
+the D1 database `curso-energia-ypfb` survives. Restoring means `workers_dev = true`,
+`npm run worker:deploy`, the three `wrangler secret put` (they died with the script), the URL
+back in `.env.production` and the two MDX mounts.
 
 Sibling of `simulador-subastas-peru` (same Vite + React 19 + TS + Recharts skeleton and
 conventions). Curriculum of the first edition: `~/.claude/plans/flickering-floating-star.md`; plan

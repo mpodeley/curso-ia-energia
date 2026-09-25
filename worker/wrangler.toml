@@ -24,6 +24,9 @@ compatibility_date = "2026-08-01"
 # la máquina de desarrollo, y la cuota de la cuenta se agotaba en una hora. La
 # segunda edición (multiempresa-2026-09) se dicta sin Worker ni PIN: pulsos y
 # encuesta van de viva voz, y el sitio se construye con VITE_API_URL vacío.
+# Ese mismo día, a las 16:58 UTC, otra sesión borró el script de Cloudflare
+# (wrangler delete --force). La base D1 quedó. Volver a usarlo = deploy desde
+# acá y cargar de nuevo los tres secretos, que se fueron con el script.
 workers_dev = false
 
 # Cada deploy publicaría además una URL propia de su versión, todas apuntando a
