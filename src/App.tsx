@@ -1,4 +1,5 @@
 import { ErrorBoundary } from './components/ErrorBoundary'
+import { apiHabilitada } from './lib/config'
 import { IdentidadProvider } from './lib/identidad'
 import { HomePage } from './pages/HomePage'
 import { PanelPage } from './pages/PanelPage'
@@ -33,12 +34,20 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="wrap footer-inner">
-          <p className="footer-note">
-            Curso dictado por Matías Podeley, con Martín Alvarado. Los ejercicios de este sitio corren enteros en tu
-            navegador. Lo único que viaja al servidor del curso es lo que enviás a propósito (la
-            encuesta, los pulsos en vivo y las respuestas abiertas) junto con el nombre que
-            escribiste al entrar con el PIN.
-          </p>
+          {apiHabilitada ? (
+            <p className="footer-note">
+              Curso dictado por Matías Podeley, con Martín Alvarado. Los ejercicios de este sitio corren enteros en tu
+              navegador. Lo único que viaja al servidor del curso es lo que enviás a propósito (la
+              encuesta, los pulsos en vivo y las respuestas abiertas) junto con el nombre que
+              escribiste al entrar con el PIN.
+            </p>
+          ) : (
+            <p className="footer-note">
+              Curso dictado por Matías Podeley, con Martín Alvarado. Todo este sitio corre en tu
+              navegador: lo que escribís en los ejercicios queda guardado en tu computadora y no se
+              manda a ningún servidor.
+            </p>
+          )}
         </div>
       </footer>
     </IdentidadProvider>

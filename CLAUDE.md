@@ -27,6 +27,16 @@ travels with them — all going to a Cloudflare Worker in `worker/` (see below).
 themselves still send nothing. Keep the footer in `src/App.tsx` honest about that distinction —
 it is a promise, not decoration.
 
+**The second edition (2026-09) runs with the Worker off.** On 2026-09-24 something outside the
+dev machine started hitting the Worker at 6–13k req/min and the account's Free quota died within
+an hour of each reset, so on 2026-09-25 `workers_dev` went to false, `.env.production` ships an
+empty `VITE_API_URL`, and the MDX pages no longer mount `PulsoVivo` or `EncuestaS1`. There is no
+PIN; the definitions, the expectations, the confidence vote, the S2 polls and the session-1
+survey (now a spoken two-question round) all go through the video-call chat or by voice, and
+Martín keeps them in his own document. The footer switches on `apiHabilitada`. Components,
+panel and Worker stay in the repo for a future edition: restoring them is the URL, `true` and a
+deploy, plus the two MDX mounts.
+
 Sibling of `simulador-subastas-peru` (same Vite + React 19 + TS + Recharts skeleton and
 conventions). Curriculum of the first edition: `~/.claude/plans/flickering-floating-star.md`; plan
 of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md` and
@@ -111,10 +121,16 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   data in the shared chat. Examples and datasets come from public sources of Ecuador (ARCH
   daily report, Petroecuador monthly) and Argentina (Capítulo IV); no third country track. The
   two HR coordinators (PCR, Andes) do not attend.
-- **Two instructors.** Matías teaches; Martín Alvarado runs the chat, the panel (pulsos,
-  relevamiento), the timer and calls the rounds. Deck notes address Matías; anything Martín has
+- **Two instructors.** Matías teaches; Martín Alvarado runs the chat, the timer, calls the
+  rounds and writes down what the room says in the chat (expectations, definitions, the
+  relevamiento round). Deck notes address Matías; anything Martín has
   to do in a block goes in the notes prefixed `Martín:`. One hand on the panel buttons at a
   time (Martín's).
+- **The employers pay for the course.** Every use case is framed as work; nothing is pitched as
+  personal or "para la vida", even when it obviously also serves there (Matías, 2026-09-25).
+- **Vocabulary:** "IA de propósito específico" versus "IA de propósito general"; never "IA
+  estrecha" (Matías, 2026-09-25). NotebookLM is "Gemini Notebook (antes NotebookLM)" since
+  Google's rename of 2026-07-16.
 - **The real case is pre-built on public data** (waterflood screening, Puesto Guardián, Capítulo
   IV). It is shown, dissected and extended live in session 8 — not assembled between sessions
   from the survey. The survey feeds emphasis and examples; each company writes its own one-page

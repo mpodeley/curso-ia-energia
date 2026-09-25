@@ -19,7 +19,12 @@ compatibility_date = "2026-08-01"
 # esos requests son error de borde y NO cuentan contra la cuota. Entre ediciones
 # conviene volver a false; antes de una clase, true + `npm run deploy` + cerrar
 # cualquier pestaña vieja abierta.
-workers_dev = true
+# 2026-09-25: false otra vez. Desde el 24-sep a las 8:00 AR algo le pegaba a
+# 6-13k req/min (1.7 M el 24, 1.6 M el 25 antes de la 01:00 UTC) desde fuera de
+# la máquina de desarrollo, y la cuota de la cuenta se agotaba en una hora. La
+# segunda edición (multiempresa-2026-09) se dicta sin Worker ni PIN: pulsos y
+# encuesta van de viva voz, y el sitio se construye con VITE_API_URL vacío.
+workers_dev = false
 
 # Cada deploy publicaría además una URL propia de su versión, todas apuntando a
 # los mismos secretos y a la misma base. Para una herramienta de clase en vivo
