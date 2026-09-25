@@ -38,7 +38,7 @@ Martín: cronómetro en cero y el link a la página de la sesión 4 en el chat.
 
 ## La planilla y el copiloto
 
-Bloque 1 de 6 · **30 min**
+Bloque 1 de 5 · **30 min**
 
 <!--
 0:00 · arranca acá, termina 0:30
@@ -186,7 +186,7 @@ Cierre del bloque 1.
 
 ## De PDF a tabla: el reporte diario de la ARCH
 
-Bloque 2 de 6 · **35 min**
+Bloque 2 de 5 · **35 min**
 
 <!--
 0:30 · arranca acá, termina 1:05
@@ -350,7 +350,7 @@ apretar "Reiniciar ejercicio".
 
 ## Declinación en vivo
 
-Bloque 4 de 6 · **25 min**
+Bloque 3 de 5 · **25 min**
 
 <!--
 1:15 · arranca acá, termina 1:40
@@ -459,7 +459,7 @@ medias: abrir dca_referencia.xlsx y leer las mismas dos filas ahí.
 La pregunta de discusión de la página cierra el bloque: en el pozo que no
 ajusta, ¿qué información tenés vos que el modelo no puede tener? Vuelve en
 todo el curso.
-Cierre del bloque 4.
+Cierre del bloque 3.
 -->
 
 ---
@@ -468,7 +468,7 @@ Cierre del bloque 4.
 
 ## Qué se puede afirmar
 
-Bloque 5 de 6 · **10 min**
+Bloque 4 de 5 · **10 min**
 
 <!--
 1:40 · arranca acá, termina 1:50
@@ -497,7 +497,7 @@ se verificó. Es el puente directo al protocolo de verificación de la sesión 7
 
 ## Cierre y tarea
 
-Bloque 6 de 6 · **10 min**
+Bloque 5 de 5 · **10 min**
 
 <!--
 1:50 · arranca acá, termina 2:00
@@ -582,6 +582,6 @@ El quiz, el constructor y el laboratorio quedan en la página · **mpodeley.gith
 1 min · acumulado 2:00
 Dejar proyectada mientras se despiden.
 Después de clase: pasar en limpio la lista de tareas de la ronda, los
-prompts del taller y la tabla verificada de la ARCH; los tres alimentan el
-cuaderno de mañana y el caso de la sesión 8.
+prompts del taller y la tabla verificada de la ARCH. La tabla y la lista de
+pozos cerrados por agua vuelven en el caso de la sesión 8.
 -->

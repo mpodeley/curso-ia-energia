@@ -29,7 +29,7 @@ UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.3
 # Sites that answer 403 to any non-browser client. Their liveness cannot be
 # checked from here; they are listed so the report says so out loud instead of
 # quietly passing them.
-ANTIBOT = ('chatgpt.com', 'claude.ai', 'claude.com', 'platform.openai.com')
+ANTIBOT = ('chatgpt.com', 'claude.ai', 'claude.com', 'openai.com')
 
 
 def curl(url: str, head: bool = False) -> tuple[int, str]:

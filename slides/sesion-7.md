@@ -15,7 +15,6 @@ Sesión 7 de 8 · día 4 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Pe
 <!--
 0:00 · portada mientras entra la gente
 Ventanas de esta sesión: A este deck, C el sitio en la página de la sesión 7.
-Sin pulsos hoy: el Worker está encendido pero este día no los usa.
 Antes de clase: el borrador de la política (el .docx descargable de la
 página, con corchetes para completar) abierto y listo; las fuentes de los
 cinco incidentes abiertas en pestañas: Deloitte (Guardian), el registro de
@@ -31,6 +30,19 @@ propio en el chat compartido.
 
 ---
 
+<!-- _class: seccion -->
+
+## Apertura
+
+Bloque 1 de 6 · **8 min**
+
+<!--
+0 min · acumulado 0:00
+Arranca 0:00, termina 0:08.
+-->
+
+---
+
 <!-- _class: agenda -->
 
 ## Esta sesión
@@ -42,8 +54,8 @@ propio en el chat compartido.
 | El protocolo | 25 min | Cuánto verificar según el costo del error |
 | Datos de la empresa | 20 min | Datos reales en los tres niveles, y el borde entre cuatro empresas |
 | Agentes y operación | 20 min | Donde el error no es reversible, el loop no sirve |
-| La política | 17 min | El borrador de una página, redactado en vivo |
-| Pausa | 10 min | A las 12:00 sigue la sesión 8 |
+| La política | 17 min | El borrador de una página, redactado en vivo, y tres prácticas para llevarse |
+| Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 8 |
 
 <!--
 3 min · acumulado 0:03
@@ -51,7 +63,7 @@ La misma tabla está en la página de la sesión 7.
 Bajada del día, en dos sesiones. Esta convierte todo lo que vieron en reglas
 que se aplican el lunes a la mañana. La sesión 8, después
 de la pausa, le aplica esas reglas al caso y a las cuatro páginas que
-escribieron ayer, y cierra con una hora de horizonte. Es el último día.
+escribieron ayer, y su último bloque mira el horizonte. Es el último día.
 -->
 
 ---
@@ -65,7 +77,7 @@ escribieron ayer, y cierra con una hora de horizonte. Es el último día.
 <!--
 2 min · acumulado 0:05
 Lo que suma hoy es que cada regla viene con un incidente real y
-documentado de los últimos dos años, y que en la sesión 8 las reglas
+documentado de 2023 a hoy, y que en la sesión 8 las reglas
 se usan dos veces, contra el caso prearmado y contra el de cada uno.
 -->
 
@@ -78,12 +90,11 @@ se usan dos veces, contra el caso prearmado y contra el de cada uno.
 `mpodeley.github.io/curso-ia-energia`
 
 Hoy usamos la página de la sesión 7. Tené a mano **tu caso en una página**: en la sesión 8
-pasa por el protocolo. El primer bloque se juega en el ejercicio de la **cacería de
+pasa por el protocolo. El bloque que sigue se juega en el ejercicio de la **cacería de
 alucinaciones**.
 
 <!--
 3 min · acumulado 0:08
-Hoy no hace falta el PIN: no hay encuesta ni pulsos, la página se lee sola.
 Plan de la sesión en una frase: primero cazar invenciones, después las tres
 reglas (verificar, datos, operación), y al final la política escrita. Después
 de la pausa, el caso y su crítica, la ruta de cada empresa y el horizonte.
@@ -98,7 +109,7 @@ a mano; con seis personas alcanza con preguntar.
 
 ## La cacería
 
-Bloque 1 de 5 · **20 min**
+Bloque 2 de 6 · **20 min**
 
 <!--
 0:08 · arranca acá, termina 0:28
@@ -152,7 +163,7 @@ le atribuís al prompt lo que era falta de documento, va a seguir inventando
 con prolijidad.
 En el trabajo casi nunca viene una sola: el ejemplo de la página es una
 consulta larga sobre una norma no adjuntada (conocimiento + memoria).
-Cierre del bloque 1.
+Cierre del bloque 2.
 -->
 
 ---
@@ -161,7 +172,7 @@ Cierre del bloque 1.
 
 ## El protocolo
 
-Bloque 2 de 5 · **25 min**
+Bloque 3 de 6 · **25 min**
 
 <!--
 0:28 · arranca acá, termina 0:53
@@ -201,8 +212,8 @@ lo destapó fue un investigador que hizo lo que enseña este curso: abrió las
 citas.
 La firma sostuvo que las recomendaciones no cambiaban, pero el costo de
 reputación ya estaba pagado.
-El registro público de Charlotin (también linkeado) ya pasa los 1,900
-fallos judiciales con citas inventadas por IA. La fila de
+El registro público de Charlotin (también linkeado) pasaba en septiembre
+de 2026 los 2,000 fallos judiciales con citas inventadas por IA. La fila de
 normativa del protocolo existe por eso.
 -->
 
@@ -241,7 +252,7 @@ Martín: ronda corta por nombre, un ejemplo por persona, sin datos propios.
 La frase del bloque, tal cual está en la página. Es la versión operativa de
 la regla del lunes ("La salida de un LLM es un borrador plausible: se
 verifica antes de usarlo"), ahora con umbral de tiempo.
-Cierre del bloque 2.
+Cierre del bloque 3.
 -->
 
 ---
@@ -250,7 +261,7 @@ Cierre del bloque 2.
 
 ## Datos de la empresa
 
-Bloque 3 de 5 · **20 min**
+Bloque 4 de 6 · **20 min**
 
 <!--
 0:53 · arranca acá, termina 1:13
@@ -272,9 +283,8 @@ El clásico que abrió esta conversación en la industria: ingenieros de
 Samsung pegando código fuente en ChatGPT en 2023. La respuesta de la empresa
 fue prohibir todo, que es la política que nadie cumple. El mapa existe para
 no terminar ahí: tres niveles se pueden cumplir.
-La regla del primer día (el correo a un desconocido) era la versión de
-entrada; esta es la operativa. El martes la vieron en su versión corta, "qué
-no se sube a un chatbot"; hoy es la completa.
+La regla del martes (el correo a un desconocido, en "qué no se sube a un
+chatbot") era la versión de entrada; esta es la operativa.
 -->
 
 ---
@@ -314,7 +324,7 @@ después de publicado?).
 La regla del borde: ante la duda, el nivel más alto, y la consulta al
 responsable, que es el quinto punto de la política de hoy.
 Anotar los datos clasificados: entran tal cual al punto 2 del borrador en el
-bloque 5.
+bloque 6.
 Martín: llama la ronda y anota en el chat categoría y nivel, una línea por
 persona.
 -->
@@ -332,7 +342,7 @@ Es lo que hizo el curso entero: los pozos de escuela del martes son datos
 sintéticos con estructura real, y el zip del caso trae un campo sintético
 de práctica al lado del real. Probar con lo sintético, correr con lo real
 adentro de la red.
-Cierre del bloque 3.
+Cierre del bloque 4.
 -->
 
 ---
@@ -341,7 +351,7 @@ Cierre del bloque 3.
 
 ## Agentes y operación
 
-Bloque 4 de 5 · **20 min**
+Bloque 5 de 6 · **20 min**
 
 <!--
 1:13 · arranca acá, termina 1:33
@@ -401,8 +411,10 @@ Son dos culturas de ingeniería incompatibles, y escribir mejor el prompt no
 cambia eso.
 Para el ángulo de seguridad informática: en noviembre de 2025 Anthropic
 reportó el primer caso de espionaje orquestado con agentes de IA, contra
-unas treinta organizaciones. El link está en la página; para una empresa de
-energía es lectura obligada.
+unas treinta organizaciones: grandes tecnológicas, entidades financieras,
+fabricantes de productos químicos y agencias de gobierno. Entró en unas
+pocas. El link está en la página; para una empresa de energía es lectura
+obligada.
 -->
 
 ---
@@ -418,7 +430,7 @@ oficina, produciendo recomendaciones que una persona ejecuta. SCADA y el
 resto de la red de operaciones quedan en su propia red, y el asistente no la
 toca. Es la misma lógica por la que un cálculo de ingeniería lo firma
 alguien.
-Cierre del bloque 4. Sin pausa: la política va ahora, y la pausa es al final.
+Cierre del bloque 5. Sin pausa: la política va ahora, y la pausa es al final.
 -->
 
 
@@ -428,7 +440,7 @@ Cierre del bloque 4. Sin pausa: la política va ahora, y la pausa es al final.
 
 ## La política
 
-Bloque 5 de 5 · **17 min**
+Bloque 6 de 6 · **17 min**
 
 <!--
 1:33 · arranca acá, termina 1:50
@@ -462,18 +474,40 @@ La redactamos en vivo sobre un borrador editable de **cinco puntos**: herramient
 mapa de datos, verificación, declaración de asistencia, y a quién consultar.
 
 <!--
-12 min · acumulado 1:50
+10 min · acumulado 1:48
 El borrador es el .docx descargable de la página; proyectarlo y completarlo
-en vivo: las categorías clasificadas del bloque 3 entran al punto 2, el
+en vivo: las categorías clasificadas del bloque 4 entran al punto 2, el
 protocolo al punto 3, y el nombre del punto 5 se decide acá. Con cuatro
 empresas el punto 5 se llena distinto en cada una: pedir el ROL de la
 persona, y el nombre lo completa cada empresa.
 El quinto punto (a quién se consulta el caso nuevo) es el que más se olvida
 y el que mantiene la política viva.
 Cada uno se lo baja de la página, editable, para su empresa.
-Martín: pega en el chat las categorías del bloque 3 para que Matías las
+Martín: pega en el chat las categorías del bloque 4 para que Matías las
 copie al punto 2 sin retipear.
-Cierre del bloque 5 y de la sesión. Anunciar la pausa y la hora de vuelta.
+Si preguntan por la ley, una línea para los de Ecuador: el 15 de septiembre
+de 2026 la Asamblea archivó el proyecto de ley de IA, y el 1 de septiembre
+entró otro, por niveles de riesgo. La política de la empresa no espera a la
+ley.
+-->
+
+---
+
+<!-- _class: acentos -->
+
+## Para llevarse
+
+- Frente a un error, **buscale la causa** (dato, documento, memoria o formato) antes de reescribir el prompt
+- **Verificá según el costo del error**: si no podés abrir la fuente en dos minutos, el número no entra
+- Antes de pegar un dato, **ubicalo en su nivel**; ante la duda, el más alto
+
+<!--
+2 min · acumulado 1:50
+Tres prácticas de la sesión, en palabras simples: una de la cacería, una
+del protocolo y una del mapa de datos. La cuarta regla del día, la persona
+con nombre y apellido entre el modelo y el campo, ya quedó dicha en su cita.
+El quiz de la sesión 7 y la cacería quedan en la página.
+Cierre del bloque 6 y de la sesión. Anunciar la pausa y la hora de vuelta.
 -->
 
 ---

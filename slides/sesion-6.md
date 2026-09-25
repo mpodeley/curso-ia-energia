@@ -16,8 +16,8 @@ Sesión 6 de 8 · día 3 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Pe
 0:00 · portada mientras vuelven de la pausa
 Ventanas de esta sesión: A este deck, C el sitio en la sesión 6, E la
 terminal del agente (la que esté ensayada), probada sobre los CSV del
-Capítulo IV, los mismos del ejercicio de la página. D NotebookLM queda
-abierta por si alguien pregunta por su cuaderno.
+Capítulo IV, los mismos del ejercicio de la página. D Gemini Notebook (antes
+NotebookLM) queda abierta por si alguien pregunta por su cuaderno.
 Martín: cronómetro en cero, chat abierto, y el archivo de la ronda abierto
 en una hoja nueva para las cadenas de pasos y las filas de cada caso.
 -->
@@ -245,7 +245,7 @@ Cambiás de modelo mañana y esos archivos siguen valiendo.
 3 min · acumulado 1:00
 El punto práctico: a un agente se le enseña por escrito.
 El archivo de instrucciones del proyecto (CLAUDE.md, AGENTS.md o parecido)
-es la biblioteca de prompts de ayer, versión agente.
+cumple el papel del prompt de la tarea del martes, en versión agente.
 Skills: procedimientos empaquetados que carga cuando los necesita. MCP, el
 protocolo de contexto de modelo: plomería estándar para conectarle
 herramientas; lo que el agente puede hacer no cambia. El callout de la página lo dice en dos
@@ -256,8 +256,8 @@ líneas.
 
 ## La frontera se corre sola
 
-METR mide el **largo de tarea** que un agente completa solo: viene duplicándose cada **siete
-meses**, de tareas de segundos a tareas de horas.
+METR mide el **largo de tarea** que un agente completa solo. En mayo de 2026 publicó el de una
+versión temprana de Claude Mythos Preview: **al menos 16 horas**, el techo de lo que puede medir.
 
 Lo que hoy se rompe a los veinte pasos es lo que más rápido está mejorando.
 
@@ -265,7 +265,10 @@ Lo que hoy se rompe a los veinte pasos es lo que más rápido está mejorando.
 4 min · acumulado 1:04
 Mostrar el gráfico de METR en vivo: el link está en los recursos de la
 página. Leerlo con la letra chica a la vista: es al 50% de éxito y en tareas
-de software, y describe lo que pasó hasta ahora.
+de software, y describe lo que pasó hasta ahora. En toda la serie, desde
+2019, el largo se duplicó cada unos siete meses; desde 2024, cada unos tres
+(METR, enero de 2026). Por encima de 16 horas METR ya no mide bien: le
+faltan tareas más largas.
 La lectura honesta para ellos: lo que hoy no delegás porque es largo,
 reevalualo en seis meses. La regla de verificar no cambia con el largo. La
 contracara está en los recursos: la charla de Barry Zhang, no armes un
@@ -292,7 +295,7 @@ Cierre del bloque 3.
 
 ## Pausa · 10 min
 
-Volvemos a las **1:15**
+Volvemos a las **13:15** (11:15 en Ecuador y Colombia)
 
 <!--
 10 min · acumulado 1:15
@@ -352,6 +355,10 @@ una línea o dos por pregunta.
 18 min · acumulado 1:39
 Salas por empresa. Matías pasa por cada una a mitad de tiempo con una sola
 pregunta: ¿cómo sabrían que está bien? Es la fila que siempre queda floja.
+Martín: antes de abrir las salas, lee de su documento lo que cada uno
+contestó el lunes en la ronda de relevamiento a "el problema que probarías
+primero", una línea por persona, con nombre. Es la semilla del caso: la
+página arranca de ahí, o dice por qué cambió.
 Martín: cronómetro a la vista, aviso a los 9 y a los 15 minutos, y en el
 chat de cada sala la plantilla pegada. El que está solo trabaja igual: la
 página es suya, y mañana la lee él.

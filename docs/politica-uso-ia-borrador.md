@@ -15,7 +15,7 @@ herramienta, en cualquier dispositivo.
 - **Aprobadas para documentos internos**: [herramienta contratada por la empresa, con acuerdo de
   tratamiento de datos y sin entrenamiento sobre lo que se sube].
 - **Permitidas con cuenta gratuita**, solo con datos del nivel 3: [lista: p. ej. Claude, ChatGPT,
-  Gemini, NotebookLM].
+  Gemini, Gemini Notebook].
 - **No aprobadas** para datos de la empresa: cuentas personales, herramientas no listadas, y toda
   extensión o aplicación que reenvíe texto a servicios de terceros.
 

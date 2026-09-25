@@ -12,7 +12,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-09-24'
+export const VERIFICADO = '2026-09-25'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -110,6 +110,33 @@ export const RECURSOS: Record<number, Recurso[]> = {
       porque:
         'La historia de la IA en una sola página, con gráficos: de las primeras redes a los modelos que escriben, y cuánto se aceleró todo. Complementa la línea de tiempo de la sesión; es de 2022, así que termina justo cuando sale ChatGPT.',
     },
+    // Movidos desde la sesión 4 el 2026-09-25: explican el botón "Que la busque la
+    // máquina" del duelo de declinación, que vive en esta sesión. El comentario va
+    // afuera del objeto para que check_links.py lo lea (su regex exige `{ tipo:`).
+    {
+      tipo: 'video',
+      titulo: 'Introduction to residuals and least-squares regression',
+      url: 'https://www.youtube.com/watch?v=VqD-nf1YUks',
+      fuente: 'Khan Academy',
+      duracion: '4:49',
+      publicado: '2018-06',
+      historico: true,
+      idioma: 'en',
+      porque:
+        'La primera mitad de la matemática del botón "Que la busque la máquina", en el duelo de declinación de esta sesión: qué es un residuo y por qué se minimiza la suma de sus cuadrados. Cinco minutos, sin pedir nada previo.',
+    },
+    {
+      tipo: 'video',
+      titulo: 'Calculating the equation of a regression line',
+      url: 'https://www.youtube.com/watch?v=FGesqq22TCM',
+      fuente: 'Khan Academy',
+      duracion: '8:10',
+      publicado: '2017-07',
+      historico: true,
+      idioma: 'en',
+      porque:
+        'La segunda mitad, que el video anterior deja abierta: cómo se calcula la recta que minimiza esos cuadrados. El duelo busca una curva, y la busca probando combinaciones, pero el criterio es el mismo: el error más chico.',
+    },
   ],
   2: [
     {
@@ -185,30 +212,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   4: [
     {
-      tipo: 'video',
-      titulo: 'Introduction to residuals and least-squares regression',
-      url: 'https://www.youtube.com/watch?v=VqD-nf1YUks',
-      fuente: 'Khan Academy',
-      duracion: '4:49',
-      publicado: '2018-06',
-      historico: true,
-      idioma: 'en',
-      porque:
-        'La primera mitad de la matemática del botón "que la busque la máquina": qué es un residuo y por qué se minimiza la suma de sus cuadrados. Cinco minutos, sin pedir nada previo.',
-    },
-    {
-      tipo: 'video',
-      titulo: 'Calculating the equation of a regression line',
-      url: 'https://www.youtube.com/watch?v=FGesqq22TCM',
-      fuente: 'Khan Academy',
-      duracion: '8:10',
-      publicado: '2017-07',
-      historico: true,
-      idioma: 'en',
-      porque:
-        'La segunda mitad, que el video anterior deja abierta: cómo se encuentra la recta que minimiza esos cuadrados. Es la cuenta que el laboratorio hace cada vez que apretás el botón.',
-    },
-    {
       tipo: 'herramienta',
       titulo: 'Producción por pozo — Capítulo IV',
       url: 'https://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
@@ -234,20 +237,9 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   5: [
     {
-      tipo: 'video',
-      titulo: 'RAG Explained For Beginners',
-      url: 'https://www.youtube.com/watch?v=_HQ2H_0Ayy0',
-      fuente: 'KodeKloud',
-      duracion: '10:09',
-      publicado: '2025-08',
-      idioma: 'en',
-      porque:
-        'El circuito completo de la generación aumentada por recuperación (RAG) en diez minutos: por qué la búsqueda clásica se queda corta y qué hace cada etapa (recuperar, aumentar, generar). Es el mismo busca-y-pega del ejercicio de esta página, contado paso a paso.',
-    },
-    {
       tipo: 'herramienta',
-      titulo: 'NotebookLM',
-      url: 'https://notebooklm.google.com',
+      titulo: 'Gemini Notebook (antes NotebookLM)',
+      url: 'https://notebook.google.com/',
       fuente: 'Google',
       idioma: 'es',
       porque:
@@ -268,12 +260,12 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
     {
       tipo: 'lectura',
-      titulo: 'Measuring AI ability to complete long tasks',
-      url: 'https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/',
+      titulo: 'Task-Completion Time Horizons of Frontier AI Models',
+      url: 'https://metr.org/time-horizons/',
       fuente: 'METR',
       idioma: 'en',
       porque:
-        'La medición detrás de "el techo sube solo": el largo de tarea que un agente completa viene duplicándose cada siete meses. Publica la letra chica: la cifra corresponde a un 50% de éxito, en tareas de software.',
+        'La medición detrás de "el techo sube solo", con el gráfico al día: el largo de tarea que un agente completa por su cuenta. En mayo de 2026 sumó una versión temprana de Claude Mythos Preview, en al menos 16 horas, el techo de lo que mide. Publica la letra chica: 50% de éxito, en tareas de software.',
     },
     {
       tipo: 'video',
@@ -381,7 +373,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Our World in Data',
       idioma: 'en',
       porque:
-        'Los 35 gráficos que hacen falta para discutir el futuro con datos: cómputo de entrenamiento, desempeño en pruebas contra la línea humana, inversión, adopción entre trabajadores y demanda eléctrica de los centros de datos. En clase se recorre en vivo.',
+        'Los gráficos que hacen falta para discutir el futuro con datos: cómputo de entrenamiento, desempeño en pruebas contra la línea humana, inversión, adopción entre trabajadores y demanda eléctrica de los centros de datos. En clase se recorre en vivo.',
     },
     {
       tipo: 'herramienta',
@@ -390,7 +382,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Epoch AI',
       idioma: 'en',
       porque:
-        'Once exploradores con los datos crudos, al día y descargables: capacidades contra benchmarks, 3,500 modelos desde 1950, y el seguimiento de centros de datos por satélite. Epoch AI es el instituto de referencia en medir hacia dónde va la capacidad de estos sistemas.',
+        'Exploradores con los datos crudos, al día y descargables: capacidades contra benchmarks, una base de modelos desde 1950, y el seguimiento de centros de datos por satélite. Epoch AI es el instituto de referencia en medir hacia dónde va la capacidad de estos sistemas.',
     },
     {
       tipo: 'lectura',
@@ -399,7 +391,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Geoffrey Litt',
       idioma: 'en',
       porque:
-        'El texto con el que cierra el curso. Discute la idea cómoda de que, si el agente se verifica solo, ya no hace falta entender: sostiene que entender sirve para participar del trabajo, además de para controlarlo. Su instrumento es un cuestionario de cinco preguntas después de cada explicación, como los quizzes que hicieron acá en cada sesión.',
+        'El texto con el que cierra el curso. Discute la idea cómoda de que, si el agente se verifica solo, ya no hace falta entender: sostiene que entender sirve para participar del trabajo, además de para controlarlo. Su instrumento es un cuestionario de cinco preguntas después de cada explicación; cada página de sesión de este curso tiene un quiz de ese estilo.',
     },
     {
       tipo: 'lectura',

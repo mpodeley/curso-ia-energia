@@ -5,7 +5,7 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       { nombre: 'ChatGPT', href: 'https://chatgpt.com', nota: 'chatbot de OpenAI; el nivel gratuito alcanza para todo el curso' },
       { nombre: 'Claude', href: 'https://claude.ai', nota: 'chatbot de Anthropic, fuerte en documentos largos y redacción' },
       { nombre: 'Gemini', href: 'https://gemini.google.com', nota: 'chatbot de Google, integrado con el ecosistema Google' },
-      { nombre: 'NotebookLM', href: 'https://notebooklm.google.com', nota: 'conversar con tus propios documentos, con citas (sesión 5)' },
+      { nombre: 'Gemini Notebook (antes NotebookLM)', href: 'https://notebook.google.com/', nota: 'conversar con tus propios documentos, con citas (sesión 5)' },
     ],
   },
   {

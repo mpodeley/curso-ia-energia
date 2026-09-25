@@ -8,15 +8,15 @@ footer: 'mpodeley.github.io/curso-ia-energia'
 
 <!-- _class: portada -->
 
-# Tu conocimiento: RAG y NotebookLM
+# Tu conocimiento: RAG y Gemini Notebook (antes NotebookLM)
 
 Sesión 5 de 8 · día 3 · 2 h en vivo · **PCR · CGC · Tecpetrol · Andes Petroleum**
 
 <!--
 0:00 · portada mientras entra la gente
-Ventanas de esta sesión: A este deck, C el sitio en la sesión 5, D NotebookLM
-con la cuenta del curso. La E (la terminal del agente) se abre en la pausa,
-para la sesión 6. Sin pulsos hoy: lo que se comparte va por el chat.
+Ventanas de esta sesión: A este deck, C el sitio en la sesión 5, D Gemini
+Notebook (notebook.google.com) con la cuenta del curso. La E (la terminal
+del agente) se abre en la pausa, para la sesión 6. Lo que se comparte va por el chat.
 Antes de clase: los tres documentos del cuaderno bajados y listos para subir
 (reglamento de operaciones de Ecuador, reporte de sustentabilidad de PCR, Ley
 17.319 de InfoLEG) más dos reportes diarios de la ARCH de ayer; el cuaderno se
@@ -50,7 +50,7 @@ Bloque 1 de 6 · **15 min**
 | Apertura y repaso de la tarea | 15 min | Las ventanas de la sesión y una ronda: la mejor de tus tres preguntas |
 | Por qué no sabe lo tuyo | 15 min | El hueco, las dos formas de cerrarlo, y qué significa "parecido" para un modelo |
 | Buscar por significado | 15 min | Las dos búsquedas del ejercicio, y el prompt aumentado que se le manda al modelo |
-| NotebookLM en vivo: el cuaderno del rubro | 32 min | Reglamento, reporte y ley interrogados con sus preguntas, mirando siempre los fragmentos |
+| Gemini Notebook en vivo: el cuaderno del rubro | 32 min | Reglamento, reporte y ley interrogados con sus preguntas, mirando siempre los fragmentos |
 | Tu cuaderno: un documento público de tu empresa | 28 min | Cada uno arma el suyo y le hace sus tres preguntas; ronda de qué salió |
 | Cierre | 5 min | Lo que se llevan de la búsqueda, y qué viene después de la pausa |
 | Pausa | 10 min | A las 12:00 de Argentina (10:00 de Ecuador y Colombia) sigue la sesión 6 |
@@ -92,7 +92,7 @@ cual las escribiste, dos veces.
 
 <!--
 2 min · acumulado 0:05
-El PIN de siempre. Plan de la sesión en una frase: primero entender cómo
+Plan de la sesión en una frase: primero entender cómo
 busca, después preguntarle de verdad a un cuaderno del rubro y a uno propio.
 Después de la pausa, en la sesión 6, ver trabajar a un agente y escribir el
 caso de cada empresa.
@@ -113,7 +113,7 @@ Ronda directa con nombre, la mejor de las tres por persona, y de paso una
 línea sobre el prompt antes y después de ayer si alguien lo trajo. Seis
 personas, un minuto y medio cada una.
 Martín: anota las preguntas en el archivo a la vista; ese es el guion del
-bloque de NotebookLM. Marca las dos o tres más concretas (equipo, número,
+bloque de Gemini Notebook. Marca las dos o tres más concretas (equipo, número,
 procedimiento): esas van primero.
 La regla del chat, dicha una vez: la pregunta sí, el documento y el dato de
 la empresa no. Hay cuatro empresas competidoras en la sala.
@@ -257,7 +257,7 @@ Cierre del bloque 3.
 
 <!-- _class: seccion -->
 
-## NotebookLM en vivo: el cuaderno del rubro
+## Gemini Notebook en vivo: el cuaderno del rubro
 
 Bloque 4 de 6 · **32 min**
 
@@ -271,7 +271,7 @@ Bloque 4 de 6 · **32 min**
 
 ## Armamos el cuaderno
 
-NotebookLM, con la cuenta gratuita. Tres documentos públicos, uno por país y uno de la sala:
+Gemini Notebook, con la cuenta gratuita. Tres documentos públicos, uno por país y uno de la sala:
 
 - El **Reglamento de Operaciones Hidrocarburíferas** de Ecuador (2021, 191 artículos)
 - El **Reporte de Sustentabilidad 2024** de PCR
@@ -291,6 +291,8 @@ Decir en voz alta el mapeo: esto es el mismo circuito del ejercicio anterior,
 con interfaz. Buscar por significado + libro abierto + cita.
 Recordar la regla: acá también, nada confidencial en la cuenta gratuita. Para
 documentos internos existen las versiones corporativas (mañana).
+Los límites de la cuenta gratuita, en septiembre de 2026: 50 fuentes por
+cuaderno y 3 resúmenes de audio por día. Hoy usamos cuatro fuentes.
 -->
 
 ---
@@ -372,7 +374,7 @@ Bloque 5 de 6 · **28 min**
 
 ## Cuatro pasos, en la página
 
-1. NotebookLM con una cuenta **personal** de Google, y **Crear cuaderno**
+1. notebook.google.com con una cuenta **personal** de Google, y un cuaderno nuevo
 2. Una fuente: un documento **público** de tu empresa (memoria, reporte, nota de prensa)
 3. Tus **tres preguntas** de la tarea, una por vez; por cada respuesta, abrí la cita
 4. Anotá una que salió bien citada y una que salió mal o no estaba
@@ -382,8 +384,8 @@ Bloque 5 de 6 · **28 min**
 Leer los pasos y señalar la lista de candidatos por empresa que está en la
 página (PCR y Tecpetrol tienen reporte de sustentabilidad; CGC, la sección de
 inversores; Andes, la nota de prensa del contrato de Tarapoa o un reporte de
-la ARCH). Cuenta personal: en varias empresas la corporativa tiene NotebookLM
-bloqueado, y mejor descubrirlo hoy.
+la ARCH). Cuenta personal: en varias empresas la corporativa tiene Gemini
+Notebook bloqueado, y mejor descubrirlo hoy.
 La regla, otra vez y corta: solo documentos públicos, y en el chat cada uno
 cuenta cómo le fue, sin las preguntas.
 -->
@@ -405,9 +407,11 @@ típicas: cuenta corporativa bloqueada (que usen la personal), PDF pesado que
 no termina de procesar (que peguen la dirección de la página en vez de
 subir), y el que no encuentra un documento público (mandarle el reporte
 de la ARCH de la sesión 4).
-Plan B si el sitio de NotebookLM no abre desde alguna red: esa persona
+Plan B si el sitio de Gemini Notebook no abre desde alguna red: esa persona
 sigue en el cuaderno del rubro de la ventana D, con sus preguntas, en voz
-alta.
+alta. Ojo con la dirección: desde el cambio de nombre es notebook.google.com,
+y una red que solo habilitó la vieja (notebooklm.google.com) puede
+bloquear la nueva.
 -->
 
 ---

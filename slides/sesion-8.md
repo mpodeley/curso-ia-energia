@@ -48,8 +48,8 @@ cuatro empresas para las rondas.
 2 min · acumulado 0:02
 La misma tabla está en la página de la sesión 8.
 Dos partes. Primero el caso, y las reglas de la sesión 7 se le aplican al
-caso y a las cuatro páginas que escribieron ayer. Después de la pausa, la
-última hora levanta la vista, y tiene un motivo práctico: sin una idea de
+caso y a las cuatro páginas que escribieron ayer. Después de la pausa, el
+último bloque levanta la vista, y tiene un motivo práctico: sin una idea de
 dónde va a estar la herramienta, el proyecto se dimensiona contra la de hoy.
 -->
 
@@ -97,8 +97,11 @@ el mismo loop de agente de ayer, sobre datos públicos. No se construyó con
 datos ni preguntas de ninguna de las cuatro empresas. Por eso hoy se
 critica.
 La pregunta les habla a dos de las cuatro por su nombre: Pindo tiene 17
-productores, 1 inyector y 3 reinyectores con recobro 28%; Libertador tiene
-16 pozos en inyección secundaria. Todo público. Y a las otras dos les habla
+productores, 1 inyector y 3 reinyectores con recobro 28% (Revista
+Politécnica de la Escuela Politécnica Nacional, mayo de 2021); Libertador
+tiene 16 pozos en inyección secundaria (Tecpetrol, "Una década de
+crecimiento en Ecuador", 2022, balance de 2012 a 2021). Todo público, y con
+años encima: decirlo con la fecha. Y a las otras dos les habla
 por la ARCH: un pozo cerrado por alto corte de agua es un pozo sobre el que
 alguien tiene que decidir algo.
 El alcance, fijado de antemano: un screening con criterios; la simulación
@@ -383,7 +386,7 @@ las demás, que es de donde salen las mejores ideas, y ninguna fila lleva un
 dato propio.
 El pase al bloque siguiente, y decirlo con estas palabras: esa fila de
 noventa días se escribe pensando en la herramienta que va a existir dentro
-de noventa días. De eso va la última hora.
+de noventa días. De eso va el último bloque.
 Martín: llama a las cuatro empresas en orden y confirma que las tres filas
 de cada una quedaron pegadas.
 Cierre del bloque 3.
@@ -420,9 +423,9 @@ dimensionarlo. La ventaja de haber salido primero se la come la diferencia
 de herramienta.
 Y enseguida la contracara, para que nadie se vaya con la excusa: los datos,
 los permisos y los criterios los tiene que construir alguien. La regla que sale de
-las dos mitades: arrancá YA con lo que no se abarata (el mapa de datos, la
-política, las preguntas de aceptación) y postergá lo que sí (la
-construcción).
+las dos mitades del argumento: arrancá YA con lo que no se abarata (el
+mapa de datos, la política, las preguntas de aceptación) y postergá lo que
+sí (la construcción).
 El caso lo mostró: lo que faltaba era el Nivel 2.
 La vara del bloque, declarada: de acá en adelante es especulación con nombre
 propio, para conversar. Las reglas de verificación valen también para los
@@ -442,8 +445,9 @@ después la opinión.
 
 <!--
 7 min · acumulado 1:23
-Pestañas abiertas de antes. Our World in Data tiene 35 gráficos y Epoch
-once exploradores al día. Hoy alcanzan dos.
+Pestañas abiertas de antes. Hoy alcanzan dos gráficos.
+La foto de dónde estamos hoy ya se mostró el lunes (sesión 1, "Dónde estamos
+hoy, septiembre de 2026"): acá va solo la tendencia, sin repetirla.
 Recorrido: desempeño en pruebas contra la línea humana (años por debajo,
 cruce, saturación), y demanda eléctrica de los centros de datos, que se
 retoma al final del bloque. El cómputo de entrenamiento se nombra sin
@@ -451,8 +455,9 @@ abrirlo.
 Antes de opinar, una advertencia: un benchmark mide una tarea acotada, muy
 lejos de un puesto de trabajo completo, y las pruebas se eligen porque se
 pueden medir. Aun así, conviene mirar la pendiente.
-Si preguntan por el largo de tarea que un agente completa, se duplica cada
-siete meses y ya lo vieron ayer.
+Si preguntan por el largo de tarea que un agente completa, ya lo vieron
+ayer: en mayo de 2026 METR publicó al menos 16 horas para una versión
+temprana de Claude Mythos Preview, el techo de lo que puede medir.
 -->
 
 ---
@@ -478,7 +483,7 @@ vale doble, porque en el mundo físico un paso equivocado mueve algo real.
 
 ## La frontera también se achica
 
-Modelos abiertos que corren en **una máquina de escritorio**, sin mandar un byte afuera, hoy
+Modelos abiertos que corren en **una computadora de escritorio**, sin mandar un byte afuera, hoy
 rinden como los gigantes de hace dos años.
 
 Para el mapa de datos de hoy eso cambia el tablero: el **primer nivel** puede tener asistente
@@ -489,8 +494,9 @@ adentro de la red.
 Esto se cuenta, sin demo. La experiencia propia sirve de anécdota: un modelo
 abierto de 27 mil millones de parámetros corriendo en la máquina del
 instructor, respondiendo sobre documentos que nunca salieron del disco.
-Las familias abiertas chicas (Llama, Qwen, Gemma, Phi) son las de este
-mundo. La brecha con la frontera sigue existiendo, pero lo de hace dos años
+Las familias abiertas de este mundo son Qwen, DeepSeek, Kimi, Gemma y
+gpt-oss; las que entran en una computadora de escritorio son sus versiones
+chicas. La brecha con la frontera sigue existiendo, pero lo de hace dos años
 se vuelve local cada vez más rápido.
 Si alguna empresa quiere seguirla, es un proyecto de sistemas, con el mapa
 de datos como requisito.
@@ -504,8 +510,8 @@ de datos como requisito.
 **Superinteligencia**: por encima del mejor humano en casi todas.
 
 La hipótesis que las conecta, I. J. Good (1965): una máquina que **diseña máquinas mejores**
-dispara una explosión de inteligencia. Hoy, en concreto: los laboratorios ya usan sus modelos
-para construir los siguientes.
+dispara una explosión de inteligencia. Hoy, en concreto: en mayo de 2026, Claude escribía más
+del 80% del código que Anthropic incorpora a su base de código.
 
 <!--
 4 min · acumulado 1:34
@@ -513,10 +519,11 @@ Los dos términos, definidos, y la letra chica: no hay definición única, y
 por eso se discute tanto si la primera ya llegó. El conteo de LifeArchitect
 queda en la pestaña y en la página: se lee como un pronóstico, mirando los
 supuestos. Abrirlo solo si sobra tiempo.
-Good era matemático, colega de Turing. El dato aterrizado: buena parte del
-código de los laboratorios ya lo escriben sus propios modelos, y la curva
-del largo de tarea es el indicador que más miran los que toman esta
-hipótesis en serio.
+Good era matemático, colega de Turing. El dato aterrizado sale de Anthropic
+("When AI builds itself", linkeado en la página): antes de febrero de 2025
+Claude escribía un porcentaje de un dígito del código que la empresa
+incorpora a su base; en mayo de 2026, más del 80%. La curva del largo de
+tarea es el indicador que más miran los que toman esta hipótesis en serio.
 Para la sala: con la definición de arriba, ¿cuánto falta? ¿Y si la
 definición fuera "hace tu trabajo de hoy"?
 -->
@@ -637,10 +644,10 @@ protagonista no forma memoria nueva, cada mañana arranca de cero y lo único
 que sabe es lo que tiene tatuado encima. Un modelo de lenguaje es eso. Los
 tatuajes son el contexto: los documentos que le pegás, lo que el buscador le
 mete adentro antes de responder.
-The AI Doc es el estreno de este año, del director de Navalny; avisar que
-puede no estar disponible en la región todavía. Para esta noche, algo que sí
-se puede ver ya: los ocho minutos de Bloomberg sobre la crisis del
-directorio de OpenAI, en los recursos.
+The AI Doc es el estreno de este año, del director de Navalny. En
+septiembre de 2026 está en Netflix en Argentina, Ecuador y Colombia, como
+"El doc de la IA". Para esta noche, algo más corto: los ocho minutos de
+Bloomberg sobre la crisis del directorio de OpenAI, en los recursos.
 -->
 
 ---
@@ -665,8 +672,8 @@ opción que el modelo no consideró.
 Su instrumento es un quiz de cinco preguntas después de cada explicación,
 con una regla dura: no le manda código a nadie hasta que puede aprobarlo.
 Es trabajar y cursar a la vez.
-Es lo mismo que vinieron haciendo con el quiz de cada sesión, y los quizzes
-quedan en las páginas.
+Cada página de sesión tiene un quiz de ese estilo, y queda para volver
+cuando quieran.
 Para terminar, con Alan Kay de fondo: la computación se pensó siempre como
 una forma de aumentar lo que puede hacer una persona. Con estas herramientas
 también podemos meternos más adentro del loop.
@@ -678,15 +685,22 @@ también podemos meternos más adentro del loop.
 
 ## Una cosa distinta, el lunes
 
-Ronda de cierre, por nombre: **una sola cosa** que vas a hacer distinto el lunes, en una
-frase.
+Ronda de cierre, por nombre. Martín lee lo que esperabas el primer día: **¿te llevaste lo que
+esperabas?** Y **una sola cosa** que vas a hacer distinto el lunes, en una frase.
 
 <!--
 4 min · acumulado 1:59
-De viva voz, las seis personas. Pedirles que la peguen también en el chat:
-ese puñado de frases es el mejor resumen posible del curso, escrito por
-ellos.
-Martín: llama la ronda por nombre y guarda el chat entero al terminar.
+Martín: abre la ronda leyendo de su documento las expectativas que cada uno
+escribió en el chat el primer día, una por persona y con nombre, sin
+comentarlas.
+Después de cada una, esa persona contesta en una frase si se la llevó, y
+dice la cosa que va a hacer distinto el lunes. Seis personas en cuatro
+minutos: medio minuto cada una, así que la lectura tiene que ser rápida.
+Pedirles que peguen también en el chat lo que van a hacer distinto: ese
+puñado de frases es el mejor resumen posible del curso, escrito por ellos. Si alguna
+expectativa quedó sin cubrir, decirlo sin excusas y señalar dónde está en
+la página.
+Martín: guarda el chat entero al terminar.
 -->
 
 ---

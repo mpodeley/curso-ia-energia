@@ -5,7 +5,7 @@ import { Recursos } from '../components/Recursos'
 ## Antes de la sesión (opcional)
 
 Lo único que pide esta sesión es la tarea de ayer: una tarea real de tu semana, la que le
-pedirías a un chatbot, anotada en una línea. Es la materia prima del taller; si no llegaste, la
+pedirías a un chatbot, anotada en tres líneas. Es la materia prima del taller; si no llegaste, la
 anotamos en los primeros minutos. Si tenés un rato antes, el constructor de prompts de esta
 página se puede jugar solo.
 
@@ -14,9 +14,11 @@ página se puede jugar solo.
 ## Elegir modelo: benchmarks y precios
 
 Todos los proveedores ofrecen la misma escalera: un modelo **grande** y uno **rápido y barato**
-(GPT y su mini, Claude y Haiku, Gemini Pro y Flash). El selector de modelos de tu chatbot es esa
-decisión. Al comparar, cuatro cosas: capacidad en tu tarea, ventana de contexto, precio por
-token y velocidad.
+(Astra y Luna en OpenAI, Sonnet y Haiku en Claude, Pro y Flash en Gemini). Cuando tu chatbot
+tiene selector de modelos, ese selector es esta decisión. En septiembre de 2026, las cuentas
+gratuitas quedan así: ChatGPT no trae selector, Claude ofrece Sonnet y Haiku, y Gemini corre
+Flash con acceso limitado a Pro. Al comparar, cuatro cosas: capacidad en tu tarea, ventana de
+contexto, precio por token y velocidad.
 
 Un benchmark es un examen estandarizado, útil para descartar modelos y poco fino para elegir entre
 los que quedan. Los modelos "estudian para el examen", un punto más de puntaje no se nota en una
@@ -25,11 +27,11 @@ miles de usuarios; [Artificial Analysis](https://artificialanalysis.ai) pone cap
 velocidad en un solo cuadro. El benchmark que importa de verdad es tu tarea, corrida en dos
 modelos.
 
-Los precios son por token, distintos para entrada y salida, y entre el grande y el rápido de un
-mismo proveedor puede haber cien veces de diferencia. Con cuentas gratuitas no lo pagás; importa
-el día que algo se automatiza, porque mil corridas por mes convierten el precio por token en
-presupuesto. Lo habitual es usar el grande para lo difícil o lo que se hace una vez, y el
-rápido para lo repetitivo, después de probar que alcanza.
+Los precios son por token, distintos para entrada y salida, y el modelo grande cuesta varias veces
+lo que el rápido del mismo proveedor; Artificial Analysis tiene el precio de cada uno. Con cuentas
+gratuitas no lo pagás; importa el día que algo se automatiza, porque mil corridas por mes convierten
+el precio por token en presupuesto. Lo habitual es usar el grande para lo difícil o lo que se hace
+una vez, y el rápido para lo repetitivo, después de probar que alcanza.
 
 ## Anatomía de un prompt que funciona
 
@@ -88,12 +90,13 @@ informe, al modelo le alcanza con la estructura.
 
 ## La contracara: "intentá en serio"
 
-En agosto de 2026, un modelo de Anthropic todavía sin publicar movió una cota de la hipótesis de
-Riemann que llevaba décadas casi quieta: del 41.6% al 67.2% de los ceros en la línea crítica. El
-prompt no tenía rol, ni contexto, ni formato: un empleado sin formación matemática le pidió que
-"intentara en serio". Atrás hubo un día y medio de trabajo, 650 ideas probadas, 31 millones de
-tokens, y una prueba formalizada y revisada por matemáticos. Lo que movió fue una cota parcial;
-la hipótesis sigue abierta.
+En agosto de 2026, una versión de investigación de Claude que Anthropic todavía no había
+publicado (el anuncio no dice cuál) subió de 41.6% a 67.2% una cota inferior de larga data: la
+fracción de los ceros de la función zeta de Riemann que cumplen la hipótesis. El prompt fue una
+frase suelta, sin rol, contexto ni formato: un empleado sin formación matemática le pidió que
+"intentara en serio". Atrás hubo 650 ideas que no funcionaron, un segundo intento de un día y
+medio, 31 millones de tokens, y una prueba formalizada y revisada por matemáticos. Lo que movió
+fue una cota parcial; la hipótesis sigue abierta.
 
 La anatomía sigue valiendo: en el trabajo de todos los días, el prompt fino es lo que controla
 la salida. Cuando la tarea cae en algo para lo que un modelo de frontera tiene talento nativo, el
@@ -108,7 +111,7 @@ prompt puede ser mínimo. La verificación hace falta en los dos casos.
 | El peor prompt | 12 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
 | Anatomía de un prompt | 22 min | Las seis piezas, reescribiendo en vivo dos tareas de la lista |
 | Taller: tu tarea, tu prompt | 36 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
-| Qué no se sube a un chatbot | 13 min | La regla, el porqué y las alternativas |
+| Qué no se sube a un chatbot | 13 min | La regla, el porqué, las alternativas y tres prácticas para llevarse |
 | Pausa | 10 min | Dejá abierto un chatbot que acepte archivos: lo usás al volver |
 
 A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 4: el mismo chatbot, ahora con

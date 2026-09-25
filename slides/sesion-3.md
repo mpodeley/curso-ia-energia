@@ -18,8 +18,7 @@ Ventanas de hoy: A este deck, C el sitio en la página de la sesión 3, D el
 chatbot del instructor. En esta sesión Gemini Flash para las demos de
 prompting (sin conexión, como ayer); en la sesión 4, Claude (Sonnet), que
 corre código y genera el Excel y el artifact de la corrida grande: se cambia
-en la pausa del final. Los alumnos siguen con el chatbot que tengan. Sin
-pulsos ni encuesta hoy: el panel no hace falta.
+en la pausa del final. Los alumnos siguen con el chatbot que tengan.
 Antes de clase, en el escritorio, lo de las dos sesiones del día: un CSV de
 un año del Capítulo IV (cuenca Noroeste, el link está en el material previo
 de la página de la sesión 4), el CSV de 10 pozos
@@ -37,7 +36,7 @@ empresa a la vista para llamar las rondas.
 
 ## Apertura y repaso de la tarea
 
-Bloque 1 de 7 · **15 min**
+Bloque 1 de 6 · **15 min**
 
 <!--
 0:00 · arranca acá, termina 0:15
@@ -101,7 +100,6 @@ dar de comer planillas y un PDF, así que conviene uno que acepte archivos.
 
 <!--
 2 min · acumulado 0:05
-El PIN es el mismo; dictarlo solo si alguien cambió de computadora.
 Avisar temprano: en el taller de la mañana cada uno corre su propio prompt
 en su propio chatbot. El que no tenga cuenta, que la cree ahora.
 Para la sesión 4 conviene un chatbot que acepte archivos y corra código
@@ -122,8 +120,7 @@ son el menú del taller de hoy.
 10 min · acumulado 0:15
 Martín: llama la ronda por nombre, seis personas, una tarea cada una, sin
 apuro. Anota TODAS en un archivo a la vista (compartir la ventana de notas
-un momento): esa lista es el menú del taller y alimenta el cuaderno de
-mañana.
+un momento): esa lista es el menú del taller.
 Regla dicha una vez y en voz alta: la tarea tiene que ser real, sin datos
 propios. Nadie describe un pozo, un contrato ni un número propio; alcanza con "el informe
 mensual de producción" o "la minuta del comité".
@@ -141,7 +138,7 @@ coincidir en el informe mensual y en la minuta.
 
 ## Elegir modelo
 
-Bloque 2 de 7 · **12 min**
+Bloque 2 de 6 · **12 min**
 
 <!--
 0:15 · arranca acá, termina 0:27
@@ -165,11 +162,15 @@ Todos los proveedores tienen la misma escalera: un modelo **grande** y uno **rá
 
 <!--
 4 min · acumulado 0:19
-La escalera, con nombres: GPT y su mini, Claude y Haiku, Gemini Pro y Flash.
-Ya la usaron sin saberlo: el Flash de las demos de ayer es el rápido de
-Gemini.
+La escalera, con nombres: Astra y Luna en OpenAI, Sonnet y Haiku en Claude,
+Pro y Flash en Gemini. Ya la usaron sin saberlo: el Flash de las demos de
+ayer es el rápido de Gemini.
 El selector de modelo del chatbot ES esta decisión, y hasta hoy lo dejaron
 en el que venía por defecto. Después de este bloque, que sea una elección.
+Las cuentas gratuitas, en septiembre de 2026: ChatGPT no tiene selector
+(usa su modelo chico), Claude ofrece Sonnet y Haiku, Gemini corre Flash con
+acceso limitado a Pro. Plan B para el que no ve selector: el mismo prompt
+en dos chatbots distintos, que para comparar sirve igual.
 -->
 
 ---
@@ -196,8 +197,8 @@ practicada: mismo prompt, dos modelos, comparar con tus propios ojos.
 
 ## La economía de tokens
 
-Se cobra **por token**, y la entrada y la salida tienen precio distinto. Entre el modelo grande
-y el rápido puede haber **cien veces** de diferencia.
+Se cobra **por token**, y la entrada y la salida tienen precio distinto. El modelo grande
+cuesta **varias veces** lo que el rápido: Artificial Analysis tiene el precio de cada uno.
 
 Con cuentas gratuitas hoy no lo pagan. Importa el día que algo se automatiza: mil corridas por
 mes convierten el precio por token en presupuesto.
@@ -220,7 +221,7 @@ Cierre del bloque 2.
 
 ## El peor prompt
 
-Bloque 3 de 7 · **12 min**
+Bloque 3 de 6 · **12 min**
 
 <!--
 0:27 · arranca acá, termina 0:39
@@ -275,7 +276,7 @@ de eso se trata el prompting.
 
 ## Anatomía de un prompt
 
-Bloque 4 de 7 · **22 min**
+Bloque 4 de 6 · **22 min**
 
 <!--
 0:39 · arranca acá, termina 1:01
@@ -366,7 +367,7 @@ toca a ellos, con la tarea propia.
 
 ## Taller: tu tarea, tu prompt
 
-Bloque 5 de 7 · **36 min**
+Bloque 5 de 6 · **36 min**
 
 <!--
 1:01 · arranca acá, termina 1:37
@@ -415,6 +416,9 @@ La crítica con nombre de pieza es amable y transferible; "está flojo" no
 enseña nada. Martín: llama el orden de lectura por nombre.
 La consigna extra del cambio de modelo cierra el bloque de benchmarks: quien
 la haya probado, que cuente qué cambió entre el grande y el rápido.
+Plan B para la consigna extra: la cuenta gratuita de ChatGPT no tiene
+selector de modelo. Quien no lo vea, que corra el mismo prompt en otro
+chatbot (Claude o Gemini) y compare igual.
 -->
 
 ---
@@ -443,7 +447,7 @@ tarea de hoy, y el que arme el "después" ya tiene la mitad hecha.
 
 ## Qué no se sube a un chatbot
 
-Bloque 6 de 7 · **13 min**
+Bloque 6 de 6 · **13 min**
 
 <!--
 1:37 · arranca acá, termina 1:50
@@ -462,11 +466,11 @@ Y en esta sala hay cuatro empresas que compiten: **el chat de la videollamada es
 compartido como el chatbot**.
 
 <!--
-7 min · acumulado 1:44
+6 min · acumulado 1:43
 La regla de ayer, ahora con criterio detrás. El porqué corto: lo que se
 sube a una cuenta gratuita sale de tu control, y el contrato de datos de una
 cuenta gratuita no promete nada.
-La segunda cara es nueva y va dicha sin dramatismo: PCR, CGC, Tecpetrol y
+La segunda cara va dicha sin dramatismo: PCR, CGC, Tecpetrol y
 Andes en la misma videollamada. Ningún ejercicio pide un dato propio, y si
 uno se escapa en el chat, Martín lo borra y seguimos. Lo público del
 regulador (que vamos a usar en la sesión 4) sí se comenta con nombre y todo:
@@ -488,13 +492,31 @@ borrador de política de uso entero.
 Y las versiones corporativas existen, con otro contrato de datos. Eso es parte de la sesión 7.
 
 <!--
-6 min · acumulado 1:50
+5 min · acumulado 1:48
 La tercera alternativa es la más útil para el trabajo diario: para ayudarte
 a armar el informe, al modelo le alcanza con la estructura.
 Puente a lo que sigue: la sesión 4 entera trabaja con datos públicos de
 producción, argentinos y ecuatorianos, justamente por esta regla. Y para dos
 empresas de la sala el Capítulo IV es su propio dato, publicado por el
 Estado.
+-->
+
+---
+
+<!-- _class: acentos -->
+
+## Para llevarse
+
+- Elegí el modelo con **tu tarea**: el mismo prompt en dos modelos, y te quedás con el más barato que alcanza
+- Escribí el prompt como una **orden de trabajo**: para quién es, qué decide, qué formato
+- Si no lo pondrías en un **correo a un desconocido**, no va al chatbot ni al chat de la sala
+
+<!--
+2 min · acumulado 1:50
+Tres prácticas de la sesión, una por bloque grande, en palabras simples. La
+del medio se completa con la cita del bloque 4: la primera salida es un
+borrador y se corrige conversando.
+El quiz de la sesión 3 y el constructor quedan en la página.
 Cierre del bloque 6.
 -->
 
@@ -511,7 +533,8 @@ A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 4, con su propio deck
 Martín: cronómetro de diez minutos a la vista en el chat y aviso a los dos
 minutos del final. Pegar en el chat el link a la página de la sesión 4.
 Mientras tanto, pasa en limpio la lista de tareas de la ronda y los prompts
-del taller en un archivo aparte: mañana alimentan el cuaderno.
+del taller en un archivo aparte: los prompts son el "antes" de la tarea que
+se da al final de la sesión 4.
 Matías: cerrar este deck y abrir el de la sesión 4 en la ventana A. Cambiar
 el chatbot de la ventana D a Claude, subir el CSV del Capítulo IV y dejarlo
 listo para la demo.
