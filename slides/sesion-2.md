@@ -103,7 +103,7 @@ pedazos más frecuentes en un montón de texto.
 
 ¿En cuántos tokens parte el modelo la frase **perforación direccional**? ¿2, 4, 6, u 8 o más?
 
-Un número en el chat, cuando Martín diga "ya".
+Un número en el chat, cuando te indiquemos.
 
 <!--
 3 min · acumulado 0:08

@@ -72,7 +72,7 @@ bloque se pase cinco minutos.
 
 ---
 
-## Al final de esta sesión van a poder
+## Al terminar, van a poder
 
 - Distinguir una **IA de propósito específico** de una **IA de propósito general**
 - Contar cómo se llegó de los **sistemas expertos** a los modelos de hoy, y **dónde estamos** en septiembre de 2026
@@ -145,7 +145,7 @@ celular: los ejercicios de hoy andan en el teléfono.
 
 ## ¿Qué te querés llevar de estos cuatro días?
 
-Escribilo en el chat en una oración, y mandalo cuando Martín diga "ya".
+Escribilo en el chat en una oración, y esperá a que te indiquemos para mandarlo.
 
 <!--
 2 min · acumulado 0:07
@@ -186,7 +186,7 @@ la slide que sigue. Cortar al minuto con amabilidad.
 | Miércoles 30 | **Tus documentos y los agentes** | 5 · RAG y Gemini Notebook; 6 · Agentes y el caso de tu empresa |
 | Jueves 1 | **Riesgos y el caso real** | 7 · Riesgos, límites y gobernanza; 8 · El caso y el horizonte |
 
-Te llevás criterio para delegar y verificar, un cuaderno con documentos del rubro, un borrador de política de uso y el caso de tu empresa escrito en una página.
+Te llevás criterio para delegar y verificar, un cuaderno del rubro, un borrador de política de uso y el caso de tu empresa.
 
 <!--
 4 min · acumulado 0:18
@@ -250,7 +250,7 @@ Arranca 0:20, termina 0:30.
 
 ## En una oración: ¿qué es la inteligencia artificial para vos?
 
-Escribila en el chat, sin buscar, y mandala cuando Martín diga "ya".
+Escribila en el chat, sin buscar, y esperá a que te indiquemos para mandarla.
 
 <!--
 2 min · acumulado 0:22
@@ -904,7 +904,7 @@ nadie lo va a arreglar con un parche.
 
 ## ¿Cuánto confiarías ahora?
 
-Del 1 (nada) al 5 (mucho): ¿cuánto confiarías en una respuesta sin verificarla? Un número en el chat, cuando Martín diga "ya".
+Del 1 (nada) al 5 (mucho): ¿cuánto confiarías en una respuesta sin verificarla? Un número en el chat, cuando te indiquemos.
 
 <!--
 2 min · acumulado 1:32
@@ -953,7 +953,7 @@ cada empresa escribe su caso en una página.
 
 ## Ronda: tu tarea y tu problema
 
-Un minuto y medio cada uno. Martín llama por nombre.
+Un minuto y medio cada uno, cuando te indiquemos.
 
 <!--
 9 min · acumulado 1:42
