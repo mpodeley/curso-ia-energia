@@ -23,7 +23,7 @@ En el escritorio, para las demos: el abstract público de SPE copiado y la foto
 de la hoja de notas de reunión (a mano, inventada, sin nada de ninguna empresa).
 El deck está publicado en el sitio; si alguien se cae de la videollamada,
 puede seguir las slides desde ahí.
-Martín: confirmar en el chat quién entró y quién falta; a las 10:03 arrancamos
+Apoyo: confirmar en el chat quién entró y quién falta; a las 10:03 arrancamos
 con los que estén. Abrir un documento propio para anotar lo que la sala escribe
 en el chat: expectativas, definiciones y la ronda de relevamiento. Ese documento
 vuelve en la sesión 2, en la 6 y en la 8.
@@ -66,7 +66,7 @@ a 12 y de 12 a 14 (de 8 a 10 y de 10 a 12 en Ecuador y Colombia). Hay una pausa
 al final de la primera sesión y otra a mitad de la segunda. El mapa completo de
 los cuatro días viene en unos minutos.
 La misma tabla está en la página de la sesión 1: deck y sitio no se contradicen.
-Martín: el cronómetro arranca acá; avisarme por el chat privado cuando un
+Apoyo: el cronómetro arranca acá; avisarme por el chat privado cuando un
 bloque se pase cinco minutos.
 -->
 
@@ -114,10 +114,10 @@ estimación de reservas (SPE-PRMS) y recuperación mejorada.
 <!--
 2 min · acumulado 0:04
 Un minuto cada uno, sin leer la slide. Lo que importa que entiendan del
-reparto: yo miro la pantalla que comparto, Martín mira el chat. Si tienen un
+reparto: uno mira la pantalla que se comparte y el otro mira el chat. Si tienen un
 problema técnico o una pregunta que no quieren interrumpir, va por el chat y
-Martín decide cuándo entra.
-Martín: presentarse con la voz, treinta segundos, y decir cómo van a
+desde el chat decidimos cuándo entra.
+Apoyo: presentarse con la voz, treinta segundos, y decir cómo van a
 funcionar las rondas: él nombra, el nombrado habla.
 -->
 
@@ -133,7 +133,7 @@ La página de la sesión 1 la usamos varias veces hoy. No hace falta usuario ni 
 
 <!--
 1 min · acumulado 0:05
-Martín pega la dirección en el chat. Que abran la página de la sesión 1 y la
+Pegamos la dirección en el chat. Que abran la página de la sesión 1 y la
 dejen en una pestaña.
 Si alguien no puede entrar (firewall de la empresa), que siga desde el
 celular: los ejercicios de hoy andan en el teléfono.
@@ -149,10 +149,10 @@ Escribilo en el chat en una oración, y esperá a que te indiquemos para mandarl
 
 <!--
 2 min · acumulado 0:07
-Un minuto para escribir sin mandar. Martín dice "ya" y mandan todos a la vez:
+Un minuto para escribir sin mandar. Decimos "ya" y mandan todos a la vez:
 así nadie arrastra la expectativa del de al lado.
 No dar ejemplos mientras escriben: cualquier ejemplo mío se copia.
-Martín: copiar las seis oraciones, con nombre, a su documento. Vuelven el
+Apoyo: copiar las seis oraciones, con nombre, a su documento. Vuelven el
 último día, en la ronda de cierre de la sesión 8.
 -->
 
@@ -166,7 +166,7 @@ Un minuto cada uno. Contá tu rol, sin datos de la empresa, y leé tu oración d
 
 <!--
 7 min · acumulado 0:14
-Martín: llamar por nombre, en el orden de la lista de asistentes, y anotar
+Apoyo: llamar por nombre, en el orden de la lista de asistentes, y anotar
 rol y país de cada uno. Esa lista es la que usa después para las rondas del día.
 Son 4 personas en Ecuador, 1 en Argentina y 1 en Colombia; cuatro empresas.
 Escuchar qué hace cada uno: los ejemplos de las demos se eligen con eso
@@ -182,8 +182,8 @@ la slide que sigue. Cortar al minuto con amabilidad.
 | Día | De qué se trata | Sesiones |
 | --- | --- | --- |
 | Lunes 28 | **Qué es y cómo funciona** | 1 · De los datos a la IA generativa; 2 · Cómo funciona un LLM |
-| Martes 29 | **Usarlo bien, con prompts y datos** | 3 · Prompting y trabajo diario; 4 · Análisis asistido de datos |
-| Miércoles 30 | **Tus documentos y los agentes** | 5 · RAG y Gemini Notebook; 6 · Agentes y el caso de tu empresa |
+| Martes 29 | **Datos y documentos** | 3 · Prompts y datos, en la práctica; 4 · RAG y Gemini Notebook |
+| Miércoles 30 | **Agentes** | 5 · Qué son, el arnés y cuáles hay; 6 · Agentes y el caso de tu empresa |
 | Jueves 1 | **Riesgos y el caso real** | 7 · Riesgos, límites y gobernanza; 8 · El caso y el horizonte |
 
 Te llevás criterio para delegar y verificar, un cuaderno del rubro, un borrador de política de uso y el caso de tu empresa.
@@ -193,8 +193,8 @@ Te llevás criterio para delegar y verificar, un cuaderno del rubro, un borrador
 Cada día, la primera sesión de 10 a 12 y la segunda de 12 a 14 (de 8 a 10 y de
 10 a 12 en Ecuador y Colombia).
 Recorrer el arco en una frase por día: el lunes entender qué es esto y cómo
-funciona; el martes usarlo bien, con prompts y con datos; el miércoles darle
-tus documentos y ver trabajar a un agente; el jueves usarlo con cabeza, y el
+funciona; el martes ponerlo a trabajar con datos y con tus documentos; el
+miércoles los agentes y el caso de tu empresa; el jueves usarlo con cabeza, y el
 caso real de punta a punta.
 Después, ubicar en el mapa las expectativas que acabamos de escuchar, con
 nombre: "lo de Fulano cae el martes". Si alguna no cae en ningún día, decirlo
@@ -202,7 +202,7 @@ de frente: el curso no entrena modelos, no conecta sistemas de la empresa y
 trabaja con datos públicos.
 Cómo funciona: cada sesión tiene su página, su deck y un quiz para repasar;
 entre día y día hay una sola tarea, de cinco minutos; las preguntas que no
-quieran hacer en voz alta van por el chat, y Martín decide cuándo entran.
+quieran hacer en voz alta van por el chat, y desde ahí decidimos cuándo entran.
 Gemini Notebook es el nombre nuevo de NotebookLM, desde julio: si alguien lo
 conoce por el viejo, es lo mismo.
 -->
@@ -254,10 +254,10 @@ Escribila en el chat, sin buscar, y esperá a que te indiquemos para mandarla.
 
 <!--
 2 min · acumulado 0:22
-Un minuto y medio para escribir sin mandar; Martín dice "ya" y mandan todos a
+Un minuto y medio para escribir sin mandar; decimos "ya" y mandan todos a
 la vez. Mientras escriben, no dar ejemplos de definiciones: cualquier ejemplo
 mío arrastra las de ellos.
-Martín: copiar las seis, con nombre, a su documento. Vuelven al cierre de la
+Apoyo: copiar las seis, con nombre, a su documento. Vuelven al cierre de la
 sesión 2 ("¿cambiarías tu definición?").
 -->
 
@@ -276,7 +276,7 @@ Leerlas en voz alta desde el chat y agruparlas en familias, sin corregir ninguna
 - las que hablan de imitar a una persona;
 - las que hablan de aprender de datos o de patrones;
 - las que hablan de pensar, entender o razonar.
-Martín: llamar a dos por nombre, con una repregunta: "¿por qué esa palabra?".
+Apoyo: llamar a dos por nombre, con una repregunta: "¿por qué esa palabra?".
 El campo tampoco tiene una definición cerrada: Turing la planteó en 1950 como
 un juego de imitación, una conversación escrita donde la máquina intenta pasar
 por persona; en Dartmouth, en 1956, el proyecto se propuso describir la
@@ -413,7 +413,7 @@ Leer el camino en cinco pasos, con el dedo en la figura:
    noviembre de 2022 sale ChatGPT, con ese mismo entrenamiento.
 4) 2024, o1: modelos que razonan paso a paso antes de responder.
 5) 2025, Claude Code: el modelo general con herramientas y un loop, que pasa
-   de conversar a hacer (lo vemos en la sesión 6).
+   de conversar a hacer (lo vemos el miércoles).
 Los dos últimos hitos, de 2026, son el puente a lo que sigue: hoy.
 Cómo funciona cada paso es la sesión 2. Acá alcanza con el mapa.
 -->
@@ -482,7 +482,7 @@ Hacer: ChatGPT Work y Claude Cowork trabajan sobre los archivos de la
 computadora; Claude Code, en la terminal. En mayo de 2026, METR midió que el
 modelo más fuerte de Anthropic completaba la mitad de las veces tareas que a un
 experto le llevan al menos 16 horas, el techo de lo que su batería de pruebas
-puede medir. Qué se le delega hoy a un agente y dónde se rompe es la sesión 6.
+puede medir. Qué se le delega hoy a un agente y dónde se rompe, el miércoles (sesiones 5 y 6).
 Ver y escuchar: la demo de la foto de este mismo bloque de demos sale de acá.
 Costo: Epoch AI midió que el costo de llegar a un mismo nivel de desempeño cae
 cerca de 47% por trimestre, unas 13 veces por año. Lo que hoy es caro para
@@ -509,11 +509,11 @@ para comparar: lo hacemos mañana en la sesión 3.
 "Lee menos texto por vez": la ventana de contexto de la cuenta gratuita de
 Gemini es de 32,000 tokens, contra un millón de los modelos grandes. Qué es la
 ventana y por qué importa es la sesión 2.
-Gemini Notebook es el cuaderno del miércoles (sesión 5).
+Gemini Notebook es el cuaderno del martes a la tarde (sesión 4).
 Si preguntan por las versiones pagas o empresariales: cambian el modelo, los
 límites y el contrato de datos; lo del contrato es la sesión 3.
 Preguntar a la sala, a mano alzada: ¿quién usa alguno de estos todas las
-semanas? Martín cuenta en voz alta.
+semanas? Se cuentan en voz alta.
 -->
 
 ---
@@ -600,7 +600,7 @@ a algo entre 3% y 8%. El mejor ajuste posible con estas perillas es 2.17%.
 Que aprieten "Listo, este es mi ajuste" antes de seguir.
 Mientras trabajan, decir en voz alta que esto es la regla escrita a mano:
 eligieron una forma funcional y estimaron los parámetros a ojo.
-Martín: pedir por el chat que cada uno escriba su error cuando aprieta
+Apoyo: pedir por el chat que cada uno escriba su error cuando aprieta
 "Listo"; leo los seis números en voz alta antes de pasar a la máquina.
 -->
 
@@ -670,7 +670,7 @@ calcula en vivo.
 Sin etiquetas: "Buscar 2 grupos" y después "Comparar con las etiquetas". Sin
 haber visto nunca el tipo declarado, la máquina separa los pozos casi igual
 que la operadora: con los datos de hoy, 81 de 84.
-Martín: pedir que uno por empresa diga en el chat qué predijo su pozo nuevo.
+Apoyo: pedir que uno por empresa diga en el chat qué predijo su pozo nuevo.
 -->
 
 ---
@@ -747,7 +747,7 @@ un modelo de lenguaje hace lo mismo con texto.
 Si preguntan: la que lee tiene una sola capa oculta; las profundas apilan
 decenas, con el mismo principio. Si lee mal alguno, comentarlo al pasar: en
 los 10,000 dígitos de prueba acierta el 97.9%. No forzar la falla.
-Martín: pedir que cada uno dibuje un dígito y escriba en el chat si lo leyó bien.
+Apoyo: pedir que cada uno dibuje un dígito y escriba en el chat si lo leyó bien.
 Puente a las demos: ahora sí, el chatbot.
 Cierre del bloque 4.
 -->
@@ -778,9 +778,8 @@ Y la cuarta, la más importante, es **verlo fallar**.
 <!--
 1 min · acumulado 1:14
 Avisar que las tres las hago en vivo y que van a ver los errores también.
-La tabla de producción sale de acá a propósito: es el bloque "de PDF a tabla"
-de mañana (sesión 4), sobre el reporte diario de la ARCH, y hacerla dos veces no
-agrega nada.
+La tabla de producción sale de acá a propósito: mañana, en la sesión 3, dos PDF
+oficiales de Ecuador se cruzan entre sí, y hacerla dos veces no agrega nada.
 Pedir que mientras miran anoten: ¿esto me serviría mañana en mi trabajo?
 Los tres prompts quedan en la página de la sesión 1, listos para copiar.
 -->
@@ -815,7 +814,7 @@ Cambiar a la ventana D (chatbot). Prompts exactos, en orden:
 Reserva, si una demo falla por algo técnico: "Explicá qué es la recuperación
 secundaria por inyección de agua como si le hablaras a un directorio no técnico.
 Máximo 150 palabras, sin fórmulas." (es el tema del caso de la sesión 8).
-Martín: pegar cada prompt en el chat apenas lo corro. Después de la tercera,
+Apoyo: pegar cada prompt en el chat apenas lo corro. Después de la tercera,
 un nombre: "¿te sirve tal cual, o qué le cambiarías?". Una sola respuesta: el
 bloque tiene 7 minutos.
 Volver al deck en la slide siguiente.
@@ -879,7 +878,7 @@ Comentar al pasar, sin slide, las dos causas. A Gemini le faltaba el dato:
 nunca leyó el reporte de hoy, y si da una cifra es la más creíble de su
 entrenamiento. Los números de SPE inventados son lo otro: no existen en
 ninguna parte, y aun así salen con la forma exacta de una cita. La primera
-se arregla trayéndole el documento (sesión 5); la segunda hay que verificarla
+se arregla trayéndole el documento (sesión 4); la segunda hay que verificarla
 (sesión 7). El cierre retoma esta distinción.
 El POR QUÉ viene después de la pausa: no adelantarlo.
 Volver al deck.
@@ -908,7 +907,7 @@ Del 1 (nada) al 5 (mucho): ¿cuánto confiarías en una respuesta sin verificarl
 
 <!--
 2 min · acumulado 1:32
-Martín dice "ya" y mandan todos a la vez, para que nadie ancle su número en el
+Decimos "ya" y mandan todos a la vez, para que nadie ancle su número en el
 de los demás. Leer los seis en voz alta.
 Es la confianza declarada después de ver fallar al modelo: contrastarla con el
 tono de las definiciones del arranque.
@@ -957,7 +956,7 @@ Un minuto y medio cada uno, cuando te indiquemos.
 
 <!--
 9 min · acumulado 1:42
-Martín: ronda completa con nombre, en el mismo orden de la apertura, y anotar
+Apoyo: ronda completa con nombre, en el mismo orden de la apertura, y anotar
 las dos respuestas de cada uno en su documento. No preguntar al aire.
 Repreguntar una sola cosa por persona, la que más ayude a elegir ejemplos:
 "¿en qué formato viven esos datos?" (planilla, PDF, sistema, papel).
@@ -989,7 +988,7 @@ Arranca 1:42, termina 1:50.
 <!--
 5 min · acumulado 1:47
 Pide un diagnóstico: que clasifiquen cada error que vieron en una de las dos
-causas. Dos o tres voces; Martín las llama por nombre.
+causas. Dos o tres voces, llamadas por nombre.
 Buscar que salga la idea de "verificable": las tareas donde puedo comprobar el
 resultado rápido son las tareas seguras. La foto de las notas es el ejemplo:
 el original está al lado.
@@ -1025,7 +1024,7 @@ Dejá abierta la página de la sesión 2 y el chatbot.
 Cortar el audio y dejar la pantalla compartida, con esta slide proyectada.
 En la pausa, abrir el deck de la sesión 2 en la ventana A y dejarlo en la
 portada; las otras ventanas quedan como están.
-Martín: releer lo que anotó de la ronda de relevamiento y pasarme en una línea
+Apoyo: releer lo que anotó de la ronda de relevamiento y pasarme en una línea
 cualquier tarea que sirva de ejemplo para la sesión 2. Avisar por el chat un
 minuto antes de volver.
 -->

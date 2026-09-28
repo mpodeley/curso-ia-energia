@@ -23,7 +23,7 @@ Anthropic. Todas están linkeadas en la página.
 Dejar preparado también lo de la sesión 8 (ver las notas de su portada): la
 pausa entre sesiones dura diez minutos y no alcanza para cargar el Libro A,
 la terminal y las pestañas del futuro.
-Martín: cronómetro en cero, la lista de las seis personas por empresa a
+Apoyo: cronómetro en cero, la lista de las seis personas por empresa a
 mano para las rondas, y el chat con la regla de siempre pegada: ningún dato
 propio en el chat compartido.
 -->
@@ -99,7 +99,7 @@ Plan de la sesión en una frase: primero cazar invenciones, después las tres
 reglas (verificar, datos, operación), y al final la política escrita. Después
 de la pausa, el caso y su crítica, la ruta de cada empresa y el horizonte.
 Plan B para la tarea: si alguien no pulió su página, la versión que escribió
-en el taller de ayer sirve igual. Martín confirma en el chat quién la tiene
+en el taller de ayer sirve igual. Confirmamos en el chat quién la tiene
 a mano; con seis personas alcanza con preguntar.
 -->
 
@@ -134,7 +134,7 @@ puntaje penaliza marcar de más, porque sospechar de todo también es leer
 mal.
 Quien ya hizo la cacería en casa comparte qué lo engañó, que vale igual.
 Anotar los hallazgos a la vista: son el material de la slide siguiente.
-Martín: cinco minutos de cronómetro para la caza, y después llama la ronda
+Apoyo: cinco minutos de cronómetro para la caza, y después llama la ronda
 por nombre, seis personas, un minuto cada una.
 -->
 
@@ -238,7 +238,7 @@ Ejemplos que les hablan a las cuatro: el reporte diario al regulador
 el correo de coordinación del turno (primero).
 Volver a Deloitte: el informe era del tercer y cuarto nivel, tratado como
 del primero.
-Martín: ronda corta por nombre, un ejemplo por persona, sin datos propios.
+Apoyo: ronda corta por nombre, un ejemplo por persona, sin datos propios.
 -->
 
 ---
@@ -325,7 +325,7 @@ La regla del borde: ante la duda, el nivel más alto, y la consulta al
 responsable, que es el quinto punto de la política de hoy.
 Anotar los datos clasificados: entran tal cual al punto 2 del borrador en el
 bloque 6.
-Martín: llama la ronda y anota en el chat categoría y nivel, una línea por
+Apoyo: llama la ronda y anota en el chat categoría y nivel, una línea por
 persona.
 -->
 
@@ -483,8 +483,8 @@ persona, y el nombre lo completa cada empresa.
 El quinto punto (a quién se consulta el caso nuevo) es el que más se olvida
 y el que mantiene la política viva.
 Cada uno se lo baja de la página, editable, para su empresa.
-Martín: pega en el chat las categorías del bloque 4 para que Matías las
-copie al punto 2 sin retipear.
+Apoyo: pega en el chat las categorías del bloque 4 para copiarlas
+al punto 2 sin retipear.
 Si preguntan por la ley, una línea para los de Ecuador: el 15 de septiembre
 de 2026 la Asamblea archivó el proyecto de ley de IA, y el 1 de septiembre
 entró otro, por niveles de riesgo. La política de la empresa no espera a la
@@ -521,8 +521,8 @@ el caso y el horizonte
 
 <!--
 10 min · acumulado 2:00
-Martín: pone la hora de vuelta en el chat y pide que abran la página de la
+Apoyo: pone la hora de vuelta en el chat y pide que abran la página de la
 sesión 8 y dejen a mano su caso en una página, que entra en la crítica.
-Matías: cerrar este deck y abrir el de la sesión 8; ventana D con el Libro A
+Antes de la pausa: cerrar este deck y abrir el de la sesión 8; ventana D con el Libro A
 de Puesto Guardián y la terminal con resumen_cuenca.py listos.
 -->

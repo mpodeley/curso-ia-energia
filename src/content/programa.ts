@@ -53,13 +53,13 @@ export const SESIONES: Sesion[] = [
   {
     n: 3,
     dia: 2,
-    titulo: 'Prompting y trabajo diario',
+    titulo: 'Prompts y datos, en la práctica',
     resumen:
-      'Anatomía de un buen prompt, cómo elegir entre el modelo grande y el rápido, y qué información de la empresa no se sube a un chatbot.',
+      'El chatbot gratuito lee un archivo, corre código y entrega una planilla de surveillance con relación agua-petróleo contra acumulada; con un dato bueno, alcanza un pedido corto. Y dos PDF oficiales de Ecuador que tienen que cuadrar.',
     objetivos: [
-      'Elegir entre el modelo grande y el rápido de un mismo proveedor, con tu tarea como benchmark',
-      'Escribir prompts con rol, contexto, tarea, formato y ejemplos, sobre una tarea real tuya',
-      'Saber qué información de la empresa no debe subirse a un chatbot',
+      'Pedirle a un chatbot gratuito un análisis con código sobre un archivo, y verificarlo',
+      'Saber qué va en el prompt cuando el dato es bueno, y qué cambia cuando no',
+      'Cruzar dos fuentes oficiales y encontrar dónde difieren',
     ],
     estado: 'lista',
     slides: true,
@@ -67,13 +67,13 @@ export const SESIONES: Sesion[] = [
   {
     n: 4,
     dia: 2,
-    titulo: 'Análisis asistido de datos',
+    titulo: 'Tus documentos: RAG y Gemini Notebook',
     resumen:
-      'El modelo como copiloto de análisis: de una planilla o un PDF del regulador a una tabla verificada y una curva de declinación.',
+      'Cómo hacer que el modelo responda a partir de tus documentos: buscar por significado, un cuaderno de reservas y normativa, y lo que genera el cuaderno con esas fuentes.',
     objetivos: [
-      'Pedirle un análisis a un chatbot y leer el código que escribió, con el conteo de filas de cada filtro',
-      'Extraer una tabla del reporte diario de la ARCH y verificarla contra el original, número por número',
-      'Ajustar una curva de declinación sobre datos públicos de un pozo',
+      'Entender la intuición de RAG: buscar → traer → responder',
+      'Armar un cuaderno de Gemini Notebook (antes NotebookLM) con el PRMS y la normativa de reservas de Ecuador, Colombia y Argentina',
+      'Abrir cada cita y juzgar si el fragmento responde la pregunta o solo queda cerca',
     ],
     estado: 'lista',
     slides: true,
@@ -81,13 +81,13 @@ export const SESIONES: Sesion[] = [
   {
     n: 5,
     dia: 3,
-    titulo: 'Tu conocimiento: RAG y Gemini Notebook',
+    titulo: 'Agentes: qué son, el arnés y cuáles hay',
     resumen:
-      'Cómo hacer que el modelo responda a partir de tus documentos: buscar por significado, responder con el libro abierto y abrir cada cita.',
+      'Qué es un agente, qué es el arnés que lo envuelve, qué agentes hay hoy y de qué formas se usan, con un taller para correr uno gratis.',
     objetivos: [
-      'Entender la intuición de RAG: buscar → traer → responder',
-      'Armar un cuaderno de Gemini Notebook (antes NotebookLM) con documentos públicos del rubro y uno de tu empresa',
-      'Abrir cada cita y juzgar si el fragmento responde la pregunta o solo queda cerca',
+      'Explicar qué es un agente y qué hace el arnés que lo envuelve',
+      'Ubicar los agentes de hoy por forma de uso, y cuáles se pueden probar gratis',
+      'Correr un agente sobre una tarea de varios pasos y verificar lo que entregó',
     ],
     estado: 'lista',
     slides: true,
@@ -96,9 +96,10 @@ export const SESIONES: Sesion[] = [
     n: 6,
     dia: 3,
     titulo: 'Agentes y el caso de tu empresa',
-    resumen: 'Qué es un agente, qué hace bien hoy y dónde falla; y el caso de tu empresa escrito en una página.',
+    resumen:
+      'Un agente de terminal arma en vivo el caso real del curso, un screening de waterflooding; qué funciona hoy y dónde se rompe; y el caso de tu empresa escrito en una página.',
     objetivos: [
-      'Ver el loop de un agente trabajando en vivo sobre datos de producción',
+      'Ver a un agente trabajar sobre una carpeta, guiado por un archivo de instrucciones',
       'Separar lo que se delega hoy (digital, acotado, verificable) de lo que todavía no',
       'Escribir en una página el caso de tu empresa: dolor, datos, sensibilidad, verificabilidad',
     ],
@@ -139,8 +140,8 @@ export const SESIONES: Sesion[] = [
 /** Fecha y título de cada día de la edición vigente: las dos sesiones de un día van juntas. */
 export const DIAS: Record<number, { fecha: string; titulo: string }> = {
   1: { fecha: 'lunes 28 de septiembre', titulo: 'Qué es y cómo funciona' },
-  2: { fecha: 'martes 29 de septiembre', titulo: 'Usarlo bien, con prompts y datos' },
-  3: { fecha: 'miércoles 30 de septiembre', titulo: 'Tus documentos y los agentes' },
+  2: { fecha: 'martes 29 de septiembre', titulo: 'Datos y documentos, con el chatbot trabajando' },
+  3: { fecha: 'miércoles 30 de septiembre', titulo: 'Agentes' },
   4: { fecha: 'jueves 1 de octubre', titulo: 'Riesgos y el caso real' },
 }
 

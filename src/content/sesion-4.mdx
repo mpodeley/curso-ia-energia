@@ -1,387 +1,248 @@
-import { DeclineLab } from '../exercises/DeclineLab'
+import { EmbeddingsMap } from '../exercises/EmbeddingsMap'
+import { RagDemo } from '../exercises/RagDemo'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos } from '../components/Recursos'
 
 ## Antes de la sesión (opcional)
 
-Esta sesión sigue a la 3 después de una pausa de diez minutos y no pide nada nuevo. Conviene
-tener abierto un chatbot que acepte archivos y corra código: acá le damos planillas y un PDF. Si
-tenés un rato antes, el laboratorio de declinación de esta página se puede jugar solo: arrancá
-por los pozos de escuela.
+No hace falta traer nada: ni documentos, ni preguntas, ni una cuenta paga. Todo lo que usamos en
+esta sesión es público, y el cuaderno lo armamos en vivo.
+
+Si tenés cinco minutos antes, entrá a [Gemini Notebook (antes NotebookLM)](https://notebook.google.com/)
+con una cuenta personal de Google y fijate que abra, porque en varias empresas la cuenta
+corporativa lo tiene bloqueado. Los dos ejercicios de esta página se juegan solos: primero el
+mapa, después la búsqueda, que usa lo que muestra el mapa.
 
 <Recursos sesion={4} />
-
-## El chatbot como copiloto de análisis
-
-Hasta acá el modelo escribió texto. Ahora le vamos a dar una tabla y pedirle que la analice. La
-diferencia importante es que, para analizarla, escribe **código**, lo corre y te devuelve el
-resultado. Eso cambia dónde puede fallar y dónde tenés que mirar.
-
-Cuatro movimientos, en orden de dificultad:
-
-1. De un archivo separado por comas a un análisis. Subís la planilla, pedís estadísticas y
-   gráficos. El copiloto escribe el código; vos juzgás el resultado.
-2. De un archivo PDF a una tabla. La producción diaria de Ecuador se publica en un PDF de una
-   página del regulador, un reporte por día de operación. Extraemos sus tablas y las verificamos
-   contra el original, número por número.
-3. De una tabla a un modelo. Ajustar una curva de declinación: pocos parámetros, una fórmula de
-   1945 y la pregunta de siempre, que es cuánto le creés a la extrapolación.
-4. Del modelo al lote. Un prompt con reglas escritas, diez pozos, y de vuelta un Excel con
-   pronósticos, supuestos anotados y una visualización para recorrerlos.
-
-## Verificar código es distinto de verificar texto
-
-Cuando el modelo escribe un párrafo, el error se lee. Cuando escribe código, el error se esconde
-detrás de un número que parece razonable. Un filtro mal escrito devuelve menos filas y sigue, sin
-avisar.
-
-La regla práctica es corta. Pedile siempre que te muestre el código junto con el resultado.
-Pedile que el código informe cuántas filas entran y cuántas quedan en cada filtro: las cuenta el
-chatbot, y ese renglón hace visible al filtro que se comió filas de más. Y comprobá un caso a
-mano, uno solo, eligiendo un valor que puedas rastrear en la planilla original. Si ese cierra,
-casi siempre cierra el resto; si no cierra, el resultado no sirve y hay que buscar el error.
-
-## De PDF a tabla: el reporte diario de la ARCH
-
-La Agencia de Regulación y Control de Hidrocarburos de Ecuador (ARCH) publica un reporte
-preliminar de producción y operaciones por cada día de operación, en
-[controlhidrocarburos.gob.ec](https://controlhidrocarburos.gob.ec/). Es un PDF de una página,
-formulario GTRCH.GEERIH.02.FO.01, y trae cuatro tablas y un bloque de texto:
-
-1. Producción diaria de petróleo por compañía, en barriles por día: producción del día anterior,
-   producción del día de operación, incremento o pérdida, estimado del mes y cumplimiento. Una
-   fila por sujeto de control (EP Petroecuador y trece privadas, entre ellas Andes Petroleum,
-   PCR-Ecuador, PetroOriental, Gente Oil, Orion, Petrobell y Pluspetrol), el subtotal de privadas
-   y el total nacional.
-2. Producción de la empresa pública por bloque. Acá aparecen Shushufindi y Libertador (bloque 57)
-   y Bermejo (bloque 49), que Tecpetrol opera por contrato de servicios: en la tabla 1 no figura
-   por nombre.
-3. Estado de pozos: en producción, en reacondicionamiento o completación, en perforación.
-4. Producción de gas natural, en miles de pies cúbicos por día.
-5. "Novedades principales": texto libre por compañía, con pozo, campo y causa. "Cerrado 24 horas
-   por falla de equipo BES", "continúan cerrados por alto corte de agua", "en espera de
-   reacondicionamiento", "con incremento de BSW".
-
-El ejercicio usa el
-[reporte del 15 de septiembre de 2026](descargas/arch-reporte-diario-2026-09-15.pdf) (día de
-operación 14 de septiembre), copia local del
-[original publicado por la ARCH](https://controlhidrocarburos.gob.ec/wp-content/uploads/downloads/2026/09/REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-15-DE-SEPTIEMBRE-DE-2026.pdf),
-por si el sitio del regulador no abre desde tu red. Es un documento público oficial; los
-volúmenes son preliminares y el propio formulario dice "sujetos a revisión". Sacar esa tabla a
-mano lleva una tarde; extraerla con el modelo lleva un minuto, y a eso hay que sumarle la
-verificación.
-
-El prompt del ejercicio, para copiar con el PDF adjunto:
-
-```text
-Actuá como analista de producción. Te subo el reporte diario preliminar
-de producción y operaciones de la Agencia de Regulación y Control de
-Hidrocarburos de Ecuador (ARCH), formulario GTRCH.GEERIH.02.FO.01: un
-PDF de una página con cuatro tablas y un bloque de texto "Novedades
-principales".
-
-Contexto: voy a verificar lo que extraigas contra el original número por
-número, y después va a alimentar una serie de varios días. El original
-usa punto de miles y coma decimal (368.058,36 son trescientos sesenta y
-ocho mil), y en algunas celdas el punto es de miles sin decimales
-(23.607 es veintitrés mil seiscientos siete, no veintitrés coma seis).
-La tabla 2 está pegada a la derecha de la tabla 1: no mezcles filas de
-una con la otra.
-
-Tarea 1: extraé completa la tabla 1, "Producción diaria y cumplimiento
-de estimados": las 14 compañías, el subtotal de privadas y el total
-nacional.
-Formato: una tabla con las columnas fecha_operacion, tipo (pública o
-privada), compania, produccion_anterior_bppd, produccion_dia_bppd,
-incremento_bppd, estimado_bppd, cumplimiento_pct. Números con punto
-decimal y sin separador de miles. Copiá los totales del original, no los
-calcules.
-
-Tarea 2: convertí el bloque "Novedades principales" en una tabla con las
-columnas compania, bloque_o_campo, pozo, causa, horas. Una fila por pozo
-nombrado. Cuando el texto dice "11 pozos de los campos X, Y" sin
-nombrarlos, una sola fila con pozo = "(11 sin nombre)" y los campos en su
-columna. La causa va con las palabras del original, sin resumir ni
-traducir.
-
-Regla: si una celda no la pudiste leer con certeza, dejala vacía y listá
-al final qué no pudiste leer y por qué. No completes con lo que "debería"
-decir.
-```
-
-Dónde suele fallar, para saber qué mirar primero:
-
-- **El formato de los números.** Tablas 1, 2 y 3 con punto de miles y coma decimal; la tabla de
-  gas con punto decimal (24201.44) en el reporte del 15 y con coma (24.181,23) en el del 14: el
-  formato cambia de un día al otro. Y celdas sin decimales, como el estimado de Andes (23.607)
-  o el total de pozos en producción (2.616), que un lector automático convierte en 23.6 y en
-  2.6 sin avisar. Ese es el primer número que hay que buscar en la tabla extraída.
-- **Las dos tablas pegadas.** La tabla 2 vive a la derecha de la tabla 1 en la misma altura de
-  página. Una extracción apurada intercala filas de una con la otra, o le cuelga a una
-  compañía la producción de un bloque.
-- **Los nombres de pozo.** "Hormiguero-33-43" son dos pozos, 33 y 43; "Sacha: 419-400" también;
-  "Villano: 03ST2-11RE1-15H" son tres; "Fanny-18B16RE1" y "Oso-H113RE" son uno solo con
-  sufijo de reentrada. El modelo tiende a partir donde no hay que partir, y al revés.
-- **Los pozos sin nombre.** Andes reporta por cantidad: "11 pozos de los campos Alice Oeste,
-  Chorongo, Dorine y Fanny-18B continúan cerrados por alto corte de agua". Una tabla que
-  "inventa" once filas con nombres plausibles falló en silencio.
-- **El día anterior no coincide.** La columna "producción anterior" de hoy no siempre es igual a
-  la "producción del día" del reporte de ayer: los volúmenes son preliminares y se corrigen. Al
-  armar una serie, elegí una columna y anotalo.
-
-### Segunda pasada: la serie de pozos cerrados por agua
-
-Si el tiempo da en vivo, o como tarea para curiosos: cinco reportes consecutivos, uno por día
-hábil, y de ahí una serie de pozos cerrados por alto corte de agua por compañía. Los archivos
-siguen una única forma de nombre, con el día en dos cifras y el mes en mayúsculas:
-
-```text
-https://controlhidrocarburos.gob.ec/wp-content/uploads/downloads/2026/09/REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-11-DE-SEPTIEMBRE-DE-2026.pdf
-```
-
-Por si el sitio del regulador no abre desde tu red, los cinco reportes del 8 al 15 de septiembre
-de 2026 están copiados acá: [8](descargas/arch-reporte-diario-2026-09-08.pdf),
-[9](descargas/arch-reporte-diario-2026-09-09.pdf), [10](descargas/arch-reporte-diario-2026-09-10.pdf),
-[11](descargas/arch-reporte-diario-2026-09-11.pdf) y [14](descargas/arch-reporte-diario-2026-09-14.pdf),
-además del 15 de arriba.
-
-Con los cinco PDF adjuntos, el pedido es el mismo de la tarea 2 repetido por archivo, más una
-tabla final: fecha de operación, compañía, cantidad de pozos cerrados por alto corte de agua
-(nombrados y sin nombre por separado), y qué cambió respecto del día anterior. Ese conteo se
-retoma en la sesión 8, cuando el caso de recuperación secundaria llega a la pregunta de qué se
-hace con un pozo que produce agua.
-
-## La curva de declinación, y lo que la curva no dice
-
-Ayer, en la capa de aprendizaje automático de la sesión 1, el pozo era de escuela: dos perillas y
-una respuesta exacta escondida, que la máquina encontró sola. Acá aparecen la tercera perilla, el
-eje logarítmico, la acumulada a 30 años y, sobre todo, seis pozos que nadie
-diseñó para que ajustaran.
-
-El ejercicio tiene dos grupos de pozos, y el orden importa.
-
-Los **pozos de escuela** están generados a partir de parámetros conocidos. Sirven para aprender qué
-hace cada perilla contra una curva que tiene respuesta exacta: si ponés los valores con los que se
-generó, el modelo pasa por el medio de los puntos.
-
-Los **pozos reales** son de Aguaragüe, Ramos y Acambuco, en Salta, y producen de huamampampa,
-tupambi, icla y santa rosa. La serie es la producción mensual declarada al Estado argentino entre
-2019 y 2026, sin retocar, del Capítulo IV de la Secretaría de Energía. Aguaragüe lo opera
-Tecpetrol y CGC tiene el 5%: para dos empresas de la sala es dato propio, publicado por el
-Estado, y nadie tiene que agregarle nada.
-
-Y acá está lo que hay que decir en voz alta, porque es donde este ejercicio se separa de un tutorial
-cualquiera. **Arps describe un reservorio que se despresuriza solo, y ningún pozo real hace eso.** Lo
-que se mide en la boca es el reservorio más la compresión disponible ese mes, más las restricciones
-de planta, más la contrapresión de línea, más el líquido que se acumula y ahoga el pozo. Un ajuste
-que cierra no prueba que entendiste la geología, y uno que no cierra no prueba que el reservorio se
-haya portado mal. Para un análisis serio hay que corregir los caudales por horas de operación y
-presión de boca antes de ajustar.
-
-El método sigue siendo útil dentro de ese límite. La curva sirve para ordenar una conversación y
-acotar un número; para cerrarla hacen falta otros datos.
-
-<DeclineLab sesion={4} />
-
-## Del ajuste a mano al pronóstico en lote
-
-El laboratorio ajusta de a un pozo, con tus dedos en las perillas. El trabajo real rara vez es
-así: son diez, cuarenta o doscientos pozos, y el pronóstico se entrega en una planilla. Ese
-salto es el último movimiento del día.
-
-La planilla del ejercicio es
-[produccion_noroeste_10pozos.csv](descargas/produccion_noroeste_10pozos.csv): los seis pozos
-del laboratorio más cuatro nuevos, 90 meses cada uno, 2019 a 2026, del mismo Capítulo IV. Trae
-una columna que el laboratorio no tenía: `dias_efectivos`, los días del mes que el pozo produjo
-de verdad. Con ella el ajuste se hace sobre **caudal efectivo** en lugar de volumen calendario,
-y el serrucho de los febreros desaparece solo.
-
-Entre los cuatro nuevos hay un pozo que murió, uno que produce cada vez más y uno que cambió de
-régimen a mitad de la serie. Están porque tu campo también los tiene: un prompt de pronóstico se
-mide en qué hace cuando el modelo no corresponde.
-
-El prompt completo, para copiar:
-
-```text
-Actuá como ingeniero de reservorios. Te subo un CSV con la producción mensual
-de 10 pozos de gas convencional de la cuenca Noroeste argentina (fuente:
-Capítulo IV, Secretaría de Energía; datos públicos). Columnas: idpozo, pozo,
-yacimiento, formacion, mes (AAAA-MM), gas_miles_m3 (producción del mes, en
-miles de m³), petroleo_m3, agua_m3, dias_efectivos (días del mes que el pozo
-produjo de verdad).
-
-Tarea: ajustá curvas de declinación de Arps por pozo y pronosticá el gas.
-
-Antes de analizar: describí el archivo (filas, columnas, rango de fechas,
-meses por pozo, huecos) y mostrame esa tabla de control. Recién después
-seguí con el análisis.
-
-Reglas del análisis:
-1. Trabajá sobre caudal efectivo: q = gas_miles_m3 / dias_efectivos, en
-   miles de m³/día. Los meses con dias_efectivos < 10 quedan en la historia
-   pero fuera de todos los ajustes.
-2. Si el caudal salta más de 2 veces de forma sostenida, para arriba o para
-   abajo, es un cambio de régimen: ajustá solo el tramo posterior al último
-   salto y anotalo en las notas del pozo.
-3. Ventana de ajuste: desde el pico de la mediana móvil de 3 meses en
-   adelante. Si quedan menos de 24 meses útiles, reportá "sin ajuste" con el
-   motivo. No fuerces ningún ajuste.
-4. Ajustá tres variantes: exponencial (b = 0), hiperbólica (0 < b <= 1.2) y
-   armónica (b = 1), minimizando el error sobre log(q).
-5. Elegí por menor error, pero la hiperbólica tiene que mejorar a la
-   exponencial en más de 2% para ganarse su parámetro extra. Si b queda en
-   el tope, marcá el ajuste como dudoso.
-6. Confiabilidad por R² sobre log(q): 0.6 o más, confiable; entre 0.25 y
-   0.6, pronóstico de orden de magnitud, marcado "dudoso"; menos de 0.25,
-   no ajustable. Si la producción sube, decilo: Arps no aplica.
-7. Backtest por pozo: reajustá sin los últimos 12 meses, pronosticá esos 12
-   e informá el error absoluto medio en volumen. Es la medida de cuánto
-   creerle a cada pronóstico.
-8. Pronóstico mensual desde 2026-07 hasta 2036-12 o hasta el límite
-   económico de 2 miles de m³/día, lo que llegue primero. Volumen del mes =
-   q × días del mes × factor de servicio (mediana de dias_efectivos / días
-   del mes de los últimos 24 meses).
-
-Entregables:
-1. Un Excel: hoja "Resumen" con una fila por pozo (estado, modelo elegido,
-   qi, Di anual, b, R², error de backtest, acumulada histórica, EUR
-   restante, fin del pronóstico, notas); una hoja por pozo con historia y
-   pronóstico mensual; hoja "Supuestos" con todas las reglas que aplicaste.
-2. Un gráfico panel con los 10 pozos en escala semilogarítmica: puntos de
-   historia, las tres curvas, la elegida resaltada y el pronóstico.
-3. Un artifact interactivo: selector de pozo, escala lineal/log, historia,
-   ajustes, pronóstico y la tabla resumen.
-
-En todo el proceso: mostrá el código que corras y el conteo de filas antes
-y después de cada filtro. Si no podés generar archivos descargables,
-entregá el Resumen como tabla y cada pronóstico como CSV en un bloque de
-código.
-```
-
-Cada regla numerada es una decisión de ingeniería de reservorios: qué meses valen, cuándo un salto
-parte la historia, cuánta historia pide un ajuste, cuándo decir que no. Lo que en el laboratorio
-era una perilla acá es una regla escrita, auditable y repetible.
-
-Cuando vuelva el resultado, las tres reglas del día siguen mandando. Pedí el conteo de filas.
-Elegí un pozo que hayas ajustado a mano y compará qi y la declinación anual: son los mismos
-datos, tienen que contar la misma historia. Y buscá la fila de YPF.St.SP.x-1: si el Excel le
-inventa un EUR en lugar de decir "sin ajuste", el archivo entero pierde crédito.
-
-<div className="callout">
-  <strong>Si tu cuenta no genera archivos:</strong> no todos los chatbots gratuitos escriben un
-  Excel o una página interactiva. El prompt ya trae el plan B: las mismas tablas como CSV en
-  bloques de código, para pegar en tu planilla.
-</div>
-
-### Para curiosos: cuando además hay presiones
-
-Todo lo de arriba usa caudales solos, porque es lo que publica el Capítulo IV. Equinor liberó
-los datos completos del campo Volve (Mar del Norte, 2008–2016) bajo una licencia abierta que
-permite usarlos y compartirlos con crédito, y ahí está lo que acá falta:
-[producción diaria con presión de fondo, presión de boca y horas en
-línea](https://www.equinor.com/energy/volve-data-sharing), pozo por pozo.
-
-El dataset completo pide registro; para este ejercicio no hace falta. La planilla
-[volve_diario_2pozos.csv](descargas/volve_diario_2pozos.csv) trae el recorte listo: los dos
-productores con mejor cobertura de presión, 15/9-F-14 (2008–2016) y 15/9-F-11 (2013–2016), día
-por día. Datos del campo Volve de Equinor y los ex socios de la licencia (ExxonMobil Exploration
-& Production Norway AS, Bayerngas Norge AS), compartidos acá bajo
-[sus términos](https://cdn.equinor.com/files/h61q9gi9/global/de6532f6134b9a953f6c41bac47a0c055a3712d3.pdf):
-está permitido usarlos y compartirlos con crédito, y está prohibido venderlos.
-
-Con ese archivo el pedido al chatbot pasa de aplicar Arps a construir el diagnóstico que Arps
-no puede dar. El prompt completo:
-
-```text
-Te subo volve_diario_2pozos.csv: producción diaria real de dos pozos de
-petróleo del campo Volve (Mar del Norte), una fila por pozo y día.
-Columnas: fecha, pozo, horas_linea (horas en producción ese día),
-p_fondo_bar (presión de fondo fluyente promedio), p_boca_bar (presión de
-boca), oil_sm3, gas_sm3, agua_sm3 (volúmenes del día).
-
-Antes de analizar: describí el archivo (filas y rango de fechas por pozo,
-cobertura de presión de fondo) y esperá mi ok.
-
-Reglas:
-1. Día productivo: horas_linea > 0 y petróleo > 0. Normalizá los
-   caudales a 24 horas en línea. Día de cierre: horas_linea = 0.
-2. La presión de fondo de los días de cierre es tu proxy de presión de
-   reservorio: descartá los ceros de sensor (< 50 bar), tomá la mediana
-   mensual e interpolá los meses sin cierres. Graficala junto a la
-   presión fluyente de los días productivos.
-3. Armá series mensuales por pozo: caudal de petróleo, caudal de líquido,
-   corte de agua, presión fluyente y proxy de reservorio.
-4. Índice de productividad: PI = caudal de líquido / (pR − pwf), en los
-   días que tienen las dos presiones. Seguilo en el tiempo.
-5. Ajustá una curva de Arps al caudal de petróleo desde su pico, como
-   referencia, e informá qi, Di, b y R².
-6. El entregable central es un diagnóstico por pozo, en una tabla de
-   cuatro filas: depresionamiento (¿pR cae?), pérdida de productividad
-   (¿PI cae?), avance de agua (¿el corte sube?), manejo del drawdown
-   (¿pR − pwf cae?). Cada fila con su evidencia numérica: valor al
-   principio, valor al final.
-7. Cerrá comparando: ¿qué acierta la Arps del punto 5 y qué no puede ver?
-   ¿Qué habría pronosticado para 15/9-F-11 una Arps ajustada solo hasta
-   fines de 2015, y qué pasó de verdad en 2016?
-
-Mostrá el código y el conteo de filas después de cada filtro. Si no podés
-generar archivos, las tablas van como CSV en bloques de código. Cerrá con
-un gráfico de cuatro paneles por pozo: caudales y corte de agua,
-presiones, PI, y el semilog con la Arps.
-```
-
-Lo que ese diagnóstico tiene que mostrar, para controlar al copiloto: la presión de reservorio
-de los dos pozos no cae nunca (la inyección de agua la sostiene cerca de 300 bar), el índice de
-productividad no se pierde, y el corte de agua sube de 8% a 94% en 15/9-F-14 y de 9% a 81% en
-15/9-F-11. Mientras tanto una Arps ajusta el petróleo de 15/9-F-14 con R² de 0.96. La curva
-describe la caída sin ver el mecanismo, y la meseta de 15/9-F-11 hasta 2015 no anuncia en nada
-el barranco de 2016.
-
-Con volumen mensual crudo este análisis no se puede hacer. Con presiones diarias lleva una tarde
-de trabajo con el copiloto, y además de extrapolar la curva permite entender por qué declina el
-pozo. Para un campo con inyección de agua, como Pindo o Libertador, es el análisis que
-importa.
-
-## De la ingeniería de prompts a la ingeniería de contexto
-
-Una puerta que queda abierta para mañana. El prompt que ve el modelo es tu pedido más todo lo
-que viaja con él: los archivos que adjuntaste hoy, los
-fragmentos que un buscador recupera de tus manuales (mañana, en la sesión 5), los resultados
-de las herramientas que un agente usa mientras trabaja (en la sesión 6). En el rubro ya hay
-nombre para eso: la ingeniería de prompts está dando lugar a la **ingeniería de contexto**.
-
-Las piezas de hoy siguen valiendo, con la orden de trabajo en el centro. Alrededor crece todo lo
-que la acompaña, y todo eso tiene que caber en la ventana de contexto de ayer.
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| La planilla y el copiloto | 30 min | Retomamos, subimos producción real del Capítulo IV, pedimos análisis y leemos el código juntos |
-| De PDF a tabla: el reporte diario de la ARCH | 35 min | La producción por compañía y las novedades pozo por pozo, verificadas número por número entre todos |
-| Pausa | 10 min | La corrida de los 10 pozos sigue trabajando mientras tanto |
-| Declinación en vivo | 25 min | Pozos reales de Salta: ajustamos entre todos y discutimos qué no dice la curva |
-| Qué se puede afirmar | 10 min | De los tres análisis: qué conclusión firmarías y cuál necesita más trabajo |
-| Cierre y tarea | 10 min | Tres prácticas para llevarse y la tarea de mañana |
+| De la planilla a los documentos | 10 min | El puente con la mañana, las ventanas de la sesión y una pregunta a la sala por el chat |
+| Por qué no sabe lo tuyo | 12 min | El hueco, las dos formas de cerrarlo, y qué significa "parecido" para un modelo |
+| Buscar por significado | 13 min | Las dos búsquedas del ejercicio, y el prompt aumentado que se le manda al modelo |
+| El cuaderno de reservas y regulación | 25 min | Armamos en vivo un cuaderno con el estándar internacional de reservas y las normas de los tres países, y lo interrogamos abriendo cada cita |
+| Pausa | 10 min | A las 13:00 de Argentina (11:00 de Ecuador y Colombia) |
+| Cuando la cita miente | 10 min | Una pregunta sin respuesta en las fuentes y una norma bien citada en su versión vieja |
+| Tu cuaderno, sin traer nada | 20 min | Cada uno elige un documento público del menú, arma su cuaderno y le hace dos preguntas |
+| Las cosas lindas del cuaderno | 14 min | Audio, video, mapa, tabla, infografía y presentación: cada uno genera una sola pieza y la verifica |
+| Cierre y tarea | 6 min | Tres prácticas, qué discutir y la tarea de cinco minutos para el taller de agentes |
 
-<Quiz data="quiz_s4" sesion={4} />
+Las preguntas cortas a la sala van por el chat de la videollamada.
+
+## De la planilla a los documentos
+
+A la mañana le diste a un chatbot un CSV del Capítulo IV y te devolvió un Excel con fórmulas que
+se pueden revisar. Con una planilla, el dato está entero adelante: el modelo lo lee, corre la
+cuenta y te la muestra. Un reglamento de 84 páginas funciona distinto. La respuesta que buscás está
+en un párrafo del medio, escrita con palabras que no son las de tu pregunta. Esta sesión trata de
+cómo llega una herramienta a ese párrafo, y de cómo verificás que llegó al correcto.
+
+## El modelo no leyó tus documentos
+
+Leyó una cantidad enorme de texto de internet. No leyó tu manual de operaciones, ni tus normas
+internas, ni el informe del campo que escribió tu compañero el mes pasado. Preguntarle sobre eso es
+pedirle que complete lo más plausible, y así sale una respuesta inventada con tono seguro.
+
+Hay dos formas de cerrar ese hueco. Una es reentrenar el modelo con tus documentos, que es caro,
+lento y casi siempre innecesario. La otra es más simple y es la que se usa: **buscar los fragmentos
+que responden la pregunta y pegarlos arriba de la pregunta**. El modelo responde con el libro
+abierto. Se llama generación aumentada por recuperación (RAG, por su sigla en inglés), y una vez que
+la ves funcionar es difícil que te siga pareciendo sofisticada.
+
+## Primero, qué significa "parecido" para un modelo
+
+Para buscar por significado hay que poder medirlo. El modelo convierte cada texto en una lista de
+números, y dos textos con sentido parecido dan listas parecidas. Todo lo demás sale de ahí.
+
+El ejercicio proyecta esas listas a un plano para que las puedas mirar. Prestá atención a la familia
+de jerga: "burro", "araña", "pescado", "camisa". El modelo aprendió esas palabras del lenguaje
+corriente, así que las ubica junto a objetos cotidianos, lejos del equipamiento del yacimiento.
+Ahí se ve, de un vistazo, qué es lo que no sabe de tu trabajo.
+
+<EmbeddingsMap sesion={4} />
+
+## Y ahora sí, buscar en tus documentos
+
+El corpus del segundo ejercicio es un manual interno inventado para el curso, y es a propósito:
+cualquier documento público de verdad podría haber estado en el entrenamiento del modelo, y entonces
+la demostración no probaría nada.
+
+Probá las preguntas que no comparten ninguna palabra con su respuesta. La que pregunta cómo evitar
+que alguien arranque el equipo mientras lo reparás la responde un fragmento que habla de "bloqueo y
+etiquetado". La de cuidarse los oídos la responde uno que dice "protección auditiva". Un buscador de
+palabras no tiene con qué encontrarlas y uno por significado sí. Por eso esto sirve sobre
+documentación técnica, que siempre está escrita en un vocabulario que nadie usa cuando pregunta.
+
+Mirá también el bloque del final, que muestra todo lo que se le manda al modelo.
+
+<RagDemo sesion={4} />
+
+## Dónde sigue fallando
+
+Recuperar fragmentos reduce las invenciones pero no las elimina, y además agrega un modo de falla
+nuevo: si el buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que
+sea el modelo, y va a estar mal **con una cita al lado**, que es peor. Por eso la regla es mirar
+siempre los fragmentos recuperados además de la respuesta. Si una herramienta no te los muestra, la
+cita parece verificable pero no tenés cómo verificarla.
+
+Hay un segundo límite, más aburrido y más frecuente: si la respuesta no está en los documentos,
+ninguna búsqueda la va a traer. La herramienta sabe lo que dicen las fuentes que le diste, y nada
+más.
+
+## El cuaderno de reservas y regulación
+
+El manual inventado prueba el mecanismo. El cuaderno que armamos en vivo usa documentos reales: el
+estándar con el que se clasifican las reservas y las normas que dicen cómo se reportan en los tres
+países de la sala. Son públicos y entran en una cuenta gratuita de Gemini Notebook, que admite
+[hasta 50 fuentes por cuaderno](https://support.google.com/notebooklm/answer/16213268?hl=es-419).
+Podés armarte el mismo con estas siete:
+
+- El [Sistema de Gerencia de los Recursos de Petróleo 2018](https://www.spe.org/media/filer_public/a1/f2/a1f29a2d-f0b9-4872-8648-ffa055af93f3/2018_sistema_de_gerencia_de_los_recursos_de_petroleo_-_traduccion_en_espanol_-_vf.pdf),
+  traducción oficial al español de la Sociedad de Ingenieros de Petróleo (SPE, por su sigla en
+  inglés). PDF de 65 páginas. Es el PRMS (por su sigla en inglés), el estándar que define qué es
+  una reserva y qué es un recurso contingente.
+- Las [Guidelines for Application of the Petroleum Resources Management System](https://www.spe.org/industry/docs/PRMS_Guidelines_Nov2011.pdf),
+  la guía de aplicación del PRMS. PDF en inglés, 222 páginas, de noviembre de 2011: comenta la
+  versión 2007 del estándar, y el cuaderno no te lo va a avisar.
+- El [Reglamento de Operaciones Hidrocarburíferas](https://www.gob.ec/sites/default/files/regulations/2025-05/Documento_Reglamento-Operaciones-Hidrocarbur%C3%ADferas.pdf)
+  de Ecuador, resolución ARCERNNR-024/2021, Registro Oficial 514 del 12 de agosto de 2021. PDF de
+  84 páginas y 191 artículos; el artículo 22 es el de reservas.
+- La [Resolución 0895 del 4 de noviembre de 2025](https://www.anh.gov.co/documents/32451/Res_0895_del_04-11-2025_IRR_fO1pCS6.pdf)
+  de la Agencia Nacional de Hidrocarburos (ANH) de Colombia. PDF de 19 páginas: cómo se valoran,
+  certifican y reportan recursos y reservas.
+- El [Informe de Recursos y Reservas 2025](https://www.anh.gov.co/documents/34284/Informe_de_Recursos_y_Reservas_-_IRR_2025.pdf)
+  de la ANH, publicado el 23 de junio de 2026. PDF de 36 láminas: lo que dio aplicar esa
+  resolución.
+- La [Resolución 324/2006 de la Secretaría de Energía](https://www.argentina.gob.ar/normativa/nacional/norma-114769/actualizacion)
+  de Argentina, en su texto actualizado. Página web: reservas comprobadas, no comprobadas y
+  recursos, certificados por auditores externos.
+- La [Resolución 69-E/2016](https://www.argentina.gob.ar/normativa/nacional/norma-267420/texto),
+  también página web, la que en 2016 reemplazó las definiciones de la 324.
+
+Con los PDF se sube el archivo; con las páginas web se pega la dirección.
+
+### Ojo con la versión
+
+El sitio argentino de normativa muestra cada norma en dos versiones. El texto original de la
+324/2006 todavía trae las definiciones de 2006; el texto actualizado ya incorpora las que puso la
+69-E en 2016. Y la página de la 69-E no trae esas definiciones: están en un anexo en PDF que el
+cuaderno no lee si le das solo la dirección. Un cuaderno cita con la misma prolijidad un texto
+vigente y uno reemplazado, así que la versión la elegís vos antes de cargarla.
+
+### Seis preguntas que cruzan documentos
+
+1. ¿Qué diferencia hay entre una reserva y un recurso contingente, y qué tiene que pasar para que
+   un recurso contingente pase a ser reserva?
+2. En Ecuador, ¿hasta qué fecha se presentan las reservas de cada año, y quién las tiene que
+   certificar?
+3. ¿Cómo se relaciona la Resolución 0895 de la ANH con el PRMS? ¿Qué toma de él y qué le agrega?
+4. ¿Cómo define la norma argentina una reserva comprobada? ¿Cita el PRMS?
+5. Armá una tabla con Ecuador, Colombia y Argentina: fecha límite para presentar las reservas,
+   quién las certifica y cada cuánto hay que cambiar de certificador.
+6. ¿Cuántos años de reservas probadas de petróleo le quedan a Colombia, y cuántos a Ecuador?
+
+Cada respuesta trae números de cita. Tocá cada uno, leé el fragmento entero y hacete tres
+preguntas: de cuál de los siete documentos sale, si el fragmento dice eso mismo o algo parecido, y
+de qué versión es. Con siete fuentes de tres países en dos idiomas, una misma oración prolija
+puede mezclar el reglamento de Ecuador con la resolución de Colombia. Y una pregunta cuya respuesta
+no está en ninguna fuente tiene que terminar en "no está en las fuentes": si trae un número,
+fijate de dónde salió.
+
+## Tu cuaderno, sin traer nada
+
+El segundo cuaderno lo armás vos, con un solo documento público. Elegí uno del menú, el que más
+se acerque a tu trabajo:
+
+- **Producción y reservas de Argentina.** El [Reporte Mensual del Instituto Argentino del Petróleo y del Gas (IAPG), julio de 2026](https://iapg.org.ar/REM/IAPG_REPORTE_JULIO_2026.pdf)
+  (PDF, 64 páginas).
+  - "¿Cuánto petróleo por día produjo Argentina en julio de 2026?" Mirá de qué tabla lo saca: el
+    mismo reporte da más de un total.
+  - "¿De qué año es el último dato de reservas comprobadas, y cuánto crecieron las no
+    convencionales?"
+- **Reservas de Colombia.** El [Informe de Recursos y Reservas 2025](https://www.anh.gov.co/documents/34284/Informe_de_Recursos_y_Reservas_-_IRR_2025.pdf)
+  de la ANH (PDF, 36 láminas), el mismo del cuaderno de reservas, ahora solo.
+  - "¿Qué porcentaje de las reservas probadas de petróleo certificó un tercero independiente, y
+    cuántas empresas auditoras intervinieron?"
+  - "¿Por qué no se desarrollan los recursos contingentes de gas?"
+- **Producción de Ecuador.** El [Boletín Analítico del Sector Petrolero del Banco Central del Ecuador (BCE), segundo trimestre de 2026](descargas/bce-boletin-sector-petrolero-2026-t2.pdf)
+  (PDF, 32 páginas; el mismo de la mañana; [original](https://contenido.bce.fin.ec/documentos/Estadisticas/Hidrocarburos/ASP202602.pdf)).
+  - "¿Cuánto petróleo por día produjo Ecuador en el segundo trimestre de 2026? Dame la producción
+    en campo y la fiscalizada, y explicame la diferencia."
+  - "¿Por qué bajó la producción de EP Petroecuador en el trimestre?"
+- **Un caso técnico.** El [artículo sobre inyección de agua en ciclos en el campo Chichimene](https://ctyf.journal.ecopetrol.com.co/index.php/ctyf/article/download/725/497)
+  (Colombia), de la revista Ciencia, Tecnología y Futuro (CT&F) de Ecopetrol, junio de 2024 (PDF
+  en inglés con resumen en español, 14 páginas).
+  - "¿Cuánta agua y cuánta energía se ahorró con la inyección en ciclos?"
+  - "¿Cuánto aumentó el factor de recobro del piloto? Dame un número."
+
+Paso a paso, con el chat abierto para lo que trabe:
+
+1. Entrá a [notebook.google.com](https://notebook.google.com/) con una cuenta personal de Google y
+   creá un cuaderno nuevo.
+2. Subí el PDF o pegá la dirección. Un documento alcanza.
+3. Leé con desconfianza el resumen que arma solo: es la primera respuesta sin pregunta, y ya puede
+   estar citando de más.
+4. Hacele las dos preguntas del menú, una por vez. Por cada respuesta, tocá el número de la cita y
+   leé el fragmento: ¿responde la pregunta, o quedó cerca del tema nada más?
+5. Anotá para la ronda una respuesta bien citada y una que no, o que no estaba en el documento. Las
+   dos valen lo mismo.
+
+La regla de la mañana sigue: a una cuenta gratuita entra solo lo que ya está en internet. Por eso
+el menú es público, y ninguna ronda te pide un documento de tu empresa.
+
+## Las cosas lindas del cuaderno
+
+Además de contestar preguntas, Gemini Notebook arma piezas enteras con las mismas fuentes, desde
+el panel Studio. En septiembre de 2026 la cuenta gratuita trae todas estas:
+
+| Pieza | Qué arma | Un uso de trabajo |
+| --- | --- | --- |
+| [Resumen en audio](https://support.google.com/gemininotebook/answer/16212820?hl=es-419) | Una conversación de dos voces (Análisis detallado), un resumen de una voz en menos de dos minutos (Resumen), una crítica (Opinión) o un debate, en español de Latinoamérica | Ponerse al día con el marco de reservas de otro país en el viaje al yacimiento |
+| [Resumen en video](https://support.google.com/gemininotebook/answer/16454555?hl=es-419) | Un video explicativo o uno corto de unos 60 segundos, en español; a veces tarda más de 30 minutos | La inducción de un ingeniero nuevo sobre cómo se reportan reservas |
+| Mapa mental | Los temas de las fuentes como un árbol que se abre por ramas | Orientarse en un reglamento de 191 artículos antes de buscar uno |
+| Informe | Un documento informativo, una guía de estudio o preguntas frecuentes; se exporta a Documentos de Google | El primer borrador de una minuta para gerencia |
+| Tarjetas y cuestionario | Preguntas y respuestas sobre las fuentes, con la dificultad que elijas; las tarjetas se bajan en CSV | Preparar al equipo antes de una auditoría de reservas |
+| Infografía | Una lámina con las cifras y relaciones principales; se baja en PNG | Una lámina para la reunión de resultados |
+| [Presentación](https://support.google.com/gemininotebook/answer/16757456?hl=es-419) | Un deck detallado para leer solo, o uno de apoyo para exponer; se baja en PDF o PPTX | El esqueleto de una presentación al comité |
+| Tabla de datos | Filas y columnas con lo que le pidas; se exporta a Hojas de cálculo de Google, con las citas en una segunda pestaña | La comparación de plazos y certificadores de los tres países |
+
+Desde el 2 de septiembre de 2026, los [límites de la cuenta gratuita](https://support.google.com/gemininotebook/answer/17670842?hl=es-419)
+se miden por cómputo: cada pregunta y cada pieza gastan de una cuota que se renueva cada cinco
+horas, hasta un tope semanal. Un video gasta mucho más que una pregunta. Por eso en vivo cada uno
+genera **una sola pieza**, y el video del cuaderno de reservas lo generamos antes de la clase.
+
+### Cómo se verifica una pieza sin citas
+
+Google avisa en su propia ayuda que el audio, el video, la infografía y la presentación pueden
+tener imprecisiones. La razón es concreta: esas piezas no traen una cita por frase, y el modelo
+que las arma puede decir cosas que ninguna fuente dice. Para verificar una, elegí dos afirmaciones
+que tengan un número, una fecha o un artículo, y hacé la misma pregunta en el chat del cuaderno,
+donde sí hay cita para abrir. En una infografía, cada cifra tiene que aparecer en alguna fuente. Y
+si le pedís cambios a una presentación ya generada, la corrección no vuelve a mirar las fuentes.
 
 ## Para discutir
 
-1. De la tarea que trajiste: ¿lo caro es el borrador, o lo caro es verificar?
-2. ¿Qué dato de tu área vive hoy atrapado en archivos PDF o en escaneos? ¿Cuánto valdría tenerlo en
-   una tabla, y quién lo usaría?
-3. Cuando el chatbot escribe código de análisis: ¿revisás el código o el resultado? ¿Alcanza con uno
-   de los dos?
-4. En el pozo que no ajusta con ningún parámetro: ¿qué información tenés vos que el modelo no puede
-   tener? La misma pregunta vuelve en todo el curso.
+1. La Resolución 0895 obliga a pasar a recurso contingente una reserva que lleva cinco años sin
+   desarrollarse y sin una justificación documentada; el PRMS da esos cinco años como referencia.
+   ¿Qué cambia eso en cómo se planifica un campo?
+2. Un resumen en audio no muestra citas. ¿Para qué usos de tu trabajo alcanza igual, y para cuáles
+   no?
+3. ¿Qué documento de tu trabajo abrís todos los meses para buscar un párrafo? ¿Qué te haría falta
+   para poder cargarlo en un cuaderno? (La respuesta de fondo, con el contrato de datos de las
+   versiones corporativas, es de la sesión 7.)
 
 ## Tarea para mañana
 
-Dos cosas, cinco minutos en total. Primero, tu prompt **antes y después**: el de una línea con el
-que arrancaste hoy y el que funcionó, pegados uno debajo del otro. Segundo, pensá en un documento
-de tu empresa que consultás seguido y que no es confidencial (un manual, una norma, un
-procedimiento, un instructivo) y anotá **tres preguntas concretas** que le harías si pudieras
-preguntarle en lugar de buscar. "¿Cada cuánto se calibra la válvula X?" es una pregunta
-concreta; "¿qué dice el manual?" es demasiado general. Mañana ese documento y esas preguntas van
-a un cuaderno de verdad.
+Opcional, cinco minutos, y nadie la da por hecha. Pensá **una tarea de tu semana que tenga varios
+pasos seguidos**: buscar un dato, bajar un archivo, calcular, armar una tabla, escribir el correo.
+Anotá los pasos en tres a cinco líneas y marcá cuál revisarías vos antes de dar la tarea por
+terminada. Nada de la empresa: alcanza con la forma de la tarea. Mañana, en el taller de agentes,
+esa lista es la materia prima; si no la traés, la escribís ahí en tres minutos.
+
+<Quiz data="quiz_s4" sesion={4} />
+
+Mañana, miércoles, el día es de agentes. En la sesión 5, qué es un agente, qué es el arnés que lo
+envuelve y cuáles hay hoy, con un taller para correr uno gratis. En la sesión 6, un agente arma en
+vivo el caso del curso, y cada empresa escribe el suyo en una página.

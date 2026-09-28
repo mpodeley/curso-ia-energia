@@ -14,8 +14,9 @@ primeros pasos para usar IA generativa en el trabajo de una petrolera, con datos
 Ecuador y Argentina en cada ejercicio. Nadie llega con nada
 leído; todo lo esencial pasa en vivo. Entre día y día hay una sola tarea de unos cinco minutos.
 
-Los asistentes solo necesitan un navegador, una cuenta gratuita de chatbot y una cuenta de
-Google para Gemini Notebook (antes NotebookLM). El sitio no pide usuario ni clave: las preguntas a
+Los asistentes solo necesitan un navegador, una cuenta gratuita de Claude (el único chatbot
+gratuito que hoy corre código y devuelve una planilla) y una cuenta de Google para Gemini
+Notebook (antes NotebookLM). El sitio no pide usuario ni clave: las preguntas a
 la sala van por el chat de la videollamada o de viva voz. Ningún dato confidencial entra a una herramienta gratuita: se trabaja
 con fuentes públicas del regulador ecuatoriano (ARCH) y de la Secretaría de Energía argentina
 (Capítulo IV).
@@ -51,55 +52,57 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 | Alucinaciones en vivo | 30 |
 | Cierre: cuatro maneras de fallar, ¿cambiarías tu definición?, tarea | 12 |
 
-### Día 2, martes 29
+### Día 2, martes 29 · Datos y documentos, con el chatbot trabajando
 
-#### Sesión 3 · 10:00–12:00 · Prompting y trabajo diario
+#### Sesión 3 · 10:00–12:00 · Prompts y datos, en la práctica
 
 | Bloque | min |
-|---|---|
-| Apertura y repaso de la tarea | 15 |
-| Elegir modelo | 12 |
-| El peor prompt | 12 |
-| Anatomía de un prompt | 22 |
-| Taller: tu tarea, tu prompt | 36 |
-| Qué no se sube a un chatbot | 13 |
+| --- | --- |
+| Apertura | 8 |
+| Qué hace hoy un chatbot gratuito | 10 |
+| Prompt corto, dato bueno | 20 |
+| Taller: planilla de surveillance | 37 |
+| ¿Cuadran Petroecuador y el Banco Central? | 25 |
+| Qué no se sube, y para llevarse | 10 |
 | Pausa | 10 |
 
-#### Sesión 4 · 12:00–14:00 · Análisis asistido de datos
+#### Sesión 4 · 12:00–14:00 · Tus documentos: RAG y Gemini Notebook
 
 | Bloque | min |
-|---|---|
-| La planilla y el copiloto | 30 |
-| De PDF a tabla: el reporte diario de la ARCH | 35 |
+| --- | --- |
+| De la planilla a los documentos | 10 |
+| Por qué no sabe lo tuyo | 12 |
+| Buscar por significado | 13 |
+| El cuaderno de reservas y regulación | 25 |
 | Pausa | 10 |
-| Declinación en vivo | 25 |
-| Qué se puede afirmar | 10 |
-| Cierre y tarea | 10 |
+| Cuando la cita miente | 10 |
+| Tu cuaderno, sin traer nada | 20 |
+| Las cosas lindas del cuaderno | 14 |
+| Cierre y tarea | 6 |
 
-### Día 3, miércoles 30
+### Día 3, miércoles 30 · Agentes
 
-#### Sesión 5 · 10:00–12:00 · Tu conocimiento: RAG y Gemini Notebook
+#### Sesión 5 · 10:00–12:00 · Agentes: qué son, el arnés y cuáles hay
 
 | Bloque | min |
-|---|---|
-| Apertura y repaso de la tarea | 15 |
-| Por qué no sabe lo tuyo | 15 |
-| Buscar por significado | 15 |
-| Gemini Notebook en vivo: el cuaderno del rubro | 32 |
-| Tu cuaderno: un documento público de tu empresa | 28 |
-| Cierre | 5 |
+| --- | --- |
+| Apertura | 8 |
+| Qué es un agente | 15 |
+| El arnés | 20 |
+| Qué agentes hay, y cómo se usan | 25 |
+| Taller: tu primer agente | 30 |
+| Qué delegar, y para llevarse | 12 |
 | Pausa | 10 |
 
 #### Sesión 6 · 12:00–14:00 · Agentes y el caso de tu empresa
 
 | Bloque | min |
-|---|---|
-| El loop del agente | 20 |
-| Sus tareas | 30 |
+| --- | --- |
+| El caso real, armado por un agente | 45 |
 | Dónde se rompe, dónde mejora | 15 |
 | Pausa | 10 |
-| Taller: el caso de tu empresa, en una página | 36 |
-| Cierre y tarea | 9 |
+| Taller: el caso de tu empresa, en una página | 40 |
+| Cierre y tarea | 10 |
 
 ### Día 4, jueves 1
 

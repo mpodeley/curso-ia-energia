@@ -25,7 +25,7 @@ hecho, y el de Kosinski ya posicionado en el minuto 36. Al compartir
 pantalla, tildar "compartir audio de la pestaña".
 Retomar en una frase: la sesión 7 dejó las reglas; esta las usa dos veces,
 contra el caso prearmado y contra el caso de cada empresa.
-Martín: confirma en el chat quién volvió, y tiene a mano la lista de las
+Apoyo: confirma en el chat quién volvió, y tiene a mano la lista de las
 cuatro empresas para las rondas.
 -->
 
@@ -158,7 +158,7 @@ Consecuencia, dicha con precisión: la mitad "revisar la inyección que ya
 existe" no se puede correr sobre este análogo, porque en el norte argentino
 la recuperación secundaria está en pasado. Queda la otra mitad, que es la
 que se corre hoy: dónde tendría sentido inyectar.
-Martín: la pregunta va también al chat, para el que no quiera hablar.
+Apoyo: la pregunta va también al chat, para el que no quiera hablar.
 -->
 
 ---
@@ -265,7 +265,7 @@ IV que se puede abrir.
 Sobre el mapa de datos: el caso es público de punta a punta. Corrido con
 datos propios, la volumetría y los fluidos son primer nivel y el libro no
 sale de la red.
-Martín: anota las objeciones en el chat; son el entregable del bloque.
+Apoyo: anota las objeciones en el chat; son el entregable del bloque.
 -->
 
 ---
@@ -311,7 +311,7 @@ Plan B si alguna empresa no trae la página: dos minutos para escribir UNA
 objeción a su propio caso de ayer, y se critica esa.
 Lo que salga se anota: la crítica es lo que cada empresa se lleva para
 reescribir el caso.
-Martín: lleva el reloj, tres minutos exactos por empresa, avisa al minuto
+Apoyo: lleva el reloj, tres minutos exactos por empresa, avisa al minuto
 dos, y llama a la siguiente. Anota una línea por empresa en el chat.
 Cierre del bloque 2. Anunciar la pausa y la hora de vuelta.
 -->
@@ -326,10 +326,10 @@ Volvemos con **la hoja de ruta**
 
 <!--
 10 min · acumulado 1:02
-Martín: hora de vuelta en el chat, y deja armadas cuatro líneas vacías
+Apoyo: hora de vuelta en el chat, y deja armadas cuatro líneas vacías
 ("PCR / CGC / Tecpetrol / Andes") para que cada empresa pegue sus tres filas
 de la hoja de ruta al volver.
-Matías: chequear que las pestañas del futuro sigan cargadas y el audio de la
+Chequear que las pestañas del futuro sigan cargadas y el audio de la
 pestaña listo para el video.
 -->
 
@@ -387,7 +387,7 @@ dato propio.
 El pase al bloque siguiente, y decirlo con estas palabras: esa fila de
 noventa días se escribe pensando en la herramienta que va a existir dentro
 de noventa días. De eso va el último bloque.
-Martín: llama a las cuatro empresas en orden y confirma que las tres filas
+Apoyo: llama a las cuatro empresas en orden y confirma que las tres filas
 de cada una quedaron pegadas.
 Cierre del bloque 3.
 -->
@@ -685,12 +685,12 @@ también podemos meternos más adentro del loop.
 
 ## Una cosa distinta, el lunes
 
-Ronda de cierre, por nombre. Martín lee lo que esperabas el primer día: **¿te llevaste lo que
+Ronda de cierre, por nombre. Leemos lo que esperabas el primer día: **¿te llevaste lo que
 esperabas?** Y **una sola cosa** que vas a hacer distinto el lunes, en una frase.
 
 <!--
 4 min · acumulado 1:59
-Martín: abre la ronda leyendo de su documento las expectativas que cada uno
+Apoyo: abre la ronda leyendo de su documento las expectativas que cada uno
 escribió en el chat el primer día, una por persona y con nombre, sin
 comentarlas.
 Después de cada una, esa persona contesta en una frase si se la llevó, y
@@ -700,7 +700,7 @@ Pedirles que peguen también en el chat lo que van a hacer distinto: ese
 puñado de frases es el mejor resumen posible del curso, escrito por ellos. Si alguna
 expectativa quedó sin cubrir, decirlo sin excusas y señalar dónde está en
 la página.
-Martín: guarda el chat entero al terminar.
+Apoyo: guarda el chat entero al terminar.
 -->
 
 ---

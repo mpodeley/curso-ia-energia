@@ -1,71 +1,93 @@
 {
-  "generated_at": "2026-09-15T00:00:00+00:00",
+  "generated_at": "2026-09-28T00:00:00+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
     {
-      "pregunta": "En una palabra: ¿qué hace un sistema de recuperación aumentada antes de responder?",
+      "pregunta": "¿Qué distingue a un agente de un chatbot sin herramientas?",
       "opciones": [
         {
-          "texto": "Reentrena el modelo con tus documentos.",
-          "explicacion": "Eso es otra técnica, mucho más cara y lenta, y casi nunca es lo que se usa. El modelo no cambia en absoluto."
+          "texto": "Que el modelo que tiene adentro es más potente.",
+          "explicacion": "Suele ser el mismo modelo, o uno de la misma familia. La diferencia está en lo que lo rodea: el arnés."
         },
         {
-          "texto": "Busca los fragmentos más parecidos a la pregunta y los pega adelante de la pregunta, en el mismo prompt.",
+          "texto": "Que puede ejecutar herramientas, mirar el resultado y decidir el paso siguiente con eso a la vista.",
           "correcta": true,
-          "explicacion": "Así el modelo responde con el libro abierto: lee tu manual en el momento de responder."
+          "explicacion": "Es el loop: piensa, actúa, mira el resultado. Un chatbot sin herramientas que se equivoca no se entera; un agente recibe el error de vuelta y puede corregirse."
         },
         {
-          "texto": "Le da acceso a internet para que busque la respuesta.",
-          "explicacion": "Buscar en internet es otra herramienta. Acá el corpus es tuyo y está cerrado, y por eso la respuesta sale de tus documentos."
+          "texto": "Que no alucina, porque verifica todo lo que hace.",
+          "explicacion": "Alucina igual. Lo que cambia es que algunos de sus errores vuelven como un resultado que puede ver, y esos los puede corregir. Los demás siguen siendo tuyos."
         },
         {
-          "texto": "Guarda tus documentos en la memoria del modelo para las próximas consultas.",
-          "explicacion": "No hay memoria persistente. En cada pregunta se vuelve a buscar y se vuelve a pegar."
+          "texto": "Que fue entrenado aparte para trabajar solo.",
+          "explicacion": "Lo que lo deja trabajar solo es el programa que lo envuelve: el loop, las herramientas y los permisos que le dieron."
         }
       ]
     },
     {
-      "pregunta": "El buscador trae un fragmento que no responde la pregunta, pero el modelo contesta igual. ¿Cuál es el riesgo?",
+      "pregunta": "En la traza, el agente filtró por \"AGUARAGUE\" sin diéresis y le volvieron cero filas. ¿Por qué importa lo que hizo después?",
       "opciones": [
         {
-          "texto": "Que la respuesta salga mal y con una cita al lado, lo que la hace más creíble que una respuesta sin fuente.",
+          "texto": "Porque fue a mirar qué valores existen en la columna, y ahí encontró que el área lleva diéresis.",
           "correcta": true,
-          "explicacion": "La cita transmite verificación aunque no la haya. Por eso hay que mirar los fragmentos recuperados además de la respuesta."
+          "explicacion": "Reemplazó una suposición por un dato. Un chatbot sin herramientas hubiera seguido escribiendo con total seguridad sobre una tabla vacía."
         },
         {
-          "texto": "Ninguno: si el fragmento no sirve, el modelo va a decir que no sabe.",
-          "explicacion": "Debería, pero muchas veces no lo hace: arma una respuesta usando lo que tiene, porque es lo que sabe hacer."
+          "texto": "Porque probó otras grafías hasta que una funcionó.",
+          "explicacion": "Eso sería adivinar de nuevo, con suerte. El agente de la traza hizo algo mejor: fue a mirar los datos."
         },
         {
-          "texto": "Que el sistema se ponga más lento.",
-          "explicacion": "El problema es de confiabilidad: la respuesta sale igual de rápido, y mal."
+          "texto": "Porque reintentó la misma consulta y la segunda vez anduvo.",
+          "explicacion": "El error estaba en el filtro, así que la misma consulta hubiera devuelto cero filas otra vez."
         },
         {
-          "texto": "Que se rompa la búsqueda para las próximas preguntas.",
-          "explicacion": "Cada consulta es independiente. El problema es la respuesta de esta vez."
+          "texto": "Porque frenó y le pidió a la persona el nombre correcto del área.",
+          "explicacion": "Frenar ante cada obstáculo lo volvería inútil. Acá lo pudo resolver solo, con evidencia que tenía a mano."
         }
       ]
     },
     {
-      "pregunta": "En el mapa de significados, \"burro\" y \"araña\" quedaban lejos del vocabulario del yacimiento. ¿Qué muestra eso?",
+      "pregunta": "Dejás el mismo modelo y cambiás el arnés. Según las mediciones de Epoch AI y de METR, ¿qué es lo que más cambia?",
       "opciones": [
         {
-          "texto": "Que el mapa está mal calculado.",
-          "explicacion": "El mapa está bien: refleja fielmente lo que el modelo entiende por esas palabras."
+          "texto": "Nada: con el mismo modelo, el resultado es el mismo.",
+          "explicacion": "Epoch AI midió hasta 11% de diferencia para GPT-5 y hasta 15% para Kimi K2 Thinking en un examen de programación, cambiando solo el arnés."
         },
         {
-          "texto": "Que hay que evitar la jerga cuando se usan estas herramientas.",
-          "explicacion": "Evitarla sirve poco: lo que funciona es darle el material donde esa jerga está definida."
+          "texto": "Todo: un buen arnés convierte cualquier modelo en uno de frontera.",
+          "explicacion": "METR comparó Claude Code y Codex con arneses de prueba simples y no encontró una gran diferencia en el largo de tarea que el modelo completa solo."
         },
         {
-          "texto": "Que el modelo aprendió esas palabras del lenguaje corriente y no conoce su significado en el yacimiento.",
+          "texto": "Solo la velocidad con la que responde.",
+          "explicacion": "La velocidad depende sobre todo del modelo y de los servidores. El arnés decide otras cosas: herramientas, permisos y memoria."
+        },
+        {
+          "texto": "Sobre todo qué puede hacer el agente: qué herramientas tiene, qué permisos y qué recuerda.",
           "correcta": true,
-          "explicacion": "Por eso hace falta darle tus documentos: la jerga de tu empresa no está en internet."
+          "explicacion": "Es la lectura de las dos mediciones juntas: el arnés abre y cierra puertas, y la capacidad de fondo la pone el modelo, que cambia menos con otro arnés."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Cuál de estas tareas le delegarías hoy a un agente, sin una persona en el medio?",
+      "opciones": [
+        {
+          "texto": "Mandarle al transportista la nominación de gas del mes que viene.",
+          "explicacion": "Una vez enviada, ya está hecha: si el agente se equivocó, el error no vuelve como un resultado para corregir. Lo irreversible lo aprueba una persona."
         },
         {
-          "texto": "Que el modelo es malo en español.",
-          "explicacion": "Entiende bien el español general. El problema es específico del vocabulario técnico de un oficio."
+          "texto": "Ajustar el caudal de inyección de un pozo en el sistema de control.",
+          "explicacion": "Tiene consecuencias físicas, y el paso equivocado ya no se corrige mirando la salida. De esto trata la sesión 7."
+        },
+        {
+          "texto": "Armar la tabla de relación agua-petróleo de siete campos desde un CSV público, para que después la revises.",
+          "correcta": true,
+          "explicacion": "Es digital, acotada, verificable con dos cuentas contra el archivo, y se puede rehacer si sale mal."
+        },
+        {
+          "texto": "Decidir qué campos se abandonan el año que viene.",
+          "explicacion": "Es una decisión de criterio que no se comprueba rápido. El agente puede preparar el análisis; la decisión es de las personas que responden por ella."
         }
       ]
     }

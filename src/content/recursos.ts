@@ -12,7 +12,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-09-25'
+export const VERIFICADO = '2026-09-28'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -166,24 +166,33 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   3: [
     {
-      tipo: 'video',
-      titulo: 'Prompting 101 | Code w/ Claude',
-      url: 'https://www.youtube.com/watch?v=ysPbXH0LpIE',
+      // Rehecha el 2026-09-28: la sesión 3 pasa a trabajar con datos y el taller va
+      // en Claude, el único chatbot gratuito que devuelve un .xlsx.
+      tipo: 'lectura',
+      titulo: 'Create and edit files with Claude',
+      url: 'https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude',
       fuente: 'Anthropic',
-      duracion: '24:52',
-      publicado: '2025-07',
       idioma: 'en',
       porque:
-        'La clase de prompting de los que hacen los modelos: el equipo de Anthropic construye un prompt real, pieza por pieza, sobre un caso de seguros. Son las mismas piezas del constructor de esta página, contadas desde adentro. En inglés, con subtítulos.',
+        'La ayuda oficial de lo que usamos en el taller: cómo activar la ejecución de código y qué archivos devuelve (planillas, documentos, presentaciones, PDF). Dice que está en todos los planes, el gratuito incluido.',
     },
     {
       tipo: 'herramienta',
-      titulo: 'LMArena',
-      url: 'https://lmarena.ai',
-      fuente: 'LMArena',
+      titulo: 'Producción de petróleo y gas por pozo (Capítulo IV)',
+      url: 'http://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
+      fuente: 'Secretaría de Energía, Argentina',
+      idioma: 'es',
+      porque:
+        'La fuente del archivo del taller es uno de sus recursos, "Producción de Capítulo IV agrupada por yacimiento y formación productiva": petróleo, gas, agua e inyección, mes a mes desde 2006, con licencia abierta. Trae todos los campos del país, así que la planilla se puede repetir con cualquier otro.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'Arena',
+      url: 'https://arena.ai',
+      fuente: 'Arena (antes LMArena)',
       idioma: 'en',
       porque:
-        'El ranking de chatbots hecho con votos a ciegas: miles de personas eligen entre dos respuestas sin saber de qué modelo es cada una. Sirve como referencia general; para elegir, probá los modelos con tu propia tarea.',
+        'Dos modelos anónimos contestan lo mismo y vos votás. El ranking que sale de millones de esos votos sirve de referencia general; para elegir, lo que importa es tu tarea corrida en dos modelos.',
     },
     {
       tipo: 'herramienta',
@@ -195,50 +204,41 @@ export const RECURSOS: Record<number, Recurso[]> = {
         'Capacidad, precio por token y velocidad de todos los modelos en un solo cuadro. El lugar para mirar la escalera grande/rápido de cada proveedor con los números al lado.',
     },
     {
-      tipo: 'lectura',
-      titulo: "Learning more about Claude's mathematical capabilities",
-      url: 'https://www.anthropic.com/research/riemann-zeta',
-      fuente: 'Anthropic',
-      idioma: 'en',
-      porque:
-        'El anuncio original de la contracara de esta sesión: la cota de Riemann movida de 41.6% a 67.2% con un prompt de aliento, y 31 millones de tokens y una prueba formal atrás. El anuncio aclara que el resultado no prueba la hipótesis.',
-    },
-    {
-      tipo: 'lectura',
-      titulo: 'Prompt engineering overview',
-      url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview',
-      fuente: 'Anthropic',
-      idioma: 'en',
-      porque:
-        'La guía con la que Anthropic enseña a escribir prompts. Está pensada para gente que programa, pero las técnicas (ser claro, dar ejemplos, dejar pensar) son las mismas piezas del constructor de esta página, y sirven en cualquier chatbot. En inglés: el traductor del navegador alcanza.',
-    },
-  ],
-  4: [
-    {
-      tipo: 'herramienta',
-      titulo: 'Producción por pozo — Capítulo IV',
-      url: 'https://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
-      fuente: 'Secretaría de Energía, Argentina',
-      idioma: 'es',
-      porque:
-        'La fuente de los pozos del laboratorio. Bajate un año y probá el flujo de la sesión con datos de verdad, que es la mejor práctica antes de tocar los de tu empresa.',
-    },
-    {
-      // Segunda edición: la fuente del bloque "De PDF a tabla" de la sesión 4. No
-      // hay página índice: los PDF viven bajo wp-content/uploads/downloads/AAAA/MM/
-      // con nombre predecible, uno por día hábil. Copias del 8 al 15 de
-      // septiembre de 2026 en public/descargas/ por si la red corporativa
-      // bloquea el sitio del regulador.
+      // Movido desde la sesión 4 el 2026-09-28: el reporte diario queda como "para
+      // curiosos" de la sesión 3. Copias del 8 al 15 de septiembre de 2026 en
+      // public/descargas/ por si la red corporativa bloquea el sitio del regulador.
       tipo: 'herramienta',
       titulo: 'Reporte diario preliminar de producción y operaciones',
       url: 'https://controlhidrocarburos.gob.ec/',
       fuente: 'Agencia de Regulación y Control de Hidrocarburos (ARCH), Ecuador',
       idioma: 'es',
       porque:
-        'Una página por día: producción por compañía y por bloque, estado de pozos, gas y las novedades pozo por pozo con su causa de cierre. El PDF de cada día se llama REPORTE-DIARIO-PRELIMINAR-DE-PRODUCCION-Y-OPERACIONES-DE-DD-DE-MES-DE-AAAA.pdf bajo wp-content/uploads/downloads/AAAA/MM/.',
+        'Una página por día: producción por compañía y por bloque, estado de pozos, gas y las novedades pozo por pozo con su causa de cierre. Es la única fuente pública de Ecuador donde aparece el agua, como texto.',
+    },
+    {
+      tipo: 'video',
+      titulo: 'Prompting 101 | Code w/ Claude',
+      url: 'https://www.youtube.com/watch?v=ysPbXH0LpIE',
+      fuente: 'Anthropic',
+      duracion: '24:52',
+      publicado: '2025-07',
+      idioma: 'en',
+      porque:
+        'La clase de prompting de los que hacen los modelos: el equipo de Anthropic construye un prompt real, pieza por pieza, sobre un caso de seguros. Son las piezas del constructor de esta página, para correos, minutas e informes. En inglés, con subtítulos.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: "Learning more about Claude's mathematical capabilities",
+      url: 'https://www.anthropic.com/research/riemann-zeta',
+      fuente: 'Anthropic',
+      idioma: 'en',
+      porque:
+        'El otro extremo del prompt corto: un pedido de una frase ("intentá en serio") y un modelo de frontera que movió una cota de la función zeta de Riemann de 41.6% a 67.2%, con 31 millones de tokens y una prueba formal atrás. El anuncio aclara que la hipótesis sigue abierta.',
     },
   ],
-  5: [
+  // Sesión 4 desde el 2026-09-28: la ex sesión 5 (RAG y Gemini Notebook), con el cuaderno de
+  // reservas y normativa.
+  4: [
     {
       tipo: 'herramienta',
       titulo: 'Gemini Notebook (antes NotebookLM)',
@@ -246,30 +246,39 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Google',
       idioma: 'es',
       porque:
-        'La versión sin programar de todo esto. Subí dos o tres documentos públicos de tu rubro y hacele una pregunta antes de la sesión: más abajo en esta página hay tres reales para arrancar.',
-    },
-  ],
-  6: [
-    {
-      tipo: 'video',
-      titulo: 'Agentic AI: Workflows vs. agents',
-      url: 'https://www.youtube.com/watch?v=Qd6anWv0mv0',
-      fuente: 'Google Cloud Tech',
-      duracion: '5:30',
-      publicado: '2025-03',
-      idioma: 'en',
-      porque:
-        'Cinco minutos sobre la distinción que ordena el tema: un flujo fijo que usa un modelo, frente a un modelo que decide sus propios pasos. Es el mismo eje de la lectura de Anthropic de abajo, en video.',
+        'La herramienta de la sesión. Entrá con una cuenta personal de Google antes de la clase y fijate que abra: en varias empresas la cuenta corporativa la tiene bloqueada, y mejor descubrirlo antes que en el taller.',
     },
     {
       tipo: 'lectura',
-      titulo: 'Task-Completion Time Horizons of Frontier AI Models',
-      url: 'https://metr.org/time-horizons/',
-      fuente: 'METR',
+      titulo: 'Sistema de Gerencia de los Recursos de Petróleo (PRMS) 2018, traducción oficial al español',
+      url: 'https://www.spe.org/media/filer_public/a1/f2/a1f29a2d-f0b9-4872-8648-ffa055af93f3/2018_sistema_de_gerencia_de_los_recursos_de_petroleo_-_traduccion_en_espanol_-_vf.pdf',
+      fuente: 'Society of Petroleum Engineers (SPE)',
+      idioma: 'es',
+      porque:
+        'La fuente central del cuaderno de reservas: 65 páginas. Las definiciones de reserva y recurso contingente están en la sección 1.1.0.6, y los criterios para pasar de una a otra en la 2.1.2.1. Con eso a mano, las respuestas del cuaderno se chequean en un minuto.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Administra tus límites de uso de Gemini Notebook',
+      url: 'https://support.google.com/gemininotebook/answer/17670842?hl=es-419',
+      fuente: 'Ayuda de Gemini Notebook, Google',
+      idioma: 'es',
+      porque:
+        'Por qué en vivo cada uno genera una sola pieza: desde el 2 de septiembre de 2026 la cuenta gratuita tiene límites de cómputo, con una cuota que se renueva cada cinco horas hasta un tope semanal.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Introducing Contextual Retrieval',
+      url: 'https://www.anthropic.com/engineering/contextual-retrieval',
+      fuente: 'Anthropic',
+      publicado: '2024-09',
       idioma: 'en',
       porque:
-        'La medición detrás de "el techo sube solo", con el gráfico al día: el largo de tarea que un agente completa por su cuenta. En mayo de 2026 sumó una versión temprana de Claude Mythos Preview, en al menos 16 horas, el techo de lo que mide. Publica la letra chica: 50% de éxito, en tareas de software.',
+        'Para curiosos: por qué un buscador trae el fragmento equivocado. Un pedazo que dice "los ingresos crecieron 3%" ya no dice de qué empresa ni de qué trimestre, y Anthropic mide cuánto baja la tasa de fallas cuando a cada fragmento se le agrega su contexto. Está escrito para quien programa; el traductor del navegador alcanza.',
     },
+  ],
+  // Sesión 5 (agentes, nueva el 2026-09-28): qué es un agente, el arnés y cuáles hay.
+  5: [
     {
       tipo: 'video',
       titulo: 'Tips for building AI agents',
@@ -279,7 +288,81 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2025-02',
       idioma: 'en',
       porque:
-        'Tres personas de Anthropic (investigación, aplicaciones y relación con desarrolladores) cuentan qué agentes funcionan hoy y los errores típicos de quien empieza. El mejor complemento en video de la lectura de abajo.',
+        'Tres personas de Anthropic (investigación, aplicaciones y relación con desarrolladores) cuentan qué agentes funcionan hoy y los errores típicos de quien empieza. Tiene pista de audio en español, elegible en el reproductor.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Building effective agents',
+      url: 'https://www.anthropic.com/engineering/building-effective-agents',
+      fuente: 'Anthropic (19 de diciembre de 2024)',
+      idioma: 'en',
+      porque:
+        'La definición que usa esta sesión, en una línea: modelos de lenguaje que usan herramientas según lo que les devuelve el entorno, en un loop. Separa el flujo fijo, con los pasos escritos de antemano, del agente que decide los suyos, y recomienda empezar siempre por lo más simple. En inglés.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Effective harnesses for long-running agents',
+      url: 'https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents',
+      fuente: 'Anthropic (26 de noviembre de 2025)',
+      idioma: 'en',
+      porque:
+        'De acá sale la imagen de los turnos: un proyecto atendido por ingenieros que llegan sin memoria del turno anterior. Cuenta cómo el arnés lo resuelve con archivos: un parte de avance, una lista de tareas y el historial de cambios. Para el más curioso; está escrito para gente que programa.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Why benchmarking is hard',
+      url: 'https://epoch.ai/gradient-updates/why-benchmarking-is-hard',
+      fuente: 'Epoch AI (23 de diciembre de 2025)',
+      idioma: 'en',
+      porque:
+        'La medición de cuánto pesa el arnés: con el mismo modelo, cambiar el programa que lo opera mueve hasta 11% el resultado de GPT-5 y hasta 15% el de Kimi K2 Thinking en un examen de tareas reales de programación. Sirve también para entender por qué dos rankings del mismo modelo no coinciden.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'Arena, modo agente',
+      url: 'https://arena.ai/agent',
+      fuente: 'Arena',
+      idioma: 'en',
+      porque:
+        'Un agente gratuito que trabaja en una computadora descartable en la nube: acepta CSV y PDF, corre comandos y te devuelve en un zip los archivos que armó. Arena puede compartir las conversaciones con los proveedores de los modelos, sin los datos que te identifican, así que ahí va solo dato público.',
+    },
+  ],
+  6: [
+    {
+      tipo: 'herramienta',
+      titulo: 'Producción de petróleo y gas por pozo (Capítulo IV)',
+      url: 'https://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
+      fuente: 'Secretaría de Energía, Argentina',
+      idioma: 'es',
+      porque:
+        'La fuente de los dos archivos que usa el agente: producción e inyección de agua de cada pozo, mes por mes. Es la misma de los 84 pozos del lunes; para el caso se tomó la cuenca Noroeste completa, de enero de 2019 a julio de 2026.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'How Claude remembers your project',
+      url: 'https://code.claude.com/docs/en/memory',
+      fuente: 'Anthropic, documentación de Claude Code',
+      idioma: 'en',
+      porque:
+        'Cómo funciona el archivo de instrucciones que vas a ver en la demo: cada sesión arranca con el contexto vacío, y lo que el agente sabe del proyecto lo lee de CLAUDE.md. Explica también cuándo conviene escribirlo corto y concreto. En inglés; el traductor del navegador alcanza.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'AGENTS.md',
+      url: 'https://agents.md/',
+      fuente: 'Agentic AI Foundation (Linux Foundation)',
+      idioma: 'en',
+      porque:
+        'El mismo tipo de archivo de instrucciones, en un formato abierto que leen más de veinte agentes de programación, entre ellos los de OpenAI, Google y GitHub. Es la razón práctica de "lo que aprende un agente vive en archivos": si cambiás de herramienta, el archivo te sigue sirviendo.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Task-Completion Time Horizons of Frontier AI Models',
+      url: 'https://metr.org/time-horizons/',
+      fuente: 'METR',
+      idioma: 'en',
+      porque:
+        'La medición detrás de "la frontera sube": el largo de tarea que un agente completa solo, con el gráfico al día (última actualización, 8 de mayo de 2026). Leelo con su letra chica: 50% de éxito, tareas de software, y por encima de 16 horas su conjunto de tareas ya no mide bien.',
     },
     {
       tipo: 'video',
@@ -290,16 +373,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2025-04',
       idioma: 'en',
       porque:
-        'La charla del coautor de la lectura de abajo, en un cuarto de hora: no construyas agentes para todo, mantenelos simples, y pensá desde el punto de vista del agente. Tiene pista de audio en español, elegible en el reproductor.',
-    },
-    {
-      tipo: 'lectura',
-      titulo: 'Building effective agents',
-      url: 'https://www.anthropic.com/engineering/building-effective-agents',
-      fuente: 'Anthropic',
-      idioma: 'en',
-      porque:
-        'Para el más curioso: la nota de ingeniería de Anthropic sobre qué es un agente y, sobre todo, cuándo no conviene armar uno. Está escrita para gente que construye, pero la primera mitad le sirve a cualquiera para separar lo que funciona del humo. En inglés.',
+        'La contracara sensata de la demo, en un cuarto de hora: no armes un agente para todo, mantenelo simple, y pensá el trabajo desde lo que el agente ve. Sirve para decidir si el caso de tu empresa necesita un agente o alcanza con un chatbot.',
     },
   ],
   7: [

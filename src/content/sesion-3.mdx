@@ -4,117 +4,372 @@ import { Recursos } from '../components/Recursos'
 
 ## Antes de la sesión (opcional)
 
-Lo único que pide esta sesión es la tarea de ayer: una tarea real de tu semana, la que le
-pedirías a un chatbot, anotada en tres líneas. Es la materia prima del taller; si no llegaste, la
-anotamos en los primeros minutos. Si tenés un rato antes, el constructor de prompts de esta
-página se puede jugar solo.
+No hace falta traer nada. Si tenés cinco minutos antes, dejá lista la herramienta del taller:
+
+1. Una cuenta gratuita en [Claude](https://claude.ai). Es el chatbot gratuito que hoy corre
+   código y te devuelve un Excel para bajar.
+2. En la configuración de Claude, en la sección de capacidades, activá la ejecución de código y
+   la creación de archivos (en la interfaz en inglés: Settings, Capabilities, "Code execution and
+   file creation").
+3. Bajá el archivo del taller:
+   [campos_capiv_2006_2026.csv](descargas/campos_capiv_2006_2026.csv).
+
+Si no llegás, lo hacemos en los primeros minutos.
 
 <Recursos sesion={3} />
-
-## Elegir modelo: benchmarks y precios
-
-Todos los proveedores ofrecen la misma escalera: un modelo **grande** y uno **rápido y barato**
-(Astra y Luna en OpenAI, Sonnet y Haiku en Claude, Pro y Flash en Gemini). Cuando tu chatbot
-tiene selector de modelos, ese selector es esta decisión. En septiembre de 2026, las cuentas
-gratuitas quedan así: ChatGPT no trae selector, Claude ofrece Sonnet y Haiku, y Gemini corre
-Flash con acceso limitado a Pro. Al comparar, cuatro cosas: capacidad en tu tarea, ventana de
-contexto, precio por token y velocidad.
-
-Un benchmark es un examen estandarizado, útil para descartar modelos y poco fino para elegir entre
-los que quedan. Los modelos "estudian para el examen", un punto más de puntaje no se nota en una
-minuta, y el podio cambia todos los meses. [LMArena](https://lmarena.ai) junta votos a ciegas de
-miles de usuarios; [Artificial Analysis](https://artificialanalysis.ai) pone capacidad, precio y
-velocidad en un solo cuadro. El benchmark que importa de verdad es tu tarea, corrida en dos
-modelos.
-
-Los precios son por token, distintos para entrada y salida, y el modelo grande cuesta varias veces
-lo que el rápido del mismo proveedor; Artificial Analysis tiene el precio de cada uno. Con cuentas
-gratuitas no lo pagás; importa el día que algo se automatiza, porque mil corridas por mes convierten
-el precio por token en presupuesto. Lo habitual es usar el grande para lo difícil o lo que se hace
-una vez, y el rápido para lo repetitivo, después de probar que alcanza.
-
-## Anatomía de un prompt que funciona
-
-Un prompt efectivo es una **orden de trabajo bien escrita**, como la que le darías a un analista
-nuevo el primer día. Las piezas:
-
-- **Rol:** quién quiere que sea. *"Sos un ingeniero de producción senior que escribe para gerencia."*
-- **Contexto:** lo que necesita saber. *"Este resumen va al comité que decide el workover del pozo X."*
-- **Tarea:** el verbo concreto. Resumir, comparar, redactar, extraer, traducir, criticar.
-- **Formato:** cómo querés la salida. *"Tabla de dos columnas"*, *"máximo 200 palabras"*, *"en viñetas"*.
-- **Ejemplos:** si tenés un "así me gusta", mostralo. Un ejemplo vale más que tres párrafos de instrucciones.
-- **Iteración:** la primera salida es un borrador. *"Más corto"*, *"menos jerga"*, *"ahora en tono formal"*:
-  corregir sobre la marcha es parte normal del trabajo.
-
-Un ejemplo completo:
-
-```text
-Sos un ingeniero de reservorios que escribe para un directorio no técnico.
-Contexto: adjunto las conclusiones técnicas del estudio de simulación del campo.
-Tarea: redactá un resumen ejecutivo.
-Formato: máximo una página, tres secciones (situación, opciones, recomendación),
-sin jerga; cada término técnico inevitable, explicado entre paréntesis.
-```
-
-<PromptBuilder sesion={3} />
-
-## Dónde rinde hoy, en la oficina
-
-Los casos de mayor retorno inmediato son tareas de todos los días: resumir informes y papers (los de
-la Society of Petroleum Engineers incluidos), redactar primeros borradores de correos, minutas e
-informes mensuales, traducir con vocabulario técnico correcto, extraer datos puntuales de
-documentos largos, criticar un texto propio antes de mandarlo. La regla común: **tareas donde el
-borrador cuesta y la verificación es rápida**.
-
-## Qué no se sube a un chatbot
-
-Regla práctica: si no lo pondrías en un correo a un desconocido, no va en el chat. No van
-producción real por pozo, reservas, precios y cláusulas de contratos, datos de socios,
-información de personas. Lo que se sube a una cuenta gratuita sale de tu control, y el contrato
-de datos de una cuenta gratuita no promete nada.
-
-En este curso la regla tiene una segunda cara. En la sala hay cuatro empresas que compiten
-entre sí, y el chat de la videollamada es tan compartido como el chatbot: **ningún ejercicio
-pide un dato de tu empresa**, y ninguna ronda lo espera. Cuando necesitás una estructura real
-para practicar, las alternativas son tres: datos públicos (el reporte diario del regulador
-ecuatoriano, el Capítulo IV argentino, lo que ya está afuera), datos viejos que dejaron de ser
-sensibles, o la planilla con las mismas columnas y números inventados. Para ayudarte a armar el
-informe, al modelo le alcanza con la estructura.
-
-<div className="callout">
-  <strong>Los casos grises</strong> (¿el borrador del informe mensual entra?) dependen de qué
-  números lleve. Ese "depende" se resuelve en la sesión 7, cuando cada uno se lleva un borrador
-  de política de uso para su equipo. Las versiones corporativas de estas herramientas existen, con
-  otro contrato de datos; también son parte de la sesión 7.
-</div>
-
-## La contracara: "intentá en serio"
-
-En agosto de 2026, una versión de investigación de Claude que Anthropic todavía no había
-publicado (el anuncio no dice cuál) subió de 41.6% a 67.2% una cota inferior de larga data: la
-fracción de los ceros de la función zeta de Riemann que cumplen la hipótesis. El prompt fue una
-frase suelta, sin rol, contexto ni formato: un empleado sin formación matemática le pidió que
-"intentara en serio". Atrás hubo 650 ideas que no funcionaron, un segundo intento de un día y
-medio, 31 millones de tokens, y una prueba formalizada y revisada por matemáticos. Lo que movió
-fue una cota parcial; la hipótesis sigue abierta.
-
-La anatomía sigue valiendo: en el trabajo de todos los días, el prompt fino es lo que controla
-la salida. Cuando la tarea cae en algo para lo que un modelo de frontera tiene talento nativo, el
-prompt puede ser mínimo. La verificación hace falta en los dos casos.
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura y repaso de la tarea | 15 min | La agenda, el sitio, y una ronda con la tarea real de cada uno: es el menú del taller |
-| Elegir modelo | 12 min | Benchmarks, precios por token y la escalera grande/rápido de cada proveedor |
-| El peor prompt | 12 min | Le pedimos una de esas tareas de una línea, sin contexto, y miramos qué devuelve |
-| Anatomía de un prompt | 22 min | Las seis piezas, reescribiendo en vivo dos tareas de la lista |
-| Taller: tu tarea, tu prompt | 36 min | Cada uno arma el suyo con el constructor, lo prueba y pega el resultado en el chat |
-| Qué no se sube a un chatbot | 13 min | La regla, el porqué, las alternativas y tres prácticas para llevarse |
-| Pausa | 10 min | Dejá abierto un chatbot que acepte archivos: lo usás al volver |
+| Apertura | 8 min | El día, el sitio, y cada uno con Claude abierto y el archivo bajado |
+| Qué hace hoy un chatbot gratuito | 10 min | Qué corre, qué lee y qué entrega cada uno, y la escalera de modelos grande y rápido |
+| Prompt corto, dato bueno | 20 min | La misma pregunta de una línea sobre un archivo limpio y sobre uno sucio, y después en Arena, a ciegas |
+| Taller: planilla de surveillance | 37 min | El chatbot arma el Excel con semáforo y relación agua-petróleo contra acumulada; cada uno lo verifica |
+| ¿Cuadran Petroecuador y el Banco Central? | 25 min | Dos PDF oficiales, un trimestre, y un promedio que parece bien |
+| Qué no se sube, y para llevarse | 10 min | La regla entre cuatro empresas y tres prácticas |
+| Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 4 |
 
-A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 4: el mismo chatbot, ahora con
-planillas y un PDF del regulador.
+Las preguntas a la sala van por el chat de la videollamada. Lo que subas a un chatbot en esta
+sesión es público: producción oficial de Argentina y reportes oficiales de Ecuador.
+
+## Qué hace hoy un chatbot gratuito
+
+Un chatbot de 2026 ya no solo escribe texto. Con una cuenta gratuita puede leer tu archivo,
+escribir un programa que lo analice, correrlo, mirar el resultado y devolverte una planilla. Eso
+es un agente chico, y el miércoles le dedicamos el día entero. Lo que trae cada cuenta gratuita,
+al 28 de septiembre de 2026:
+
+| Chatbot | Modelo de la cuenta gratuita | Con tus archivos | Lo que entrega |
+| --- | --- | --- | --- |
+| [Claude](https://claude.com/pricing) | Sonnet y Haiku | Corre código sobre CSV, Excel y PDF; hasta 20 archivos por conversación | Planillas `.xlsx`, documentos, presentaciones y gráficos para bajar |
+| [ChatGPT](https://chatgpt.com/pricing) | GPT-5.6 Luna | Análisis de datos y subida de archivos, con límites | Tablas y gráficos; unas 12 páginas de texto por pedido |
+| [Gemini](https://support.google.com/gemini/answer/16275805) | Flash, con algo de Pro | Corre código y arma gráficos desde una planilla | Tablas que se exportan a Hojas de cálculo de Google; unas 48 páginas por pedido |
+
+Por eso el taller de hoy va en Claude. Los otros dos sirven de plan B cuando se agota la cuota
+gratuita, que en los tres se renueva cada cinco horas.
+
+Todos los proveedores ofrecen la misma escalera: un modelo **grande** y uno **rápido y barato**.
+En OpenAI, GPT-6 Astra (pago) y GPT-5.6 Luna; en Anthropic, Opus 5.5 (pago), Sonnet y Haiku; en
+Google, Pro y Flash. Un benchmark es un examen estandarizado: sirve para descartar modelos y
+distingue poco entre los que quedan.
+[Artificial Analysis](https://artificialanalysis.ai) pone capacidad, precio y velocidad en un
+solo cuadro, y [Arena](https://arena.ai) junta votos a ciegas de miles de usuarios. El benchmark
+que importa es tu tarea, corrida en dos modelos. El precio por token no lo pagás con una cuenta
+gratuita; se vuelve presupuesto el día que algo corre mil veces por mes.
+
+## Prompt corto, dato bueno
+
+El archivo del taller tiene la producción mensual de siete campos maduros de Argentina, de enero
+de 2006 a julio de 2026, tomada del Capítulo IV de la Secretaría de Energía (datos abiertos,
+licencia CC BY 4.0). Ecuador y Colombia publican la producción de petróleo por campo, pero no la
+de agua, así que el agua viene de Argentina. Ninguno de los siete campos es de una empresa de la
+sala.
+
+[campos_capiv_2006_2026.csv](descargas/campos_capiv_2006_2026.csv) · 2,078 filas · 194 KB
+
+| Columna | Qué trae |
+| --- | --- |
+| `campo`, `cuenca`, `operadora` | El Corcobo Norte, Chihuido de la Sierra Negra, El Trapial, Puesto Hernández, Los Perales, Manantiales Behr y Diadema; la operadora es la del mes |
+| `tipo_recurso` | convencional o no convencional (Vaca Muerta aparece en dos campos) |
+| `mes` | AAAA-MM |
+| `petroleo_m3`, `agua_m3`, `iny_agua_m3` | Producción de petróleo y de agua, e inyección de agua, en m³ del mes |
+
+Subilo a Claude con una sola línea:
+
+```text
+¿Qué campos tengo que mirar este mes y por qué?
+```
+
+Sin rol, sin contexto y sin formato, y aun así la respuesta suele ser buena: los nombres de las
+columnas dicen qué es cada cosa, las unidades están en el nombre y las fechas vienen en un solo
+formato. Buena parte de lo que antes había que explicar en el prompt ya lo explica el archivo.
+
+Ahora la misma pregunta sobre los mismos números, exportados sin cuidado:
+[campos_capiv_sucio.csv](descargas/campos_capiv_sucio.csv). Antes de abrir la lista de abajo,
+mirá qué contesta y qué supone.
+
+<details>
+<summary>Lo que tiene el archivo sucio</summary>
+
+- Encabezados sin unidades (`yac;per;p;a;iny`), punto y coma de separador y coma decimal.
+- Convencional y no convencional sumados en una fila: en El Trapial y en Chihuido, Vaca Muerta
+  queda mezclada con el waterflood.
+- Fechas en dos formatos, `2006-02` y `01/2006`.
+- El agua de Los Perales en barriles en lugar de m³, sin que nada lo diga. Su relación
+  agua-petróleo sale 6.3 veces más alta.
+- Ocho meses borrados y un mes duplicado (Diadema, marzo de 2020).
+
+</details>
+
+### Lo que sí va en el prompt
+
+Cuando el dato es bueno, el prompt se achica a lo que el archivo no puede decir:
+
+- **Para qué decisión es.** Elegir qué campos revisar este mes pide otra respuesta que armar el
+  informe para el socio.
+- **Qué cuenta como problema.** Un umbral explícito ("15% de caída") reemplaza al criterio del
+  modelo.
+- **En qué formato lo querés**, si lo vas a volver a usar.
+- **Que te diga qué supuso** y qué encontró raro. Es la pregunta que más errores destapa.
+
+Rol, tono y ejemplos siguen sirviendo para escribir texto. Para analizar datos pesan menos que
+un archivo con columnas claras.
+
+### A ciegas, en Arena
+
+[Arena](https://arena.ai) (antes LMArena) le manda el mismo pedido a dos modelos anónimos. Votás
+cuál respondió mejor y recién ahí te dice quiénes eran. El modo batalla anda sin cuenta, acepta
+texto e imágenes pero no planillas, y no corre código: los modelos hacen las cuentas de memoria.
+Todo lo que escribas ahí puede compartirse con los proveedores de los modelos, así que va solo
+dato público.
+
+Elegí el modo batalla y pegá esto:
+
+```text
+Con esta tabla de producción anual convencional, ¿qué campos tengo que mirar
+y por qué? Mostrá la relación agua-petróleo (agua / petróleo) de 2025 de cada
+campo. 2026 tiene 7 meses.
+
+campo | año | meses | petroleo_m3 | agua_m3
+El Corcobo Norte | 2024 | 12 | 523,738 | 8,462,116
+El Corcobo Norte | 2025 | 12 | 494,397 | 8,138,122
+El Corcobo Norte | 2026 | 7 | 273,620 | 4,654,284
+Chihuido de la Sierra Negra | 2024 | 12 | 153,741 | 6,299,940
+Chihuido de la Sierra Negra | 2025 | 12 | 143,865 | 5,469,298
+Chihuido de la Sierra Negra | 2026 | 7 | 80,166 | 2,819,356
+El Trapial | 2024 | 12 | 136,884 | 7,258,974
+El Trapial | 2025 | 12 | 71,639 | 4,178,451
+El Trapial | 2026 | 7 | 5,332 | 422,458
+Puesto Hernández | 2024 | 12 | 157,665 | 10,171,071
+Puesto Hernández | 2025 | 12 | 137,549 | 8,384,926
+Puesto Hernández | 2026 | 7 | 68,101 | 4,530,698
+Los Perales | 2024 | 12 | 414,030 | 8,020,220
+Los Perales | 2025 | 12 | 358,843 | 7,746,645
+Los Perales | 2026 | 7 | 186,208 | 4,395,822
+Manantiales Behr | 2024 | 12 | 1,386,059 | 8,045,735
+Manantiales Behr | 2025 | 12 | 1,462,226 | 9,153,217
+Manantiales Behr | 2026 | 7 | 842,228 | 5,411,608
+Diadema | 2024 | 12 | 561,023 | 14,961,339
+Diadema | 2025 | 12 | 573,379 | 16,098,308
+Diadema | 2026 | 7 | 334,146 | 9,297,314
+```
+
+Antes de votar, hacé una cuenta con la calculadora: la relación agua-petróleo de 2025 de un
+campo. Los modelos que no corren código suelen redondear de más, o equivocarse en la división
+con la misma seguridad con la que aciertan. Los modelos del modo batalla salen al azar, así que
+puede tocarte uno lejos de la frontera.
+
+## Taller: una planilla de surveillance
+
+La pregunta de una línea sirve para explorar. Para una herramienta que vas a abrir todos los
+meses, el prompt carga los criterios. Con el mismo archivo adjunto en Claude:
+
+```text
+Te adjunto la producción mensual de siete campos maduros de Argentina
+(Capítulo IV, Secretaría de Energía), en m³, desde enero de 2006. Quiero una
+planilla de Excel de surveillance para revisar estos campos todos los meses.
+
+Usá solo las filas con tipo_recurso = "convencional".
+Hojas:
+1. Datos: el CSV tal cual, más una columna con los días de cada mes.
+2. Resumen: una fila por campo con la operadora del último mes, el petróleo
+   en m³/d de los últimos 3 meses y de los 12 meses anteriores, el cambio en
+   %, la relación agua-petróleo (RAP = agua / petróleo) de esas dos ventanas
+   y su cambio, el petróleo acumulado desde 2006 (Np), y un semáforo: rojo si
+   el petróleo cae 15% o más o la RAP sube 15% o más; amarillo desde 5%;
+   verde si no. Una columna "revisar dato" con los meses que faltan y los
+   cambios de operadora de los últimos 24 meses.
+3. Un gráfico por campo de RAP (eje vertical logarítmico) contra Np.
+4. Léeme: de dónde salen los datos, los criterios, y cómo sumar el mes que
+   viene.
+
+Todo con fórmulas de Excel que lean la hoja Datos, sin valores pegados, así
+el mes que viene alcanza con pegar filas. Antes de armarla, decime qué
+supuestos hiciste y qué encontraste raro en los datos.
+```
+
+La relación agua-petróleo contra el petróleo acumulado es el gráfico de diagnóstico clásico de un
+waterflood: en escala logarítmica, un campo maduro dibuja una recta que se puede extender hasta
+la relación en la que producir deja de pagar. Un quiebre en esa recta es la señal que un
+surveillance busca: más agua de la esperada, un pozo nuevo, un cambio de inyección, o un dato
+que cambió de definición.
+
+Cuando baje la planilla, abrila y hacé tres chequeos:
+
+1. **¿Fórmula o número pegado?** Hacé clic en una celda de la relación agua-petróleo del
+   Resumen. Tiene que haber una fórmula que lea la hoja Datos.
+2. **Una cuenta a mano.** El Corcobo Norte, mayo a julio de 2026: sumá el agua y el petróleo de
+   esos tres meses en el archivo y dividí. Tiene que dar lo mismo que la planilla.
+3. **¿Vio lo raro?** El Corcobo Norte no tiene enero de 2019, y El Trapial casi no produce
+   petróleo convencional en 2026. Si la respuesta no lo menciona, preguntale.
+
+<details>
+<summary>Para comparar: lo que tiene que dar</summary>
+
+Ventana reciente: mayo a julio de 2026. Base: mayo de 2025 a abril de 2026.
+
+| Campo | Petróleo base → reciente (m³/d) | RAP base → reciente | Np desde 2006 (m³) | Semáforo |
+| --- | --- | --- | --- | --- |
+| El Corcobo Norte | 1,334.6 → 1,262.4 (−5.4%) | 16.60 → 17.37 | 15,109,737 | amarillo |
+| Chihuido de la Sierra Negra | 384.5 → 377.6 (−1.8%) | 37.11 → 34.93 | 9,695,940 | verde |
+| El Trapial | 120.4 → 11.7 (−90.3%) | 59.34 → 110.35 | 20,737,718 | rojo |
+| Puesto Hernández | 351.5 → 315.4 (−10.3%) | 63.28 → 65.58 | 12,419,240 | amarillo |
+| Los Perales | 932.3 → 856.8 (−8.1%) | 22.57 → 23.90 | 13,745,181 | amarillo |
+| Manantiales Behr | 4,019.3 → 3,877.0 (−3.5%) | 6.25 → 6.71 | 24,341,645 | amarillo |
+| Diadema | 1,579.0 → 1,601.5 (+1.4%) | 28.01 → 27.42 | 12,444,536 | verde |
+
+Para revisar el dato: a El Corcobo Norte le falta enero de 2019; Los Perales pasó de YPF a
+Patagonia Resources y Manantiales Behr de YPF a PECOM en los últimos 24 meses. En El Trapial, lo
+convencional cayó de 71,639 m³ en 2025 a 5,332 m³ entre enero y julio de 2026, mientras Vaca
+Muerta sigue creciendo en el mismo campo. Sumado todo junto, la relación agua-petróleo del campo
+parece mejorar; separado, lo convencional se está apagando.
+
+Si tu planilla no sale, la de referencia está acá:
+[surveillance_referencia.xlsx](descargas/surveillance_referencia.xlsx). La arma un programa del
+curso con estas mismas reglas.
+
+</details>
+
+### Para curiosos: hasta dónde llega la recta
+
+En un campo con la relación agua-petróleo creciendo en línea recta en escala logarítmica, se
+puede extender la recta hasta un límite económico (digamos 50 o 100 m³ de agua por m³ de
+petróleo) y leer en el eje horizontal el petróleo acumulado final. Pedíselo al chatbot para El
+Corcobo Norte, que arranca a producir en 2006 y por eso tiene la acumulada completa en el
+archivo. Para los otros seis, el Np de la planilla empieza a contar en 2006 y les falta todo lo
+producido antes: cualquier estimación de reservas con ese número queda corta.
+
+## ¿Cuadran Petroecuador y el Banco Central?
+
+Dos documentos oficiales de Ecuador cuentan la misma producción desde lugares distintos:
+
+- El [Informe Estadístico Mensual de EP Petroecuador, enero a agosto de 2026](descargas/petroecuador-informe-estadistico-2026-ene-ago.pdf)
+  (71 páginas, datos provisionales; [original](https://www.eppetroecuador.ec/?p=3721)). En las
+  páginas 11 y 12, la producción de crudo por campo y por mes.
+- El [Boletín Analítico del Sector Petrolero del Banco Central del Ecuador, segundo trimestre de 2026](descargas/bce-boletin-sector-petrolero-2026-t2.pdf)
+  (32 páginas; [original](https://contenido.bce.fin.ec/boletin-analitico-del-sector-petrolero-indice/)).
+  Su tabla 2 trae la producción de EP Petroecuador por trimestre.
+
+Subí los dos a Claude con este pedido:
+
+```text
+Te adjunto dos PDF oficiales de Ecuador: el Informe Estadístico Mensual de EP
+Petroecuador (enero a agosto de 2026) y el Boletín Analítico del Sector
+Petrolero del Banco Central del Ecuador (segundo trimestre de 2026).
+
+Quiero saber si cuadran. Del informe de Petroecuador, sacá la producción de
+crudo de abril, mayo y junio de 2026 (tabla "Producción de crudo por campos",
+fila del total de crudo). Calculá el total del trimestre en barriles y el
+promedio diario. Compará con lo que dice el Banco Central para EP
+Petroecuador en el segundo trimestre.
+
+Mostrá la cuenta, citá la página de cada número, y decime si hay diferencia
+y de dónde sale.
+```
+
+Si usás Gemini, el informe completo no le entra de una vez: usá el
+[recorte de las páginas 11 y 12](descargas/petroecuador-produccion-por-campo-2026-ene-ago.pdf).
+
+Dónde mirar:
+
+- **Los formatos de número.** Petroecuador usa punto de miles (11.213.284 son once millones) y
+  el Banco Central coma decimal (32,81 son treinta y dos coma ochenta y uno).
+- **El promedio.** El promedio diario de un trimestre es el total dividido por los días. El
+  promedio simple de los tres promedios mensuales da casi lo mismo, y "casi" es justo lo que
+  hay que atrapar.
+- **Las filas que no son.** Debajo del total de crudo hay una fila de crudo y gas en barriles
+  equivalentes, y la capa de texto de la página 12 esconde una fila que en la imagen no se ve.
+  Un modelo que lee el texto del PDF puede "ver" números que nadie ve.
+- **La etiqueta.** La página 11 está en barriles, pero su fila de total dice "BPPD", como si
+  fueran barriles por día.
+
+<details>
+<summary>Para comparar: lo que tiene que dar</summary>
+
+Petroecuador, página 11: abril 10,706,025, mayo 11,213,284 y junio 10,887,413 barriles. Total
+del trimestre: 32,806,722 barriles. Dividido por 91 días: 360,513 barriles por día.
+
+Banco Central, tabla 2 (página 8 del PDF): 32.81 millones de barriles y 360.51 mil barriles por
+día (el boletín escribe 32,81 y 360,51). Cuadran, al redondeo del Banco Central, que toma el dato de la Agencia de Regulación y
+Control de Hidrocarburos (ARCH): es el reporte de la empresa contra el del regulador.
+
+La trampa: el promedio simple de los tres promedios mensuales de la página 12 (356,867, 361,719
+y 362,914) da 360,500, trece barriles por día menos. Aparece recién en el segundo decimal del
+Banco Central, y por eso es fácil tomarlo por redondeo. Otras respuestas que salen mal:
+dividir por 90 días (364,519), tomar la fila de crudo y gas (364,929) o el promedio de enero a
+agosto (363,393).
+
+</details>
+
+## Qué no se sube a un chatbot
+
+Regla práctica: si no lo pondrías en un correo a un desconocido, no va en el chat. No van
+producción real por pozo, reservas, precios y cláusulas de contratos, datos de socios ni
+información de personas. Lo que se sube a una cuenta gratuita sale de tu control.
+
+En este curso la regla tiene una segunda cara. En la sala hay cuatro empresas que compiten entre
+sí, y el chat de la videollamada es tan compartido como el chatbot: **ningún ejercicio pide un
+dato de tu empresa**. Para practicar con una estructura real hay tres salidas: datos públicos
+como los de hoy, datos viejos que dejaron de ser sensibles, o la misma planilla con números
+inventados. Para armar la herramienta, al modelo le alcanza con la estructura. Los casos grises y
+las versiones corporativas de estas herramientas, con otro contrato de datos, son tema de la
+sesión 7.
+
+## Para llevarse
+
+- Antes de escribir un prompt largo, arreglá el dato: columnas con nombre y unidad, un solo
+  formato de fecha.
+- Pedile al modelo que te diga qué supuso y qué encontró raro, y verificá una cuenta a mano.
+- En una planilla que vas a reusar, pedí fórmulas; un número pegado no se actualiza.
+
+## Para curiosos: el reporte diario de la ARCH
+
+La Agencia de Regulación y Control de Hidrocarburos (ARCH) de Ecuador publica un reporte de una
+página por cada día de operación, en
+[controlhidrocarburos.gob.ec](https://controlhidrocarburos.gob.ec/). Trae la producción por
+compañía, la de la empresa pública por bloque, el estado de los pozos, el gas, y un bloque de
+texto con las novedades: "cerrado 24 horas por falla de equipo BES", "continúan cerrados por
+alto corte de agua", "con incremento de BSW" (sedimentos y agua). Es la única fuente pública de
+Ecuador donde aparece el agua, y aparece como texto.
+
+Seis reportes de septiembre de 2026, copiados por si el sitio del regulador no abre desde tu
+red: [8](descargas/arch-reporte-diario-2026-09-08.pdf),
+[9](descargas/arch-reporte-diario-2026-09-09.pdf),
+[10](descargas/arch-reporte-diario-2026-09-10.pdf),
+[11](descargas/arch-reporte-diario-2026-09-11.pdf),
+[14](descargas/arch-reporte-diario-2026-09-14.pdf) y
+[15](descargas/arch-reporte-diario-2026-09-15.pdf). Un pedido para convertir las novedades en una
+tabla:
+
+```text
+Te adjunto el reporte diario preliminar de producción y operaciones de la
+ARCH de Ecuador. Convertí el bloque "Novedades principales" en una tabla con
+las columnas compania, bloque_o_campo, pozo, causa, horas. Una fila por pozo
+nombrado. Cuando el texto dice "11 pozos de los campos X, Y" sin nombrarlos,
+una sola fila con pozo = "(11 sin nombre)". La causa va con las palabras del
+original. Si una celda no la pudiste leer con certeza, dejala vacía y listá
+al final qué no pudiste leer.
+```
+
+Dónde suele fallar: los nombres compuestos ("Hormiguero-33-43" son dos pozos, "Fanny-18B16RE1"
+es uno con sufijo de reentrada), los pozos sin nombre que el modelo "completa" con nombres
+plausibles, y los formatos de número, que cambian de un día al otro. Con los seis reportes, la
+misma tabla repetida por día da la serie de pozos cerrados por alto corte de agua por compañía.
+
+Para seguir con el agua en un campo de la región, el trabajo de
+[CT&F sobre el campo Chichimene](https://ctyf.journal.ecopetrol.com.co/index.php/ctyf/article/view/725)
+(Ecopetrol, 2024, de acceso abierto) cuenta un proyecto de inyección de agua en crudo pesado, con
+gráficos de producción del patrón y del factor de recobro.
+
+### Para practicar prompts de texto
+
+Para correos, minutas e informes, las piezas clásicas (rol, contexto, tarea, formato, ejemplos)
+siguen rindiendo. El constructor de abajo las arma por partes y puntúa un prompt tuyo.
+
+<PromptBuilder sesion={3} />
+
+A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 4: de las planillas a los documentos,
+con un cuaderno de reservas y normativa en Gemini Notebook.
 
 <Quiz data="quiz_s3" sesion={3} />

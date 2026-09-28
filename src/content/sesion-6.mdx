@@ -1,139 +1,259 @@
-import { AgentTrace } from '../exercises/AgentTrace'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos } from '../components/Recursos'
 
 ## Antes de la sesión (opcional)
 
-Esta sesión no pide tarea: arranca después de la pausa de la sesión 5. Si tenés un rato antes, la
-traza del agente de esta página se recorre sola, paso a paso. Y conviene tener en la cabeza una
-tarea tuya que hoy te lleve varios pasos con herramientas distintas: es la ronda del segundo
-bloque.
+Esta sesión no pide nada previo: arranca después de la pausa de la sesión 5, donde viste qué es un
+agente y qué es el arnés que lo envuelve. Si tenés un rato, leé la sección del caso, más abajo:
+cuenta qué vas a ver en la terminal y qué conviene chequear. Y traé a la cabeza el problema que
+nombraste el lunes en la ronda de relevamiento, el primero que probarías, porque es el punto de
+partida del taller.
 
 <Recursos sesion={6} />
-
-## Qué es un agente
-
-Un agente es un modelo de lenguaje metido en un loop, con permiso para usar herramientas. Piensa qué
-le falta, ejecuta una acción, mira el resultado y vuelve a pensar. Repite hasta poder responder.
-
-Debajo está el mismo modelo que predice el próximo token, el de la sesión 2, con dos agregados.
-Puede **ejecutar** (correr un comando, leer un archivo, buscar en internet) y puede **mirar lo que
-salió**. Un chatbot que se equivoca no se entera nunca. Un agente que se equivoca recibe el error de
-vuelta y tiene la chance de corregirse.
-
-Esa vuelta del resultado es lo que le permite trabajar por su cuenta, y es también el motivo por el
-que hay que pensar bien qué herramientas se le dan.
-
-## La traza, paso a paso
-
-Abajo está una corrida sobre el mismo conjunto de datos de producción de ayer, el Capítulo IV
-argentino. El paso más interesante es el tercero, donde el agente filtra por el nombre del área,
-escribe "AGUARAGUE" sin diéresis y le vuelven cero filas.
-
-Mirá qué hace con eso. En vez de reintentar a ciegas o inventar un resultado para seguir adelante,
-va a buscar los valores que existen de verdad en la columna, encuentra que el área lleva diéresis,
-corrige y continúa. Un chatbot sin herramientas hubiera seguido escribiendo con total seguridad
-sobre una tabla vacía.
-
-<AgentTrace sesion={6} />
-
-## Qué funciona hoy y qué no
-
-Funcionan bien las tareas **digitales, acotadas y verificables**: buscar información en muchos
-documentos, transformar datos de un formato a otro, escribir y corregir código, automatizar una
-secuencia repetitiva de pasos que hoy hacés a mano. La característica común es que el resultado se
-puede comprobar rápido.
-
-Funcionan mal las tareas largas y ambiguas. El agente acumula contexto en cada vuelta (el ejercicio
-lo muestra con un contador) y a medida que crece, se vuelve más lento, más caro y más propenso a
-perder el hilo del objetivo original. Una tarea de veinte pasos sale bastante peor que dos de diez.
-
-Hay una tercera categoría que en esta industria pesa más que las otras dos: las tareas con
-**consecuencias físicas o irreversibles**. Ahí el loop deja de funcionar, por bueno que sea el
-agente. Todo lo que hace el agente del ejercicio es reversible: lee archivos y guarda un gráfico. Si
-se equivoca, el error vuelve y se corrige. Cuando la herramienta manda un correo, cierra una válvula
-o escribe en un sistema de control, el paso equivocado ya no se corrige mirando la salida. La
-diferencia entre un agente que lee y uno que actúa sobre equipos ocupa buena parte de mañana, en la
-sesión 7.
-
-<div className="callout">
-  <strong>El protocolo de contexto de modelo</strong> (Model Context Protocol, MCP) aparece mucho en
-  estas conversaciones. Es simplemente una forma estandarizada de conectarle herramientas a un modelo,
-  para no reescribir la conexión por cada aplicación. Es plomería útil, y lo que un agente puede o
-  no puede hacer es lo mismo con o sin él.
-</div>
-
-## Lo que aprende un agente vive en archivos
-
-La sesión de un agente se apaga y el modelo no retiene nada de lo que pasó. Lo que queda se guarda
-en archivos: un archivo de instrucciones con las reglas del proyecto (en las herramientas actuales
-se llama CLAUDE.md, AGENTS.md o parecido), habilidades empaquetadas que el agente carga cuando las
-necesita (las llaman skills), y las conexiones a tus sistemas. A un agente se le enseña por escrito,
-en esos archivos, que vienen a ser los prompts de la tarea del martes en versión agente. Y si
-mañana cambiás de modelo, esos archivos te siguen sirviendo.
-
-Lo otro que conviene saber es que el techo se mueve. [METR](https://metr.org/time-horizons/), un
-instituto que mide capacidades de modelos, sigue el largo de tarea que un agente completa solo. En
-toda su serie, desde 2019, ese largo se duplicó cada unos siete meses, y [desde
-2024](https://metr.org/blog/2026-1-29-time-horizon-1-1/) cada unos tres. En mayo de 2026 publicó que
-una versión temprana de Claude Mythos Preview completa tareas de al menos 16 horas, el techo de lo
-que su conjunto de tareas puede medir. La medición tiene su letra chica (50% de éxito, tareas de
-software). Aun así, lo que hoy no delegás porque es largo conviene reevaluarlo en seis meses. La
-charla de Barry Zhang que está en los recursos de arriba es la contracara sensata: no armes un
-agente para todo, y mantenelo simple.
-
-## Taller: el caso de tu empresa, en una página
-
-El último bloque del día es de escritura, por empresa: los de PCR juntos, los de Andes juntos, y CGC
-y Tecpetrol cada uno por su cuenta. El punto de partida es el problema que cada uno nombró el lunes,
-en la ronda de relevamiento, como el primero que probaría. El resultado es una página que describe
-el primer caso de uso que probarían en su empresa, y mañana, en la sesión 8, se critica al lado del
-caso prearmado del curso, con el mismo protocolo de verificación. La plantilla tiene cinco
-preguntas; una línea o dos por cada una alcanza.
-
-| Pregunta | Qué tiene que decir |
-| --- | --- |
-| **Dolor** | Qué tarea, cuán seguido se hace, quién la sufre. "Todos los lunes, el ingeniero de producción, tres horas" vale más que "optimizar la gestión". |
-| **Datos** | Dónde viven (planilla, sistema, PDF, correo), en qué formato, quién los tiene. Si hay que pedírselos a otra gerencia, decilo. |
-| **Sensibilidad** | Qué puede salir de la empresa y qué no. Lo que no puede salir, ¿tiene un análogo público (Capítulo IV, reporte de la ARCH) para probar el flujo? |
-| **Verificabilidad** | Cómo sabrían que el resultado está bien: contra qué se compara, quién lo mira, cuánto tarda comprobarlo. Si comprobar cuesta más que hacer, no es un caso. |
-| **Primer paso** | Qué probarían el lunes, con qué herramienta y con qué documento o planilla. Alcanza con un solo paso concreto. |
-
-Los criterios salen de la lista corta con la que la primera edición eligió su caso real:
-frecuencia del dolor, datos disponibles y no sensibles, resultado verificable. Los tres tienen que
-estar. Un caso doloroso sin datos accesibles no se puede construir, y uno con datos pero sin forma
-de comprobar el resultado se construye y no sirve.
-
-Por el chat va solo lo que no es confidencial: la fila del dolor y la del primer paso alcanzan para
-la ronda. El resto queda en su documento, que mañana leen ustedes en voz alta si quieren, y solo la
-parte que quieran.
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| El loop del agente | 20 min | Dónde quedamos antes de la pausa, la traza del ejercicio paso a paso, y después en vivo sobre el Capítulo IV |
-| Sus tareas | 30 min | Las cadenas de pasos de cada uno: qué delegarían hoy y qué no |
-| Dónde se rompe, dónde mejora | 15 min | Contexto, leer contra tocar, memoria en archivos, la frontera que sube |
+| El caso real, armado por un agente | 45 min | Un agente de terminal trabaja sobre una carpeta preparada y arma el screening de waterflooding que el jueves se critica |
+| Dónde se rompe, dónde mejora | 15 min | Contexto que crece, leer contra tocar, la memoria en archivos, la frontera que sube |
 | Pausa | 10 min | |
-| Taller: el caso de tu empresa, en una página | 36 min | Dolor, datos, sensibilidad, verificabilidad, primer paso; por empresa |
-| Cierre y tarea | 9 min | Lo que se llevan, y pulir la página del caso para mañana |
+| Taller: el caso de tu empresa, en una página | 40 min | Dolor, datos, sensibilidad, verificabilidad, primer paso; por empresa |
+| Cierre y tarea | 10 min | Lo que se llevan, y pulir la página del caso para mañana |
 
-<Quiz data="quiz_s6" sesion={6} />
+En el primer bloque mirás y proponés: no hace falta correr nada. Los chequeos que se te ocurran y
+las preguntas van por el chat de la videollamada.
+
+## El caso real, armado por un agente
+
+Un screening de waterflooding es una lista ordenada de dónde tendría sentido inyectar agua para
+empujar petróleo, armada con criterios explícitos sobre datos de producción e inyección. El caso
+del curso es uno de esos, sobre datos públicos de la cuenca Noroeste de Argentina, y el jueves, en
+la sesión 8, se critica. Hoy lo arma de nuevo, en vivo, un agente de terminal.
+
+El agente es Claude Code, de Anthropic, y corre en la computadora del instructor con una cuenta
+paga. Tiene el loop de la sesión 5 (pensar, ejecutar, mirar lo que salió, decidir el paso
+siguiente) con herramientas de más alcance: lee archivos, escribe un programa en Python, lo corre,
+lee el error y lo corrige. OpenAI y Google tienen agentes de terminal de la misma familia, y lo que
+se ve hoy vale para cualquiera de ellos.
+
+### La carpeta
+
+Todo lo que el agente necesita está en una carpeta preparada antes de la clase:
+
+| En la carpeta | Qué es |
+| --- | --- |
+| `CLAUDE.md` | El archivo de instrucciones del proyecto: reglas de trabajo, qué significa cada columna de los datos, las trampas conocidas y los criterios del screening |
+| `PEDIDO.md` | El pedido, en cuatro pasos. Es lo único que se escribe en la terminal |
+| `.claude/settings.json` | Los permisos: qué puede hacer sin preguntar y qué tiene prohibido |
+| `datos/` | Dos archivos del Capítulo IV de la Secretaría de Energía: 88,093 registros mensuales de 1,003 pozos, de enero de 2019 a julio de 2026 |
+| `salida/` | Vacía al empezar. Ahí escribe el agente: un programa, tablas, dos gráficos y un informe de una página |
+
+Los datos salen de la misma fuente que los 84 pozos del lunes. El pedido tiene cuatro pasos: quién
+inyecta agua en la cuenca y para qué, un ranking de los campos, el diagnóstico de agua de Puesto
+Guardián (un campo de Salta) y un informe de una página con sus límites.
+
+### El archivo de instrucciones
+
+El archivo de instrucciones es lo primero que lee el agente cada vez que arranca, sin que nadie se
+lo pida. En Claude Code se llama CLAUDE.md; muchas otras herramientas leen uno llamado AGENTS.md,
+que cumple el mismo papel. Funciona como el prompt del proyecto, escrito una vez y guardado al lado
+de los datos. El de hoy tiene ocho reglas de trabajo, el diccionario de los datos, los criterios
+del screening resumidos del manual del proyecto y una lista de trampas conocidas. Un extracto de
+esa lista:
+
+```
+- `tef` cuenta días de producción. Muchas filas de inyección traen `tef = 0`.
+  Un filtro por días pensado para productores borra la inyección sin avisar:
+  las filas con `iny_agua > 0` se conservan siempre.
+- La serie arranca en enero de 2019. Todo acumulado es "desde 2019" y así
+  se escribe.
+```
+
+La primera trampa tiene historia. Cuando el caso se armó por primera vez, en agosto, un modelo
+cargó los datos sin mirar esa columna, los pozos inyectores desaparecieron del resultado y el
+trabajo siguió como si nada. Lo detectó una persona que contó las filas. Hoy la lección está
+escrita, y el agente la lee antes de tocar un dato.
+
+### Los permisos
+
+Los permisos dicen qué puede hacer el agente sin preguntar. En esta carpeta puede leer, correr
+Python y escribir dentro de `salida/`. Tiene prohibido entrar a internet, borrar archivos y tocar
+`datos/`. Para cualquier otra cosa se detiene y pregunta, y el instructor contesta en pantalla. La
+primera vez que se abre la carpeta, la herramienta pregunta además si se confía en ella, porque es
+la carpeta la que trae los permisos.
+
+Todo lo que este agente puede hacer se deshace: si algo sale mal, se vacía `salida/` y se corre de
+nuevo.
+
+### Lo que se ve en la terminal
+
+La terminal muestra el loop vuelta por vuelta. En cada una aparece qué herramienta llama el agente
+(leer un archivo, correr un comando, escribir otro), qué le devolvió y qué decide hacer con eso. En
+una corrida típica, primero lee las instrucciones y mira los datos: cuántas filas hay, qué
+columnas, algunos valores. Después escribe el programa y lo corre. Casi siempre algo falla la
+primera vez, como una columna leída con el tipo equivocado o un filtro que dejó cero filas; el
+error vuelve como texto, el agente lo lee y corrige. Al final arma los gráficos, escribe el informe
+y corre los chequeos que le pide el archivo de instrucciones.
+
+La corrida lleva entre 10 y 20 minutos. Tu parte, mientras tanto, es proponer por el chat qué
+chequearías antes de creerle: un conteo, un pozo, una cifra contra la fuente.
+
+### Qué verificar en lo que entrega
+
+Estos son los números de referencia, calculados aparte con un programa independiente sobre los
+mismos dos archivos. Si el agente llega a otros, alguno de los dos se equivocó, y hay que encontrar
+cuál antes de seguir.
+
+Tres abreviaturas y un método del rubro. Np es el petróleo acumulado, en miles de barriles (Mbbl).
+La relación agua-petróleo (WOR, por su nombre en inglés) es el agua producida dividida por el
+petróleo producido, y el corte de agua es la fracción de agua en el líquido. El diagnóstico de
+Chan, un método publicado en 1995, lee la forma de la curva del WOR en el tiempo para distinguir si
+el agua avanza de manera normal, por un canal o en cono.
+
+| Qué | Valor de referencia |
+| --- | --- |
+| El archivo de producción | 1,003 pozos y 88,093 filas, de enero de 2019 a julio de 2026 |
+| Quién inyecta agua | 26 sumideros con 5,464,168 m³ (97.3%) y un pozo de inyección con 154,484 m³ (2.7%) |
+| Pozos declarados como inyección de agua | 6, y uno solo inyectó algo: P.Gu. a-11, durante 12 meses |
+| Ranking, campos que quedan después de cada filtro | 27 con petróleo → 16 fuera de la rama condensado → 13 activos desde 2025 → 10 con al menos 50 Mbbl → 5 con al menos tres pozos |
+| Los cinco, de mayor a menor Np | Palmar Largo, Proa, Caimancito, Dos Puntitas, Puesto Guardián |
+| Puesto Guardián, carga de datos | 340 filas de 8 pozos, 300 de ellas de la formación yacoraite; 11 afuera por tener menos de 10 días efectivos |
+| Puesto Guardián, yacoraite | Np desde 2019: 240.6 Mbbl; último WOR (julio de 2025): 10.38; corte de agua: 91.2% |
+| Diagnóstico de Chan | Desplazamiento normal |
+
+Un sumidero se deshace del agua que sale con el petróleo, por lo general en una formación que no
+produce; un pozo
+de inyección la mete en el reservorio para empujar petróleo. El 97.3% del agua inyectada en la
+cuenca va a sumideros. Puesto Guardián sale último de los cinco: es el campo del caso porque tiene
+el único inyector que inyectó algo, y dos sumideros para compararlo.
+
+Tres chequeos valen más que cualquier cifra de la tabla:
+
+1. El WOR del campo, pozo por pozo. El de Puesto Guardián baja de 26.5 en enero de 2019 a 10.4
+   en julio de 2025, y eso parece una buena noticia. En 2022 entró un pozo nuevo, PPSA.St.PGu-13,
+   con un WOR de 3.3, mientras los viejos (con WOR de 14 a 36 ese año) fueron parando. En 2025 el nuevo da
+   el 95% del petróleo del campo, y su WOR propio se triplicó: 10.4. El número del campo bajó
+   porque cambió la mezcla de pozos, y el diagnóstico de Chan, pensado para un pozo, se aplicó
+   acá a esa mezcla.
+2. El denominador de un promedio. P.Gu. a-11 inyectó 154,484 m³ en 12 de los 79 meses en que
+   figura en el archivo: son 404 barriles por día (bpd) promediados sobre los 79 meses y 2,660
+   bpd sobre los 12 en que inyectó. Las dos cifras son correctas; el informe tiene que decir cuál
+   usa.
+3. La regla detrás de cada cifra. El Np de Puesto Guardián es 243.4 Mbbl en el ranking, que
+   usa todas las filas, y 240.6 en el diagnóstico, que descarta las 11 filas con menos de 10 días
+   de producción. La diferencia se explica con un conteo de filas.
+
+Lo que el caso no puede afirmar: el ranking ordena por tamaño con datos de producción, y el índice
+de atractivo del manual necesita volumetría, fluidos y roca, que ninguna fuente pública trae. Es
+una lista de dónde pedir datos primero, y el informe del agente tiene que decirlo con esas
+palabras o parecidas.
+
+Si la corrida se traba en vivo, mostramos la del ensayo del día anterior, hecha con la misma
+carpeta. El proyecto original, que arma el libro de diagnóstico en planilla y que se critica el
+jueves, se puede bajar:
+[waterflood-screening_2026-08-19.zip](descargas/waterflood-screening_2026-08-19.zip).
+
+## Dónde se rompe, dónde mejora
+
+### El contexto crece en cada vuelta
+
+Cada archivo que el agente lee y cada resultado que le vuelve se suman a su ventana de contexto, la
+memoria de trabajo de la sesión 2. A medida que crece, el agente se vuelve más lento, más caro y
+más propenso a perder de vista el objetivo del principio. Por eso el pedido de hoy viene en cuatro
+pasos chicos, y por eso una tarea larga conviene cortarla en sesiones que se pasan el trabajo por
+archivos. Una tarea de veinte pasos sale bastante peor que dos de diez.
+
+### Cuando el agente pasa de leer a actuar
+
+El agente de hoy lee datos y escribe en una carpeta propia: si se equivoca, se borra y se repite.
+Cuando la herramienta manda un correo, carga un dato en un sistema de la empresa o mueve una
+válvula, el paso equivocado queda hecho, y mirar la salida ya no alcanza para corregirlo. Por eso
+los permisos de hoy son estrechos, y por eso la sesión 7, mañana, dedica un bloque entero a dónde
+un agente no entra.
+
+### Lo que aprende un agente vive en archivos
+
+La sesión de un agente se apaga y el modelo no retiene nada de lo que pasó: cada sesión arranca
+con el contexto vacío. Lo que queda está escrito en archivos: las instrucciones del proyecto
+(CLAUDE.md, AGENTS.md), las habilidades empaquetadas que el agente carga cuando las necesita (las
+llaman skills) y las conexiones a otros sistemas. La trampa del `tef` es el ejemplo de hoy: se
+aprendió una vez y desde entonces la lee cada agente que abre la carpeta. Si mañana cambiás de
+herramienta o de modelo, el archivo sigue sirviendo: AGENTS.md, por ejemplo, lo leen más de veinte
+herramientas, entre ellas las de OpenAI, Google y GitHub.
+
+<div className="callout">
+  <strong>El protocolo de contexto de modelo</strong> (Model Context Protocol, MCP) aparece mucho en
+  estas conversaciones. Es una forma estándar de conectarle herramientas a un modelo, para no
+  reescribir la conexión en cada aplicación. Cambia cómo se enchufa una herramienta; qué puede
+  hacer el agente lo siguen decidiendo los permisos.
+</div>
+
+### La frontera sube, con letra chica
+
+[METR](https://metr.org/time-horizons/) (Model Evaluation and Threat Research), un instituto que
+mide capacidades de modelos, sigue el largo de las tareas que un agente completa solo, medido en lo
+que le llevan a una persona experta. En toda su serie, desde 2019, ese largo se duplicó cada unos
+siete meses, y [desde 2024](https://metr.org/blog/2026-1-29-time-horizon-1-1/) cada unos tres. El
+gráfico se actualizó el 8 de mayo de 2026, cuando sumó una versión temprana de Claude Mythos
+Preview, y advierte que por encima de 16 horas su conjunto de tareas ya no mide bien.
+
+Las dos evaluaciones que siguieron traen la letra chica. Para GPT-5.6 Sol, de OpenAI, METR
+[estimó](https://metr.org/blog/2026-06-26-gpt-5-6-sol/) el 26 de junio unas 11.3 horas al 50% de
+éxito, con un intervalo de 5 a 40 horas, y aclaró que no la considera una medición robusta: en
+algunas tareas el modelo intentó hacer trampa, sacando información de las pruebas ocultas que lo
+iban a evaluar. Contados como fallas, esos intentos dan las 11.3 horas; contados como éxitos, la
+estimación pasaría las 270. Para [Claude Opus 5.5](https://metr.org/blog/2026-09-22-claude-opus-5-5/),
+el 22 de septiembre, METR habló de una mejora incremental sobre Fable 5.1, también de Anthropic,
+dentro de la tendencia.
+
+De ahí salen dos lecturas para el trabajo. Lo que hoy no delegás porque es largo conviene
+reevaluarlo en seis meses. Y la trampa de GPT-5.6 Sol explica por qué se verifica: un agente capaz
+también puede pasar su propia prueba sin hacer la tarea, y lo nota una persona mirando el
+resultado.
+
+## Taller: el caso de tu empresa, en una página
+
+El último bloque del día es de escritura, por empresa: los de PCR juntos, los de Andes juntos, y
+CGC y Tecpetrol cada uno por su cuenta. El punto de partida es el problema que cada uno nombró el
+lunes en la ronda de relevamiento, el primero que probaría. El resultado es una página con el
+primer caso de uso que probarían en su empresa, y mañana, en la sesión 8, se critica al lado del
+caso que armó el agente, con el mismo protocolo de verificación. La plantilla tiene cinco
+preguntas, y una línea o dos por cada una alcanzan.
+
+| Pregunta | Qué tiene que decir | El caso de hoy, como ejemplo |
+| --- | --- | --- |
+| **Dolor** | Qué tarea, cuán seguido se hace, quién la sufre. "Todos los lunes, el ingeniero de producción, tres horas" dice más que "optimizar la gestión". | Decidir en qué campos de una cuenca conviene estudiar primero una inyección de agua, con el mismo criterio para todos. |
+| **Datos** | Dónde viven (planilla, sistema, PDF, correo), en qué formato, quién los tiene. Si hay que pedírselos a otra gerencia, decilo. | Producción e inyección mensual por pozo, públicas. La volumetría, los fluidos y la roca no están. |
+| **Sensibilidad** | Qué puede salir de la empresa y qué no. Lo que no puede salir, ¿tiene un análogo público (el Capítulo IV, el reporte diario de la Agencia de Regulación y Control de Hidrocarburos, ARCH) para probar el flujo? | Ninguna con datos públicos. Con datos propios, la volumetría y los fluidos quedan adentro de la red. |
+| **Verificabilidad** | Cómo sabrían que el resultado está bien: contra qué se compara, quién lo mira, cuánto tarda comprobarlo. Si comprobar cuesta más que hacer, no es un caso. | Números de referencia de un programa independiente, filas contadas después de cada filtro y el detalle pozo por pozo. |
+| **Primer paso** | Qué probarían el lunes, con qué herramienta y con qué documento o planilla. Alcanza con un solo paso concreto. | Una carpeta con los datos y un archivo de instrucciones de una página. |
+
+Los criterios salen de la lista corta con la que la primera edición del curso eligió su caso real:
+frecuencia del dolor, datos disponibles y no sensibles, resultado verificable. Tienen que estar los
+tres. Un caso doloroso sin datos accesibles no se puede construir, y uno con datos pero sin forma de
+comprobar el resultado se construye y no sirve. Si el caso pasa la crítica de mañana, esa página es
+casi el archivo de instrucciones de su proyecto.
+
+Por el chat va solo lo que no es confidencial: la fila del dolor y la del primer paso alcanzan para
+la ronda. El resto queda en su documento, que mañana leen ustedes en voz alta si quieren, y solo la
+parte que quieran.
 
 ## Para discutir
 
-1. ¿Qué corpus de tu área (manuales, normas, informes históricos) haría más diferencia con un
-   buscador conversacional encima? ¿Quién lo consultaría?
-2. Si el buscador trae el fragmento equivocado, la respuesta viene mal y con cita. ¿Cómo te darías
-   cuenta vos, en tu tema?
-3. ¿Qué tarea de tu área delegarías a un agente si pudiera usar tus mismas herramientas? ¿Qué te
-   frenaría, la capacidad o el permiso?
-4. En la traza, el agente se dio cuenta de su error porque el resultado volvió vacío. De los errores
-   que podría cometer en tu trabajo, ¿cuáles no avisarían nada al volver?
+1. En la corrida de hoy, ¿qué chequeo propusiste, o hubieras propuesto, antes de creerle al
+   informe? ¿Cuánto tardaría hacerlo a mano?
+2. ¿Qué tarea de tu área le darías a un agente con una carpeta y un archivo de instrucciones? ¿Qué
+   te frenaría, la capacidad o el permiso?
+3. ¿Qué trampa de tus datos (una columna engañosa, una unidad, un pozo que cambió de nombre)
+   escribirías primero en ese archivo?
+4. El WOR de Puesto Guardián bajaba porque cambió la mezcla de pozos. ¿Qué número agregado de tu
+   trabajo podría esconder lo mismo?
 
 ## Tarea para mañana
 
-Pulí la página del caso de tu empresa: releé las cinco filas y completá la que quedó floja, que casi
-siempre es la de verificabilidad. Cinco minutos. Mañana se leen los cuatro casos al lado del caso
-prearmado del curso, y se les aplica el mismo protocolo.
+Pulí la página del caso de tu empresa: releé las cinco filas y completá la que quedó floja, que
+casi siempre es la de verificabilidad. Cinco minutos. Mañana, en la sesión 8, se leen los cuatro
+casos al lado del screening que armó el agente hoy, con el mismo protocolo.
+
+<Quiz data="quiz_s6" sesion={6} />

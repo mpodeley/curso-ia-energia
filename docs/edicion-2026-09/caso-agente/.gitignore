@@ -1,0 +1,3 @@
+# Built by preparar_datos.py from scripts/_cache/ (itself gitignored); the live run writes salida/.
+datos/
+salida/

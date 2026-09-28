@@ -34,8 +34,8 @@ export function HomePage() {
           <p className="intro">
             Es un curso para aprender a manejar: del motor vemos solo lo que ayuda a manejar mejor.
             El objetivo es dar los primeros pasos con la IA generativa en el trabajo. El arco:
-            entender qué es esto (sesiones 1–2), usarlo bien con datos públicos y documentos del rubro
-            (3–6), y usarlo con cabeza, cerrando con el caso real (7–8).
+            entender qué es esto (sesiones 1–2), ponerlo a trabajar con datos públicos y documentos del
+            rubro (3–4), los agentes (5–6), y usarlo con cabeza, cerrando con el caso real (7–8).
           </p>
         </div>
         {Object.keys(DIAS).map(Number).map((dia) => (
@@ -117,9 +117,9 @@ export function HomePage() {
           <div className="how-item">
             <h3>Un caso real al final</h3>
             <p>
-              La sesión 8 recorre y critica un screening de waterflooding hecho sobre datos públicos
-              de producción. Y en la sesión 6 cada empresa escribe su propio caso en una página,
-              que pasa por las mismas reglas.
+              En la sesión 6 un agente arma en vivo un screening de waterflooding sobre datos públicos
+              de producción, y la sesión 8 lo critica. En la sesión 6, además, cada empresa escribe
+              su propio caso en una página, que pasa por las mismas reglas.
             </p>
           </div>
         </div>

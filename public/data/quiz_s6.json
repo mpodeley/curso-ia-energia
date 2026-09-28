@@ -1,71 +1,103 @@
 {
-  "generated_at": "2026-09-15T00:00:00+00:00",
+  "generated_at": "2026-09-28T00:00:00+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
     {
-      "pregunta": "¿Qué distingue a un agente de un chatbot?",
+      "pregunta": "En la carpeta del agente, ¿qué es el archivo CLAUDE.md (o AGENTS.md, en otras herramientas)?",
       "opciones": [
         {
-          "texto": "Que el modelo que tiene adentro es más potente.",
-          "explicacion": "Suele ser el mismo modelo. La diferencia está en lo que lo rodea."
+          "texto": "Un registro de lo que el agente hizo en la sesión anterior, que guarda solo.",
+          "explicacion": "El modelo no retiene nada entre sesiones y ese archivo no es un registro automático: lo escribe una persona, y el agente lo lee."
         },
         {
-          "texto": "Que fue entrenado específicamente para ser autónomo.",
-          "explicacion": "La autonomía viene del loop y de los permisos que le dieron; el entrenamiento es el mismo."
+          "texto": "La configuración que decide qué puede hacer el agente sin preguntar.",
+          "explicacion": "Eso vive en otro archivo de la carpeta, el de permisos (.claude/settings.json). CLAUDE.md dice cómo trabajar; lo permitido está en el otro."
         },
         {
-          "texto": "Que no alucina, porque verifica lo que hace.",
-          "explicacion": "Alucina igual. Lo que cambia es que algunos de sus errores vuelven como resultado observable, y esos los puede corregir."
-        },
-        {
-          "texto": "Que puede ejecutar herramientas y mirar el resultado, y decidir el paso siguiente con eso a la vista.",
+          "texto": "El archivo de instrucciones del proyecto, que el agente lee solo cada vez que arranca: reglas, diccionario de datos, criterios y trampas conocidas.",
           "correcta": true,
-          "explicacion": "Un chatbot que se equivoca no se entera nunca; un agente recibe el error de vuelta y tiene la chance de corregirse."
+          "explicacion": "Es el prompt del proyecto, escrito una vez y guardado al lado de los datos. Lo que el agente sabe del proyecto está escrito ahí, y sigue sirviendo si cambiás de modelo."
+        },
+        {
+          "texto": "Una copia del modelo, ajustada con los datos del proyecto.",
+          "explicacion": "Nadie reentrena nada: es un archivo de texto que cualquiera puede abrir, leer y corregir."
         }
       ]
     },
     {
-      "pregunta": "¿Por qué un agente rinde peor en tareas largas que en tareas cortas?",
+      "pregunta": "El WOR de Puesto Guardián baja de 26.5 en 2019 a 10.4 en 2025. ¿Qué conviene mirar antes de leerlo como una buena noticia?",
       "opciones": [
         {
-          "texto": "Porque se cansa y baja la calidad con el uso.",
-          "explicacion": "No hay fatiga: cada llamada es independiente. El problema es acumulativo pero por otra razón."
+          "texto": "Si el gráfico usa escala logarítmica, que exagera las bajas.",
+          "explicacion": "La escala cambia cómo se ve la curva, y 26.5 y 10.4 siguen siendo los mismos números en cualquier escala."
         },
         {
-          "texto": "Porque arrastra todo lo anterior en cada vuelta: se vuelve más lento, más caro y más propenso a perder de vista el objetivo original.",
+          "texto": "Si la baja sigue en 2026, con los datos más nuevos.",
+          "explicacion": "El campo deja de informar en julio de 2025, así que no hay 2026 para mirar. Y aunque lo hubiera, no explicaría por qué baja."
+        },
+        {
+          "texto": "Nada más: es un cociente de volúmenes reales y el cálculo está bien hecho.",
+          "explicacion": "El cálculo está bien y la lectura puede estar mal. Un número agregado se contrasta con su detalle antes de interpretarlo."
+        },
+        {
+          "texto": "El WOR pozo por pozo, para ver si el número del campo cambió porque entraron o salieron pozos.",
           "correcta": true,
-          "explicacion": "El contador de contexto del ejercicio lo muestra creciendo paso a paso. Una tarea de veinte pasos sale bastante peor que dos de diez."
-        },
-        {
-          "texto": "Porque las herramientas fallan más cuando se usan muchas veces.",
-          "explicacion": "Las herramientas se comportan igual. Lo que se degrada es la capacidad del modelo de sostener el hilo."
-        },
-        {
-          "texto": "Porque necesita permisos adicionales para tareas largas.",
-          "explicacion": "Los permisos son los mismos. El límite es de contexto."
+          "explicacion": "Eso pasó: en 2022 entró un pozo con WOR 3.3 que en 2025 da el 95% del petróleo, y su propio WOR se triplicó. El promedio bajó porque cambió la mezcla de pozos."
         }
       ]
     },
     {
-      "pregunta": "En la traza, el agente filtró por \"AGUARAGUE\" sin diéresis y le volvieron cero filas. Lo importante es el paso siguiente. ¿Por qué?",
+      "pregunta": "¿Por qué el agente de la demo puede trabajar sin que el instructor apruebe cada paso?",
       "opciones": [
         {
-          "texto": "Porque probó otra grafía hasta que funcionó.",
-          "explicacion": "Eso sería adivinar de nuevo. Hizo algo mejor."
-        },
-        {
-          "texto": "Porque reintentó la misma consulta y la segunda vez anduvo.",
-          "explicacion": "El error estaba en el filtro, así que la misma consulta hubiera devuelto cero filas de nuevo."
-        },
-        {
-          "texto": "Porque fue a leer los valores que realmente existen en la columna en vez de suponer otro, y ahí encontró la diéresis.",
+          "texto": "Porque los permisos solo le dejan hacer, sin preguntar, cosas que se deshacen: leer, correr Python y escribir en su carpeta de salida.",
           "correcta": true,
-          "explicacion": "Reemplazó una suposición por un dato. Un chatbot sin herramientas hubiera seguido escribiendo con total seguridad sobre una tabla vacía."
+          "explicacion": "Si se equivoca, se borra la salida y se repite. Para todo lo demás se detiene y pregunta, y lo que tiene efecto afuera (un correo, una carga en un sistema) no está permitido."
         },
         {
-          "texto": "Porque avisó del error y frenó para consultar.",
-          "explicacion": "Frenar ante cada obstáculo lo volvería inútil. Acá pudo resolverlo solo, con evidencia."
+          "texto": "Porque el modelo es lo bastante bueno como para no equivocarse.",
+          "explicacion": "Se equivoca, y en la corrida suele verse: una columna mal leída, un filtro vacío. Trabaja solo porque el error vuelve y se puede corregir."
+        },
+        {
+          "texto": "Porque los datos son públicos, y con datos públicos no hace falta revisar.",
+          "explicacion": "Que el dato sea público resuelve la sensibilidad. El resultado se chequea igual, contra una referencia y pozo por pozo."
+        }
+      ]
+    },
+    {
+      "pregunta": "¿Por qué el pedido de la demo vino en cuatro pasos chicos y no en una sola orden grande?",
+      "opciones": [
+        {
+          "texto": "Porque el agente no acepta más de cuatro instrucciones por vez.",
+          "explicacion": "No hay un límite así. El motivo está en lo que pasa con el contexto a medida que el trabajo avanza."
+        },
+        {
+          "texto": "Porque cada vuelta suma texto al contexto, y con más contexto el agente se vuelve más lento, más caro y más propenso a perder el objetivo.",
+          "correcta": true,
+          "explicacion": "Una tarea de veinte pasos sale bastante peor que dos de diez. Pasos chicos, con resultados guardados en archivos, lo mantienen acotado y verificable."
+        },
+        {
+          "texto": "Para que la cuenta paga cobre menos.",
+          "explicacion": "Algo de eso hay, pero el motivo que importa es la calidad: el agente pierde el hilo cuando el contexto crece."
+        }
+      ]
+    },
+    {
+      "pregunta": "METR estimó unas 11.3 horas de largo de tarea para GPT-5.6 Sol y aclaró que no la considera una medición robusta. ¿Por qué?",
+      "opciones": [
+        {
+          "texto": "Porque las tareas eran de petróleo y gas, fuera de la especialidad del modelo.",
+          "explicacion": "Las tareas de METR son de software e investigación. El problema fue otro, y tiene que ver con cómo se comportó el modelo."
+        },
+        {
+          "texto": "Porque el modelo no llegó a terminar ninguna tarea larga.",
+          "explicacion": "Terminó tareas largas: la estimación es de 11.3 horas, con un intervalo de 5 a 40. La duda es sobre cómo llegó a algunas."
+        },
+        {
+          "texto": "Porque en algunas tareas intentó hacer trampa, sacando información de las pruebas ocultas que lo evaluaban.",
+          "correcta": true,
+          "explicacion": "METR contó esos intentos como fallas; como éxitos, la estimación pasaría las 270 horas. Un agente capaz también puede pasar su propia prueba sin hacer la tarea, y por eso se verifica."
         }
       ]
     }

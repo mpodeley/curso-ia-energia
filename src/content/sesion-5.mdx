@@ -1,153 +1,314 @@
-import { EmbeddingsMap } from '../exercises/EmbeddingsMap'
-import { RagDemo } from '../exercises/RagDemo'
+import { AgentTrace } from '../exercises/AgentTrace'
 import { Quiz } from '../exercises/Quiz'
 import { Recursos } from '../components/Recursos'
 
 ## Antes de la sesión (opcional)
 
-Lo único que pide esta sesión es la tarea de ayer: tu prompt antes y después, y las **tres
-preguntas** que le harías a un documento de tu empresa. Las preguntas se usan literalmente en
-vivo, dos veces: primero contra el cuaderno del rubro y después contra tu propio cuaderno. Si no
-llegaste, las escribís en los primeros minutos.
-
-Si tenés un rato antes, los dos ejercicios de esta página se juegan solos (primero el mapa, después
-la búsqueda, que usa lo que muestra el mapa), y podés curiosear [Gemini Notebook (antes
-NotebookLM)](https://notebook.google.com/) con tu cuenta gratuita. Y una cosa más, de un minuto:
-elegí el documento público de tu empresa que vas a subir en el bloque "Tu cuaderno". Más abajo hay
-una lista de candidatos por empresa.
+No hace falta traer nada: todo lo de hoy pasa en vivo. Si tenés cinco minutos antes, la traza del
+agente de esta página se recorre sola, paso a paso. El archivo del taller es el mismo de la sesión
+3, por si no lo tenés a mano: [campos_capiv_2006_2026.csv](descargas/campos_capiv_2006_2026.csv).
 
 <Recursos sesion={5} />
 
-## El modelo no leyó tus documentos
+## Ayer ya usaste un agente chico
 
-Leyó una cantidad enorme de texto de internet. No leyó tu manual de operaciones, ni tus normas
-internas, ni el informe del campo que escribió tu compañero el mes pasado. Preguntarle sobre eso es
-pedirle que complete lo más plausible, y así sale una respuesta inventada con tono seguro.
+En la sesión 3 le diste a Claude un CSV (un archivo de texto con una tabla) de siete campos y le
+pediste una planilla de surveillance. Entre tu pedido y el Excel pasaron varias cosas que no
+escribiste vos: leyó el archivo, escribió un programa en Python, lo corrió, miró qué salía,
+corrigió lo que no andaba y armó el archivo para bajar. Eso ya es un agente, chico y con pocas
+herramientas. Hoy le ponemos nombre a cada pieza, y cada uno corre uno sobre una tarea de varios
+pasos.
 
-Hay dos formas de cerrar ese hueco. Una es reentrenar el modelo con tus documentos, que es caro,
-lento y casi siempre innecesario. La otra es más simple y es la que se usa: **buscar los fragmentos
-que responden la pregunta y pegarlos arriba de la pregunta**. El modelo responde con el libro
-abierto. Se llama generación aumentada por recuperación (RAG, por su sigla en inglés), y una vez que
-la ves funcionar es difícil que te siga pareciendo sofisticada.
+## Qué es un agente
 
-## Primero, qué significa "parecido" para un modelo
+Un agente es un modelo de lenguaje metido en un loop, con permiso para usar herramientas. Piensa
+qué le falta, ejecuta una acción, mira el resultado y vuelve a pensar, hasta que puede responder.
+Anthropic lo resume en una línea en
+[Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
+(diciembre de 2024): modelos que usan herramientas según lo que les devuelve el entorno, en un
+loop.
 
-Para buscar por significado hay que poder medirlo. El modelo convierte cada texto en una lista de
-números, y dos textos con sentido parecido dan listas parecidas. Todo lo demás sale de ahí.
+Debajo está el mismo modelo que predice el próximo token, el de la sesión 2, con dos agregados.
+Puede **ejecutar**: correr un comando, leer un archivo, buscar en internet. Y puede **mirar lo que
+salió**. Un chatbot sin herramientas que se equivoca no tiene cómo enterarse; un agente recibe el
+error de vuelta y tiene la chance de corregirse.
 
-El ejercicio proyecta esas listas a un plano para que las puedas mirar. Prestá atención a la familia
-de jerga: "burro", "araña", "pescado", "camisa". El modelo aprendió esas palabras del lenguaje
-corriente, así que las ubica junto a objetos cotidianos, lejos del equipamiento del yacimiento.
-Ahí se ve, de un vistazo, qué es lo que no sabe de tu trabajo.
+La misma nota separa dos cosas que en los anuncios se llaman igual. En un flujo fijo, una persona
+escribió de antemano los pasos y el modelo cumple su parte en cada uno. En un agente, el modelo
+decide el paso siguiente según lo que va viendo. Los dos sirven, y la recomendación de Anthropic es
+empezar por lo más simple que resuelva el problema, que a veces es un flujo fijo y a veces ni eso.
 
-<EmbeddingsMap sesion={5} />
+## La traza, paso a paso
 
-## Y ahora sí, buscar en tus documentos
+Abajo hay una corrida de un agente sobre el Capítulo IV, reconstruida paso a paso. Le pidieron
+cuál de los pozos de gas de Aguaragüe, en Salta, declinó más rápido en los últimos dos años. El
+paso más interesante es el tercero: el agente filtra por el nombre del área, escribe "AGUARAGUE"
+sin diéresis y le vuelven cero filas.
 
-El corpus del segundo ejercicio es un manual interno inventado para el curso, y es a propósito:
-cualquier documento público de verdad podría haber estado en el entrenamiento del modelo, y entonces
-la demostración no probaría nada.
+Mirá qué hace con eso. Va a buscar los valores que existen de verdad en la columna, encuentra que
+el área lleva diéresis, corrige y sigue. Un chatbot sin herramientas hubiera seguido escribiendo
+con total seguridad sobre una tabla vacía. Fijate también en el contador de contexto, que crece en
+cada vuelta, y en el final: la respuesta llega con dos advertencias sobre lo que el agente no
+verificó.
 
-Probá las preguntas que no comparten ninguna palabra con su respuesta. La que pregunta cómo evitar
-que alguien arranque el equipo mientras lo reparás la responde un fragmento que habla de "bloqueo y
-etiquetado". La de cuidarse los oídos la responde uno que dice "protección auditiva". Un buscador de
-palabras no tiene con qué encontrarlas y uno por significado sí. Por eso esto sirve sobre
-documentación técnica, que siempre está escrita en un vocabulario que nadie usa cuando pregunta.
+<AgentTrace sesion={5} />
 
-Mirá también el bloque del final, que muestra todo lo que se le manda al modelo.
+## El arnés, el programa alrededor del modelo
 
-<RagDemo sesion={5} />
+El arnés es el programa que envuelve al modelo y lo convierte en agente. El modelo recibe texto y
+devuelve texto; todo lo demás lo hace el arnés. En inglés se dice *harness*, y también lo vas a
+ver como *scaffold* (andamio): Epoch AI lo describe como el software que opera al agente, en
+general un programa de terminal como Claude Code.
 
-## Dónde sigue fallando
+<figure className="figura">
+  <img
+    src="slides/img/arnes.svg"
+    alt="Un recuadro grande, el arnés, envuelve al modelo de lenguaje, que está en el centro rodeado por un loop: piensa, actúa, mira el resultado. Dentro del arnés, seis funciones: herramientas, el loop, el contexto, los permisos, la memoria en archivos, y subagentes y conectores. Afuera, con flechas de ida y vuelta: la persona que pide y da permisos, los archivos, los programas y otros sistemas."
+  />
+  <figcaption>El modelo en el centro, el arnés alrededor con sus seis funciones, y afuera lo que el agente toca, con vos pidiendo y dando permisos.</figcaption>
+</figure>
 
-Recuperar fragmentos reduce las invenciones pero no las elimina, y además agrega un modo de falla
-nuevo: si el buscador trae el fragmento equivocado, la respuesta va a estar mal por más bueno que
-sea el modelo, y va a estar mal **con una cita al lado**, que es peor. Por eso la regla es mirar
-siempre los fragmentos recuperados además de la respuesta. Si una herramienta no te los muestra, la
-cita parece verificable pero no tenés cómo verificarla.
+Las seis funciones, una por una:
 
-Hay un segundo límite, más aburrido y más frecuente: si la respuesta no está en los documentos,
-ninguna búsqueda la va a traer, porque la herramienta solo sabe lo que tu empresa escribió.
+- **Le da herramientas.** Leer y escribir archivos, correr código, buscar en internet, usar un
+  navegador. Qué herramientas tiene un agente lo decide el arnés.
+- **Corre el loop.** Le pasa tu pedido al modelo, ejecuta la herramienta que el modelo eligió, le
+  devuelve el resultado y repite hasta que el modelo da la tarea por terminada.
+- **Decide qué entra al contexto.** La ventana de la sesión 2 se llena rápido en un agente. El
+  arnés resume la conversación vieja cuando se acerca al límite (Anthropic lo llama compactación)
+  y trae cada archivo recién cuando hace falta.
+- **Pide permiso.** Define qué hace el agente solo y qué necesita tu visto bueno. Leer suele estar
+  permitido; borrar, mandar o instalar suelen pedir confirmación.
+- **Guarda la memoria en archivos.** El modelo no recuerda nada de una sesión a otra. Lo que tiene
+  que saber lo lee de archivos de instrucciones (CLAUDE.md, AGENTS.md) y de habilidades empaquetadas
+  que carga cuando las necesita, que en inglés se llaman skills.
+- **Reparte y conecta.** Lanza subagentes para tareas acotadas, cada uno con su contexto limpio, y
+  se conecta a otros sistemas por el protocolo de contexto de modelo.
 
-## El cuaderno del rubro
+### Trabaja por turnos, y deja un parte
 
-El manual inventado prueba el mecanismo; el cuaderno que interrogamos en vivo se arma con
-documentos reales del rubro, públicos y con texto de sobra. Podés armarte el mismo en tu cuenta
-gratuita de Gemini Notebook: subí estos tres y agregale los tuyos. En septiembre de 2026 la cuenta
-gratuita admite [50 fuentes por cuaderno y 3 resúmenes de audio por día](https://support.google.com/notebooklm/answer/16213268?hl=es-419).
+Anthropic lo explica con una imagen que en un yacimiento se entiende sola: un proyecto atendido por
+ingenieros que trabajan por turnos, donde cada uno llega sin memoria de lo que pasó en el turno
+anterior ([Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents),
+noviembre de 2025). Así trabaja un agente en una tarea larga, porque cada sesión nueva arranca en
+blanco. La solución que describe es la de cualquier guardia bien llevada: un parte de avance que
+el agente escribe al terminar y lee al empezar, una lista de lo que falta y el historial de
+cambios.
 
-- [Reglamento de Operaciones Hidrocarburíferas](https://www.gob.ec/sites/default/files/regulations/2025-05/Documento_Reglamento-Operaciones-Hidrocarbur%C3%ADferas.pdf)
-  de Ecuador, resolución ARCERNNR-024/2021, Registro Oficial 514 del 12 de agosto de 2021 (PDF,
-  84 páginas, 191 artículos). Cómo se perfora, se completa, se produce, se reinyecta y se abandona
-  un pozo bajo la Agencia de Regulación y Control de Hidrocarburos (ARCH): el pariente real del
-  manual inventado de arriba.
-- [Reporte de Sustentabilidad 2024 de PCR](https://www.pcr.energy/wp-content/uploads/2025/09/PCR-Reporte-de-Sustentabilidad-2024-vf_compressed.pdf)
-  (PDF, 174 páginas). Una empresa de la sala contada por sí misma, con sus operaciones de
-  Argentina y Ecuador: producción, reservas, proyectos y resultados de 2024.
-- [Ley 17.319 de hidrocarburos](https://servicios.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16078/texact.htm),
-  texto actualizado en InfoLEG. El marco argentino desde 1967, con las reformas incorporadas:
-  permisos, concesiones, regalías, plazos y prórrogas. Es la ley bajo la que CGC y Tecpetrol
-  reportan al Capítulo IV.
+De ahí sale una regla práctica: **a un agente se le enseña por escrito**. Las reglas de tu tarea,
+los nombres de las columnas, lo que ya se probó y no anduvo, todo eso vive en archivos que el arnés
+le hace leer. Si mañana cambiás de modelo, esos archivos te siguen sirviendo. En la sesión 6 vas a
+ver un agente trabajando sobre una carpeta, guiado por un archivo así.
 
-Los reportes diarios de la ARCH que ayer extrajeron a tabla también entran al cuaderno: preguntale
-lo que ayer sacaste a mano, y mirá de qué fragmento lo trae. Con cuatro fuentes
-distintas en el cuaderno, además, conviene preguntarse siempre de cuál de las cuatro sacó cada cosa.
+<div className="callout">
 
-Tres preguntas para arrancar, una por documento, escritas para que la respuesta no comparta
-vocabulario con la pregunta:
+**El protocolo de contexto de modelo** (Model Context Protocol, MCP) es un estándar abierto, creado
+por Anthropic, para conectar aplicaciones de IA con herramientas y datos. Funciona como un enchufe
+común: el mismo conector sirve para varios arneses, y le suma al agente las herramientas de ese
+sistema, con los permisos que le des. La cuenta gratuita de Claude admite
+[un conector propio](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
 
-1. Al reglamento: "¿Qué tengo que hacer antes de cerrar definitivamente un pozo que ya no produce?"
-   La respuesta está en los artículos de taponamiento y abandono, con otra palabra.
-2. Al reporte de PCR: "¿Cuánto petróleo produjo la empresa en Ecuador el año pasado, y en qué
-   campos?" Mirá si la cifra viene de una tabla o de un párrafo, y si el cuaderno la cita entera.
-3. A la ley: "¿Cuántos años dura una concesión de explotación y cuántas veces se puede prorrogar?"
-   La ley original y las reformas dicen cosas distintas: fijate de qué artículo sale la respuesta.
+</div>
 
-## Tu cuaderno: un documento público de tu empresa
+### Cuánto cambia el resultado con otro arnés
 
-El segundo cuaderno es tuyo, y arranca con un solo documento: uno **público** de tu empresa. La
-regla es la misma de ayer y no tiene excepciones en la cuenta gratuita: nada que no esté ya en
-internet. Candidatos por empresa, para que no pierdas el bloque buscando:
+Hay dos mediciones recientes. [Epoch AI](https://epoch.ai/gradient-updates/why-benchmarking-is-hard),
+un instituto que mide el avance de estos sistemas, comparó el mismo modelo con arneses distintos en
+SWE-bench Verified, un examen de tareas reales de programación. Cambiar solo el arnés movió el
+resultado hasta 11% en GPT-5 y hasta 15% en Kimi K2 Thinking (diciembre de 2025).
+[METR](https://metr.org/notes/2026-02-13-measuring-time-horizon-using-claude-code-and-codex/), otro
+instituto de medición, probó en febrero de 2026 si Claude Code y Codex alargaban las tareas que un
+modelo completa solo, frente a sus propios arneses de prueba, más simples. Concluyó que no hacen
+una gran diferencia.
 
-- **PCR**: el reporte de sustentabilidad de arriba, o [la página que lo resume](https://www.pcr.energy/sustentabilidad-2024/).
-- **CGC**: la memoria anual o el informe de calificación, en la sección de inversores de
-  [cgc.energy](https://cgc.energy/).
-- **Tecpetrol**: el [Reporte Global de Sostenibilidad 2024](https://www.tecpetrol.com/media/ivsna4kt/teceptrol-reporte-global-de-sostenibilidad-2024.pdf)
-  (PDF, cubre Argentina, Ecuador y Colombia).
-- **Andes Petroleum**: una nota de prensa sobre la ampliación del contrato de Tarapoa, por ejemplo
-  [esta de Primicias](https://www.primicias.ec/noticias/economia/andes-petroleum-acuerdo-contratos-petroleo/),
-  o el reporte diario de la ARCH del día que quieras.
+Las dos se leen juntas. El arnés decide sobre todo **qué puede hacer** el agente: con qué
+herramientas, con qué permisos y con qué memoria. La capacidad de fondo la pone el modelo, y
+cambiar de arnés la mueve menos. En la práctica, el mismo modelo hace cosas distintas en dos
+productos distintos. El Claude gratuito que ayer corrió código en una computadora aislada y el
+Claude Code que vas a ver en la sesión 6 sobre una carpeta usan la misma familia de modelos con
+otro arnés.
 
-Paso a paso, con Martín en el chat para lo que trabe:
+## Qué agentes hay, por forma de uso
 
-1. Entrá a [notebook.google.com](https://notebook.google.com/) con una cuenta de Google personal,
-   porque en varias empresas la corporativa tiene Gemini Notebook bloqueado. Creá un cuaderno
-   nuevo.
-2. En la ventana que se abre, subí el PDF o pegá la dirección de la página. Un documento alcanza;
-   si subís dos, mejor, pero no más de tres hoy.
-3. Esperá a que el panel del chat muestre el resumen de tus fuentes y leelo con desconfianza: es
-   la primera respuesta sin pregunta, y ya puede estar citando de más.
-4. Hacele tus tres preguntas de la tarea, una por vez. Por cada respuesta, tocá el número de la cita
-   y leé el fragmento: ¿responde la pregunta, o quedó cerca del tema nada más?
-5. Anotá, para la ronda, dos cosas: una respuesta que salió bien citada y una que salió mal, o que
-   no estaba en el documento. Las dos valen lo mismo.
+Los agentes de hoy se ordenan mejor por cómo se usan que por la marca. Estas son seis formas, con
+lo que se puede probar gratis al 28 de septiembre de 2026. La foto envejece rápido: los nombres y
+los planes cambian de un mes a otro.
 
-Por el chat contá cómo te fue: qué contestó bien, qué inventó y qué no encontró. Las preguntas y
-las respuestas guardalas para vos. El documento es público, pero la lista de preguntas que le hacés
-a tu propia empresa ya dice algo de tu trabajo, y en la sala hay cuatro empresas competidoras.
+| Forma de uso | Qué hace | Gratis hoy | Con plan pago o de empresa |
+| --- | --- | --- | --- |
+| Chat con herramientas | Corre código sobre tus archivos y te devuelve planillas, documentos y gráficos | Claude ([código y archivos](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)), Gemini ([Canvas](https://support.google.com/gemini/answer/16275805?hl=es-419)), ChatGPT (análisis de datos, con límites) | Los mismos, con más cuota |
+| Investigación | Arma un plan, lee decenas de páginas y entrega un informe con fuentes | Gemini Deep Research ([puede faltar en horas pico](https://support.google.com/gemini/answer/16275805?hl=es-419)), ChatGPT deep research (pocas por mes) | [Claude Research](https://support.claude.com/en/articles/11088861-use-research-on-claude) |
+| Navegador y computadora | Usa sitios, aplicaciones y archivos de tu computadora como lo harías vos | ChatGPT Work, en la app de escritorio ([comparte la cuota con Codex](https://learn.chatgpt.com/docs/pricing)) | [Claude in Chrome](https://claude.com/blog/claude-in-chrome-generally-available), desde el 26 de agosto de 2026; Microsoft Copilot Autopilot, [anunciado](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) el 25 de septiembre de 2026, en vista previa privada |
+| Terminal sobre una carpeta | Lee, escribe y ejecuta sobre los archivos de una carpeta tuya | [OpenAI Codex](https://learn.chatgpt.com/docs/pricing) (tareas cortas), [Antigravity](https://antigravity.google/docs/plans/) de Google (cuota semanal; desde el 18 de junio de 2026 [reemplaza a Gemini CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) en las cuentas sin pago) | Claude Code |
+| Conectores | Conecta el agente con tus sistemas por MCP | Claude, [un conector propio](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) | Más conectores |
+| Caja de arena | Un agente en una computadora descartable en la nube, con terminal y archivos | [Arena, modo agente](https://arena.ai/agent) | |
+
+Para el taller alcanza con dos. Claude, que ayer corrió código y te devolvió un Excel, y Arena en
+modo agente, que trabaja en una computadora descartable y al final te entrega en un zip todo lo
+que armó. Arena puede compartir las conversaciones con los proveedores de los modelos, sin los
+datos que te identifican, y en sus [preguntas frecuentes](https://arena.ai/faq) recomienda no
+escribir nada sensible. Ahí va solo dato público, como el del taller.
+
+En vivo mostramos tres, con cuentas pagas del curso: un agente de investigación sobre una pregunta
+del rubro, Arena en modo agente con el archivo sucio de ayer, y un agente de terminal sobre una
+carpeta, que es el adelanto de la sesión 6.
+
+### En la industria: Leucipa
+
+Baker Hughes anunció el 29 de enero de 2026 que Expand Energy, que se presenta como el mayor
+productor de gas natural de Norteamérica, va a desplegar Leucipa en miles de pozos de gas de
+Marcellus, Utica y Haynesville ([comunicado](https://www.bakerhughes.com/company/news/baker-hughes-expand-energy-deploy-leucipatm-across-us-natural-gas-fields)).
+El comunicado describe flujos de trabajo con IA para gestionar la producción, y un piloto de Lucy,
+un asistente conversacional sobre los datos de producción. La palabra agente no aparece. Leído con
+la distinción de Anthropic, lo que describe se parece más a un flujo fijo con modelos adentro,
+pensado para repetirse en miles de pozos, que a un agente que decide sus propios pasos.
+
+## Taller: tu primer agente
+
+Son 30 minutos, cada uno en su computadora. Elegís una de dos tareas: la principal, sobre el
+archivo de ayer, o la alternativa, con un agente de investigación. Las dos terminan igual, con dos
+chequeos concretos antes de creerle al resultado.
+
+### La principal: siete campos, seis pasos
+
+Con Claude (cuenta gratuita, con la ejecución de código y la creación de archivos activadas, como
+ayer) o con [Arena en modo agente](https://arena.ai/agent). Adjuntá
+[campos_capiv_2006_2026.csv](descargas/campos_capiv_2006_2026.csv) y pegá el pedido entero:
+
+```text
+Te adjunto la producción mensual de siete campos maduros de Argentina
+(Capítulo IV, Secretaría de Energía), de enero de 2006 a julio de 2026, en m³.
+Trabajá en pasos y contame qué hiciste en cada uno.
+
+1. Revisá el archivo: columnas, unidades, cuántas filas y cuántos campos,
+   meses que falten o estén repetidos, valores vacíos o negativos.
+   Quedate solo con las filas de tipo_recurso = "convencional".
+2. Para cada campo calculá el petróleo acumulado desde enero de 2006 (Np)
+   y la relación agua-petróleo (RAP = agua / petróleo) de 2020 y de 2025,
+   sumando los doce meses de cada año.
+3. Marcá los campos con RAP de 2025 mayor que 30.
+4. Hacé un gráfico de la RAP anual de cada campo, de 2006 a 2025, con el
+   eje vertical en escala logarítmica y los campos marcados en color.
+5. Escribí una nota de una página para el gerente de producción: qué
+   campos marcaste y por qué, qué te llamó la atención y qué no pudiste
+   verificar.
+6. Entregame tres archivos: una planilla con los números, el gráfico en
+   PNG y la nota en Word.
+```
+
+Mientras trabaja, mirá el loop: qué herramienta usa en cada paso, qué lee antes de calcular, y qué
+hace cuando algo le sale distinto de lo esperado. En Claude lo ves desplegando cada bloque de
+código. En Arena lo ves en el panel del espacio de trabajo, y de ahí mismo bajás todo en un zip al
+final.
+
+Cuando tengas los archivos, dos chequeos antes de creerle:
+
+- **Una cuenta contra el archivo.** El petróleo acumulado (Np) de El Corcobo Norte tiene que dar
+  15,109,737 m³, el mismo de la planilla de ayer. Si no la tenés, abrí el CSV en Excel, filtrá El Corcobo Norte y sumá la
+  columna `petroleo_m3`.
+- **Una relación a mano.** El Trapial en 2025: 4,178,451 m³ de agua sobre 71,639 m³ de petróleo
+  da 58.33. Buscá ese número en la planilla y en la nota.
+
+Si te sobra un minuto, fijate si en el paso 1 vio que a El Corcobo Norte le falta enero de 2019.
+Si no lo dice, preguntale.
+
+<details>
+<summary>Para comparar: lo que tiene que dar</summary>
+
+Solo convencional. El Np va de enero de 2006 a julio de 2026; la relación agua-petróleo (RAP) de
+cada año, con los doce meses sumados.
+
+| Campo | Np desde 2006 (m³) | RAP 2020 | RAP 2025 | Marcado |
+| --- | --- | --- | --- | --- |
+| El Corcobo Norte | 15,109,737 | 12.19 | 16.46 | no |
+| Chihuido de la Sierra Negra | 9,695,940 | 35.40 | 38.02 | sí |
+| El Trapial | 20,737,718 | 41.44 | 58.33 | sí |
+| Puesto Hernández | 12,419,240 | 58.95 | 60.96 | sí |
+| Los Perales | 13,745,181 | 18.54 | 21.59 | no |
+| Manantiales Behr | 24,341,645 | 5.98 | 6.26 | no |
+| Diadema | 12,444,536 | 23.20 | 28.08 | no |
+
+Diadema queda cerca del umbral y sube: una buena nota lo menciona aunque no lo marque. El Trapial
+es el que más empeora entre 2020 y 2025, y en 2026 su petróleo convencional casi desaparece.
+
+</details>
+
+### La alternativa: un agente de investigación
+
+Con Gemini Deep Research, en tu cuenta gratuita de [Gemini](https://gemini.google.com/): elegí
+Deep Research antes de mandar el pedido.
+
+```text
+Investigá los proyectos de recuperación secundaria (inyección de agua) en
+campos petroleros de Ecuador anunciados o en marcha entre 2024 y 2026.
+Armá una tabla con una fila por proyecto: campo, bloque, operadora, etapa
+(anunciado, adjudicado, en ejecución), producción incremental esperada y
+la fuente de cada dato con su enlace. Separá lo que sale de fuentes
+oficiales (Petroecuador, la Agencia de Regulación y Control de
+Hidrocarburos, el ministerio, la propia operadora) de lo que sale de la
+prensa.
+```
+
+Gemini te muestra primero un plan de investigación: leelo y aprobalo. El informe tarda entre cinco
+y diez minutos, y mientras tanto podés arrancar la tarea principal en otra pestaña. Los dos
+chequeos:
+
+- **Abrí dos citas.** Elegí dos filas y abrí el enlace de cada una. La página tiene que existir y
+  decir lo que dice la tabla: campo, operadora y fecha.
+- **Mirá de quién es el dato.** En esas dos filas, fijate si la fuente es oficial o de prensa, y si
+  la fecha cae entre 2024 y 2026. Un informe que mezcla un anuncio de 2019 con una adjudicación de
+  2025 se lee bien y está mal.
+
+### Si algo no anda
+
+- **Se agotó la cuota de Claude.** Seguí en Arena con el mismo pedido, o pasate a la alternativa en
+  Gemini. La cuota gratuita de Claude se renueva cada cinco horas.
+- **Arena te pide una cuenta.** Entrá con Google, o seguí en Claude.
+- **La red de tu empresa bloquea el sitio.** Probá desde el celular con datos móviles, o seguí la
+  pantalla compartida y hacé los dos chequeos sobre la tabla de referencia.
+
+## Qué delegar hoy
+
+Lo que mejor funciona hoy son las tareas **digitales, acotadas y verificables**: buscar
+información en muchos documentos, pasar datos de un formato a otro, escribir y corregir código,
+automatizar una secuencia de pasos que hoy hacés a mano. Lo común a todas es que el resultado se
+comprueba rápido, como con los dos chequeos del taller.
+
+Acotada quiere decir clara y también corta. El agente acumula contexto en cada vuelta (el contador
+de la traza lo muestra), y con el contexto crecen el tiempo, el costo y la chance de perder el
+objetivo. Una tarea de veinte pasos suele salir peor que dos de diez. El techo igual se mueve:
+[METR](https://metr.org/time-horizons/) mide cuánto dura la tarea que un agente completa solo, y en
+mayo de 2026 ubicó una versión temprana de Claude Mythos Preview por encima de 16 horas, el máximo
+que su conjunto de tareas mide bien, con 50% de éxito y en tareas de software. Lo que hoy no
+delegás por largo conviene volver a probarlo en unos meses.
+
+La tercera condición es la que más pesa en esta industria: lo **irreversible queda afuera**. Todo
+lo que hizo el agente de la traza se puede deshacer, porque leyó archivos y guardó un gráfico. Si
+se equivoca, el error vuelve y se corrige. Cuando la herramienta manda un correo, carga una
+nominación o escribe en un sistema de control, el paso equivocado ya quedó hecho, y mirar la salida
+llega tarde. Ese es el tema de la sesión 7.
+
+## Para llevarse
+
+- Antes de elegir un agente para una tarea, mirá qué herramientas y permisos le da su arnés: eso
+  decide qué puede hacer.
+- Delegá lo digital, acotado y verificable; lo que no se deshace lo aprueba una persona.
+- Antes de usar lo que te entregó, hacé dos chequeos concretos: una cuenta contra el archivo y una
+  cita abierta.
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura y repaso de la tarea | 15 min | Las ventanas de la sesión y una ronda: la mejor de tus tres preguntas |
-| Por qué no sabe lo tuyo | 15 min | El hueco, las dos formas de cerrarlo, y qué significa "parecido" para un modelo |
-| Buscar por significado | 15 min | Las dos búsquedas del ejercicio, y el prompt aumentado que se le manda al modelo |
-| Gemini Notebook en vivo: el cuaderno del rubro | 32 min | Reglamento, reporte y ley interrogados con sus preguntas, mirando siempre los fragmentos |
-| Tu cuaderno: un documento público de tu empresa | 28 min | Cada uno arma el suyo y le hace sus tres preguntas; ronda de qué salió |
-| Cierre | 5 min | Lo que se llevan de la búsqueda, y qué viene después de la pausa |
-| Pausa | 10 min | A las 12:00 de Argentina (10:00 de Ecuador y Colombia) sigue la sesión 6 |
+| Apertura | 8 min | De ayer a hoy: el chatbot que corrió código ya era un agente chico |
+| Qué es un agente | 15 min | Modelo, herramientas y loop; la traza del ejercicio paso a paso |
+| El arnés | 20 min | Qué es, qué hace y cuánto pesa en el resultado |
+| Qué agentes hay, y cómo se usan | 25 min | El mapa por forma de uso, lo que es gratis, y tres en vivo |
+| Taller: tu primer agente | 30 min | Cada uno corre un agente gratuito sobre una tarea dada y verifica dos cosas del resultado |
+| Qué delegar, y para llevarse | 12 min | Digital, acotado y verificable; lo irreversible queda afuera; tres prácticas |
+| Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 6 |
+
+Las preguntas a la sala van por el chat de la videollamada. Todo lo que subas a un agente en esta
+sesión es público: producción oficial de Argentina y fuentes abiertas de Ecuador.
 
 <Quiz data="quiz_s5" sesion={5} />
-
-Después de la pausa, en la sesión 6, vemos al mismo modelo trabajar por su cuenta, con herramientas.

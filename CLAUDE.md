@@ -83,18 +83,22 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   components draw (pozos-aprendizaje, escala, linea-de-tiempo, linea-de-tiempo-reciente), and it
   imports `src/engine/aprendizaje.ts` directly (Node ≥ 24 type stripping; CI runs Node 24). It
   runs inside `npm run slides`. Every SVG embeds its fonts: an `<img>` SVG can't see the page's.
-- `public/descargas/` — files the student downloads to feed a chatbot (today: the 10-well
-  production CSV for the session-4 batch-forecast exercise, built by
-  `scripts/build_csv_descarga.py` from the tef-bearing Capítulo IV cache).
-  `scripts/dca_referencia.py` implements the same rules as the prompt printed on the session-4
-  page and writes the instructor's reference xlsx/png to `scripts/_cache/` — prompt and script
-  are two copies of one contract: change both or neither. The Volve daily CSV (the "para
-  curiosos" pressures example) also ships in `public/descargas/`: the Equinor Open Data
-  Licence permits sharing with attribution and forbids only selling, and the session-4 page
-  carries the credit + terms link next to the download. `scripts/build_csv_volve.py` builds it
-  from the official xlsx cached in `scripts/_cache/` (out of git as a 2.3 MB source binary,
-  not for license reasons); `scripts/volve_referencia.py` reads the committed CSV — the same
-  file the student downloads.
+- `public/descargas/` — files the student downloads to feed a chatbot. Since 2026-09-28 the
+  session-3 workshop uses `campos_capiv_2006_2026.csv` (seven mature Argentine fields, oil,
+  water and water injection by month and resource type, 2006-01 to 2026-07; no field operated
+  by a company in the room) and its deliberately dirty twin `campos_capiv_sucio.csv`, both
+  built by `scripts/build_csv_campos.py` from the Capítulo IV "agrupada por yacimiento y
+  formación" CSV (downloaded to `scripts/_cache/`). Ecuador and Colombia publish oil only, so
+  the water comes from Argentina. `scripts/surveillance_referencia.py` implements the same
+  rules as the surveillance prompt printed on the session-3 page and writes
+  `surveillance_referencia.xlsx` (plan B, with live formulas; recalculated in LibreOffice it
+  matches the script) plus the answer key in `scripts/_cache/` — prompt and script are two
+  copies of one contract: change both or neither. Also shipped: the Petroecuador monthly
+  statistical report (Jan–Aug 2026), the Banco Central del Ecuador petroleum bulletin (Q2 2026)
+  and a two-page extract of the former, for the "¿cuadran?" exercise, and the ARCH daily
+  reports. The decline assets (10-well CSV, `build_csv_descarga.py`, `dca_referencia.py`, the
+  Volve CSV and its scripts) are no longer linked from any page since the 2026-09-28 reshuffle;
+  they stay in the repo, and `decline_wells.json` still feeds session 1's DeclineDuel.
 - `src/theme.ts` — same export shape as simulador's, but values are `var(--pd-*)` strings from
   `src/styles/tokens.css` (podeley.ar identity layer, copied verbatim — edit upstream, not here).
   Chart/badge colors stay literal hex (SVG attributes can't resolve var()); they mirror the LIGHT
@@ -116,6 +120,15 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
 
 ## Course calibration (set 2026-09-15 for the second edition; supersedes the YPFB calibration frozen at tag ypfb-2026-08)
 
+- **Reshuffle of 2026-09-28** (Matías, after day 1): the old sessions 3 and 4 were condensed
+  into session 3 (data with a chatbot that runs code: surveillance workbook with WOR/RAP vs
+  Np, Petroecuador vs Banco Central cross-check, Arena); the old session 5 (RAG, Gemini
+  Notebook) moved to slot 4 with a reserves and regulation notebook; the old session 6 on
+  agents was split into sessions 5 (what an agent is, the harness, the landscape, a free
+  agent workshop) and 6 (a terminal agent builds the session-8 case live, then the company
+  case). Design assumption from then on: nobody brings anything (no homework, no data, no
+  paid account); every exercise ships its own files. The free workshop tool is Claude, the
+  only free tier verified to run code and return an .xlsx.
 - **Format: 8 sessions × 2 h, two per day on 4 consecutive days, Mon 28-sep to Thu 1-oct 2026,
   10:00–14:00 Argentina (8:00–12:00 Ecuador and Colombia), remote.** Odd session 10:00–12:00,
   even session 12:00–14:00; same numbering and topics as the first edition (day 1 = S1+S2, day
@@ -134,9 +147,12 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   two HR coordinators (PCR, Andes) do not attend.
 - **Two instructors.** Matías teaches; Martín Alvarado runs the chat, the timer, calls the
   rounds and writes down what the room says in the chat (expectations, definitions, the
-  relevamiento round). Deck notes address Matías; anything Martín has
-  to do in a block goes in the notes prefixed `Martín:`. One hand on the panel buttons at a
-  time (Martín's).
+  relevamiento round). Deck notes address the lead instructor; anything the support
+  instructor does in a block goes in the notes prefixed `Apoyo:`.
+- **Nobody is named in published text** (Matías, 2026-09-28). Pages, slide text and speaker
+  notes never name Matías or Martín: the notes ship in the handout PDFs and in presenter view.
+  Cues to the room say "esperá a que te indiquemos" or use "nosotros" ("decimos 'ya'"). Only
+  the credits keep the names: the "Quiénes somos" slide of session 1 and the site footer.
 - **The employers pay for the course.** Every use case is framed as work; nothing is pitched as
   personal or "para la vida", even when it obviously also serves there (Matías, 2026-09-25).
 - **Vocabulary:** "IA de propósito específico" versus "IA de propósito general"; never "IA

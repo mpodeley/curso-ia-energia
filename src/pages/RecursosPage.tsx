@@ -19,7 +19,7 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       {
         nombre: 'Reporte diario de producción — Ecuador (ARCH)',
         href: 'https://controlhidrocarburos.gob.ec/cifras-del-sector-hidrocarburifero/',
-        nota: 'un PDF de una página por día: producción por compañía y por bloque, estado de pozos y novedades con causa de cierre (de ahí el ejercicio de la sesión 4)',
+        nota: 'un PDF de una página por día: producción por compañía y por bloque, estado de pozos y novedades con causa de cierre (el "para curiosos" de la sesión 3)',
       },
     ],
   },

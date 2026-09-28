@@ -17,7 +17,7 @@ Sesión 2 de 8 · día 1: qué es y cómo funciona · 2 h en vivo · **PCR · CG
 Este deck se abrió en la ventana A durante la pausa; las otras ventanas
 siguen como estaban: el sitio del curso (C) y el chatbot (D). Todo lo que se
 pregunta a la sala va por el chat de la videollamada.
-Martín: confirmar en el chat que volvieron los seis; a las 12:01 arrancamos
+Apoyo: confirmar en el chat que volvieron los seis; a las 12:01 arrancamos
 con los que estén.
 -->
 
@@ -56,7 +56,7 @@ en el trabajo.
 1 min · acumulado 0:01
 La misma tabla está en la página de la sesión 2. Pedir que pasen a esa
 página: los laboratorios de esta sesión están ahí.
-Martín: el cronómetro vuelve a cero; el mismo aviso por el chat privado si un
+Apoyo: el cronómetro vuelve a cero; el mismo aviso por el chat privado si un
 bloque se pasa cinco minutos.
 -->
 
@@ -107,7 +107,7 @@ Un número en el chat, cuando te indiquemos.
 
 <!--
 3 min · acumulado 0:08
-Martín dice "ya" y mandan todos a la vez; después lee los números en voz alta.
+Decimos "ya" y mandan todos a la vez; después se leen los números en voz alta.
 NO adelantar la respuesta: el laboratorio la muestra en la slide siguiente y el
 golpe está en la distancia entre lo que dijeron y lo que ven.
 -->
@@ -125,7 +125,7 @@ Está en la página de la sesión 2. Empezá por **perforación direccional**.
 Ventana C, sesión 2, ejercicio "El texto que ve el modelo: tokens".
 Empezar por el ejemplo "Dos palabras que usás todos los días": son seis fichas
 para dos palabras. Contarlas en voz alta, despacio.
-Martín: decir cuántos habían escrito 2 o 4.
+Apoyo: decir cuántos habían escrito 2 o 4.
 Después recorrer los otros ejemplos, sobre todo el par español/inglés y el
 número largo. Que jueguen dos minutos solos antes de seguir: que peguen un
 nombre de pozo o una unidad de su rutina y cuenten las fichas.
@@ -148,7 +148,7 @@ El dato para decir en voz alta: "perforación direccional" son seis tokens y
 Aclarar por qué pasa: cuando se armó el tokenizador había mucho más texto en
 inglés.
 Si alguien pregunta por el costo: hoy con cuentas gratuitas no lo pagan, pero
-importa apenas alguien piense en automatizar algo, y eso aparece en la sesión 6.
+importa apenas alguien piense en automatizar algo, y eso aparece en las sesiones 5 y 6.
 -->
 
 ---
@@ -248,7 +248,7 @@ Una tarea tuya, en el chat, donde querrías la misma respuesta cada vez.
 
 <!--
 2 min · acumulado 0:33
-Martín lee tres en voz alta, con nombre.
+Se leen tres en voz alta, con nombre.
 Comentar en treinta segundos: casi todo el trabajo técnico quiere temperatura
 baja, y eso es una pista de para qué sirve esta herramienta acá.
 Cierre del bloque 1.
@@ -414,7 +414,7 @@ computadora. METR mide cuánto dura, en tiempo de un experto, una tarea que el
 agente completa la mitad de las veces: en mayo de 2026 llegó a al menos 16
 horas, el techo de lo que su batería de pruebas puede medir. Desde 2024 ese
 largo se duplicó cada tres meses, más o menos.
-Qué hace bien un agente hoy y dónde se rompe es la sesión 6; acá solo
+Qué hace bien un agente hoy y dónde se rompe son las sesiones 5 y 6; acá solo
 nombrarlo.
 -->
 
@@ -493,7 +493,7 @@ Pedirles que primero lo lleven al máximo para leer la conversación entera, y
 que después bajen de a poco. La pregunta es qué se pierde primero.
 Sale solo: las reglas, porque las reglas se dan al principio.
 Después bajar hasta 200 y mostrar que también se caen los datos.
-Martín: ronda de dos nombres: "¿a quién le pasó que el chatbot dejó de
+Apoyo: ronda de dos nombres: "¿a quién le pasó que el chatbot dejó de
 respetar algo que le pidió al principio?". Es exactamente esto: la regla se
 cayó de la ventana.
 -->
@@ -510,7 +510,7 @@ Y en un documento grande, lo que se cayó tampoco se busca solo. Hay que volver 
 <!--
 2 min · acumulado 1:05
 Resume lo que acaban de ver en el ejercicio. Ir rápido.
-La solución de verdad al segundo caso es la sesión 5: en vez de
+La solución de verdad al segundo caso es la sesión 4: en vez de
 pegar todo, buscar el pedazo que hace falta y pegar solo eso.
 -->
 
@@ -542,7 +542,7 @@ Volvemos a la 1:18 del cronómetro. Dejá el chatbot abierto: lo usás al volver
 <!--
 10 min · acumulado 1:18
 Cortar el audio y dejar la pantalla compartida.
-Martín: pasar por el chat la consigna del bloque siguiente, para que la lean
+Apoyo: pasar por el chat la consigna del bloque siguiente, para que la lean
 en la pausa: "pensá una pregunta de tu especialidad cuya respuesta sepas de
 memoria y sea pública: una norma, una cifra del regulador, un nombre. Nada de
 la empresa". Avisar un minuto antes de volver.
@@ -590,7 +590,7 @@ Escribila en el chat.
 
 <!--
 2 min · acumulado 1:23
-Martín: juntar las palabras en su documento y avisar cuáles se repiten. Se
+Apoyo: juntar las palabras en su documento y avisar cuáles se repiten. Se
 comentan al volver de la demo, en la cita del borrador plausible.
 -->
 
@@ -641,17 +641,17 @@ una cifra del regulador, un nombre. Nada de tu empresa. Pegá la respuesta en el
 
 <!--
 8 min · acumulado 1:41
-La consigna exacta ya la mandó Martín en la pausa: una pregunta de su área
+La consigna exacta ya salió por el chat en la pausa: una pregunta de su área
 cuya respuesta conocen de memoria y es pública. Nada de la empresa: hay cuatro
 en la sala.
 Tres minutos para probar; el resultado, pegado en el chat.
-Martín: leer dos en voz alta, con nombre, y pasarme el resto en una línea.
+Apoyo: leer dos en voz alta, con nombre, y pasarme el resto en una línea.
 Clasificar con la sala: ¿le faltaba el dato, o el dato no existe y lo completó
 igual?
 Si a alguien "le salió bien", también es dato: preguntarle cómo lo verificaría
 si NO supiera la respuesta de memoria. Esa pregunta es el puente a la cita
 siguiente.
-Nadie comparte pantalla, el chat es suficiente. Martín guarda el chat al
+Nadie comparte pantalla, el chat es suficiente. El chat se guarda al
 final: esos ejemplos alimentan la cacería de errores de la sesión 7.
 -->
 
@@ -665,7 +665,7 @@ final: esos ejemplos alimentan la cacería de errores de la sesión 7.
 3 min · acumulado 1:44
 La misma regla de la sesión 1, ahora con la explicación atrás. Vale la pena
 decirlo así: en la sesión 1 era una advertencia, ahora es una conclusión.
-Martín: leer las dos o tres palabras que más se repitieron en el chat.
+Apoyo: leer las dos o tres palabras que más se repitieron en el chat.
 -->
 
 ---
@@ -674,12 +674,12 @@ Martín: leer las dos o tres palabras que más se repitieron en el chat.
 
 La ventana de contexto crece, los modelos mejoran y la frecuencia baja, pero el mecanismo sigue siendo el mismo.
 
-Lo que sí se puede cambiar es **de dónde saca el material**, y eso es la sesión 5.
+Lo que sí se puede cambiar es **de dónde saca el material**, y eso es la sesión 4.
 
 <!--
 4 min · acumulado 1:48
 Dejar sembradas las dos salidas que trabajamos más adelante: darle las fuentes
-buenas en vez de confiar en lo que recuerda (sesión 5), y armar un protocolo de
+buenas en vez de confiar en lo que recuerda (sesión 4), y armar un protocolo de
 verificación propio (sesión 7).
 Aclarar que acotan el problema, sin prometer que lo resuelven.
 Cierre del bloque 4.
@@ -706,7 +706,7 @@ Arranca 1:48, termina 2:00.
 
 - **Inventa lo que no sabe**: de cómo genera el texto, token por token · hoy
 - **No hace lo que le pediste**: de cuánto control dan las instrucciones · mañana
-- **Está seguro y equivocado**: de lo que aprendió y de lo que no · sesión 5
+- **Está seguro y equivocado**: de lo que aprendió y de lo que no · sesión 4
 - **Se olvida de lo que le dijiste**: de cuánto puede mirar a la vez · hoy y sesión 6
 
 <!--
@@ -729,7 +729,7 @@ A la mañana escribiste qué es la IA para vos. Con lo que viste de cómo funcio
 
 <!--
 3 min · acumulado 1:54
-Martín: pegar en el chat dos de las definiciones de la mañana, con nombre, de
+Apoyo: pegar en el chat dos de las definiciones de la mañana, con nombre, de
 las que guardó en su documento.
 Leer esas dos en voz alta y preguntarle a cada autor si la sostiene después de ver
 tokens, predicción, las dos etapas y la escala. Lo esperable: las que decían
@@ -767,31 +767,29 @@ Si ya tenés cuenta, probala (sin datos confidenciales) y anotá qué salió **m
 
 <!--
 2 min · acumulado 1:58
-Es la única cosa que se pide entre días, y son cinco minutos. Mañana, en la
-sesión 3, esa tarea es la materia prima del taller "tu tarea, tu prompt": cada
-uno trabaja sobre la suya.
+Es la única cosa que se pide entre días, son cinco minutos y es opcional. La
+tarea vuelve el miércoles, en el caso de tu empresa.
 Insistir en que anoten lo que salió MAL si la probaron. Es el material más
 útil que van a traer, y con la hoja de ruta recién vista ya pueden arriesgar
 cuál de las cuatro fue.
-Plan B para mañana, si pocos la hicieron: tres minutos al arrancar el taller,
-ahí mismo, con una tarea chica de la semana; el taller no depende de la tarea.
-Martín: pegar la consigna en el chat, en tres líneas, y volver a mandarla por
+Plan B para mañana: nada depende de la tarea. La sesión 3 trae su propio
+archivo y sus propios PDF.
+Apoyo: pegar la consigna en el chat, en tres líneas, y volver a mandarla por
 el canal del curso mañana a las 8:00.
 -->
 
 ---
 
-## Mañana, sesiones 3 y 4: prompting y análisis asistido de datos
+## Mañana, sesiones 3 y 4: datos y documentos
 
-- Escribir prompts con **rol, contexto, tarea, formato y ejemplos**, sobre tu tarea
-- Saber **qué información de la empresa no debe subirse** a un chatbot
-- Del **reporte diario de la ARCH** a una tabla verificada, y una declinación sobre pozos reales
+- Un chatbot gratuito que **corre código** y arma una planilla de surveillance
+- Dos PDF oficiales de Ecuador que **tienen que cuadrar**
+- Un **cuaderno de reservas y normativa** en Gemini Notebook
 
 <!--
 1 min · acumulado 1:59
-La segunda es la que cierra la regla que abrió el día. Anticiparlo: mañana
-dejamos de decir "no subas datos confidenciales" y empezamos a decir qué sí,
-qué no y por qué.
+Anticiparlo: mañana el chatbot deja de solo escribir y empieza a trabajar
+con archivos. La regla de no subir datos de la empresa sigue en pie.
 Nada de material previo obligatorio; mañana arranca de cero igual.
 -->
 
@@ -806,7 +804,7 @@ El quiz, los recursos y los laboratorios quedan en la página · **mpodeley.gith
 <!--
 1 min · acumulado 2:00
 Dejar proyectada mientras se despiden y responder lo que quede suelto.
-Después de la clase: Martín guarda el chat de la ronda de alucinaciones;
+Después de la clase: guardar el chat de la ronda de alucinaciones;
 leemos juntos lo que anotó de la ronda de relevamiento y elegimos los ejemplos
 de mañana con eso.
 -->
