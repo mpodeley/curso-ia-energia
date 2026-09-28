@@ -1,8 +1,26 @@
 {
-  "generated_at": "2026-09-28T18:00:00+00:00",
+  "generated_at": "2026-09-28T23:00:00+00:00",
   "source": "elaboración propia para el curso (segunda edición: sesión 3 rehecha el 28 de septiembre de 2026, prompts y datos)",
   "source_date": null,
   "data": [
+    {
+      "pregunta": "Le pedís a Claude un resumen y te lo devuelve en prosa, aunque vos querías viñetas. En su prompt de sistema publicado dice que, en una conversación normal, responde en prosa salvo que se lo pidan. ¿Qué hacés para que tus resúmenes salgan siempre en viñetas?",
+      "opciones": [
+        {
+          "texto": "Nada: el prompt de sistema lo escribió Anthropic y no se puede cambiar.",
+          "explicacion": "El de la aplicación no lo cambiás, pero encima de él podés escribir el tuyo: las instrucciones de tu cuenta valen para todas tus conversaciones."
+        },
+        {
+          "texto": "Lo escribo en \"Instrucciones para Claude\", en la configuración: vale para todos mis pedidos, y en cada pedido queda solo lo del día.",
+          "correcta": true,
+          "explicacion": "Es un prompt de sistema escrito por vos. Lo que se repite en todos tus pedidos va ahí; lo que cambia, en el prompt de usuario."
+        },
+        {
+          "texto": "Lo pido una vez en una conversación y ya queda para siempre.",
+          "explicacion": "El modelo no recuerda nada entre conversaciones: todo viaja junto en cada pedido. Si no está en tus instrucciones, en la conversación nueva no está."
+        }
+      ]
+    },
     {
       "pregunta": "Subiste a un chatbot un CSV con columnas claras (petroleo_m3, agua_m3, mes en formato AAAA-MM) y le preguntaste en una línea qué campos mirar. La respuesta fue buena. ¿Por qué alcanzó con tan poco?",
       "opciones": [
@@ -22,38 +40,38 @@
       ]
     },
     {
-      "pregunta": "El chatbot te devolvió la planilla de surveillance. Hacés clic en una celda de la relación agua-petróleo del Resumen y ves el número 17.37, sin fórmula. ¿Qué hacés?",
+      "pregunta": "El chatbot te devolvió el Excel de los partes. Hacés clic en el total nacional del Resumen y ves el número 463,812.77, sin fórmula. ¿Qué hacés?",
       "opciones": [
         {
-          "texto": "Nada: si el número coincide con mi cuenta a mano, la planilla está bien.",
-          "explicacion": "Puede estar bien hoy, pero el mes que viene no se actualiza. Una herramienta de surveillance que no recalcula obliga a pedirle todo de nuevo al chatbot cada mes."
+          "texto": "Nada: si el número coincide con el del parte, la planilla está bien.",
+          "explicacion": "Puede estar bien hoy, pero cuando sumes el parte de mañana no se actualiza. Una planilla que no recalcula obliga a pedirle todo de nuevo al chatbot."
+        },
+        {
+          "texto": "Le pido que rehaga el Resumen con fórmulas que lean la hoja de producción por compañía, y vuelvo a controlar un día contra el parte.",
+          "correcta": true,
+          "explicacion": "Un número pegado es una respuesta; una fórmula es una herramienta. Y el control se repite, porque la planilla nueva es otra."
         },
         {
           "texto": "La tiro y armo la planilla a mano.",
-          "explicacion": "Es más rápido pedirle que la rehaga con fórmulas que lean la hoja Datos. El borrador del modelo sirve; lo que falta es el pedido."
-        },
-        {
-          "texto": "Le pido que la rehaga con fórmulas que lean la hoja Datos, y vuelvo a verificar una cuenta a mano.",
-          "correcta": true,
-          "explicacion": "Un número pegado es una respuesta; una fórmula es una herramienta que el mes que viene se actualiza sola al pegar filas. Y la cuenta a mano se repite, porque la planilla nueva es otra."
+          "explicacion": "Es más rápido pedirle que la rehaga con fórmulas. El borrador del modelo sirve; lo que falta es el pedido."
         }
       ]
     },
     {
-      "pregunta": "Abril, mayo y junio tienen 30, 31 y 30 días. Para el promedio diario del trimestre, un chatbot promedia los tres promedios mensuales y le da 360,500 barriles por día; el Banco Central dice 360.51 mil. ¿Qué pasó?",
+      "pregunta": "Consolidaste seis partes de la ARCH en un Excel. El parte del 11 dice que EP Petroecuador produjo el día 9 367,065.88 barriles por día; el parte del 10 decía 361,238.63 para el mismo día. ¿Qué hacés?",
       "opciones": [
         {
-          "texto": "Es redondeo: la diferencia está en el segundo decimal.",
-          "explicacion": "Parece redondeo y es un error de método: con un trimestre de otra cantidad de días la diferencia crece. El total dividido por 91 días da 360,513, que cuadra con el Banco Central."
+          "texto": "Borro uno de los dos: seguro que el chatbot leyó mal un número.",
+          "explicacion": "Primero se mira el PDF: los dos números están impresos así. Los volúmenes del parte son preliminares y se corrigen de un día al otro."
         },
         {
-          "texto": "Los meses pesan distinto porque tienen distintos días: el promedio correcto es el total del trimestre dividido por 91.",
+          "texto": "Promedio los dos y sigo.",
+          "explicacion": "El promedio no es ninguno de los dos datos oficiales. Una serie mezclada así no se puede explicar después."
+        },
+        {
+          "texto": "Lo marco en la hoja de control, elijo con qué columna armo la serie (la del día o la corregida) y lo anoto en la planilla.",
           "correcta": true,
-          "explicacion": "El promedio de promedios le da a febrero o a un mes de 30 días el mismo peso que a uno de 31. Pedirle al modelo que muestre la cuenta es lo que deja verlo."
-        },
-        {
-          "texto": "El Banco Central usa otra fuente, así que no tienen por qué coincidir.",
-          "explicacion": "Toma el dato de la ARCH, y con la cuenta bien hecha coincide al redondeo con Petroecuador. La diferencia de 13 barriles por día sale del método."
+          "explicacion": "Es una revisión del dato preliminar, 5,827 barriles por día. Lo que importa es que la regla sea una sola y quede escrita, así otro puede rehacer la cuenta."
         }
       ]
     },

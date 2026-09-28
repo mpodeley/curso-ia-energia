@@ -75,8 +75,8 @@ lo armamos acá.
 
 ## Esta mañana, una planilla. Ahora, documentos
 
-Con el CSV, el dato estaba **entero adelante**: el chatbot lo leyó, corrió la cuenta y devolvió un
-Excel que se puede revisar.
+Con los seis partes, el dato estaba **entero adelante**: el chatbot los leyó, corrió la cuenta y
+devolvió un Excel que se puede revisar.
 
 Un reglamento de 84 páginas funciona distinto. La respuesta está en **un párrafo del medio**,
 escrita con otras palabras que las de tu pregunta.
@@ -543,7 +543,7 @@ Bloque 6 de 8 · **20 min**
 
 - **Argentina**: el Reporte Mensual del IAPG, julio de 2026
 - **Colombia**: el Informe de Recursos y Reservas 2025 de la ANH
-- **Ecuador**: el Boletín del Banco Central, segundo trimestre, el de la mañana
+- **Ecuador**: el Boletín del Banco Central, segundo trimestre
 - **Un caso técnico**: inyección de agua en ciclos en Chichimene, revista de Ecopetrol
 
 Cada uno trae **dos preguntas** en la página.

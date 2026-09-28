@@ -55,11 +55,11 @@ export const SESIONES: Sesion[] = [
     dia: 2,
     titulo: 'Prompts y datos, en la práctica',
     resumen:
-      'El chatbot gratuito lee un archivo, corre código y entrega una planilla de surveillance con relación agua-petróleo contra acumulada; con un dato bueno, alcanza un pedido corto. Y dos PDF oficiales de Ecuador que tienen que cuadrar.',
+      'Qué es un prompt, y cómo se ven el de sistema y el de usuario; un parte de la ARCH contado a cuatro destinatarios en tres idiomas; y seis partes consolidados en un Excel con controles, la tarea que mañana hace un agente.',
     objetivos: [
-      'Pedirle a un chatbot gratuito un análisis con código sobre un archivo, y verificarlo',
-      'Saber qué va en el prompt cuando el dato es bueno, y qué cambia cuando no',
-      'Cruzar dos fuentes oficiales y encontrar dónde difieren',
+      'Explicar qué es un prompt, y separar el prompt de sistema del prompt de usuario',
+      'Escribir lo mismo para otro destinatario y otro idioma, y revisarlo',
+      'Consolidar una serie de partes en un Excel con fórmulas y controles, y verificarlo',
     ],
     estado: 'lista',
     slides: true,

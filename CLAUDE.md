@@ -93,10 +93,15 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   rules as the surveillance prompt printed on the session-3 page and writes
   `surveillance_referencia.xlsx` (plan B, with live formulas; recalculated in LibreOffice it
   matches the script) plus the answer key in `scripts/_cache/` — prompt and script are two
-  copies of one contract: change both or neither. Also shipped: the Petroecuador monthly
-  statistical report (Jan–Aug 2026), the Banco Central del Ecuador petroleum bulletin (Q2 2026)
-  and a two-page extract of the former, for the "¿cuadran?" exercise, and the ARCH daily
-  reports. The decline assets (10-well CSV, `build_csv_descarga.py`, `dca_referencia.py`, the
+  copies of one contract: change both or neither. Since the second rework of 2026-09-28 the
+  session-3 workshop consolidates the six ARCH daily reports (8–15 Sep) into an Excel, and the
+  surveillance workbook moved to "para curiosos". `scripts/arch_consolidar.py` reads the six
+  PDFs with `pdftotext -layout` and writes `arch_consolidado_referencia.xlsx` (plan B) plus
+  the answer key in `scripts/_cache/arch_control.json`; it is the second copy of the workshop
+  prompt's contract. Known facts it pins: companies add up to each report's totals; the
+  report of 11 Sep revises EP Petroecuador's day 9 by +5,827 bppd; operation days 11 and 12
+  have no report of their own. The Banco Central del Ecuador bulletin (Q2 2026) stays for the
+  session-4 notebook menu; the Petroecuador vs BCE cross-check was dropped. The decline assets (10-well CSV, `build_csv_descarga.py`, `dca_referencia.py`, the
   Volve CSV and its scripts) are no longer linked from any page since the 2026-09-28 reshuffle;
   they stay in the repo, and `decline_wells.json` still feeds session 1's DeclineDuel.
 - `src/theme.ts` — same export shape as simulador's, but values are `var(--pd-*)` strings from
@@ -121,8 +126,9 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
 ## Course calibration (set 2026-09-15 for the second edition; supersedes the YPFB calibration frozen at tag ypfb-2026-08)
 
 - **Reshuffle of 2026-09-28** (Matías, after day 1): the old sessions 3 and 4 were condensed
-  into session 3 (data with a chatbot that runs code: surveillance workbook with WOR/RAP vs
-  Np, Petroecuador vs Banco Central cross-check, Arena); the old session 5 (RAG, Gemini
+  into session 3 (reworked again that night: what a prompt is, system vs user prompt shown
+  on Claude's published system prompt, an ARCH report told to four audiences in three
+  languages, and a workshop that consolidates six ARCH reports into an Excel); the old session 5 (RAG, Gemini
   Notebook) moved to slot 4 with a reserves and regulation notebook; the old session 6 on
   agents was split into sessions 5 (what an agent is, the harness, the landscape, a free
   agent workshop) and 6 (a terminal agent builds the session-8 case live, then the company

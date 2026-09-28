@@ -59,10 +59,11 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 | Bloque | min |
 | --- | --- |
 | Apertura | 8 |
-| Qué hace hoy un chatbot gratuito | 10 |
-| Prompt corto, dato bueno | 20 |
-| Taller: planilla de surveillance | 37 |
-| ¿Cuadran Petroecuador y el Banco Central? | 25 |
+| Qué es un prompt | 15 |
+| Un parte, cuatro correos | 25 |
+| Qué hace un buen prompt | 5 |
+| Prompt corto, dato bueno | 12 |
+| Taller: seis partes en un Excel | 35 |
 | Qué no se sube, y para llevarse | 10 |
 | Pausa | 10 |
 

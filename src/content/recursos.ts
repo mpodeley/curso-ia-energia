@@ -166,8 +166,35 @@ export const RECURSOS: Record<number, Recurso[]> = {
   ],
   3: [
     {
-      // Rehecha el 2026-09-28: la sesión 3 pasa a trabajar con datos y el taller va
-      // en Claude, el único chatbot gratuito que devuelve un .xlsx.
+      // Rehecha el 2026-09-28 (noche): la sesión 3 explica qué es un prompt y
+      // muestra el prompt de sistema publicado de Claude.
+      tipo: 'lectura',
+      titulo: 'Claude Sonnet 5.5 system prompts',
+      url: 'https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-5-5',
+      fuente: 'Anthropic',
+      idioma: 'en',
+      porque:
+        'El prompt de sistema completo que recibe Claude en la aplicación, antes de tu primer mensaje, en la versión del 28 de septiembre de 2026. Son varias páginas: la fecha, qué productos existen, cómo responde y cómo no. La sesión muestra cinco fragmentos.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Prompting best practices',
+      url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices',
+      fuente: 'Anthropic',
+      idioma: 'en',
+      porque:
+        'La guía oficial de Anthropic: el modelo como un empleado brillante pero nuevo, la regla de oro de mostrarle el prompt a un colega, los ejemplos, las etiquetas y el prompt de sistema. Está escrita para quien programa, pero cada técnica sirve en el chat. El traductor del navegador alcanza.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Prompt design strategies',
+      url: 'https://ai.google.dev/gemini-api/docs/prompting-strategies',
+      fuente: 'Google',
+      idioma: 'en',
+      porque:
+        'La misma idea contada por Google: instrucciones claras y específicas, ejemplos ("los prompts sin ejemplos suelen ser menos efectivos"), todo el contexto primero y el pedido al final.',
+    },
+    {
       tipo: 'lectura',
       titulo: 'Create and edit files with Claude',
       url: 'https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude',
@@ -178,42 +205,21 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
     {
       tipo: 'herramienta',
-      titulo: 'Producción de petróleo y gas por pozo (Capítulo IV)',
-      url: 'http://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
-      fuente: 'Secretaría de Energía, Argentina',
-      idioma: 'es',
-      porque:
-        'La fuente del archivo del taller es uno de sus recursos, "Producción de Capítulo IV agrupada por yacimiento y formación productiva": petróleo, gas, agua e inyección, mes a mes desde 2006, con licencia abierta. Trae todos los campos del país, así que la planilla se puede repetir con cualquier otro.',
-    },
-    {
-      tipo: 'herramienta',
-      titulo: 'Arena',
-      url: 'https://arena.ai',
-      fuente: 'Arena (antes LMArena)',
-      idioma: 'en',
-      porque:
-        'Dos modelos anónimos contestan lo mismo y vos votás. El ranking que sale de millones de esos votos sirve de referencia general; para elegir, lo que importa es tu tarea corrida en dos modelos.',
-    },
-    {
-      tipo: 'herramienta',
-      titulo: 'Artificial Analysis',
-      url: 'https://artificialanalysis.ai',
-      fuente: 'Artificial Analysis',
-      idioma: 'en',
-      porque:
-        'Capacidad, precio por token y velocidad de todos los modelos en un solo cuadro. El lugar para mirar la escalera grande/rápido de cada proveedor con los números al lado.',
-    },
-    {
-      // Movido desde la sesión 4 el 2026-09-28: el reporte diario queda como "para
-      // curiosos" de la sesión 3. Copias del 8 al 15 de septiembre de 2026 en
-      // public/descargas/ por si la red corporativa bloquea el sitio del regulador.
-      tipo: 'herramienta',
       titulo: 'Reporte diario preliminar de producción y operaciones',
       url: 'https://controlhidrocarburos.gob.ec/',
       fuente: 'Agencia de Regulación y Control de Hidrocarburos (ARCH), Ecuador',
       idioma: 'es',
       porque:
-        'Una página por día: producción por compañía y por bloque, estado de pozos, gas y las novedades pozo por pozo con su causa de cierre. Es la única fuente pública de Ecuador donde aparece el agua, como texto.',
+        'La fuente del correo y del taller: una página por día, con producción por compañía y por bloque, estado de pozos, gas y novedades pozo por pozo. La dirección de cada PDF tiene siempre la misma forma, y por eso se puede bajar solo, que es lo que mañana hace un agente.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'Producción de petróleo y gas por pozo (Capítulo IV)',
+      url: 'http://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
+      fuente: 'Secretaría de Energía, Argentina',
+      idioma: 'es',
+      porque:
+        'La fuente del archivo de los siete campos es uno de sus recursos, "Producción de Capítulo IV agrupada por yacimiento y formación productiva": petróleo, gas, agua e inyección, mes a mes desde 2006, con licencia abierta.',
     },
     {
       tipo: 'video',
@@ -224,16 +230,16 @@ export const RECURSOS: Record<number, Recurso[]> = {
       publicado: '2025-07',
       idioma: 'en',
       porque:
-        'La clase de prompting de los que hacen los modelos: el equipo de Anthropic construye un prompt real, pieza por pieza, sobre un caso de seguros. Son las piezas del constructor de esta página, para correos, minutas e informes. En inglés, con subtítulos.',
+        'La clase de prompting de los que hacen los modelos: el equipo de Anthropic construye un prompt real, pieza por pieza, sobre un caso de seguros, con prompt de sistema y ejemplos. En inglés, con subtítulos.',
     },
     {
-      tipo: 'lectura',
-      titulo: "Learning more about Claude's mathematical capabilities",
-      url: 'https://www.anthropic.com/research/riemann-zeta',
-      fuente: 'Anthropic',
+      tipo: 'herramienta',
+      titulo: 'Arena',
+      url: 'https://arena.ai',
+      fuente: 'Arena (antes LMArena)',
       idioma: 'en',
       porque:
-        'El otro extremo del prompt corto: un pedido de una frase ("intentá en serio") y un modelo de frontera que movió una cota de la función zeta de Riemann de 41.6% a 67.2%, con 31 millones de tokens y una prueba formal atrás. El anuncio aclara que la hipótesis sigue abierta.',
+        'Dos modelos anónimos contestan lo mismo y vos votás. El ranking que sale de millones de esos votos sirve de referencia general; para elegir, lo que importa es tu tarea corrida en dos modelos.',
     },
   ],
   // Sesión 4 desde el 2026-09-28: la ex sesión 5 (RAG y Gemini Notebook), con el cuaderno de
