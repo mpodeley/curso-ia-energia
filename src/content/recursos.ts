@@ -40,17 +40,6 @@ export type Recurso = {
 export const RECURSOS: Record<number, Recurso[]> = {
   1: [
     {
-      tipo: 'video',
-      titulo: 'Large Language Models explained briefly',
-      url: 'https://www.youtube.com/watch?v=LPZh9BOjkQs',
-      fuente: '3Blue1Brown',
-      duracion: '7:58',
-      publicado: '2024-11',
-      idioma: 'en',
-      porque:
-        'El video del punto 2 de la lista de arriba. Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
-    },
-    {
       // Repetido a propósito en INTERPRETABILIDAD (sesión 2): acá respalda la
       // línea de la capa 3 del deck ("el video dura un minuto y está en la página").
       tipo: 'video',
@@ -63,17 +52,6 @@ export const RECURSOS: Record<number, Recurso[]> = {
       idioma: 'en',
       porque:
         'El ejemplo fundacional de la capa 3, en un minuto y sin narración: una red de los Laboratorios Bell leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy escribe informes, en una computadora de hace treinta y siete años.',
-    },
-    {
-      tipo: 'video',
-      titulo: 'The moment we stopped understanding AI [AlexNet]',
-      url: 'https://www.youtube.com/watch?v=UZDiGooFs54',
-      fuente: 'Welch Labs',
-      duracion: '17:38',
-      publicado: '2024-07',
-      idioma: 'en',
-      porque:
-        'Donde la capa 3 explota: AlexNet (2012), el mismo mecanismo de LeNet con GPUs y un millón de imágenes. El título es literal, y es el hilo que retomamos en las sesiones 2 y 7: desde acá los modelos rinden más de lo que se dejan leer.',
     },
     {
       // Repetido a propósito en la sesión 2, donde acompaña la sección de
@@ -139,6 +117,31 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
   ],
   2: [
+    // Movidos desde la sesión 1 el 2026-09-28 (pedido de Matías): abren la sesión 2.
+    {
+      tipo: 'video',
+      titulo: 'Large Language Models explained briefly',
+      url: 'https://www.youtube.com/watch?v=LPZh9BOjkQs',
+      fuente: '3Blue1Brown',
+      duracion: '7:58',
+      publicado: '2024-11',
+      idioma: 'en',
+      porque:
+        'Tiene pista de audio en español, elegible en el reproductor. No hace falta entender todo: quedate con la idea de que el modelo aprende de texto y genera texto.',
+    },
+    {
+      // Also in INTERPRETABILIDAD; sesion-2.mdx filters that list against this one,
+      // so the page shows it once, here.
+      tipo: 'video',
+      titulo: 'The moment we stopped understanding AI [AlexNet]',
+      url: 'https://www.youtube.com/watch?v=UZDiGooFs54',
+      fuente: 'Welch Labs',
+      duracion: '17:38',
+      publicado: '2024-07',
+      idioma: 'en',
+      porque:
+        'AlexNet (2012): el mismo mecanismo de la red que leía códigos postales en 1989, con placas gráficas (GPU) y un millón de imágenes. El título es literal: desde ahí los modelos rinden más de lo que se dejan leer, y ese hilo vuelve en la sesión 7.',
+    },
     {
       tipo: 'herramienta',
       titulo: 'Tiktokenizer',
@@ -430,7 +433,7 @@ export const INTERPRETABILIDAD: Recurso[] = [
       'Un minuto, sin narración: LeNet-1 leyendo números escritos a mano en 1989. Es el mismo mecanismo que hoy mueve todo, corriendo en una computadora de hace treinta y siete años.',
   },
   {
-    // Repetido a propósito en el material previo de la sesión 1 (capa 3).
+    // Also first in RECURSOS[2]: sesion-2.mdx hides it here to show it once.
     tipo: 'video',
     titulo: 'The moment we stopped understanding AI [AlexNet]',
     url: 'https://www.youtube.com/watch?v=UZDiGooFs54',

@@ -386,8 +386,8 @@ actual? Una voz, medio minuto. La conversación sobre el futuro es de la sesión
 La regla pasa a encontrarla la máquina mirando ejemplos. Deep Blue queda como
 contraejemplo: gana al campeón del mundo en una sola tarea.
 AlexNet junta los tres ingredientes de lo que sigue: muchos datos etiquetados,
-cómputo en placas gráficas y redes con muchas capas. Los dos videos de esta
-parte (LeNet y AlexNet) están en el material de la página.
+cómputo en placas gráficas y redes con muchas capas. El video de LeNet está
+en el material de esta página; el de AlexNet abre el de la sesión 2.
 GPU: unidad de procesamiento gráfico, las placas de los videojuegos.
 -->
 

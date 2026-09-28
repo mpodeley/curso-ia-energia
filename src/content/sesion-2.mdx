@@ -9,7 +9,9 @@ import { RECURSOS, INTERPRETABILIDAD } from '../content/recursos'
 
 ## Antes de la sesión (opcional)
 
-Esta sesión arranca después de la pausa y no pide nada previo. Los laboratorios de la página (el
+Esta sesión arranca después de la pausa y no pide nada previo. El primer video del material de
+abajo (8 min, de 3Blue1Brown) cuenta en qué consiste un modelo grande de lenguaje. Los
+laboratorios de la página (el
 tokenizador, "adiviná el próximo token", los ejercicios que trae cada oración, el gráfico de escala
 y la ventana de contexto) los recorremos juntos en vivo; están acá para volver después, o para
 adelantarte si querés. Para el más curioso, el
@@ -226,8 +228,8 @@ puede mirar adentro, con esfuerzo. La segunda es que todavía no sabemos hacerlo
 para garantizar cómo se va a comportar un modelo en una situación nueva, y esa brecha es exactamente el
 tema de la sesión 7.
 
-{/* Sin repetir lo que ya está en el material de arriba. LeNet y AlexNet también
-    están en el material de la sesión 1: acá se repiten a propósito. */}
+{/* Sin repetir lo que ya está en el material de arriba (AlexNet abre esa lista).
+    LeNet también está en el material de la sesión 1: acá se repite a propósito. */}
 <ListaRecursos
   items={INTERPRETABILIDAD.filter((r) => !RECURSOS[2].some((x) => x.url === r.url))}
   titulo="Para ver adentro (opcional)"
