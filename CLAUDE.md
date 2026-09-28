@@ -104,6 +104,16 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   session-4 notebook menu; the Petroecuador vs BCE cross-check was dropped. The decline assets (10-well CSV, `build_csv_descarga.py`, `dca_referencia.py`, the
   Volve CSV and its scripts) are no longer linked from any page since the 2026-09-28 reshuffle;
   they stay in the repo, and `decline_wells.json` still feeds session 1's DeclineDuel.
+- `public/descargas/volve/` — the session-6 lite bundle of Equinor's Volve field (monthly
+  production per well, formation tops, the F-12 LAS cut to 2,680–3,600 m plus a `.txt` copy for
+  Arena, a thinned Hugin top grid, two Sodir tables, a README with the Equinor Open Data
+  Licence and NLOD attribution, and a zip). `scripts/build_volve_bundle.py` downloads the full
+  bundle from sha256-pinned GitHub mirrors (the official copy now sits behind a Databricks
+  login) into `scripts/_cache/volve/`; `scripts/volve_checks.py` computes every number the
+  session-6 page states (per-well oil 1.33% below Sodir, F-11 vs F-11 B, the padded GR of F-12
+  from 3,509 m, ED50 vs WGS84). The live-demo folder is `docs/edicion-2026-09/volve-agente/`;
+  its `preparar_datos.py` refuses to write inside the repo because Claude Code would also read
+  this CLAUDE.md.
 - `src/theme.ts` — same export shape as simulador's, but values are `var(--pd-*)` strings from
   `src/styles/tokens.css` (podeley.ar identity layer, copied verbatim — edit upstream, not here).
   Chart/badge colors stay literal hex (SVG attributes can't resolve var()); they mirror the LIGHT
@@ -130,9 +140,11 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   on Claude's published system prompt, an ARCH report told to four audiences in three
   languages, and a workshop that consolidates six ARCH reports into an Excel); the old session 5 (RAG, Gemini
   Notebook) moved to slot 4 with a reserves and regulation notebook; the old session 6 on
-  agents was split into sessions 5 (what an agent is, the harness, the landscape, a free
-  agent workshop) and 6 (a terminal agent builds the session-8 case live, then the company
-  case). Design assumption from then on: nobody brings anything (no homework, no data, no
+  agents was split into sessions 5 (reworked again that night: how a tool call works, the
+  harness, terminal CLIs with Claude Code live over the six ARCH reports, MCP, skills and
+  subagents) and 6 (a terminal agent builds a one-file dashboard over the public Volve
+  dataset live, students build a lite version with a free agent, then the company case).
+  Session 8 critiques its pre-built case; `docs/edicion-2026-09/caso-agente/` is kept for it. Design assumption from then on: nobody brings anything (no homework, no data, no
   paid account); every exercise ships its own files. The free workshop tool is Claude, the
   only free tier verified to run code and return an .xlsx.
 - **Format: 8 sessions × 2 h, two per day on 4 consecutive days, Mon 28-sep to Thu 1-oct 2026,

@@ -122,8 +122,8 @@ corte de agua** en el reporte diario de la ARCH.
 
 <!--
 3 min · acumulado 0:09
-Ventana D. Es el mismo conjunto de datos donde el agente de ayer trabajó en
-vivo, ahora bajado entero: ocho años de archivos anuales, filtrados por
+Ventana D. Es el Capítulo IV, la misma fuente del archivo de siete campos del
+martes, ahora bajado entero: ocho años de archivos anuales, filtrados por
 cuenca al vuelo.
 Decir el precio: 2.5 GB de descarga y un script de sesenta líneas. Eso es
 todo lo que hizo falta para tener el dato público.

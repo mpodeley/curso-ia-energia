@@ -1,103 +1,107 @@
 {
   "generated_at": "2026-09-28T00:00:00+00:00",
-  "source": "elaboración propia para el curso",
-  "source_date": null,
+  "source": "elaboración propia para el curso; números de scripts/volve_checks.py sobre los datos del campo Volve (Equinor Open Data Licence) y de Sodir (NLOD)",
+  "source_date": "2026-09-28",
   "data": [
     {
-      "pregunta": "En la carpeta del agente, ¿qué es el archivo CLAUDE.md (o AGENTS.md, en otras herramientas)?",
+      "pregunta": "En el perfil de F-12, el GR vale 100.669 API en cada muestra desde 3,509.0 m hasta el final del archivo, 4,186.7 m. Sodir da 3,520 m de profundidad final. ¿Qué es ese tramo?",
       "opciones": [
         {
-          "texto": "Un registro de lo que el agente hizo en la sesión anterior, que guarda solo.",
-          "explicacion": "El modelo no retiene nada entre sesiones y ese archivo no es un registro automático: lo escribe una persona, y el agente lo lee."
+          "texto": "Una arcilla gruesa debajo del reservorio: el GR alto es la marca de las arcillas.",
+          "explicacion": "Un GR alto marca arcilla cuando varía como varía la roca. Un valor idéntico en 4,448 muestras seguidas, y 667 m debajo del fondo del pozo, no lo midió ninguna herramienta."
         },
         {
-          "texto": "La configuración que decide qué puede hacer el agente sin preguntar.",
-          "explicacion": "Eso vive en otro archivo de la carpeta, el de permisos (.claude/settings.json). CLAUDE.md dice cómo trabajar; lo permitido está en el otro."
-        },
-        {
-          "texto": "El archivo de instrucciones del proyecto, que el agente lee solo cada vez que arranca: reglas, diccionario de datos, criterios y trampas conocidas.",
+          "texto": "Un valor de relleno: debajo del último dato medido, el archivo repite un número hasta completar la profundidad.",
           "correcta": true,
-          "explicacion": "Es el prompt del proyecto, escrito una vez y guardado al lado de los datos. Lo que el agente sabe del proyecto está escrito ahí, y sigue sirviendo si cambiás de modelo."
+          "explicacion": "El último GR medido es de 3,508.9 m y la densidad, el neutrón y las resistividades terminan antes de 3,508 m. Un gráfico sin chequeo lo dibuja como una arcilla; comparado con la profundidad final de Sodir, se ve que es relleno."
         },
         {
-          "texto": "Una copia del modelo, ajustada con los datos del proyecto.",
-          "explicacion": "Nadie reentrena nada: es un archivo de texto que cualquiera puede abrir, leer y corregir."
+          "texto": "Un error de unidades: el tramo está en pies y el resto del archivo en metros.",
+          "explicacion": "El encabezado declara una sola unidad de profundidad para todo el archivo, y el paso entre muestras no cambia. El problema está en el valor de la curva."
+        },
+        {
+          "texto": "El perfil de otra rama del pozo, pegado al final del archivo.",
+          "explicacion": "Otra rama traería una curva que varía con la roca que atraviesa. Un número constante durante cientos de metros no es un perfil de ningún pozo."
         }
       ]
     },
     {
-      "pregunta": "El WOR de Puesto Guardián baja de 26.5 en 2019 a 10.4 en 2025. ¿Qué conviene mirar antes de leerlo como una buena noticia?",
+      "pregunta": "La producción de F-11 (1.15 millones de Sm³) está cargada a 15/9-F-11, que Sodir lista como pozo de observación y que en los topes no llega al reservorio. ¿Qué conviene hacer?",
       "opciones": [
         {
-          "texto": "Si el gráfico usa escala logarítmica, que exagera las bajas.",
-          "explicacion": "La escala cambia cómo se ve la curva, y 26.5 y 10.4 siguen siendo los mismos números en cualquier escala."
+          "texto": "Sacar esa producción del análisis, porque un pozo de observación no produce.",
+          "explicacion": "Es el 11% del petróleo del campo y existe: Sodir lo cuenta en el total. Sacarla rompe la conciliación y esconde el problema en lugar de resolverlo."
         },
         {
-          "texto": "Si la baja sigue en 2026, con los datos más nuevos.",
-          "explicacion": "El campo deja de informar en julio de 2025, así que no hay 2026 para mirar. Y aunque lo hubiera, no explicaría por qué baja."
+          "texto": "Cargarla al pozo vecino con más producción, que es F-12.",
+          "explicacion": "Sería inventar una asignación. Los archivos dicen de qué rama es, y hace falta leerlos."
         },
         {
-          "texto": "Nada más: es un cociente de volúmenes reales y el cálculo está bien hecho.",
-          "explicacion": "El cálculo está bien y la lectura puede estar mal. Un número agregado se contrasta con su detalle antes de interpretarlo."
+          "texto": "Dejarla como está: es la forma estándar de nombrar pozos en Noruega.",
+          "explicacion": "El nombre del archivo de producción es el del pozo madre, y así el tablero no encuentra reservorio para el 11% de la producción. Hay que resolverlo y dejarlo escrito."
         },
         {
-          "texto": "El WOR pozo por pozo, para ver si el número del campo cambió porque entraron o salieron pozos.",
+          "texto": "Buscar las otras ramas en Sodir y en los topes: la productora es F-11 B, terminada en junio de 2013, y el tablero lo dice con esos datos.",
           "correcta": true,
-          "explicacion": "Eso pasó: en 2022 entró un pozo con WOR 3.3 que en 2025 da el 95% del petróleo, y su propio WOR se triplicó. El promedio bajó porque cambió la mezcla de pozos."
+          "explicacion": "Sodir lista a F-11 B como pozo de producción, terminado un mes antes del primer petróleo, y es la rama que cruza el tope de Hugin. La tabla de nombres deja escrita la equivalencia."
         }
       ]
     },
     {
-      "pregunta": "¿Por qué el agente de la demo puede trabajar sin que el instructor apruebe cada paso?",
+      "pregunta": "Los siete pozos suman 10.04 millones de Sm³ de petróleo y Sodir da 10.17 para el campo, un 1.3% más. ¿Qué hace un buen tablero con ese número?",
       "opciones": [
         {
-          "texto": "Porque los permisos solo le dejan hacer, sin preguntar, cosas que se deshacen: leer, correr Python y escribir en su carpeta de salida.",
+          "texto": "Lo informa, en Sm³ y en porcentaje, año por año, y dice que los datos no traen la causa.",
           "correcta": true,
-          "explicacion": "Si se equivoca, se borra la salida y se repite. Para todo lo demás se detiene y pregunta, y lo que tiene efecto afuera (un correo, una carga en un sistema) no está permitido."
+          "explicacion": "La diferencia es chica y va siempre del mismo lado, todos los años. Informarla con el número deja que decida quien usa el dato; inventarle una causa sería afirmar algo que los archivos no dicen."
         },
         {
-          "texto": "Porque el modelo es lo bastante bueno como para no equivocarse.",
-          "explicacion": "Se equivoca, y en la corrida suele verse: una columna mal leída, un filtro vacío. Trabaja solo porque el error vuelve y se puede corregir."
+          "texto": "Lo redondea: 1.3% está dentro del error de medición y no hace falta mostrarlo.",
+          "explicacion": "Puede que sea error de medición, pero eso es una hipótesis. En un balance de reservas 1.3% pesa, y el que lee el tablero tiene que poder verlo."
         },
         {
-          "texto": "Porque los datos son públicos, y con datos públicos no hace falta revisar.",
-          "explicacion": "Que el dato sea público resuelve la sensibilidad. El resultado se chequea igual, contra una referencia y pozo por pozo."
+          "texto": "Escala la producción de cada pozo para que la suma dé igual a Sodir.",
+          "explicacion": "Eso fabrica datos que ninguna fuente publicó, y borra la única señal de que algo no cuadra."
         }
       ]
     },
     {
-      "pregunta": "¿Por qué el pedido de la demo vino en cuatro pasos chicos y no en una sola orden grande?",
+      "pregunta": "El archivo de instrucciones del agente dice que la profundidad bajo el nivel del mar es negativa en los topes y positiva en la grilla, pero pregunta por las curvas constantes sin dar la respuesta. ¿Por qué?",
       "opciones": [
         {
-          "texto": "Porque el agente no acepta más de cuatro instrucciones por vez.",
-          "explicacion": "No hay un límite así. El motivo está en lo que pasa con el contexto a medida que el trabajo avanza."
+          "texto": "Porque el agente no puede leer números negativos sin ayuda.",
+          "explicacion": "Los lee sin problema. La diferencia está en qué se sabe de antemano y qué hay que averiguar."
         },
         {
-          "texto": "Porque cada vuelta suma texto al contexto, y con más contexto el agente se vuelve más lento, más caro y más propenso a perder el objetivo.",
+          "texto": "Para que la corrida tarde más y se vea el loop en pantalla.",
+          "explicacion": "El tiempo de la corrida es un costo. Lo que se busca es que el agente descubra lo que no se sabe y lo sostenga con un número."
+        },
+        {
+          "texto": "Porque lo que ya se sabe de los datos se escribe como regla, y lo que todavía no se sabe se pide como chequeo con número.",
           "correcta": true,
-          "explicacion": "Una tarea de veinte pasos sale bastante peor que dos de diez. Pasos chicos, con resultados guardados en archivos, lo mantienen acotado y verificable."
+          "explicacion": "Una convención conocida no se hace redescubrir en cada corrida. Una pregunta abierta, con el número que la sostiene, se puede comparar después contra una referencia independiente."
         },
         {
-          "texto": "Para que la cuenta paga cobre menos.",
-          "explicacion": "Algo de eso hay, pero el motivo que importa es la calidad: el agente pierde el hilo cuando el contexto crece."
+          "texto": "Porque las curvas constantes son un secreto del operador.",
+          "explicacion": "Los datos son públicos y la respuesta está en el archivo. Se pregunta para que el agente la encuentre y la muestre, y así se pueda verificar."
         }
       ]
     },
     {
-      "pregunta": "METR estimó unas 11.3 horas de largo de tarea para GPT-5.6 Sol y aclaró que no la considera una medición robusta. ¿Por qué?",
+      "pregunta": "¿Qué archivos pueden ir a Arena, modo agente?",
       "opciones": [
         {
-          "texto": "Porque las tareas eran de petróleo y gas, fuera de la especialidad del modelo.",
-          "explicacion": "Las tareas de METR son de software e investigación. El problema fue otro, y tiene que ver con cómo se comportó el modelo."
+          "texto": "Cualquiera, porque el agente corre en una computadora descartable que se borra al terminar.",
+          "explicacion": "Que la computadora se descarte no dice nada de la conversación: Arena puede compartirla con los proveedores de los modelos."
         },
         {
-          "texto": "Porque el modelo no llegó a terminar ninguna tarea larga.",
-          "explicacion": "Terminó tareas largas: la estimación es de 11.3 horas, con un intervalo de 5 a 40. La duda es sobre cómo llegó a algunas."
-        },
-        {
-          "texto": "Porque en algunas tareas intentó hacer trampa, sacando información de las pruebas ocultas que lo evaluaban.",
+          "texto": "Solo datos públicos, como los de Volve, porque lo que escribís ahí puede compartirse con los proveedores de los modelos.",
           "correcta": true,
-          "explicacion": "METR contó esos intentos como fallas; como éxitos, la estimación pasaría las 270 horas. Un agente capaz también puede pasar su propia prueba sin hacer la tarea, y por eso se verifica."
+          "explicacion": "Es la misma regla de la sesión 3 para Arena. Para probar un flujo con datos de tu empresa, se arma primero con un análogo público."
+        },
+        {
+          "texto": "Los de tu empresa, siempre que les saques el nombre del campo.",
+          "explicacion": "Sacar el nombre no alcanza: los volúmenes, las fechas y las profundidades identifican un campo igual. Con datos propios, la herramienta tiene que ser una aprobada por la empresa."
         }
       ]
     }

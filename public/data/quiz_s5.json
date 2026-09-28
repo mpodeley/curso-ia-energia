@@ -4,24 +4,24 @@
   "source_date": null,
   "data": [
     {
-      "pregunta": "¿Qué distingue a un agente de un chatbot sin herramientas?",
+      "pregunta": "Un agente consolida los partes de la ARCH y en un paso corre un script de Python. ¿Quién lo ejecuta?",
       "opciones": [
         {
-          "texto": "Que el modelo que tiene adentro es más potente.",
-          "explicacion": "Suele ser el mismo modelo, o uno de la misma familia. La diferencia está en lo que lo rodea: el arnés."
+          "texto": "El modelo, en los servidores del proveedor, en el momento en que escribe el código.",
+          "explicacion": "El modelo solo escribe texto: el código y un pedido tool_use que dice qué correr. Anthropic lo dice así: \"The model never executes anything on its own.\""
         },
         {
-          "texto": "Que puede ejecutar herramientas, mirar el resultado y decidir el paso siguiente con eso a la vista.",
+          "texto": "La herramienta, sola, apenas el modelo la nombra en su respuesta.",
+          "explicacion": "Una herramienta no se dispara por nombrarla. Alguien tiene que leer el pedido tool_use, revisar los permisos y correrla, y ese alguien es el arnés."
+        },
+        {
+          "texto": "El arnés: lee el pedido tool_use del modelo, corre el script si hay permiso y le devuelve la salida como tool_result.",
           "correcta": true,
-          "explicacion": "Es el loop: piensa, actúa, mira el resultado. Un chatbot sin herramientas que se equivoca no se entera; un agente recibe el error de vuelta y puede corregirse."
+          "explicacion": "Es el contrato de los tres grandes proveedores: el modelo pide y el arnés ejecuta. Según el arnés, el script corre en tu computadora (un agente de terminal) o en una computadora aislada en la nube (el chatbot de la sesión 3)."
         },
         {
-          "texto": "Que no alucina, porque verifica todo lo que hace.",
-          "explicacion": "Alucina igual. Lo que cambia es que algunos de sus errores vuelven como un resultado que puede ver, y esos los puede corregir. Los demás siguen siendo tuyos."
-        },
-        {
-          "texto": "Que fue entrenado aparte para trabajar solo.",
-          "explicacion": "Lo que lo deja trabajar solo es el programa que lo envuelve: el loop, las herramientas y los permisos que le dieron."
+          "texto": "Nadie: el modelo imagina la salida más probable del script y sigue desde ahí.",
+          "explicacion": "Eso le puede pasar a un chatbot sin herramientas, que inventa una salida verosímil. Con herramientas, la salida real vuelve como tool_result y el modelo la lee."
         }
       ]
     },
@@ -31,11 +31,11 @@
         {
           "texto": "Porque fue a mirar qué valores existen en la columna, y ahí encontró que el área lleva diéresis.",
           "correcta": true,
-          "explicacion": "Reemplazó una suposición por un dato. Un chatbot sin herramientas hubiera seguido escribiendo con total seguridad sobre una tabla vacía."
+          "explicacion": "Reemplazó una suposición por un dato, y pudo hacerlo porque el resultado de la herramienta volvió a la conversación. Un chatbot sin herramientas hubiera seguido escribiendo sobre una tabla vacía."
         },
         {
           "texto": "Porque probó otras grafías hasta que una funcionó.",
-          "explicacion": "Eso sería adivinar de nuevo, con suerte. El agente de la traza hizo algo mejor: fue a mirar los datos."
+          "explicacion": "Eso sería adivinar de nuevo, con suerte. El agente de la traza hizo algo mejor: pidió ver los datos."
         },
         {
           "texto": "Porque reintentó la misma consulta y la segunda vez anduvo.",
@@ -48,46 +48,68 @@
       ]
     },
     {
-      "pregunta": "Dejás el mismo modelo y cambiás el arnés. Según las mediciones de Epoch AI y de METR, ¿qué es lo que más cambia?",
+      "pregunta": "Abrís Claude Code en modo manual sobre la carpeta de los partes. ¿Cuál de estas acciones hace sin preguntarte?",
       "opciones": [
         {
-          "texto": "Nada: con el mismo modelo, el resultado es el mismo.",
-          "explicacion": "Epoch AI midió hasta 11% de diferencia para GPT-5 y hasta 15% para Kimi K2 Thinking en un examen de programación, cambiando solo el arnés."
+          "texto": "Correr pdftotext para sacar el texto de los PDF.",
+          "explicacion": "Es un comando en la terminal (la herramienta Bash), y en modo manual todo lo que ejecuta pide permiso antes."
         },
         {
-          "texto": "Todo: un buen arnés convierte cualquier modelo en uno de frontera.",
-          "explicacion": "METR comparó Claude Code y Codex con arneses de prueba simples y no encontró una gran diferencia en el largo de tarea que el modelo completa solo."
+          "texto": "Escribir el script de consolidación en la carpeta.",
+          "explicacion": "Crear o cambiar un archivo usa Write o Edit, que en modo manual piden permiso. En el modo aceptar ediciones lo haría solo."
         },
         {
-          "texto": "Solo la velocidad con la que responde.",
-          "explicacion": "La velocidad depende sobre todo del modelo y de los servidores. El arnés decide otras cosas: herramientas, permisos y memoria."
+          "texto": "Buscar en internet cómo es el formato del parte.",
+          "explicacion": "WebSearch y WebFetch salen a la red, y en modo manual piden permiso. Además, es una puerta por la que puede entrar contenido no confiable."
         },
         {
-          "texto": "Sobre todo qué puede hacer el agente: qué herramientas tiene, qué permisos y qué recuerda.",
+          "texto": "Leer los PDF y el CLAUDE.md de la carpeta.",
           "correcta": true,
-          "explicacion": "Es la lectura de las dos mediciones juntas: el arnés abre y cierra puertas, y la capacidad de fondo la pone el modelo, que cambia menos con otro arnés."
+          "explicacion": "Read, Glob y Grep no piden permiso: en modo manual, lo único que corre sin preguntar es la lectura. Todo lo que escribe, ejecuta o sale a internet pasa por tu visto bueno."
         }
       ]
     },
     {
-      "pregunta": "¿Cuál de estas tareas le delegarías hoy a un agente, sin una persona en el medio?",
+      "pregunta": "Mañana abrís una sesión nueva del agente en la misma carpeta. ¿Cómo sabe que los números del parte vienen con punto de miles y coma decimal?",
       "opciones": [
         {
-          "texto": "Mandarle al transportista la nominación de gas del mes que viene.",
-          "explicacion": "Una vez enviada, ya está hecha: si el agente se equivocó, el error no vuelve como un resultado para corregir. Lo irreversible lo aprueba una persona."
+          "texto": "Se acuerda de la sesión de ayer, donde se lo explicaste.",
+          "explicacion": "Cada sesión arranca con la ventana de contexto vacía, como un turno nuevo sin memoria del anterior. Lo que no quedó escrito en un archivo se perdió."
         },
         {
-          "texto": "Ajustar el caudal de inyección de un pozo en el sistema de control.",
-          "explicacion": "Tiene consecuencias físicas, y el paso equivocado ya no se corrige mirando la salida. De esto trata la sesión 7."
-        },
-        {
-          "texto": "Armar la tabla de relación agua-petróleo de siete campos desde un CSV público, para que después la revises.",
+          "texto": "Lo lee del CLAUDE.md (o del AGENTS.md) de la carpeta, que el arnés carga al empezar cada sesión.",
           "correcta": true,
-          "explicacion": "Es digital, acotada, verificable con dos cuentas contra el archivo, y se puede rehacer si sale mal."
+          "explicacion": "Es la memoria en archivos: las reglas de la tarea viven por escrito, y siguen sirviendo si mañana cambiás de modelo o de agente."
         },
         {
-          "texto": "Decidir qué campos se abandonan el año que viene.",
-          "explicacion": "Es una decisión de criterio que no se comprueba rápido. El agente puede preparar el análisis; la decisión es de las personas que responden por ella."
+          "texto": "Lo aprendió en su entrenamiento, porque todos los partes de Ecuador usan ese formato.",
+          "explicacion": "Puede que lo adivine, pero nada lo garantiza: en el mismo parte, la producción de gas viene con otro formato. Una regla que importa se escribe."
+        },
+        {
+          "texto": "De ninguna manera: se lo tenés que repetir en cada pedido.",
+          "explicacion": "Repetirlo funciona, pero es justo lo que evita el archivo de instrucciones. Se escribe una vez en CLAUDE.md o AGENTS.md y el arnés lo carga siempre."
+        }
+      ]
+    },
+    {
+      "pregunta": "Querés que un agente consulte el catálogo de datos de subsuelo de tu empresa, un sistema con su propia interfaz para programas. ¿Qué pieza lo conecta?",
+      "opciones": [
+        {
+          "texto": "Una skill con las instrucciones para usar el catálogo.",
+          "explicacion": "Una skill es una carpeta con instrucciones y scripts que el agente carga cuando la necesita. Le puede enseñar a usar el catálogo, pero la conexión con el sistema es otra pieza."
+        },
+        {
+          "texto": "Un subagente dedicado al catálogo.",
+          "explicacion": "Un subagente es una tarea aparte, con su propio contexto y sus permisos. Sirve para repartir trabajo; para hablar con otro sistema igual necesita una herramienta que lo conecte."
+        },
+        {
+          "texto": "Un servidor MCP, que le ofrece al agente las herramientas de ese sistema.",
+          "correcta": true,
+          "explicacion": "MCP es el estándar abierto para conectar aplicaciones de IA con otros sistemas. El servidor ofrece herramientas, recursos y prompts; el ejemplo del rubro es el servidor comunitario para OSDU, que trae la escritura apagada."
+        },
+        {
+          "texto": "El CLAUDE.md, con la dirección del catálogo anotada.",
+          "explicacion": "El CLAUDE.md da instrucciones y no ejecuta nada. Sin una herramienta que hable con el sistema, el agente solo sabría que el catálogo existe."
         }
       ]
     }

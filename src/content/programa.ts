@@ -81,13 +81,14 @@ export const SESIONES: Sesion[] = [
   {
     n: 5,
     dia: 3,
-    titulo: 'Agentes: qué son, el arnés y cuáles hay',
+    titulo: 'Cómo funciona un agente: herramientas, arnés y CLI',
     resumen:
-      'Qué es un agente, qué es el arnés que lo envuelve, qué agentes hay hoy y de qué formas se usan, con un taller para correr uno gratis.',
+      'Qué pasa entre tu pedido y el resultado: el loop, cómo el modelo pide una herramienta y el arnés la ejecuta, qué hace un agente de terminal en una carpeta y cómo se le dan permisos e instrucciones, con Claude Code en vivo sobre los partes diarios de producción de Ecuador.',
     objetivos: [
-      'Explicar qué es un agente y qué hace el arnés que lo envuelve',
-      'Ubicar los agentes de hoy por forma de uso, y cuáles se pueden probar gratis',
-      'Correr un agente sobre una tarea de varios pasos y verificar lo que entregó',
+      'Explicar cómo usa una herramienta un agente: la definición, el pedido y el resultado, y quién ejecuta',
+      'Ubicar las seis funciones del arnés y cuánto pesa en el resultado',
+      'Leer qué hace un agente de terminal en una carpeta: sus herramientas, sus permisos y su archivo de instrucciones',
+      'Definir MCP, skills y subagentes, y ubicar los agentes de hoy por forma de uso',
     ],
     estado: 'lista',
     slides: true,
@@ -95,13 +96,13 @@ export const SESIONES: Sesion[] = [
   {
     n: 6,
     dia: 3,
-    titulo: 'Agentes y el caso de tu empresa',
+    titulo: 'Un agente arma el tablero de un campo',
     resumen:
-      'Un agente de terminal arma en vivo el caso real del curso, un screening de waterflooding; qué funciona hoy y dónde se rompe; y el caso de tu empresa escrito en una página.',
+      'Un agente de terminal arma en vivo un tablero de un solo archivo sobre los datos públicos del campo Volve (producción, mapa y perfiles de pozo) y lo concilia con la fuente oficial; después armás tu versión con un agente gratuito, y cada empresa escribe su caso en una página.',
     objetivos: [
-      'Ver a un agente trabajar sobre una carpeta, guiado por un archivo de instrucciones',
-      'Separar lo que se delega hoy (digital, acotado, verificable) de lo que todavía no',
-      'Escribir en una página el caso de tu empresa: dolor, datos, sensibilidad, verificabilidad',
+      'Leer lo que hace un agente de terminal vuelta por vuelta, y decir qué chequear antes de creerle',
+      'Pedirle a un agente gratuito una herramienta sobre datos de pozo y verificarla con dos chequeos',
+      'Escribir en una página el caso de tu empresa: dolor, datos, sensibilidad, verificabilidad y primer paso',
     ],
     estado: 'lista',
     slides: true,

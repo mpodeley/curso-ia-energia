@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run *)",
+      "Bash(ls *)",
+      "Bash(head *)",
+      "Bash(wc *)",
+      "Edit(./salida/**)"
+    ],
+    "deny": [
+      "WebFetch",
+      "WebSearch",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(rm *)",
+      "Edit(./datos/**)"
+    ]
+  }
+}

@@ -83,27 +83,29 @@ primera del día cierra con la pausa, la segunda la tiene a mitad de camino.
 
 ### Día 3, miércoles 30 · Agentes
 
-#### Sesión 5 · 10:00–12:00 · Agentes: qué son, el arnés y cuáles hay
+#### Sesión 5 · 10:00–12:00 · Cómo funciona un agente: herramientas, arnés y CLI
 
 | Bloque | min |
 | --- | --- |
 | Apertura | 8 |
-| Qué es un agente | 15 |
-| El arnés | 20 |
-| Qué agentes hay, y cómo se usan | 25 |
-| Taller: tu primer agente | 30 |
-| Qué delegar, y para llevarse | 12 |
+| El loop | 12 |
+| Cómo usa una herramienta | 20 |
+| El arnés | 15 |
+| Los CLI: un agente en la terminal | 25 |
+| MCP, skills y subagentes | 10 |
+| Qué agentes hay, y para llevarse | 20 |
 | Pausa | 10 |
 
-#### Sesión 6 · 12:00–14:00 · Agentes y el caso de tu empresa
+#### Sesión 6 · 12:00–14:00 · Un agente arma el tablero de un campo
 
 | Bloque | min |
 | --- | --- |
-| El caso real, armado por un agente | 45 |
-| Dónde se rompe, dónde mejora | 15 |
+| El dataset, en cinco minutos | 8 |
+| La herramienta, armada por un agente en vivo | 40 |
 | Pausa | 10 |
-| Taller: el caso de tu empresa, en una página | 40 |
-| Cierre y tarea | 10 |
+| Tu versión, con un agente gratuito | 30 |
+| Taller: el caso de tu empresa, en una página | 25 |
+| Cierre y tarea | 7 |
 
 ### Día 4, jueves 1
 

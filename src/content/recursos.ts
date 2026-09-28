@@ -298,12 +298,30 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
     {
       tipo: 'lectura',
+      titulo: 'Cómo funciona Claude Code',
+      url: 'https://code.claude.com/docs/es/how-claude-code-works',
+      fuente: 'Anthropic, documentación de Claude Code',
+      idioma: 'es',
+      porque:
+        'La guía oficial en español del agente de terminal de la demo: el loop en tres fases (recopilar contexto, actuar, verificar), las cinco familias de herramientas, un ejemplo de seis pasos y qué ve el agente cuando lo abrís en una carpeta. Cierra con los modos de permiso y cómo deshacer un cambio.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'How tool use works',
+      url: 'https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works',
+      fuente: 'Anthropic, documentación de la plataforma',
+      idioma: 'en',
+      porque:
+        'De acá sale la frase del bloque de herramientas: "The model never executes anything on its own." Explica el contrato entre la aplicación y el modelo, dónde corre cada herramienta y el loop en cinco pasos. Corto; el traductor del navegador alcanza.',
+    },
+    {
+      tipo: 'lectura',
       titulo: 'Building effective agents',
       url: 'https://www.anthropic.com/engineering/building-effective-agents',
       fuente: 'Anthropic (19 de diciembre de 2024)',
       idioma: 'en',
       porque:
-        'La definición que usa esta sesión, en una línea: modelos de lenguaje que usan herramientas según lo que les devuelve el entorno, en un loop. Separa el flujo fijo, con los pasos escritos de antemano, del agente que decide los suyos, y recomienda empezar siempre por lo más simple. En inglés.',
+        'La definición que usa esta sesión, en una línea: modelos de lenguaje que usan herramientas según lo que les devuelve el entorno, en un loop. Separa el flujo fijo, con los pasos escritos de antemano, del agente que decide los suyos, y recomienda empezar siempre por lo más simple.',
     },
     {
       tipo: 'lectura',
@@ -316,32 +334,59 @@ export const RECURSOS: Record<number, Recurso[]> = {
     },
     {
       tipo: 'lectura',
-      titulo: 'Why benchmarking is hard',
-      url: 'https://epoch.ai/gradient-updates/why-benchmarking-is-hard',
-      fuente: 'Epoch AI (23 de diciembre de 2025)',
+      titulo: 'What is the Model Context Protocol (MCP)?',
+      url: 'https://modelcontextprotocol.io/docs/getting-started/intro',
+      fuente: 'Model Context Protocol',
       idioma: 'en',
       porque:
-        'La medición de cuánto pesa el arnés: con el mismo modelo, cambiar el programa que lo opera mueve hasta 11% el resultado de GPT-5 y hasta 15% el de Kimi K2 Thinking en un examen de tareas reales de programación. Sirve también para entender por qué dos rankings del mismo modelo no coinciden.',
-    },
-    {
-      tipo: 'herramienta',
-      titulo: 'Arena, modo agente',
-      url: 'https://arena.ai/agent',
-      fuente: 'Arena',
-      idioma: 'en',
-      porque:
-        'Un agente gratuito que trabaja en una computadora descartable en la nube: acepta CSV y PDF, corre comandos y te devuelve en un zip los archivos que armó. Arena puede compartir las conversaciones con los proveedores de los modelos, sin los datos que te identifican, así que ahí va solo dato público.',
+        'La página de entrada del estándar, en cinco minutos: qué es, la comparación con un puerto USB-C y cuatro ejemplos de lo que habilita. Desde ahí, la página de arquitectura explica host, cliente y servidor, y las tres cosas que ofrece un servidor: herramientas, recursos y prompts.',
     },
   ],
   6: [
     {
       tipo: 'herramienta',
-      titulo: 'Producción de petróleo y gas por pozo (Capítulo IV)',
-      url: 'https://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo',
-      fuente: 'Secretaría de Energía, Argentina',
-      idioma: 'es',
+      titulo: 'Volve field data set',
+      url: 'https://www.equinor.com/energy/volve-data-sharing',
+      fuente: 'Equinor',
+      idioma: 'en',
       porque:
-        'La fuente de los dos archivos que usa el agente: producción e inyección de agua de cada pozo, mes por mes. Es la misma de los 84 pozos del lunes; para el caso se tomó la cuenca Noroeste completa, de enero de 2019 a julio de 2026.',
+        'La página oficial del conjunto de datos de la sesión: unos 40,000 archivos de un campo del mar del Norte que produjo de 2008 a 2016, liberados en 2018 para estudiar. Hoy el acceso completo pasa por una cuenta de Databricks; el paquete del curso trae diez archivos, y el liviano está en esta página.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Equinor Open Data Licence (Volve)',
+      url: 'https://cdn.equinor.com/files/h61q9gi9/global/de6532f6134b9a953f6c41bac47a0c055a3712d3.pdf',
+      fuente: 'Equinor',
+      idioma: 'en',
+      porque:
+        'Los términos bajo los que el curso comparte los datos de Volve, con un resumen de una página arriba: se pueden usar, adaptar y compartir con crédito a Equinor y a los ex socios de la licencia, y no se pueden vender. Es la licencia que hay que leer antes de subir estos archivos a cualquier herramienta.',
+    },
+    {
+      tipo: 'herramienta',
+      titulo: 'FactPages',
+      url: 'https://factpages.sodir.no/en/',
+      fuente: 'Norwegian Offshore Directorate (Sodir)',
+      idioma: 'en',
+      porque:
+        'El registro oficial noruego de pozos, campos y producción, bajo licencia abierta (NLOD). De acá salen los dos archivos contra los que el tablero concilia la producción de Volve; buscá el campo VOLVE para ver su ficha, sus pozos y su producción mes a mes.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'What are artifacts and how do I use them?',
+      url: 'https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them',
+      fuente: 'Anthropic, ayuda de Claude',
+      idioma: 'en',
+      porque:
+        'Qué es un artifact, la página interactiva que Claude arma al lado de la conversación y que usás en tu versión del tablero. Está en la cuenta gratuita, y el artículo explica cómo se comparte y se baja. En inglés; el traductor del navegador alcanza.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'How to use Agent Mode on Arena',
+      url: 'https://help.arena.ai/articles/5432423882-how-to-use-agent-mode',
+      fuente: 'Arena',
+      idioma: 'en',
+      porque:
+        'La alternativa gratuita a Claude para tu versión: un agente con una computadora descartable en la nube. Lista los tipos de archivo que acepta (CSV y texto, no LAS ni zip) y cómo bajar lo que arma. Lo que escribís ahí puede compartirse con los proveedores de los modelos: solo dato público.',
     },
     {
       tipo: 'lectura',
@@ -359,16 +404,7 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Agentic AI Foundation (Linux Foundation)',
       idioma: 'en',
       porque:
-        'El mismo tipo de archivo de instrucciones, en un formato abierto que leen más de veinte agentes de programación, entre ellos los de OpenAI, Google y GitHub. Es la razón práctica de "lo que aprende un agente vive en archivos": si cambiás de herramienta, el archivo te sigue sirviendo.',
-    },
-    {
-      tipo: 'lectura',
-      titulo: 'Task-Completion Time Horizons of Frontier AI Models',
-      url: 'https://metr.org/time-horizons/',
-      fuente: 'METR',
-      idioma: 'en',
-      porque:
-        'La medición detrás de "la frontera sube": el largo de tarea que un agente completa solo, con el gráfico al día (última actualización, 8 de mayo de 2026). Leelo con su letra chica: 50% de éxito, tareas de software, y por encima de 16 horas su conjunto de tareas ya no mide bien.',
+        'El mismo tipo de archivo de instrucciones, en un formato abierto que leen más de veinte agentes de programación, entre ellos los de OpenAI, Google y GitHub. Si cambiás de herramienta, las reglas y las trampas que escribiste para tus datos te siguen sirviendo.',
     },
     {
       tipo: 'video',

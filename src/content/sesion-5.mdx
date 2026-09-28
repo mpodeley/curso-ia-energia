@@ -5,60 +5,229 @@ import { Recursos } from '../components/Recursos'
 ## Antes de la sesión (opcional)
 
 No hace falta traer nada: todo lo de hoy pasa en vivo. Si tenés cinco minutos antes, la traza del
-agente de esta página se recorre sola, paso a paso. El archivo del taller es el mismo de la sesión
-3, por si no lo tenés a mano: [campos_capiv_2006_2026.csv](descargas/campos_capiv_2006_2026.csv).
+agente de esta página se recorre sola, paso a paso. Y si preferís leer en español, Anthropic
+publica una guía de [cómo funciona Claude Code](https://code.claude.com/docs/es/how-claude-code-works)
+que recorre un ejemplo de seis pasos con herramientas.
 
 <Recursos sesion={5} />
 
-## Ayer ya usaste un agente chico
+## Ayer el chatbot ya usó herramientas
 
-En la sesión 3 le diste a Claude un CSV (un archivo de texto con una tabla) de siete campos y le
-pediste una planilla de surveillance. Entre tu pedido y el Excel pasaron varias cosas que no
-escribiste vos: leyó el archivo, escribió un programa en Python, lo corrió, miró qué salía,
-corrigió lo que no andaba y armó el archivo para bajar. Eso ya es un agente, chico y con pocas
-herramientas. Hoy le ponemos nombre a cada pieza, y cada uno corre uno sobre una tarea de varios
-pasos.
+Ayer, en la sesión 3, le diste a Claude seis partes diarios de producción de la Agencia de
+Regulación y Control de Hidrocarburos (ARCH) de Ecuador, en PDF, y te devolvió un Excel. En el
+medio pasaron cosas que no escribiste vos. Leyó cada PDF, escribió un programa en Python, lo
+corrió, miró qué salía, corrigió lo que no cerraba y armó el archivo. Cada una de esas acciones
+fue una herramienta: el modelo la pidió y otro programa la ejecutó.
 
-## Qué es un agente
+Hacer lo mismo todos los días, con el parte nuevo, es trabajo de un agente. Hoy vemos cómo funciona
+por dentro: el loop, cómo se pide una herramienta, el programa que la ejecuta y los agentes que
+trabajan en la terminal de tu computadora. Al final, un mapa de los agentes que hay.
+
+## Un modelo en un loop, con herramientas
 
 Un agente es un modelo de lenguaje metido en un loop, con permiso para usar herramientas. Piensa
-qué le falta, ejecuta una acción, mira el resultado y vuelve a pensar, hasta que puede responder.
+qué le falta, pide una acción, mira el resultado y vuelve a pensar, hasta que puede responder.
 Anthropic lo resume en una línea en
 [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
 (diciembre de 2024): modelos que usan herramientas según lo que les devuelve el entorno, en un
 loop.
 
 Debajo está el mismo modelo que predice el próximo token, el de la sesión 2, con dos agregados.
-Puede **ejecutar**: correr un comando, leer un archivo, buscar en internet. Y puede **mirar lo que
-salió**. Un chatbot sin herramientas que se equivoca no tiene cómo enterarse; un agente recibe el
-error de vuelta y tiene la chance de corregirse.
+Puede **pedir una acción**: correr un comando, leer un archivo, buscar en internet. Y puede **ver
+lo que salió**. Un chatbot sin herramientas que se equivoca no tiene cómo enterarse; un agente
+recibe el error de vuelta y tiene la chance de corregirse.
 
 La misma nota separa dos cosas que en los anuncios se llaman igual. En un flujo fijo, una persona
 escribió de antemano los pasos y el modelo cumple su parte en cada uno. En un agente, el modelo
 decide el paso siguiente según lo que va viendo. Los dos sirven, y la recomendación de Anthropic es
-empezar por lo más simple que resuelva el problema, que a veces es un flujo fijo y a veces ni eso.
+empezar por lo más simple que resuelva el problema.
 
-## La traza, paso a paso
+### La traza, paso a paso
 
 Abajo hay una corrida de un agente sobre el Capítulo IV, reconstruida paso a paso. Le pidieron
-cuál de los pozos de gas de Aguaragüe, en Salta, declinó más rápido en los últimos dos años. El
-paso más interesante es el tercero: el agente filtra por el nombre del área, escribe "AGUARAGUE"
-sin diéresis y le vuelven cero filas.
+cuál de los pozos de gas de Aguaragüe, en Salta, declinó más rápido en los últimos dos años. Cada
+paso es una vuelta del loop: el modelo pide la terminal o Python, y el arnés, el programa que lo
+rodea, corre el comando y le devuelve la salida.
 
-Mirá qué hace con eso. Va a buscar los valores que existen de verdad en la columna, encuentra que
-el área lleva diéresis, corrige y sigue. Un chatbot sin herramientas hubiera seguido escribiendo
-con total seguridad sobre una tabla vacía. Fijate también en el contador de contexto, que crece en
-cada vuelta, y en el final: la respuesta llega con dos advertencias sobre lo que el agente no
-verificó.
+El paso más interesante es el tercero. El agente filtra por el nombre del área, escribe
+"AGUARAGUE" sin diéresis y le vuelven cero filas. Mirá qué hace con eso: va a buscar los valores
+que existen de verdad en la columna, encuentra la diéresis, corrige y sigue. Fijate también en el
+contador de contexto, que crece en cada vuelta, y en el final: la respuesta llega con dos
+advertencias sobre lo que el agente no verificó.
 
 <AgentTrace sesion={5} />
 
+## El modelo pide, el arnés ejecuta
+
+Anthropic describe el uso de herramientas como un contrato entre la aplicación y el modelo
+([How tool use works](https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works)).
+La aplicación declara qué herramientas hay y qué datos reciben; el modelo decide cuándo usarlas. La
+frase central es esta: "The model never executes anything on its own. It emits a structured
+request, your code (or Anthropic's servers) runs the operation, and the result flows back into the
+conversation." El modelo escribe un pedido con formato fijo, otro programa hace la operación, y el
+resultado vuelve a la conversación.
+
+<figure className="figura">
+  <img
+    src="slides/img/tool-call.svg"
+    alt="Diagrama de secuencia con tres columnas: el modelo, el arnés y la herramienta. Uno: el arnés le manda al modelo tu pedido y la lista de herramientas. Dos: el modelo pide una herramienta con un bloque tool_use, con el nombre leer_parte_arch y la fecha 2026-09-15. Tres: el arnés la ejecuta, si hay permiso, y la herramienta le devuelve el dato. Cuatro: el arnés le devuelve el resultado al modelo en un bloque tool_result, con el total nacional. Cinco: el modelo responde en texto. Los pasos dos a cuatro se repiten mientras el modelo pida herramientas."
+  />
+  <figcaption>Una llamada a una herramienta, en cinco mensajes. El modelo solo escribe texto: el pedido del paso 2 y la respuesta del paso 5. Todo lo que se ejecuta pasa por el arnés.</figcaption>
+</figure>
+
+El contrato tiene tres piezas, y las tres se escriben en JSON (JavaScript Object Notation), el
+formato de datos con llaves y comillas que usan casi todos los programas para intercambiar
+información. Van con el ejemplo oficial de Anthropic: una herramienta que da el clima de una
+ciudad.
+
+### La definición: qué herramientas hay
+
+Junto con tu pedido, el arnés le manda al modelo la lista de herramientas. Cada una lleva un
+nombre, una descripción y un esquema de entrada (`input_schema`) que dice qué datos recibe:
+
+```json
+{
+  "name": "get_weather",
+  "description": "Get the current weather for a given location.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "City and state, e.g. San Francisco, CA"
+      }
+    },
+    "required": ["location"]
+  }
+}
+```
+
+El modelo nunca ve el programa que hay detrás: "it only sees the schema you provided and the result
+you returned". De la descripción depende que elija la herramienta cuando corresponde, así que se
+escribe como para un colega nuevo, igual que un buen prompt de la sesión 3.
+
+### El pedido: `tool_use`
+
+Cuando el modelo necesita el dato, responde con un bloque `tool_use` que nombra la herramienta y
+los datos de entrada, y ahí frena:
+
+```json
+{
+  "type": "tool_use",
+  "id": "toolu_01A09q90qw90lq917835lq9",
+  "name": "get_weather",
+  "input": { "location": "San Francisco, CA" }
+}
+```
+
+El `id` sirve para emparejar después el resultado con este pedido. En la documentación, el `input`
+de este ejemplo trae además una unidad (`"unit": "celsius"`) que la definición de arriba no
+declara. La sacamos para que el pedido y la definición coincidan.
+
+### El resultado: `tool_result`
+
+El arnés lee el pedido, corre la herramienta y le manda la salida al modelo en un mensaje nuevo,
+con un bloque `tool_result` que repite el mismo `id`:
+
+```json
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01A09q90qw90lq917835lq9",
+      "content": "15 degrees"
+    }
+  ]
+}
+```
+
+Con eso el modelo sigue: responde, o pide otra herramienta. Anthropic lo cuenta en cinco pasos:
+
+1. La aplicación manda la lista de herramientas y el mensaje de la persona.
+2. El modelo responde con uno o más bloques `tool_use`.
+3. La aplicación ejecuta cada herramienta y arma los bloques `tool_result`.
+4. Los manda de vuelta, con la conversación entera.
+5. Se repite desde el paso 2 mientras el modelo siga pidiendo herramientas.
+
+Fijate en el rol del mensaje con el resultado: dice `user`, aunque no lo escribiste vos. Para el
+modelo, lo que devuelve una herramienta es texto que entra a la conversación, igual que tu pedido.
+Por eso un PDF o una página web con instrucciones escondidas puede desviar a un agente, y Anthropic
+pide tratar ese contenido como no confiable
+([Handle tool calls](https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls)).
+Vuelve en la sesión 7.
+
+### El mismo contrato, con un parte de la ARCH
+
+Esta herramienta la inventamos para el curso, y no existe en ningún producto. Sirve para ver las
+tres piezas con un dato que ya conocés. La definición:
+
+```json
+{
+  "name": "leer_parte_arch",
+  "description": "Lee el parte diario de producción de la ARCH publicado en una fecha y devuelve la producción de petróleo del día de operación, en barriles por día.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "fecha": {
+        "type": "string",
+        "description": "Fecha de publicación del parte, AAAA-MM-DD. Ejemplo: 2026-09-15"
+      }
+    },
+    "required": ["fecha"]
+  }
+}
+```
+
+El pedido del modelo y la respuesta del arnés:
+
+```json
+{
+  "type": "tool_use",
+  "id": "toolu_ejemplo_01",
+  "name": "leer_parte_arch",
+  "input": { "fecha": "2026-09-15" }
+}
+```
+
+```json
+{
+  "role": "user",
+  "content": [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_ejemplo_01",
+      "content": "Operación del 2026-09-14. Total nacional: 463812.77. EP Petroecuador: 366559.66. Compañías privadas: 97253.11."
+    }
+  ]
+}
+```
+
+Los números son los del parte del 15 de septiembre de 2026, que informa la operación del 14. EP
+Petroecuador más las privadas dan el total: 366,559.66 + 97,253.11 = 463,812.77 barriles por día.
+Un agente con buenas instrucciones hace esa suma antes de responder, igual que la hoja de control
+del Excel de ayer.
+
+### Los otros proveedores usan el mismo contrato
+
+OpenAI describe el uso de herramientas en cinco pasos casi iguales, y el tercero es "Execute code
+on the application side with input from the tool call"
+([Function calling](https://developers.openai.com/api/docs/guides/function-calling)). Google lo
+dice en una línea: "The model doesn't execute the function itself"
+([Function calling con Gemini](https://ai.google.dev/gemini-api/docs/function-calling)). Cambian
+los nombres de los campos; el reparto de tareas es el mismo.
+
+Dónde corre la herramienta lo decide el arnés. En el chatbot gratuito de ayer, el código corrió en
+una computadora aislada en la nube. En un agente de terminal, como el de la demo de hoy, corre en
+tu computadora y sobre tus archivos.
+
 ## El arnés, el programa alrededor del modelo
 
-El arnés es el programa que envuelve al modelo y lo convierte en agente. El modelo recibe texto y
-devuelve texto; todo lo demás lo hace el arnés. En inglés se dice *harness*, y también lo vas a
-ver como *scaffold* (andamio): Epoch AI lo describe como el software que opera al agente, en
-general un programa de terminal como Claude Code.
+El arnés es el programa que envuelve al modelo y lo convierte en agente. El glosario de Claude Code
+lo define como "the tools, context management, and execution environment that turn a language
+model into a capable coding agent", y agrega: "Claude Code is the harness; Claude is the model
+inside it" ([Glossary](https://code.claude.com/docs/en/glossary)). En inglés se dice *harness*, y
+también lo vas a ver como *scaffold* (andamio).
 
 <figure className="figura">
   <img
@@ -71,7 +240,7 @@ general un programa de terminal como Claude Code.
 Las seis funciones, una por una:
 
 - **Le da herramientas.** Leer y escribir archivos, correr código, buscar en internet, usar un
-  navegador. Qué herramientas tiene un agente lo decide el arnés.
+  navegador. La lista que viaja en el paso 1 del diagrama la arma el arnés.
 - **Corre el loop.** Le pasa tu pedido al modelo, ejecuta la herramienta que el modelo eligió, le
   devuelve el resultado y repite hasta que el modelo da la tarea por terminada.
 - **Decide qué entra al contexto.** La ventana de la sesión 2 se llena rápido en un agente. El
@@ -80,15 +249,14 @@ Las seis funciones, una por una:
 - **Pide permiso.** Define qué hace el agente solo y qué necesita tu visto bueno. Leer suele estar
   permitido; borrar, mandar o instalar suelen pedir confirmación.
 - **Guarda la memoria en archivos.** El modelo no recuerda nada de una sesión a otra. Lo que tiene
-  que saber lo lee de archivos de instrucciones (CLAUDE.md, AGENTS.md) y de habilidades empaquetadas
-  que carga cuando las necesita, que en inglés se llaman skills.
-- **Reparte y conecta.** Lanza subagentes para tareas acotadas, cada uno con su contexto limpio, y
-  se conecta a otros sistemas por el protocolo de contexto de modelo.
+  que saber lo lee de archivos de instrucciones, como CLAUDE.md o AGENTS.md.
+- **Reparte y conecta.** Lanza subagentes para tareas acotadas y se conecta a otros sistemas. Las
+  dos cosas están más abajo, con las skills.
 
 ### Trabaja por turnos, y deja un parte
 
-Anthropic lo explica con una imagen que en un yacimiento se entiende sola: un proyecto atendido por
-ingenieros que trabajan por turnos, donde cada uno llega sin memoria de lo que pasó en el turno
+Anthropic lo explica con una imagen que en un yacimiento se entiende sola. Es un proyecto atendido
+por ingenieros que trabajan por turnos, donde cada uno llega sin memoria de lo que pasó en el turno
 anterior ([Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents),
 noviembre de 2025). Así trabaja un agente en una tarea larga, porque cada sesión nueva arranca en
 blanco. La solución que describe es la de cualquier guardia bien llevada: un parte de avance que
@@ -97,18 +265,7 @@ cambios.
 
 De ahí sale una regla práctica: **a un agente se le enseña por escrito**. Las reglas de tu tarea,
 los nombres de las columnas, lo que ya se probó y no anduvo, todo eso vive en archivos que el arnés
-le hace leer. Si mañana cambiás de modelo, esos archivos te siguen sirviendo. En la sesión 6 vas a
-ver un agente trabajando sobre una carpeta, guiado por un archivo así.
-
-<div className="callout">
-
-**El protocolo de contexto de modelo** (Model Context Protocol, MCP) es un estándar abierto, creado
-por Anthropic, para conectar aplicaciones de IA con herramientas y datos. Funciona como un enchufe
-común: el mismo conector sirve para varios arneses, y le suma al agente las herramientas de ese
-sistema, con los permisos que le des. La cuenta gratuita de Claude admite
-[un conector propio](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
-
-</div>
+le hace leer. Si mañana cambiás de modelo, esos archivos te siguen sirviendo.
 
 ### Cuánto cambia el resultado con otro arnés
 
@@ -123,192 +280,233 @@ una gran diferencia.
 
 Las dos se leen juntas. El arnés decide sobre todo **qué puede hacer** el agente: con qué
 herramientas, con qué permisos y con qué memoria. La capacidad de fondo la pone el modelo, y
-cambiar de arnés la mueve menos. En la práctica, el mismo modelo hace cosas distintas en dos
-productos distintos. El Claude gratuito que ayer corrió código en una computadora aislada y el
-Claude Code que vas a ver en la sesión 6 sobre una carpeta usan la misma familia de modelos con
-otro arnés.
+cambiar de arnés la mueve menos. El Claude gratuito que ayer corrió código en la nube y el Claude
+Code de la demo de hoy usan la misma familia de modelos con otro arnés.
 
-## Qué agentes hay, por forma de uso
+## Un agente en la terminal
 
-Los agentes de hoy se ordenan mejor por cómo se usan que por la marca. Estas son seis formas, con
-lo que se puede probar gratis al 28 de septiembre de 2026. La foto envejece rápido: los nombres y
-los planes cambian de un mes a otro.
+Una interfaz de línea de comandos (command-line interface, CLI) es un programa que se usa
+escribiendo en una terminal, la ventana de texto donde se tipean comandos. Un agente de terminal
+es un arnés que corre en tu computadora: lo abrís dentro de una carpeta y el modelo trabaja sobre
+esos archivos. Según la [documentación de Claude Code](https://code.claude.com/docs/en/how-claude-code-works),
+al correr `claude` en una carpeta el agente accede a sus archivos y subcarpetas, a la terminal
+(cualquier comando que podrías correr vos) y al estado de git, el registro de versiones del
+proyecto.
 
-| Forma de uso | Qué hace | Gratis hoy | Con plan pago o de empresa |
-| --- | --- | --- | --- |
-| Chat con herramientas | Corre código sobre tus archivos y te devuelve planillas, documentos y gráficos | Claude ([código y archivos](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)), Gemini ([Canvas](https://support.google.com/gemini/answer/16275805?hl=es-419)), ChatGPT (análisis de datos, con límites) | Los mismos, con más cuota |
-| Investigación | Arma un plan, lee decenas de páginas y entrega un informe con fuentes | Gemini Deep Research ([puede faltar en horas pico](https://support.google.com/gemini/answer/16275805?hl=es-419)), ChatGPT deep research (pocas por mes) | [Claude Research](https://support.claude.com/en/articles/11088861-use-research-on-claude) |
-| Navegador y computadora | Usa sitios, aplicaciones y archivos de tu computadora como lo harías vos | ChatGPT Work, en la app de escritorio ([comparte la cuota con Codex](https://learn.chatgpt.com/docs/pricing)) | [Claude in Chrome](https://claude.com/blog/claude-in-chrome-generally-available), desde el 26 de agosto de 2026; Microsoft Copilot Autopilot, [anunciado](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/) el 25 de septiembre de 2026, en vista previa privada |
-| Terminal sobre una carpeta | Lee, escribe y ejecuta sobre los archivos de una carpeta tuya | [OpenAI Codex](https://learn.chatgpt.com/docs/pricing) (tareas cortas), [Antigravity](https://antigravity.google/docs/plans/) de Google (cuota semanal; desde el 18 de junio de 2026 [reemplaza a Gemini CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) en las cuentas sin pago) | Claude Code |
-| Conectores | Conecta el agente con tus sistemas por MCP | Claude, [un conector propio](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) | Más conectores |
-| Caja de arena | Un agente en una computadora descartable en la nube, con terminal y archivos | [Arena, modo agente](https://arena.ai/agent) | |
+### Cuáles se prueban gratis
 
-Para el taller alcanza con dos. Claude, que ayer corrió código y te devolvió un Excel, y Arena en
-modo agente, que trabaja en una computadora descartable y al final te entrega en un zip todo lo
-que armó. Arena puede compartir las conversaciones con los proveedores de los modelos, sin los
-datos que te identifican, y en sus [preguntas frecuentes](https://arena.ai/faq) recomienda no
-escribir nada sensible. Ahí va solo dato público, como el del taller.
+Al 28 de septiembre de 2026, dos de estos cuatro se pueden probar sin pagar:
 
-En vivo mostramos tres, con cuentas pagas del curso: un agente de investigación sobre una pregunta
-del rubro, Arena en modo agente con el archivo sucio de ayer, y un agente de terminal sobre una
-carpeta, que es el adelanto de la sesión 6.
+| Agente de terminal | De quién | ¿Gratis? |
+| --- | --- | --- |
+| Copilot CLI | GitHub | Sí. "All plans include Copilot CLI" ([planes](https://docs.github.com/en/copilot/get-started/plans)), también el gratuito, con créditos limitados |
+| Antigravity CLI | Google | Sí, con una cuenta personal de Google y una cuota que se renueva cada semana ([planes](https://antigravity.google/docs/plans/)). Desde el 18 de junio de 2026 [reemplaza a Gemini CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/) en las cuentas sin pago |
+| Claude Code | Anthropic | No. Pide Pro o superior: "The free claude.ai plan does not include Claude Code access" ([instalación](https://code.claude.com/docs/en/setup)) |
+| Codex CLI | OpenAI | No. La terminal arranca en el plan Plus ([precios](https://learn.chatgpt.com/docs/pricing)) |
 
-### En la industria: Leucipa
-
-Baker Hughes anunció el 29 de enero de 2026 que Expand Energy, que se presenta como el mayor
-productor de gas natural de Norteamérica, va a desplegar Leucipa en miles de pozos de gas de
-Marcellus, Utica y Haynesville ([comunicado](https://www.bakerhughes.com/company/news/baker-hughes-expand-energy-deploy-leucipatm-across-us-natural-gas-fields)).
-El comunicado describe flujos de trabajo con IA para gestionar la producción, y un piloto de Lucy,
-un asistente conversacional sobre los datos de producción. La palabra agente no aparece. Leído con
-la distinción de Anthropic, lo que describe se parece más a un flujo fijo con modelos adentro,
-pensado para repetirse en miles de pozos, que a un agente que decide sus propios pasos.
-
-## Taller: tu primer agente
-
-Son 30 minutos, cada uno en su computadora. Elegís una de dos tareas: la principal, sobre el
-archivo de ayer, o la alternativa, con un agente de investigación. Las dos terminan igual, con dos
-chequeos concretos antes de creerle al resultado.
-
-### La principal: siete campos, seis pasos
-
-Con Claude (cuenta gratuita, con la ejecución de código y la creación de archivos activadas, como
-ayer) o con [Arena en modo agente](https://arena.ai/agent). Adjuntá
-[campos_capiv_2006_2026.csv](descargas/campos_capiv_2006_2026.csv) y pegá el pedido entero:
-
-```text
-Te adjunto la producción mensual de siete campos maduros de Argentina
-(Capítulo IV, Secretaría de Energía), de enero de 2006 a julio de 2026, en m³.
-Trabajá en pasos y contame qué hiciste en cada uno.
-
-1. Revisá el archivo: columnas, unidades, cuántas filas y cuántos campos,
-   meses que falten o estén repetidos, valores vacíos o negativos.
-   Quedate solo con las filas de tipo_recurso = "convencional".
-2. Para cada campo calculá el petróleo acumulado desde enero de 2006 (Np)
-   y la relación agua-petróleo (RAP = agua / petróleo) de 2020 y de 2025,
-   sumando los doce meses de cada año.
-3. Marcá los campos con RAP de 2025 mayor que 30.
-4. Hacé un gráfico de la RAP anual de cada campo, de 2006 a 2025, con el
-   eje vertical en escala logarítmica y los campos marcados en color.
-5. Escribí una nota de una página para el gerente de producción: qué
-   campos marcaste y por qué, qué te llamó la atención y qué no pudiste
-   verificar.
-6. Entregame tres archivos: una planilla con los números, el gráfico en
-   PNG y la nota en Word.
-```
-
-Mientras trabaja, mirá el loop: qué herramienta usa en cada paso, qué lee antes de calcular, y qué
-hace cuando algo le sale distinto de lo esperado. En Claude lo ves desplegando cada bloque de
-código. En Arena lo ves en el panel del espacio de trabajo, y de ahí mismo bajás todo en un zip al
-final.
-
-Cuando tengas los archivos, dos chequeos antes de creerle:
-
-- **Una cuenta contra el archivo.** El petróleo acumulado (Np) de El Corcobo Norte tiene que dar
-  15,109,737 m³, el mismo de la planilla de ayer. Si no la tenés, abrí el CSV en Excel, filtrá El Corcobo Norte y sumá la
-  columna `petroleo_m3`.
-- **Una relación a mano.** El Trapial en 2025: 4,178,451 m³ de agua sobre 71,639 m³ de petróleo
-  da 58.33. Buscá ese número en la planilla y en la nota.
-
-Si te sobra un minuto, fijate si en el paso 1 vio que a El Corcobo Norte le falta enero de 2019.
-Si no lo dice, preguntale.
+Claude Code, Copilot CLI y Antigravity CLI se instalan con un comando en la terminal. La página de
+instalación de Claude Code dice que en Windows no hace falta ser administrador; las de los otros
+dos no lo mencionan. En una computadora de la empresa, consultá antes con sistemas: instalar un
+programa que ejecuta comandos es una decisión de seguridad.
 
 <details>
-<summary>Para comparar: lo que tiene que dar</summary>
+<summary>Para curiosos: los comandos de instalación</summary>
 
-Solo convencional. El Np va de enero de 2006 a julio de 2026; la relación agua-petróleo (RAP) de
-cada año, con los doce meses sumados.
+Copiados de la documentación de cada uno el 28 de septiembre de 2026. En cada par, la primera
+línea es para macOS y Linux y la segunda para Windows (PowerShell); la de npm sirve en los tres.
 
-| Campo | Np desde 2006 (m³) | RAP 2020 | RAP 2025 | Marcado |
-| --- | --- | --- | --- | --- |
-| El Corcobo Norte | 15,109,737 | 12.19 | 16.46 | no |
-| Chihuido de la Sierra Negra | 9,695,940 | 35.40 | 38.02 | sí |
-| El Trapial | 20,737,718 | 41.44 | 58.33 | sí |
-| Puesto Hernández | 12,419,240 | 58.95 | 60.96 | sí |
-| Los Perales | 13,745,181 | 18.54 | 21.59 | no |
-| Manantiales Behr | 24,341,645 | 5.98 | 6.26 | no |
-| Diadema | 12,444,536 | 23.20 | 28.08 | no |
+```bash
+# Antigravity CLI (Google); se abre con el comando agy
+curl -fsSL https://antigravity.google/cli/install.sh | bash
+irm https://antigravity.google/cli/install.ps1 | iex
 
-Diadema queda cerca del umbral y sube: una buena nota lo menciona aunque no lo marque. El Trapial
-es el que más empeora entre 2020 y 2025, y en 2026 su petróleo convencional casi desaparece.
+# Copilot CLI (GitHub); pide Node.js 22 o posterior
+npm install -g @github/copilot
+winget install GitHub.Copilot
+
+# Claude Code (Anthropic); se abre con el comando claude
+curl -fsSL https://claude.ai/install.sh | bash
+irm https://claude.ai/install.ps1 | iex
+```
 
 </details>
 
-### La alternativa: un agente de investigación
+### La carpeta y las herramientas de fábrica
 
-Con Gemini Deep Research, en tu cuenta gratuita de [Gemini](https://gemini.google.com/): elegí
-Deep Research antes de mandar el pedido.
+Claude Code trae más de cuarenta herramientas de fábrica
+([Tools reference](https://code.claude.com/docs/en/tools-reference)). Estas son las que vas a ver
+en la demo, con la columna que más importa:
 
-```text
-Investigá los proyectos de recuperación secundaria (inyección de agua) en
-campos petroleros de Ecuador anunciados o en marcha entre 2024 y 2026.
-Armá una tabla con una fila por proyecto: campo, bloque, operadora, etapa
-(anunciado, adjudicado, en ejecución), producción incremental esperada y
-la fuente de cada dato con su enlace. Separá lo que sale de fuentes
-oficiales (Petroecuador, la Agencia de Regulación y Control de
-Hidrocarburos, el ministerio, la propia operadora) de lo que sale de la
-prensa.
+| Herramienta | Qué hace | ¿Pide permiso? |
+| --- | --- | --- |
+| Read | Lee un archivo | No |
+| Glob, Grep | Busca archivos por nombre y texto adentro de los archivos | No |
+| Write, Edit | Crea un archivo, o cambia una parte de uno | Sí |
+| Bash | Corre un comando en la terminal: Python, un script, una instalación | Sí |
+| WebFetch, WebSearch | Baja una página, o busca en internet | Sí |
+| TodoWrite | Lleva la lista de tareas de la sesión | No |
+| Agent | Lanza un subagente | No |
+| Skill | Usa una skill | Sí |
+
+El patrón se repite en todos los agentes de terminal. Leer corre sin preguntar; escribir, ejecutar
+y salir a internet pasan por un permiso.
+
+### Los permisos
+
+En Claude Code, el modo de permiso fija cuánto pregunta el agente
+([Permission modes](https://code.claude.com/docs/en/permission-modes)):
+
+- **Manual.** Pregunta antes de editar archivos, correr comandos o salir a la red. Sin preguntar,
+  solo lee.
+- **Aceptar ediciones** (acceptEdits). Edita archivos y corre comandos comunes de carpetas sin
+  preguntar; para lo demás, pregunta.
+- **Plan.** Explora y propone un plan, sin tocar tus archivos.
+- **Auto.** Un segundo modelo, un clasificador, revisa cada acción en tu lugar y bloquea las
+  riesgosas.
+
+Desde la versión 2.1.283, una sesión nueva en la terminal arranca en auto. Para ver los permisos,
+en la demo arrancamos en manual. Encima de los modos van las reglas: cada herramienta, o cada
+comando, puede estar permitida, preguntar o estar prohibida, y la prohibición gana en cualquier
+modo. Aparte está el aislamiento (sandbox): el sistema operativo encierra los comandos de la
+terminal dentro de las carpetas y la red que definas de antemano.
+
+Los otros dos se parecen. Codex CLI trabaja en un aislamiento con tres niveles (solo lectura,
+escritura en la carpeta del proyecto, acceso total) y arranca con la red apagada
+([Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security)). Copilot
+CLI permite o prohíbe herramientas una por una, y "deny rules always take precedence over allow
+rules" ([Allowing and denying tool use](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)).
+
+### CLAUDE.md y AGENTS.md, las instrucciones por escrito
+
+CLAUDE.md es un archivo de texto con instrucciones persistentes que Claude Code carga al empezar
+cada sesión ([Glossary](https://code.claude.com/docs/en/glossary)). AGENTS.md es lo mismo en un
+formato abierto, "a README for agents" ([agents.md](https://agents.md/)), que desde el 9 de
+diciembre de 2025 administra la Agentic AI Foundation, de la Linux Foundation. Lo leen más de
+veinte agentes, entre ellos Codex, Copilot y Gemini CLI. Claude Code lee AGENTS.md cuando la
+carpeta no tiene CLAUDE.md.
+
+Es el parte de avance de la sección del arnés, hecho archivo. El de la demo entra en seis líneas:
+
+```markdown
+# Partes diarios de la ARCH
+
+- Cada PDF es un parte diario de producción de la ARCH de Ecuador, de una página.
+- Los números usan punto de miles y coma decimal: 366.559,66 son 366559.66 barriles por día.
+- Cada parte trae dos fechas: la de publicación y la de operación.
+- No modifiques los PDF. Todo lo nuevo va en la carpeta salida/.
+- Antes de terminar, compará la suma de las compañías con el total nacional de cada parte.
 ```
 
-Gemini te muestra primero un plan de investigación: leelo y aprobalo. El informe tarda entre cinco
-y diez minutos, y mientras tanto podés arrancar la tarea principal en otra pestaña. Los dos
-chequeos:
+### En vivo: los seis partes, con Claude Code
 
-- **Abrí dos citas.** Elegí dos filas y abrí el enlace de cada una. La página tiene que existir y
-  decir lo que dice la tabla: campo, operadora y fecha.
-- **Mirá de quién es el dato.** En esas dos filas, fijate si la fuente es oficial o de prensa, y si
-  la fecha cae entre 2024 y 2026. Un informe que mezcla un anuncio de 2019 con una adjudicación de
-  2025 se lee bien y está mal.
+En la sesión lo hacemos con Claude Code, con una cuenta paga del curso, sobre una carpeta con los
+seis partes de ayer y ese CLAUDE.md. El pedido:
 
-### Si algo no anda
+```text
+Armá un script en Python que lea los seis partes de esta carpeta y los
+consolide en un Excel en salida/: producción por compañía y por día, el
+total nacional, y una hoja de control que compare la suma de las
+compañías con el total de cada parte. Que se pueda volver a correr
+mañana con el parte nuevo. Probalo y contame qué no pudiste leer.
+```
 
-- **Se agotó la cuota de Claude.** Seguí en Arena con el mismo pedido, o pasate a la alternativa en
-  Gemini. La cuota gratuita de Claude se renueva cada cinco horas.
-- **Arena te pide una cuenta.** Entrá con Google, o seguí en Claude.
-- **La red de tu empresa bloquea el sitio.** Probá desde el celular con datos móviles, o seguí la
-  pantalla compartida y hacé los dos chequeos sobre la tabla de referencia.
+Mirá tres cosas mientras corre: qué herramienta pide en cada paso, cuándo frena a pedir permiso y
+qué hace cuando un número no cierra. Lo que queda en la carpeta es un programa. Mañana se corre con
+el parte nuevo, sin volver a explicar nada: ese es el salto del chatbot al agente.
 
-## Qué delegar hoy
+Si tenés acceso a Copilot CLI o a Antigravity CLI, podés repetirlo. Bajá los seis partes
+([8](descargas/arch-reporte-diario-2026-09-08.pdf), [9](descargas/arch-reporte-diario-2026-09-09.pdf),
+[10](descargas/arch-reporte-diario-2026-09-10.pdf), [11](descargas/arch-reporte-diario-2026-09-11.pdf),
+[14](descargas/arch-reporte-diario-2026-09-14.pdf) y [15](descargas/arch-reporte-diario-2026-09-15.pdf)
+de septiembre), ponelos en una carpeta nueva con esas instrucciones en un AGENTS.md y pegá el
+pedido.
 
-Lo que mejor funciona hoy son las tareas **digitales, acotadas y verificables**: buscar
-información en muchos documentos, pasar datos de un formato a otro, escribir y corregir código,
-automatizar una secuencia de pasos que hoy hacés a mano. Lo común a todas es que el resultado se
-comprueba rápido, como con los dos chequeos del taller.
+## MCP, skills y subagentes
 
-Acotada quiere decir clara y también corta. El agente acumula contexto en cada vuelta (el contador
-de la traza lo muestra), y con el contexto crecen el tiempo, el costo y la chance de perder el
-objetivo. Una tarea de veinte pasos suele salir peor que dos de diez. El techo igual se mueve:
-[METR](https://metr.org/time-horizons/) mide cuánto dura la tarea que un agente completa solo, y en
-mayo de 2026 ubicó una versión temprana de Claude Mythos Preview por encima de 16 horas, el máximo
-que su conjunto de tareas mide bien, con 50% de éxito y en tareas de software. Lo que hoy no
-delegás por largo conviene volver a probarlo en unos meses.
+Tres piezas que agrandan a un agente sin cambiar el modelo. Las tres las carga el arnés.
 
-La tercera condición es la que más pesa en esta industria: lo **irreversible queda afuera**. Todo
-lo que hizo el agente de la traza se puede deshacer, porque leyó archivos y guardó un gráfico. Si
-se equivoca, el error vuelve y se corrige. Cuando la herramienta manda un correo, carga una
-nominación o escribe en un sistema de control, el paso equivocado ya quedó hecho, y mirar la salida
-llega tarde. Ese es el tema de la sesión 7.
+### MCP, un enchufe común para otros sistemas
+
+El protocolo de contexto de modelo (Model Context Protocol, MCP) es "an open-source standard for
+connecting AI applications to external systems"
+([modelcontextprotocol.io](https://modelcontextprotocol.io/docs/getting-started/intro)): un
+estándar abierto para conectar aplicaciones de IA con otros sistemas. Su documentación lo compara
+con un puerto USB-C. Lo creó Anthropic, y desde diciembre de 2025 lo administra la Agentic AI
+Foundation.
+
+Tiene tres partes. El host es la aplicación de IA, por ejemplo Claude Code. El servidor es el
+programa que da acceso a un sistema, y ofrece herramientas (acciones que el agente puede pedir),
+recursos (datos para leer) y prompts (plantillas). Entre los dos, un cliente por cada conexión
+([Architecture](https://modelcontextprotocol.io/docs/learn/architecture)). Para el modelo, una
+herramienta que llega por MCP se usa igual que una de fábrica: definición, pedido y resultado.
+
+<div className="callout">
+
+**Un ejemplo del rubro.** OSDU (Open Subsurface Data Universe) es la plataforma abierta de datos de
+subsuelo que define el OSDU Forum, de The Open Group. Hay un [servidor MCP para OSDU](https://github.com/danielscholl-osdu/osdu-mcp-server)
+que le da a un agente herramientas para buscar registros, leer esquemas y consultar el
+almacenamiento. Es un proyecto de la comunidad, por fuera del OSDU Forum, y viene con la escritura
+y el borrado apagados: cada uno se prende a propósito, con su propia variable de configuración.
+
+</div>
+
+### Skills, instrucciones que se cargan cuando hacen falta
+
+Una skill (habilidad) es una carpeta con "instructions, scripts, and resources that Claude can load
+when needed" ([Introducing Agent Skills](https://claude.com/blog/skills), 16 de octubre de 2025).
+Al empezar, el agente ve solo la descripción de cada skill, y el contenido entero se carga cuando
+lo usa. Así no ocupa la ventana de contexto hasta que sirve. Es un estándar abierto
+([agentskills.io](https://agentskills.io)). El script de la demo, con las reglas de lectura de los
+partes, podría quedar guardado como una skill "partes-arch" para la próxima vez.
+
+### Subagentes, una tarea aparte con su propio contexto
+
+Un subagente "runs in its own context window with a custom system prompt, specific tool access,
+and independent permissions" ([Subagents](https://code.claude.com/docs/en/sub-agents)): corre con
+su propia ventana de contexto, su propio prompt de sistema (el de la sesión 3), sus herramientas y
+sus permisos. Hace una tarea delegada y le devuelve un resumen al agente principal. Sirve para que
+la lectura de los seis PDF, por ejemplo, no llene la ventana del agente que después arma el Excel.
+
+## Qué agentes hay, por forma de uso
+
+Los agentes de hoy se ordenan mejor por cómo se usan que por la marca. La foto es del 28 de
+septiembre de 2026 y envejece rápido: los nombres y los planes cambian de un mes a otro.
+
+| Forma de uso | Qué hace | Gratis hoy | Con plan pago o de empresa |
+| --- | --- | --- | --- |
+| Chat con herramientas | Corre código sobre tus archivos y devuelve planillas, documentos y gráficos | Claude ([código y archivos](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)), Gemini, ChatGPT (con límites) | Los mismos, con más cuota |
+| Investigación | Arma un plan, lee decenas de páginas y entrega un informe con fuentes | Gemini Deep Research, ChatGPT deep research (pocas por mes) | Claude Research |
+| Navegador y computadora | Usa sitios y aplicaciones como lo harías vos | ChatGPT Work, en la app de escritorio, a medida que se habilita ([precios](https://learn.chatgpt.com/docs/pricing)) | [Claude in Chrome](https://claude.com/blog/claude-in-chrome-generally-available), Microsoft Copilot Autopilot ([vista previa privada](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)) |
+| Terminal sobre una carpeta | Lee, escribe y ejecuta sobre los archivos de una carpeta | Copilot CLI, Antigravity CLI | Claude Code, Codex CLI |
+| Conectores | Conecta el agente con otros sistemas por MCP | Claude, [un conector propio](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) | Más conectores |
+| Caja de arena | Un agente en una computadora descartable en la nube | [Arena, modo agente](https://arena.ai/agent) | |
+
+Arena puede compartir las conversaciones con los proveedores de los modelos, así que ahí va solo
+dato público. En la sesión 6 vas a usar una de estas formas gratuitas sobre un dataset público.
 
 ## Para llevarse
 
-- Antes de elegir un agente para una tarea, mirá qué herramientas y permisos le da su arnés: eso
-  decide qué puede hacer.
-- Delegá lo digital, acotado y verificable; lo que no se deshace lo aprueba una persona.
-- Antes de usar lo que te entregó, hacé dos chequeos concretos: una cuenta contra el archivo y una
-  cita abierta.
+- Antes de darle una tarea a un agente, mirá su arnés: qué herramientas tiene, qué permisos pide y
+  dónde corre lo que ejecuta.
+- Escribí las reglas de la tarea en un CLAUDE.md o un AGENTS.md. La próxima sesión arranca sin
+  memoria y las lee de ahí.
+- Empezá en modo manual y sobre una copia de la carpeta. Lo que no se deshace lo aprueba una
+  persona.
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura | 8 min | De ayer a hoy: el chatbot que corrió código ya era un agente chico |
-| Qué es un agente | 15 min | Modelo, herramientas y loop; la traza del ejercicio paso a paso |
-| El arnés | 20 min | Qué es, qué hace y cuánto pesa en el resultado |
-| Qué agentes hay, y cómo se usan | 25 min | El mapa por forma de uso, lo que es gratis, y tres en vivo |
-| Taller: tu primer agente | 30 min | Cada uno corre un agente gratuito sobre una tarea dada y verifica dos cosas del resultado |
-| Qué delegar, y para llevarse | 12 min | Digital, acotado y verificable; lo irreversible queda afuera; tres prácticas |
+| Apertura | 8 min | De ayer a hoy: el chatbot que consolidó los partes ya usó herramientas |
+| El loop | 12 min | Modelo, herramientas y loop, con la traza de un agente paso a paso |
+| Cómo usa una herramienta | 20 min | La definición, el pedido y el resultado, en JSON de verdad; el modelo pide y el arnés ejecuta |
+| El arnés | 15 min | Las seis funciones, los permisos y la memoria en archivos; cuánto pesa en el resultado |
+| Los CLI: un agente en la terminal | 25 min | Qué es, cómo se instala, la carpeta, los permisos, las herramientas de fábrica, CLAUDE.md y AGENTS.md; Claude Code en vivo sobre los seis partes de la ARCH |
+| MCP, skills y subagentes | 10 min | Tres piezas que agrandan al agente, una definición cada una |
+| Qué agentes hay, y para llevarse | 20 min | El mapa por forma de uso y tres prácticas |
 | Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 6 |
 
-Las preguntas a la sala van por el chat de la videollamada. Todo lo que subas a un agente en esta
-sesión es público: producción oficial de Argentina y fuentes abiertas de Ecuador.
+Las preguntas a la sala van por el chat de la videollamada. Todo lo que ves en esta sesión usa
+datos públicos: el Capítulo IV de Argentina y los partes de la ARCH de Ecuador.
 
 <Quiz data="quiz_s5" sesion={5} />
