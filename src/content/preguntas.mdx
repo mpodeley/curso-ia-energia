@@ -1,0 +1,496 @@
+La cohorte de septiembre dejó dos preguntas abiertas. La primera es práctica: cómo tener un
+agente como el de la sesión 5 en la computadora del trabajo, con el Copilot que ya pagó la empresa
+o con Claude y Codex, sin permiso de administrador. La segunda mira al software de todos los días:
+qué inteligencia artificial (IA) traen tNavigator, Petrel e INTERSECT, y cómo se conecta con lo
+que vimos en el curso.
+
+<div className="callout">
+
+**Foto del 29 de septiembre de 2026.** Cada dato lleva su fuente, y los productos de esta página
+cambian de nombre, de plan y de estado de un mes a otro. Antes de decidir algo con esto, abrí el
+link y fijate la fecha.
+
+</div>
+
+## Un agente en la PC de la empresa
+
+### "Copilot" son dos productos
+
+Microsoft vende dos cosas con el mismo nombre, y solo una se parece a Claude Code. Microsoft
+Copilot (antes Microsoft 365 Copilot) trabaja sobre el correo, Teams y los documentos de
+Office. GitHub Copilot trabaja sobre una carpeta con archivos y scripts, con el mismo arnés de la
+sesión 5: herramientas, permisos y un archivo de instrucciones.
+
+<figure className="figura">
+  <img
+    src="slides/img/preguntas-copilots.svg"
+    alt="Dos columnas. Microsoft Copilot, que trabaja sobre correo, Teams, Word, Excel y SharePoint: chat con Researcher y Analyst, Agent Mode, Copilot Cowork y Copilot Studio. GitHub Copilot, que trabaja sobre una carpeta con archivos y scripts: el agente en VS Code, Copilot CLI, el cloud agent y el arnés de Claude o de Codex. Una flecha marca que GitHub Copilot es lo más parecido a Claude Code o Codex. Una nota aclara que Copilot Cowork es de Microsoft y Claude Cowork es de Anthropic."
+  />
+</figure>
+
+Del lado de Microsoft Copilot hay agentes, y sirven para otro tipo de trabajo:
+
+| Pieza | Qué hace | Fuente |
+| --- | --- | --- |
+| Researcher | Investiga en la web y en tus archivos, correos y reuniones, y entrega un informe con citas | [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/researcher-agent) |
+| Agent Mode (Office Agent) | Crea y edita adentro de Word, Excel y PowerPoint; según Microsoft, "Office Agent runs on Anthropic models" | [Soporte de Microsoft](https://support.microsoft.com/en-us/topic/get-started-with-agent-mode-in-word-excel-and-powerpoint-4d322d7f-5e89-4f66-9fa4-57d328b156ff) |
+| Copilot Cowork | Tareas de oficina en la nube: manda correos, agenda reuniones, arma documentos, y pide aprobación en cada paso | [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) |
+| Copilot Studio, computer use | Un agente que maneja sitios y aplicaciones de Windows con mouse y teclado virtuales, sobre máquinas que prepara sistemas | [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use) |
+
+El 25 de septiembre Microsoft anunció Copilot Code, que arma tableros y aplicaciones internas a
+partir de una descripción ([anuncio](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)).
+Está pensado para quien no programa y corre en la nube de Microsoft. Por ahora llega al programa
+Frontier, el de acceso anticipado.
+
+Ninguno de estos abre una carpeta de tu disco y corre tus scripts de Python. Para eso está GitHub
+Copilot: en VS Code, el editor de código gratuito de Microsoft, el agente puede "edit files on your
+machine" y correr pruebas, con permisos y aprobaciones, y se extiende con servidores del protocolo
+de contexto de modelo (Model Context Protocol, MCP) y con skills
+([VS Code, Agents](https://code.visualstudio.com/docs/copilot/agents/overview)). La misma página
+deja elegir el arnés: el de Copilot, el de Anthropic Claude o el de OpenAI Codex.
+
+### Qué decide sistemas
+
+Casi todo lo que hace falta lo prende o lo apaga un administrador, en tres lugares distintos:
+
+| Dónde | Qué controla | Fuente |
+| --- | --- | --- |
+| Políticas de GitHub (organización o empresa) | Servidores MCP, agentes de terceros, qué modelos se pueden elegir, funciones en vista previa, Copilot CLI. La de la empresa le gana a la de la organización | [GitHub Docs](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies) |
+| Políticas de VS Code en Windows | Si hay modo agente (`ChatAgentMode`), si hay MCP (`ChatMCP`), qué servidores se permiten, si se aprueban herramientas solas, qué extensiones se instalan | [VS Code, Enterprise policies](https://code.visualstudio.com/docs/enterprise/policies) |
+| Configuración de Microsoft Copilot | Si se usan modelos de Anthropic. Vienen prendidos, salvo en la Unión Europea, la Asociación Europea de Libre Comercio y el Reino Unido | [Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor) |
+
+Los modelos de Claude y GPT aparecen en el selector de GitHub Copilot, y "an enterprise or
+organization administrator must still enable each model"
+([Supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models)).
+Los agentes de terceros en GitHub, Claude y Codex, están en vista previa pública y dependen de una
+política. Esa política no alcanza a los agentes locales de VS Code
+([About third-party agents](https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents)).
+
+Lo que conviene pedirle a sistemas, en un solo mail:
+
+1. ¿Tenemos GitHub Copilot Business o Enterprise? ¿Está habilitado el modo agente en VS Code?
+2. ¿Qué modelos están habilitados en el selector?
+3. ¿Se permiten servidores MCP? ¿Hay una lista de servidores aprobados?
+4. ¿Está habilitado Copilot CLI?
+5. ¿Qué clase de datos se pueden usar con estas herramientas?
+
+### Receta: un agente tipo Claude Code con GitHub Copilot
+
+Supone que la empresa tiene GitHub Copilot con el modo agente habilitado. Todo se hace sin permiso
+de administrador.
+
+1. **Instalá VS Code con el instalador de usuario.** El "User setup" "does not require
+   administrator permissions" y queda en `%LOCALAPPDATA%\Programs\Microsoft VS Code`
+   ([VS Code en Windows](https://code.visualstudio.com/docs/setup/windows)). El "System setup",
+   para todos los usuarios de la máquina, sí pide administrador.
+2. **Entrá con la cuenta de GitHub de la empresa.** La extensión de Copilot viene integrada;
+   abrí el chat y pasalo a modo agente.
+3. **Abrí una carpeta de trabajo.** Una copia, como en la sesión 5. El agente lee, propone
+   cambios y pide permiso antes de correr comandos.
+4. **Dejá las reglas por escrito.** GitHub Copilot lee `.github/copilot-instructions.md`, y
+   también `AGENTS.md` y `CLAUDE.md`
+   ([instrucciones del repositorio](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)).
+   El AGENTS.md de la sesión 5 sirve tal cual. En VS Code, la lectura de CLAUDE.md depende de la
+   opción `chat.useClaudeMdFile` ([Custom instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions)).
+5. **Guardá los pedidos que repetís.** Un archivo `.github/prompts/partes.prompt.md` se llama
+   después como `/partes` en el chat ([Prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)).
+   Es lo más parecido a una skill chica.
+6. **Si la política lo permite, conectá un servidor MCP.** Por ejemplo el de tNavigator, más abajo.
+7. **Si preferís la terminal,** Copilot CLI se instala con `winget install GitHub.Copilot` o con
+   `npm install -g @github/copilot`, y pide Node.js 22 o posterior
+   ([Install Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)).
+
+Para probarlo, repetí el caso de la sesión 6, el tablero de Volve, con el mismo AGENTS.md. Es un
+dataset público, así que no hay nada de la empresa en juego.
+
+### Sin permiso de administrador: qué anda y qué no
+
+La respuesta depende menos del programa que de lo que contrató la empresa:
+
+<figure className="figura">
+  <img
+    src="slides/img/preguntas-sin-admin.svg"
+    alt="Árbol de decisión que arranca en qué contrató la empresa. GitHub Copilot: VS Code de usuario y Copilot CLI andan sin admin; MCP, modelos y la CLI los decide la política. Microsoft Copilot: nada que instalar, pero no trabaja sobre carpetas locales; los modelos de Anthropic los prende un administrador. Claude: Claude Code se instala sin admin; Cowork de escritorio no; Cowork en la web depende del administrador. ChatGPT: Codex CLI se instala sin admin con un aislamiento más débil; la app de escritorio sale de Microsoft Store; Codex local y cloud son interruptores del administrador. Si no contrató nada, con cuentas personales va solo dato público."
+  />
+</figure>
+
+Todo lo que se instala sin administrador vive en tu carpeta de usuario. Lo que toca Windows para
+todos, o crea servicios, pide permiso:
+
+<figure className="figura">
+  <img
+    src="slides/img/preguntas-perfil-usuario.svg"
+    alt="A la izquierda, tu carpeta de usuario, donde escribís sin permiso: VS Code de usuario, la carpeta .local bin con claude.exe y uv, la carpeta de npm con copilot y codex, Scoop, y Node.js portable. Abajo, el PATH de usuario. A la derecha, lo que pide administrador: instaladores para todos, la plataforma de máquina virtual que necesita Cowork, los usuarios y el firewall del sandbox elevado de Codex, y las políticas de sistemas."
+  />
+</figure>
+
+<div className="callout">
+
+**Que se pueda instalar no quiere decir que esté permitido.** Un agente corre comandos con tus
+permisos y manda lo que lee al proveedor del modelo. Los tres niveles de la sesión 7 siguen
+valiendo: dato público, dato interno solo en herramientas que contrató la empresa, y lo sensible
+fuera de todas. Si la política de la empresa prohíbe instalar programas, esta página no la cambia.
+
+</div>
+
+### Claude Code
+
+Es el agente de terminal de Anthropic, el de la demo de la sesión 5. Pide un plan Pro o superior,
+o una cuenta de empresa (Team o Enterprise), o que la empresa lo conecte por su nube: Amazon
+Bedrock, Google Cloud o Microsoft Foundry
+([proveedores](https://code.claude.com/docs/en/third-party-integrations)).
+
+**Instalación sin administrador.** En PowerShell:
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+La documentación lo dice explícito: "You do not need to run as Administrator"
+([Setup](https://code.claude.com/docs/en/setup)). Queda en `%USERPROFILE%\.local\bin` y se
+actualiza solo. Git for Windows es opcional: si está, el agente usa Git Bash; si no, usa
+PowerShell. Pide Windows 10 1809 o posterior.
+
+**Detrás de un proxy corporativo.** Claude Code respeta `HTTPS_PROXY` y confía en los
+certificados del sistema operativo, así que un proxy que inspecciona el tráfico suele andar sin
+tocar nada. Si no anda, `NODE_EXTRA_CA_CERTS` apunta al certificado de la empresa. Los proxies
+con autenticación NTLM o Kerberos necesitan otro camino, una pasarela intermedia
+([Network configuration](https://code.claude.com/docs/en/network-config)). Las variables se
+guardan en el bloque `env` de `~/.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "HTTPS_PROXY": "<la dirección del proxy que te pase sistemas>",
+    "NODE_EXTRA_CA_CERTS": "C:\\Users\\tu-usuario\\certificados\\empresa.pem"
+  }
+}
+```
+
+**Qué puede fijar sistemas.** Una configuración administrada, en el registro de Windows o en
+`C:\Program Files\ClaudeCode\managed-settings.json`, le gana a la tuya: permisos, modelos,
+servidores MCP ([Managed settings](https://code.claude.com/docs/en/managed-settings)).
+
+### Claude Cowork
+
+Cowork es "the same agentic architecture that powers Claude Code, with no terminal required": el
+mismo agente, desde la aplicación de escritorio de Claude y sin terminal, para planillas,
+documentos y carpetas ([Get started with Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork)).
+Está en los planes pagos: Pro, Max, Team y Enterprise.
+
+**Sin administrador, Cowork de escritorio no anda.** La guía de instalación para Windows es
+directa: "Users without admin access can still install Claude, but Cowork on desktop will not be
+available" ([Deploy Claude Desktop for Windows](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows)).
+Cowork corre en una máquina virtual aislada y necesita la función Virtual Machine Platform de
+Windows, que se prende con permisos de administrador y un reinicio. La aplicación de Claude sí se
+instala; lo que queda afuera es Cowork.
+
+Dos caminos:
+
+1. **Que sistemas lo instale para toda la máquina.** La misma guía muestra cómo: prende la
+   plataforma de máquinas virtuales y aprovisiona el paquete para todos los usuarios. Después,
+   cualquier usuario sin permisos lo usa.
+2. **Cowork en la web.** Está en beta en la web y el celular para Pro, Max y Team. En Enterprise
+   viene apagado hasta que lo prende un administrador
+   ([Cowork en web, escritorio y celular](https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile)).
+   Corre en la nube de Anthropic, así que trabaja con lo que le subís, sin acceso a tu disco.
+
+### Codex
+
+Codex es el agente de OpenAI. Viene como aplicación de terminal (Codex CLI), extensión de VS Code
+y aplicación de escritorio, y pide un plan pago de ChatGPT (Plus, Pro, Business, Edu o
+Enterprise) o una clave de la API.
+
+**Instalación de la terminal sin administrador.** Cualquiera de las dos, según el
+[repositorio oficial](https://github.com/openai/codex):
+
+```powershell
+# Instalador de OpenAI
+powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
+
+# O con npm, si ya tenés Node.js
+npm install -g @openai/codex
+```
+
+**El aislamiento cambia sin administrador.** En Windows, Codex encierra los comandos en un
+sandbox. El modo "elevated" crea usuarios aparte y reglas de firewall, y eso pide aprobación de
+administrador. Sin ese permiso, Codex pasa al modo "unelevated": limita los archivos con permisos
+comunes y aísla menos la red ([Windows sandbox](https://learn.chatgpt.com/docs/windows/windows-sandbox)).
+Anda igual, con menos protección, así que ahí conviene empezar con la aprobación manual. La misma
+página recomienda Windows 11.
+
+**La aplicación de escritorio** se instala desde Microsoft Store, sin administrador
+([Codex para Windows](https://learn.chatgpt.com/docs/windows/windows-app)). En muchas empresas la
+Store está bloqueada; entonces queda la terminal o la
+[extensión de VS Code](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt).
+
+**Qué decide el administrador en Enterprise.** Codex local y Codex en la nube son dos
+interruptores separados, y "Codex Cloud is off by default for Enterprise workspaces"
+([Admin setup](https://learn.chatgpt.com/docs/enterprise/admin-setup)).
+
+### Las herramientas de base, sin administrador
+
+Copilot CLI y Codex por npm necesitan Node.js. Los scripts que arma un agente necesitan Python.
+Las dos cosas se instalan en tu usuario:
+
+| Qué | Cómo, sin administrador | Dónde queda | Fuente |
+| --- | --- | --- | --- |
+| Node.js | Bajá el `.zip` de Windows (no el `.msi`) y descomprimilo en una carpeta tuya | Donde lo descomprimas | [nodejs.org](https://nodejs.org/en/download) |
+| Paquetes de npm | `npm install -g` ya escribe en tu usuario | `%AppData%\npm` | [npm folders](https://docs.npmjs.com/cli/v11/configuring-npm/folders) |
+| Python | `uv` baja su propio Python, sin tocar el del sistema | `~\.local\bin` | [uv](https://docs.astral.sh/uv/getting-started/installation/) |
+| Git | PortableGit, un archivo que se descomprime | Donde lo descomprimas | [git-scm.com](https://git-scm.com/install/windows) |
+| Varios a la vez | Scoop, un gestor de paquetes que se niega a correr como administrador | `~\scoop` | [Scoop](https://github.com/ScoopInstaller/Install) |
+
+<details>
+<summary>Para curiosos: los comandos, y cómo agregar una carpeta al PATH</summary>
+
+El PATH es la lista de carpetas donde la terminal busca los programas. Windows tiene uno del
+sistema, que pide administrador, y uno de tu usuario, que no. Para agregar la carpeta de Node.js
+al tuyo, en PowerShell:
+
+```powershell
+$dir = "$env:USERPROFILE\herramientas\node"
+$actual = [Environment]::GetEnvironmentVariable('Path', 'User')
+[Environment]::SetEnvironmentVariable('Path', "$actual;$dir", 'User')
+# Cerrá y volvé a abrir la terminal para que tome el cambio
+```
+
+Lo mismo con el mouse: en el menú Inicio buscá "variables de entorno" y elegí la opción de tu
+cuenta, la que no pide administrador.
+
+```powershell
+# uv y un Python propio
+irm https://astral.sh/uv/install.ps1 | iex
+uv python install
+
+# Scoop, y con Scoop, Node.js y Git
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+scoop install nodejs-lts git
+```
+
+Si la política de la empresa bloquea `Set-ExecutionPolicy` o los scripts de PowerShell, eso es
+una decisión de sistemas. No la esquives.
+
+</details>
+
+### Resumen
+
+| Herramienta | ¿Pide admin? | Licencia | Dónde corre | Qué puede bloquear sistemas |
+| --- | --- | --- | --- | --- |
+| GitHub Copilot en VS Code | No, con el instalador de usuario | GitHub Copilot | Tu PC, con el modelo en la nube | Modo agente, MCP, modelos |
+| Copilot CLI | No, con npm o winget | GitHub Copilot | Tu PC | La CLI entera, por política |
+| Microsoft Copilot (Researcher, Cowork) | No, nada que instalar | Microsoft Copilot | Nube de Microsoft | Agentes, modelos de Anthropic |
+| Claude Code | No | Claude Pro o de empresa, o la nube de la empresa | Tu PC | Configuración administrada |
+| Claude Cowork de escritorio | Sí, para la máquina virtual | Claude pago | Tu PC, en una máquina virtual | Todo, por política |
+| Claude Cowork en la web | No | Claude pago | Nube de Anthropic | En Enterprise viene apagado |
+| Codex CLI | No; sin admin aísla menos | ChatGPT pago | Tu PC | Codex local, `requirements.toml` |
+| Codex, app de escritorio | No, si la Store está abierta | ChatGPT pago | Tu PC | La Store, Codex local |
+
+## IA dentro de tNavigator, Petrel e INTERSECT
+
+Los tres traen IA, y de tres clases distintas. Conviene separarlas porque se evalúan distinto:
+
+<figure className="figura">
+  <img
+    src="slides/img/preguntas-ia-simuladores.svg"
+    alt="Tres capas. Capa 1, un asistente que conversa, un modelo de lenguaje dentro del programa: tNavigator AI Assistant, Petrel AI Assistant y Tela, ENVOY de Stone Ridge. Capa 2, aprendizaje automático sobre el modelo: history matching asistido y proxies de tNavigator, Petrel ML, CMOST-AI y Techlog AI Log Prediction. Capa 3, una puerta para tu agente, API de Python y servidores MCP: tNavigator, Python Tool Pro para Petrel, OPM Flow con ResInsight. Una flecha va de tu agente a la capa 3."
+  />
+</figure>
+
+- **El asistente que conversa** es un modelo de lenguaje (large language model, LLM) adentro del
+  programa, con el arnés que armó el fabricante. Es lo de las sesiones 2 y 5, con las mismas
+  alucinaciones posibles.
+- **El aprendizaje automático** (machine learning, ML) sobre el modelo existe hace años: redes
+  entrenadas con corridas del simulador, o con datos de pozo. Es el aprendizaje supervisado de la
+  sesión 1.
+- **La puerta para tu agente** es una interfaz de programación (application programming
+  interface, API) en Python, o un servidor MCP. Con eso, un agente como Claude Code, Copilot o
+  Codex maneja el programa desde afuera, con tus permisos y tu AGENTS.md. Es lo de las sesiones 5
+  y 6.
+
+### tNavigator
+
+tNavigator, de Rock Flow Dynamics, es el que más movió su asistente en el último año. Las notas de
+versión, una por trimestre, muestran el recorrido:
+
+<figure className="figura">
+  <img
+    src="slides/img/preguntas-tnavigator.svg"
+    alt="Línea de tiempo. 25.2, julio de 2025: AI Assistant en servidor local, genera código Python. 25.3, octubre de 2025: voz, links a la documentación, AI Server en Windows. 25.4, enero de 2026: asistente desde el navegador en la red interna. 26.1, abril de 2026: conecta modelos de lenguaje externos por el protocolo de OpenAI y soporta MCP. 26.2, julio de 2026: servidor MCP local, modo multiagente, lectura de logs de simulación, flash acelerado con aprendizaje automático."
+  />
+</figure>
+
+- **25.2** (julio de 2025): AI Assistant instalable en un servidor de la red local, con
+  generación interactiva de código Python ([notas](https://rfdyn.com/tnavigator-25-2-key-updates-now-available/)).
+- **25.3** (octubre de 2025): entrada por voz, links a la documentación, AI Server en Windows
+  ([notas](https://rfdyn.com/tnavigator-25-3-key-updates-now-available/)).
+- **25.4** (enero de 2026): el asistente, desde el navegador ([notas](https://www.rfdyn.com/tnavigator-25-4-key-updates-now-available/)).
+- **26.1** (abril de 2026): el AI Server se conecta a modelos de lenguaje de terceros "via the
+  OpenAI protocol", y aparece MCP ([notas](https://rfdyn.com/tnavigator-26-1-advancing-integrated-modelling-and-ai-capabilities/)).
+- **26.2** (julio de 2026): un servidor MCP local para que aplicaciones de IA de terceros busquen
+  en la documentación y manejen proyectos con funciones de la API; un modo multiagente; análisis
+  de los logs de simulación para encontrar la causa de errores y advertencias; aprendizaje
+  automático para acelerar el equilibrio líquido-vapor en corridas composicionales
+  ([notas](https://www.rfdyn.eu/tnavigator-26-2-accelerating-the-digital-energy-workflow-with-ai-petrophysics-and-advanced-simulation/)).
+
+El servidor MCP de 26.2 es el enchufe de la sesión 5, del lado del simulador. Con él, un agente
+de terminal puede consultar la documentación de tNavigator y operar un proyecto por la API, en el
+mismo loop de pensar, actuar y mirar el resultado. Además, tNavigator tiene hace años su API de
+Python y el módulo de ajuste histórico asistido e incertidumbre (assisted history matching, AHM),
+que entrena proxies con redes neuronales ([IA y ML en tNavigator](https://rfdyn.com/industries/machine-learning-ai/)).
+
+<div className="callout">
+
+**Lo que no se sabe.** Todo lo anterior sale de las notas de versión del fabricante. No
+encontramos una evaluación independiente de cuánto acierta el asistente. Tampoco dice qué modelo
+de lenguaje usa por defecto; desde 26.1 se le puede conectar uno externo. Antes de usarlo con un
+modelo de la empresa, preguntá a sistemas qué versión tienen, si el AI Server está instalado y a
+qué modelo apunta.
+
+</div>
+
+### Petrel, Delfi y Lumi
+
+SLB tiene las tres capas, repartidas en varios productos:
+
+- **Aprendizaje automático en Petrel.** Predicción de fallas y horizontes con redes que entrena
+  el usuario, y modelado de propiedades con ML
+  ([Petrel ML](https://www.slb.com/products-and-services/delivering-digital-at-scale/subsurface/machine-learning)).
+- **Petrel AI Assistant.** Ayuda conversacional, consultas a los datos del proyecto y
+  visualizaciones armadas desde un pedido ([video de SLB](https://www.slb.com/videos/petrel-ai-assistant)).
+- **Tela.** Un asistente agéntico presentado en ADIPEC, en noviembre de 2025. Sigue "a common
+  five-step agentic AI loop: observe, plan, generate, act, and learn"
+  ([JPT](https://jpt.spe.org/slb-unveils-agentic-ai-for-upstream-workflows)), que es el loop del
+  arnés de la sesión 5 con otros nombres ([comunicado](https://www.slb.com/newsroom/press-release/2025/pr-2025-1103-slb-tela-ai)).
+- **Lumi.** La plataforma de datos e IA donde corren Tela y los modelos de SLB, en la nube o en
+  los servidores de la empresa ([World Oil, 2024](https://worldoil.com/news/2024/9/17/slb-accelerates-digital-transformation-with-lumi-data-and-ai-platform-launch/)).
+  SLB la desarrolla con NVIDIA ([World Oil, 2026](https://worldoil.com/news/2026/3/25/slb-nvidia-expand-partnership-to-deploy-ai-infrastructure-for-energy-industry))
+  y con Shell ([World Oil, 2025](https://www.worldoil.com/news/2025/12/11/slb-shell-partner-to-accelerate-digital-and-ai-solutions-in-upstream-operations)).
+- **Python.** Petrel se programa en C# con Ocean ([Ocean](https://www.ocean.slb.com/en/developer/petrel)),
+  y en Python con Python Tool Pro, de Cegal, que SLB revende: desde un entorno de Python externo
+  se leen y escriben objetos de Petrel
+  ([Cegal](https://www.cegal.com/en/software/data-science-and-cegal-prizm/cegal-python-tool-pro)).
+  Techlog tiene su propio Python y una predicción de perfiles con un modelo entrenado en más de
+  18,000 pozos públicos ([Techlog](https://www.slb.com/products-and-services/delivering-digital-at-scale/software/techlog-wellbore-software/techlog-features)).
+
+Python Tool Pro es la puerta de la capa 3: un agente de terminal escribe y corre el script de
+Python que habla con Petrel, igual que en la sesión 6 escribió el que leía los perfiles de Volve.
+
+### INTERSECT
+
+INTERSECT, el simulador de alta resolución de SLB, es el que menos IA pública tiene de los tres.
+Lo que se puede citar:
+
+- Corre en procesadores gráficos (graphics processing unit, GPU) en Windows desde la versión
+  2024.3 ([notas](https://www.software.slb.com/software-news/support-news/intersect/intersect-2024-3)),
+  y en varias GPU a la vez desde la 2025.4 ([notas](https://www.software.slb.com/software-news/support-news/intersect/intersect-2025-4)).
+- Corre en la nube de Delfi, junto con ECLIPSE y VISAGE
+  ([On Demand Reservoir Simulation](https://www.slb.com/products-and-services/delivering-digital-at-scale/software/delfi/delfi-solutions/delfi-on-demand-reservoir-simulation)).
+- El manejo de campo (field management) se programa en Python. La documentación está detrás del
+  login de SLB, así que no hay página pública para citar.
+
+<div className="callout">
+
+**Lo que no se sabe de INTERSECT.** No encontramos una descripción pública de funciones de
+aprendizaje automático en INTERSECT, ni un asistente conversacional propio, ni un producto que
+reemplace corridas con un proxy, ni una confirmación de que Tela opere corridas de INTERSECT.
+Si alguien de SLB se lo ofrece a tu empresa, pedí la demo sobre un modelo propio.
+
+</div>
+
+### El resto del mercado, en una tabla
+
+| Producto | Asistente que conversa | Aprendizaje automático | Puerta para un agente | Fuente |
+| --- | --- | --- | --- | --- |
+| tNavigator | Sí, local; desde 26.1 acepta modelos externos | AHM con proxies, flash con ML | API de Python, servidor MCP (26.2) | [RFD](https://rfdyn.com/industries/machine-learning-ai/) |
+| Petrel | Petrel AI Assistant, Tela | Fallas, horizontes, propiedades | Python Tool Pro, Ocean (C#) | [Cegal](https://www.cegal.com/en/software/data-science-and-cegal-prizm/cegal-python-tool-pro) |
+| INTERSECT | No encontrado | Sin detalle público | Python para manejo de campo | [SLB](https://www.software.slb.com/software-news/support-news/intersect/intersect-2024-3) |
+| CMG (CMOST-AI) | No encontrado | Ajuste histórico y optimización con ML | Sin detalle público | [CMG](https://www.cmgl.ca/solutions/software/cmost/) |
+| Halliburton DecisionSpace 365 | Prueba de concepto con Claude en Amazon Bedrock, para sísmica | Modelos de ML integrados | Sin detalle público | [AWS](https://aws.amazon.com/blogs/machine-learning/halliburton-enhances-seismic-workflow-creation-with-amazon-bedrock-and-generative-ai/), [Halliburton](https://www.halliburton.com/en/software/decisionspace-365-enterprise) |
+| Stone Ridge ECHELON | ENVOY, prototipo con Claude en Amazon Bedrock | No encontrado | Archivos de entrada en texto | [Stone Ridge](https://stoneridgetechnology.com/company/blog/envoy-an-ai-assistant-for-reservoir-simulation/) |
+| OPM Flow + ResInsight (abiertos) | No | No, de fábrica | Paquete `opm` de Python, API de ResInsight, un servidor MCP de la comunidad | [OPM](https://pypi.org/project/opm/), [resinsight-mcp](https://github.com/hnil/resinsight-mcp) |
+
+OPM Flow es un simulador abierto que lee archivos en formato ECLIPSE. Con ResInsight y su
+servidor MCP comunitario, se puede probar la capa 3 completa sobre un modelo público, sin licencias
+y sin datos de la empresa.
+
+### Cómo funciona un proxy del simulador
+
+La capa 2 es la más vieja y la que más se usa en ajuste histórico. Un proxy es un modelo de
+aprendizaje supervisado entrenado con corridas del simulador:
+
+<figure className="figura">
+  <img
+    src="slides/img/preguntas-proxy.svg"
+    alt="Cinco pasos: parámetros inciertos; cientos de corridas del simulador, horas cada una; una tabla de ejemplos de entrada y salida; un proxy entrenado que responde en segundos; miles de preguntas para ajuste histórico, P10, P50 y P90 y optimización. Una flecha punteada vuelve al simulador para confirmar los casos que importan. Dos avisos: el costo está en las corridas de entrenamiento, y fuera de rango el proxy se equivoca sin avisar."
+  />
+</figure>
+
+Es el mismo mecanismo de la sesión 1: ejemplos con respuesta, un modelo que aprende la relación y
+un error que se mide con datos que el modelo no vio. Y vale lo que dice la sesión 8: la simulación
+sigue siendo trabajo de reservoristas. El proxy acelera la exploración, y el caso que se lleva a
+una decisión se corre en el simulador.
+
+<details>
+<summary>Para curiosos: qué está haciendo la investigación</summary>
+
+- **Operadores neuronales.** U-FNO predijo la migración de CO₂ unas 10,000 veces más rápido que
+  el simulador en los casos de prueba de sus autores ([Wen y otros, 2022](https://arxiv.org/abs/2109.03697)).
+  La versión anidada llegó a escala de cuenca ([Wen y otros, 2023](https://arxiv.org/abs/2210.17051)).
+- **Redes sobre grafos,** para grillas irregulares y optimización de pozos
+  ([Stanford, 2024](https://arxiv.org/abs/2312.08625)).
+- **NVIDIA PhysicsNeMo** trae un ejemplo entrenado con corridas de OPM Flow sobre Norne, un campo
+  público. Su documentación reconoce que los errores "accumulate over time"
+  ([ejemplo](https://docs.nvidia.com/physicsnemo/26.08/physicsnemo/examples/reservoir_simulation/xmgn/README.html)).
+- **Agentes que arman modelos.** JutulGPT, de SINTEF, es un agente que construye modelos de
+  simulación en JutulDarcy, los corre y los valida en un loop, y marca las ambigüedades del pedido
+  ([Lie y otros, 2026](https://arxiv.org/abs/2603.00214)). En ADIPEC 2025 hubo varios trabajos de
+  agentes sobre simuladores, por ejemplo uno con 18 herramientas y búsqueda en documentos
+  ([SPE-229646-MS](https://onepetro.org/SPEADIP/proceedings-abstract/25ADIP/25ADIP/D021S069R002/793001)).
+
+Las velocidades de estos papers se miden después de entrenar y sobre los casos de sus autores. El
+costo de las corridas de entrenamiento queda afuera de la cuenta.
+
+</details>
+
+### Qué se puede hacer el lunes
+
+1. **Preguntar qué hay.** Qué versión de tNavigator o de Petrel tiene la empresa, si el AI
+   Assistant o Tela están licenciados, y a qué modelo de lenguaje apuntan.
+2. **Probar la capa 3 con dato público.** Un agente de terminal, OPM Flow y ResInsight, sobre
+   Norne o Volve. El AGENTS.md de la sesión 5 se adapta con tres líneas: qué modelo es, qué no se
+   toca y cómo se valida el resultado.
+3. **Si tienen tNavigator 26.2 o posterior,** pedirle a sistemas que evalúe el servidor MCP local
+   con el agente que ya contrató la empresa.
+
+## Fuentes
+
+Todas abiertas y revisadas el 29 de septiembre de 2026. Las de fabricantes cuentan lo que el
+fabricante afirma.
+
+**Microsoft y GitHub**
+
+- [Microsoft Copilot: modelos de Anthropic como subprocesadores](https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor)
+- [Researcher](https://learn.microsoft.com/en-us/microsoft-365/copilot/researcher-agent) · [Agent Mode](https://support.microsoft.com/en-us/topic/get-started-with-agent-mode-in-word-excel-and-powerpoint-4d322d7f-5e89-4f66-9fa4-57d328b156ff) · [Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) · [Copilot Studio, computer use](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use)
+- [Anuncio de Copilot Home, Code y Autopilot, 25 de septiembre de 2026](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)
+- [VS Code: agentes](https://code.visualstudio.com/docs/copilot/agents/overview) · [instalación en Windows](https://code.visualstudio.com/docs/setup/windows) · [modo portable](https://code.visualstudio.com/docs/editor/portable) · [políticas](https://code.visualstudio.com/docs/enterprise/policies) · [instrucciones](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) · [prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
+- [GitHub: políticas de Copilot](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies) · [modelos](https://docs.github.com/en/copilot/reference/ai-models/supported-models) · [agentes de terceros](https://docs.github.com/en/copilot/concepts/agents/about-third-party-agents) · [Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) · [instrucciones del repositorio](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)
+
+**Anthropic y OpenAI**
+
+- [Claude Code: instalación](https://code.claude.com/docs/en/setup) · [red y proxy](https://code.claude.com/docs/en/network-config) · [configuración administrada](https://code.claude.com/docs/en/managed-settings) · [proveedores de nube](https://code.claude.com/docs/en/third-party-integrations)
+- [Cowork: primeros pasos](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) · [Claude Desktop en Windows](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows) · [Cowork en la web](https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile) · [Cowork en Team y Enterprise](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)
+- [Codex: repositorio](https://github.com/openai/codex) · [CLI](https://learn.chatgpt.com/docs/codex/cli) · [sandbox de Windows](https://learn.chatgpt.com/docs/windows/windows-sandbox) · [app de Windows](https://learn.chatgpt.com/docs/windows/windows-app) · [administración en Enterprise](https://learn.chatgpt.com/docs/enterprise/admin-setup)
+
+**Herramientas de base**
+
+- [Node.js](https://nodejs.org/en/download) · [carpetas de npm](https://docs.npmjs.com/cli/v11/configuring-npm/folders) · [uv](https://docs.astral.sh/uv/getting-started/installation/) · [Git para Windows](https://git-scm.com/install/windows) · [Scoop](https://github.com/ScoopInstaller/Install)
+
+**Software de reservorios**
+
+- Rock Flow Dynamics: [IA y ML en tNavigator](https://rfdyn.com/industries/machine-learning-ai/) · [25.2](https://rfdyn.com/tnavigator-25-2-key-updates-now-available/) · [25.3](https://rfdyn.com/tnavigator-25-3-key-updates-now-available/) · [25.4](https://www.rfdyn.com/tnavigator-25-4-key-updates-now-available/) · [26.1](https://rfdyn.com/tnavigator-26-1-advancing-integrated-modelling-and-ai-capabilities/) · [26.2](https://www.rfdyn.eu/tnavigator-26-2-accelerating-the-digital-energy-workflow-with-ai-petrophysics-and-advanced-simulation/)
+- SLB: [Petrel ML](https://www.slb.com/products-and-services/delivering-digital-at-scale/subsurface/machine-learning) · [Petrel AI Assistant](https://www.slb.com/videos/petrel-ai-assistant) · [Tela](https://www.slb.com/newsroom/press-release/2025/pr-2025-1103-slb-tela-ai) · [Tela en JPT](https://jpt.spe.org/slb-unveils-agentic-ai-for-upstream-workflows) · [Techlog](https://www.slb.com/products-and-services/delivering-digital-at-scale/software/techlog-wellbore-software/techlog-features) · [INTERSECT 2024.3](https://www.software.slb.com/software-news/support-news/intersect/intersect-2024-3) · [INTERSECT 2025.4](https://www.software.slb.com/software-news/support-news/intersect/intersect-2025-4) · [simulación en Delfi](https://www.slb.com/products-and-services/delivering-digital-at-scale/software/delfi/delfi-solutions/delfi-on-demand-reservoir-simulation) · [Ocean](https://www.ocean.slb.com/en/developer/petrel)
+- [Cegal Python Tool Pro](https://www.cegal.com/en/software/data-science-and-cegal-prizm/cegal-python-tool-pro) · [CMG CMOST](https://www.cmgl.ca/solutions/software/cmost/) · [Halliburton DecisionSpace 365](https://www.halliburton.com/en/software/decisionspace-365-enterprise) · [Halliburton y Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/halliburton-enhances-seismic-workflow-creation-with-amazon-bedrock-and-generative-ai/) · [Stone Ridge ENVOY](https://stoneridgetechnology.com/company/blog/envoy-an-ai-assistant-for-reservoir-simulation/)
+- Abiertos: [OPM Flow en Python](https://pypi.org/project/opm/) · [ResInsight](https://resinsight.org/) · [resinsight-mcp](https://github.com/hnil/resinsight-mcp)
+- Investigación: [U-FNO](https://arxiv.org/abs/2109.03697) · [FNO anidado](https://arxiv.org/abs/2210.17051) · [redes sobre grafos](https://arxiv.org/abs/2312.08625) · [PhysicsNeMo con Norne](https://docs.nvidia.com/physicsnemo/26.08/physicsnemo/examples/reservoir_simulation/xmgn/README.html) · [JutulGPT](https://arxiv.org/abs/2603.00214) · [SPE-229646-MS](https://onepetro.org/SPEADIP/proceedings-abstract/25ADIP/25ADIP/D021S069R002/793001)

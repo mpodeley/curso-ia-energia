@@ -3,6 +3,7 @@ import { apiHabilitada } from './lib/config'
 import { IdentidadProvider } from './lib/identidad'
 import { HomePage } from './pages/HomePage'
 import { PanelPage } from './pages/PanelPage'
+import { PreguntasPage } from './pages/PreguntasPage'
 import { RecursosPage } from './pages/RecursosPage'
 import { SesionPage } from './pages/SesionPage'
 import { hrefFor, useHashRoute } from './router'
@@ -19,6 +20,7 @@ export default function App() {
           <nav className="nav" aria-label="Principal">
             <a href={hrefFor({ page: 'home' })}>Programa</a>
             <a href={hrefFor({ page: 'recursos' })}>Recursos</a>
+            <a href={hrefFor({ page: 'preguntas' })}>Preguntas</a>
           </nav>
         </div>
       </header>
@@ -28,6 +30,7 @@ export default function App() {
           {route.page === 'home' && <HomePage />}
           {route.page === 'sesion' && <SesionPage n={route.n} />}
           {route.page === 'recursos' && <RecursosPage />}
+          {route.page === 'preguntas' && <PreguntasPage />}
           {route.page === 'panel' && <PanelPage />}
         </ErrorBoundary>
       </main>

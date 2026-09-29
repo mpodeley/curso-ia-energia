@@ -13,6 +13,7 @@ export type Route =
   | { page: 'home' }
   | { page: 'sesion'; n: number }
   | { page: 'recursos' }
+  | { page: 'preguntas' }
   | { page: 'panel' }
 
 export function parseHash(hash: string): Route {
@@ -22,6 +23,7 @@ export function parseHash(hash: string): Route {
     if (Number.isInteger(n) && n >= 1 && n <= N_SESIONES) return { page: 'sesion', n }
   }
   if (h === 'recursos') return { page: 'recursos' }
+  if (h === 'preguntas') return { page: 'preguntas' }
   if (h === 'panel') return { page: 'panel' }
   return { page: 'home' }
 }
@@ -34,6 +36,8 @@ export function hrefFor(route: Route): string {
       return `#/sesion/${route.n}`
     case 'recursos':
       return '#/recursos'
+    case 'preguntas':
+      return '#/preguntas'
     case 'panel':
       return '#/panel'
   }

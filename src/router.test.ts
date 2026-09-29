@@ -20,6 +20,11 @@ describe('parseHash', () => {
     expect(parseHash('#/recursos')).toEqual({ page: 'recursos' })
   })
 
+  it('routes the cohort questions page', () => {
+    expect(parseHash('#/preguntas')).toEqual({ page: 'preguntas' })
+    expect(parseHash('#/preguntas/')).toEqual({ page: 'preguntas' })
+  })
+
   it('routes the instructor panel', () => {
     expect(parseHash('#/panel')).toEqual({ page: 'panel' })
     expect(parseHash('#/panel/')).toEqual({ page: 'panel' })
@@ -30,6 +35,7 @@ describe('parseHash', () => {
       { page: 'home' },
       { page: 'sesion', n: 3 },
       { page: 'recursos' },
+      { page: 'preguntas' },
       { page: 'panel' },
     ] as const
     for (const r of routes) expect(parseHash(hrefFor(r))).toEqual(r)
