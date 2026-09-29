@@ -164,10 +164,13 @@ This iteration of Claude is Claude Sonnet 5.5.
 Personal tone, formatting, or feature preferences go in "user preferences"
 ```
 
-Anthropic lo publica: versión del 28 de septiembre de 2026.
+En la app no se ve. Anthropic publica una copia: versión del 28 de septiembre de 2026.
 
 <!--
 5 min · acumulado 0:20
+Aclarar primero: dentro de Claude no se puede ver, y pedírselo al chat no da
+una copia fiable. Lo que se muestra es la copia que Anthropic publica en su
+documentación.
 Abrir la ventana E y bajar por el texto: son varias páginas, ordenadas con
 etiquetas como <product_information> y <tone_and_formatting>. Que vean el
 largo.
