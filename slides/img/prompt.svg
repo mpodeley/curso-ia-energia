@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 480" width="100%" role="img" aria-labelledby="titulo desc">
-<title id="titulo">Qué es un prompt: todo lo que recibe el modelo en cada pedido</title>
-<desc id="desc">Un recuadro grande, el prompt, contiene cuatro capas. Arriba, el prompt de sistema, que escribe quien arma la aplicación y que el usuario no ve: la fecha, las reglas, las herramientas. Debajo, tus instrucciones, las que dejás escritas en la configuración o en un proyecto. Después, la conversación: el pedido anterior, la respuesta anterior y tu pedido de ahora, que es el prompt de usuario. Al final, los adjuntos. Una flecha lleva todo eso al modelo, que predice la continuación, y de ahí sale la respuesta. Todo viaja junto en cada pedido: el modelo no recuerda nada entre uno y otro.</desc>
+<title id="titulo">Qué es un prompt: todo lo que entra en la ventana de contexto en cada pedido</title>
+<desc id="desc">Un recuadro grande, el prompt, que tiene que entrar entero en la ventana de contexto, contiene cuatro capas. Arriba, el prompt de sistema, que escribe quien arma la aplicación y que el usuario no ve; en Claude son unas 3,000 palabras. Debajo, tus instrucciones, las que dejás escritas en la configuración o en un proyecto. Después, la conversación: el pedido anterior, la respuesta anterior y tu pedido de ahora, que es el prompt de usuario. Al final, los adjuntos. Una flecha lleva todo eso al modelo, que predice la continuación, y de ahí sale la respuesta. Todo viaja junto en cada pedido: el modelo no recuerda nada entre uno y otro.</desc>
 <defs>
 <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
 <path d="M0 0 L10 5 L0 10 z" fill="#4a5361"/>
@@ -9,10 +9,10 @@
 <rect width="1136" height="480" fill="#ffffff"/>
 <rect x="16" y="16" width="700" height="448" rx="14" fill="#f6f7f8" stroke="#4a5361" stroke-width="2"/>
 <text x="40" y="56" font-size="30" fill="#16181d" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">El prompt</text>
-<text x="186" y="56" font-size="19" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">todo lo que recibe el modelo en cada pedido</text>
+<text x="186" y="56" font-size="19" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">todo tiene que entrar en la ventana de contexto</text>
 <rect x="40" y="78" width="652" height="78" rx="12" fill="#c24b22" fill-opacity="0.07" stroke="#c24b22" stroke-width="2"/>
 <text x="58" y="110" font-size="22" fill="#c24b22" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">Prompt de sistema</text>
-<text x="58" y="138" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">lo escribe quien arma la aplicación: la fecha, las reglas, las herramientas</text>
+<text x="58" y="138" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">lo escribe quien arma la aplicación; en Claude, unas 3,000 palabras</text>
 <text x="674" y="110" font-size="16" fill="#c24b22" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="end">no lo ves</text>
 <rect x="40" y="166" width="652" height="64" rx="12" fill="#8a6412" fill-opacity="0.07" stroke="#8a6412" stroke-width="2"/>
 <text x="58" y="195" font-size="22" fill="#8a6412" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">Tus instrucciones</text>
@@ -25,12 +25,12 @@
 <rect x="58" y="318" width="616" height="28" rx="8" fill="#ffffff" stroke="#d9dce0" stroke-width="1.2"/>
 <text x="72" y="338" font-size="16" fill="#4a5361" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">asistente</text>
 <text x="172" y="338" font-size="16" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">su respuesta anterior</text>
-<rect x="58" y="352" width="616" height="28" rx="8" fill="#ffffff" stroke="#1f6a9b" stroke-width="2"/>
-<text x="72" y="372" font-size="16" fill="#1f6a9b" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">usuario</text>
-<text x="172" y="372" font-size="16" fill="#16181d" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">tu pedido de ahora: el prompt de usuario</text>
+<rect x="58" y="352" width="616" height="28" rx="8" fill="#1f6a9b" stroke="#1f6a9b" stroke-width="2"/>
+<text x="72" y="372" font-size="16" fill="#ffffff" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">usuario</text>
+<text x="172" y="372" font-size="16" fill="#ffffff" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">tu pedido de ahora: el prompt de usuario</text>
 <rect x="40" y="400" width="652" height="52" rx="12" fill="#147a5f" fill-opacity="0.07" stroke="#147a5f" stroke-width="2"/>
 <text x="58" y="432" font-size="22" fill="#147a5f" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="start">Adjuntos</text>
-<text x="176" y="432" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">el PDF, la planilla, la foto: también entran como texto o imagen</text>
+<text x="176" y="432" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">el PDF entero también entra: cada página ocupa lugar</text>
 <line x1="724" y1="240" x2="790" y2="240" stroke="#4a5361" stroke-width="2.5" marker-end="url(#flecha)"/>
 <rect x="800" y="176" width="150" height="128" rx="12" fill="#1f6a9b" fill-opacity="0.07" stroke="#1f6a9b" stroke-width="2"/>
 <text x="875" y="234" font-size="28" fill="#1f6a9b" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="middle">Modelo</text>
@@ -41,9 +41,10 @@
 <text x="1064" y="236" font-size="19" fill="#16181d" font-family="Space Grotesk, ui-sans-serif, system-ui, sans-serif" font-weight="500" text-anchor="middle">Respuesta</text>
 <text x="1064" y="262" font-size="15" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="middle">un turno más</text>
 <text x="1064" y="280" font-size="15" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="middle">de asistente</text>
-<text x="800" y="350" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">Todo viaja junto en cada pedido:</text>
-<text x="800" y="374" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">el modelo no recuerda nada</text>
-<text x="800" y="398" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">entre un pedido y el otro.</text>
+<text x="800" y="350" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">Si no entra en la ventana,</text>
+<text x="800" y="374" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">para el modelo no existe.</text>
+<text x="800" y="398" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">Y no recuerda nada entre</text>
+<text x="800" y="422" font-size="17" fill="#4a5361" font-family="IBM Plex Sans, ui-sans-serif, system-ui, sans-serif" text-anchor="start">un pedido y el otro.</text>
 <!-- Fuentes incrustadas: copia de IBM Plex Sans y Space Grotesk de
      slides/themes/podeley-fonts.css. Un SVG cargado como <img> no ve las
      fuentes de la página, y sin esto cae en la fuente del sistema, más ancha. -->

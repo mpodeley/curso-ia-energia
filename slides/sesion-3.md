@@ -124,14 +124,50 @@ Arranca 0:08, termina 0:23.
 
 ![Un recuadro grande, el prompt, con cuatro capas: el prompt de sistema, tus instrucciones, la conversación con tu pedido de ahora, y los adjuntos; una flecha lleva todo al modelo](img/prompt.svg)
 
-Todo viaja junto en cada pedido: el modelo no recuerda nada entre un pedido y el otro.
+Todo tiene que entrar en la ventana de contexto: lo que no entra, para el modelo no existe.
 
 <!--
-4 min · acumulado 0:12
+3 min · acumulado 0:11
 Retomar la ventana de contexto de ayer: el prompt es lo que hay en la
 ventana cuando le toca responder. Recorrer las capas de arriba abajo.
 La que más sorprende es la primera: hay texto que el modelo recibe antes de
-tu primer mensaje, y no lo escribiste vos.
+tu primer mensaje, y no lo escribiste vos. La que se resalta es la tuya.
+-->
+
+---
+
+## El prompt vive en la ventana de contexto
+
+- Todo entra junto en cada pedido, y la respuesta también
+- El de sistema de Claude ocupa unas **3,000 palabras** antes de tu primer mensaje
+- **Tu prompt de usuario** es la capa más chica, y la que decide qué se hace con el resto
+
+<!--
+2 min · acumulado 0:13
+El modelo no recuerda nada entre pedidos: la conversación entera se vuelve a
+mandar cada vez. Por eso una conversación larga termina llenando la ventana.
+3,000 palabras son unos 5,000 tokens (medido sobre la versión publicada del
+28 de septiembre).
+-->
+
+---
+
+## Pegar el documento entero
+
+- Unos **670 tokens por página** (la cuenta de Google: un millón cada 1,500)
+- Gemini gratuito: 32,000 tokens, unas 48 páginas; ChatGPT gratuito, unas 12
+- Un reglamento de 84 páginas **no entra**
+
+Esta tarde, RAG: se busca el pedazo que responde y se pega solo ese.
+
+<!--
+2 min · acumulado 0:15
+Cuando no entra, según la aplicación, lo que sobra se corta sin avisar, el
+pedido se rechaza, o se cae lo más viejo de la conversación: el escritorio
+de ayer. Y aunque entre, la respuesta es un párrafo entre miles.
+Anticipar la sesión 4 sin desarrollarla: en vez de pegar todo, buscar el
+fragmento y pegar solo ese. Eso es RAG, generación aumentada por
+recuperación.
 -->
 
 ---
@@ -143,7 +179,7 @@ tu primer mensaje, y no lo escribiste vos.
 - Por dentro son dos campos del mismo pedido: `system` y `messages`
 
 <!--
-3 min · acumulado 0:15
+2 min · acumulado 0:17
 En la página está el ejemplo oficial de Anthropic, con el campo "system" y un
 mensaje de usuario. OpenAI lo llama "instructions" o mensajes de
 "developer", con prioridad sobre los del usuario; Google, "system_instruction".
@@ -168,7 +204,7 @@ Personal tone, formatting, or feature preferences go in "user preferences"
 En la app no se ve. Anthropic publica una copia: versión del 28 de septiembre de 2026.
 
 <!--
-5 min · acumulado 0:20
+3 min · acumulado 0:20
 Aclarar primero: dentro de Claude no se puede ver, y pedírselo al chat no da
 una copia fiable. Lo que se muestra es la copia que Anthropic publica en su
 documentación.

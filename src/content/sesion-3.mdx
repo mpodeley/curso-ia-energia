@@ -21,7 +21,7 @@ Si no llegás, lo hacemos en los primeros minutos.
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
 | Apertura | 8 min | El día, el sitio, y cada uno con Claude abierto y la ejecución de código activada |
-| Qué es un prompt | 15 min | Todo lo que recibe el modelo en un pedido, el prompt de sistema y el de usuario, cómo se ve el de Claude y dónde escribís el tuyo |
+| Qué es un prompt | 15 min | Todo lo que recibe el modelo en un pedido y cuánto entra en la ventana de contexto, el prompt de sistema y el de usuario, cómo se ve el de Claude y dónde escribís el tuyo |
 | Un parte, cuatro correos | 25 min | La parte de EP Petroecuador de un parte diario de la ARCH, contada a cuatro destinatarios en tres idiomas |
 | Qué hace un buen prompt | 5 min | Las piezas, dichas sobre lo que acabamos de hacer |
 | Prompt corto, dato bueno | 12 min | La misma pregunta de una línea sobre un archivo limpio y sobre uno sucio |
@@ -41,10 +41,33 @@ predice lo que sigue; el prompt es lo que hay en esa ventana cuando le toca resp
 <figure className="figura">
   <img
     src="slides/img/prompt.svg"
-    alt="Un recuadro grande, el prompt, con cuatro capas: el prompt de sistema, que escribe quien arma la aplicación y que no ves; tus instrucciones, las que dejás escritas en la configuración; la conversación, con el pedido anterior, la respuesta anterior y tu pedido de ahora, que es el prompt de usuario; y los adjuntos. Una flecha lleva todo al modelo, y de ahí sale la respuesta."
+    alt="Un recuadro grande, el prompt, que tiene que entrar entero en la ventana de contexto, con cuatro capas: el prompt de sistema, que escribe quien arma la aplicación y que no ves; tus instrucciones, las que dejás escritas en la configuración; la conversación, con el pedido anterior, la respuesta anterior y tu pedido de ahora, que es el prompt de usuario; y los adjuntos. Una flecha lleva todo al modelo, y de ahí sale la respuesta."
   />
-  <figcaption>Todo viaja junto en cada pedido: el modelo no recuerda nada entre un pedido y el otro.</figcaption>
+  <figcaption>Todo tiene que entrar en la ventana de contexto: lo que no entra, para el modelo no existe.</figcaption>
 </figure>
+
+### El prompt vive en la ventana de contexto
+
+La ventana de contexto de la sesión 2 es el tamaño máximo del prompt. Todo lo de la figura tiene
+que entrar junto en cada pedido, y la respuesta también: el modelo no recuerda nada entre un pedido
+y el otro, así que la conversación entera se vuelve a mandar cada vez. El prompt de sistema de
+Claude ya ocupa cerca de 3,000 palabras, unos 5,000 tokens, antes de tu primer mensaje.
+
+De todas las capas, **el prompt de usuario** es la única que escribís en cada pedido, y suele ser
+la más chica. Es la que decide qué se hace con todo lo demás, y por eso vale la pena escribirla
+bien.
+
+**Pegar un documento entero puede saturar la ventana.** Google calcula un millón de tokens por
+cada 1,500 páginas, unos 670 tokens por página. La cuenta gratuita de Gemini lee 32,000 tokens por
+vez, unas 48 páginas; la de ChatGPT, unas 12 páginas por pedido. Un reglamento de 84 páginas no
+entra en ninguna de las dos. Según la aplicación, lo que sobra se corta sin avisar, el pedido se
+rechaza, o se cae lo más viejo de la conversación, como el escritorio de la sesión 2. Y aunque
+entre, la respuesta que buscás es un párrafo entre miles, y el modelo tiene que encontrarlo entre
+todo lo demás.
+
+Esta tarde, en la sesión 4, se hace al revés: en vez de pegar el documento entero, se busca el
+pedazo que responde la pregunta y se pega solo ese. Eso es RAG (generación aumentada por
+recuperación).
 
 ### Prompt de sistema y prompt de usuario
 
