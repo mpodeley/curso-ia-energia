@@ -16,8 +16,9 @@ Sesión 3 de 8 · día 2: datos y documentos, con el chatbot trabajando · 2 h e
 0:00 · portada mientras entra la gente
 Ventanas de hoy: A este deck; C el sitio en la página de la sesión 3; D Claude
 con la ejecución de código y la creación de archivos activadas (si se puede,
-una cuenta gratuita, para ver lo mismo que ellos); E la página de System
-Prompts de Anthropic, en la entrada de Claude Sonnet 5.5; F Gemini como plan B.
+una cuenta gratuita, para ver lo mismo que ellos); E la página de
+Indicaciones del sistema de Claude Sonnet 5.5, en la documentación en español
+(platform.claude.com/docs/es/release-notes/system-prompts/claude-sonnet-5-5); F Gemini como plan B.
 En el escritorio: los seis partes de la ARCH (public/descargas/
 arch-reporte-diario-2026-09-{08,09,10,11,14,15}.pdf),
 campos_capiv_2006_2026.csv, campos_capiv_sucio.csv y

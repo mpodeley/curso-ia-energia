@@ -51,10 +51,10 @@ predice lo que sigue; el prompt es lo que hay en esa ventana cuando le toca resp
 El **prompt de sistema** lo escribe quien arma la aplicación, y vale para toda la conversación:
 quién es el asistente, qué fecha es, cómo responde, qué herramientas tiene. El **prompt de
 usuario** es lo que escribís vos en cada turno. Anthropic lo define así en la
-[referencia de su interfaz de programación](https://platform.claude.com/docs/en/api/messages): el
+[referencia de su interfaz de programación](https://platform.claude.com/docs/es/api/messages): el
 prompt de sistema es "una forma de darle a Claude contexto e instrucciones, como una meta o un
 rol". Por dentro son dos campos distintos del mismo pedido. Este es el ejemplo de la
-[guía de prompting de Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices),
+[guía de prompting de Anthropic](https://platform.claude.com/docs/es/build-with-claude/prompt-engineering/claude-prompting-best-practices),
 recortado:
 
 ```json
@@ -73,10 +73,15 @@ y Google con `system_instruction` ([guía de Gemini](https://ai.google.dev/gemin
 
 ### Así se ve el prompt de sistema de Claude
 
-Dentro de Claude no se puede ver: la aplicación no lo muestra, y pedírselo al chat no da una copia fiable. Lo
-que sí hace Anthropic es publicar una copia en su documentación, en
-[System Prompts](https://platform.claude.com/docs/en/release-notes/system-prompts/overview). El de
-Claude Sonnet 5.5, el modelo de la cuenta gratuita, tiene una versión del 28 de septiembre de 2026.
+Dentro de Claude no se puede ver: la aplicación no lo muestra, y pedírselo al chat no da una copia
+fiable. Lo que sí hace Anthropic es publicar una copia en su documentación, en
+[Indicaciones del sistema](https://platform.claude.com/docs/es/release-notes/system-prompts/overview),
+con una página por modelo: la interfaz está en español y el prompt, en inglés, tal cual lo recibe
+Claude. El de
+[Claude Sonnet 5.5](https://platform.claude.com/docs/es/release-notes/system-prompts/claude-sonnet-5-5),
+el modelo de la cuenta gratuita, tiene una versión del 28 de septiembre de 2026; el de
+[Claude Opus 5.5](https://platform.claude.com/docs/es/release-notes/system-prompts/claude-opus-5-5),
+el grande de pago, una del 22.
 Son varias páginas de texto que Claude recibe antes de tu primer mensaje, ordenadas con etiquetas
 como `<product_information>` o `<tone_and_formatting>`. Algunos fragmentos, tal cual:
 
@@ -167,7 +172,7 @@ el mismo pedido corto con las instrucciones puestas y sin ellas.
 
 ### Cómo se revisa un correo en un idioma que no leés
 
-La [guía multilingüe de Anthropic](https://platform.claude.com/docs/en/build-with-claude/multilingual-support)
+La [guía multilingüe de Anthropic](https://platform.claude.com/docs/es/build-with-claude/multilingual-support)
 recomienda nombrar siempre el idioma de destino, idealmente en el prompt de sistema. Los errores
 graves de traducción automática, según la
 [nota de transparencia de Microsoft Translator](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/translator/transparency-note),
@@ -182,7 +187,7 @@ a salir de la empresa en un idioma que no leés lo revisa alguien que lo lee.
 
 Anthropic propone pensar al modelo como "un empleado brillante pero nuevo, que no conoce tus normas
 ni tu forma de trabajar". Su regla de oro, en la
-[guía de prompting](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices):
+[guía de prompting](https://platform.claude.com/docs/es/build-with-claude/prompt-engineering/claude-prompting-best-practices):
 mostrale tu prompt a un colega que no conozca la tarea y pedile que lo siga; si él se confunde,
 Claude también. Las piezas que acabás de usar en el correo:
 

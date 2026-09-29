@@ -169,21 +169,21 @@ export const RECURSOS: Record<number, Recurso[]> = {
       // Rehecha el 2026-09-28 (noche): la sesión 3 explica qué es un prompt y
       // muestra el prompt de sistema publicado de Claude.
       tipo: 'lectura',
-      titulo: 'Claude Sonnet 5.5 system prompts',
-      url: 'https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-5-5',
+      titulo: 'Indicaciones del sistema de Claude Sonnet 5.5',
+      url: 'https://platform.claude.com/docs/es/release-notes/system-prompts/claude-sonnet-5-5',
       fuente: 'Anthropic',
-      idioma: 'en',
+      idioma: 'es',
       porque:
-        'El prompt de sistema completo que recibe Claude en la aplicación, antes de tu primer mensaje, en la versión del 28 de septiembre de 2026. Son varias páginas: la fecha, qué productos existen, cómo responde y cómo no. La sesión muestra cinco fragmentos.',
+        'El prompt de sistema completo que recibe Claude en la aplicación, antes de tu primer mensaje, en la versión del 28 de septiembre de 2026. Dentro de la app no se ve; esta copia la publica Anthropic, con la página en español y el prompt en inglés, tal cual lo recibe Claude. La sesión muestra cinco fragmentos.',
     },
     {
       tipo: 'lectura',
-      titulo: 'Prompting best practices',
-      url: 'https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices',
+      titulo: 'Mejores prácticas de prompting',
+      url: 'https://platform.claude.com/docs/es/build-with-claude/prompt-engineering/claude-prompting-best-practices',
       fuente: 'Anthropic',
-      idioma: 'en',
+      idioma: 'es',
       porque:
-        'La guía oficial de Anthropic: el modelo como un empleado brillante pero nuevo, la regla de oro de mostrarle el prompt a un colega, los ejemplos, las etiquetas y el prompt de sistema. Está escrita para quien programa, pero cada técnica sirve en el chat. El traductor del navegador alcanza.',
+        'La guía oficial de Anthropic: el modelo como un empleado brillante pero nuevo, la regla de oro de mostrarle el prompt a un colega, los ejemplos, las etiquetas y el prompt de sistema. Está escrita para quien programa, pero cada técnica sirve en el chat, y tiene versión en español.',
     },
     {
       tipo: 'lectura',
