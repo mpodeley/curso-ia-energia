@@ -106,12 +106,20 @@ button {
 .nav a:hover {
   color: var(--pd-text);
 }
-/* Four links plus the brand don't fit a phone in one row. */
-@media (max-width: 480px) {
+/* Six links plus the brand don't fit one row below tablet width: the brand
+   takes its own row and the links wrap underneath it. */
+@media (max-width: 820px) {
+  .masthead-inner {
+    flex-wrap: wrap;
+    row-gap: var(--pd-sp-1);
+    padding-block: var(--pd-sp-2);
+  }
+  .brand {
+    flex-basis: 100%;
+  }
   .nav {
     flex-wrap: wrap;
-    justify-content: flex-end;
-    column-gap: var(--pd-sp-3);
+    column-gap: var(--pd-sp-4);
     row-gap: var(--pd-sp-1);
   }
 }

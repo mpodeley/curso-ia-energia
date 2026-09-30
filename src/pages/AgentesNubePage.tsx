@@ -10,7 +10,7 @@ export function AgentesNubePage() {
       titulo="Agentes en la nube, gratis o baratos, sin instalar nada"
       Cuerpo={Cuerpo}
       anterior={{ route: { page: 'preguntas' }, label: 'Preguntas' }}
-      siguiente={{ route: { page: 'recursos' }, label: 'Recursos' }}
+      siguiente={{ route: { page: 'ia-reservorios' }, label: 'IA en reservorios' }}
     />
   )
 }

@@ -4,6 +4,7 @@ import { IdentidadProvider } from './lib/identidad'
 import { AgentesNubePage } from './pages/AgentesNubePage'
 import { GuiaAgentesPage } from './pages/GuiaAgentesPage'
 import { HomePage } from './pages/HomePage'
+import { IaReservoriosPage } from './pages/IaReservoriosPage'
 import { PanelPage } from './pages/PanelPage'
 import { PreguntasPage } from './pages/PreguntasPage'
 import { RecursosPage } from './pages/RecursosPage'
@@ -25,6 +26,8 @@ export default function App() {
             <a href={hrefFor({ page: 'repaso' })}>Repaso</a>
             <a href={hrefFor({ page: 'recursos' })}>Recursos</a>
             <a href={hrefFor({ page: 'preguntas' })}>Preguntas</a>
+            <a href={hrefFor({ page: 'agentes-nube' })}>Agentes en la nube</a>
+            <a href={hrefFor({ page: 'ia-reservorios' })}>IA en reservorios</a>
           </nav>
         </div>
       </header>
@@ -36,6 +39,7 @@ export default function App() {
           {route.page === 'recursos' && <RecursosPage />}
           {route.page === 'preguntas' && <PreguntasPage />}
           {route.page === 'agentes-nube' && <AgentesNubePage />}
+          {route.page === 'ia-reservorios' && <IaReservoriosPage />}
           {route.page === 'guia-agentes' && <GuiaAgentesPage />}
           {route.page === 'repaso' && <RepasoPage />}
           {route.page === 'panel' && <PanelPage />}

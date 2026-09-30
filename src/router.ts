@@ -15,6 +15,7 @@ export type Route =
   | { page: 'recursos' }
   | { page: 'preguntas' }
   | { page: 'agentes-nube' }
+  | { page: 'ia-reservorios' }
   | { page: 'guia-agentes' }
   | { page: 'repaso' }
   | { page: 'panel' }
@@ -28,6 +29,7 @@ export function parseHash(hash: string): Route {
   if (h === 'recursos') return { page: 'recursos' }
   if (h === 'preguntas') return { page: 'preguntas' }
   if (h === 'agentes-nube') return { page: 'agentes-nube' }
+  if (h === 'ia-reservorios') return { page: 'ia-reservorios' }
   if (h === 'guia-agentes') return { page: 'guia-agentes' }
   if (h === 'repaso') return { page: 'repaso' }
   if (h === 'panel') return { page: 'panel' }
@@ -46,6 +48,8 @@ export function hrefFor(route: Route): string {
       return '#/preguntas'
     case 'agentes-nube':
       return '#/agentes-nube'
+    case 'ia-reservorios':
+      return '#/ia-reservorios'
     case 'guia-agentes':
       return '#/guia-agentes'
     case 'repaso':

@@ -11,7 +11,8 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
   {
     titulo: 'Preguntas de la cohorte',
     items: [
-      { nombre: 'Agentes en la PC de la empresa, e IA en el software de reservorios', href: '#/preguntas', nota: 'Copilot corporativo, Claude Code, Cowork y Codex sin permiso de administrador; qué traen tNavigator, Petrel e INTERSECT' },
+      { nombre: 'Un agente en la PC de la empresa', href: '#/preguntas', nota: 'Copilot corporativo, Claude Code, Cowork y Codex sin permiso de administrador' },
+      { nombre: 'IA en el software de reservorios', href: '#/ia-reservorios', nota: 'qué traen tNavigator, Petrel e INTERSECT, el resto del mercado y cómo funciona un proxy del simulador' },
       { nombre: 'IA y agentes en el trabajo: guía de riesgos y controles', href: '#/guia-agentes', nota: 'la guía para llevarse de la sesión 7: regla de dos, escalera de autonomía, cuatro tareas con su arquitectura segura, qué hacen otras empresas' },
       { nombre: 'Agentes en la nube, gratis o baratos', href: '#/agentes-nube', nota: 'hoja comparativa y tutorial con ChatGPT, para PCs donde no se puede instalar nada' },
     ],
