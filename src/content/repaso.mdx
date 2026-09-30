@@ -177,9 +177,24 @@ tiene cinco maneras de administrarla, y las vemos funcionar hoy.
 
 Un agente es un modelo de lenguaje metido en un loop, con permiso para usar herramientas. Piensa
 qué le falta, pide una acción, mira el resultado y vuelve a pensar, hasta que puede responder.
-Ayer ya lo viste trabajar: cuando Claude consolidó los seis partes de la Agencia de Regulación y
-Control de Hidrocarburos (ARCH) en un Excel, leyó cada PDF, escribió un programa, lo corrió y
-corrigió lo que no cerraba.
+
+Ayer lo viste trabajar en la terminal. Claude Code armó, por fases, un asistente de ingeniería de
+reservorios sobre los datos públicos del campo Volve:
+
+1. **Formato estándar y adaptador.** Convirtió los datos crudos de Volve a un formato propio,
+   con validación y 13 tests. La acumulada de petróleo cerró a 1.3% de la que publica Sodir, el
+   registro petrolero noruego.
+2. **Cálculos de ingeniería.** Caudales, la relación agua-petróleo (RAP) contra la acumulada de
+   petróleo (Np), el gráfico de Chan y la declinación de Arps, en un informe HTML. Cada cálculo
+   se prueba contra datos inventados con resultado conocido, y esos tests atraparon tres errores
+   en el camino.
+3. **App web.** Los mismos análisis en el navegador, con el pozo, la ventana de ajuste y el
+   límite económico elegibles. Las capturas de pantalla encontraron lo que los tests no ven,
+   como leyendas encima de los títulos.
+
+El agente trabajó con las reglas del proyecto escritas en un CLAUDE.md y dejó una nota por fase
+con lo que hizo y lo que encontró: el parte de turno de la figura de arriba. Cada fase quedó en
+su carpeta, así que se puede abrir y ver qué cambió de una a otra.
 
 <AgentTrace sesion={5} />
 
