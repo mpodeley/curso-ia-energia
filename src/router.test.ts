@@ -24,6 +24,7 @@ describe('parseHash', () => {
     expect(parseHash('#/preguntas')).toEqual({ page: 'preguntas' })
     expect(parseHash('#/preguntas/')).toEqual({ page: 'preguntas' })
     expect(parseHash('#/agentes-nube')).toEqual({ page: 'agentes-nube' })
+    expect(parseHash('#/repaso')).toEqual({ page: 'repaso' })
   })
 
   it('routes the instructor panel', () => {
@@ -38,6 +39,7 @@ describe('parseHash', () => {
       { page: 'recursos' },
       { page: 'preguntas' },
       { page: 'agentes-nube' },
+      { page: 'repaso' },
       { page: 'panel' },
     ] as const
     for (const r of routes) expect(parseHash(hrefFor(r))).toEqual(r)

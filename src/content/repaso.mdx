@@ -1,0 +1,229 @@
+import { NextTokenLab } from '../exercises/NextTokenLab'
+import { EscalaDeLosModelos } from '../exercises/EscalaDeLosModelos'
+import { ContextoLab } from '../exercises/ContextoLab'
+import { RagDemo } from '../exercises/RagDemo'
+import { AgentTrace } from '../exercises/AgentTrace'
+
+Esta página junta en un solo recorrido lo que vimos el lunes y el martes, con los mismos gráficos,
+para arrancar el día de agentes con todo a mano. Son cinco pasos: dónde queda un modelo de lenguaje
+dentro de la IA, cómo funciona, qué límites tiene, cómo se trabaja alrededor de esos límites y qué
+es un agente. Al final, qué hacemos hoy y mañana.
+
+## 1. Dónde quedan los LLM dentro de la IA
+
+Un modelo grande de lenguaje (LLM, por su sigla en inglés) es la capa más chica de una serie de
+capas anidadas. La inteligencia artificial contiene al aprendizaje automático, que contiene a las
+redes profundas, que contienen a la IA generativa.
+
+<figure className="figura">
+  <img
+    src="slides/img/capas.svg"
+    alt="Cuatro rectángulos anidados: inteligencia artificial contiene al aprendizaje automático, que contiene a las redes profundas, que contienen a la IA generativa. Cada capa lleva un ejemplo del petróleo: sistemas expertos que interpretan perfiles, un modelo que clasifica pozos, una red que lee perfiles o sísmica, un chatbot que redacta un informe."
+  />
+  <figcaption>Las capas de la IA, con un ejemplo del rubro en cada una.</figcaption>
+</figure>
+
+Durante décadas, cada modelo hizo una sola tarea: un clasificador de pozos clasificaba pozos. A eso
+lo llamamos IA de propósito específico. Un LLM también hace una sola cosa, predecir la palabra
+siguiente, pero para hacerla bien en cualquier texto aprende un poco de todo, y un mismo modelo
+resume, traduce, programa y analiza una planilla. Es una IA de propósito general.
+
+<figure className="figura">
+  <img
+    src="slides/img/estrecha-vs-general.svg"
+    alt="A la izquierda, cuatro modelos de propósito específico, uno por tarea; a la derecha, un modelo grande de lenguaje conectado a seis tareas."
+  />
+  <figcaption>Un modelo por tarea, o un modelo para muchas tareas.</figcaption>
+</figure>
+
+El camino tuvo cuatro eras: reglas escritas a mano, aprender de datos, redes profundas y modelos
+generales. La segunda línea acerca la lupa a 2012–2026, donde está casi todo lo que usamos hoy.
+
+<figure className="figura">
+  <img
+    src="slides/img/linea-de-tiempo.svg"
+    alt="Línea de tiempo de 1950 a 2026 con cuatro eras: reglas escritas a mano, aprender de datos, redes profundas y modelos generales."
+  />
+</figure>
+
+<figure className="figura">
+  <img
+    src="slides/img/linea-de-tiempo-reciente.svg"
+    alt="Línea de tiempo de 2012 a 2026: AlexNet, AlphaGo, Transformer, GPT, GPT-2, GPT-3, InstructGPT, ChatGPT, LLaMA, GPT-4, Claude, o1, DeepSeek-R1, Claude Code, Claude Mythos y GPT-6 Astra."
+  />
+  <figcaption>De AlexNet a los modelos de 2026.</figcaption>
+</figure>
+
+Y hay tres maneras de aprender. Con etiquetas (supervisado), como los pozos que traen su tipo
+declarado. Sin etiquetas (no supervisado), cuando el algoritmo arma grupos solo. Y la del LLM,
+autosupervisado: el texto trae su propia respuesta, porque alcanza con tapar la palabra siguiente.
+
+<figure className="figura">
+  <img
+    src="slides/img/tres-maneras.svg"
+    alt="Tres columnas: supervisado, con pozos que traen su tipo declarado; no supervisado, con puntos grises agrupados; autosupervisado, con una oración a la que se le tapa la palabra siguiente."
+  />
+</figure>
+
+## 2. Cómo funciona un LLM
+
+El modelo lee tokens, pedazos de palabra, y hace una sola operación: calcula qué token es más
+probable que venga después, elige uno, lo agrega al texto y repite. Todo lo que ves en un chatbot
+sale de repetir ese paso miles de veces.
+
+<NextTokenLab sesion={2} />
+
+Se entrena en dos etapas de tamaños muy distintos. El preentrenamiento lee una fracción enorme de
+todo lo escrito y aprende a predecir la palabra siguiente. El ajuste como asistente, mucho más
+chico, le enseña a conversar, seguir instrucciones y negarse a lo que no corresponde.
+
+<figure className="figura">
+  <img
+    src="slides/img/dos-etapas.svg"
+    alt="Un recuadro grande, el preentrenamiento, lleva con una flecha a uno mucho más chico, el ajuste como asistente."
+  />
+  <figcaption>Casi todo el cómputo va al preentrenamiento.</figcaption>
+</figure>
+
+Para predecir bien la palabra siguiente de un manual de perforación, de una demostración o de un
+programa, el modelo tiene que aprender lo que dicen. Con suficiente escala, en los parámetros
+queda comprimida buena parte del conocimiento escrito, y aparece algo más: la capacidad de
+encadenar razonamientos. El gráfico muestra cuánto creció el cómputo de entrenamiento desde 1989.
+
+<EscalaDeLosModelos sesion={2} />
+
+Desde 2024 los modelos, además, piensan paso a paso antes de responder, y con más tiempo aciertan
+más. Hoy compiten con los mejores del mundo en matemática y programación:
+
+- En julio de 2025, una versión de Gemini sacó 35 de 42 puntos en la Olimpíada Internacional de
+  Matemática, nivel de medalla de oro, corregido por los jueces de la olimpíada
+  ([Google DeepMind](https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/)).
+- En septiembre de 2025, en la final mundial de programación universitaria (ICPC), resolvió 10 de
+  12 problemas, nivel oro, incluido uno que no resolvió ningún equipo humano
+  ([Google DeepMind](https://deepmind.google/blog/gemini-achieves-gold-medal-level-at-the-international-collegiate-programming-contest-world-finals/)).
+- Para agosto de 2026, según [Epoch AI](https://epoch.ai/latest/announcing-frontiermath-erdos),
+  la IA había resuelto entre 3 y 5 problemas abiertos de Erdős, preguntas de investigación que los
+  matemáticos no habían podido cerrar.
+- En mayo de 2026, [METR](https://metr.org/time-horizons/) midió que el modelo más fuerte de
+  Anthropic completaba la mitad de las veces tareas que a un experto le llevan al menos 16 horas.
+
+Estas cifras describen lo mejor que logra cada modelo en condiciones medidas. En una tarea tuya,
+con tus datos, el mismo modelo se puede equivocar en algo simple: el nivel alto en promedio no
+garantiza cada respuesta.
+
+## 3. Lo que no puede: la ventana de contexto
+
+Para elegir el próximo token, el modelo mira todo lo que tiene delante: tu pregunta, sus respuestas
+anteriores, los documentos que pegaste. Ese conjunto es la **ventana de contexto**, y tiene un
+tamaño máximo. En septiembre de 2026, los modelos grandes de OpenAI y de Anthropic leen hasta un
+millón de tokens, y la cuenta gratuita de Gemini, 32,000. Lo que no entra no existe para el modelo,
+y el modelo tampoco sabe que se cayó.
+
+<ContextoLab sesion={2} />
+
+La otra mitad del límite: cuando termina el entrenamiento, el modelo queda fijo. Sabe lo que leyó
+hasta esa fecha, y de ahí en adelante solo sabe lo que entra en el prompt. Tu manual de operaciones,
+el parte de ayer o la normativa que salió el mes pasado existen para el modelo si viajan en el
+prompt, y el prompt tiene que caber entero en la ventana.
+
+<figure className="figura">
+  <img
+    src="slides/img/prompt.svg"
+    alt="Un recuadro grande, el prompt, que tiene que entrar entero en la ventana de contexto, con cuatro capas: el prompt de sistema, que escribe quien arma la aplicación y que no ves; tus instrucciones, las que dejás escritas en la configuración; la conversación, con el pedido anterior, la respuesta anterior y tu pedido de ahora; y los adjuntos. Una flecha lleva todo al modelo."
+  />
+  <figcaption>Todo lo que el modelo sabe de tu caso viaja en el prompt.</figcaption>
+</figure>
+
+Cuando le preguntás algo que no está ni en su entrenamiento ni en el prompt, el modelo hace lo único
+que sabe hacer: completa con lo más plausible. Así sale una alucinación, con el mismo tono seguro
+que una respuesta correcta. Las cuatro maneras de fallar están en la
+[sesión 2](#/sesion/2).
+
+## 4. Cómo se trabaja con ese límite
+
+### RAG: buscar, traer, responder
+
+Para que el modelo responda sobre tus documentos, no hace falta reentrenarlo. Se busca el
+fragmento que responde la pregunta, se lo pega arriba de la pregunta y el modelo responde con el
+libro abierto. Se llama generación aumentada por recuperación (RAG, por su sigla en inglés), y es
+lo que hace Gemini Notebook (antes NotebookLM) con el cuaderno de reservas de la
+[sesión 4](#/sesion/4).
+
+<figure className="figura">
+  <img
+    src="slides/img/rag.svg"
+    alt="Tres pasos. 1: tu pregunta se busca por significado entre los fragmentos de tus documentos. 2: se traen los dos más parecidos. 3: el prompt lleva las instrucciones, los dos fragmentos y tu pregunta, y el modelo responde con la cita al fragmento, que conviene abrir. Abajo, dos límites: si el buscador trae el fragmento equivocado, la respuesta sale mal y con cita; si la respuesta no está en los documentos, ninguna búsqueda la trae."
+  />
+  <figcaption>RAG en tres pasos, y sus dos límites.</figcaption>
+</figure>
+
+<RagDemo sesion={4} />
+
+### Un agente administra su propia ventana
+
+Un agente lee archivos, corre programas y mira los resultados, y cada una de esas cosas ocupa lugar
+en la ventana. En una tarea larga se llena rápido. El programa que envuelve al modelo, el arnés,
+tiene cinco maneras de administrarla, y las vemos funcionar hoy.
+
+<figure className="figura">
+  <img
+    src="slides/img/contexto-agente.svg"
+    alt="Arriba, la ventana de contexto de un agente, ocupada por las instrucciones, las descripciones de las skills, el pedido y la conversación, y sobre todo los resultados de herramientas; queda una parte libre. Abajo, cinco técnicas: instrucciones por escrito en CLAUDE.md o AGENTS.md; skills, de las que entra solo la descripción hasta que hacen falta; subagentes, con su propia ventana, que devuelven solo el resumen; compactación, el arnés resume la conversación vieja cerca del límite; y el parte de turno, un archivo donde el agente anota lo que hizo y lo que falta."
+  />
+  <figcaption>La ventana se llena con lo que el agente lee; el arnés decide qué queda.</figcaption>
+</figure>
+
+## 5. Qué es un agente
+
+Un agente es un modelo de lenguaje metido en un loop, con permiso para usar herramientas. Piensa
+qué le falta, pide una acción, mira el resultado y vuelve a pensar, hasta que puede responder.
+Ayer ya lo viste trabajar: cuando Claude consolidó los seis partes de la Agencia de Regulación y
+Control de Hidrocarburos (ARCH) en un Excel, leyó cada PDF, escribió un programa, lo corrió y
+corrigió lo que no cerraba.
+
+<AgentTrace sesion={5} />
+
+El modelo solo lee y escribe texto. Cuando necesita una herramienta, la pide, y quien la ejecuta
+es el arnés, si hay permiso.
+
+<figure className="figura">
+  <img
+    src="slides/img/tool-call.svg"
+    alt="Diagrama de secuencia con tres columnas, modelo, arnés y herramienta: el arnés manda el pedido y la lista de herramientas; el modelo pide una herramienta con tool_use; el arnés la ejecuta y recibe el dato; le devuelve el resultado al modelo con tool_result; el modelo responde en texto. Los pasos 2 a 4 se repiten."
+  />
+  <figcaption>El modelo pide, el arnés ejecuta.</figcaption>
+</figure>
+
+<figure className="figura">
+  <img
+    src="slides/img/arnes.svg"
+    alt="El arnés envuelve al modelo de lenguaje, que está en el centro con su loop: piensa, actúa, mira el resultado. Seis funciones adentro del arnés: herramientas, el loop, el contexto, los permisos, la memoria en archivos, y subagentes y conectores. Afuera, la persona, los archivos, los programas y otros sistemas."
+  />
+  <figcaption>El modelo en el centro y el arnés alrededor, con sus seis funciones.</figcaption>
+</figure>
+
+## Hoy y mañana: agentes sobre problemas reales
+
+Lo que queda del curso es práctica con agentes. El objetivo es que puedas dar los primeros pasos
+por tu cuenta, que conozcas los riesgos que trae darle a un programa permiso para actuar y que sepas
+cómo mitigarlos.
+
+| Día | Sesión | Qué hacemos |
+| --- | --- | --- |
+| Hoy | [5. Cómo funciona un agente](#/sesion/5) | Herramientas, arnés y permisos; Claude Code en vivo sobre los partes de la ARCH |
+| Hoy | [6. Un agente arma el tablero de un campo](#/sesion/6) | Un tablero sobre los datos públicos de Volve, tu versión con un agente gratuito y el caso de tu empresa en una página |
+| Mañana | [7. Riesgos, límites y gobernanza](#/sesion/7) | Cuánto verificar según el costo del error, qué dato va a qué herramienta y un borrador de política de uso |
+| Mañana | [8. El caso y el horizonte](#/sesion/8) | El caso de waterflooding de punta a punta, una hoja de ruta y hacia dónde va todo esto |
+
+Las alternativas para probar sin instalar nada están en
+[agentes en la nube](#/agentes-nube), y las preguntas sobre PC corporativas con restricciones, en
+[preguntas](#/preguntas).
+
+### Para llevarse
+
+- **Empezá por una tarea propia con datos públicos.** Un agente en un proyecto chico, con datos que
+  pueden salir de la empresa, es la manera más barata de aprender qué hace bien y dónde se rompe.
+- **Verificá en proporción al costo del error.** Mirá los fragmentos que citó, los números que
+  calculó y los archivos que tocó antes de usar el resultado.
+- **Dale permisos de a uno, y por escrito.** Lo que el agente puede leer, correr o borrar lo decidís
+  vos. Las reglas de la tarea van en un archivo que el agente lee al empezar.

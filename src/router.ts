@@ -15,6 +15,7 @@ export type Route =
   | { page: 'recursos' }
   | { page: 'preguntas' }
   | { page: 'agentes-nube' }
+  | { page: 'repaso' }
   | { page: 'panel' }
 
 export function parseHash(hash: string): Route {
@@ -26,6 +27,7 @@ export function parseHash(hash: string): Route {
   if (h === 'recursos') return { page: 'recursos' }
   if (h === 'preguntas') return { page: 'preguntas' }
   if (h === 'agentes-nube') return { page: 'agentes-nube' }
+  if (h === 'repaso') return { page: 'repaso' }
   if (h === 'panel') return { page: 'panel' }
   return { page: 'home' }
 }
@@ -42,6 +44,8 @@ export function hrefFor(route: Route): string {
       return '#/preguntas'
     case 'agentes-nube':
       return '#/agentes-nube'
+    case 'repaso':
+      return '#/repaso'
     case 'panel':
       return '#/panel'
   }

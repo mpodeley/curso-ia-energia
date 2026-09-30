@@ -106,6 +106,15 @@ button {
 .nav a:hover {
   color: var(--pd-text);
 }
+/* Four links plus the brand don't fit a phone in one row. */
+@media (max-width: 480px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    column-gap: var(--pd-sp-3);
+    row-gap: var(--pd-sp-1);
+  }
+}
 
 /* ---------- hero ---------- */
 .hero {

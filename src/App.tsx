@@ -6,6 +6,7 @@ import { HomePage } from './pages/HomePage'
 import { PanelPage } from './pages/PanelPage'
 import { PreguntasPage } from './pages/PreguntasPage'
 import { RecursosPage } from './pages/RecursosPage'
+import { RepasoPage } from './pages/RepasoPage'
 import { SesionPage } from './pages/SesionPage'
 import { hrefFor, useHashRoute } from './router'
 
@@ -20,6 +21,7 @@ export default function App() {
           </a>
           <nav className="nav" aria-label="Principal">
             <a href={hrefFor({ page: 'home' })}>Programa</a>
+            <a href={hrefFor({ page: 'repaso' })}>Repaso</a>
             <a href={hrefFor({ page: 'recursos' })}>Recursos</a>
             <a href={hrefFor({ page: 'preguntas' })}>Preguntas</a>
           </nav>
@@ -33,6 +35,7 @@ export default function App() {
           {route.page === 'recursos' && <RecursosPage />}
           {route.page === 'preguntas' && <PreguntasPage />}
           {route.page === 'agentes-nube' && <AgentesNubePage />}
+          {route.page === 'repaso' && <RepasoPage />}
           {route.page === 'panel' && <PanelPage />}
         </ErrorBoundary>
       </main>
