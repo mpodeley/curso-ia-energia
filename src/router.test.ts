@@ -23,6 +23,7 @@ describe('parseHash', () => {
   it('routes the cohort questions page', () => {
     expect(parseHash('#/preguntas')).toEqual({ page: 'preguntas' })
     expect(parseHash('#/preguntas/')).toEqual({ page: 'preguntas' })
+    expect(parseHash('#/agentes-nube')).toEqual({ page: 'agentes-nube' })
   })
 
   it('routes the instructor panel', () => {
@@ -36,6 +37,7 @@ describe('parseHash', () => {
       { page: 'sesion', n: 3 },
       { page: 'recursos' },
       { page: 'preguntas' },
+      { page: 'agentes-nube' },
       { page: 'panel' },
     ] as const
     for (const r of routes) expect(parseHash(hrefFor(r))).toEqual(r)

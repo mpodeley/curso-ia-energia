@@ -9,6 +9,13 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
     ],
   },
   {
+    titulo: 'Preguntas de la cohorte',
+    items: [
+      { nombre: 'Agentes en la PC de la empresa, e IA en el software de reservorios', href: '#/preguntas', nota: 'Copilot corporativo, Claude Code, Cowork y Codex sin permiso de administrador; qué traen tNavigator, Petrel e INTERSECT' },
+      { nombre: 'Agentes en la nube, gratis o baratos', href: '#/agentes-nube', nota: 'hoja comparativa y tutorial con ChatGPT, para PCs donde no se puede instalar nada' },
+    ],
+  },
+  {
     titulo: 'Datos abiertos de la industria',
     items: [
       {
@@ -109,7 +116,10 @@ export function RecursosPage() {
             <ul>
               {g.items.map((it) => (
                 <li key={it.nombre}>
-                  <a href={it.href} target="_blank" rel="noreferrer">
+                  <a
+                    href={it.href}
+                    {...(it.href.startsWith('http') && { target: '_blank', rel: 'noreferrer' })}
+                  >
                     {it.nombre}
                   </a>{' '}
                   — {it.nota}

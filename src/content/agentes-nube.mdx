@@ -1,0 +1,201 @@
+Un agente en la nube trabaja en una computadora del proveedor, y a vos te alcanza con el
+navegador. No hay nada que instalar, así que sirve en una PC donde sistemas no deja instalar
+programas. Esta página compara los que se prueban gratis o por unos 20 dólares al mes, y trae un
+tutorial con ChatGPT sobre el taller de la sesión 3.
+
+<div className="callout">
+
+**Foto del 30 de septiembre de 2026.** Los planes y los cupos de esta página cambian seguido, y en
+algunos casos el cambio fue grande: el "modo agente" de ChatGPT ya no existe, y lo reemplazó
+ChatGPT Work. Antes de pagar, abrí el link y confirmá el precio en la pantalla de compra.
+
+</div>
+
+## Dónde corre el agente
+
+Los agentes de la sesión 5 y de la [página de preguntas](#/preguntas) corren en tu PC: Claude
+Code, Codex CLI, Copilot en VS Code. Los de esta página corren en una máquina virtual del
+proveedor, con su propio Python, su propio navegador y sus propios archivos:
+
+<figure className="figura">
+  <img
+    src="slides/img/nube-donde-corre.svg"
+    alt="Dos recuadros. El agente local se instala en tu PC, ve las carpetas que le abrís, corre comandos con tus permisos y llega a la red de la empresa; en una PC con restricciones choca con la instalación, el proxy y la política. El agente en la nube solo necesita el navegador: los archivos van y vienen a una máquina virtual del proveedor, con Python y navegador propio, fuera de tu red; no ve tu disco. Abajo: en los dos casos lo que el agente lee viaja al proveedor del modelo, y en la nube además queda guardado allá."
+  />
+</figure>
+
+El arnés es el mismo de la sesión 5: herramientas, un loop, permisos. Cambia dónde corren las
+herramientas. Eso tiene una ventaja y un costo. La ventaja es que el agente no puede tocar nada de
+tu PC ni de la red de la empresa. El costo es que todo lo que le das sale de la empresa y queda en
+los servidores del proveedor, así que en las cuentas personales va solo dato público, como en todo
+el curso.
+
+## Cuál probar
+
+La pregunta útil es qué querés que te entregue:
+
+<figure className="figura">
+  <img
+    src="slides/img/nube-cual-probar.svg"
+    alt="Cinco filas. Un Excel o un informe desde archivos que ya tenés: Claude o ChatGPT en el chat común, gratis. Datos que hay que buscar en la web y un Excel: ChatGPT Work, Manus o Genspark, con el plan Plus de 20 dólares o créditos gratis. Un análisis que quede como notebook de Python: Colab con Data Science Agent, gratis. Una app o un tablero que use otra persona: Replit Agent, gratis con la app publicada 30 días, o Core de 20 dólares. Comparar modelos con datos públicos: Arena en modo agente, gratis, y las conversaciones se comparten."
+  />
+</figure>
+
+### La hoja comparativa
+
+| Herramienta | Mejor para | Gratis | Plan pago más barato | Navega la web | Fuente |
+| --- | --- | --- | --- | --- | --- |
+| Claude, chat con ejecución de código | Planillas, documentos y gráficos desde tus archivos | Sí: "available to all Claude users (Free, Pro, Max, Team, and Enterprise)" | Pro, US$20 por mes | No en el chat gratuito; Cowork en la web es pago | [Anthropic](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude) |
+| ChatGPT, chat con análisis de datos | Lo mismo, con los modelos de OpenAI | Sí, con límites de archivos | Plus, US$20 | No | [Sesión 3](#/sesion/3) |
+| ChatGPT Work | Buscar en la web, bajar archivos y entregar planillas y documentos | En la web, no: en Free y Go, solo en la app de escritorio | Plus, US$20 | Sí, con un navegador en la nube | [OpenAI](https://learn.chatgpt.com/codex/pricing) |
+| Manus | Encargos completos: investigar, bajar, procesar y entregar | 300 créditos por día, un modelo liviano, una tarea a la vez | US$20, con 4,000 créditos por mes | Sí | [Manus](https://help.manus.im/en/articles/11711111) |
+| Genspark | Trabajo de oficina: planillas (AI Sheets), documentos, investigación | 100 créditos por día, hasta agotar un cupo total | Plus, US$24.99 por mes o US$19.99 pagando el año | Sí | [Genspark](https://www.genspark.ai/helpcenter/membership-plans) |
+| Replit Agent | Una app o un tablero publicado, que use otra persona | Créditos diarios limitados y una app publicada que se da de baja a los 30 días | Core, US$20 (US$18 pagando el año) | Para su trabajo, no como asistente | [Replit](https://docs.replit.com/billing/plans/starter-plan), [precios](https://replit.com/pricing) |
+| Colab con Data Science Agent | Un notebook de Python completo, que se puede seguir editando | Sí, para mayores de 18 en países seleccionados; sesiones de hasta 12 horas | Colab Pro | No | [Google](https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/) |
+| Arena, modo agente | Probar modelos distintos sobre el mismo pedido | Sí | No tiene | Sí | [Arena](https://help.arena.ai/articles/5432423882) |
+
+Quedan afuera tres que aparecen en las búsquedas. Grok Bot, de xAI, tiene su computadora en la
+nube, compartida entre todos tus bots, pero se usa desde una aplicación que hay que instalar y no
+tiene plan gratuito ([FAQ](https://docs.x.ai/grok-bot/faq)). Jules, de Google, da 15 tareas por
+día gratis, y Claude Code en la web y Codex en la nube corren en máquinas virtuales del
+proveedor, pero los tres trabajan sobre repositorios de código en GitHub
+([Jules](https://jules.google/docs/usage-limits),
+[Claude Code en la web](https://code.claude.com/docs/en/claude-code-on-the-web)): sirven a quien
+ya programa.
+
+### Qué pasa con tus datos en el plan gratuito
+
+| Herramienta | Qué dice el proveedor | Fuente |
+| --- | --- | --- |
+| ChatGPT | En Free y Plus, las conversaciones se usan para entrenar, salvo que lo apagues en Configuración, Controles de datos | [OpenAI](https://help.openai.com/en/articles/7730893-data-controls-faq) |
+| Claude | En Free, Pro y Max, lo mismo: se usan para entrenar salvo que lo apagues. Si queda prendido, se guardan cinco años | [Anthropic](https://www.anthropic.com/news/updates-to-our-consumer-terms) |
+| Colab | Google usa los datos para mejorar sus productos, "human reviewers may read" las conversaciones, y las guarda hasta 18 meses | [Google](https://research.google.com/colaboratory/faq.html) |
+| Arena | Publica conversaciones en conjuntos de datos de investigación y las comparte con los proveedores de los modelos | [Arena](https://arena.ai/faq) |
+| Replit | Usa los datos para mejorar sus modelos de generación de código | [Replit](https://replit.com/privacy) |
+| Manus, Genspark | No encontramos una política clara sobre entrenamiento | |
+
+Manus merece una línea aparte. Nació en China y tiene sede en Singapur; Meta la compró en diciembre
+de 2025 y en abril de 2026 el gobierno chino ordenó deshacer la operación
+([TechCrunch](https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/)).
+Con dato público no cambia nada. Con cualquier otro dato, la pregunta de dónde queda guardado es de
+sistemas y de legales.
+
+<div className="callout">
+
+**La regla corta.** En cualquier cuenta personal o gratuita, solo dato público: el del curso, el de
+los organismos de control, los datasets abiertos. El dato de la empresa va en las herramientas que
+contrató la empresa, con su contrato de datos. Es el mapa de tres niveles de la
+[sesión 7](#/sesion/7).
+
+</div>
+
+## Tutorial: el taller de la sesión 3, con ChatGPT
+
+En la [sesión 3](#/sesion/3) consolidaste seis partes diarios de la Agencia de Regulación y Control
+de Hidrocarburos (ARCH) de Ecuador en un Excel, subiendo los PDF a un chatbot. Acá lo hacés de dos
+formas con ChatGPT: gratis, con el chat común, o con Work, que va a buscar los PDF solo.
+
+### Versión gratuita: el chat común
+
+1. Bajá los seis partes a tu computadora:
+   [8](descargas/arch-reporte-diario-2026-09-08.pdf),
+   [9](descargas/arch-reporte-diario-2026-09-09.pdf),
+   [10](descargas/arch-reporte-diario-2026-09-10.pdf),
+   [11](descargas/arch-reporte-diario-2026-09-11.pdf),
+   [14](descargas/arch-reporte-diario-2026-09-14.pdf) y
+   [15](descargas/arch-reporte-diario-2026-09-15.pdf) de septiembre.
+2. Entrá a [chatgpt.com](https://chatgpt.com) con una cuenta personal. En Configuración, Controles
+   de datos, apagá la opción de mejorar el modelo con tus conversaciones.
+3. Adjuntá los seis PDF y pegá el pedido del taller de la sesión 3, tal cual.
+4. Cuando termine, pedile el Excel para bajar.
+
+La cuenta gratuita limita cuántos archivos subís por día. Si se corta, seguí al día siguiente o
+repartí los partes en dos conversaciones.
+
+### Versión Work: que los vaya a buscar
+
+Work, con el plan Plus, "uses its own browser, running on a separate computer in the cloud"
+([Cloud browser](https://learn.chatgpt.com/docs/browser)): navega, baja archivos, corre Python y
+entrega planillas y documentos ([Get started with Work](https://learn.chatgpt.com/codex/get-started-with-work)).
+Los partes están publicados en el sitio del curso, así que no hace falta subir nada.
+
+1. Entrá a [chatgpt.com](https://chatgpt.com) con una cuenta Plus y apagá el entrenamiento, como
+   en la versión gratuita.
+2. Cambiá a la pestaña **Work**.
+3. Pegá este pedido:
+
+```text
+Bajá estos seis partes diarios de la Agencia de Regulación y Control de
+Hidrocarburos (ARCH) de Ecuador, del 8 al 15 de septiembre de 2026. Son
+datos públicos, copiados en el sitio de un curso:
+
+https://mpodeley.github.io/curso-ia-energia/descargas/arch-reporte-diario-2026-09-08.pdf
+https://mpodeley.github.io/curso-ia-energia/descargas/arch-reporte-diario-2026-09-09.pdf
+https://mpodeley.github.io/curso-ia-energia/descargas/arch-reporte-diario-2026-09-10.pdf
+https://mpodeley.github.io/curso-ia-energia/descargas/arch-reporte-diario-2026-09-11.pdf
+https://mpodeley.github.io/curso-ia-energia/descargas/arch-reporte-diario-2026-09-14.pdf
+https://mpodeley.github.io/curso-ia-energia/descargas/arch-reporte-diario-2026-09-15.pdf
+
+Cada parte informa el día de operación anterior. Con código, consolidalos
+en un Excel con cinco hojas:
+1. Producción por compañía y día de operación, como viene en la tabla 1.
+2. Resumen por día: EP Petroecuador, privadas y total nacional, con
+   fórmulas desde la hoja 1, el total que dice el parte y la diferencia.
+3. Estado de pozos y gas de EP Petroecuador, por día.
+4. Novedades por compañía y día, con el texto original.
+5. Control: si las compañías suman el total de cada parte, y si la
+   producción anterior de cada parte coincide con la del día del parte
+   previo.
+
+Los números vienen con punto de miles y coma decimal; pasalos a punto
+decimal. Lo que no puedas leer con certeza, dejalo vacío y listalo en
+Control. No inventes datos.
+
+Además, armá una página HTML de un solo archivo que muestre el total
+nacional por día en un gráfico y deje filtrar la tabla por compañía.
+Entregame el Excel y el HTML para bajar, y contame qué días faltan.
+```
+
+4. Mirá cómo trabaja. Work muestra los pasos: qué páginas abre, qué código corre, qué archivos
+   escribe. Si una página pide iniciar sesión o un captcha, frena y te deja tomar el control; la
+   documentación avisa que algunos sitios bloquean navegadores automáticos.
+5. Bajá los dos archivos y revisalos con los tres chequeos de la sesión 3: qué días cubre, si cierra
+   el resumen con fórmulas, y por qué cae el 7 de septiembre. Los números correctos están en el
+   desplegable "Para comparar" de esa sesión, y en la
+   [planilla de referencia](descargas/arch_consolidado_referencia.xlsx).
+
+<div className="callout">
+
+**Qué mirar.** Si el Excel no coincide con la referencia, la diferencia dice algo del agente. Los
+errores habituales son leer la coma decimal como separador de miles, tomar el día del parte como
+día de operación, o rellenar los días 11 y 12, que no tienen parte. Un agente que rellena un dato
+faltante sin avisar es el error más caro: parece un dato y no lo es.
+
+</div>
+
+## Una prueba común para comparar
+
+Si querés elegir entre Manus, Genspark, Work o Replit, dales a todos el mismo pedido de arriba, con
+los mismos seis partes, y anotá:
+
+| Qué medir | Cómo |
+| --- | --- |
+| ¿Terminó sin ayuda? | Cuántas veces tuviste que intervenir o corregir |
+| ¿Los números son correctos? | Contra la planilla de referencia, día por día |
+| ¿Avisó lo que no pudo? | Si los días 11 y 12 quedaron vacíos y marcados, o rellenos |
+| ¿Cuánto costó? | Créditos o mensajes consumidos, que cada herramienta muestra en su panel |
+| ¿El HTML anda? | Abrirlo sin conexión y filtrar por una compañía |
+
+La tarea tiene una respuesta conocida, así que la comparación no depende de la impresión que deja
+cada interfaz. Antes de pagar un año, hacé esta prueba con el plan gratuito o con un mes.
+
+## Fuentes
+
+Revisadas el 30 de septiembre de 2026.
+
+- OpenAI: [planes de Work y Codex](https://learn.chatgpt.com/codex/pricing) · [Get started with Work](https://learn.chatgpt.com/codex/get-started-with-work) · [navegador en la nube](https://learn.chatgpt.com/docs/browser) · [controles de datos](https://help.openai.com/en/articles/7730893-data-controls-faq)
+- Anthropic: [archivos y ejecución de código](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude) · [condiciones para cuentas personales](https://www.anthropic.com/news/updates-to-our-consumer-terms) · [Claude Code en la web](https://code.claude.com/docs/en/claude-code-on-the-web)
+- Manus: [planes](https://help.manus.im/en/articles/11711111) · [Manus 2.0, 28 de septiembre de 2026](https://manus.im/blog/introducing-manus-2-0) · [TechCrunch sobre la compra de Meta](https://techcrunch.com/2026/04/27/china-vetoes-metas-2b-manus-deal-after-months-long-probe/)
+- [Genspark: planes](https://www.genspark.ai/helpcenter/membership-plans) · [Replit: plan Starter](https://docs.replit.com/billing/plans/starter-plan) · [Replit: precios](https://replit.com/pricing) · [Replit: privacidad](https://replit.com/privacy)
+- Google: [Data Science Agent en Colab](https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/) · [preguntas frecuentes de Colab](https://research.google.com/colaboratory/faq.html) · [Jules, límites](https://jules.google/docs/usage-limits)
+- [Arena: modo agente](https://help.arena.ai/articles/5432423882) · [Arena: preguntas frecuentes](https://arena.ai/faq) · [xAI: Grok Bot](https://docs.x.ai/grok-bot/faq)

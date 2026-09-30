@@ -1,6 +1,7 @@
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { apiHabilitada } from './lib/config'
 import { IdentidadProvider } from './lib/identidad'
+import { AgentesNubePage } from './pages/AgentesNubePage'
 import { HomePage } from './pages/HomePage'
 import { PanelPage } from './pages/PanelPage'
 import { PreguntasPage } from './pages/PreguntasPage'
@@ -31,6 +32,7 @@ export default function App() {
           {route.page === 'sesion' && <SesionPage n={route.n} />}
           {route.page === 'recursos' && <RecursosPage />}
           {route.page === 'preguntas' && <PreguntasPage />}
+          {route.page === 'agentes-nube' && <AgentesNubePage />}
           {route.page === 'panel' && <PanelPage />}
         </ErrorBoundary>
       </main>
