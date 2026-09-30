@@ -206,11 +206,11 @@ export const RECURSOS: Record<number, Recurso[]> = {
     {
       tipo: 'herramienta',
       titulo: 'Reporte diario preliminar de producción y operaciones',
-      url: 'https://controlhidrocarburos.gob.ec/',
-      fuente: 'Agencia de Regulación y Control de Hidrocarburos (ARCH), Ecuador',
+      url: 'https://mpodeley.github.io/curso-ia-energia/descargas/arch-reporte-diario-2026-09-15.pdf',
+      fuente: 'Agencia de Regulación y Control de Hidrocarburos (ARCH), Ecuador; copia del curso',
       idioma: 'es',
       porque:
-        'La fuente del correo y del taller: una página por día, con producción por compañía y por bloque, estado de pozos, gas y novedades pozo por pozo. La dirección de cada PDF tiene siempre la misma forma, y por eso se puede bajar solo, que es lo que mañana hace un agente.',
+        'La fuente del correo y del taller: una página por día, con producción por compañía y por bloque, estado de pozos, gas y novedades pozo por pozo. La dirección de cada PDF tiene siempre la misma forma, y por eso se puede bajar solo, que es lo que mañana hace un agente. El link va a la copia del curso: el 30 de septiembre de 2026 el sitio de la ARCH no mostraba los reportes.',
     },
     {
       tipo: 'herramienta',

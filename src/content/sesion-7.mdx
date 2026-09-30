@@ -110,6 +110,28 @@ en algún bloque son socias. El chat compartido del curso es una herramienta ext
 tres. Lo que va al primer nivel no se dice ahí, y en la ronda de datos de hoy se nombra solo la
 categoría del dato, por ejemplo "el pronóstico mensual de un campo", sin decir el pronóstico.
 
+## Agentes: lo más potente y lo más riesgoso
+
+Un agente suma algo que el chatbot no tiene: actúa. Eso es lo que ahorra horas, y es también lo
+que convierte un error en un hecho. Hay tres poderes que conviene mirar por separado: leer
+contenido que no controlás (una página, un correo, un PDF de un tercero), tener acceso a lo
+sensible (partes, bases, credenciales) y actuar o salir hacia afuera (escribir, borrar, mandar).
+Con los tres juntos, un texto escondido en un correo puede darle órdenes al agente, y el agente
+las cumple con tus permisos. La regla de diseño que propuso Meta es corta: sin una persona que
+apruebe cada acción, un agente tiene como mucho dos de los tres.
+
+<figure className="figura">
+  <img
+    src="slides/img/guia-regla-de-dos.svg"
+    alt="Tres círculos que se superponen: A, lee lo que no controlás; B, tiene acceso a lo sensible; C, actúa o sale afuera. En el centro, donde se juntan los tres, un signo de peligro. A la derecha, las combinaciones seguras: A más C sin B, scraping de datos públicos sin acceso a nada interno; B más C sin A, partes internos a una base con archivos de fuente conocida; A más B sin C, lee todo pero solo propone y una persona ejecuta. Las tres juntas, solo con una persona que aprueba cada acción."
+  />
+</figure>
+
+La [guía de agentes](#/guia-agentes) desarrolla esto para llevarse: los riesgos con casos reales,
+la escalera de autonomía, las cuatro tareas que más pidió esta cohorte (datos públicos, partes a
+una base, modelos de simulación y tableros de monitoreo) con su arquitectura segura, qué hicieron
+otras empresas y una lista de chequeo de diez preguntas.
+
 ## Infraestructura crítica
 
 Acá hay que ser directo. "Conectemos un agente al sistema de control" es una frase que tiene que
@@ -132,9 +154,14 @@ red, y el asistente no la toca. Entre el modelo y cualquier cosa que se mueva en
 humano con nombre y apellido, por la misma lógica por la que un cálculo de ingeniería lo firma
 alguien.
 
+Las agencias de ciberseguridad llegaron a lo mismo. En diciembre de 2025, CISA, la NSA y otras
+siete agencias de siete países publicaron principios para integrar IA en tecnología de operaciones.
+Cubren modelos de lenguaje y agentes, y piden una persona en el lazo para todo lo que toque la
+seguridad del proceso ([CISA](https://www.cisa.gov/resources-tools/resources/principles-secure-integration-artificial-intelligence-operational-technology)).
+
 ## Esto ya pasó, con fuentes
 
-Cinco incidentes documentados, cada uno pegado a una regla de las de arriba:
+Siete incidentes documentados, cada uno pegado a una regla de las de arriba:
 
 - **Deloitte, octubre de 2025.** Un informe de AU$ 440,000 para el gobierno australiano salió con
   citas académicas inventadas y una cita judicial falsa; la firma
@@ -148,6 +175,14 @@ Cinco incidentes documentados, cada uno pegado a una regla de las de arriba:
   [borró la base de datos de producción](https://incidentdatabase.ai/cite/1152/) de una empresa en
   pleno congelamiento de cambios, y después informó que la recuperación era imposible (no lo era).
   Es el ejemplo más claro de un paso equivocado que pega directo en un sistema real.
+- **EchoLeak, 2025.** Un solo correo, sin que nadie hiciera clic, lograba que Microsoft 365 Copilot
+  sacara datos de su alcance: el correo traía instrucciones escondidas y el asistente las seguía
+  ([Hack The Box](https://www.hackthebox.com/blog/cve-2025-32711-echoleak-copilot-vulnerability)).
+  Microsoft lo corrigió en sus servidores. Es la regla de dos en un caso concreto.
+- **postmark-mcp, septiembre de 2025.** Un servidor MCP publicado para conectar agentes al correo
+  empezó, en una versión nueva, a mandar copia oculta de cada mensaje a un tercero
+  ([The Register](https://www.theregister.com/2025/09/29/postmark_mcp_server_code_hijacked/)).
+  Un conector es software de terceros con tus permisos.
 - **Air Canada, febrero de 2024.** Su chatbot inventó una política de descuentos y
   [un tribunal obligó a la aerolínea a cumplirla](https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know).
   Para el tribunal, lo que dijo el chatbot lo dijo la empresa.
@@ -167,7 +202,9 @@ asistencia; y a quién se le consulta cuando aparece un caso nuevo. Ese último 
 se olvida y el que hace que la política siga viva.
 
 El borrador está acá:
-[politica-uso-ia-borrador.docx](descargas/politica-uso-ia-borrador.docx). Se abre en Word o en
+[politica-uso-ia-borrador.docx](descargas/politica-uso-ia-borrador.docx). La versión 0.2 suma un
+sexto punto, sobre agentes: autonomía máxima, regla de dos, permisos mínimos, conectores
+aprobados, registro de acciones y un responsable por agente. Se abre en Word o en
 cualquier procesador, y los corchetes marcan lo que cada empresa completa. En la sesión lo
 llenamos con lo que salga de los bloques: los datos clasificados entran al punto 2, el protocolo
 al punto 3. Cada empresa se lleva su copia y la termina con su gente.

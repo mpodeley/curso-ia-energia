@@ -12,6 +12,7 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
     titulo: 'Preguntas de la cohorte',
     items: [
       { nombre: 'Agentes en la PC de la empresa, e IA en el software de reservorios', href: '#/preguntas', nota: 'Copilot corporativo, Claude Code, Cowork y Codex sin permiso de administrador; qué traen tNavigator, Petrel e INTERSECT' },
+      { nombre: 'IA y agentes en el trabajo: guía de riesgos y controles', href: '#/guia-agentes', nota: 'la guía para llevarse de la sesión 7: regla de dos, escalera de autonomía, cuatro tareas con su arquitectura segura, qué hacen otras empresas' },
       { nombre: 'Agentes en la nube, gratis o baratos', href: '#/agentes-nube', nota: 'hoja comparativa y tutorial con ChatGPT, para PCs donde no se puede instalar nada' },
     ],
   },
@@ -25,8 +26,8 @@ const GRUPOS: { titulo: string; items: { nombre: string; href: string; nota: str
       },
       {
         nombre: 'Reporte diario de producción — Ecuador (ARCH)',
-        href: 'https://controlhidrocarburos.gob.ec/cifras-del-sector-hidrocarburifero/',
-        nota: 'un PDF de una página por día: producción por compañía y por bloque, estado de pozos y novedades con causa de cierre (el "para curiosos" de la sesión 3)',
+        href: 'descargas/arch-reporte-diario-2026-09-15.pdf',
+        nota: 'un PDF de una página por día: producción por compañía y por bloque, estado de pozos y novedades con causa de cierre (el taller de la sesión 3). El link va a la copia del curso: el 30 de septiembre de 2026 el sitio de la ARCH no mostraba los reportes',
       },
     ],
   },

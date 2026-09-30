@@ -1,0 +1,294 @@
+Esta guía acompaña la [sesión 7](#/sesion/7) y está hecha para llevarse a la empresa. Ordena lo
+que hace falta decidir antes de poner a trabajar un agente: qué poderes le das, cuánta autonomía,
+qué controles pide cada tarea y qué hicieron otras empresas. Las cuatro tareas de la sección 4 son
+las que más pidió esta cohorte: bajar datos públicos, pasar partes internos a una base, preparar
+modelos de simulación y armar tableros de monitoreo.
+
+<div className="callout">
+
+**Revisada el 30 de septiembre de 2026.** Cada afirmación lleva su fuente. Los incidentes son casos
+públicos y documentados. Las cifras de las empresas son las que publicó cada empresa. Nada de esto
+reemplaza a sistemas ni a legales: sirve para llegar a esa conversación con las preguntas
+correctas.
+
+</div>
+
+## 1. Por qué un agente es lo más potente y lo más riesgoso
+
+Un chatbot contesta y una persona decide qué hacer con la respuesta. Un agente, además, actúa: lee
+archivos, corre código, escribe en carpetas, manda mensajes. Eso es lo que ahorra horas, y es
+también lo que convierte un error en un hecho consumado. Hay tres poderes que conviene separar:
+
+- **A. Lee contenido que no controlás.** Una página web, un correo, un PDF de un tercero.
+- **B. Tiene acceso a lo sensible.** Partes internos, bases de datos, credenciales.
+- **C. Actúa o sale hacia afuera.** Escribe, borra, manda un correo, sube un archivo.
+
+Con los tres juntos, un texto escondido en una página o en un correo puede darle instrucciones al
+agente, y el agente las ejecuta con tus permisos. Simon Willison lo llamó
+"[the lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)", y Meta lo
+convirtió en una regla de diseño, la "Agents Rule of Two": sin supervisión, un agente tiene como
+mucho dos de los tres ([resumen de Willison](https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/)).
+
+<figure className="figura">
+  <img
+    src="slides/img/guia-regla-de-dos.svg"
+    alt="Tres círculos que se superponen: A, lee lo que no controlás; B, tiene acceso a lo sensible; C, actúa o sale afuera. En el centro, donde se juntan los tres, un signo de peligro. A la derecha, las combinaciones seguras: A más C sin B, scraping de datos públicos sin acceso a nada interno; B más C sin A, partes internos a una base con archivos de fuente conocida; A más B sin C, lee todo pero solo propone y una persona ejecuta. Las tres juntas, solo con una persona que aprueba cada acción."
+  />
+</figure>
+
+El Centro Nacional de Ciberseguridad del Reino Unido (NCSC) explica por qué no alcanza con escribir
+mejor las instrucciones: un modelo de lenguaje no separa las instrucciones de los datos, así que
+la inyección de instrucciones quizás no se pueda eliminar nunca, y lo que queda es diseñar para
+que su impacto sea chico ([Prompt injection is not SQL injection](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)).
+La regla de dos es eso: un diseño que acota el daño aunque el agente sea engañado.
+
+## 2. Los riesgos, con casos reales
+
+| Riesgo | Qué pasó | Cómo se ve en una petrolera | Control |
+| --- | --- | --- | --- |
+| Inyección de instrucciones | EchoLeak (CVE-2025-32711): un solo correo, sin que nadie hiciera clic, hacía que Microsoft 365 Copilot sacara datos de su alcance. Microsoft lo corrigió en sus servidores, en 2025 ([Hack The Box](https://www.hackthebox.com/blog/cve-2025-32711-echoleak-copilot-vulnerability)) | Un agente que resume correos de proveedores y además ve los partes de producción | Regla de dos: el agente que lee contenido externo no ve lo sensible |
+| Datos que se filtran por una herramienta | Un issue malicioso en un repositorio público hizo que un agente con el servidor MCP de GitHub copiara datos de repositorios privados a uno público ([Invariant Labs](https://invariantlabs.ai/blog/mcp-github-vulnerability)) | Un agente con acceso a la carpeta compartida del activo y a internet | Permisos mínimos por tarea; nada de acceso "a todo" |
+| Acción destructiva | Replit, julio de 2025: un agente borró la base de producción de una empresa durante un congelamiento de cambios ([AI Incident Database](https://incidentdatabase.ai/cite/1152/)) | Un agente que carga partes y tiene permiso de borrar en la base | Staging, usuario sin DELETE ni DROP, backups probados |
+| Cadena de suministro | postmark-mcp, septiembre de 2025: una versión de un servidor MCP copiaba en secreto cada correo enviado a un tercero ([The Register](https://www.theregister.com/2025/09/29/postmark_mcp_server_code_hijacked/)). En agosto, paquetes de Nx usaron los agentes instalados con permisos desactivados para buscar credenciales ([Wiz](https://www.wiz.io/blog/s1ngularity-supply-chain-attack)) | Un servidor MCP o una extensión bajada de internet para "conectar" un agente a un sistema | Lista de servidores y extensiones aprobados; nunca desactivar permisos |
+| Un proveedor comprometido | En julio de 2025, una versión oficial de la extensión de Amazon Q para VS Code salió con instrucciones de borrado insertadas por un atacante ([AWS](https://aws.amazon.com/security/security-bulletins/AWS-2025-015/)) | Una actualización automática de la herramienta del agente | Versiones fijas en lo crítico; el agente trabaja sobre copias |
+| Fuga por uso cotidiano | Samsung, 2023: empleados pegaron código y notas internas en un chatbot, y la empresa prohibió estas herramientas ([CNBC](https://www.cnbc.com/2023/05/02/samsung-bans-use-of-ai-like-chatgpt-for-staff-after-misuse-of-chatbot.html)) | Pegar un parte con producción por pozo en una cuenta gratuita | El mapa de tres niveles de la sesión 7 y una herramienta aprobada |
+| Error confiado | Deloitte, 2025: un informe con citas inventadas (en la sesión 7) | Un agente que rellena un día sin parte con un número plausible | Validación contra la fuente; "si no lo leíste, dejalo vacío" |
+| Operación | La guía de CISA de diciembre de 2025 pide que la IA no tome decisiones de seguridad por su cuenta en tecnología de operaciones (OT) ([CISA](https://www.cisa.gov/resources-tools/resources/principles-secure-integration-artificial-intelligence-operational-technology)) | Un agente conectado al SCADA | Ningún agente en la red de operación (sección 4.4) |
+
+Los dos marcos que ordenan estos riesgos son de OWASP, una fundación abierta de seguridad. El
+[Top 10 para aplicaciones con modelos de lenguaje](https://genai.owasp.org/llm-top-10/) incluye la
+"excessive agency", un agente con más permisos de los que necesita. El
+[Top 10 para aplicaciones agénticas 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/),
+de diciembre de 2025, suma el secuestro del objetivo del agente, el mal uso de herramientas y la
+cadena de suministro de agentes.
+
+## 3. La escalera de autonomía
+
+La pregunta práctica es cuánto dejarle hacer solo. Conviene pensarlo en escalones:
+
+<figure className="figura">
+  <img
+    src="slides/img/guia-escalera.svg"
+    alt="Cinco escalones. 1, lee y resume; control: verificar lo que se cita. 2, propone; una persona decide y ejecuta. 3, escribe en una copia, como staging o una carpeta aparte; revisión antes de pasar a producción. 4, actúa con aprobación; una persona aprueba cada acción. 5, actúa solo; solo en tareas reversibles y acotadas. Para empezar en una empresa, escalones 2 y 3; el 5 no se usa con datos ni sistemas de la empresa."
+  />
+</figure>
+
+Los escalones 2 y 3 dan casi todo el ahorro con poco riesgo. En el 2, el agente escribe el script,
+la consulta o el borrador, y una persona lo corre. En el 3, el agente corre sus propios pasos, pero
+sobre una copia o una tabla aparte, y lo que pasa a producción lo aprueba alguien. Es lo que hizo
+el agente de la sesión 6 con Volve: trabajó en una carpeta, sobre archivos públicos, y cada
+comando que modificaba algo pasó por un permiso.
+
+## 4. Las cuatro tareas que pidió la cohorte
+
+### 4.1 Bajar datos públicos (scraping)
+
+**Qué hace el agente.** Visita sitios de organismos de control o portales de datos abiertos, baja
+archivos, los lee y arma una tabla.
+
+**Qué puede salir mal.**
+
+- **La fuente cambia sin avisar.** El 30 de septiembre de 2026, la dirección de la ARCH que usó
+  este curso para los partes diarios mostraba una página de apuestas en lugar de los reportes. Un
+  agente automático habría seguido "leyendo" esa página.
+- **La página es contenido no confiable.** Cualquier texto que el agente lee puede traer
+  instrucciones escondidas.
+- **Los términos de uso importan.** Que un dato sea visible no quiere decir que se pueda scrapear.
+  El juicio de LinkedIn contra hiQ, que bajaba perfiles públicos, terminó en 2022 con una
+  sentencia en contra de hiQ ([National Law Review](https://natlawreview.com/article/linkedin-s-data-scraping-battle-hiq-labs-ends-proposed-judgment)).
+
+**Controles.**
+
+1. Preferí los datos abiertos con licencia: la producción por pozo de Argentina (Capítulo IV) se
+   publica con licencia Creative Commons Attribution 4.0
+   ([datos.energia.gob.ar](https://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo)).
+   Si el sitio no tiene licencia, leé sus términos.
+2. Regla de dos: el agente que navega no tiene acceso a nada interno ni a credenciales. Corre en
+   una carpeta aislada o en un [agente en la nube](#/agentes-nube).
+3. Validá lo que baja: forma del archivo, rangos, sumas contra totales, y que la fecha sea la
+   pedida. Si algo no cierra, se frena y avisa.
+4. Guardá el archivo original junto a la tabla, con la fecha de descarga.
+
+### 4.2 Partes internos a una base de datos
+
+**Qué hace el agente.** Lee los partes diarios (PDF, planillas, correos), extrae los números y los
+carga en una base.
+
+<figure className="figura">
+  <img
+    src="slides/img/guia-partes-db.svg"
+    alt="Seis pasos: partes, extracción, validación, staging, revisión, producción. Dos puertas: si no valida, no entra; si nadie lo aprueba, no pasa. Controles: el agente no tiene DELETE, DROP ni acceso a producción; cada fila guarda de qué archivo y página salió; antes de empezar, backup y prueba de restauración; la herramienta es la contratada por la empresa."
+  />
+</figure>
+
+**Qué puede salir mal.** Un número mal leído que parece bueno (la coma decimal de la sesión 3), un
+día faltante rellenado, una carga repetida, o un borrado como el de Replit.
+
+**Controles.**
+
+1. Es dato de nivel 2: solo con la herramienta que contrató la empresa, con contrato de datos.
+2. El agente escribe en una tabla de staging con un usuario que solo puede insertar. No tiene
+   DELETE, DROP ni acceso a la base de producción.
+3. Dos puertas: una validación automática (esquema, rangos físicos, suma de pozos contra el total
+   del parte) y una persona que aprueba el pase a producción.
+4. Cada fila guarda su procedencia: archivo, página y fecha de carga.
+5. Backup antes de empezar y una restauración probada.
+
+### 4.3 Preparar modelos de simulación
+
+**Qué hace el agente.** Arma o modifica un deck de simulación a partir de una descripción: agrega
+pozos, cambia un esquema de inyección, prepara sensibilidades, lee los logs de la corrida.
+
+**Qué puede salir mal.** El modelo corre y está mal. JutulGPT, un agente de SINTEF que construye
+modelos de simulación, mostró que la misma descripción en texto admite modelos distintos, y que
+sin detectar esas ambigüedades "neither the correctness of the result nor its reproducibility from
+the original description can be assured" ([Lie y otros, 2026](https://arxiv.org/abs/2603.00214);
+[lo que aprendieron](https://blog.sintef.com/digital-en/talking-to-your-simulator-what-we-learned-building-jutulgpt/)).
+Los valores por defecto del simulador son supuestos que nadie escribió.
+
+**Controles.**
+
+1. El agente trabaja sobre una copia del deck, en una carpeta propia, nunca sobre el caso oficial.
+2. Diff contra el caso base: cada cambio se ve y se explica.
+3. Registro de supuestos, con los valores por defecto que usa el simulador.
+4. Corrida corta de prueba antes de la corrida larga, y la versión del simulador fija.
+5. Reconstruir dos veces desde la misma descripción: si salen modelos distintos, la descripción es
+   ambigua.
+6. El caso que se usa para decidir lo firma un ingeniero.
+
+Para probar sin licencias ni datos de la empresa: OPM Flow y ResInsight son abiertos, y tNavigator
+26.2 trae un servidor MCP para agentes (en la [página de preguntas](#/preguntas)).
+
+### 4.4 Visualización y monitoreo
+
+**Qué hace el agente.** Escribe el código de un tablero o de unas alertas sobre datos de
+producción, presiones o equipos.
+
+<figure className="figura">
+  <img
+    src="slides/img/guia-monitoreo.svg"
+    alt="Tres zonas. Red de operación, OT, con SCADA, controladores e historian: el agente no entra y nada se escribe desde afuera. Zona intermedia, DMZ, con una réplica del historian con la escritura apagada: los datos salen de la planta. Oficina, IT: una cuenta de servicio de solo lectura, el tablero y las alertas cuyo código escribió el agente, y una persona que mira la alerta y decide. Las credenciales no van en el código del agente."
+  />
+</figure>
+
+**Qué puede salir mal.** Un agente con acceso a la red de operación, una credencial con permiso de
+escritura, una contraseña guardada dentro del código del tablero, o una alerta que dispara una
+acción sin nadie en el medio.
+
+**Controles.**
+
+1. El agente no entra a la red de operación. Los datos salen de la planta hacia una réplica o un
+   historian en una zona intermedia, y el tablero lee de ahí.
+2. Una cuenta de servicio de solo lectura, con los tags que hacen falta y nada más. El agente
+   escribe el código; las credenciales las pone sistemas, fuera del código.
+3. Los servidores de datos de planta también tienen vulnerabilidades: CISA publicó avisos sobre
+   PI Web API de AVEVA ([ICSA-25-162-08](https://www.cisa.gov/news-events/ics-advisories/icsa-25-162-08)).
+   Se mantienen actualizados y sin exposición a internet.
+4. La alerta la mira una persona, que decide. La guía conjunta de CISA, la NSA y otras siete
+   agencias pone a la IA en OT bajo cuatro principios: entender la IA, evaluar su uso en OT,
+   gobernarla y embeber seguridad, con una persona en el lazo para todo lo que toque seguridad
+   ([CISA](https://www.cisa.gov/resources-tools/resources/principles-secure-integration-artificial-intelligence-operational-technology)).
+
+## 5. Qué están haciendo otras empresas
+
+| Empresa | Qué hizo | Fuente |
+| --- | --- | --- |
+| ADNOC | Contrato de US$340 millones y tres años con AIQ para llevar agentes a más de 28 campos: cinco agentes de subsuelo para sísmica, modelado geológico y monitoreo de procesos (mayo de 2025) | [JPT](https://jpt.spe.org/aiq-announces-340-million-contract-from-adnoc-for-deployment-of-agentic-ai) |
+| Petrobras | ChatPetrobras, un asistente propio sobre Azure OpenAI para 110,000 empleados y contratistas, armado sobre sus políticas de seguridad de la información y con los datos dentro del dominio de la empresa | [Agência Petrobras](https://agencia.petrobras.com.br/w/petrobras-cria-ferramenta-com-inteligencia-artificial-generativa-para-apoiar-mais-de-100-mil-trabalhadores) |
+| Equinor | US$130 millones de valor por IA en 2025 y 330 desde 2020. El mayor aporte, 120 millones, viene del mantenimiento predictivo de más de 700 máquinas rotantes; el personal usa copilotos, chatbots y agentes | [Equinor](https://www.equinor.com/news/20260107-artificial-intelligence-saved-equinor-usd-130-million) |
+| TotalEnergies | Alianza con Mistral para desarrollar modelos propios de exploración e ingeniería de reservorios | [TotalEnergies](https://totalenergies.com/newsroom/totalenergies-annonce-un-partenariat-avec-mistral-en-vue-de-developper-des-modeles-de-frontiere-dintelligence-artificielle-dedies-a-lexploration-et-a-lingenierie-des-reservoirs-498514/?lang=eng) |
+| bp | Relación de cinco años con Palantir, con nuevas capacidades de IA (2024) | [Palantir](https://investors.palantir.com/news-details/2024/Palantir-and-bp-Agree-to-5-Year-Strategic-Relationship-With-New-AI-Capabilities/) |
+| SLB | Tela, un asistente agéntico para sus aplicaciones (noviembre de 2025) | [SLB](https://www.slb.com/newsroom/press-release/2025/pr-2025-1103-slb-tela-ai) |
+| YPF | GAIA, IA generativa con Microsoft para la gestión de proveedores en Y-click! | [LM Neuquén](https://mase.lmneuquen.com/empresas/como-es-el-acuerdo-ypf-y-microsoft-aplicar-inteligencia-artificial-n1138947) |
+| Pan American Energy | IA en la cadena de suministro | [Ámbito](https://www.ambito.com/energia/pan-american-energy-sumo-inteligencia-artificial-su-cadena-suministro-n6094152) |
+| CGC | Security Copilot de Microsoft para ciberseguridad | [Río Negro](https://www.rionegro.com.ar/energia/petroleras-y-la-inteligencia-artificial-cgc-refuerza-su-ciberseguridad-3777192/) |
+| Samsung | Prohibió los chatbots externos después de una fuga, en 2023 | [CNBC](https://www.cnbc.com/2023/05/02/samsung-bans-use-of-ai-like-chatgpt-for-staff-after-misuse-of-chatbot.html) |
+
+Se repiten tres patrones:
+
+1. **Dar una herramienta aprobada en vez de prohibir.** Petrobras armó la suya, con los datos dentro de
+   su dominio. Una prohibición sin alternativa manda el uso a lo que no se ve.
+2. **Agentes acotados a un dominio.** Los de ADNOC son cinco, con tareas de subsuelo definidas.
+   En lo publicado, ninguna de estas empresas anunció un agente general con acceso a todo.
+3. **El contrato de datos decide el proveedor.** TotalEnergies eligió un proveedor europeo para
+   modelos propios; Petrobras, una nube con los datos dentro de su dominio.
+
+Los proveedores ya venden controles para esto. Microsoft da identidades propias a los agentes,
+para saber qué hizo cada uno ([Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/),
+[Agent 365](https://learn.microsoft.com/en-us/security/security-for-ai/agent-365-security)).
+Anthropic documenta los permisos y las defensas contra inyección de Claude Code
+([Security](https://code.claude.com/docs/en/security)). OpenAI recomienda aprobaciones para las
+acciones sensibles ([Safety in building agents](https://developers.openai.com/api/docs/guides/agent-builder-safety)).
+Google propone un responsable humano definido, poderes limitados y acciones observables
+([Secure AI agents](https://research.google/pubs/an-introduction-to-googles-approach-for-secure-ai-agents/),
+[SAIF](https://safety.google/intl/en/safety/saif/)).
+
+## 6. Marcos para respaldar la política
+
+No hace falta inventar la política desde cero. Estos marcos son públicos y sirven de respaldo
+ante la dirección o auditoría:
+
+| Marco | Para qué sirve |
+| --- | --- |
+| [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) y su perfil de IA generativa (NIST AI 600-1, julio de 2024) | Ordenar riesgos en cuatro funciones: gobernar, mapear, medir y gestionar |
+| [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) | Un sistema de gestión de IA certificable, con la misma estructura que ISO 27001 |
+| [OWASP Top 10 LLM](https://genai.owasp.org/llm-top-10/) y [agénticas 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | La lista de riesgos técnicos para revisar cada agente |
+| [CISA, IA en OT](https://www.cisa.gov/resources-tools/resources/principles-secure-integration-artificial-intelligence-operational-technology) y [seguridad de los datos de IA](https://www.cisa.gov/news-events/alerts/2025/05/22/new-best-practices-guide-securing-ai-data-released) | Lo específico de infraestructura crítica y de la cadena de datos |
+
+En Argentina y en Ecuador todavía no hay una ley de IA. Lo que ya obliga son las leyes de datos
+personales: la Ley 25.326 en Argentina
+([IAPP](https://iapp.org/news/a/novedades-legislativas-en-argentina-sobre-protecci-n-de-datos-personales-e-inteligencia-artificial))
+y la Ley Orgánica de Protección de Datos Personales en Ecuador. El 31 de agosto de 2026, la
+comisión de Educación de la Asamblea recomendó archivar el proyecto de ley de IA
+([El Diario](https://www.eldiario.ec/ecuador/comision-de-educacion-de-la-asamblea-recomienda-archivar-proyecto-de-ley-sobre-inteligencia-artificial-31082026)).
+La [Ley de IA de la Unión Europea](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)
+alcanza a quien tenga socios o clientes europeos.
+
+## 7. Noventa días para empezar
+
+<figure className="figura">
+  <img
+    src="slides/img/guia-90-dias.svg"
+    alt="Cuatro etapas. Semanas 1 y 2, inventario: quién usa qué, con qué datos y en qué cuentas. Semanas 3 y 4, herramienta aprobada con contrato de datos y la política v0.2. Mes 2, un piloto con agente: una tarea, escalón 2 o 3, un dueño con nombre. Mes 3, medir y decidir: horas ahorradas, errores atrapados, incidentes. Cada etapa deja algo escrito."
+  />
+</figure>
+
+1. **Inventario.** Una encuesta corta: qué herramientas usa cada equipo, con qué datos y en qué
+   cuentas. Lo que aparezca en cuentas personales es la demanda que la herramienta aprobada tiene
+   que cubrir.
+2. **Herramienta aprobada y política.** Una herramienta contratada, con contrato de datos y sin
+   entrenamiento sobre lo que se sube, y la
+   [política de uso v0.2](descargas/politica-uso-ia-borrador.docx) completada.
+3. **Un piloto con agente.** Una tarea de la sección 4, en el escalón 2 o 3, con un dueño con
+   nombre y apellido y la lista de chequeo de abajo firmada.
+4. **Medir y decidir.** Horas ahorradas, errores que atrapó la validación, incidentes. Con eso se
+   decide si se amplía, se corrige o se para.
+
+## 8. Antes de poner un agente a trabajar
+
+Diez preguntas. Si alguna no tiene respuesta, el agente todavía no arranca.
+
+| Pregunta | Respuesta esperada |
+| --- | --- |
+| ¿Qué tarea hace, en una oración? | Una sola tarea, con un resultado que se puede revisar |
+| ¿Quién es el dueño? | Una persona con nombre, que responde por lo que hace |
+| ¿Qué escalón de autonomía tiene? | 2 o 3 para empezar |
+| ¿Cuáles de los tres poderes tiene? | Como mucho dos, o una persona que aprueba cada acción |
+| ¿Qué datos ve, y de qué nivel? | Nivel 3 en cualquier herramienta; nivel 2 solo en la contratada |
+| ¿Con qué permisos corre? | Los mínimos: su carpeta, su tabla de staging, lectura en lo demás |
+| ¿Qué servidores MCP, extensiones o skills usa? | Solo los de la lista aprobada, en versiones fijas |
+| ¿Cómo se valida lo que produce? | Una validación automática y una persona antes de producción |
+| ¿Dónde queda registrado lo que hizo? | Un registro de acciones que alguien puede revisar |
+| ¿Qué pasa si se equivoca? | Se deshace: copia, staging, backup probado |
+
+## Fuentes
+
+Revisadas el 30 de septiembre de 2026.
+
+- **Diseño y riesgos:** [la trifecta letal](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) · [la regla de dos de Meta](https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/) · [NCSC](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection) · [OWASP LLM](https://genai.owasp.org/llm-top-10/) · [OWASP agénticas](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- **Incidentes:** [EchoLeak](https://www.hackthebox.com/blog/cve-2025-32711-echoleak-copilot-vulnerability) · [MCP de GitHub](https://invariantlabs.ai/blog/mcp-github-vulnerability) · [Replit](https://incidentdatabase.ai/cite/1152/) · [postmark-mcp](https://www.theregister.com/2025/09/29/postmark_mcp_server_code_hijacked/) · [Nx s1ngularity](https://www.wiz.io/blog/s1ngularity-supply-chain-attack) · [Amazon Q](https://aws.amazon.com/security/security-bulletins/AWS-2025-015/) · [Samsung](https://www.cnbc.com/2023/05/02/samsung-bans-use-of-ai-like-chatgpt-for-staff-after-misuse-of-chatbot.html)
+- **Operación:** [CISA, IA en OT](https://www.cisa.gov/resources-tools/resources/principles-secure-integration-artificial-intelligence-operational-technology) · [CISA, datos de IA](https://www.cisa.gov/news-events/alerts/2025/05/22/new-best-practices-guide-securing-ai-data-released) · [aviso sobre PI Web API](https://www.cisa.gov/news-events/ics-advisories/icsa-25-162-08)
+- **Simulación y datos:** [JutulGPT](https://arxiv.org/abs/2603.00214) · [SINTEF](https://blog.sintef.com/digital-en/talking-to-your-simulator-what-we-learned-building-jutulgpt/) · [Capítulo IV](https://datos.energia.gob.ar/dataset/produccion-de-petroleo-y-gas-por-pozo) · [hiQ contra LinkedIn](https://natlawreview.com/article/linkedin-s-data-scraping-battle-hiq-labs-ends-proposed-judgment)
+- **Empresas:** [ADNOC y AIQ](https://jpt.spe.org/aiq-announces-340-million-contract-from-adnoc-for-deployment-of-agentic-ai) · [Petrobras](https://agencia.petrobras.com.br/w/petrobras-cria-ferramenta-com-inteligencia-artificial-generativa-para-apoiar-mais-de-100-mil-trabalhadores) · [Equinor](https://www.equinor.com/news/20260107-artificial-intelligence-saved-equinor-usd-130-million) · [TotalEnergies](https://totalenergies.com/newsroom/totalenergies-annonce-un-partenariat-avec-mistral-en-vue-de-developper-des-modeles-de-frontiere-dintelligence-artificielle-dedies-a-lexploration-et-a-lingenierie-des-reservoirs-498514/?lang=eng) · [bp y Palantir](https://investors.palantir.com/news-details/2024/Palantir-and-bp-Agree-to-5-Year-Strategic-Relationship-With-New-AI-Capabilities/) · [SLB Tela](https://www.slb.com/newsroom/press-release/2025/pr-2025-1103-slb-tela-ai) · [YPF](https://mase.lmneuquen.com/empresas/como-es-el-acuerdo-ypf-y-microsoft-aplicar-inteligencia-artificial-n1138947) · [PAE](https://www.ambito.com/energia/pan-american-energy-sumo-inteligencia-artificial-su-cadena-suministro-n6094152) · [CGC](https://www.rionegro.com.ar/energia/petroleras-y-la-inteligencia-artificial-cgc-refuerza-su-ciberseguridad-3777192/)
+- **Proveedores:** [Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/) · [Agent 365](https://learn.microsoft.com/en-us/security/security-for-ai/agent-365-security) · [Claude Code](https://code.claude.com/docs/en/security) · [OpenAI](https://developers.openai.com/api/docs/guides/agent-builder-safety) · [Google](https://research.google/pubs/an-introduction-to-googles-approach-for-secure-ai-agents/) · [SAIF](https://safety.google/intl/en/safety/saif/)
+- **Marcos y leyes:** [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) · [ISO/IEC 42001](https://www.iso.org/standard/81230.html) · [Argentina](https://iapp.org/news/a/novedades-legislativas-en-argentina-sobre-protecci-n-de-datos-personales-e-inteligencia-artificial) · [Ecuador](https://www.eldiario.ec/ecuador/comision-de-educacion-de-la-asamblea-recomienda-archivar-proyecto-de-ley-sobre-inteligencia-artificial-31082026) · [Unión Europea](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)

@@ -17,9 +17,11 @@ Sesión 7 de 8 · día 4: riesgos y el caso real · 2 h en vivo · **PCR · CGC 
 Ventanas de esta sesión: A este deck, C el sitio en la página de la sesión 7.
 Antes de clase: el borrador de la política (el .docx descargable de la
 página, con corchetes para completar) abierto y listo; las fuentes de los
-cinco incidentes abiertas en pestañas: Deloitte (Guardian), el registro de
-Charlotin, Replit (AIID), Air Canada (BBC) y el reporte de espionaje de
-Anthropic. Todas están linkeadas en la página.
+siete incidentes abiertas en pestañas: Deloitte (Guardian), el registro de
+Charlotin, Replit (AIID), EchoLeak (Hack The Box), postmark-mcp (The
+Register), Air Canada (BBC) y el reporte de espionaje de Anthropic. Todas
+están linkeadas en la página. También abierta la guía de agentes
+(#/guia-agentes).
 Dejar preparado también lo de la sesión 8 (ver las notas de su portada): la
 pausa entre sesiones dura diez minutos y no alcanza para cargar el Libro A,
 la terminal y las pestañas del futuro.
@@ -367,12 +369,49 @@ En un sistema que opera equipos, un paso equivocado termina en una **válvula en
 que no era**.
 
 <!--
-5 min · acumulado 1:18
+3 min · acumulado 1:16
 Retomar la traza de ayer: todo lo que hizo el agente era reversible, y por
 eso el loop podía permitirse el error.
 "Conectemos un agente al sistema de control" tiene que encender todas las
 alarmas por cómo funciona el mecanismo: el loop supone que equivocarse no
 cuesta nada.
+-->
+
+---
+
+## La regla de dos
+
+![Tres círculos: lee lo que no controlás, tiene acceso a lo sensible, actúa o sale afuera; en el centro, peligro; a la derecha, las tres combinaciones de a dos y las tres juntas solo con aprobación de cada acción](img/guia-regla-de-dos.svg)
+
+<!--
+4 min · acumulado 1:20
+El agente de ayer tenía dos: leía archivos públicos (A) y escribía en su
+carpeta (C). No tenía nada sensible (B). Por eso el riesgo era bajo.
+Con los tres juntos, un texto escondido en una página o un correo le da
+órdenes al agente, y el agente las cumple con los permisos de quien lo
+corre. Simon Willison lo llamó "la trifecta letal"; Meta lo convirtió en
+regla de diseño (Agents Rule of Two, octubre de 2025).
+Pregunta a la sala: el agente que les gustaría para los partes diarios,
+¿cuáles de los tres tiene? (B y C: por eso los partes vienen de una fuente
+conocida, sin A.) Links en la guía, sección 1.
+-->
+
+---
+
+## Esto ya pasó: EchoLeak y postmark-mcp, 2025
+
+**Un correo, sin clic:** Microsoft 365 Copilot seguía instrucciones escondidas en un mail y
+sacaba datos de su alcance. Microsoft lo corrigió en sus servidores.
+
+**Un conector:** un servidor MCP para mandar correos empezó a copiar cada mensaje a un tercero.
+
+<!--
+2 min · acumulado 1:22
+EchoLeak (CVE-2025-32711) es la regla de dos en un caso concreto: lee
+contenido externo (A), ve el correo y los archivos (B), y puede sacar
+datos (C). postmark-mcp: un conector es software de terceros que corre con
+tus permisos; por eso la política v0.2 pide una lista de conectores
+aprobados. Fuentes en la página de la sesión.
 -->
 
 ---
@@ -385,12 +424,49 @@ congelamiento de cambios.
 Después informó que la recuperación era imposible, y se equivocó: se pudo recuperar.
 
 <!--
-4 min · acumulado 1:22
+2 min · acumulado 1:24
 La fuente (el AI Incident Database) está linkeada en la página.
 Dos lecciones, las dos del curso: la herramienta de escritura estaba
 conectada sin necesidad (herramientas que no deberían estar, ayer), y lo
 que el agente dice sobre su propio error también es salida de un modelo: se
 verifica igual. La recuperación la terminó haciendo una persona.
+-->
+
+---
+
+## Cuánto dejarlo hacer solo
+
+![Escalera de cinco escalones: lee y resume; propone; escribe en una copia; actúa con aprobación; actúa solo. Para empezar en una empresa, escalones 2 y 3](img/guia-escalera.svg)
+
+<!--
+3 min · acumulado 1:27
+Casi todo el ahorro está en los escalones 2 y 3: el agente escribe el
+script o carga en staging, y una persona aprueba lo que pasa a producción.
+Es lo que hizo el agente de ayer con Volve. El 5 no se usa con datos ni
+sistemas de la empresa.
+-->
+
+---
+
+## Las cuatro tareas, con su control
+
+| Tarea | El control que no se negocia |
+| --- | --- |
+| Bajar datos públicos | El agente que navega no ve nada interno |
+| Partes internos a una base | Staging, sin permiso de borrar, y una persona antes de producción |
+| Modelos de simulación | Copia del deck, diff contra el caso base, firma del ingeniero |
+| Tableros de monitoreo | Solo lectura sobre una réplica; el agente no entra a la red de operación |
+
+El detalle, en **la guía de agentes**.
+
+<!--
+2 min · acumulado 1:29
+No desarrollar acá: son las cuatro tareas que salieron en las rondas. Cada
+una tiene en la guía su esquema, sus riesgos y sus controles, más lo que
+hicieron ADNOC, Petrobras, Equinor y otras, y la lista de diez preguntas.
+Dato del día para la de datos públicos: el 30 de septiembre, la dirección
+de la ARCH que usó el curso mostraba una página de apuestas en lugar de
+los reportes. Un agente automático la habría seguido "leyendo".
 -->
 
 ---
@@ -403,18 +479,13 @@ que nunca lo va a hacer.
 La seguridad industrial se diseña al revés: garantías demostrables, modos de falla conocidos.
 
 <!--
-6 min · acumulado 1:28
+2 min · acumulado 1:31
 El video corto de los recursos (Anthropic, qué es la interpretabilidad) es
 exactamente esta pregunta: hoy se puede mirar adentro de un modelo, pero
 todavía no se puede garantizar lo que va a hacer.
-Son dos culturas de ingeniería incompatibles, y escribir mejor el prompt no
-cambia eso.
 Para el ángulo de seguridad informática: en noviembre de 2025 Anthropic
 reportó el primer caso de espionaje orquestado con agentes de IA, contra
-unas treinta organizaciones: grandes tecnológicas, entidades financieras,
-fabricantes de productos químicos y agencias de gobierno. Entró en unas
-pocas. El link está en la página; para una empresa de energía es lectura
-obligada.
+unas treinta organizaciones. El link está en la página.
 -->
 
 ---
@@ -424,12 +495,15 @@ obligada.
 ## Entre el modelo y el campo, **una persona con nombre y apellido**
 
 <!--
-5 min · acumulado 1:33
+2 min · acumulado 1:33
 La separación práctica: asistentes sobre copias de datos, del lado de la
 oficina, produciendo recomendaciones que una persona ejecuta. SCADA y el
 resto de la red de operaciones quedan en su propia red, y el asistente no la
 toca. Es la misma lógica por la que un cálculo de ingeniería lo firma
-alguien.
+alguien. Las agencias llegaron a lo mismo: CISA, la NSA y otras siete
+agencias publicaron en diciembre de 2025 principios para IA en tecnología
+de operaciones, con una persona en el lazo para todo lo que toque la
+seguridad del proceso.
 Cierre del bloque 5. Sin pausa: la política va ahora, y la pausa es al final.
 -->
 
@@ -470,8 +544,8 @@ quién, y quién responde cuando se equivocan.
 
 ## La política, en una página
 
-La redactamos en vivo sobre un borrador editable de **cinco puntos**: herramientas aprobadas,
-mapa de datos, verificación, declaración de asistencia, y a quién consultar.
+La redactamos en vivo sobre un borrador editable de **seis puntos**: herramientas aprobadas,
+mapa de datos, verificación, declaración de asistencia, a quién consultar, y agentes.
 
 <!--
 10 min · acumulado 1:48
@@ -482,6 +556,9 @@ empresas el punto 5 se llena distinto en cada una: pedir el ROL de la
 persona, y el nombre lo completa cada empresa.
 El quinto punto (a quién se consulta el caso nuevo) es el que más se olvida
 y el que mantiene la política viva.
+El sexto (agentes, nuevo en la v0.2) no se redacta en vivo: ya viene
+escrito con la regla de dos, los permisos mínimos y un responsable por
+agente. Mostrarlo diez segundos y mandar a la guía de agentes.
 Cada uno se lo baja de la página, editable, para su empresa.
 Apoyo: pega en el chat las categorías del bloque 4 para copiarlas
 al punto 2 sin retipear.

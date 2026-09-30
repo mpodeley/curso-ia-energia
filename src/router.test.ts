@@ -24,6 +24,7 @@ describe('parseHash', () => {
     expect(parseHash('#/preguntas')).toEqual({ page: 'preguntas' })
     expect(parseHash('#/preguntas/')).toEqual({ page: 'preguntas' })
     expect(parseHash('#/agentes-nube')).toEqual({ page: 'agentes-nube' })
+    expect(parseHash('#/guia-agentes')).toEqual({ page: 'guia-agentes' })
     expect(parseHash('#/repaso')).toEqual({ page: 'repaso' })
   })
 
@@ -39,6 +40,7 @@ describe('parseHash', () => {
       { page: 'recursos' },
       { page: 'preguntas' },
       { page: 'agentes-nube' },
+      { page: 'guia-agentes' },
       { page: 'repaso' },
       { page: 'panel' },
     ] as const

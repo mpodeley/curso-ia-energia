@@ -1,6 +1,6 @@
 # Política de uso de inteligencia artificial generativa
 
-**[Gerencia / equipo] · Versión 0.1 · [fecha]**
+**[Gerencia / equipo] · Versión 0.2 · [fecha]**
 
 *Borrador de trabajo del curso de IA generativa, pensado para que cada equipo lo adapte y lo
 haga propio. No es un documento oficial de la empresa. Los corchetes marcan lo que falta
@@ -45,15 +45,36 @@ Declaran asistencia de inteligencia artificial: [definir umbral; p. ej. todo inf
 que circule fuera del equipo, con una línea al pie]. La responsabilidad por el contenido es
 siempre de quien firma, con o sin asistencia.
 
-## 5. Casos nuevos y agentes
+## 5. Casos nuevos
 
 - Los casos que esta página no cubre los resuelve **[nombre y cargo]**, y la respuesta se
   incorpora a la versión siguiente.
-- Un agente con herramientas de escritura (correo, planillas compartidas, sistemas internos) se
-  usa solo con aprobación previa de [rol], y con una persona que revisa cada acción antes de que
-  ocurra.
-- Ningún asistente ni agente se conecta a sistemas de operación o control. Trabajan sobre copias
-  de datos, del lado de la oficina, y producen recomendaciones que una persona ejecuta.
+
+## 6. Agentes
+
+Un agente es un asistente que además actúa: lee y escribe archivos, corre código, navega, manda
+mensajes o se conecta a otros sistemas.
+
+- **Autonomía máxima permitida**: [escalón 3: el agente escribe solo en copias o en tablas de
+  staging; lo que pasa a producción lo aprueba una persona]. Escalones por encima requieren
+  aprobación de [rol].
+- **Regla de dos**: sin una persona que apruebe cada acción, un agente tiene como mucho dos de
+  estos tres poderes: leer contenido externo no confiable (web, correos, archivos de terceros),
+  acceder a datos o sistemas sensibles, y actuar o comunicarse hacia afuera.
+- **Permisos mínimos**: cada agente corre con una cuenta o credencial propia, con los permisos que
+  su tarea necesita y nada más. Ningún agente tiene permisos de borrado sobre bases de producción.
+  Las credenciales no se escriben en el código ni en las instrucciones del agente.
+- **Validación y revisión**: lo que un agente carga en una base o entrega como resultado pasa por
+  una validación automática (formato, rangos, totales) y por una persona antes de usarse.
+- **Extensiones y conectores**: solo servidores MCP, extensiones y skills de la lista aprobada
+  por [sistemas], en versiones fijas. Está prohibido desactivar los permisos del agente.
+- **Registro**: las acciones de cada agente quedan registradas y se revisan [cada mes].
+- **Responsable**: cada agente tiene un dueño con nombre y cargo, que responde por lo que hace.
+- **Operación**: ningún asistente ni agente se conecta a sistemas de operación o control (SCADA,
+  controladores, redes de planta). Trabajan sobre copias o réplicas de solo lectura, del lado de
+  la oficina, y producen recomendaciones que una persona ejecuta.
+- **Antes de arrancar**: todo agente nuevo responde por escrito las diez preguntas de la lista de
+  chequeo [anexo o link], y la firma su responsable.
 
 ---
 
