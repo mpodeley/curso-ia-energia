@@ -1,0 +1,371 @@
+{
+  "generated_at": "2026-09-24T13:54:00+00:00",
+  "source": "elaboración propia; cada hito cita su fuente primaria",
+  "source_date": "2026-09-24",
+  "data": {
+    "eras": [
+      {
+        "id": "reglas",
+        "nombre": "Reglas escritas a mano",
+        "desde": 1950,
+        "hasta": 1986
+      },
+      {
+        "id": "datos",
+        "nombre": "Aprender de datos",
+        "desde": 1986,
+        "hasta": 2012
+      },
+      {
+        "id": "profundas",
+        "nombre": "Redes profundas",
+        "desde": 2012,
+        "hasta": 2017
+      },
+      {
+        "id": "generales",
+        "nombre": "Modelos generales",
+        "desde": 2017,
+        "hasta": 2026
+      }
+    ],
+    "hitos": [
+      {
+        "id": "turing-1950",
+        "fecha": "1950-10",
+        "titulo": "Turing pregunta si una máquina piensa",
+        "que": "Alan Turing propone en la revista Mind reemplazar la pregunta por un juego de imitación: una conversación escrita donde la máquina intenta pasar por persona.",
+        "porque": "Fija una vara que todavía se discute, y en su última sección ya imagina máquinas que aprenden como un chico al que se educa.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "A. M. Turing, \"Computing Machinery and Intelligence\", Mind 59 (236), 1950",
+          "url": "https://academic.oup.com/mind/article/LIX/236/433/986238"
+        }
+      },
+      {
+        "id": "dartmouth-1956",
+        "fecha": "1956",
+        "titulo": "Nace el campo en Dartmouth",
+        "que": "John McCarthy reúne en Dartmouth un proyecto de verano: describir la inteligencia con tanta precisión que una máquina pueda simularla.",
+        "porque": "Dartmouth lo considera el nacimiento de la inteligencia artificial como campo de investigación, y el nombre del proyecto queda como nombre del campo.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "Dartmouth College, \"Artificial Intelligence (AI) Coined at Dartmouth\"",
+          "url": "https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth"
+        }
+      },
+      {
+        "id": "perceptron-1958",
+        "fecha": "1958-07",
+        "titulo": "El perceptrón aprende de ejemplos",
+        "que": "Frank Rosenblatt muestra una máquina que aprende sola, después de 50 intentos, a distinguir tarjetas marcadas a la izquierda de las marcadas a la derecha.",
+        "porque": "Es el antepasado de las redes neuronales actuales. En 1969 el libro Perceptrons, de Minsky y Papert, la critica y la idea queda relegada.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "Cornell Chronicle, \"Professor's perceptron paved the way for AI – 60 years too soon\", 2019",
+          "url": "https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon"
+        }
+      },
+      {
+        "id": "eliza-1966",
+        "fecha": "1966-01",
+        "titulo": "ELIZA conversa por escrito",
+        "que": "Joseph Weizenbaum, en el Instituto Tecnológico de Massachusetts (MIT), publica ELIZA: un programa que conversa como un psicoterapeuta aplicando reglas escritas a mano.",
+        "porque": "El propio autor cuenta que a algunas personas costó convencerlas de que ELIZA no era humana, un efecto que reaparece con los chatbots de hoy.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "J. Weizenbaum, \"ELIZA\", Communications of the ACM 9 (1), enero de 1966",
+          "url": "https://doi.org/10.1145/365153.365168"
+        }
+      },
+      {
+        "id": "lighthill-1973",
+        "fecha": "1973",
+        "titulo": "Primer invierno: el informe Lighthill",
+        "que": "Un informe encargado por el consejo de investigación científica británico concluye que la IA decepcionó lo esperado y critica su investigación básica.",
+        "porque": "Provoca en el Reino Unido una pérdida de confianza en la IA que dura casi una década: es el primer invierno del campo.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "Chilton Computing, archivo del informe Lighthill, \"Artificial Intelligence: A General Survey\"",
+          "url": "https://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/overview.htm"
+        }
+      },
+      {
+        "id": "r1-1980",
+        "fecha": "1980",
+        "titulo": "Sistemas expertos: reglas para configurar computadoras",
+        "que": "John McDermott, de Carnegie Mellon, presenta R1: 772 reglas escritas a mano que configuran las computadoras VAX-11/780 de Digital Equipment Corporation.",
+        "porque": "Muestra la receta de la época: sacarle el conocimiento a un experto y escribirlo como reglas del tipo si pasa esto, hacé aquello.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "J. McDermott, \"R1: an Expert in the Computer Systems Domain\", AAAI 1980",
+          "url": "https://cdn.aaai.org/AAAI/1980/AAAI80-076.pdf"
+        }
+      },
+      {
+        "id": "dipmeter-1981",
+        "fecha": "1981-08",
+        "titulo": "Un sistema experto interpreta perfiles de pozo",
+        "que": "El Instituto Tecnológico de Massachusetts (MIT) y Schlumberger presentan Dipmeter Advisor, que infiere la estructura geológica del subsuelo a partir del perfil de buzamiento.",
+        "porque": "La IA llega al pozo: el sistema busca imitar a los intérpretes expertos en una tarea que se aprende con años de práctica.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "R. Davis et al., \"The Dipmeter Advisor: Interpretation of Geologic Signals\", IJCAI 1981",
+          "url": "https://www.ijcai.org/Proceedings/81-2/Papers/051.pdf"
+        }
+      },
+      {
+        "id": "invierno-1984",
+        "fecha": "1984",
+        "titulo": "Advierten un segundo invierno",
+        "que": "Investigadores reunidos por la Asociación Estadounidense de IA (AAAI) advierten que las expectativas están demasiado altas; algunos ya hablan de un \"invierno de la IA\".",
+        "porque": "El peor escenario que describen incluye a Schlumberger y Texas Instruments perdiendo interés: la industria ya era cliente de los sistemas expertos.",
+        "era": "reglas",
+        "fuente": {
+          "titulo": "D. McDermott et al., \"The Dark Ages of AI: A Panel Discussion at AAAI-84\", AI Magazine 6 (3), 1985",
+          "url": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/494"
+        }
+      },
+      {
+        "id": "retropropagacion-1986",
+        "fecha": "1986-10",
+        "titulo": "Las redes aprenden de sus errores",
+        "que": "Rumelhart, Hinton y Williams publican en Nature la retropropagación: un método que ajusta los pesos de una red con capas ocultas según sus errores.",
+        "porque": "Las capas ocultas terminan representando por su cuenta los rasgos importantes del problema, algo que el perceptrón no podía hacer.",
+        "era": "datos",
+        "fuente": {
+          "titulo": "D. Rumelhart, G. Hinton y R. Williams, \"Learning representations by back-propagating errors\", Nature 323, 1986",
+          "url": "https://www.nature.com/articles/323533a0"
+        }
+      },
+      {
+        "id": "lenet-1989",
+        "fecha": "1989",
+        "titulo": "Una red lee códigos postales",
+        "que": "En los Laboratorios Bell, Yann LeCun y su equipo entrenan con retropropagación una red que reconoce dígitos manuscritos de códigos postales del correo estadounidense.",
+        "porque": "Una sola red aprende todo el reconocimiento, desde la imagen del dígito hasta la respuesta final.",
+        "era": "datos",
+        "fuente": {
+          "titulo": "Y. LeCun et al., \"Backpropagation Applied to Handwritten Zip Code Recognition\", Neural Computation 1 (4), 1989",
+          "url": "https://doi.org/10.1162/neco.1989.1.4.541"
+        }
+      },
+      {
+        "id": "deep-blue-1997",
+        "fecha": "1997-05",
+        "titulo": "Deep Blue le gana a Kasparov",
+        "que": "La computadora de IBM vence al campeón mundial de ajedrez Garry Kasparov por 3.5 a 2.5, en un match con tiempos de torneo.",
+        "porque": "Es el ejemplo clásico de IA de propósito específico: un sistema construido para una sola tarea, que en esa tarea le gana al campeón del mundo.",
+        "era": "datos",
+        "fuente": {
+          "titulo": "IBM, \"Deep Blue\"",
+          "url": "https://www.ibm.com/history/deep-blue"
+        }
+      },
+      {
+        "id": "imagenet-2009",
+        "fecha": "2009",
+        "titulo": "ImageNet: millones de imágenes etiquetadas",
+        "que": "Investigadores de Princeton publican ImageNet: 3.2 millones de imágenes, anotadas y revisadas por personas, en 5,247 categorías, para entrenar y comparar algoritmos.",
+        "porque": "Es aprendizaje supervisado a escala: cada imagen trae su etiqueta. Sobre este conjunto se corre el concurso donde despegan las redes profundas.",
+        "era": "datos",
+        "fuente": {
+          "titulo": "J. Deng et al., \"ImageNet: A Large-Scale Hierarchical Image Database\", CVPR 2009",
+          "url": "https://www.image-net.org/static_files/papers/imagenet_cvpr09.pdf"
+        }
+      },
+      {
+        "id": "alexnet-2012",
+        "fecha": "2012",
+        "titulo": "AlexNet: el salto de las redes profundas",
+        "que": "Una red profunda de la Universidad de Toronto, entrenada en dos unidades de procesamiento gráfico (GPU), gana ImageNet con 15.3% de error; el segundo, 26.2%.",
+        "porque": "Junta los tres ingredientes de lo que sigue: muchos datos etiquetados, cómputo en placas gráficas y redes con muchas capas.",
+        "era": "profundas",
+        "fuente": {
+          "titulo": "ImageNet, resultados del concurso ILSVRC 2012",
+          "url": "https://image-net.org/challenges/LSVRC/2012/results.html"
+        }
+      },
+      {
+        "id": "alphago-2016",
+        "fecha": "2016-03",
+        "titulo": "AlphaGo le gana a Lee Sedol",
+        "que": "AlphaGo, de DeepMind, vence 4 a 1 en Seúl a Lee Sedol, ganador de 18 títulos mundiales; lo siguen más de 200 millones de personas.",
+        "porque": "Aprende de miles de partidas de expertos y jugando contra sí mismo: aprendizaje por refuerzo, la técnica que también ajusta a los chatbots.",
+        "era": "profundas",
+        "fuente": {
+          "titulo": "Google DeepMind, \"AlphaGo\"",
+          "url": "https://deepmind.google/research/breakthroughs/alphago/"
+        }
+      },
+      {
+        "id": "transformer-2017",
+        "fecha": "2017-06",
+        "titulo": "Aparece el transformer",
+        "que": "Investigadores de Google publican \"Attention Is All You Need\": una arquitectura basada solo en atención, más paralelizable y mucho más rápida de entrenar.",
+        "porque": "Es la arquitectura sobre la que se construyen GPT, GPT-2 y los modelos que siguen en esta línea.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "A. Vaswani et al., \"Attention Is All You Need\", arXiv:1706.03762",
+          "url": "https://arxiv.org/abs/1706.03762"
+        }
+      },
+      {
+        "id": "gpt-2018",
+        "fecha": "2018-06",
+        "titulo": "GPT: preentrenar con texto sin etiquetar",
+        "que": "OpenAI combina el transformer con preentrenamiento no supervisado: el modelo lee grandes cantidades de texto sin etiquetar y después se ajusta a cada tarea.",
+        "porque": "Aprovecha el texto que abunda en todas partes, sin que nadie tenga que etiquetarlo antes, para aprender el lenguaje.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "OpenAI, \"Improving language understanding with unsupervised learning\", 11 de junio de 2018",
+          "url": "https://openai.com/index/language-unsupervised/"
+        }
+      },
+      {
+        "id": "gpt2-2019",
+        "fecha": "2019-02",
+        "titulo": "GPT-2: predecir la palabra siguiente",
+        "que": "OpenAI entrena un transformer de 1,500 millones de parámetros con 8 millones de páginas web y un solo objetivo: predecir la palabra siguiente.",
+        "porque": "Sin entrenamiento específico, muestra capacidades rudimentarias de comprensión de lectura, traducción y respuesta a preguntas. OpenAI lo publica por etapas.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "OpenAI, \"Better language models and their implications\", 14 de febrero de 2019",
+          "url": "https://openai.com/index/better-language-models/"
+        }
+      },
+      {
+        "id": "gpt3-2020",
+        "fecha": "2020-05",
+        "titulo": "GPT-3: aprender del ejemplo en el pedido",
+        "que": "Con 175,000 millones de parámetros, diez veces más que cualquier modelo anterior de su tipo, GPT-3 resuelve tareas con pocos ejemplos escritos en el pedido.",
+        "porque": "La misma red traduce, responde preguntas y hace aritmética sin reentrenarla: agrandar el modelo mejoró su desempeño en tareas generales.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "T. Brown et al., \"Language Models are Few-Shot Learners\", arXiv:2005.14165",
+          "url": "https://arxiv.org/abs/2005.14165"
+        }
+      },
+      {
+        "id": "instructgpt-2022",
+        "fecha": "2022-03",
+        "titulo": "Personas le enseñan a seguir instrucciones",
+        "que": "OpenAI ajusta GPT-3 con ejemplos y comparaciones hechas por personas, mediante aprendizaje por refuerzo con retroalimentación humana (RLHF).",
+        "porque": "Las respuestas de un modelo de 1,300 millones de parámetros ajustado así se prefieren a las de GPT-3, que tiene 100 veces más.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "L. Ouyang et al., \"Training language models to follow instructions with human feedback\", arXiv:2203.02155",
+          "url": "https://arxiv.org/abs/2203.02155"
+        }
+      },
+      {
+        "id": "chatgpt-2022",
+        "fecha": "2022-11-30",
+        "titulo": "Sale ChatGPT",
+        "que": "OpenAI abre gratis un modelo que conversa: responde repreguntas, admite errores y cuestiona premisas incorrectas. Está entrenado con RLHF, como InstructGPT.",
+        "porque": "El formato de conversación pone un modelo de propósito general al alcance de cualquiera con un navegador.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "OpenAI, \"Introducing ChatGPT\", 30 de noviembre de 2022",
+          "url": "https://openai.com/index/chatgpt/"
+        }
+      },
+      {
+        "id": "llama-2023",
+        "fecha": "2023-02",
+        "titulo": "Meta abre LLaMA a investigadores",
+        "que": "Meta presenta LLaMA, con versiones de 7,000 a 65,000 millones de parámetros, y da acceso a investigadores con una licencia no comercial.",
+        "porque": "Modelos más chicos y eficientes permiten que investigadores sin grandes centros de cómputo estudien estos sistemas.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "Meta AI, \"Introducing LLaMA\", 24 de febrero de 2023",
+          "url": "https://ai.meta.com/blog/large-language-model-llama-meta-ai/"
+        }
+      },
+      {
+        "id": "gpt4-2023",
+        "fecha": "2023-03-14",
+        "titulo": "GPT-4 también lee imágenes",
+        "que": "OpenAI presenta GPT-4, un modelo grande multimodal: recibe texto e imágenes y responde con texto.",
+        "porque": "Según OpenAI, rinde a nivel humano en varios exámenes profesionales y académicos, aunque en muchas situaciones reales sigue por debajo de las personas.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "OpenAI, \"GPT-4\", 14 de marzo de 2023",
+          "url": "https://openai.com/index/gpt-4-research/"
+        }
+      },
+      {
+        "id": "claude-2023",
+        "fecha": "2023-03-14",
+        "titulo": "Anthropic lanza Claude",
+        "que": "Anthropic abre Claude a más usuarios después de meses de prueba cerrada con socios como Notion, Quora y DuckDuckGo.",
+        "porque": "Sale el mismo día que GPT-4, y desde entonces hay más de un laboratorio con asistentes de propósito general.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "Anthropic, \"Introducing Claude\", 14 de marzo de 2023",
+          "url": "https://www.anthropic.com/news/introducing-claude"
+        }
+      },
+      {
+        "id": "o1-2024",
+        "fecha": "2024-09",
+        "titulo": "Modelos que piensan antes de responder",
+        "que": "OpenAI presenta o1, entrenado con aprendizaje por refuerzo para razonar paso a paso en una cadena de pensamiento antes de dar la respuesta.",
+        "porque": "Su desempeño mejora con más entrenamiento y con más tiempo para pensar: aparece una segunda palanca, además de agrandar el modelo.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "OpenAI, \"Learning to reason with LLMs\", 12 de septiembre de 2024",
+          "url": "https://openai.com/index/learning-to-reason-with-llms/"
+        }
+      },
+      {
+        "id": "deepseek-r1-2025",
+        "fecha": "2025-01",
+        "titulo": "DeepSeek-R1 razona y se descarga",
+        "que": "DeepSeek publica R1, entrenado sobre todo con aprendizaje por refuerzo, con un desempeño en razonamiento comparable al de o1.",
+        "porque": "Cualquiera puede descargar el modelo y seis versiones más chicas, de 1,500 a 70,000 millones de parámetros.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "DeepSeek-AI, \"DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning\", arXiv:2501.12948",
+          "url": "https://arxiv.org/abs/2501.12948"
+        }
+      },
+      {
+        "id": "claude-code-2025",
+        "fecha": "2025-02-24",
+        "titulo": "Claude Code trabaja en la terminal",
+        "que": "Anthropic presenta Claude Code, un agente de terminal que busca y lee código, edita archivos, corre pruebas y usa herramientas de línea de comandos.",
+        "porque": "Es un modelo general con herramientas y un loop, que pasa de conversar a hacer. Queda disponible para todos el 22 de mayo de 2025.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "Anthropic, \"Claude 3.7 Sonnet and Claude Code\", 24 de febrero de 2025",
+          "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+        }
+      },
+      {
+        "id": "mythos-2026",
+        "fecha": "2026-04",
+        "titulo": "Un modelo reservado por seguridad",
+        "que": "Anthropic informa que Claude Mythos Preview encontró fallas de seguridad desconocidas en todos los sistemas operativos y navegadores principales, y decide no publicarlo.",
+        "porque": "Lo comparte solo con un grupo limitado de socios y desarrolladores de código abierto: la capacidad ya pesa en la seguridad del software crítico.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "Anthropic, \"Claude Mythos Preview\", 7 de abril de 2026",
+          "url": "https://www.anthropic.com/research/mythos-preview"
+        }
+      },
+      {
+        "id": "gpt6-astra-2026",
+        "fecha": "2026-09-03",
+        "titulo": "GPT-6 Astra",
+        "que": "OpenAI presenta GPT-6 Astra, que según la empresa lidera en uso de computadoras, programación, ciberseguridad y ciencia.",
+        "porque": "Es el hito más reciente a la fecha del curso: la competencia se mide en usar la computadora y programar, además de conversar.",
+        "era": "generales",
+        "fuente": {
+          "titulo": "OpenAI, \"GPT-6 Astra: A new generation of intelligence\", 3 de septiembre de 2026",
+          "url": "https://openai.com/index/gpt-6-astra/"
+        }
+      }
+    ]
+  }
+}

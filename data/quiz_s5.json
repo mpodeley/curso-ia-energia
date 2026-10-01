@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-09-28T00:00:00+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "Un agente consolida los partes de la ARCH y en un paso corre un script de Python. ¿Quién lo ejecuta?",
+      "opciones": [
+        {
+          "texto": "El modelo, en los servidores del proveedor, en el momento en que escribe el código.",
+          "explicacion": "El modelo solo escribe texto: el código y un pedido tool_use que dice qué correr. Anthropic lo dice así: \"The model never executes anything on its own.\""
+        },
+        {
+          "texto": "La herramienta, sola, apenas el modelo la nombra en su respuesta.",
+          "explicacion": "Una herramienta no se dispara por nombrarla. Alguien tiene que leer el pedido tool_use, revisar los permisos y correrla, y ese alguien es el arnés."
+        },
+        {
+          "texto": "El arnés: lee el pedido tool_use del modelo, corre el script si hay permiso y le devuelve la salida como tool_result.",
+          "correcta": true,
+          "explicacion": "Es el contrato de los tres grandes proveedores: el modelo pide y el arnés ejecuta. Según el arnés, el script corre en tu computadora (un agente de terminal) o en una computadora aislada en la nube (el chatbot de la sesión 3)."
+        },
+        {
+          "texto": "Nadie: el modelo imagina la salida más probable del script y sigue desde ahí.",
+          "explicacion": "Eso le puede pasar a un chatbot sin herramientas, que inventa una salida verosímil. Con herramientas, la salida real vuelve como tool_result y el modelo la lee."
+        }
+      ]
+    },
+    {
+      "pregunta": "En la traza, el agente filtró por \"AGUARAGUE\" sin diéresis y le volvieron cero filas. ¿Por qué importa lo que hizo después?",
+      "opciones": [
+        {
+          "texto": "Porque fue a mirar qué valores existen en la columna, y ahí encontró que el área lleva diéresis.",
+          "correcta": true,
+          "explicacion": "Reemplazó una suposición por un dato, y pudo hacerlo porque el resultado de la herramienta volvió a la conversación. Un chatbot sin herramientas hubiera seguido escribiendo sobre una tabla vacía."
+        },
+        {
+          "texto": "Porque probó otras grafías hasta que una funcionó.",
+          "explicacion": "Eso sería adivinar de nuevo, con suerte. El agente de la traza hizo algo mejor: pidió ver los datos."
+        },
+        {
+          "texto": "Porque reintentó la misma consulta y la segunda vez anduvo.",
+          "explicacion": "El error estaba en el filtro, así que la misma consulta hubiera devuelto cero filas otra vez."
+        },
+        {
+          "texto": "Porque frenó y le pidió a la persona el nombre correcto del área.",
+          "explicacion": "Frenar ante cada obstáculo lo volvería inútil. Acá lo pudo resolver solo, con evidencia que tenía a mano."
+        }
+      ]
+    },
+    {
+      "pregunta": "Abrís Claude Code en modo manual sobre la carpeta de los partes. ¿Cuál de estas acciones hace sin preguntarte?",
+      "opciones": [
+        {
+          "texto": "Correr pdftotext para sacar el texto de los PDF.",
+          "explicacion": "Es un comando en la terminal (la herramienta Bash), y en modo manual todo lo que ejecuta pide permiso antes."
+        },
+        {
+          "texto": "Escribir el script de consolidación en la carpeta.",
+          "explicacion": "Crear o cambiar un archivo usa Write o Edit, que en modo manual piden permiso. En el modo aceptar ediciones lo haría solo."
+        },
+        {
+          "texto": "Buscar en internet cómo es el formato del parte.",
+          "explicacion": "WebSearch y WebFetch salen a la red, y en modo manual piden permiso. Además, es una puerta por la que puede entrar contenido no confiable."
+        },
+        {
+          "texto": "Leer los PDF y el CLAUDE.md de la carpeta.",
+          "correcta": true,
+          "explicacion": "Read, Glob y Grep no piden permiso: en modo manual, lo único que corre sin preguntar es la lectura. Todo lo que escribe, ejecuta o sale a internet pasa por tu visto bueno."
+        }
+      ]
+    },
+    {
+      "pregunta": "Mañana abrís una sesión nueva del agente en la misma carpeta. ¿Cómo sabe que los números del parte vienen con punto de miles y coma decimal?",
+      "opciones": [
+        {
+          "texto": "Se acuerda de la sesión de ayer, donde se lo explicaste.",
+          "explicacion": "Cada sesión arranca con la ventana de contexto vacía, como un turno nuevo sin memoria del anterior. Lo que no quedó escrito en un archivo se perdió."
+        },
+        {
+          "texto": "Lo lee del CLAUDE.md (o del AGENTS.md) de la carpeta, que el arnés carga al empezar cada sesión.",
+          "correcta": true,
+          "explicacion": "Es la memoria en archivos: las reglas de la tarea viven por escrito, y siguen sirviendo si mañana cambiás de modelo o de agente."
+        },
+        {
+          "texto": "Lo aprendió en su entrenamiento, porque todos los partes de Ecuador usan ese formato.",
+          "explicacion": "Puede que lo adivine, pero nada lo garantiza: en el mismo parte, la producción de gas viene con otro formato. Una regla que importa se escribe."
+        },
+        {
+          "texto": "De ninguna manera: se lo tenés que repetir en cada pedido.",
+          "explicacion": "Repetirlo funciona, pero es justo lo que evita el archivo de instrucciones. Se escribe una vez en CLAUDE.md o AGENTS.md y el arnés lo carga siempre."
+        }
+      ]
+    },
+    {
+      "pregunta": "Querés que un agente consulte el catálogo de datos de subsuelo de tu empresa, un sistema con su propia interfaz para programas. ¿Qué pieza lo conecta?",
+      "opciones": [
+        {
+          "texto": "Una skill con las instrucciones para usar el catálogo.",
+          "explicacion": "Una skill es una carpeta con instrucciones y scripts que el agente carga cuando la necesita. Le puede enseñar a usar el catálogo, pero la conexión con el sistema es otra pieza."
+        },
+        {
+          "texto": "Un subagente dedicado al catálogo.",
+          "explicacion": "Un subagente es una tarea aparte, con su propio contexto y sus permisos. Sirve para repartir trabajo; para hablar con otro sistema igual necesita una herramienta que lo conecte."
+        },
+        {
+          "texto": "Un servidor MCP, que le ofrece al agente las herramientas de ese sistema.",
+          "correcta": true,
+          "explicacion": "MCP es el estándar abierto para conectar aplicaciones de IA con otros sistemas. El servidor ofrece herramientas, recursos y prompts; el ejemplo del rubro es el servidor comunitario para OSDU, que trae la escritura apagada."
+        },
+        {
+          "texto": "El CLAUDE.md, con la dirección del catálogo anotada.",
+          "explicacion": "El CLAUDE.md da instrucciones y no ejecuta nada. Sin una herramienta que hable con el sistema, el agente solo sabría que el catálogo existe."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-09-15T00:00:00+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "En el Capítulo IV, seis pozos de la cuenca Noroeste figuran como inyección de agua y uno solo tiene volumen inyectado en 91 meses. ¿Qué te dice eso sobre la mitad del screening que revisa la inyección existente?",
+      "opciones": [
+        {
+          "texto": "Que el dataset está mal cargado y hay que pedir otra fuente.",
+          "explicacion": "El dato es coherente con el resto del registro: tres de los seis están abandonados y el único activo figura parado. Antes de dudar de la fuente, se lee la columna de tipo de pozo."
+        },
+        {
+          "texto": "Que sobre este análogo esa mitad no se puede correr, porque la recuperación secundaria en el norte argentino está en pasado; queda la otra mitad, dónde tendría sentido inyectar.",
+          "correcta": true,
+          "explicacion": "Es el hallazgo del caso. Un análogo público sirve para lo que sus datos contienen, y decir con precisión qué parte de la pregunta no contesta es parte del resultado."
+        },
+        {
+          "texto": "Que la inyección de agua no sirve en campos maduros.",
+          "explicacion": "Una cuenca donde el waterflooding ya terminó dice poco sobre su rendimiento. Lo que muestra es que un proyecto de recuperación secundaria tiene un final."
+        },
+        {
+          "texto": "Que los 26 sumideros son inyectores y el screening puede usarlos.",
+          "explicacion": "Un sumidero dispone agua producida en una formación que no produce. No empuja petróleo, así que no entra en un screening de recuperación secundaria."
+        }
+      ]
+    },
+    {
+      "pregunta": "Al cargar el Capítulo IV en el libro del caso, los inyectores desaparecían sin que nada diera error. ¿Por qué?",
+      "opciones": [
+        {
+          "texto": "Porque el tiempo efectivo del Capítulo IV cuenta días de producción, y un inyector informa siempre cero.",
+          "correcta": true,
+          "explicacion": "Es el error del caso, y pasó sin ningún aviso: quedaba un libro prolijo con la mitad de los pozos. El modelo siguió de largo y lo agarró una persona mirando la cuenta de filas."
+        },
+        {
+          "texto": "Porque el Capítulo IV no publica los volúmenes inyectados.",
+          "explicacion": "Los publica pozo por pozo y mes por mes: de ahí salen los 5.6 millones de metros cúbicos de la primera tabla. El dato estaba; lo que fallaba era cómo se leía."
+        },
+        {
+          "texto": "Porque el modelo decidió que los inyectores no eran relevantes para el screening.",
+          "explicacion": "Nadie decidió nada: los filtró una columna mal leída en la conversión de unidades. Por eso el error no dejó rastro en la salida."
+        },
+        {
+          "texto": "Porque en la cuenca Noroeste no hay inyectores.",
+          "explicacion": "Hay seis declarados y uno que inyectó 154,484 metros cúbicos. Son pocos, y el campo del caso se eligió justamente por ese inyector."
+        }
+      ]
+    },
+    {
+      "pregunta": "Tu empresa propone un piloto de noventa días: \"usar más inteligencia artificial en el área de reservorios\". ¿Qué le falta para que sea una fila válida de la hoja de ruta?",
+      "opciones": [
+        {
+          "texto": "Un presupuesto para licencias.",
+          "explicacion": "Las licencias van en la fila de decisión corporativa. Un piloto de noventa días puede correr con lo que ya está aprobado."
+        },
+        {
+          "texto": "Un modelo más potente que el que hay disponible hoy.",
+          "explicacion": "La capacidad es lo único que mejora sola; lo que falta acá lo tiene que construir alguien."
+        },
+        {
+          "texto": "Que lo apruebe el área de sistemas antes de arrancar.",
+          "explicacion": "Puede hacer falta según la herramienta, pero no convierte el enunciado en algo que se pueda cerrar: sigue sin decir cuándo funcionó."
+        },
+        {
+          "texto": "Un dueño con nombre, y un criterio de éxito observable escrito antes de arrancar, como \"los informes de turno salen con borrador asistido desde el lunes\".",
+          "correcta": true,
+          "explicacion": "Un piloto sin criterio de éxito escrito no termina nunca: se diluye y después nadie sabe si funcionó. Y el criterio se cuenta: informes, consultas resueltas, horas de un análisis concreto."
+        }
+      ]
+    },
+    {
+      "pregunta": "Tu equipo duda entre arrancar ahora o esperar a que salgan modelos mejores. ¿Qué dice la regla del bloque del futuro?",
+      "opciones": [
+        {
+          "texto": "Esperar: el que arranca dentro de un mes, con mejores herramientas, puede terminar antes.",
+          "explicacion": "Es la mitad del argumento. La otra mitad es que lo único que mejora solo es la capacidad: los datos, los permisos y los criterios no se construyen mientras esperás."
+        },
+        {
+          "texto": "Arrancar ya con todo, incluida la construcción, para no quedarse atrás.",
+          "explicacion": "La construcción es justamente lo que se abarata: lo que hoy lleva semanas, con la herramienta de dentro de seis meses puede llevar mucho menos."
+        },
+        {
+          "texto": "Arrancar ya con lo que no se abarata (el mapa de datos, la política, las preguntas de aceptación, el criterio de éxito) y postergar la construcción.",
+          "correcta": true,
+          "explicacion": "El caso lo mostró sin forzarlo: lo que faltaba para completar el screening era el Nivel 2, y eso no lo trae ninguna versión nueva de un modelo."
+        },
+        {
+          "texto": "Depende del proveedor que elija la empresa.",
+          "explicacion": "El proveedor es una fila de la decisión corporativa. La regla vale con cualquiera, porque habla de lo que ningún proveedor te entrega hecho."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-10-01T00:00:00+00:00",
+  "source": "elaboración propia para el curso",
+  "source_date": null,
+  "data": [
+    {
+      "pregunta": "De estas cuatro afirmaciones de un informe generado con tu planilla adjunta, ¿cuál es la que más probablemente esté inventada?",
+      "opciones": [
+        {
+          "texto": "\"La producción de gas del bloque en junio fue de 1,847,320 metros cúbicos.\"",
+          "explicacion": "Sale de la planilla y la podés recalcular en dos minutos. Cuando el modelo suma números que le diste, suele acertar."
+        },
+        {
+          "texto": "\"Esto representa una caída del 4.2% respecto de mayo.\"",
+          "explicacion": "También se deriva de los mismos datos. Una cuenta simple sobre lo que le entregaste es terreno seguro."
+        },
+        {
+          "texto": "\"La caída se explica por la parada programada de la planta compresora entre el 8 y el 11 de junio.\"",
+          "correcta": true,
+          "explicacion": "La planilla trae caudales, sin eventos operativos. El modelo no puede saber que hubo una parada ni sus fechas: construyó la explicación más plausible y la escribió con el mismo tono que las cifras reales."
+        },
+        {
+          "texto": "\"Dos pozos no reportaron producción durante la segunda quincena.\"",
+          "explicacion": "Los huecos están en la planilla y se ven contando filas vacías. El modelo describe lo que ve, y ahí acierta."
+        }
+      ]
+    },
+    {
+      "pregunta": "Te ofrecen un agente que \"te maneja la casilla\": lee todo tu correo de trabajo y responde solo. ¿Cuál es el problema principal?",
+      "opciones": [
+        {
+          "texto": "Que puede redactar con un tono que no es el tuyo.",
+          "explicacion": "Es una molestia, y se arregla con un ejemplo. El problema de fondo es otro: qué más llega a esa casilla."
+        },
+        {
+          "texto": "Que a esa casilla llegan los enlaces y códigos para recuperar otras cuentas, y cualquiera que le escriba puede intentar darle instrucciones.",
+          "correcta": true,
+          "explicacion": "El correo es la llave de casi todas las demás cuentas. Un agente que lo lee y además actúa junta los tres poderes de la regla de dos. Por eso la política pide una casilla dedicada, un segundo factor que no pase por el correo, y que los cambios de cuenta los haga una persona."
+        },
+        {
+          "texto": "Que los asistentes no entienden bien los correos largos.",
+          "explicacion": "Los entienden bastante bien, y justamente por eso siguen las instrucciones que encuentran adentro."
+        },
+        {
+          "texto": "Ninguno, si la herramienta es de un proveedor conocido.",
+          "explicacion": "El proveedor no cambia el mecanismo. En 2026 el asistente de soporte de Meta asoció correos nuevos a más de veinte mil cuentas ajenas porque podía hacer ese cambio solo."
+        }
+      ]
+    },
+    {
+      "pregunta": "El informe mensual a los socios se arma hace seis meses con un asistente, y sale bien. ¿Qué pide el plan B para esa tarea?",
+      "opciones": [
+        {
+          "texto": "Dejar de usar el asistente para ese informe, por las dudas.",
+          "explicacion": "El plan B no prohíbe nada. La tarea se sigue haciendo con el asistente; lo que se prepara es el día que no esté."
+        },
+        {
+          "texto": "Contratar la versión más cara de la misma herramienta.",
+          "explicacion": "Una versión más cara se cae junto con la más barata. Lo que protege es un proveedor distinto y un procedimiento que no dependa de ninguno."
+        },
+        {
+          "texto": "Un procedimiento escrito para hacerlo sin IA, dos personas que lo sepan ejecutar y lo practiquen cada tanto, y una segunda herramienta de otro proveedor.",
+          "correcta": true,
+          "explicacion": "Es una tarea crítica porque tiene un plazo comprometido con alguien de afuera. El 3 de septiembre de 2026 tres asistentes estuvieron caídos a la vez. Y sin práctica, a los seis meses ya nadie recuerda cómo se hacía a mano."
+        },
+        {
+          "texto": "Guardar los informes anteriores para copiar el formato.",
+          "explicacion": "Ayuda, pero el formato es lo de menos. Lo que se pierde es saber de dónde sale cada número y cómo se controla."
+        }
+      ]
+    },
+    {
+      "pregunta": "Armás un sistema de veinte agentes para revisar mil partes diarios. Para controlar el resultado, sumás un agente más que revisa lo que hicieron los otros. ¿Alcanza?",
+      "opciones": [
+        {
+          "texto": "Sí: un agente revisor detecta los errores de los demás.",
+          "explicacion": "A veces los detecta. Pero comparte los mismos puntos ciegos, y uno de los modos de falla más frecuentes en estos sistemas es dar por verificado lo que otro agente no verificó."
+        },
+        {
+          "texto": "No: la verificación final la hace una persona o un control automático independiente, y el sistema corre con topes y con un responsable que lo puede detener.",
+          "correcta": true,
+          "explicacion": "Un agente que revisa a otro agente no cuenta como verificación. Un control independiente es, por ejemplo, que los totales cierren contra la fuente. Y con muchos agentes nadie lee todo, así que hacen falta topes de cantidad, de tiempo y de gasto."
+        },
+        {
+          "texto": "Sí, siempre que el revisor use un modelo más grande.",
+          "explicacion": "Un modelo más capaz se equivoca menos, pero sigue sin poder abrir la fuente por vos. El control tiene que venir de afuera del sistema."
+        },
+        {
+          "texto": "No: veinte agentes es demasiado, y hay que volver a hacerlo a mano.",
+          "explicacion": "La cantidad no es el problema. Con entorno aislado, topes y una verificación independiente, se puede usar."
+        }
+      ]
+    },
+    {
+      "pregunta": "Alguien propone conectar un agente al sistema de control de la planta para que optimice en tiempo real. ¿Cuál es la objeción más fuerte?",
+      "opciones": [
+        {
+          "texto": "Que los modelos todavía no son lo bastante precisos para esa tarea.",
+          "explicacion": "La precisión mejora todos los años, así que si el problema fuera ese alcanzaría con esperar. La objeción de fondo sigue en pie con cualquier modelo."
+        },
+        {
+          "texto": "Que el loop del agente funciona porque el error vuelve y se corrige, y en un sistema que opera equipos un paso equivocado termina en una válvula en la posición que no era.",
+          "correcta": true,
+          "explicacion": "Toda la utilidad del agente supone que equivocarse es barato y reversible. En un sistema que opera equipos, ninguna de las dos cosas es cierta."
+        },
+        {
+          "texto": "Que es caro de implementar.",
+          "explicacion": "El costo es un problema de proyecto. Acá el problema es de seguridad, y no se arregla con presupuesto."
+        },
+        {
+          "texto": "Que la empresa no tiene todavía una política de uso.",
+          "explicacion": "La política hace falta, pero escribirla no vuelve segura una arquitectura que no lo es."
+        }
+      ]
+    }
+  ]
+}

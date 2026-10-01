@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-09-15T15:04:09+00:00",
+  "source": "conversación de trabajo escrita para el curso; el conteo de tokens de cada mensaje sale del tokenizador o200k_base (GPT-4o) vía tiktoken, igual que el laboratorio de tokens de esta misma sesión.",
+  "source_date": null,
+  "data": {
+    "mensajes": [
+      {
+        "i": 0,
+        "rol": "usuario",
+        "texto": "Vas a ayudarme con el informe mensual del bloque. Dos reglas para toda la conversación: todos los volúmenes van en metros cúbicos, nunca en pies cúbicos, y cada vez que uses una cifra que yo no te di, avisame en la misma línea.",
+        "tokens": 58,
+        "hecho": "Las dos reglas: metros cúbicos, y avisar cuando la cifra no salió de vos."
+      },
+      {
+        "i": 1,
+        "rol": "modelo",
+        "texto": "Entendido. Trabajo en metros cúbicos y marco cualquier cifra que no venga de los datos que me pases. ¿Con qué arrancamos?",
+        "tokens": 29
+      },
+      {
+        "i": 2,
+        "rol": "usuario",
+        "texto": "El pozo Ramos-12 produjo 148,500 metros cúbicos de gas en junio, con 28 días de operación efectiva.",
+        "tokens": 28,
+        "hecho": "Ramos-12: 148,500 m³ en junio, 28 días de operación."
+      },
+      {
+        "i": 3,
+        "rol": "modelo",
+        "texto": "Anotado. Eso da un caudal promedio de 5,304 metros cúbicos por día sobre los días efectivamente operados. Si querés el promedio sobre los 30 días del mes, son 4,950 metros cúbicos por día.",
+        "tokens": 54
+      },
+      {
+        "i": 4,
+        "rol": "usuario",
+        "texto": "El Ramos-14 estuvo cerrado tres semanas por reparación de la línea de conducción y produjo 31,200 metros cúbicos.",
+        "tokens": 26,
+        "hecho": "Ramos-14: cerrado tres semanas, 31,200 m³."
+      },
+      {
+        "i": 5,
+        "rol": "modelo",
+        "texto": "Con nueve días de operación efectiva, el Ramos-14 promedió 3,467 metros cúbicos por día. Ojo con comparar ese promedio mensual contra el del Ramos-12: la diferencia la explican los días de operación, y sobre el reservorio no dice nada.",
+        "tokens": 50
+      },
+      {
+        "i": 6,
+        "rol": "usuario",
+        "texto": "Bien. Ahora sumale el Ramos-9, que produjo 96,300 metros cúbicos con el mes completo, y armame el cuadro comparativo de los tres.",
+        "tokens": 36,
+        "hecho": "Ramos-9: 96,300 m³ con el mes completo."
+      },
+      {
+        "i": 7,
+        "rol": "modelo",
+        "texto": "Cuadro de los tres pozos, con volumen del mes, días operados y caudal promedio sobre días operados. Ramos-12: 148,500 y 28 días, 5,304 por día. Ramos-14: 31,200 y 9 días, 3,467 por día. Ramos-9: 96,300 y 30 días, 3,210 por día.",
+        "tokens": 85
+      },
+      {
+        "i": 8,
+        "rol": "usuario",
+        "texto": "Perfecto. Agregale una columna con el corte de agua: 12% en el Ramos-12, 4% en el Ramos-14 y 21% en el Ramos-9.",
+        "tokens": 41,
+        "hecho": "Cortes de agua: 12% (S-12), 4% (S-14), 21% (S-9)."
+      },
+      {
+        "i": 9,
+        "rol": "modelo",
+        "texto": "Listo, cuadro con la columna de corte de agua agregada. El Ramos-9 es el que más agua produce de los tres, con 21%, y también el de menor caudal promedio pese a haber operado el mes completo.",
+        "tokens": 49
+      },
+      {
+        "i": 10,
+        "rol": "usuario",
+        "texto": "Escribime ahora el párrafo de conclusiones del informe, dos o tres oraciones, para la gerencia.",
+        "tokens": 24
+      },
+      {
+        "i": 11,
+        "rol": "modelo",
+        "texto": "El bloque produjo 276,000 metros cúbicos en junio. El Ramos-12 aportó más de la mitad del total con el mejor caudal promedio del grupo. El Ramos-14 quedó muy por debajo por la reparación de la línea, y el Ramos-9 combina el mes completo con el caudal más bajo y el corte de agua más alto, que conviene seguir de cerca.",
+        "tokens": 80
+      },
+      {
+        "i": 12,
+        "rol": "usuario",
+        "texto": "Cerrá con una estimación de lo que produciría el bloque el mes que viene si el Ramos-14 vuelve a operar normal.",
+        "tokens": 28
+      }
+    ],
+    "total": 588
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "generated_at": "2026-07-30T14:10:09+00:00",
+  "source": "corpus redactado para el curso: simula un manual interno, que es justamente lo que un modelo no puede haber leído. Rankings por similitud coseno con intfloat/multilingual-e5-large.",
+  "source_date": null,
+  "data": {
+    "chunks": [
+      {
+        "id": "OP-01",
+        "doc": "Manual de operaciones",
+        "seccion": "Separación",
+        "texto": "El separador trifásico opera a una presión de 45 bar y separa la corriente de pozo en gas, petróleo y agua. El nivel de interfase se controla con el lazo LIC-201 y no debe superar el 60% del recipiente."
+      },
+      {
+        "id": "OP-02",
+        "doc": "Manual de operaciones",
+        "seccion": "Separación",
+        "texto": "Si el nivel de líquido en el separador supera el 80%, el sistema dispara el cierre automático de la válvula de entrada. El operador debe verificar el estado del control de nivel antes de rearmar."
+      },
+      {
+        "id": "OP-03",
+        "doc": "Manual de operaciones",
+        "seccion": "Compresión",
+        "texto": "La planta compresora tiene tres unidades de tornillo de 1,200 HP cada una. En operación normal trabajan dos y la tercera queda en reserva rotativa, alternando cada 500 horas de servicio."
+      },
+      {
+        "id": "OP-04",
+        "doc": "Manual de operaciones",
+        "seccion": "Compresión",
+        "texto": "La temperatura de descarga del compresor no debe superar los 120 °C. Por encima de ese valor el sistema de enfriamiento requiere inspección inmediata y la unidad debe pasar a carga reducida."
+      },
+      {
+        "id": "OP-05",
+        "doc": "Manual de operaciones",
+        "seccion": "Deshidratación",
+        "texto": "La planta de deshidratación con trietilenglicol reduce el contenido de agua del gas a menos de 65 miligramos por metro cúbico, que es la especificación de entrega al gasoducto troncal."
+      },
+      {
+        "id": "OP-06",
+        "doc": "Manual de operaciones",
+        "seccion": "Deshidratación",
+        "texto": "La concentración de glicol pobre debe mantenerse por encima del 98.5%. Una concentración menor indica arrastre de agua en el regenerador o temperatura insuficiente en el rehervidor."
+      },
+      {
+        "id": "MT-01",
+        "doc": "Plan de mantenimiento",
+        "seccion": "Válvulas",
+        "texto": "Las válvulas de alivio de presión se calibran en banco cada 24 meses. El certificado de calibración debe archivarse en el legajo del equipo y una copia queda en la sala de control."
+      },
+      {
+        "id": "MT-02",
+        "doc": "Plan de mantenimiento",
+        "seccion": "Válvulas",
+        "texto": "Las válvulas de bloqueo de emergencia se prueban con carrera parcial cada 6 meses y con carrera completa durante la parada anual de planta."
+      },
+      {
+        "id": "MT-03",
+        "doc": "Plan de mantenimiento",
+        "seccion": "Rotativos",
+        "texto": "El análisis de vibraciones de las unidades de compresión se realiza cada 3 meses. Un valor por encima de 7.1 milímetros por segundo en velocidad eficaz obliga a programar intervención."
+      },
+      {
+        "id": "MT-04",
+        "doc": "Plan de mantenimiento",
+        "seccion": "Rotativos",
+        "texto": "El cambio de aceite de los compresores se hace cada 4,000 horas de operación o cuando el análisis de laboratorio indique degradación del aditivo antioxidante."
+      },
+      {
+        "id": "MT-05",
+        "doc": "Plan de mantenimiento",
+        "seccion": "Instrumentos",
+        "texto": "Los medidores de caudal fiscales se verifican contra patrón cada 12 meses. La incertidumbre admitida en la medición fiscal de gas es del 1% sobre el valor medido."
+      },
+      {
+        "id": "MT-06",
+        "doc": "Plan de mantenimiento",
+        "seccion": "Recipientes",
+        "texto": "Los recipientes a presión se inspeccionan por ultrasonido cada 5 años para medir espesor remanente. Un adelgazamiento mayor al 20% del espesor nominal obliga a evaluación de aptitud para el servicio."
+      },
+      {
+        "id": "SG-01",
+        "doc": "Procedimientos de seguridad",
+        "seccion": "Permisos",
+        "texto": "Todo trabajo en caliente dentro del área clasificada requiere permiso de trabajo firmado por el supervisor de operaciones y medición previa de atmósfera explosiva."
+      },
+      {
+        "id": "SG-02",
+        "doc": "Procedimientos de seguridad",
+        "seccion": "Permisos",
+        "texto": "El ingreso a espacios confinados exige medición continua de oxígeno, gases explosivos y ácido sulfhídrico, más un vigía permanente en el exterior durante toda la tarea."
+      },
+      {
+        "id": "SG-03",
+        "doc": "Procedimientos de seguridad",
+        "seccion": "Bloqueo",
+        "texto": "Antes de intervenir un equipo se aplica bloqueo y etiquetado de todas las fuentes de energía. Cada persona que interviene coloca su propio candado y solo esa persona puede retirarlo."
+      },
+      {
+        "id": "SG-04",
+        "doc": "Procedimientos de seguridad",
+        "seccion": "Gas sulfhídrico",
+        "texto": "En áreas con presencia de ácido sulfhídrico el personal usa detector personal con alarma en 10 partes por millón. Ante alarma se evacua a favor del viento hacia el punto de reunión."
+      },
+      {
+        "id": "SG-05",
+        "doc": "Procedimientos de seguridad",
+        "seccion": "Emergencias",
+        "texto": "El simulacro general de evacuación se realiza dos veces por año. Los puntos de reunión están señalizados y el conteo de personal lo hace el jefe de cada área."
+      },
+      {
+        "id": "SG-06",
+        "doc": "Procedimientos de seguridad",
+        "seccion": "Derrames",
+        "texto": "Ante un derrame de hidrocarburo se contiene con barreras absorbentes, se corta la fuente y se da aviso a medio ambiente dentro de la hora. Todo derrame se registra sin importar el volumen."
+      },
+      {
+        "id": "SG-07",
+        "doc": "Procedimientos de seguridad",
+        "seccion": "Protección personal",
+        "texto": "El uso de protección auditiva es obligatorio en toda la zona de compresión, donde el nivel sonoro supera los 85 decibeles en jornada de 8 horas."
+      },
+      {
+        "id": "PO-01",
+        "doc": "Manual de pozos",
+        "seccion": "Boca de pozo",
+        "texto": "El conjunto de válvulas de boca de pozo se prueba hidráulicamente antes de la puesta en servicio y después de cada intervención mayor."
+      },
+      {
+        "id": "PO-02",
+        "doc": "Manual de pozos",
+        "seccion": "Intervenciones",
+        "texto": "Antes de una intervención se mata el pozo con salmuera de densidad suficiente para contener la presión de formación, con un margen de seguridad de 200 libras por pulgada cuadrada."
+      },
+      {
+        "id": "PO-03",
+        "doc": "Manual de pozos",
+        "seccion": "Intervenciones",
+        "texto": "Cuando una herramienta queda atrapada en el pozo se arma una maniobra de recuperación con herramienta de pesca. Si dos intentos fallan se evalúa desviar el tramo."
+      },
+      {
+        "id": "PO-04",
+        "doc": "Manual de pozos",
+        "seccion": "Producción",
+        "texto": "La caída de caudal esperada en los pozos del yacimiento es del 8 al 12% anual. Una caída mayor en un mes sugiere problema mecánico o entrada de agua, no declinación natural."
+      },
+      {
+        "id": "PO-05",
+        "doc": "Manual de pozos",
+        "seccion": "Medición",
+        "texto": "Cada pozo se afora individualmente al menos una vez por mes mediante el separador de control, con registro de caudal de gas, petróleo y agua."
+      },
+      {
+        "id": "PO-06",
+        "doc": "Manual de pozos",
+        "seccion": "Producción",
+        "texto": "Un aumento sostenido de la relación gas-petróleo puede indicar conificación de gas o agotamiento de la zona de petróleo, y obliga a revisar el régimen de producción."
+      },
+      {
+        "id": "AM-01",
+        "doc": "Gestión ambiental",
+        "seccion": "Emisiones",
+        "texto": "El venteo de gas está prohibido salvo emergencia. Todo evento de venteo se documenta con volumen estimado, causa y duración, y se informa mensualmente a la autoridad."
+      },
+      {
+        "id": "AM-02",
+        "doc": "Gestión ambiental",
+        "seccion": "Emisiones",
+        "texto": "Las fugas en conexiones bridadas se detectan con cámara infrarroja en campañas semestrales. Toda fuga detectada se repara dentro de los 15 días corridos."
+      },
+      {
+        "id": "AM-03",
+        "doc": "Gestión ambiental",
+        "seccion": "Agua",
+        "texto": "El agua de producción se reinyecta en el pozo sumidero autorizado. Se analiza contenido de hidrocarburos y sólidos suspendidos cada 15 días."
+      },
+      {
+        "id": "AM-04",
+        "doc": "Gestión ambiental",
+        "seccion": "Residuos",
+        "texto": "Los residuos peligrosos se segregan en el sitio y se entregan a operador habilitado con manifiesto de transporte. El manifiesto se archiva por 10 años."
+      },
+      {
+        "id": "AD-01",
+        "doc": "Régimen contractual",
+        "seccion": "Entrega",
+        "texto": "El poder calorífico del gas entregado en el punto de medición debe estar entre 8,900 y 9,300 kilocalorías por metro cúbico para cumplir el contrato de suministro."
+      },
+      {
+        "id": "AD-02",
+        "doc": "Régimen contractual",
+        "seccion": "Entrega",
+        "texto": "El contenido de ácido sulfhídrico en el gas de entrega no puede superar 3 miligramos por metro cúbico. Fuera de especificación, el comprador puede rechazar la entrega."
+      },
+      {
+        "id": "AD-03",
+        "doc": "Régimen contractual",
+        "seccion": "Compromisos",
+        "texto": "El compromiso de entrega firme es de 2.5 millones de metros cúbicos por día. Los volúmenes por debajo de ese valor generan penalidad salvo caso fortuito declarado."
+      }
+    ],
+    "preguntas": [
+      {
+        "id": "p1",
+        "texto": "¿Cada cuánto hay que calibrar las válvulas de alivio?",
+        "esperado": "MT-01",
+        "ranking": [
+          {
+            "chunk": "MT-01",
+            "sim": 0.9161
+          },
+          {
+            "chunk": "MT-02",
+            "sim": 0.8531
+          },
+          {
+            "chunk": "MT-03",
+            "sim": 0.8442
+          },
+          {
+            "chunk": "OP-02",
+            "sim": 0.8386
+          },
+          {
+            "chunk": "PO-01",
+            "sim": 0.8376
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "texto": "¿Hasta cuánto puede subir la temperatura en la descarga del compresor?",
+        "esperado": "OP-04",
+        "ranking": [
+          {
+            "chunk": "OP-04",
+            "sim": 0.9084
+          },
+          {
+            "chunk": "OP-02",
+            "sim": 0.8248
+          },
+          {
+            "chunk": "MT-04",
+            "sim": 0.8208
+          },
+          {
+            "chunk": "OP-06",
+            "sim": 0.8157
+          },
+          {
+            "chunk": "OP-03",
+            "sim": 0.8093
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "texto": "¿Cuánta agua puede llevar el gas que mandamos al ducto?",
+        "esperado": "OP-05",
+        "ranking": [
+          {
+            "chunk": "OP-05",
+            "sim": 0.8555
+          },
+          {
+            "chunk": "AD-02",
+            "sim": 0.8402
+          },
+          {
+            "chunk": "AD-01",
+            "sim": 0.8338
+          },
+          {
+            "chunk": "OP-01",
+            "sim": 0.8172
+          },
+          {
+            "chunk": "AD-03",
+            "sim": 0.8163
+          }
+        ]
+      },
+      {
+        "id": "p4",
+        "texto": "La producción se me cayó de golpe, ¿es el yacimiento o es otra cosa?",
+        "esperado": "PO-04",
+        "ranking": [
+          {
+            "chunk": "PO-04",
+            "sim": 0.8388
+          },
+          {
+            "chunk": "AM-03",
+            "sim": 0.8188
+          },
+          {
+            "chunk": "PO-06",
+            "sim": 0.8112
+          },
+          {
+            "chunk": "OP-06",
+            "sim": 0.7986
+          },
+          {
+            "chunk": "PO-02",
+            "sim": 0.7986
+          }
+        ]
+      },
+      {
+        "id": "p5",
+        "texto": "Se soltó un caño en el fondo y no lo puedo sacar, ¿qué corresponde?",
+        "esperado": "PO-03",
+        "ranking": [
+          {
+            "chunk": "PO-03",
+            "sim": 0.8261
+          },
+          {
+            "chunk": "OP-02",
+            "sim": 0.808
+          },
+          {
+            "chunk": "PO-02",
+            "sim": 0.807
+          },
+          {
+            "chunk": "AM-03",
+            "sim": 0.806
+          },
+          {
+            "chunk": "PO-04",
+            "sim": 0.8059
+          }
+        ]
+      },
+      {
+        "id": "p6",
+        "texto": "¿Hace falta cuidarse los oídos cerca de las máquinas grandes?",
+        "esperado": "SG-07",
+        "ranking": [
+          {
+            "chunk": "SG-07",
+            "sim": 0.8342
+          },
+          {
+            "chunk": "SG-03",
+            "sim": 0.8052
+          },
+          {
+            "chunk": "MT-03",
+            "sim": 0.8038
+          },
+          {
+            "chunk": "SG-04",
+            "sim": 0.7915
+          },
+          {
+            "chunk": "SG-01",
+            "sim": 0.7892
+          }
+        ]
+      },
+      {
+        "id": "p7",
+        "texto": "¿Se puede soltar gas al aire cuando hay una emergencia?",
+        "esperado": "AM-01",
+        "ranking": [
+          {
+            "chunk": "AM-01",
+            "sim": 0.8427
+          },
+          {
+            "chunk": "AD-02",
+            "sim": 0.8094
+          },
+          {
+            "chunk": "SG-06",
+            "sim": 0.8065
+          },
+          {
+            "chunk": "SG-02",
+            "sim": 0.8062
+          },
+          {
+            "chunk": "SG-04",
+            "sim": 0.8035
+          }
+        ]
+      },
+      {
+        "id": "p8",
+        "texto": "¿Cómo me aseguro de que nadie arranque el equipo mientras lo estoy reparando?",
+        "esperado": "SG-03",
+        "ranking": [
+          {
+            "chunk": "SG-03",
+            "sim": 0.872
+          },
+          {
+            "chunk": "OP-02",
+            "sim": 0.8181
+          },
+          {
+            "chunk": "AM-02",
+            "sim": 0.8066
+          },
+          {
+            "chunk": "PO-03",
+            "sim": 0.8
+          },
+          {
+            "chunk": "MT-02",
+            "sim": 0.7964
+          }
+        ]
+      }
+    ]
+  }
+}
