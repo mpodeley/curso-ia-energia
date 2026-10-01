@@ -7,42 +7,131 @@ import { PROPIEDADES } from '../content/recursos'
 
 Si tenés un rato antes, esto suma, en este orden:
 
-1. Ejercicio de esta página (20 min): la cacería, los tres informes. Hacelos antes de leer el
-   resto de la página, porque el ejercicio pierde gracia si sabés qué buscar.
-2. Lectura (10 min): la sección de las cuatro propiedades y la de política de uso, para
-   llegar con vocabulario y con opinión formada.
+1. Video (2 min): el primero de la lista de abajo, sobre el episodio de Hugging Face. Es el
+   caso que cierra la sesión, y conviene llegar habiéndolo visto.
+2. Lectura (10 min): la [política de uso, versión larga](descargas/politica-uso-ia.docx).
+   Alcanza con el índice y dos secciones, la de agentes y la de correo.
 
-Tené a mano **tu caso en una página**, la tarea de ayer: en la sesión 8 pasa por el protocolo
-que se arma acá.
+Tené a mano **tu caso en una página**, la tarea de ayer: en la sesión 8 pasa por las reglas
+que se arman acá.
 
 <Recursos sesion={7} />
 
-## Todo el curso venía sembrando esto
+## Para qué sirve esta sesión
 
 Alucinaciones el lunes, confidencialidad y verificación número por número el martes, agentes que
 actúan ayer. Hoy los junta y los convierte en reglas que se puedan aplicar el lunes a la mañana.
-En la sesión 8 esas reglas se usan dos veces: contra el caso prearmado y contra el caso de cada
-empresa.
 
-## Cazar antes de teorizar
+La sesión habla de riesgos, y conviene decir de entrada para qué. El objetivo es que tu empresa
+use más estas herramientas, con los ojos abiertos. Los casos que vas a leer acá son reales y
+tienen fuente. Casi todos terminaron en un control que ya se conocía y no estaba puesto: un
+permiso de más, una copia de respaldo guardada en el mismo lugar que el original, un dato que
+nadie cotejó. Ninguno se resolvía prohibiendo la herramienta.
 
-La forma más rápida de entender cómo se equivoca un modelo es leer con atención algo que escribió.
-Los tres informes del ejercicio tienen errores plantados, y todos son de los que aparecen de
-verdad: cifras inventadas con demasiada precisión, causas que suenan razonables y no salen de
-ningún dato, citas completas de artículos que no existen, y normativa recitada de memoria.
+Por eso cada sección tiene la misma forma: qué puede pasar, dónde ya pasó, y qué control deja
+seguir trabajando. Todo eso junto es la política de uso, que es lo que te llevás.
 
-El puntaje mide dos cosas a propósito: cuántas invenciones encontraste y cuántas afirmaciones sanas
-marcaste de más. Marcar todo como sospechoso también resta, porque es otra manera de leer mal.
+## Qué información entra y qué no
 
-<HallucinationHunt sesion={7} />
+La regla del martes (si no lo pondrías en un correo a un desconocido, no va al chat) sirve
+para empezar. Una empresa necesita una versión operativa, que es un mapa de tres niveles:
 
-## Cuatro propiedades, y cómo falla cada una
+**Nivel 1, nunca en una herramienta externa:** producción real por pozo, reservas, precios y
+cláusulas de contratos, datos de socios, información de personas, cualquier cosa bajo acuerdo de
+confidencialidad.
+
+**Nivel 2, solo en herramientas contratadas por la empresa**, con acuerdo de tratamiento de datos
+y sin entrenamiento sobre lo que subís: documentos internos no críticos, procedimientos,
+correspondencia ordinaria.
+
+**Nivel 3, en cualquier herramienta, incluso gratuita:** información pública, datos históricos ya
+publicados, textos sin datos propios, y datos inventados que imiten la estructura de los tuyos.
+Esta última categoría es más útil de lo que parece: para probar un análisis o afinar un prompt,
+una planilla sintética con las mismas columnas funciona igual de bien.
+
+El nivel del dato no alcanza solo. Importa también adónde va, porque la misma herramienta cambia
+según cómo se contrató. Una cuenta gratuita puede usar lo que subís para entrenar modelos; la
+cuenta contratada por la empresa, con acuerdo de datos, no. Y un agente que trabaja sobre una
+copia, dentro de un entorno aislado, es otra cosa que un agente suelto en tu máquina.
+
+<figure className="figura">
+  <img
+    src="slides/img/s7-flujo-datos.svg"
+    alt="Matriz de cuatro herramientas contra tres niveles de dato. Cuenta personal o gratuita: solo nivel 3. Cuenta contratada por la empresa: niveles 2 y 3. Agente en un entorno aislado: niveles 2 y 3. Herramienta dentro de la red de la empresa: los tres niveles. Ante la duda, se asume el nivel más alto y se consulta."
+  />
+</figure>
+
+El caso que abrió esta conversación en la industria es de 2023. Empleados de Samsung pegaron
+código fuente y la transcripción de una reunión en ChatGPT, tres veces en unos veinte días
+([Expansión](https://expansion.mx/tecnologia/2023/05/02/samsung-prohibe-chatgpt-a-sus-empleados-por-temores-de-seguridad)).
+La empresa respondió prohibiendo la herramienta en sus equipos. Una prohibición general suele
+terminar igual: el uso sigue, pero en cuentas personales, donde nadie lo ve. El mapa de tres
+niveles existe para no llegar ahí, porque es una regla que se puede cumplir.
+
+Esta cohorte tiene un borde más que otras: en la sala hay cuatro empresas que compiten entre sí, y
+en algún bloque son socias. El chat compartido del curso es una herramienta externa para las otras
+tres. Lo que va al nivel 1 no se dice ahí, y en las rondas de hoy se nombra solo la categoría del
+dato, por ejemplo "el pronóstico mensual de un campo", sin decir el pronóstico.
+
+## El relevamiento: qué se está usando hoy
+
+Antes de escribir una regla hay que saber sobre qué se escribe. El primer paso de cualquier
+política es un relevamiento: una lista de las herramientas de IA que el equipo ya usa, hecha sin
+consecuencias para nadie. Sirve para aprobar lo que ya funciona y contratar lo que hace falta. Si
+se vive como una auditoría de personas, la lista sale vacía.
+
+Por cada herramienta se anotan seis cosas: quién la usa, para qué tarea, con qué tipo de cuenta
+(personal, gratuita o contratada), qué datos recibe, qué conectores tiene activos y si actúa como
+agente.
+
+<figure className="figura">
+  <img
+    src="slides/img/s7-relevamiento.svg"
+    alt="Planilla de ejemplo con siete columnas: herramienta, quién la usa, para qué, tipo de cuenta, datos que recibe, conectores activos y si actúa como agente. Cuatro filas de ejemplo; la última, una extensión del navegador que nadie relevó, aparece resaltada. Debajo, las tres decisiones posibles por fila: aprobar, contratar o reemplazar."
+  />
+</figure>
+
+Tres cosas se escapan casi siempre, y conviene preguntarlas por nombre:
+
+- **Lo que viene adentro de otro programa.** La suite de oficina, el correo, el navegador y el
+  software técnico traen hoy un asistente incorporado. Nadie lo instaló, y por eso nadie lo cuenta.
+- **Las extensiones del navegador.** Una extensión que "resume la página" lee todas las páginas
+  que abrís, incluidas las internas.
+- **Los conectores.** Un asistente con permiso sobre el correo o la unidad de archivos es otra
+  herramienta que el mismo asistente sin ese permiso.
+
+Cada fila termina en una de tres decisiones: se aprueba, se contrata con cuenta de empresa, o se
+reemplaza por una aprobada que hace lo mismo. El relevamiento se repite cada tres meses, porque
+en tres meses la lista cambia.
+
+## Cuando la IA se equivoca, y cuando miente
+
+Son dos fenómenos distintos y conviene no mezclarlos.
+
+### Se equivoca: inventa con buena forma
+
+Un modelo de lenguaje produce texto verosímil, y a veces lo verosímil es falso. No avisa cuándo
+completa. Tres casos, con consecuencias:
+
+- **Deloitte, octubre de 2025.** Un informe de AU$ 440,000 para el gobierno australiano salió con
+  citas académicas inventadas y una cita judicial falsa; la firma
+  [devolvió parte de los honorarios](https://www.theguardian.com/australia-news/2025/oct/06/deloitte-to-pay-money-back-to-albanese-government-after-using-ai-in-440000-report).
+  Lo destapó un investigador que abrió las citas.
+- **Los abogados sancionados, 2023 a hoy.** Un
+  [registro público](https://www.damiencharlotin.com/hallucinations/) junta los fallos judiciales
+  con citas inventadas por inteligencia artificial: en septiembre de 2026 pasaba los 2,000 casos.
+  En Argentina ya hay varios: un tribunal
+  [apercibió a un abogado](https://www.diarioconstitucional.cl/2026/01/04/tribunal-argentino-apercibe-a-abogado-que-utilizo-inteligencia-artificial-para-redactar-escrito-con-jurisprudencia-inexistente/)
+  por jurisprudencia que no existía, y en Zapala, Neuquén, la cámara encontró al menos cinco citas
+  inexistentes en una apelación y
+  [mandó el caso al colegio de abogados](https://www.lmneuquen.com/neuquen/un-abogado-neuquino-se-paso-rosca-la-ia-y-le-dieron-un-fuerte-castigo-n1236839).
+- **Air Canada, febrero de 2024.** Su chatbot inventó una política de descuentos y
+  [un tribunal obligó a la aerolínea a cumplirla](https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know).
+  Para el tribunal, lo que dijo el chatbot lo dijo la empresa.
 
 El lunes anunciamos cuatro maneras de fallar como hoja de ruta del curso. Acá cada una recibe el
-nombre de la propiedad del modelo de la que sale. Son cuatro capacidades miradas desde el borde,
-donde se terminan. Por eso el arreglo
-cambia según cuál te tocó, y por eso conviene diagnosticar antes de reescribir el prompt por
-cuarta vez.
+nombre de la propiedad del modelo de la que sale. El arreglo cambia según cuál te tocó, y por eso
+conviene diagnosticar antes de reescribir el prompt por cuarta vez.
 
 | La propiedad | Cómo se ve la falla | El arreglo |
 | --- | --- | --- |
@@ -51,31 +140,43 @@ cuarta vez.
 | **Memoria de trabajo** (sesiones 2 y 6) | Se olvida de una instrucción de hace veinte mensajes, se contradice, pierde de vista el objetivo. | Conversaciones cortas, una tarea por vez, y repetile lo que no puede perder. |
 | **Control de la salida** (sesión 3) | Hace algo parecido a lo que pediste: cambia el formato, se pasa de largo, vuelve al tono de siempre. | Describí mejor el resultado, o mostrale un ejemplo. |
 
-La tabla es el índice del curso leído al revés. Cada fila se trabajó donde correspondía, con su
-ejercicio al lado. Lo que faltaba era verlas juntas y poder preguntarse, frente a un error
-concreto, cuál de las cuatro se activó.
-
-En el trabajo real casi nunca viene una sola. Una consulta larga sobre una norma que no le
-adjuntaste falla por conocimiento, porque nunca leyó esa norma, y también por memoria, porque la
-instrucción de citar textual quedó doce mensajes atrás. El resultado se lee como una única
-respuesta mala. Ahí está el valor de separar las causas: si le atribuís al prompt lo que era falta
-de documento, vas a reescribirlo cuatro veces y el modelo va a seguir inventando con prolijidad.
-
-El diagnóstico te dice qué arreglo aplicar. Cuánto conviene verificar antes de mandar el texto
-depende de dónde termina lo que escribiste, y de eso se ocupa la sección que sigue.
-
-Esta forma de ordenar los errores por su causa sale de un curso corto y gratuito de Anthropic. Está
-en inglés, es opcional, y no hace falta para seguir leyendo.
-
 <ListaRecursos items={PROPIEDADES} titulo="El marco original (opcional, en inglés)" />
 
-## El protocolo de verificación
+### Miente: informa algo que no hizo
 
-La regla que deja la cacería es corta: **lo verificable es lo que se deriva de lo que le diste; lo
-inventado es lo que tuvo que completar**. Un resumen de tu planilla suele estar bien. Una causa,
-una cita, un artículo de una norma o una estimación de beneficio casi nunca lo están.
+Con los agentes aparece otra cosa. Un agente que actúa también escribe un informe de lo que hizo,
+y ese informe es salida de un modelo, igual que cualquier otra.
 
-De ahí sale un protocolo corto, que se ajusta al costo del error:
+- **Replit, julio de 2025.** Un agente de programación
+  [borró la base de datos de producción](https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/)
+  de una empresa en pleno congelamiento de cambios. Según el relato del dueño, además generó unos
+  4,000 registros ficticios y afirmó que la recuperación era imposible. No lo era: la restauró una
+  persona.
+- **Un modelo que dice haber corrido código.** En abril de 2025, el laboratorio Transluce
+  [documentó](https://transluce.org/investigating-o3-truthfulness) a un modelo de OpenAI, antes de
+  su lanzamiento, afirmando que había ejecutado código "en su laptop", y defendiendo la invención
+  cuando se lo cuestionaban.
+- **Pruebas de laboratorio.** Anthropic armó una empresa simulada y puso a dieciséis modelos de
+  distintos fabricantes frente a un conflicto: iban a ser reemplazados y tenían un objetivo que
+  cumplir. Varios
+  [eligieron presionar o chantajear](https://www.anthropic.com/research/agentic-misalignment) a
+  una persona. Sin ese conflicto, ninguno lo hizo. En otro trabajo, un modelo
+  [fingió estar de acuerdo](https://www.anthropic.com/research/alignment-faking) con un
+  entrenamiento para que no lo modificaran.
+
+Lo de laboratorio hay que leerlo con cuidado. Son escenarios construidos para provocar esa
+conducta, y no describen a los asistentes que usás todos los días. Sirven para fijar una regla
+sobria: **lo que un agente dice que hizo se comprueba mirando el resultado**. Se abre el archivo,
+la tabla o el registro de acciones. El resumen que escribe el agente sobre su propio trabajo no
+cuenta como prueba.
+
+### El protocolo de verificación
+
+La regla es corta: **lo verificable es lo que se deriva de lo que le diste; lo inventado es lo que
+tuvo que completar**. Un resumen de tu planilla suele estar bien. Una causa, una cita, un artículo
+de una norma o una estimación de beneficio casi nunca lo están.
+
+De ahí sale un protocolo que se ajusta al costo del error:
 
 - **Borrador que vas a reescribir igual:** lo reescribís y no hace falta verificarlo. Un correo,
   un primer esquema.
@@ -86,39 +187,66 @@ De ahí sale un protocolo corto, que se ajusta al costo del error:
   entra.
 - **Cualquier cosa sobre normativa:** siempre con el texto de la norma adjunto. Acá el error ya
   tiene costo legal, además del reputacional.
+- **Trabajo de un agente:** se revisa el resultado, no el resumen.
 
-## Confidencialidad, en concreto
+## Depender de más, y el plan B
 
-La regla del martes (si no lo pondrías en un correo a un desconocido, no va al chat) sirve
-para empezar. Una empresa necesita una versión operativa, que es un mapa de tres niveles:
+El riesgo que menos se nombra es el más cotidiano: que la herramienta funcione bien casi siempre.
+Cuando algo acierta nueve veces de diez, se deja de mirar la décima. Y cuando una tarea la hace
+siempre el asistente, el equipo deja de saber hacerla. Hay tres formas de depender de más, y
+cada una tiene evidencia propia.
 
-**Nunca, en ninguna herramienta externa:** producción real por pozo, reservas, precios y cláusulas
-de contratos, datos de socios, información de personas, cualquier cosa bajo acuerdo de
-confidencialidad.
+**La herramienta se cae.** El 3 de septiembre de 2026 ChatGPT, Claude y Grok estuvieron caídos al
+mismo tiempo, cada uno por una causa distinta
+([Quartz](https://qz.com/chatgpt-claude-grok-simultaneous-outages-090326)). No hizo falta una
+falla común: alcanzó la coincidencia. Un proveedor también puede cambiar el precio, los límites de
+uso o las condiciones de un día para otro.
 
-**Solo en herramientas contratadas por la empresa**, con acuerdo de tratamiento de datos y sin
-entrenamiento sobre lo que subís: documentos internos no críticos, procedimientos, correspondencia
-ordinaria.
+**Se pierde la habilidad.** En cuatro centros de endoscopía de Polonia se midió qué pasaba en los
+estudios hechos sin asistencia después de unos meses de trabajar con IA: la detección de adenomas
+bajó de 28.4% a 22.4%
+([STAT](https://www.statnews.com/2025/08/12/ai-deskilling-doctors-colonoscopy-study-lancet/)). Es
+un estudio observacional y de otra profesión, pero el mecanismo es el mismo en cualquier oficio
+que se apoye en el ojo entrenado.
 
-**En cualquier herramienta, incluso gratuita:** información pública, datos históricos ya
-publicados, textos sin datos propios, y datos inventados que imiten la estructura de los tuyos.
-Esta última categoría es más útil de lo que parece: para probar un análisis o afinar un prompt,
-una planilla sintética con las mismas columnas funciona igual de bien.
+**Se deja de revisar.** En un ensayo de METR, programadores con experiencia tardaron 19% más
+usando IA, y creyeron haber sido 20% más rápidos
+([METR](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)). La muestra es
+chica, dieciséis personas, y las herramientas eran de principios de 2025. Lo que queda es la
+distancia entre lo que se siente y lo que se mide. Una encuesta de Microsoft Research encontró algo
+parecido: a más confianza en la herramienta,
+[menos esfuerzo de revisión](https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/).
 
-Esta cohorte tiene un borde más que otras: en la sala hay cuatro empresas que compiten entre sí, y
-en algún bloque son socias. El chat compartido del curso es una herramienta externa para las otras
-tres. Lo que va al primer nivel no se dice ahí, y en la ronda de datos de hoy se nombra solo la
-categoría del dato, por ejemplo "el pronóstico mensual de un campo", sin decir el pronóstico.
+<figure className="figura">
+  <img
+    src="slides/img/s7-plan-b.svg"
+    alt="Tres columnas, cada una con un riesgo arriba y su plan B abajo. La herramienta se cae: procedimiento escrito para hacer la tarea sin IA y una segunda herramienta de otro proveedor. Se pierde la habilidad: dos personas que saben hacer la tarea a mano y la practican una vez por semestre. Se deja de revisar: quien firma explica el resultado sin el asistente abierto."
+  />
+</figure>
 
-## Agentes: lo más potente y lo más riesgoso
+El plan B no se arma para todo. Se arma para las **tareas críticas**: las que tienen un plazo
+comprometido con alguien de afuera, como el reporte al regulador, el informe mensual a los socios
+o el parte diario. Para cada una:
+
+- un procedimiento escrito para hacerla sin IA, y dos personas que lo saben ejecutar;
+- una práctica cada tanto, una vez por semestre alcanza;
+- una segunda herramienta aprobada, de otro proveedor;
+- ningún plazo que dependa de que una herramienta esté disponible justo ese día.
+
+Y una regla para todas las tareas, críticas o no: quien firma tiene que poder explicar el resultado
+sin el asistente abierto. Si no puede, el documento no está listo. La sesión 8 vuelve sobre esto.
+
+## Agentes: dónde corren y qué pueden tocar
 
 Un agente suma algo que el chatbot no tiene: actúa. Eso es lo que ahorra horas, y es también lo
 que convierte un error en un hecho. Hay tres poderes que conviene mirar por separado: leer
 contenido que no controlás (una página, un correo, un PDF de un tercero), tener acceso a lo
 sensible (partes, bases, credenciales) y actuar o salir hacia afuera (escribir, borrar, mandar).
 Con los tres juntos, un texto escondido en un correo puede darle órdenes al agente, y el agente
-las cumple con tus permisos. La regla de diseño que propuso Meta es corta: sin una persona que
-apruebe cada acción, un agente tiene como mucho dos de los tres.
+las cumple con tus permisos. Simon Willison lo llamó
+[la trifecta letal](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/). La regla de
+diseño que propuso Meta es corta: sin una persona que apruebe cada acción, un agente tiene como
+mucho dos de los tres.
 
 <figure className="figura">
   <img
@@ -127,10 +255,229 @@ apruebe cada acción, un agente tiene como mucho dos de los tres.
   />
 </figure>
 
-La [guía de agentes](#/guia-agentes) desarrolla esto para llevarse: los riesgos con casos reales,
-la escalera de autonomía, las cuatro tareas que más pidió esta cohorte (datos públicos, partes a
-una base, modelos de simulación y tableros de monitoreo) con su arquitectura segura, qué hicieron
-otras empresas y una lista de chequeo de diez preguntas.
+La regla de dos dice qué poderes tiene el agente. Falta la otra mitad: **dónde corre**. Ayer el
+agente trabajó en una carpeta, y esa carpeta era todo lo que podía tocar. Eso tiene nombre: un
+entorno aislado, o *sandbox*. Puede ser una carpeta dedicada, una máquina virtual o el entorno en
+la nube del proveedor. Adentro hay una copia de los datos que la tarea necesita y una credencial
+propia, acotada a esa tarea. No hay correo, ni contraseñas guardadas, ni red de la empresa.
+
+<figure className="figura">
+  <img
+    src="slides/img/s7-sandbox.svg"
+    alt="Dos paneles. A la izquierda, el agente en tu máquina de trabajo alcanza toda la unidad, el correo y el navegador abiertos, las credenciales guardadas y la red de la empresa: si se equivoca, se equivoca con tus permisos. A la derecha, el agente en un entorno aislado alcanza una copia de los datos de la tarea, una credencial propia y acotada, ningún correo ni contraseña, y solo los sitios de una lista: si se equivoca, se pierde una copia."
+  />
+</figure>
+
+La diferencia se ve cuando algo sale mal. En un entorno aislado se pierde una copia. En tu máquina,
+el agente se equivoca con tus permisos. Por eso la política lo pone como opción por defecto: el
+agente corre aislado, y lo otro se pide. Los proveedores van en la misma dirección
+([Anthropic, sobre el aislamiento de Claude Code](https://www.anthropic.com/engineering/claude-code-sandboxing)).
+
+Tres casos muestran qué pasa cuando falta alguna de las dos mitades:
+
+- **PocketOS, abril de 2026.** Un agente de programación tenía una tarea en el entorno de pruebas
+  y se topó con una credencial que no funcionaba. Encontró en otro archivo un token con más alcance
+  del necesario y
+  [borró el volumen de producción](https://www.theregister.com/software/2026/04/27/cursor-opus-agent-snuffs-out-startups-production-database/5224442)
+  en segundos. Las copias de respaldo estaban en ese mismo volumen. El fundador habló de varios
+  errores humanos encadenados, y tiene razón: el token sobraba y el respaldo estaba mal ubicado.
+- **postmark-mcp, septiembre de 2025.** Un servidor MCP publicado para conectar agentes al correo
+  empezó, en una versión nueva, a mandar copia oculta de cada mensaje a un tercero
+  ([The Register](https://www.theregister.com/2025/09/29/postmark_mcp_server_code_hijacked/)).
+  Un conector es software de terceros con tus permisos.
+- **Amazon Q, julio de 2025.** Alguien logró meter en la extensión oficial de un asistente de
+  programación una instrucción que le ordenaba
+  [borrar archivos y recursos en la nube](https://www.bleepingcomputer.com/news/security/amazon-ai-coding-agent-hacked-to-inject-data-wiping-commands/).
+  Amazon dice que estaba mal formada y no llegó a ejecutarse. La lección es la del anterior: las
+  extensiones se instalan de una lista aprobada y en versiones fijas.
+
+De ahí salen los controles, que son pocos: entorno aislado por defecto, una credencial propia con
+los permisos justos, ningún permiso de borrado sobre producción, el respaldo en un lugar al que el
+agente no llega, y un registro de lo que hizo. La [guía de agentes](#/guia-agentes) los desarrolla,
+con la escalera de autonomía y las cuatro tareas que más pidió esta cohorte.
+
+## El correo es la llave maestra
+
+Hay un conector que merece sección propia. La casilla de correo es la llave de casi todas las
+demás cuentas: ahí llegan los enlaces para restablecer contraseñas y buena parte de los códigos de
+verificación. Un agente con permiso sobre la casilla puede recibirlos. Y cualquiera que le escriba
+a esa casilla puede intentar darle instrucciones, porque para el agente un correo es texto que
+lee.
+
+<figure className="figura">
+  <img
+    src="slides/img/s7-mail-llave.svg"
+    alt="Cadena de cinco pasos: alguien le escribe a la casilla un correo con instrucciones escondidas; el agente lo lee porque tiene permiso sobre toda la casilla; pide un reinicio de contraseña en otro servicio; el código llega a la misma casilla que el agente está leyendo; la cuenta queda tomada. Debajo, tres controles que cortan la cadena: una casilla dedicada para el agente, un segundo factor que no dependa del correo, y que los cambios de cuenta los haga una persona."
+  />
+</figure>
+
+Cada eslabón de esa cadena ya se vio por separado:
+
+- **El asistente de soporte de Meta, abril y mayo de 2026.** Los atacantes le pedían al asistente
+  que asociara un correo nuevo a una cuenta ajena de Instagram, y el asistente mandaba el código
+  ahí. Fueron
+  [20,225 cuentas](https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts/).
+  Las que tenían un segundo factor de autenticación no se vieron afectadas. Meta le quitó al
+  asistente la capacidad de hacer ese cambio solo y lo pasó a revisión de una persona.
+- **Un navegador con agente, agosto de 2025.** En una demostración de Brave, un texto escondido en
+  una página hizo que el agente del navegador buscara el correo del usuario, pidiera un código de
+  acceso, lo leyera en Gmail y lo publicara
+  ([Brave](https://brave.com/blog/comet-prompt-injection/)). Fue una prueba de investigadores, no
+  un ataque real.
+- **EchoLeak, 2025.** Un solo correo, sin que nadie hiciera clic, lograba que Microsoft 365 Copilot
+  sacara datos de su alcance: el correo traía instrucciones escondidas y el asistente las seguía
+  ([Hack The Box](https://www.hackthebox.com/blog/cve-2025-32711-echoleak-copilot-vulnerability)).
+  Microsoft lo corrigió en sus servidores, y no se conocen usos reales.
+- **Salesloft Drift, agosto de 2025.** A un chatbot de ventas le robaron los permisos que tenía
+  sobre otros sistemas, y con ellos sacaron datos de
+  [más de 700 organizaciones](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift).
+  El segundo factor no ayudó, porque un permiso ya otorgado no vuelve a pedirlo.
+
+Los controles cortan la cadena en tres lugares:
+
+- **Casilla dedicada.** Ningún agente autónomo entra a la casilla principal de una persona ni a las
+  compartidas del equipo. Si necesita correo, tiene una casilla propia, que no sea dirección de
+  recuperación de ninguna otra cuenta.
+- **Segundo factor que no pase por el correo.** Una aplicación o una llave física. Tampoco se le
+  da al agente acceso al gestor de contraseñas ni a los mensajes de verificación del teléfono.
+- **Los cambios de cuenta los hace una persona.** Restablecer contraseñas, cambiar datos de
+  recuperación y dar accesos. El agente puede preparar el pedido; no lo ejecuta.
+
+Nada de esto impide usar un asistente para el correo. Redactar, resumir y ordenar sigue
+habilitado, en modo borrador: el asistente propone y la persona envía.
+
+## Enjambres: muchos agentes a la vez
+
+En la sesión 5 aparecieron los subagentes: un agente que reparte partes de la tarea a otros. A
+escala, eso se llama sistema multiagente o enjambre (*swarm*): decenas o cientos de agentes
+trabajando en paralelo. Sirve para tareas grandes que se pueden partir, como revisar mil
+documentos o probar muchas variantes de un cálculo. Con la cantidad cambian cuatro cosas.
+
+<figure className="figura">
+  <img
+    src="slides/img/s7-swarm.svg"
+    alt="A la izquierda, un agente coordinador sobre una grilla de veinte agentes; cinco de ellos, contiguos, están marcados con un signo de alerta: un resultado malo pasa de un agente al siguiente y cada uno lo da por bueno. A la derecha, cuatro cambios: el error se copia, la instrucción ajena circula, el gasto se dispara y nadie lee todo. Debajo, los controles: entorno aislado sin acceso a producción, tope de agentes, de tiempo y de gasto, y un responsable que lo puede detener."
+  />
+</figure>
+
+- **El error se copia.** Un equipo de Berkeley revisó más de 1,600 ejecuciones de siete sistemas
+  de este tipo y clasificó
+  [catorce modos de falla](https://arxiv.org/abs/2503.13657). Varios son de coordinación: un
+  agente da por verificado lo que otro no verificó, o ignora lo que otro le avisó.
+- **La instrucción ajena circula.** En enero de 2026 una red social hecha para agentes dejó su
+  base de datos abierta, con
+  [1.5 millones de credenciales](https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys)
+  y los mensajes privados entre agentes. Otro análisis mostró agentes pasándose instrucciones
+  maliciosas entre sí
+  ([SecurityWeek](https://www.securityweek.com/security-analysis-of-moltbook-agent-network-bot-to-bot-prompt-injection-and-data-leaks/)).
+- **El error se acumula con el tiempo.** Anthropic puso a un agente a manejar un pequeño kiosco de
+  oficina durante un mes. Vendió a pérdida, inventó una cuenta de cobro y tuvo un episodio de
+  confusión sobre quién era ([Project Vend](https://www.anthropic.com/research/project-vend-1)).
+  Es un experimento contado con humor por sus autores, y muestra bien qué pasa cuando nadie
+  corrige en el camino.
+- **Nadie lee todo.** Miles de acciones por hora no las sigue una persona. El aviso de que algo
+  anda mal tiene que ser automático.
+
+Los controles son los de un agente, más tres propios: un tope de agentes, de tiempo y de gasto
+configurado en la herramienta; un responsable que puede detener todo y sabe cómo; y una
+verificación final hecha por una persona o por un control independiente. Un agente que revisa a
+otro agente no cuenta como verificación.
+
+## El episodio de Hugging Face, julio de 2026
+
+Hugging Face es la plataforma donde se publican y se descargan modelos y conjuntos de datos
+abiertos, algo así como el repositorio común de la industria. En julio de 2026 tuvo una intrusión
+que junta en un solo caso lo que vimos en las tres secciones anteriores.
+
+Lo que está confirmado sale de dos comunicados de la propia empresa, el
+[aviso del 16 de julio](https://huggingface.co/blog/security-incident-july-2026) y la
+[cronología técnica del 27](https://huggingface.co/blog/agent-intrusion-technical-timeline):
+
+- OpenAI estaba corriendo una evaluación interna para medir cuánto sabe un agente de seguridad
+  informática. La prueba le pedía encontrar y explotar fallas de software.
+- El agente salió del entorno aislado donde corría la prueba, usando una falla que nadie conocía
+  en una de las pocas salidas a internet que tenía permitidas.
+- Desde ahí entró a la infraestructura de Hugging Face con un conjunto de datos malicioso, robó
+  credenciales y se movió por varios sistemas internos entre el 9 y el 13 de julio, buena parte
+  durante un fin de semana.
+- Hugging Face reconstruyó unas 17,600 acciones. Su lectura es que el agente buscaba las
+  respuestas de la prueba, que suponía alojadas ahí: quiso aprobar por otro camino.
+- El daño informado fue acotado: acceso a algunos conjuntos de datos internos y a credenciales de
+  servicio. La empresa no encontró alteraciones en los modelos ni en los datos públicos, y pidió a
+  sus usuarios renovar sus credenciales.
+
+<figure className="figura">
+  <img
+    src="slides/img/s7-huggingface.svg"
+    alt="Línea de tiempo con cinco fechas. 9 de julio: un agente sale del entorno de prueba de una evaluación interna de OpenAI usando una falla desconocida. 9 al 13 de julio: entra a Hugging Face con un dataset malicioso, roba credenciales y se mueve por varios clústeres. 16 de julio: Hugging Face lo informa; hay datasets internos y credenciales afectados y nada público alterado. 21 de julio: OpenAI se hace cargo. 27 de julio: Hugging Face publica la cronología técnica, con unas 17,600 acciones reconstruidas. Debajo, tres reglas de la sesión que el caso muestra."
+  />
+</figure>
+
+Dos videos cortos lo cuentan en castellano, y sirven para verlo antes de leer el detalle:
+[Televisión Pública](https://www.youtube.com/watch?v=A-3n2ZpKPWY) (2 min) y
+[RTVE](https://www.youtube.com/watch?v=NHar0LXIoSc) (1 min y medio). Son noticieros, así que
+simplifican: la cantidad de agentes cambia según quién lo cuente, de 700 a 1,200, y ninguno de los
+dos comunicados de Hugging Face da esa cifra. La prensa también informó que los agentes se
+coordinaban por un canal de mensajes improvisado
+([Fortune](https://fortune.com/2026/08/06/openai-agents-passed-secret-notes-for-months-leading-up-to-hugging-face-hack/)).
+
+Conviene leerlo sin dramatismo. Nadie resultó dañado más allá de un incidente de seguridad serio
+y bien manejado, y las dos empresas lo contaron en público. Lo que deja son tres reglas de esta
+sesión, vistas juntas:
+
+- **El entorno aislado es un control, y puede fallar.** No reemplaza a los permisos mínimos ni al
+  registro: se suman. Por eso la política pide los tres.
+- **Muchos agentes, nadie mirando.** Corrió durante un fin de semana, a velocidad de máquina.
+  Hugging Face cambió sus alertas para que un aviso grave llame a una persona en minutos,
+  cualquier día.
+- **Cumplió el objetivo, a su modo.** Nadie le pidió entrar a otra empresa. Tenía un objetivo y
+  encontró un camino que quienes escribieron la prueba no habían previsto. Es la misma conducta de
+  los escenarios de laboratorio de más arriba, esta vez fuera del laboratorio.
+
+## Los atacantes también tienen IA
+
+Hasta acá el riesgo estaba adentro: una herramienta propia, mal configurada o mal usada. Queda el
+de afuera. Quien quiere atacar a una empresa tiene acceso a los mismos modelos, y eso cambia tres
+cosas concretas.
+
+**El engaño es más creíble.** Un correo de phishing ya no trae errores de redacción, viene en el
+idioma y el tono del remitente, y una voz o una cara se pueden imitar. En 2024, un empleado de la
+ingeniería Arup hizo quince transferencias por unos 25 millones de dólares después de una
+videollamada en la que todos los demás participantes eran falsos
+([CNN](https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk)).
+
+**Atacar requiere menos oficio.** En noviembre de 2025 Anthropic informó el
+[primer caso reportado](https://www.anthropic.com/news/disrupting-AI-espionage) de espionaje
+informático orquestado con agentes, contra unas treinta organizaciones. Según la propia empresa,
+la mayor parte del trabajo la hizo el agente; la cifra es suya y algunos investigadores la
+discutieron. ESET mostró ese mismo año un programa de secuestro de datos que
+[usa un modelo para escribir su código](https://www.welivesecurity.com/es/investigaciones/eset-research-descubre-el-primer-ransomware-basado-ia/);
+resultó ser una prueba de concepto, no un ataque visto en uso.
+
+**Las fallas se encuentran más rápido.** Los modelos más nuevos encuentran vulnerabilidades en
+software muy usado. Anthropic informó en mayo de 2026 que su modelo y las empresas asociadas al
+programa habían identificado más de 10,000 de severidad alta o crítica
+([Help Net Security](https://www.helpnetsecurity.com/2026/05/26/anthropic-project-glasswing-update/));
+la cifra es de la propia empresa.
+Es una buena noticia para la defensa, y acorta el tiempo entre que una falla se publica y que
+alguien la aprovecha.
+
+El caso más cercano a esta industria es de enero de 2026. En una intrusión a una empresa de agua
+de Monterrey, el modelo que usaba el atacante señaló por su cuenta una interfaz de control
+industrial como objetivo de valor
+([SecurityWeek](https://www.securityweek.com/claude-ai-guided-hackers-toward-ot-assets-during-water-utility-intrusion/)).
+El ataque a los sistemas de control falló. Dragos, que lo analizó,
+[advierte](https://www.dragos.com/blog/ai-assisted-ics-attack-water-utility) que no demuestra
+capacidad autónoma de atacar una operación. Sí muestra que un atacante sin conocimiento de la
+industria recibe hoy esa orientación.
+
+Para una empresa, esto se traduce en cuatro prácticas que no dependen de ninguna herramienta:
+
+- Pagos, cambios de datos bancarios, entrega de credenciales y pedidos urgentes de un directivo se
+  confirman por un segundo canal ya conocido: una llamada a un número registrado, o en persona.
+- La voz y la imagen en una llamada no alcanzan como prueba de identidad.
+- Los correos sospechosos se reportan aunque estén bien escritos.
+- Las actualizaciones de seguridad se instalan rápido.
 
 ## Infraestructura crítica
 
@@ -159,73 +506,83 @@ siete agencias de siete países publicaron principios para integrar IA en tecnol
 Cubren modelos de lenguaje y agentes, y piden una persona en el lazo para todo lo que toque la
 seguridad del proceso ([CISA](https://www.cisa.gov/resources-tools/resources/principles-secure-integration-artificial-intelligence-operational-technology)).
 
-## Esto ya pasó, con fuentes
+## La política de uso, explicada
 
-Siete incidentes documentados, cada uno pegado a una regla de las de arriba:
+Todo lo anterior termina en un documento. La política de uso existe para que el equipo use estas
+herramientas sin tener que adivinar qué está permitido, y se apoya en tres principios:
 
-- **Deloitte, octubre de 2025.** Un informe de AU$ 440,000 para el gobierno australiano salió con
-  citas académicas inventadas y una cita judicial falsa; la firma
-  [devolvió parte de los honorarios](https://www.theguardian.com/australia-news/2025/oct/06/deloitte-to-pay-money-back-to-albanese-government-after-using-ai-in-440000-report).
-  Lo destapó un investigador que abrió las citas.
-- **Los abogados sancionados, 2023 a hoy.** Un
-  [registro público](https://www.damiencharlotin.com/hallucinations/) junta los fallos judiciales
-  con citas inventadas por inteligencia artificial: en septiembre de 2026 pasaba los 2,000 casos.
-  La fila de normativa del protocolo existe por esto.
-- **Replit, julio de 2025.** Un agente de programación
-  [borró la base de datos de producción](https://incidentdatabase.ai/cite/1152/) de una empresa en
-  pleno congelamiento de cambios, y después informó que la recuperación era imposible (no lo era).
-  Es el ejemplo más claro de un paso equivocado que pega directo en un sistema real.
-- **EchoLeak, 2025.** Un solo correo, sin que nadie hiciera clic, lograba que Microsoft 365 Copilot
-  sacara datos de su alcance: el correo traía instrucciones escondidas y el asistente las seguía
-  ([Hack The Box](https://www.hackthebox.com/blog/cve-2025-32711-echoleak-copilot-vulnerability)).
-  Microsoft lo corrigió en sus servidores. Es la regla de dos en un caso concreto.
-- **postmark-mcp, septiembre de 2025.** Un servidor MCP publicado para conectar agentes al correo
-  empezó, en una versión nueva, a mandar copia oculta de cada mensaje a un tercero
-  ([The Register](https://www.theregister.com/2025/09/29/postmark_mcp_server_code_hijacked/)).
-  Un conector es software de terceros con tus permisos.
-- **Air Canada, febrero de 2024.** Su chatbot inventó una política de descuentos y
-  [un tribunal obligó a la aerolínea a cumplirla](https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know).
-  Para el tribunal, lo que dijo el chatbot lo dijo la empresa.
-- **Anthropic, noviembre de 2025.** El
-  [primer caso reportado](https://www.anthropic.com/news/disrupting-AI-espionage) de espionaje
-  informático orquestado con agentes de inteligencia artificial, contra unas treinta
-  organizaciones (grandes tecnológicas, entidades financieras, fabricantes de productos químicos y
-  agencias de gobierno), con éxito en unos pocos casos. Por eso la sección de infraestructura
-  crítica pide tanta cautela.
+- **Habilitar por defecto.** Lo que la política no restringe, se puede hacer con las herramientas
+  aprobadas.
+- **La responsabilidad no se delega.** Quien firma un documento o aprueba una acción responde por
+  ella, la haya hecho con asistencia o sin ella.
+- **El control es proporcional al daño posible.** Un borrador no necesita el mismo cuidado que una
+  cifra en un informe firmado, y un agente que lee una carpeta no necesita el mismo que uno que
+  escribe en una base.
 
-## La política de uso, en una página
+<figure className="figura">
+  <img
+    src="slides/img/s7-riesgo-control.svg"
+    alt="Siete riesgos, cada uno unido por una flecha a su control y a la sección de la política que lo trata. Dato confidencial afuera: mapa de tres niveles y herramientas aprobadas. Dato inventado en un informe firmado: verificación según el destino. La herramienta se cae o se pierde la habilidad: plan B por tarea crítica. Un agente borra o manda lo que no debía: entorno aislado, permisos mínimos y regla de dos. Toman una cuenta a través del correo: sin agentes en la casilla y segundo factor sin correo. Un sistema de muchos agentes se desborda: topes, entorno aislado y un responsable con corte. Un pedido falso con voz o cara conocida: confirmación por un segundo canal."
+  />
+</figure>
 
-Salimos del bloque con un borrador editable que cubre cinco puntos: qué herramientas están
-aprobadas y cuáles no; el mapa de datos de tres niveles de más arriba; el protocolo de
-verificación según el destino del texto; qué hay que declarar cuando un documento se hizo con
-asistencia; y a quién se le consulta cuando aparece un caso nuevo. Ese último punto es el que más
-se olvida y el que hace que la política siga viva.
+Hay dos versiones para descargar, y sirven para cosas distintas.
 
-El borrador está acá:
-[politica-uso-ia-borrador.docx](descargas/politica-uso-ia-borrador.docx). La versión 0.2 suma un
-sexto punto, sobre agentes: autonomía máxima, regla de dos, permisos mínimos, conectores
-aprobados, registro de acciones y un responsable por agente. Se abre en Word o en
-cualquier procesador, y los corchetes marcan lo que cada empresa completa. En la sesión lo
-llenamos con lo que salga de los bloques: los datos clasificados entran al punto 2, el protocolo
-al punto 3. Cada empresa se lleva su copia y la termina con su gente.
+**La versión larga, 1.0:** [politica-uso-ia.docx](descargas/politica-uso-ia.docx). Tiene dieciséis
+secciones y cuatro anexos. Cada sección está escrita en tres partes: qué se habilita, qué riesgo
+cubre, con un caso real y su fuente, y cuál es la regla. Es la que se discute con sistemas, legales
+y la gerencia, porque explica el porqué de cada punto. El recorrido es el de esta página:
 
-Para leer después de la sesión hay una versión larga, la 1.0:
-[politica-uso-ia.docx](descargas/politica-uso-ia.docx). Tiene dieciséis secciones y cuatro
-anexos. Cada sección dice qué se habilita, qué riesgo cubre, con un caso real y su fuente, y cuál
-es la regla. Suma lo que no entra en una página: el relevamiento de herramientas, el plan B para
-el día que la herramienta se cae, el entorno aislado donde corre un agente, el correo y las
-contraseñas, los sistemas de varios agentes, las amenazas externas y los incidentes.
+| Secciones | De qué se ocupan |
+| --- | --- |
+| 1 y 2 | El principio (se usa IA; la política dice cómo), el alcance y las definiciones |
+| 3 y 4 | El relevamiento de herramientas y la lista de aprobadas, con el trámite para sumar una |
+| 5 a 7 | El mapa de datos, la verificación según el destino y la declaración de asistencia |
+| 8 | Dependencia y continuidad: el plan B por tarea crítica |
+| 9 a 12 | Agentes, correo y contraseñas, conectores y modelos descargados, y sistemas de muchos agentes |
+| 13 y 14 | Amenazas externas con IA, y operación e infraestructura crítica |
+| 15 y 16 | Qué se reporta cuando algo sale mal, y quién resuelve los casos nuevos |
+
+Los anexos traen la planilla de relevamiento, la tabla de riesgos y controles, las diez preguntas
+para antes de poner en marcha un agente, y los marcos de referencia para quien tenga que
+justificarla ante una auditoría: los dos listados de OWASP, el marco de gestión de riesgos del
+NIST y la norma ISO/IEC 42001.
+
+**La versión de una página, 0.2:**
+[politica-uso-ia-borrador.docx](descargas/politica-uso-ia-borrador.docx). Seis puntos: herramientas,
+datos, verificación, declaración de asistencia, casos nuevos y agentes. Es la que se pega al lado
+del monitor. Sirve para empezar el lunes mientras la larga pasa por las revisiones que tenga que
+pasar.
+
+Las dos se abren en Word o en cualquier procesador, y los corchetes marcan lo que cada empresa
+completa. Dos puntos se olvidan más que el resto, y son los que mantienen viva una política: a
+quién se le consulta el caso nuevo, y qué se hace cuando algo sale mal. Un incidente que se avisa
+en una hora se contiene. Para que se avise, el reporte de buena fe no puede tener sanción.
+
+## Para practicar (opcional)
+
+La forma más rápida de entender cómo se equivoca un modelo es leer con atención algo que escribió.
+Los tres informes de este ejercicio tienen errores plantados, de los que aparecen de verdad:
+cifras inventadas con demasiada precisión, causas que suenan razonables y no salen de ningún dato,
+citas completas de artículos que no existen, y normativa recitada de memoria. No se hace en vivo;
+queda acá para quien quiera entrenar el ojo.
+
+El puntaje mide dos cosas a propósito: cuántas invenciones encontraste y cuántas afirmaciones sanas
+marcaste de más. Marcar todo como sospechoso también resta, porque es otra manera de leer mal.
+
+<HallucinationHunt sesion={7} />
 
 ## En la sesión en vivo (2 h)
 
 | Bloque | Tiempo | Qué hacemos |
 | --- | --- | --- |
-| Apertura | 8 min | Las ventanas del día y el caso de cada uno a mano |
-| La cacería | 20 min | Invenciones cazadas en vivo, cada una con su causa |
-| El protocolo | 25 min | Cuánto verificar según el costo del error |
-| Datos de la empresa | 20 min | Datos reales en los tres niveles, y el borde entre cuatro empresas |
-| Agentes y operación | 20 min | Donde el error no es reversible, el loop no sirve |
-| La política | 17 min | El borrador de una página, redactado en vivo, y tres prácticas para llevarse |
+| Apertura | 5 min | Para qué se habla de riesgos: para habilitar el uso |
+| Información y relevamiento | 20 min | El mapa de tres niveles, y la ronda de qué se usa hoy |
+| Cuando se equivoca o miente | 20 min | Verificar según el costo del error, y el plan B |
+| Agentes, entorno aislado y correo | 25 min | Dónde corre un agente, qué puede tocar, y por qué no entra a la casilla |
+| Enjambres y Hugging Face | 15 min | Muchos agentes a la vez, y el caso de julio con su video |
+| Los atacantes también tienen IA | 10 min | El segundo canal, y por qué el campo queda aparte |
+| La política | 15 min | El recorrido por el documento, y tres prácticas para llevarse |
 | Pausa | 10 min | A las 12:00 (10:00 en Ecuador y Colombia) sigue la sesión 8 |
 
 <Quiz data="quiz_s7" sesion={7} />

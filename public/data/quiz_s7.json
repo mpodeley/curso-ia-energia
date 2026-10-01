@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T00:00:00+00:00",
+  "generated_at": "2026-10-01T00:00:00+00:00",
   "source": "elaboración propia para el curso",
   "source_date": null,
   "data": [
@@ -26,24 +26,68 @@
       ]
     },
     {
-      "pregunta": "En la cacería marcaste todas las afirmaciones como sospechosas y encontraste todas las invenciones. ¿Por qué el puntaje no es perfecto?",
+      "pregunta": "Te ofrecen un agente que \"te maneja la casilla\": lee todo tu correo de trabajo y responde solo. ¿Cuál es el problema principal?",
       "opciones": [
         {
-          "texto": "Por un detalle del puntaje que no importa en la práctica.",
-          "explicacion": "Importa, y bastante: es la diferencia entre una herramienta que te ahorra tiempo y una que no."
+          "texto": "Que puede redactar con un tono que no es el tuyo.",
+          "explicacion": "Es una molestia, y se arregla con un ejemplo. El problema de fondo es otro: qué más llega a esa casilla."
         },
         {
-          "texto": "Porque desconfiar de todo cuesta el mismo tiempo que escribirlo a mano, y hace que la herramienta deje de servir.",
+          "texto": "Que a esa casilla llegan los enlaces y códigos para recuperar otras cuentas, y cualquiera que le escriba puede intentar darle instrucciones.",
           "correcta": true,
-          "explicacion": "La habilidad que se entrena es la puntería: saber qué clase de afirmación exige fuente. Sin eso, o confiás de más o verificás todo, y las dos salen caras."
+          "explicacion": "El correo es la llave de casi todas las demás cuentas. Un agente que lo lee y además actúa junta los tres poderes de la regla de dos. Por eso la política pide una casilla dedicada, un segundo factor que no pase por el correo, y que los cambios de cuenta los haga una persona."
         },
         {
-          "texto": "Porque el ejercicio premia la velocidad.",
-          "explicacion": "El tiempo no entra en el puntaje. Lo que se mide es cuántas invenciones encontraste y cuántas afirmaciones sanas marcaste de más."
+          "texto": "Que los asistentes no entienden bien los correos largos.",
+          "explicacion": "Los entienden bastante bien, y justamente por eso siguen las instrucciones que encuentran adentro."
         },
         {
-          "texto": "Porque siempre hay que dejar alguna afirmación sin marcar.",
-          "explicacion": "No es una cuota. Si un texto tuviera todo inventado, marcarlo todo sería correcto."
+          "texto": "Ninguno, si la herramienta es de un proveedor conocido.",
+          "explicacion": "El proveedor no cambia el mecanismo. En 2026 el asistente de soporte de Meta asoció correos nuevos a más de veinte mil cuentas ajenas porque podía hacer ese cambio solo."
+        }
+      ]
+    },
+    {
+      "pregunta": "El informe mensual a los socios se arma hace seis meses con un asistente, y sale bien. ¿Qué pide el plan B para esa tarea?",
+      "opciones": [
+        {
+          "texto": "Dejar de usar el asistente para ese informe, por las dudas.",
+          "explicacion": "El plan B no prohíbe nada. La tarea se sigue haciendo con el asistente; lo que se prepara es el día que no esté."
+        },
+        {
+          "texto": "Contratar la versión más cara de la misma herramienta.",
+          "explicacion": "Una versión más cara se cae junto con la más barata. Lo que protege es un proveedor distinto y un procedimiento que no dependa de ninguno."
+        },
+        {
+          "texto": "Un procedimiento escrito para hacerlo sin IA, dos personas que lo sepan ejecutar y lo practiquen cada tanto, y una segunda herramienta de otro proveedor.",
+          "correcta": true,
+          "explicacion": "Es una tarea crítica porque tiene un plazo comprometido con alguien de afuera. El 3 de septiembre de 2026 tres asistentes estuvieron caídos a la vez. Y sin práctica, a los seis meses ya nadie recuerda cómo se hacía a mano."
+        },
+        {
+          "texto": "Guardar los informes anteriores para copiar el formato.",
+          "explicacion": "Ayuda, pero el formato es lo de menos. Lo que se pierde es saber de dónde sale cada número y cómo se controla."
+        }
+      ]
+    },
+    {
+      "pregunta": "Armás un sistema de veinte agentes para revisar mil partes diarios. Para controlar el resultado, sumás un agente más que revisa lo que hicieron los otros. ¿Alcanza?",
+      "opciones": [
+        {
+          "texto": "Sí: un agente revisor detecta los errores de los demás.",
+          "explicacion": "A veces los detecta. Pero comparte los mismos puntos ciegos, y uno de los modos de falla más frecuentes en estos sistemas es dar por verificado lo que otro agente no verificó."
+        },
+        {
+          "texto": "No: la verificación final la hace una persona o un control automático independiente, y el sistema corre con topes y con un responsable que lo puede detener.",
+          "correcta": true,
+          "explicacion": "Un agente que revisa a otro agente no cuenta como verificación. Un control independiente es, por ejemplo, que los totales cierren contra la fuente. Y con muchos agentes nadie lee todo, así que hacen falta topes de cantidad, de tiempo y de gasto."
+        },
+        {
+          "texto": "Sí, siempre que el revisor use un modelo más grande.",
+          "explicacion": "Un modelo más capaz se equivoca menos, pero sigue sin poder abrir la fuente por vos. El control tiene que venir de afuera del sistema."
+        },
+        {
+          "texto": "No: veinte agentes es demasiado, y hay que volver a hacerlo a mano.",
+          "explicacion": "La cantidad no es el problema. Con entorno aislado, topes y una verificación independiente, se puede usar."
         }
       ]
     },
@@ -66,28 +110,6 @@
         {
           "texto": "Que la empresa no tiene todavía una política de uso.",
           "explicacion": "La política hace falta, pero escribirla no vuelve segura una arquitectura que no lo es."
-        }
-      ]
-    },
-    {
-      "pregunta": "Tenés que responder una consulta sobre qué obliga la normativa para informar un venteo. ¿Cómo lo hacés?",
-      "opciones": [
-        {
-          "texto": "Le preguntás al chatbot y usás la respuesta, que suele citar el decreto y el artículo.",
-          "explicacion": "Que cite un número de decreto y un artículo no significa que existan. Las respuestas normativas de memoria son el peor caso de uso, porque el costo del error es legal."
-        },
-        {
-          "texto": "Le adjuntás el texto de la norma y le pedís que responda solo con eso, citando el artículo, y después abrís el artículo citado.",
-          "correcta": true,
-          "explicacion": "Con el texto a la vista el modelo pasa de recordar a leer, que es donde es confiable. El chequeo final del artículo cuesta un minuto y cierra el tema."
-        },
-        {
-          "texto": "Le preguntás y después le pedís que confirme si está seguro.",
-          "explicacion": "Va a confirmar con la misma seguridad con la que inventó. La confirmación no agrega información."
-        },
-        {
-          "texto": "Le preguntás a dos chatbots distintos y comparás.",
-          "explicacion": "Dos modelos entrenados con textos parecidos pueden coincidir en el mismo invento plausible, así que la coincidencia no confirma el dato."
         }
       ]
     }

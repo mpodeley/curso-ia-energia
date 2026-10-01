@@ -12,7 +12,7 @@
 // and data sources. No generic-divulgation YouTube channels, in any language.
 // A short list beats a padded one; a session with no external resource is fine.
 
-export const VERIFICADO = '2026-09-28'
+export const VERIFICADO = '2026-10-01'
 
 export type Recurso = {
   tipo: 'video' | 'lectura' | 'herramienta' | 'curso'
@@ -421,25 +421,43 @@ export const RECURSOS: Record<number, Recurso[]> = {
   7: [
     {
       tipo: 'video',
-      titulo: 'What is interpretability?',
-      url: 'https://www.youtube.com/watch?v=TxhhMTOTMDg',
-      fuente: 'Anthropic',
-      duracion: '3:53',
-      publicado: '2024-06',
+      titulo: 'OpenAI confirmó que un agente IA hackeó a otra empresa',
+      url: 'https://www.youtube.com/watch?v=A-3n2ZpKPWY',
+      fuente: 'Televisión Pública Noticias',
+      duracion: '2:21',
+      publicado: '2026-07',
+      idioma: 'es',
+      porque:
+        'El episodio de Hugging Face en dos minutos y en castellano: un agente que sale de su entorno de prueba y entra a otra empresa. Es un noticiero, así que simplifica; el detalle confirmado está en la lectura de abajo. Miralo antes de la sesión, porque es el caso que la cierra.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'Security incident disclosure — July 2026',
+      url: 'https://huggingface.co/blog/security-incident-july-2026',
+      fuente: 'Hugging Face',
       idioma: 'en',
       porque:
-        'La pregunta que sostiene esta sesión, contada por el equipo que la investiga: qué es mirar adentro de un modelo, y por qué todavía no alcanza para garantizar cómo se comporta. El video de abajo es la versión larga.',
+        'La fuente primaria del mismo caso: qué se vio afectado, qué no, y qué cambiaron después. Es un buen modelo de cómo se informa un incidente. Fijate en el orden: primero el alcance, después lo que hicieron, y recién al final el análisis.',
     },
     {
       tipo: 'video',
-      titulo: 'The Dark Matter of AI [Mechanistic Interpretability]',
-      url: 'https://www.youtube.com/watch?v=UGO_Ehywuxc',
-      fuente: 'Welch Labs',
-      duracion: '24:09',
-      publicado: '2024-12',
+      titulo: 'Securing AI Agents: How to Prevent Hidden Prompt Injection Attacks',
+      url: 'https://www.youtube.com/watch?v=5ZA1lTxTH3c',
+      fuente: 'IBM Technology',
+      duracion: '10:07',
+      publicado: '2026-01',
       idioma: 'en',
       porque:
-        'Para el más curioso: por qué mirar adentro de un modelo es difícil de verdad. Welch Labs explica la interpretabilidad mecanicista: se puede mirar adentro de un modelo, pero todavía no lo bastante para garantizar cómo se comporta. Esa idea atraviesa esta sesión.',
+        'Cómo un texto escondido en una página o en un correo termina dándole órdenes a un agente, dibujado en un pizarrón. Es el mecanismo que está detrás de la regla de dos y de la sección sobre el correo. Tiene subtítulos traducibles.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'The lethal trifecta for AI agents',
+      url: 'https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/',
+      fuente: 'Simon Willison',
+      idioma: 'en',
+      porque:
+        'El texto del que sale la regla de dos: datos privados, contenido que no controlás y una salida hacia afuera. Si tu agente tiene las tres, alguien puede sacarle los datos. Corto, y con ejemplos de productos conocidos.',
     },
     {
       tipo: 'herramienta',
@@ -448,7 +466,16 @@ export const RECURSOS: Record<number, Recurso[]> = {
       fuente: 'Responsible AI Collaborative',
       idioma: 'en',
       porque:
-        'El registro público de incidentes de IA, con el mismo espíritu que los registros de incidentes de aviación: documentar para que otros no repitan. Buscá los de tu industria antes de la sesión y traé el que más se parezca a tu trabajo.',
+        'El registro público de incidentes de IA, con el mismo espíritu que los registros de incidentes de aviación: documentar para que otros no repitan. Buscá los de tu industria y traé el que más se parezca a tu trabajo.',
+    },
+    {
+      tipo: 'lectura',
+      titulo: 'OWASP Top 10 for Agentic Applications (2026)',
+      url: 'https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/',
+      fuente: 'OWASP',
+      idioma: 'en',
+      porque:
+        'La lista de referencia de riesgos en sistemas con agentes, la que va a citar el área de sistemas o una auditoría. No hace falta leerla entera: alcanza con reconocer los diez nombres y ver que la política de la sesión los cubre.',
     },
   ],
   8: [

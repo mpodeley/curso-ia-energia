@@ -110,14 +110,14 @@ export const SESIONES: Sesion[] = [
   {
     n: 7,
     dia: 4,
-    titulo: 'Riesgos, límites y gobernanza',
+    titulo: 'Información, riesgos y política de uso',
     resumen:
-      'Reglas de uso que se llevan puestas: por qué falla un modelo, cuánto verificar según el costo del error, qué dato va a qué herramienta y dónde un agente no entra.',
+      'Qué dato va a qué herramienta, cuánto verificar, qué hacer el día que la IA no está, y dónde corre un agente. Cada riesgo con un caso real y con el control que deja seguir usándola.',
     objetivos: [
-      'Ponerle causa a un error concreto con la tabla de las cuatro propiedades',
-      'Dosificar la verificación según el costo del error, y ubicar cada dato de tu trabajo en su nivel',
-      'Explicar por qué un agente no se conecta a un sistema que opera equipos',
-      'Salir con un borrador de política de uso de una página para tu empresa',
+      'Ubicar cada dato de tu trabajo en su nivel, y armar el relevamiento de lo que tu equipo ya usa',
+      'Dosificar la verificación según el costo del error, y tener un plan B para las tareas críticas',
+      'Decidir dónde corre un agente y qué puede tocar, y explicar por qué no entra al correo ni a la operación',
+      'Salir con la política de uso para tu empresa: la de una página y la versión larga, explicada',
     ],
     estado: 'lista',
     slides: true,

@@ -14,6 +14,7 @@
     "data": "python scripts/build_data.py",
     "slides": "node tools/diagramas.mjs && node tools/slides-assets.mjs && marp -I slides -o public/slides",
     "diagramas": "node tools/diagramas.mjs",
+    "diagramas:s7": "node tools/diagramas-s7.mjs",
     "slides:preview": "node tools/diagramas.mjs && node tools/slides-assets.mjs && marp -I slides -o public/slides -w -p",
     "slides:serve": "marp -s slides",
     "slides:pdf": "marp --allow-local-files --pdf --pdf-notes --pdf-outlines -I slides -o public/handouts",

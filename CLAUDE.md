@@ -91,6 +91,10 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   components draw (pozos-aprendizaje, escala, linea-de-tiempo, linea-de-tiempo-reciente), and it
   imports `src/engine/aprendizaje.ts` directly (Node ≥ 24 type stripping; CI runs Node 24). It
   runs inside `npm run slides`. Every SVG embeds its fonts: an `<img>` SVG can't see the page's.
+  The eight `s7-*.svg` of session 7 (data map, tool survey, plan B, sandbox, mail chain, swarm,
+  the Hugging Face timeline, risk-to-control map) are drawn in code by `tools/diagramas-s7.mjs`
+  (`npm run diagramas:s7`); they read no data, so they are committed and not part of
+  `npm run slides`.
 - `public/descargas/` — files the student downloads to feed a chatbot. Since 2026-09-28 the
   session-3 workshop uses `campos_capiv_2006_2026.csv` (seven mature Argentine fields, oil,
   water and water injection by month and resource type, 2006-01 to 2026-07; no field operated
@@ -196,6 +200,14 @@ of the second: `~/.claude/plans/harmonic-leaping-stearns.md`. `docs/syllabus.md`
   live, from zero. Session pages are reinforcement and optional depth ("Antes de la sesión
   (opcional)"), never prerequisites. The ONLY ask between days is the tarea, sized at ~5
   minutes, and every deck carries a plan B in its notes for when few did it.
+- **Session 7 was rebuilt on 2026-10-01** (Matías): information handling, risks of AI and agents,
+  and the usage policy as the centrepiece. It has no live exercise (the hallucination hunt stays
+  on the page as optional practice) and three rounds instead. Every risk comes with a sourced
+  case and the control that keeps the tool in use; the tone is "to use it more", never fear.
+  News clips from public broadcasters (Televisión Pública, RTVE) are allowed there as the short
+  video of the Hugging Face incident, by explicit request; the page says they simplify.
+  `docs/politica-uso-ia.md` is the source of the long policy (pandoc → `.docx`), and its
+  figures, section numbers and cases must match the page and `s7-riesgo-control.svg`.
 - **Resources: first-rate only.** 3Blue1Brown, Khan Academy, Anthropic, Distill, Polo Club
   (Transformer Explainer), official tools and data sources. No generic-divulgation YouTube
   channels in any language. Short lists beat padded ones.

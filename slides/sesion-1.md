@@ -184,7 +184,7 @@ la slide que sigue. Cortar al minuto con amabilidad.
 | Lunes 28 | **Qué es y cómo funciona** | 1 · De los datos a la IA generativa; 2 · Cómo funciona un LLM |
 | Martes 29 | **Datos y documentos** | 3 · Prompts y datos, en la práctica; 4 · RAG y Gemini Notebook |
 | Miércoles 30 | **Agentes** | 5 · Qué son, el arnés y cuáles hay; 6 · Agentes y el caso de tu empresa |
-| Jueves 1 | **Riesgos y el caso real** | 7 · Riesgos, límites y gobernanza; 8 · El caso y el horizonte |
+| Jueves 1 | **Riesgos y el caso real** | 7 · Información, riesgos y política de uso; 8 · El caso y el horizonte |
 
 Te llevás criterio para delegar y verificar, un cuaderno del rubro, un borrador de política de uso y el caso de tu empresa.
 
