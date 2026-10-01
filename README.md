@@ -39,6 +39,19 @@ impresa en decks y brochure) se publica a mano con `npm run deploy:canonica`. De
 10-ago-2026; si algún día se quiere automatizar, el paso ya está en `deploy.yml` y se activa
 creando el secret `ACTIONS_DEPLOY_KEY` (deploy key de escritura sobre el repo de mpodeley).
 
+La fuente vive en dos repos con el mismo `main`. Se clona y se trae de
+`mpodeley/curso-ia-energia`; cada push va además a `podeley/curso-ia-energia`, cuyo CI publica
+el respaldo. En una máquina nueva, después de clonar el primero:
+
+```bash
+git remote set-url --add --push origin https://github.com/mpodeley/curso-ia-energia.git
+git remote set-url --add --push origin https://github.com/podeley/curso-ia-energia.git
+```
+
+Con eso `git push` actualiza los dos. En el repo de mpodeley el workflow `Build and deploy` está
+desactivado desde el 1 de octubre de 2026, así que un push a su `main` deja la canónica como
+estaba hasta el próximo `npm run deploy:canonica`.
+
 El brochure (`docs/brochure/brochure.html`) fue el material de venta de la primera edición y ya
 no se sirve desde el sitio. Si vuelve a hacer falta: `python scripts/build_qr.py` rehace el QR
 desde la URL del curso, y `SHOTS_MODULES_DIR=<dir-con-playwright-core> node tools/brochure-pdf.mjs`

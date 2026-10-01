@@ -14,6 +14,14 @@ which the org's custom domain serves at podeley.ar/curso-ia-energia. The Worker'
 allowlist carries all three origins (it compares `Origin`, i.e. host only, so a path change never
 touches it).
 
+**The source lives in two repos with the same `main`** (since 2026-10-01, so two machines can
+work on it): `origin` fetches from `mpodeley/curso-ia-energia` and pushes to both that repo and
+`podeley/curso-ia-energia` (two push URLs; the README has the two commands for a fresh clone).
+The org's CI publishes the backup on every push. In the mpodeley repo the `Build and deploy`
+workflow is disabled, so a push never touches the canonical `gh-pages`; that one is still
+published by hand with `npm run deploy:canonica`, which force-pushes `dist/`. Pull before
+working: the other machine may have pushed.
+
 **Editions live in git history, not in directories.** `main` is always the edition being
 prepared or taught. The first edition (YPFB Andina, 8 sessions × 2 h, August 2026) is frozen at
 tag `ypfb-2026-08` and at the archived Pages repo `mpodeley/curso-energia-ypfb`; never rebuild
